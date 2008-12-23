@@ -117,34 +117,35 @@ Indices and tables
 * :ref:`modindex`
 * :ref:`search`
 
-Modules
-=============
-
-.. autosummary::
-    :toctree: generated/
-
-    sprox.formbase
-    sprox.tablebase
-    sprox.fillerbase
-    sprox.configbase
-    sprox.viewbase
-    sprox.entitiesbase
-    sprox.widgetselector
-    sprox.validatorselector
-    sprox.validators
-    sprox.sprockets
-    sprox.metadata
-    sprox.saormprovider
-    sprox.iprovider
-    sprox.widgets
-    sprox.util
-
 API
 ===========
 .. toctree::
    :maxdepth: 2
 
    class_diagram
+
+Modules
+=============
+
+.. toctree::
+    :maxdepth: 1
+
+    modules/sprox.formbase
+    modules/sprox.tablebase
+    modules/sprox.fillerbase
+    modules/sprox.configbase
+    modules/sprox.viewbase
+    modules/sprox.entitiesbase
+    modules/sprox.widgetselector
+    modules/sprox.validatorselector
+    modules/sprox.validators
+    modules/sprox.sprockets
+    modules/sprox.metadata
+    modules/sprox.saormprovider
+    modules/sprox.iprovider
+    modules/sprox.widgets
+    modules/sprox.util
+
 
 Useful Links
 ==============

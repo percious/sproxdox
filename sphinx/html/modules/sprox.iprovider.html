@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>sprox.iprovider &mdash; Sprox v0.5 documentation</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+          URL_ROOT:    '../',
+          VERSION:     '0.5',
+          COLLAPSE_MODINDEX: false,
+          FILE_SUFFIX: '.html'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Sprox v0.5 documentation" href="../index.html" />
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+  <li>
+  <a href="../index.html"><b>Sprox 0.5</b></a>
+  </li>
+
+  
+    <li> <b>/</b> <a href=""><tt class="docutils literal"><span class="pre">sprox.iprovider</span></tt></a></li>
+  
+
+      </ul>
+    </div>
+  <div class="document">
+    <div class="documentwrapper">
+      <div class="bodywrapper">
+      <div class="body">
+        
+  
+  <div class="section" id="module-sprox.iprovider">
+<h1><tt class="xref docutils literal"><span class="pre">sprox.iprovider</span></tt><a class="headerlink" href="#module-sprox.iprovider" title="Permalink to this headline">¶</a></h1>
+<p>iprovider Module</p>
+<p>this contains the class which allows dbsprockets to interface with any database.</p>
+<p>Classes:
+Name             Description
+IProvider        provider interface</p>
+<p>Exceptions:
+None</p>
+<p>Functions:
+None</p>
+<p>Copywrite (c) 2007 Christopher Perkins
+Original Version by Christopher Perkins 2007
+Released under MIT license.</p>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="sprox.iprovider.IProvider">
+<!--[sprox.iprovider.IProvider]-->class <tt class="descclassname">sprox.iprovider.</tt><tt class="descname">IProvider</tt><a class="headerlink" href="#sprox.iprovider.IProvider" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="sprox.iprovider.IProvider.add">
+<!--[sprox.iprovider.IProvider.add]--><tt class="descname">add</tt><big>(</big><em>table_name=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.add" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.edit">
+<!--[sprox.iprovider.IProvider.edit]--><tt class="descname">edit</tt><big>(</big><em>table_name=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.edit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.get_column">
+<!--[sprox.iprovider.IProvider.get_column]--><tt class="descname">get_column</tt><big>(</big><em>table_name</em>, <em>name</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_column" title="Permalink to this definition">¶</a></dt>
+<dd>(table_name, name) -&gt; sqlalchemy.schema.Column
+get the column definition givcen the tablename and column name.</dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.get_columns">
+<!--[sprox.iprovider.IProvider.get_columns]--><tt class="descname">get_columns</tt><big>(</big><em>table_name</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_columns" title="Permalink to this definition">¶</a></dt>
+<dd>(name) -&gt; [list of column_names]
+get the column names given the table name</dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.get_primary_keys">
+<!--[sprox.iprovider.IProvider.get_primary_keys]--><tt class="descname">get_primary_keys</tt><big>(</big><em>table_name</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_primary_keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.get_server_default">
+<!--[sprox.iprovider.IProvider.get_server_default]--><tt class="descname">get_server_default</tt><big>(</big><em>table_name</em>, <em>key</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_server_default" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.get_table">
+<!--[sprox.iprovider.IProvider.get_table]--><tt class="descname">get_table</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_table" title="Permalink to this definition">¶</a></dt>
+<dd>(name) -&gt; sqlalchemy.schema.Table
+get the table definition with the given table name</dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.get_tables">
+<!--[sprox.iprovider.IProvider.get_tables]--><tt class="descname">get_tables</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_tables" title="Permalink to this definition">¶</a></dt>
+<dd>()-&gt;[list of tablesNames]
+get a list of tables from the database</dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.is_nullable_field">
+<!--[sprox.iprovider.IProvider.is_nullable_field]--><tt class="descname">is_nullable_field</tt><big>(</big><em>field</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.is_nullable_field" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.select">
+<!--[sprox.iprovider.IProvider.select]--><tt class="descname">select</tt><big>(</big><em>table_name</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.select" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+        <h1>Discuss</h1>
+        <div id="disqus_thread"></div>
+           <script type="text/javascript" src="http://disqus.com/forums/sproxdox/embed.js"></script>
+           <noscript><a href="http://sproxdox.disqus.com/?url=ref">View the discussion thread.</a></noscript>
+           <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+      </div>
+
+  </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="../index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href=""><tt class="docutils literal"><span class="pre">sprox.iprovider</span></tt></a><ul>
+<li><a class="reference external" href="#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../_sources/modules/sprox.iprovider.txt">Show Source</a></li>
+            </ul>
+          <h3>Quick search</h3>
+            <form class="search" action="../search.html" method="get">
+              <input type="text" name="q" size="18" /> <input type="submit" value="Go" />
+              <input type="hidden" name="check_keywords" value="yes" />
+              <input type="hidden" name="area" value="default" />
+            </form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+  <li>
+  <a href="../index.html"><b>Sprox 0.5</b></a>
+  </li>
+
+  
+    <li> <b>/</b> <a href=""><tt class="docutils literal"><span class="pre">sprox.iprovider</span></tt></a></li>
+  
+
+      </ul>
+    </div>
+
+    <div class="footer">
+      &copy; Copyright 2008, Christopher Perkins.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.5.
+    </div>
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+  var links = document.getElementsByTagName('a');
+  var query = '?';
+  for(var i = 0; i < links.length; i++) {
+    if(links[i].href.indexOf('#disqus_thread') >= 0) {
+      query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+    }
+  }
+  document.write('<script type="text/javascript" src="http://disqus.com/forums/sproxdox/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
+
+
+  </body>
+</html>
