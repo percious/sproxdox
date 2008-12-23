@@ -22,7 +22,7 @@ Sprox is installable from pypi.::
 
 Form Generation
 --------------------
-If this is a quickstarted TG project, you probably have a "User" link over there on the left side of your screen.
+Sprox has a simple but powerful way to manipulate forms.
 Here is the simplest way to create a form based on a "User" class.::
 
     from sprox.formbase import AddRecordForm
