@@ -57,14 +57,7 @@
   <div class="section" id="module-sprox.iprovider">
 <h1><tt class="xref docutils literal"><span class="pre">sprox.iprovider</span></tt><a class="headerlink" href="#module-sprox.iprovider" title="Permalink to this headline">¶</a></h1>
 <p>iprovider Module</p>
-<p>this contains the class which allows dbsprockets to interface with any database.</p>
-<p>Classes:
-Name             Description
-IProvider        provider interface</p>
-<p>Exceptions:
-None</p>
-<p>Functions:
-None</p>
+<p>This contains the class which allows dbsprockets to interface with any database.</p>
 <p>Copyright (c) 2007 Christopher Perkins
 Original Version by Christopher Perkins 2007
 Released under MIT license.</p>
@@ -74,58 +67,89 @@ Released under MIT license.</p>
 <dt id="sprox.iprovider.IProvider">
 <!--[sprox.iprovider.IProvider]-->class <tt class="descclassname">sprox.iprovider.</tt><tt class="descname">IProvider</tt><a class="headerlink" href="#sprox.iprovider.IProvider" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
-<dt id="sprox.iprovider.IProvider.add">
-<!--[sprox.iprovider.IProvider.add]--><tt class="descname">add</tt><big>(</big><em>table_name=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.add" title="Permalink to this definition">¶</a></dt>
+<dt id="sprox.iprovider.IProvider.create">
+<!--[sprox.iprovider.IProvider.create]--><tt class="descname">create</tt><big>(</big><em>entity</em>, <em>params</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.create" title="Permalink to this definition">¶</a></dt>
+<dd>Create an entry of type entity with the given params</dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.create_relationships">
+<!--[sprox.iprovider.IProvider.create_relationships]--><tt class="descname">create_relationships</tt><big>(</big><em>obj</em>, <em>params</em>, <em>delete_first=False</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.create_relationships" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="sprox.iprovider.IProvider.edit">
-<!--[sprox.iprovider.IProvider.edit]--><tt class="descname">edit</tt><big>(</big><em>table_name=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.edit" title="Permalink to this definition">¶</a></dt>
+<dt id="sprox.iprovider.IProvider.delete">
+<!--[sprox.iprovider.IProvider.delete]--><tt class="descname">delete</tt><big>(</big><em>entity</em>, <em>params</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.delete" title="Permalink to this definition">¶</a></dt>
+<dd>Delete an entry of typeentity which matches the params</dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.get">
+<!--[sprox.iprovider.IProvider.get]--><tt class="descname">get</tt><big>(</big><em>entity</em>, <em>params</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get" title="Permalink to this definition">¶</a></dt>
+<dd>Get a single entry of type entity which matches the params</dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.get_default_values">
+<!--[sprox.iprovider.IProvider.get_default_values]--><tt class="descname">get_default_values</tt><big>(</big><em>entity</em>, <em>params</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_default_values" title="Permalink to this definition">¶</a></dt>
+<dd>Get the default values for form filling based on the database schema</dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.get_dropdown_options">
+<!--[sprox.iprovider.IProvider.get_dropdown_options]--><tt class="descname">get_dropdown_options</tt><big>(</big><em>entity</em>, <em>view_names=None</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_dropdown_options" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="sprox.iprovider.IProvider.get_column">
-<!--[sprox.iprovider.IProvider.get_column]--><tt class="descname">get_column</tt><big>(</big><em>table_name</em>, <em>name</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_column" title="Permalink to this definition">¶</a></dt>
-<dd>(table_name, name) -&gt; sqlalchemy.schema.Column
-get the column definition givcen the tablename and column name.</dd></dl>
-
-<dl class="method">
-<dt id="sprox.iprovider.IProvider.get_columns">
-<!--[sprox.iprovider.IProvider.get_columns]--><tt class="descname">get_columns</tt><big>(</big><em>table_name</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_columns" title="Permalink to this definition">¶</a></dt>
-<dd>(name) -&gt; [list of column_names]
-get the column names given the table name</dd></dl>
-
-<dl class="method">
-<dt id="sprox.iprovider.IProvider.get_primary_keys">
-<!--[sprox.iprovider.IProvider.get_primary_keys]--><tt class="descname">get_primary_keys</tt><big>(</big><em>table_name</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_primary_keys" title="Permalink to this definition">¶</a></dt>
+<dt id="sprox.iprovider.IProvider.get_entities">
+<!--[sprox.iprovider.IProvider.get_entities]--><tt class="descname">get_entities</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_entities" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="sprox.iprovider.IProvider.get_server_default">
-<!--[sprox.iprovider.IProvider.get_server_default]--><tt class="descname">get_server_default</tt><big>(</big><em>table_name</em>, <em>key</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_server_default" title="Permalink to this definition">¶</a></dt>
+<dt id="sprox.iprovider.IProvider.get_entity">
+<!--[sprox.iprovider.IProvider.get_entity]--><tt class="descname">get_entity</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_entity" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="sprox.iprovider.IProvider.get_table">
-<!--[sprox.iprovider.IProvider.get_table]--><tt class="descname">get_table</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_table" title="Permalink to this definition">¶</a></dt>
-<dd>(name) -&gt; sqlalchemy.schema.Table
-get the table definition with the given table name</dd></dl>
-
-<dl class="method">
-<dt id="sprox.iprovider.IProvider.get_tables">
-<!--[sprox.iprovider.IProvider.get_tables]--><tt class="descname">get_tables</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_tables" title="Permalink to this definition">¶</a></dt>
-<dd>()-&gt;[list of tablesNames]
-get a list of tables from the database</dd></dl>
-
-<dl class="method">
-<dt id="sprox.iprovider.IProvider.is_nullable_field">
-<!--[sprox.iprovider.IProvider.is_nullable_field]--><tt class="descname">is_nullable_field</tt><big>(</big><em>field</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.is_nullable_field" title="Permalink to this definition">¶</a></dt>
+<dt id="sprox.iprovider.IProvider.get_field">
+<!--[sprox.iprovider.IProvider.get_field]--><tt class="descname">get_field</tt><big>(</big><em>entity</em>, <em>name</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_field" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="sprox.iprovider.IProvider.select">
-<!--[sprox.iprovider.IProvider.select]--><tt class="descname">select</tt><big>(</big><em>table_name</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.select" title="Permalink to this definition">¶</a></dt>
+<dt id="sprox.iprovider.IProvider.get_fields">
+<!--[sprox.iprovider.IProvider.get_fields]--><tt class="descname">get_fields</tt><big>(</big><em>entity</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_fields" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.get_primary_field">
+<!--[sprox.iprovider.IProvider.get_primary_field]--><tt class="descname">get_primary_field</tt><big>(</big><em>entity</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_primary_field" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.get_primary_fields">
+<!--[sprox.iprovider.IProvider.get_primary_fields]--><tt class="descname">get_primary_fields</tt><big>(</big><em>entity</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_primary_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.get_relations">
+<!--[sprox.iprovider.IProvider.get_relations]--><tt class="descname">get_relations</tt><big>(</big><em>entity</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_relations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.get_view_field_name">
+<!--[sprox.iprovider.IProvider.get_view_field_name]--><tt class="descname">get_view_field_name</tt><big>(</big><em>entity</em>, <em>possible_columns</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_view_field_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.is_nullable">
+<!--[sprox.iprovider.IProvider.is_nullable]--><tt class="descname">is_nullable</tt><big>(</big><em>entity</em>, <em>name</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.is_nullable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.is_relation">
+<!--[sprox.iprovider.IProvider.is_relation]--><tt class="descname">is_relation</tt><big>(</big><em>entity</em>, <em>field_name</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.is_relation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.update">
+<!--[sprox.iprovider.IProvider.update]--><tt class="descname">update</tt><big>(</big><em>entity</em>, <em>params</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.update" title="Permalink to this definition">¶</a></dt>
+<dd>Update an entry of type entity which matches the params</dd></dl>
 
 </dd></dl>
 
@@ -213,6 +237,19 @@ get a list of tables from the database</dd></dl>
   }
   document.write('<script type="text/javascript" src="http://disqus.com/forums/sproxdox/get_num_replies.js' + query + '"></' + 'script>');
 })();
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6778746-1");
+pageTracker._trackPageview();
+} catch(err) {}
 //]]>
 </script>
 

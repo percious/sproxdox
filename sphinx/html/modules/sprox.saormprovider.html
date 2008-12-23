@@ -75,11 +75,6 @@ Released under MIT license.</p>
 <!--[sprox.saormprovider.SAORMProvider]-->class <tt class="descclassname">sprox.saormprovider.</tt><tt class="descname">SAORMProvider</tt><big>(</big><em>hint=None</em>, <em>**hints</em><big>)</big><a class="headerlink" href="#sprox.saormprovider.SAORMProvider" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="sprox.iprovider.IProvider" class="reference external" href="sprox.iprovider.html#sprox.iprovider.IProvider"><tt class="xref docutils literal"><span class="pre">sprox.iprovider.IProvider</span></tt></a></p>
 <dl class="method">
-<dt id="sprox.saormprovider.SAORMProvider.add">
-<!--[sprox.saormprovider.SAORMProvider.add]--><tt class="descname">add</tt><big>(</big><em>table_name=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.saormprovider.SAORMProvider.add" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
 <dt id="sprox.saormprovider.SAORMProvider.create">
 <!--[sprox.saormprovider.SAORMProvider.create]--><tt class="descname">create</tt><big>(</big><em>entity</em>, <em>params</em><big>)</big><a class="headerlink" href="#sprox.saormprovider.SAORMProvider.create" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -100,26 +95,9 @@ Released under MIT license.</p>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="sprox.saormprovider.SAORMProvider.edit">
-<!--[sprox.saormprovider.SAORMProvider.edit]--><tt class="descname">edit</tt><big>(</big><em>table_name=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.saormprovider.SAORMProvider.edit" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
 <dt id="sprox.saormprovider.SAORMProvider.get">
 <!--[sprox.saormprovider.SAORMProvider.get]--><tt class="descname">get</tt><big>(</big><em>entity</em>, <em>params</em><big>)</big><a class="headerlink" href="#sprox.saormprovider.SAORMProvider.get" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="method">
-<dt id="sprox.saormprovider.SAORMProvider.get_column">
-<!--[sprox.saormprovider.SAORMProvider.get_column]--><tt class="descname">get_column</tt><big>(</big><em>table_name</em>, <em>name</em><big>)</big><a class="headerlink" href="#sprox.saormprovider.SAORMProvider.get_column" title="Permalink to this definition">¶</a></dt>
-<dd>(table_name, name) -&gt; sqlalchemy.schema.Column
-get the column definition givcen the tablename and column name.</dd></dl>
-
-<dl class="method">
-<dt id="sprox.saormprovider.SAORMProvider.get_columns">
-<!--[sprox.saormprovider.SAORMProvider.get_columns]--><tt class="descname">get_columns</tt><big>(</big><em>table_name</em><big>)</big><a class="headerlink" href="#sprox.saormprovider.SAORMProvider.get_columns" title="Permalink to this definition">¶</a></dt>
-<dd>(name) -&gt; [list of column_names]
-get the column names given the table name</dd></dl>
 
 <dl class="method">
 <dt id="sprox.saormprovider.SAORMProvider.get_default_values">
@@ -162,18 +140,8 @@ get the column names given the table name</dd></dl>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="sprox.saormprovider.SAORMProvider.get_primary_keys">
-<!--[sprox.saormprovider.SAORMProvider.get_primary_keys]--><tt class="descname">get_primary_keys</tt><big>(</big><em>table_name</em><big>)</big><a class="headerlink" href="#sprox.saormprovider.SAORMProvider.get_primary_keys" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
 <dt id="sprox.saormprovider.SAORMProvider.get_relations">
 <!--[sprox.saormprovider.SAORMProvider.get_relations]--><tt class="descname">get_relations</tt><big>(</big><em>entity</em><big>)</big><a class="headerlink" href="#sprox.saormprovider.SAORMProvider.get_relations" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="sprox.saormprovider.SAORMProvider.get_server_default">
-<!--[sprox.saormprovider.SAORMProvider.get_server_default]--><tt class="descname">get_server_default</tt><big>(</big><em>table_name</em>, <em>key</em><big>)</big><a class="headerlink" href="#sprox.saormprovider.SAORMProvider.get_server_default" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -182,20 +150,8 @@ get the column names given the table name</dd></dl>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="sprox.saormprovider.SAORMProvider.get_table">
-<!--[sprox.saormprovider.SAORMProvider.get_table]--><tt class="descname">get_table</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#sprox.saormprovider.SAORMProvider.get_table" title="Permalink to this definition">¶</a></dt>
-<dd>(name) -&gt; sqlalchemy.schema.Table
-get the table definition with the given table name</dd></dl>
-
-<dl class="method">
-<dt id="sprox.saormprovider.SAORMProvider.get_tables">
-<!--[sprox.saormprovider.SAORMProvider.get_tables]--><tt class="descname">get_tables</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.saormprovider.SAORMProvider.get_tables" title="Permalink to this definition">¶</a></dt>
-<dd>()-&gt;[list of tablesNames]
-get a list of tables from the database</dd></dl>
-
-<dl class="method">
-<dt id="sprox.saormprovider.SAORMProvider.get_view_column_name">
-<!--[sprox.saormprovider.SAORMProvider.get_view_column_name]--><tt class="descname">get_view_column_name</tt><big>(</big><em>entity</em>, <em>possible_columns</em><big>)</big><a class="headerlink" href="#sprox.saormprovider.SAORMProvider.get_view_column_name" title="Permalink to this definition">¶</a></dt>
+<dt id="sprox.saormprovider.SAORMProvider.get_view_field_name">
+<!--[sprox.saormprovider.SAORMProvider.get_view_field_name]--><tt class="descname">get_view_field_name</tt><big>(</big><em>entity</em>, <em>possible_columns</em><big>)</big><a class="headerlink" href="#sprox.saormprovider.SAORMProvider.get_view_field_name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -204,18 +160,8 @@ get a list of tables from the database</dd></dl>
 <dd></dd></dl>
 
 <dl class="method">
-<dt id="sprox.saormprovider.SAORMProvider.is_nullable_field">
-<!--[sprox.saormprovider.SAORMProvider.is_nullable_field]--><tt class="descname">is_nullable_field</tt><big>(</big><em>field</em><big>)</big><a class="headerlink" href="#sprox.saormprovider.SAORMProvider.is_nullable_field" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
 <dt id="sprox.saormprovider.SAORMProvider.is_relation">
 <!--[sprox.saormprovider.SAORMProvider.is_relation]--><tt class="descname">is_relation</tt><big>(</big><em>entity</em>, <em>field_name</em><big>)</big><a class="headerlink" href="#sprox.saormprovider.SAORMProvider.is_relation" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="sprox.saormprovider.SAORMProvider.select">
-<!--[sprox.saormprovider.SAORMProvider.select]--><tt class="descname">select</tt><big>(</big><em>table_name</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.saormprovider.SAORMProvider.select" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -329,6 +275,19 @@ get a list of tables from the database</dd></dl>
   }
   document.write('<script type="text/javascript" src="http://disqus.com/forums/sproxdox/get_num_replies.js' + query + '"></' + 'script>');
 })();
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6778746-1");
+pageTracker._trackPageview();
+} catch(err) {}
 //]]>
 </script>
 
