@@ -14,7 +14,7 @@ data.
 
 Installation
 --------------
-Sprox is installable from pypi.:
+Sprox is installable from pypi.::
 
     easy_install sprox
 
@@ -98,7 +98,9 @@ And your template code would look like this::
 Keep in mind that since the form generators are declarative, you can use mixins and other class trickery to reduce
 your code further (although it is not advised to use this to fool your fellow developer).  Can you think of a way
 to reduce the 14 lines of python code above to 8?
-<h3>Sprox, the big picture</h3>
+
+Sprox, the big picture
+-------------------------
 In reality, Sprox is not about making your code smaller, but making it _smarter_.  Since you have a declarative
 base to work from, you can subclass a set of widgets that fits your application.  You can provide customized widget
 selectors which tell Sprox which widgets to use for which fields.  Because Sprox gives you the power to customize
@@ -137,5 +139,16 @@ Modules
     sprox.widgets
     sprox.util
 
+API
+===========
+.. toctree::
+   :maxdepth: 2
 
+   class_diagram
 
+Useful Links
+==============
+
+Repository `http://www.bitbucket.org/percious/sprox/src/ <http://www.bitbucket.org/percious/sprox/src/>`_
+
+Mailing List `http://groups.google.com/group/sprox <http://groups.google.com/group/sprox>`_

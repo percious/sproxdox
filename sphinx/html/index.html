@@ -19,7 +19,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="top" title="Sprox v0.5 documentation" href="" />
-    <link rel="next" title="sprox.formbase" href="generated/sprox.formbase.html" />
+    <link rel="next" title="Class Diagram" href="class_diagram.html" />
   </head>
   <body>
     <div class="related">
@@ -32,7 +32,7 @@
           <a href="modindex.html" title="Global Module Index"
              accesskey="M">modules</a> |</li>
         <li class="right" >
-          <a href="generated/sprox.formbase.html" title="sprox.formbase"
+          <a href="class_diagram.html" title="Class Diagram"
              accesskey="N">next</a> |</li>
         <li><a href="">Sprox v0.5 documentation</a> &raquo;</li>
       </ul>
@@ -54,8 +54,7 @@ data.</p>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <p>Sprox is installable from pypi.:</p>
-<blockquote>
-easy_install sprox</blockquote>
+<pre>easy_install sprox</pre>
 </div>
 <div class="section" id="form-generation">
 <h2>Form Generation<a class="headerlink" href="#form-generation" title="Permalink to this headline">¶</a></h2>
@@ -128,9 +127,11 @@ email addresses:</p>
 <pre>${user_table_form(value=user_table_value)}</pre>
 <p>Keep in mind that since the form generators are declarative, you can use mixins and other class trickery to reduce
 your code further (although it is not advised to use this to fool your fellow developer).  Can you think of a way
-to reduce the 14 lines of python code above to 8?
-&lt;h3&gt;Sprox, the big picture&lt;/h3&gt;
-In reality, Sprox is not about making your code smaller, but making it _smarter_.  Since you have a declarative
+to reduce the 14 lines of python code above to 8?</p>
+</div>
+<div class="section" id="sprox-the-big-picture">
+<h2>Sprox, the big picture<a class="headerlink" href="#sprox-the-big-picture" title="Permalink to this headline">¶</a></h2>
+<p>In reality, Sprox is not about making your code smaller, but making it _smarter_.  Since you have a declarative
 base to work from, you can subclass a set of widgets that fits your application.  You can provide customized widget
 selectors which tell Sprox which widgets to use for which fields.  Because Sprox gives you the power to customize
 any part of the form at any level of abstraction, you can create your own form generation based on the requirements
@@ -201,6 +202,19 @@ for your project.</p>
 </tbody>
 </table>
 </div>
+<div class="section" id="api">
+<h1>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h1>
+<ul>
+<li><a class="reference external" href="class_diagram.html">Class Diagram</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="useful-links">
+<h1>Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h1>
+<p>Repository <a class="reference external" href="http://www.bitbucket.org/percious/sprox/src/">http://www.bitbucket.org/percious/sprox/src/</a></p>
+<p>Mailing List <a class="reference external" href="http://groups.google.com/group/sprox">http://groups.google.com/group/sprox</a></p>
+</div>
 
 
           </div>
@@ -213,17 +227,22 @@ for your project.</p>
 <li><a class="reference external" href="">Sprox</a><ul>
 <li><a class="reference external" href="#installation">Installation</a></li>
 <li><a class="reference external" href="#form-generation">Form Generation</a></li>
-<li><a class="reference external" href="#table-generation">Table Generation</a><ul>
+<li><a class="reference external" href="#table-generation">Table Generation</a></li>
+<li><a class="reference external" href="#sprox-the-big-picture">Sprox, the big picture</a><ul>
 </ul>
 </li>
 </ul>
 </li>
 <li><a class="reference external" href="#indices-and-tables">Indices and tables</a></li>
 <li><a class="reference external" href="#modules">Modules</a></li>
+<li><a class="reference external" href="#api">API</a><ul>
+</ul>
+</li>
+<li><a class="reference external" href="#useful-links">Useful Links</a></li>
 </ul>
 
             <h4>Next topic</h4>
-            <p class="topless"><a href="generated/sprox.formbase.html" title="next chapter"><tt class="docutils literal"><span class="pre">sprox.formbase</span></tt></a></p>
+            <p class="topless"><a href="class_diagram.html" title="next chapter">Class Diagram</a></p>
             <h3>This Page</h3>
             <ul class="this-page-menu">
               <li><a href="_sources/index.txt">Show Source</a></li>
@@ -248,7 +267,7 @@ for your project.</p>
           <a href="modindex.html" title="Global Module Index"
              accesskey="M">modules</a> |</li>
         <li class="right" >
-          <a href="generated/sprox.formbase.html" title="sprox.formbase"
+          <a href="class_diagram.html" title="Class Diagram"
              accesskey="N">next</a> |</li>
         <li><a href="">Sprox v0.5 documentation</a> &raquo;</li>
       </ul>
