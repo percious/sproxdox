@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>sprox.formbase &mdash; Sprox v0.5 documentation</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+          URL_ROOT:    '../',
+          VERSION:     '0.5',
+          COLLAPSE_MODINDEX: false,
+          FILE_SUFFIX: '.html'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Sprox v0.5 documentation" href="../index.html" />
+    <link rel="next" title="sprox.tablebase" href="sprox.tablebase.html" />
+    <link rel="prev" title="Welcome to Sprox&#8217;s documentation!" href="../index.html" />
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+        <li class="right" >
+          <a href="sprox.tablebase.html" title="sprox.tablebase"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Welcome to Sprox&#8217;s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Sprox v0.5 documentation</a> &raquo;</li>
+      </ul>
+    </div>
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  
+  <div class="section" id="module-sprox.formbase">
+<h1><tt class="xref docutils literal"><span class="pre">sprox.formbase</span></tt><a class="headerlink" href="#module-sprox.formbase" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="sprox.formbase.FormBase">
+<!--[sprox.formbase.FormBase]-->class <tt class="descclassname">sprox.formbase.</tt><tt class="descname">FormBase</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.formbase.FormBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a title="sprox.viewbase.ViewBase" class="reference external" href="sprox.viewbase.html#sprox.viewbase.ViewBase"><tt class="xref docutils literal"><span class="pre">sprox.viewbase.ViewBase</span></tt></a></p>
+<dl class="attribute">
+<dt id="sprox.formbase.FormBase.validate">
+<!--[sprox.formbase.FormBase.validate]--><tt class="descname">validate</tt><a class="headerlink" href="#sprox.formbase.FormBase.validate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sprox.formbase.AddRecordForm">
+<!--[sprox.formbase.AddRecordForm]-->class <tt class="descclassname">sprox.formbase.</tt><tt class="descname">AddRecordForm</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.formbase.AddRecordForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a title="sprox.formbase.EditableForm" class="reference internal" href="#sprox.formbase.EditableForm"><tt class="xref docutils literal"><span class="pre">sprox.formbase.EditableForm</span></tt></a></p>
+<dl class="attribute">
+<dt id="sprox.formbase.AddRecordForm.validate">
+<!--[sprox.formbase.AddRecordForm.validate]--><tt class="descname">validate</tt><a class="headerlink" href="#sprox.formbase.AddRecordForm.validate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sprox.formbase.DisabledForm">
+<!--[sprox.formbase.DisabledForm]-->class <tt class="descclassname">sprox.formbase.</tt><tt class="descname">DisabledForm</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.formbase.DisabledForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a title="sprox.formbase.FormBase" class="reference internal" href="#sprox.formbase.FormBase"><tt class="xref docutils literal"><span class="pre">sprox.formbase.FormBase</span></tt></a></p>
+<dl class="attribute">
+<dt id="sprox.formbase.DisabledForm.validate">
+<!--[sprox.formbase.DisabledForm.validate]--><tt class="descname">validate</tt><a class="headerlink" href="#sprox.formbase.DisabledForm.validate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sprox.formbase.EditableForm">
+<!--[sprox.formbase.EditableForm]-->class <tt class="descclassname">sprox.formbase.</tt><tt class="descname">EditableForm</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.formbase.EditableForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a title="sprox.formbase.FormBase" class="reference internal" href="#sprox.formbase.FormBase"><tt class="xref docutils literal"><span class="pre">sprox.formbase.FormBase</span></tt></a></p>
+<dl class="attribute">
+<dt id="sprox.formbase.EditableForm.validate">
+<!--[sprox.formbase.EditableForm.validate]--><tt class="descname">validate</tt><a class="headerlink" href="#sprox.formbase.EditableForm.validate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="../index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href=""><tt class="docutils literal"><span class="pre">sprox.formbase</span></tt></a><ul>
+<li><a class="reference external" href="#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="../index.html" title="previous chapter">Welcome to Sprox&#8217;s documentation!</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="sprox.tablebase.html" title="next chapter"><tt class="docutils literal docutils literal"><span class="pre">sprox.tablebase</span></tt></a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../_sources/generated/sprox.formbase.txt">Show Source</a></li>
+            </ul>
+          <h3>Quick search</h3>
+            <form class="search" action="../search.html" method="get">
+              <input type="text" name="q" size="18" /> <input type="submit" value="Go" />
+              <input type="hidden" name="check_keywords" value="yes" />
+              <input type="hidden" name="area" value="default" />
+            </form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+        <li class="right" >
+          <a href="sprox.tablebase.html" title="sprox.tablebase"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Welcome to Sprox&#8217;s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Sprox v0.5 documentation</a> &raquo;</li>
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2008, Christopher Perkins.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.5.
+    </div>
+  </body>
+</html>
