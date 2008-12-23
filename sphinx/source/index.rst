@@ -88,7 +88,7 @@ email addresses::
         __model__ = User
         __limit_fields__ = ['display_name', 'email_address']
 
-    user_table_value = UserTableFiller().get_value()
+    user_table_value = UserTableFiller(DBSession).get_value()
 
 
 And your template code would look like this::

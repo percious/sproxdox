@@ -1,0 +1,55 @@
+{# Filename: _templates/layout.html #}
+{% extends '!layout.html' %}
+
+{% block rootrellink %}
+  <li>
+  <a href="{{ pathto('index') }}"><b>Sprox {{ release }}</b></a>
+  </li>
+{% endblock %}
+
+{% block relbaritems %}
+  {% if current_page_name != 'index' %}
+    <li> <b>/</b> <a href="{{ pathto(current_page_name) }}">{{ title }}</a></li>
+  {% endif %}
+{% endblock %}
+
+{%- block document %}
+  <div class="document">
+    <div class="documentwrapper">
+    {%- if builder != 'htmlhelp' %}
+      <div class="bodywrapper">
+    {%- endif %}
+      <div class="body">
+        {% block body %}{% endblock %}
+        <h1>Discuss</h1>
+        <div id="disqus_thread"></div>
+           <script type="text/javascript" src="http://disqus.com/forums/sproxdox/embed.js"></script>
+           <noscript><a href="http://sproxdox.disqus.com/?url=ref">View the discussion thread.</a></noscript>
+           <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+    {%- if builder != 'htmlhelp' %}
+      </div>
+    {%- endif %}
+
+  </div>
+{%- endblock %}
+
+{% block footer %}
+{{ super() }}
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+  var links = document.getElementsByTagName('a');
+  var query = '?';
+  for(var i = 0; i < links.length; i++) {
+    if(links[i].href.indexOf('#disqus_thread') >= 0) {
+      query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+    }
+  }
+  document.write('<script type="text/javascript" src="http://disqus.com/forums/sproxdox/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
+
+{% endblock %}

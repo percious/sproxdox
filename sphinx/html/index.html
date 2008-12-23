@@ -34,7 +34,12 @@
         <li class="right" >
           <a href="class_diagram.html" title="Class Diagram"
              accesskey="N">next</a> |</li>
-        <li><a href="">Sprox v0.5 documentation</a> &raquo;</li>
+  <li>
+  <a href=""><b>Sprox 0.5</b></a>
+  </li>
+
+  
+
       </ul>
     </div>
     <div class="document">
@@ -121,7 +126,7 @@ email addresses:</p>
     <span class="n">__model__</span> <span class="o">=</span> <span class="n">User</span>
     <span class="n">__limit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;display_name&#39;</span><span class="p">,</span> <span class="s">&#39;email_address&#39;</span><span class="p">]</span>
 
-<span class="n">user_table_value</span> <span class="o">=</span> <span class="n">UserTableFiller</span><span class="p">()</span><span class="o">.</span><span class="n">get_value</span><span class="p">()</span>
+<span class="n">user_table_value</span> <span class="o">=</span> <span class="n">UserTableFiller</span><span class="p">(</span><span class="n">DBSession</span><span class="p">)</span><span class="o">.</span><span class="n">get_value</span><span class="p">()</span>
 </pre></div>
 <p>And your template code would look like this:</p>
 <pre>${user_table_form(value=user_table_value)}</pre>
@@ -154,49 +159,49 @@ for your project.</p>
 <col width="70%" />
 </colgroup>
 <tbody valign="top">
-<tr><td><a title="" class="reference external" href="generated/sprox.formbase.html"><tt class="xref docutils literal"><span class="pre">sprox.formbase</span></tt></a></td>
+<tr><td><tt class="xref docutils literal"><span class="pre">sprox.formbase</span></tt></td>
 <td></td>
 </tr>
-<tr><td><a title="" class="reference external" href="generated/sprox.tablebase.html"><tt class="xref docutils literal"><span class="pre">sprox.tablebase</span></tt></a></td>
+<tr><td><tt class="xref docutils literal"><span class="pre">sprox.tablebase</span></tt></td>
 <td></td>
 </tr>
-<tr><td><a title="" class="reference external" href="generated/sprox.fillerbase.html"><tt class="xref docutils literal"><span class="pre">sprox.fillerbase</span></tt></a></td>
+<tr><td><tt class="xref docutils literal"><span class="pre">sprox.fillerbase</span></tt></td>
 <td></td>
 </tr>
-<tr><td><a title="" class="reference external" href="generated/sprox.configbase.html"><tt class="xref docutils literal"><span class="pre">sprox.configbase</span></tt></a></td>
+<tr><td><tt class="xref docutils literal"><span class="pre">sprox.configbase</span></tt></td>
 <td></td>
 </tr>
-<tr><td><a title="" class="reference external" href="generated/sprox.viewbase.html"><tt class="xref docutils literal"><span class="pre">sprox.viewbase</span></tt></a></td>
+<tr><td><tt class="xref docutils literal"><span class="pre">sprox.viewbase</span></tt></td>
 <td></td>
 </tr>
-<tr><td><a title="" class="reference external" href="generated/sprox.entitiesbase.html"><tt class="xref docutils literal"><span class="pre">sprox.entitiesbase</span></tt></a></td>
+<tr><td><tt class="xref docutils literal"><span class="pre">sprox.entitiesbase</span></tt></td>
 <td></td>
 </tr>
-<tr><td><a title="" class="reference external" href="generated/sprox.widgetselector.html"><tt class="xref docutils literal"><span class="pre">sprox.widgetselector</span></tt></a></td>
+<tr><td><tt class="xref docutils literal"><span class="pre">sprox.widgetselector</span></tt></td>
 <td></td>
 </tr>
-<tr><td><a title="" class="reference external" href="generated/sprox.validatorselector.html"><tt class="xref docutils literal"><span class="pre">sprox.validatorselector</span></tt></a></td>
+<tr><td><tt class="xref docutils literal"><span class="pre">sprox.validatorselector</span></tt></td>
 <td></td>
 </tr>
-<tr><td><a title="" class="reference external" href="generated/sprox.validators.html"><tt class="xref docutils literal"><span class="pre">sprox.validators</span></tt></a></td>
+<tr><td><tt class="xref docutils literal"><span class="pre">sprox.validators</span></tt></td>
 <td></td>
 </tr>
-<tr><td><a title="" class="reference external" href="generated/sprox.sprockets.html"><tt class="xref docutils literal"><span class="pre">sprox.sprockets</span></tt></a></td>
+<tr><td><tt class="xref docutils literal"><span class="pre">sprox.sprockets</span></tt></td>
 <td></td>
 </tr>
-<tr><td><a title="" class="reference external" href="generated/sprox.metadata.html"><tt class="xref docutils literal"><span class="pre">sprox.metadata</span></tt></a></td>
+<tr><td><tt class="xref docutils literal"><span class="pre">sprox.metadata</span></tt></td>
 <td></td>
 </tr>
-<tr><td><a title="" class="reference external" href="generated/sprox.saormprovider.html"><tt class="xref docutils literal"><span class="pre">sprox.saormprovider</span></tt></a></td>
+<tr><td><tt class="xref docutils literal"><span class="pre">sprox.saormprovider</span></tt></td>
 <td></td>
 </tr>
-<tr><td><a title="" class="reference external" href="generated/sprox.iprovider.html"><tt class="xref docutils literal"><span class="pre">sprox.iprovider</span></tt></a></td>
+<tr><td><tt class="xref docutils literal"><span class="pre">sprox.iprovider</span></tt></td>
 <td></td>
 </tr>
-<tr><td><a title="" class="reference external" href="generated/sprox.widgets.html"><tt class="xref docutils literal"><span class="pre">sprox.widgets</span></tt></a></td>
+<tr><td><tt class="xref docutils literal"><span class="pre">sprox.widgets</span></tt></td>
 <td></td>
 </tr>
-<tr><td><a title="" class="reference external" href="generated/sprox.util.html"><tt class="xref docutils literal"><span class="pre">sprox.util</span></tt></a></td>
+<tr><td><tt class="xref docutils literal"><span class="pre">sprox.util</span></tt></td>
 <td></td>
 </tr>
 </tbody>
@@ -217,8 +222,15 @@ for your project.</p>
 </div>
 
 
-          </div>
+                <h1>Discuss</h1>
+              <div id="disqus_thread"></div>
+              <script type="text/javascript" src="http://disqus.com/forums/sproxdox/embed.js"></script>
+              <noscript><a href="http://sproxdox.disqus.com/?url=ref">View the discussion thread.</a></noscript>
+              <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>          </div>
         </div>
+      
+ 
+      
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
@@ -269,12 +281,35 @@ for your project.</p>
         <li class="right" >
           <a href="class_diagram.html" title="Class Diagram"
              accesskey="N">next</a> |</li>
-        <li><a href="">Sprox v0.5 documentation</a> &raquo;</li>
+  <li>
+  <a href=""><b>Sprox 0.5</b></a>
+  </li>
+
+  
+
       </ul>
     </div>
+
     <div class="footer">
       &copy; Copyright 2008, Christopher Perkins.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.5.
     </div>
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+		var links = document.getElementsByTagName('a');
+		var query = '?';
+		for(var i = 0; i < links.length; i++) {
+			if(links[i].href.indexOf('#disqus_thread') >= 0) {
+				query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+			}
+		}
+		document.write('<script type="text/javascript" src="http://disqus.com/forums/sproxdox/get_num_replies.js' + query + '"></' + 'script>');
+	})();
+//]]>
+</script>
+
+
   </body>
 </html>
