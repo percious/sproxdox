@@ -17,42 +17,42 @@ Classes
    :undoc-members:
 
 
-.. autoclass:: DBSprocketsCalendarDatePicker
+.. autoclass:: SproxCalendarDatePicker
    :show-inheritance:
    :members:
    :inherited-members:
    :undoc-members:
 
 
-.. autoclass:: DBSprocketsCalendarDateTimePicker
+.. autoclass:: SproxCalendarDateTimePicker
    :show-inheritance:
    :members:
    :inherited-members:
    :undoc-members:
 
 
-.. autoclass:: DBSprocketsCheckBox
+.. autoclass:: SproxCheckBox
    :show-inheritance:
    :members:
    :inherited-members:
    :undoc-members:
 
 
-.. autoclass:: DBSprocketsDataGrid
+.. autoclass:: SproxDataGrid
    :show-inheritance:
    :members:
    :inherited-members:
    :undoc-members:
 
 
-.. autoclass:: DBSprocketsTableForm
+.. autoclass:: SproxTableForm
    :show-inheritance:
    :members:
    :inherited-members:
    :undoc-members:
 
 
-.. autoclass:: DBSprocketsTimePicker
+.. autoclass:: SproxTimePicker
    :show-inheritance:
    :members:
    :inherited-members:

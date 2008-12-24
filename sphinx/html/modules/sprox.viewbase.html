@@ -43,7 +43,7 @@
   </li>
 
   
-    <li> <b>/</b> <a href=""><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.viewbase</span></tt></a></li>
+    <li> <b>/</b> <a href=""><tt class="docutils literal"><span class="pre">sprox.viewbase</span></tt></a></li>
   
 
       </ul>
@@ -61,7 +61,47 @@
 <dl class="class">
 <dt id="sprox.viewbase.ViewBase">
 <!--[sprox.viewbase.ViewBase]-->class <tt class="descclassname">sprox.viewbase.</tt><tt class="descname">ViewBase</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.viewbase.ViewBase" title="Permalink to this definition">¶</a></dt>
-<dd>Bases: <a title="sprox.configbase.ConfigBase" class="reference external" href="sprox.configbase.html#sprox.configbase.ConfigBase"><tt class="xref docutils literal"><span class="pre">sprox.configbase.ConfigBase</span></tt></a></dd></dl>
+<dd><p>Bases: <a title="sprox.configbase.ConfigBase" class="reference external" href="sprox.configbase.html#sprox.configbase.ConfigBase"><tt class="xref docutils literal"><span class="pre">sprox.configbase.ConfigBase</span></tt></a></p>
+<p><em>Modifiers specific to this class</em></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="40%" />
+<col width="28%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>__widget_selector_type__</td>
+<td>What class to use for widget selection.</td>
+<td>WidgetSelector</td>
+</tr>
+<tr><td>__field_widgets__</td>
+<td>A dictionary of widgets to replace the
+ones that would be chosen by the selector</td>
+<td>{}</td>
+</tr>
+<tr><td>__field_widget_types__</td>
+<td>A dictionary of types of widgets, allowing
+sprox to determine the widget args</td>
+<td>{}</td>
+</tr>
+<tr><td>__base_widget_type__</td>
+<td>The base widget for this config</td>
+<td>Widget</td>
+</tr>
+<tr><td>__widget_selector__</td>
+<td>an instantiated object to use for widget
+selection.</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="class">
 <dt id="sprox.viewbase.ClassViewer">
@@ -94,9 +134,9 @@
 </ul>
 
             <h4>Previous topic</h4>
-            <p class="topless"><a href="sprox.configbase.html" title="previous chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.configbase</span></tt></a></p>
+            <p class="topless"><a href="sprox.configbase.html" title="previous chapter"><tt class="docutils literal"><span class="pre">sprox.configbase</span></tt></a></p>
             <h4>Next topic</h4>
-            <p class="topless"><a href="sprox.entitiesbase.html" title="next chapter"><tt class="docutils literal docutils literal"><span class="pre">sprox.entitiesbase</span></tt></a></p>
+            <p class="topless"><a href="sprox.entitiesbase.html" title="next chapter"><tt class="docutils literal"><span class="pre">sprox.entitiesbase</span></tt></a></p>
             <h3>This Page</h3>
             <ul class="this-page-menu">
               <li><a href="../_sources/modules/sprox.viewbase.txt">Show Source</a></li>
@@ -131,7 +171,7 @@
   </li>
 
   
-    <li> <b>/</b> <a href=""><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.viewbase</span></tt></a></li>
+    <li> <b>/</b> <a href=""><tt class="docutils literal"><span class="pre">sprox.viewbase</span></tt></a></li>
   
 
       </ul>

@@ -43,7 +43,7 @@
   </li>
 
   
-    <li> <b>/</b> <a href=""><tt class="docutils literal docutils literal"><span class="pre">sprox.formbase</span></tt></a></li>
+    <li> <b>/</b> <a href=""><tt class="docutils literal"><span class="pre">sprox.formbase</span></tt></a></li>
   
 
       </ul>
@@ -62,10 +62,120 @@
 <dt id="sprox.formbase.FormBase">
 <!--[sprox.formbase.FormBase]-->class <tt class="descclassname">sprox.formbase.</tt><tt class="descname">FormBase</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.formbase.FormBase" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="sprox.viewbase.ViewBase" class="reference external" href="sprox.viewbase.html#sprox.viewbase.ViewBase"><tt class="xref docutils literal"><span class="pre">sprox.viewbase.ViewBase</span></tt></a></p>
-<dl class="attribute">
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Modifiers:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Modifiers defined in this class</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="40%" />
+<col width="28%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>__base_widget_type__</td>
+<td>What widget to use for the form.</td>
+<td>TableForm</td>
+</tr>
+<tr><td>__widget_selector_type__</td>
+<td>What class to use for widget selection.</td>
+<td>SAWidgetSelector</td>
+</tr>
+<tr><td>__validator_selector_type__</td>
+<td>What class to use for validator selection.</td>
+<td>SAValidatorSelector</td>
+</tr>
+<tr><td>__require_fields__</td>
+<td>Specifies which fields are required.</td>
+<td>[]</td>
+</tr>
+<tr><td>__check_if_unique__</td>
+<td>Set this to True for &#8220;new&#8221; forms.  This
+causes Sprox to check if there is an
+existing record in the database which
+matches the field data.</td>
+<td>False</td>
+</tr>
+<tr><td>__field_validators__</td>
+<td>A dictionary of validators indexed by
+fieldname.</td>
+<td>{}</td>
+</tr>
+<tr><td>__field_validator_types__</td>
+<td>Types of validators to use for each field
+(allow sprox to set the attribute of the
+validators).</td>
+<td>{}</td>
+</tr>
+<tr><td>__base_validator__</td>
+<td>A validator to attch to the form.</td>
+<td>None</td>
+</tr>
+<tr><td>__validator_selector__</td>
+<td>What object to use to select field
+validators.</td>
+<td>None</td>
+</tr>
+<tr><td>__metadata_type__</td>
+<td>What metadata type to use to get schema
+info on this object</td>
+<td>FieldsMetadata</td>
+</tr>
+<tr><td>__dropdown_view_names__</td>
+<td>list of names to use for discovery of view
+fieldnames for dropdowns (None uses the
+sprox default names.</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>Modifiers inherited from <a title="sprox.viewbase.ViewBase" class="reference external" href="sprox.viewbase.html#sprox.viewbase.ViewBase"><tt class="xref docutils literal"><span class="pre">sprox.viewbase.ViewBase</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="40%" />
+<col width="28%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>__field_widgets__</td>
+<td>A dictionary of widgets to replace the
+ones that would be chosen by the selector</td>
+<td>{}</td>
+</tr>
+<tr><td>__field_widget_types__</td>
+<td>A dictionary of types of widgets, allowing
+sprox to determine the widget args</td>
+<td>{}</td>
+</tr>
+<tr><td>__widget_selector__</td>
+<td>an instantiated object to use for widget
+selection.</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p>Modifiers inherited from <a title="sprox.configbase.ConfigBase" class="reference external" href="sprox.configbase.html#sprox.configbase.ConfigBase"><tt class="xref docutils literal"><span class="pre">sprox.configbase.ConfigBase</span></tt></a></p>
+<dl class="method">
 <dt id="sprox.formbase.FormBase.validate">
-<!--[sprox.formbase.FormBase.validate]--><tt class="descname">validate</tt><a class="headerlink" href="#sprox.formbase.FormBase.validate" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<!--[sprox.formbase.FormBase.validate]--><tt class="descname">validate</tt><big>(</big><em>params</em><big>)</big><a class="headerlink" href="#sprox.formbase.FormBase.validate" title="Permalink to this definition">¶</a></dt>
+<dd>A pass-thru to the widget&#8217;s validate function.</dd></dl>
 
 </dd></dl>
 
@@ -73,10 +183,10 @@
 <dt id="sprox.formbase.AddRecordForm">
 <!--[sprox.formbase.AddRecordForm]-->class <tt class="descclassname">sprox.formbase.</tt><tt class="descname">AddRecordForm</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.formbase.AddRecordForm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="sprox.formbase.EditableForm" class="reference internal" href="#sprox.formbase.EditableForm"><tt class="xref docutils literal"><span class="pre">sprox.formbase.EditableForm</span></tt></a></p>
-<dl class="attribute">
+<dl class="method">
 <dt id="sprox.formbase.AddRecordForm.validate">
-<!--[sprox.formbase.AddRecordForm.validate]--><tt class="descname">validate</tt><a class="headerlink" href="#sprox.formbase.AddRecordForm.validate" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<!--[sprox.formbase.AddRecordForm.validate]--><tt class="descname">validate</tt><big>(</big><em>params</em><big>)</big><a class="headerlink" href="#sprox.formbase.AddRecordForm.validate" title="Permalink to this definition">¶</a></dt>
+<dd>A pass-thru to the widget&#8217;s validate function.</dd></dl>
 
 </dd></dl>
 
@@ -84,10 +194,10 @@
 <dt id="sprox.formbase.DisabledForm">
 <!--[sprox.formbase.DisabledForm]-->class <tt class="descclassname">sprox.formbase.</tt><tt class="descname">DisabledForm</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.formbase.DisabledForm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="sprox.formbase.FormBase" class="reference internal" href="#sprox.formbase.FormBase"><tt class="xref docutils literal"><span class="pre">sprox.formbase.FormBase</span></tt></a></p>
-<dl class="attribute">
+<dl class="method">
 <dt id="sprox.formbase.DisabledForm.validate">
-<!--[sprox.formbase.DisabledForm.validate]--><tt class="descname">validate</tt><a class="headerlink" href="#sprox.formbase.DisabledForm.validate" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<!--[sprox.formbase.DisabledForm.validate]--><tt class="descname">validate</tt><big>(</big><em>params</em><big>)</big><a class="headerlink" href="#sprox.formbase.DisabledForm.validate" title="Permalink to this definition">¶</a></dt>
+<dd>A pass-thru to the widget&#8217;s validate function.</dd></dl>
 
 </dd></dl>
 
@@ -95,10 +205,10 @@
 <dt id="sprox.formbase.EditableForm">
 <!--[sprox.formbase.EditableForm]-->class <tt class="descclassname">sprox.formbase.</tt><tt class="descname">EditableForm</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.formbase.EditableForm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="sprox.formbase.FormBase" class="reference internal" href="#sprox.formbase.FormBase"><tt class="xref docutils literal"><span class="pre">sprox.formbase.FormBase</span></tt></a></p>
-<dl class="attribute">
+<dl class="method">
 <dt id="sprox.formbase.EditableForm.validate">
-<!--[sprox.formbase.EditableForm.validate]--><tt class="descname">validate</tt><a class="headerlink" href="#sprox.formbase.EditableForm.validate" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<!--[sprox.formbase.EditableForm.validate]--><tt class="descname">validate</tt><big>(</big><em>params</em><big>)</big><a class="headerlink" href="#sprox.formbase.EditableForm.validate" title="Permalink to this definition">¶</a></dt>
+<dd>A pass-thru to the widget&#8217;s validate function.</dd></dl>
 
 </dd></dl>
 
@@ -128,7 +238,7 @@
             <h4>Previous topic</h4>
             <p class="topless"><a href="../class_diagram.html" title="previous chapter">Class Diagram</a></p>
             <h4>Next topic</h4>
-            <p class="topless"><a href="sprox.tablebase.html" title="next chapter"><tt class="docutils literal docutils literal"><span class="pre">sprox.tablebase</span></tt></a></p>
+            <p class="topless"><a href="sprox.tablebase.html" title="next chapter"><tt class="docutils literal"><span class="pre">sprox.tablebase</span></tt></a></p>
             <h3>This Page</h3>
             <ul class="this-page-menu">
               <li><a href="../_sources/modules/sprox.formbase.txt">Show Source</a></li>
@@ -163,7 +273,7 @@
   </li>
 
   
-    <li> <b>/</b> <a href=""><tt class="docutils literal docutils literal"><span class="pre">sprox.formbase</span></tt></a></li>
+    <li> <b>/</b> <a href=""><tt class="docutils literal"><span class="pre">sprox.formbase</span></tt></a></li>
   
 
       </ul>
