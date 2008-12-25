@@ -184,7 +184,7 @@ selection.</td>
 Here is the userform, limited to just the town field, which gets populated with the towns.</p>
 <div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.test.base</span> <span class="kn">import</span> <span class="n">User</span><span class="p">,</span> <span class="n">setup_database</span><span class="p">,</span> <span class="n">setup_records</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">connection</span> <span class="o">=</span> <span class="n">setup_database</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">setup_records</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">user</span> <span class="o">=</span> <span class="n">setup_records</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">TownForm</span><span class="p">(</span><span class="n">FormBase</span><span class="p">):</span>
 <span class="gp">... </span>   <span class="n">__model__</span> <span class="o">=</span> <span class="n">User</span>
 <span class="gp">... </span>   <span class="n">__limit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;town&#39;</span><span class="p">]</span>
@@ -192,6 +192,30 @@ Here is the userform, limited to just the town field, which gets populated with 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">town_form</span> <span class="o">=</span> <span class="n">TownForm</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
 <span class="go">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">town_form</span><span class="o">.</span><span class="n">__widget__</span><span class="p">()</span>
+<span class="go">&lt;form xmlns=&quot;http://www.w3.org/1999/xhtml&quot; action=&quot;&quot; method=&quot;post&quot; class=&quot;required tableform&quot;&gt;</span>
+<span class="go">    &lt;div&gt;</span>
+<span class="go">            &lt;input type=&quot;hidden&quot; name=&quot;sprox_id&quot; class=&quot;hiddenfield&quot; id=&quot;sprox_id&quot; value=&quot;&quot; /&gt;</span>
+<span class="go">    &lt;/div&gt;</span>
+<span class="go">    &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;2&quot;&gt;</span>
+<span class="go">        &lt;tr id=&quot;town.container&quot; class=&quot;even&quot;&gt;</span>
+<span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
+<span class="go">                &lt;label id=&quot;town.label&quot; for=&quot;town&quot; class=&quot;fieldlabel&quot;&gt;Town&lt;/label&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">            &lt;td class=&quot;fieldcol&quot;&gt;</span>
+<span class="go">                &lt;select name=&quot;town&quot; class=&quot;propertysingleselectfield&quot; id=&quot;town&quot;&gt;</span>
+<span class="go">        &lt;option value=&quot;1&quot;&gt;Arvada&lt;/option&gt;&lt;option value=&quot;2&quot;&gt;Denver&lt;/option&gt;&lt;option value=&quot;3&quot;&gt;Golden&lt;/option&gt;&lt;option value=&quot;4&quot;&gt;Boulder&lt;/option&gt;&lt;option value=&quot;&quot; selected=&quot;selected&quot;&gt;-----------&lt;/option&gt;</span>
+<span class="go">&lt;/select&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">        &lt;/tr&gt;&lt;tr id=&quot;submit.container&quot; class=&quot;odd&quot;&gt;</span>
+<span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">            &lt;td class=&quot;fieldcol&quot;&gt;</span>
+<span class="go">                &lt;input type=&quot;submit&quot; class=&quot;submitbutton&quot; value=&quot;Submit&quot; /&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">        &lt;/tr&gt;</span>
+<span class="go">    &lt;/table&gt;</span>
+<span class="go">&lt;/form&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">rollback</span><span class="p">()</span>
 </pre></div>
 <dl class="method">
 <dt id="sprox.formbase.FormBase.validate">
