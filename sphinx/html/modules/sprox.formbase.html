@@ -172,6 +172,27 @@ selection.</td>
 </tbody>
 </table>
 <p>Modifiers inherited from <a title="sprox.configbase.ConfigBase" class="reference external" href="sprox.configbase.html#sprox.configbase.ConfigBase"><tt class="xref docutils literal"><span class="pre">sprox.configbase.ConfigBase</span></tt></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Example usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>One of the more useful things sprox does for you is to fill in the arguments to a drop down automatically.
+Here is the userform, limited to just the town field, which gets populated with the towns.</p>
+<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.test.base</span> <span class="kn">import</span> <span class="n">User</span><span class="p">,</span> <span class="n">setup_database</span><span class="p">,</span> <span class="n">setup_records</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">connection</span> <span class="o">=</span> <span class="n">setup_database</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">setup_records</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">TownForm</span><span class="p">(</span><span class="n">FormBase</span><span class="p">):</span>
+<span class="gp">... </span>   <span class="n">__model__</span> <span class="o">=</span> <span class="n">User</span>
+<span class="gp">... </span>   <span class="n">__limit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;town&#39;</span><span class="p">]</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">town_form</span> <span class="o">=</span> <span class="n">TownForm</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">town_form</span><span class="o">.</span><span class="n">__widget__</span><span class="p">()</span>
+</pre></div>
 <dl class="method">
 <dt id="sprox.formbase.FormBase.validate">
 <!--[sprox.formbase.FormBase.validate]--><tt class="descname">validate</tt><big>(</big><em>params</em><big>)</big><a class="headerlink" href="#sprox.formbase.FormBase.validate" title="Permalink to this definition">¶</a></dt>
@@ -183,6 +204,116 @@ selection.</td>
 <dt id="sprox.formbase.AddRecordForm">
 <!--[sprox.formbase.AddRecordForm]-->class <tt class="descclassname">sprox.formbase.</tt><tt class="descname">AddRecordForm</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.formbase.AddRecordForm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="sprox.formbase.EditableForm" class="reference internal" href="#sprox.formbase.EditableForm"><tt class="xref docutils literal"><span class="pre">sprox.formbase.EditableForm</span></tt></a></p>
+<p>An editable form who&#8217;s purpose is record addition.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Modifiers:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>see <a title="sprox.formbase.FormBase" class="reference internal" href="#sprox.formbase.FormBase"><tt class="xref docutils literal"><span class="pre">sprox.formbase.FormBase</span></tt></a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="40%" />
+<col width="28%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>__check_if_unique__</td>
+<td>Set this to True for &#8220;new&#8221; forms.  This
+causes Sprox to check if there is an
+existing record in the database which
+matches the field data.</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+<p>Here is an example registration form, as generated from the vase User model.</p>
+<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.test.model</span> <span class="kn">import</span> <span class="n">User</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.formbase</span> <span class="kn">import</span> <span class="n">AddRecordForm</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">formencode</span> <span class="kn">import</span> <span class="n">Schema</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">formencode.validators</span> <span class="kn">import</span> <span class="n">FieldsMatch</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">tw.forms</span> <span class="kn">import</span> <span class="n">PasswordField</span><span class="p">,</span> <span class="n">TextField</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">form_validator</span> <span class="o">=</span>  <span class="n">Schema</span><span class="p">(</span><span class="n">chained_validators</span><span class="o">=</span><span class="p">(</span><span class="n">FieldsMatch</span><span class="p">(</span><span class="s">&#39;password&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                                                        <span class="s">&#39;verify_password&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                                                        <span class="n">messages</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;invalidNoMatch&#39;</span><span class="p">:</span>
+<span class="gp">... </span>                                                        <span class="s">&#39;Passwords do not match&#39;</span><span class="p">}),))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">RegistrationForm</span><span class="p">(</span><span class="n">AddRecordForm</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">__model__</span> <span class="o">=</span> <span class="n">User</span>
+<span class="gp">... </span>    <span class="n">__require_fields__</span>     <span class="o">=</span> <span class="p">[</span><span class="s">&#39;password&#39;</span><span class="p">,</span> <span class="s">&#39;user_name&#39;</span><span class="p">,</span> <span class="s">&#39;email_address&#39;</span><span class="p">]</span>
+<span class="gp">... </span>    <span class="n">__omit_fields__</span>        <span class="o">=</span> <span class="p">[</span><span class="s">&#39;_password&#39;</span><span class="p">,</span> <span class="s">&#39;groups&#39;</span><span class="p">,</span> <span class="s">&#39;created&#39;</span><span class="p">,</span> <span class="s">&#39;user_id&#39;</span><span class="p">,</span> <span class="s">&#39;town&#39;</span><span class="p">]</span>
+<span class="gp">... </span>    <span class="n">__field_order__</span>        <span class="o">=</span> <span class="p">[</span><span class="s">&#39;user_name&#39;</span><span class="p">,</span> <span class="s">&#39;email_address&#39;</span><span class="p">,</span> <span class="s">&#39;display_name&#39;</span><span class="p">,</span> <span class="s">&#39;password&#39;</span><span class="p">,</span> <span class="s">&#39;verify_password&#39;</span><span class="p">]</span>
+<span class="gp">... </span>    <span class="n">__base_validator__</span>     <span class="o">=</span> <span class="n">form_validator</span>
+<span class="gp">... </span>    <span class="n">email_address</span>          <span class="o">=</span> <span class="n">TextField</span>
+<span class="gp">... </span>    <span class="n">display_name</span>           <span class="o">=</span> <span class="n">TextField</span>
+<span class="gp">... </span>    <span class="n">verify_password</span>        <span class="o">=</span> <span class="n">PasswordField</span><span class="p">(</span><span class="s">&#39;verify_password&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">registration_form</span> <span class="o">=</span> <span class="n">RegistrationForm</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">registration_form</span><span class="o">.</span><span class="n">__widget__</span><span class="p">()</span>
+<span class="go">&lt;form xmlns=&quot;http://www.w3.org/1999/xhtml&quot; action=&quot;&quot; method=&quot;post&quot; class=&quot;required tableform&quot;&gt;</span>
+<span class="go">    &lt;div&gt;</span>
+<span class="go">            &lt;input type=&quot;hidden&quot; name=&quot;sprox_id&quot; class=&quot;hiddenfield&quot; id=&quot;sprox_id&quot; value=&quot;&quot; /&gt;</span>
+<span class="go">    &lt;/div&gt;</span>
+<span class="go">    &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;2&quot;&gt;</span>
+<span class="go">        &lt;tr id=&quot;user_name.container&quot; class=&quot;even&quot;&gt;</span>
+<span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
+<span class="go">                &lt;label id=&quot;user_name.label&quot; for=&quot;user_name&quot; class=&quot;fieldlabel required&quot;&gt;User Name&lt;/label&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">            &lt;td class=&quot;fieldcol&quot;&gt;</span>
+<span class="go">                &lt;input type=&quot;text&quot; name=&quot;user_name&quot; class=&quot;textfield required&quot; id=&quot;user_name&quot; value=&quot;&quot; /&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">        &lt;/tr&gt;&lt;tr id=&quot;email_address.container&quot; class=&quot;odd&quot;&gt;</span>
+<span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
+<span class="go">                &lt;label id=&quot;email_address.label&quot; for=&quot;email_address&quot; class=&quot;fieldlabel required&quot;&gt;Email Address&lt;/label&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">            &lt;td class=&quot;fieldcol&quot;&gt;</span>
+<span class="go">                &lt;input type=&quot;text&quot; name=&quot;email_address&quot; class=&quot;textfield required&quot; id=&quot;email_address&quot; value=&quot;&quot; /&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">        &lt;/tr&gt;&lt;tr id=&quot;display_name.container&quot; class=&quot;even&quot;&gt;</span>
+<span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
+<span class="go">                &lt;label id=&quot;display_name.label&quot; for=&quot;display_name&quot; class=&quot;fieldlabel&quot;&gt;Display Name&lt;/label&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">            &lt;td class=&quot;fieldcol&quot;&gt;</span>
+<span class="go">                &lt;input type=&quot;text&quot; name=&quot;display_name&quot; class=&quot;textfield&quot; id=&quot;display_name&quot; value=&quot;&quot; /&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">        &lt;/tr&gt;&lt;tr id=&quot;password.container&quot; class=&quot;odd&quot;&gt;</span>
+<span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
+<span class="go">                &lt;label id=&quot;password.label&quot; for=&quot;password&quot; class=&quot;fieldlabel&quot;&gt;Password&lt;/label&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">            &lt;td class=&quot;fieldcol&quot;&gt;</span>
+<span class="go">                &lt;input type=&quot;password&quot; name=&quot;password&quot; class=&quot;passwordfield&quot; id=&quot;password&quot; value=&quot;&quot; /&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">        &lt;/tr&gt;&lt;tr id=&quot;verify_password.container&quot; class=&quot;even&quot;&gt;</span>
+<span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
+<span class="go">                &lt;label id=&quot;verify_password.label&quot; for=&quot;verify_password&quot; class=&quot;fieldlabel&quot;&gt;Verify Password&lt;/label&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">            &lt;td class=&quot;fieldcol&quot;&gt;</span>
+<span class="go">                &lt;input type=&quot;password&quot; name=&quot;verify_password&quot; class=&quot;passwordfield&quot; id=&quot;verify_password&quot; value=&quot;&quot; /&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">        &lt;/tr&gt;&lt;tr id=&quot;town_id.container&quot; class=&quot;odd&quot;&gt;</span>
+<span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
+<span class="go">                &lt;label id=&quot;town_id.label&quot; for=&quot;town_id&quot; class=&quot;fieldlabel&quot;&gt;Town Id&lt;/label&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">            &lt;td class=&quot;fieldcol&quot;&gt;</span>
+<span class="go">                &lt;input type=&quot;text&quot; name=&quot;town_id&quot; class=&quot;textfield&quot; id=&quot;town_id&quot; value=&quot;&quot; /&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">        &lt;/tr&gt;&lt;tr id=&quot;submit.container&quot; class=&quot;even&quot;&gt;</span>
+<span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">            &lt;td class=&quot;fieldcol&quot;&gt;</span>
+<span class="go">                &lt;input type=&quot;submit&quot; class=&quot;submitbutton&quot; value=&quot;Submit&quot; /&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">        &lt;/tr&gt;</span>
+<span class="go">    &lt;/table&gt;</span>
+<span class="go">&lt;/form&gt;</span>
+</pre></div>
 <dl class="method">
 <dt id="sprox.formbase.AddRecordForm.validate">
 <!--[sprox.formbase.AddRecordForm.validate]--><tt class="descname">validate</tt><big>(</big><em>params</em><big>)</big><a class="headerlink" href="#sprox.formbase.AddRecordForm.validate" title="Permalink to this definition">¶</a></dt>
@@ -194,6 +325,56 @@ selection.</td>
 <dt id="sprox.formbase.DisabledForm">
 <!--[sprox.formbase.DisabledForm]-->class <tt class="descclassname">sprox.formbase.</tt><tt class="descname">DisabledForm</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.formbase.DisabledForm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="sprox.formbase.FormBase" class="reference internal" href="#sprox.formbase.FormBase"><tt class="xref docutils literal"><span class="pre">sprox.formbase.FormBase</span></tt></a></p>
+<p>A form who&#8217;s set of fields is disabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Modifiers:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>see <a title="sprox.formbase.FormBase" class="reference internal" href="#sprox.formbase.FormBase"><tt class="xref docutils literal"><span class="pre">sprox.formbase.FormBase</span></tt></a></p>
+<p>Here is an example disabled form with only the user_name and email fields.</p>
+<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.test.model</span> <span class="kn">import</span> <span class="n">User</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.formbase</span> <span class="kn">import</span> <span class="n">DisabledForm</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">DisabledUserForm</span><span class="p">(</span><span class="n">DisabledForm</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">__model__</span> <span class="o">=</span> <span class="n">User</span>
+<span class="gp">... </span>    <span class="n">__limit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;user_name&#39;</span><span class="p">,</span> <span class="s">&#39;email_address&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">disabled_user_form</span> <span class="o">=</span> <span class="n">DisabledUserForm</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">disabled_user_form</span><span class="o">.</span><span class="n">__widget__</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">user_name</span><span class="o">=</span><span class="s">&#39;percious&#39;</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="s">&#39;chris@percious.com&#39;</span><span class="p">))</span>
+<span class="go">&lt;form xmlns=&quot;http://www.w3.org/1999/xhtml&quot; action=&quot;&quot; method=&quot;post&quot; class=&quot;required tableform&quot;&gt;</span>
+<span class="go">    &lt;div&gt;</span>
+<span class="go">            &lt;input type=&quot;hidden&quot; name=&quot;user_name&quot; class=&quot;hiddenfield&quot; id=&quot;user_name&quot; value=&quot;&quot; /&gt;</span>
+<span class="go">            &lt;input type=&quot;hidden&quot; name=&quot;email_address&quot; class=&quot;hiddenfield&quot; id=&quot;email_address&quot; value=&quot;&quot; /&gt;</span>
+<span class="go">            &lt;input type=&quot;hidden&quot; name=&quot;sprox_id&quot; class=&quot;hiddenfield&quot; id=&quot;sprox_id&quot; value=&quot;&quot; /&gt;</span>
+<span class="go">    &lt;/div&gt;</span>
+<span class="go">    &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;2&quot;&gt;</span>
+<span class="go">        &lt;tr id=&quot;user_name.container&quot; class=&quot;even&quot;&gt;</span>
+<span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
+<span class="go">                &lt;label id=&quot;user_name.label&quot; for=&quot;user_name&quot; class=&quot;fieldlabel&quot;&gt;User Name&lt;/label&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">            &lt;td class=&quot;fieldcol&quot;&gt;</span>
+<span class="go">                &lt;input type=&quot;text&quot; name=&quot;user_name&quot; class=&quot;textfield&quot; id=&quot;user_name&quot; value=&quot;&quot; disabled=&quot;disabled&quot; /&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">        &lt;/tr&gt;&lt;tr id=&quot;email_address.container&quot; class=&quot;odd&quot;&gt;</span>
+<span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
+<span class="go">                &lt;label id=&quot;email_address.label&quot; for=&quot;email_address&quot; class=&quot;fieldlabel&quot;&gt;Email Address&lt;/label&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">            &lt;td class=&quot;fieldcol&quot;&gt;</span>
+<span class="go">                &lt;textarea id=&quot;email_address&quot; name=&quot;email_address&quot; class=&quot;textarea&quot; disabled=&quot;disabled&quot; rows=&quot;7&quot; cols=&quot;50&quot;&gt;&lt;/textarea&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">        &lt;/tr&gt;&lt;tr id=&quot;submit.container&quot; class=&quot;even&quot;&gt;</span>
+<span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">            &lt;td class=&quot;fieldcol&quot;&gt;</span>
+<span class="go">                &lt;input type=&quot;submit&quot; class=&quot;submitbutton&quot; value=&quot;Submit&quot; /&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">        &lt;/tr&gt;</span>
+<span class="go">    &lt;/table&gt;</span>
+<span class="go">&lt;/form&gt;</span>
+</pre></div>
+<p>You may notice in the above example that disabled fields pass in a hidden value for each disabled field.</p>
 <dl class="method">
 <dt id="sprox.formbase.DisabledForm.validate">
 <!--[sprox.formbase.DisabledForm.validate]--><tt class="descname">validate</tt><big>(</big><em>params</em><big>)</big><a class="headerlink" href="#sprox.formbase.DisabledForm.validate" title="Permalink to this definition">¶</a></dt>
@@ -205,6 +386,9 @@ selection.</td>
 <dt id="sprox.formbase.EditableForm">
 <!--[sprox.formbase.EditableForm]-->class <tt class="descclassname">sprox.formbase.</tt><tt class="descname">EditableForm</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.formbase.EditableForm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="sprox.formbase.FormBase" class="reference internal" href="#sprox.formbase.FormBase"><tt class="xref docutils literal"><span class="pre">sprox.formbase.FormBase</span></tt></a></p>
+<p>A form for editing a record.
+:Modifiers:</p>
+<p>see <tt class="xref docutils literal"><span class="pre">sprox.formvase.FormBase</span></tt></p>
 <dl class="method">
 <dt id="sprox.formbase.EditableForm.validate">
 <!--[sprox.formbase.EditableForm.validate]--><tt class="descname">validate</tt><big>(</big><em>params</em><big>)</big><a class="headerlink" href="#sprox.formbase.EditableForm.validate" title="Permalink to this definition">¶</a></dt>
