@@ -1,4 +1,4 @@
-:mod:`sprox.fillerbase`
+:mod:`fillerbase`
 ===============================================================================================================================================
 
 
@@ -14,18 +14,11 @@ Classes
    :inherited-members:
    :undoc-members:
 
-.. autoclass:: FormFiller
+.. autoclass:: TableFiller
    :show-inheritance:
    :members:
    :inherited-members:
    :undoc-members:
-
-.. autoclass:: AddFormFiller
-   :show-inheritance:
-   :members:
-   :inherited-members:
-   :undoc-members:
-
 
 .. autoclass:: EditFormFiller
    :show-inheritance:
@@ -33,8 +26,13 @@ Classes
    :inherited-members:
    :undoc-members:
 
+.. autoclass:: FormFiller
+   :show-inheritance:
+   :members:
+   :inherited-members:
+   :undoc-members:
 
-.. autoclass:: TableFiller
+.. autoclass:: AddFormFiller
    :show-inheritance:
    :members:
    :inherited-members:
