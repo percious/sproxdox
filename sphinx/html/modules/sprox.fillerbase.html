@@ -56,16 +56,47 @@
   
   <div class="section" id="module-sprox.fillerbase">
 <h1><tt class="xref docutils literal"><span class="pre">sprox.fillerbase</span></tt><a class="headerlink" href="#module-sprox.fillerbase" title="Permalink to this headline">¶</a></h1>
+<p>fillerbase Module</p>
+<p>Classes to help fill widgets with data</p>
+<p>Copyright (c) 2008 Christopher Perkins
+Original Version by Christopher Perkins 2008
+Released under MIT license.</p>
 <div class="section" id="classes">
 <h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="sprox.fillerbase.FillerBase">
 <!--[sprox.fillerbase.FillerBase]-->class <tt class="descclassname">sprox.fillerbase.</tt><tt class="descname">FillerBase</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.FillerBase" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="sprox.configbase.ConfigBase" class="reference external" href="sprox.configbase.html#sprox.configbase.ConfigBase"><tt class="xref docutils literal"><span class="pre">sprox.configbase.ConfigBase</span></tt></a></p>
+<p>The base filler class.</p>
 <dl class="method">
 <dt id="sprox.fillerbase.FillerBase.get_value">
-<!--[sprox.fillerbase.FillerBase.get_value]--><tt class="descname">get_value</tt><big>(</big><em>values=None</em>, <em>offset=None</em>, <em>limit=None</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.FillerBase.get_value" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<!--[sprox.fillerbase.FillerBase.get_value]--><tt class="descname">get_value</tt><big>(</big><em>values=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.FillerBase.get_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a dictionary of values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Arguments:</th><td class="field-body"><dl class="first docutils">
+<dt>values</dt>
+<dd><p class="first last">pass through of values.  This is typically a set of default values that is updated by the
+filler.  This is useful when updating an existing form.</p>
+</dd>
+<dt>kw</dt>
+<dd><p class="first last">Set of keyword arguments for assisting the fill.  This is for instance information like offset
+and limit for a TableFiller.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">filler</span> <span class="o">=</span> <span class="n">FillerBase</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">filler</span><span class="o">.</span><span class="n">get_value</span><span class="p">()</span>
+<span class="go">{}</span>
+</pre></div>
+</dd></dl>
 
 </dd></dl>
 
@@ -75,7 +106,7 @@
 <dd><p>Bases: <a title="sprox.fillerbase.FillerBase" class="reference internal" href="#sprox.fillerbase.FillerBase"><tt class="xref docutils literal"><span class="pre">sprox.fillerbase.FillerBase</span></tt></a></p>
 <dl class="method">
 <dt id="sprox.fillerbase.FormFiller.get_value">
-<!--[sprox.fillerbase.FormFiller.get_value]--><tt class="descname">get_value</tt><big>(</big><em>values=None</em>, <em>offset=None</em>, <em>limit=None</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.FormFiller.get_value" title="Permalink to this definition">¶</a></dt>
+<!--[sprox.fillerbase.FormFiller.get_value]--><tt class="descname">get_value</tt><big>(</big><em>values=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.FormFiller.get_value" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -86,7 +117,7 @@
 <dd><p>Bases: <a title="sprox.fillerbase.FormFiller" class="reference internal" href="#sprox.fillerbase.FormFiller"><tt class="xref docutils literal"><span class="pre">sprox.fillerbase.FormFiller</span></tt></a></p>
 <dl class="method">
 <dt id="sprox.fillerbase.AddFormFiller.get_value">
-<!--[sprox.fillerbase.AddFormFiller.get_value]--><tt class="descname">get_value</tt><big>(</big><em>values=None</em>, <em>offset=None</em>, <em>limit=None</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.AddFormFiller.get_value" title="Permalink to this definition">¶</a></dt>
+<!--[sprox.fillerbase.AddFormFiller.get_value]--><tt class="descname">get_value</tt><big>(</big><em>values=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.AddFormFiller.get_value" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -97,7 +128,7 @@
 <dd><p>Bases: <a title="sprox.fillerbase.FormFiller" class="reference internal" href="#sprox.fillerbase.FormFiller"><tt class="xref docutils literal"><span class="pre">sprox.fillerbase.FormFiller</span></tt></a></p>
 <dl class="method">
 <dt id="sprox.fillerbase.EditFormFiller.get_value">
-<!--[sprox.fillerbase.EditFormFiller.get_value]--><tt class="descname">get_value</tt><big>(</big><em>values=None</em>, <em>offset=None</em>, <em>limit=None</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.EditFormFiller.get_value" title="Permalink to this definition">¶</a></dt>
+<!--[sprox.fillerbase.EditFormFiller.get_value]--><tt class="descname">get_value</tt><big>(</big><em>values=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.EditFormFiller.get_value" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -108,7 +139,7 @@
 <dd><p>Bases: <a title="sprox.fillerbase.FillerBase" class="reference internal" href="#sprox.fillerbase.FillerBase"><tt class="xref docutils literal"><span class="pre">sprox.fillerbase.FillerBase</span></tt></a></p>
 <dl class="method">
 <dt id="sprox.fillerbase.TableFiller.get_value">
-<!--[sprox.fillerbase.TableFiller.get_value]--><tt class="descname">get_value</tt><big>(</big><em>values=None</em>, <em>offset=None</em>, <em>limit=None</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.TableFiller.get_value" title="Permalink to this definition">¶</a></dt>
+<!--[sprox.fillerbase.TableFiller.get_value]--><tt class="descname">get_value</tt><big>(</big><em>values=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.TableFiller.get_value" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -119,8 +150,33 @@
 <dd><p>Bases: <a title="sprox.fillerbase.FillerBase" class="reference internal" href="#sprox.fillerbase.FillerBase"><tt class="xref docutils literal"><span class="pre">sprox.fillerbase.FillerBase</span></tt></a></p>
 <dl class="method">
 <dt id="sprox.fillerbase.ModelDefFiller.get_value">
-<!--[sprox.fillerbase.ModelDefFiller.get_value]--><tt class="descname">get_value</tt><big>(</big><em>values=None</em>, <em>offset=None</em>, <em>limit=None</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.ModelDefFiller.get_value" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<!--[sprox.fillerbase.ModelDefFiller.get_value]--><tt class="descname">get_value</tt><big>(</big><em>values=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.ModelDefFiller.get_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a dictionary of values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Arguments:</th><td class="field-body"><dl class="first docutils">
+<dt>values</dt>
+<dd><p class="first last">pass through of values.  This is typically a set of default values that is updated by the
+filler.  This is useful when updating an existing form.</p>
+</dd>
+<dt>kw</dt>
+<dd><p class="first last">Set of keyword arguments for assisting the fill.  This is for instance information like offset
+and limit for a TableFiller.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">filler</span> <span class="o">=</span> <span class="n">FillerBase</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">filler</span><span class="o">.</span><span class="n">get_value</span><span class="p">()</span>
+<span class="go">{}</span>
+</pre></div>
+</dd></dl>
 
 </dd></dl>
 
@@ -130,8 +186,33 @@
 <dd><p>Bases: <a title="sprox.fillerbase.FillerBase" class="reference internal" href="#sprox.fillerbase.FillerBase"><tt class="xref docutils literal"><span class="pre">sprox.fillerbase.FillerBase</span></tt></a></p>
 <dl class="method">
 <dt id="sprox.fillerbase.ModelsFiller.get_value">
-<!--[sprox.fillerbase.ModelsFiller.get_value]--><tt class="descname">get_value</tt><big>(</big><em>values=None</em>, <em>offset=None</em>, <em>limit=None</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.ModelsFiller.get_value" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<!--[sprox.fillerbase.ModelsFiller.get_value]--><tt class="descname">get_value</tt><big>(</big><em>values=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.ModelsFiller.get_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a dictionary of values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Arguments:</th><td class="field-body"><dl class="first docutils">
+<dt>values</dt>
+<dd><p class="first last">pass through of values.  This is typically a set of default values that is updated by the
+filler.  This is useful when updating an existing form.</p>
+</dd>
+<dt>kw</dt>
+<dd><p class="first last">Set of keyword arguments for assisting the fill.  This is for instance information like offset
+and limit for a TableFiller.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">filler</span> <span class="o">=</span> <span class="n">FillerBase</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">filler</span><span class="o">.</span><span class="n">get_value</span><span class="p">()</span>
+<span class="go">{}</span>
+</pre></div>
+</dd></dl>
 
 </dd></dl>
 
