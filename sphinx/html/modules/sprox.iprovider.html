@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Classes &mdash; Sprox v0.5 documentation</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+          URL_ROOT:    '../',
+          VERSION:     '0.5',
+          COLLAPSE_MODINDEX: false,
+          FILE_SUFFIX: '.html'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Sprox v0.5 documentation" href="../index.html" />
+    <link rel="next" title="widgets" href="sprox.widgets.html" />
+    <link rel="prev" title="saormprovider" href="sprox.saormprovider.html" />
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+        <li class="right" >
+          <a href="sprox.widgets.html" title="widgets"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="sprox.saormprovider.html" title="saormprovider"
+             accesskey="P">previous</a> |</li>
+  <li>
+  <a href="../index.html"><b>Sprox 0.5</b></a>
+  </li>
+
+  
+    <li> <b>/</b> <a href="">Classes</a></li>
+  
+
+      </ul>
+    </div>
+  <div class="document">
+    <div class="documentwrapper">
+      <div class="bodywrapper">
+      <div class="body">
+        
+  
+  <hr class="docutils" />
+<p id="module-sprox.iprovider">iprovider Module</p>
+<p>This contains the class which allows dbsprockets to interface with any database.</p>
+<p>Copyright &amp;copy 2008 Christopher Perkins
+Original Version by Christopher Perkins 2008
+Released under MIT license.</p>
+<div class="section" id="classes">
+<h1>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="sprox.iprovider.IProvider">
+<!--[sprox.iprovider.IProvider]-->class <tt class="descclassname">sprox.iprovider.</tt><tt class="descname">IProvider</tt><a class="headerlink" href="#sprox.iprovider.IProvider" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="sprox.iprovider.IProvider.create">
+<!--[sprox.iprovider.IProvider.create]--><tt class="descname">create</tt><big>(</big><em>entity</em>, <em>params</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.create" title="Permalink to this definition">¶</a></dt>
+<dd>Create an entry of type entity with the given params.</dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.delete">
+<!--[sprox.iprovider.IProvider.delete]--><tt class="descname">delete</tt><big>(</big><em>entity</em>, <em>params</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.delete" title="Permalink to this definition">¶</a></dt>
+<dd>Delete an entry of typeentity which matches the params.</dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.get">
+<!--[sprox.iprovider.IProvider.get]--><tt class="descname">get</tt><big>(</big><em>entity</em>, <em>params</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get" title="Permalink to this definition">¶</a></dt>
+<dd>Get a single entry of type entity which matches the params.</dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.get_default_values">
+<!--[sprox.iprovider.IProvider.get_default_values]--><tt class="descname">get_default_values</tt><big>(</big><em>entity</em>, <em>params</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_default_values" title="Permalink to this definition">¶</a></dt>
+<dd>Get the default values for form filling based on the database schema.</dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.get_dropdown_options">
+<!--[sprox.iprovider.IProvider.get_dropdown_options]--><tt class="descname">get_dropdown_options</tt><big>(</big><em>entity</em>, <em>field_name</em>, <em>view_names=None</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_dropdown_options" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all dropdown options for a given entity field.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Arguments:</th><td class="field-body"><dl class="first docutils">
+<dt>entity</dt>
+<dd><p class="first last">the entity where the field is located</p>
+</dd>
+<dt>field_name</dt>
+<dd><p class="first last">name of the field in the entity</p>
+</dd>
+<dt>view_names</dt>
+<dd><p class="first last">a list of names which define what the view field may contain.  This allows the first
+field that has a name in the list of names will be returned as the view field.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>A list of tuples with (id, view_value) as items.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.get_entities">
+<!--[sprox.iprovider.IProvider.get_entities]--><tt class="descname">get_entities</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_entities" title="Permalink to this definition">¶</a></dt>
+<dd>Get all entities available for this provider.</dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.get_entity">
+<!--[sprox.iprovider.IProvider.get_entity]--><tt class="descname">get_entity</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_entity" title="Permalink to this definition">¶</a></dt>
+<dd>Get an entity with the given name.</dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.get_field">
+<!--[sprox.iprovider.IProvider.get_field]--><tt class="descname">get_field</tt><big>(</big><em>entity</em>, <em>name</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_field" title="Permalink to this definition">¶</a></dt>
+<dd>Get a field with the given field name.</dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.get_fields">
+<!--[sprox.iprovider.IProvider.get_fields]--><tt class="descname">get_fields</tt><big>(</big><em>entity</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_fields" title="Permalink to this definition">¶</a></dt>
+<dd>Get all of the fields for a given entity.</dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.get_primary_field">
+<!--[sprox.iprovider.IProvider.get_primary_field]--><tt class="descname">get_primary_field</tt><big>(</big><em>entity</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_primary_field" title="Permalink to this definition">¶</a></dt>
+<dd>Get the single primary field for an entity</dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.get_primary_fields">
+<!--[sprox.iprovider.IProvider.get_primary_fields]--><tt class="descname">get_primary_fields</tt><big>(</big><em>entity</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_primary_fields" title="Permalink to this definition">¶</a></dt>
+<dd>Get the fields in the entity which uniquely identifies a record.</dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.get_relations">
+<!--[sprox.iprovider.IProvider.get_relations]--><tt class="descname">get_relations</tt><big>(</big><em>entity</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_relations" title="Permalink to this definition">¶</a></dt>
+<dd>Get all of the field names in an enity which are related to other entities.</dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.get_view_field_name">
+<!--[sprox.iprovider.IProvider.get_view_field_name]--><tt class="descname">get_view_field_name</tt><big>(</big><em>entity</em>, <em>possible_names</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_view_field_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the name of the field which first matches the possible colums</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Arguments:</th><td class="field-body"><dl class="first last docutils">
+<dt>entity</dt>
+<dd><p class="first last">the entity where the field is located</p>
+</dd>
+<dt>possible_names</dt>
+<dd><p class="first last">a list of names which define what the view field may contain.  This allows the first
+field that has a name in the list of names will be returned as the view field.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.is_nullable">
+<!--[sprox.iprovider.IProvider.is_nullable]--><tt class="descname">is_nullable</tt><big>(</big><em>entity</em>, <em>field_name</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.is_nullable" title="Permalink to this definition">¶</a></dt>
+<dd>Determine if a field is nullable.</dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.is_relation">
+<!--[sprox.iprovider.IProvider.is_relation]--><tt class="descname">is_relation</tt><big>(</big><em>entity</em>, <em>field_name</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.is_relation" title="Permalink to this definition">¶</a></dt>
+<dd>Determine if a field is related to a field in another entity.</dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.update">
+<!--[sprox.iprovider.IProvider.update]--><tt class="descname">update</tt><big>(</big><em>entity</em>, <em>params</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.update" title="Permalink to this definition">¶</a></dt>
+<dd>Update an entry of type entity which matches the params.</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+        <h1>Discuss</h1>
+        <div id="disqus_thread"></div>
+           <script type="text/javascript" src="http://disqus.com/forums/sproxdox/embed.js"></script>
+           <noscript><a href="http://sproxdox.disqus.com/?url=ref">View the discussion thread.</a></noscript>
+           <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+      </div>
+
+  </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/sprox_logo.png" alt="Logo"/>
+            </a></p>
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="sprox.saormprovider.html" title="previous chapter"><tt class="docutils literal"><span class="pre">saormprovider</span></tt></a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="sprox.widgets.html" title="next chapter"><tt class="docutils literal"><span class="pre">widgets</span></tt></a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../_sources/modules/sprox.iprovider.txt">Show Source</a></li>
+            </ul>
+          <h3>Quick search</h3>
+            <form class="search" action="../search.html" method="get">
+              <input type="text" name="q" size="18" /> <input type="submit" value="Go" />
+              <input type="hidden" name="check_keywords" value="yes" />
+              <input type="hidden" name="area" value="default" />
+            </form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+        <li class="right" >
+          <a href="sprox.widgets.html" title="widgets"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="sprox.saormprovider.html" title="saormprovider"
+             accesskey="P">previous</a> |</li>
+  <li>
+  <a href="../index.html"><b>Sprox 0.5</b></a>
+  </li>
+
+  
+    <li> <b>/</b> <a href="">Classes</a></li>
+  
+
+      </ul>
+    </div>
+
+    <div class="footer">
+      &copy; Copyright 2008, Christopher Perkins.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.5.
+    </div>
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+  var links = document.getElementsByTagName('a');
+  var query = '?';
+  for(var i = 0; i < links.length; i++) {
+    if(links[i].href.indexOf('#disqus_thread') >= 0) {
+      query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+    }
+  }
+  document.write('<script type="text/javascript" src="http://disqus.com/forums/sproxdox/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6778746-1");
+pageTracker._trackPageview();
+} catch(err) {}
+//]]>
+</script>
+
+
+  </body>
+</html>
