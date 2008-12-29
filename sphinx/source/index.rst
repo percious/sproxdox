@@ -18,8 +18,6 @@ Sprox is installable from pypi.::
 
     easy_install sprox
 
-
-
 Form Generation
 --------------------
 Sprox has a simple but powerful way to manipulate forms.
@@ -67,7 +65,7 @@ was a text area).  Lastly we add a verify_password field that is not in the curr
 if you were to alter the schema for your database, any fields you added to your User model would also be added to this form.
 If you wanted to avoid this, you would use __limit_fields__ instead of __omit_fields__.
 There are many other __modifiers__ for FormBase in Sprox, you can use them to generate the forms you desire in
-any number of combinations.
+any number of combinations.  For more information see :mod:`sprox.formbase` and :mod:`sprox.fillerbase`.
 
 Table Generation
 -----------------------
