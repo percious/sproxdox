@@ -50,7 +50,7 @@ form based on Sprox, complete with password validation.::
     class RegistrationForm(AddRecordForm):
         __model__ = User
         __require_fields__     = ['password', 'user_name', 'email_address']
-        __omit_fields__        = ['_password', 'groups', 'created', 'user_id']
+        __omit_fields__        = ['_password', 'groups', 'created', 'user_id', 'town_id']
         __field_order__        = ['user_name', 'email_address', 'display_name', 'password', 'verify_password']
         __base_validator__     = form_validator
         email_address          = TextField
@@ -58,6 +58,11 @@ form based on Sprox, complete with password validation.::
         verify_password        = PasswordField('verify_password')
 
     registration_form = RegistrationForm(DBSession)
+
+Which makes a form that looks something like this:
+
+.. image:: images/registration_form.png
+
 
 Notice first that we have made three fields required set the order, and omitted the fields that
 we do not want in the form.  Also, we overrode the widget type for email_address and display_name (The default
@@ -85,7 +90,7 @@ email addresses::
 
     class UserTableFiller(TableFiller):
         __model__ = User
-        __limit_fields__ = ['display_name', 'email_address']
+        __limit_fields__ = ['user_id', 'display_name', 'email_address']
 
     user_table_value = UserTableFiller(DBSession).get_value()
 
@@ -93,6 +98,10 @@ email addresses::
 And your template code would look like this::
 
     ${user_table_form(value=user_table_value)}
+
+Rendered, the table would look like this:
+
+.. image:: images/users.png
 
 Keep in mind that since the form generators are declarative, you can use mixins and other class trickery to reduce
 your code further (although it is not advised to use this to fool your fellow developer).  Can you think of a way

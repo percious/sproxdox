@@ -91,7 +91,7 @@ form based on Sprox, complete with password validation.:</p>
 <span class="k">class</span> <span class="nc">RegistrationForm</span><span class="p">(</span><span class="n">AddRecordForm</span><span class="p">):</span>
     <span class="n">__model__</span> <span class="o">=</span> <span class="n">User</span>
     <span class="n">__require_fields__</span>     <span class="o">=</span> <span class="p">[</span><span class="s">&#39;password&#39;</span><span class="p">,</span> <span class="s">&#39;user_name&#39;</span><span class="p">,</span> <span class="s">&#39;email_address&#39;</span><span class="p">]</span>
-    <span class="n">__omit_fields__</span>        <span class="o">=</span> <span class="p">[</span><span class="s">&#39;_password&#39;</span><span class="p">,</span> <span class="s">&#39;groups&#39;</span><span class="p">,</span> <span class="s">&#39;created&#39;</span><span class="p">,</span> <span class="s">&#39;user_id&#39;</span><span class="p">]</span>
+    <span class="n">__omit_fields__</span>        <span class="o">=</span> <span class="p">[</span><span class="s">&#39;_password&#39;</span><span class="p">,</span> <span class="s">&#39;groups&#39;</span><span class="p">,</span> <span class="s">&#39;created&#39;</span><span class="p">,</span> <span class="s">&#39;user_id&#39;</span><span class="p">,</span> <span class="s">&#39;town_id&#39;</span><span class="p">]</span>
     <span class="n">__field_order__</span>        <span class="o">=</span> <span class="p">[</span><span class="s">&#39;user_name&#39;</span><span class="p">,</span> <span class="s">&#39;email_address&#39;</span><span class="p">,</span> <span class="s">&#39;display_name&#39;</span><span class="p">,</span> <span class="s">&#39;password&#39;</span><span class="p">,</span> <span class="s">&#39;verify_password&#39;</span><span class="p">]</span>
     <span class="n">__base_validator__</span>     <span class="o">=</span> <span class="n">form_validator</span>
     <span class="n">email_address</span>          <span class="o">=</span> <span class="n">TextField</span>
@@ -100,6 +100,8 @@ form based on Sprox, complete with password validation.:</p>
 
 <span class="n">registration_form</span> <span class="o">=</span> <span class="n">RegistrationForm</span><span class="p">(</span><span class="n">DBSession</span><span class="p">)</span>
 </pre></div>
+<p>Which makes a form that looks something like this:</p>
+<img alt="_images/registration_form.png" src="_images/registration_form.png" />
 <p>Notice first that we have made three fields required set the order, and omitted the fields that
 we do not want in the form.  Also, we overrode the widget type for email_address and display_name (The default
 was a text area).  Lastly we add a verify_password field that is not in the current schema.  Also keep in mind that
@@ -125,12 +127,14 @@ email addresses:</p>
 
 <span class="k">class</span> <span class="nc">UserTableFiller</span><span class="p">(</span><span class="n">TableFiller</span><span class="p">):</span>
     <span class="n">__model__</span> <span class="o">=</span> <span class="n">User</span>
-    <span class="n">__limit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;display_name&#39;</span><span class="p">,</span> <span class="s">&#39;email_address&#39;</span><span class="p">]</span>
+    <span class="n">__limit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;user_id&#39;</span><span class="p">,</span> <span class="s">&#39;display_name&#39;</span><span class="p">,</span> <span class="s">&#39;email_address&#39;</span><span class="p">]</span>
 
 <span class="n">user_table_value</span> <span class="o">=</span> <span class="n">UserTableFiller</span><span class="p">(</span><span class="n">DBSession</span><span class="p">)</span><span class="o">.</span><span class="n">get_value</span><span class="p">()</span>
 </pre></div>
 <p>And your template code would look like this:</p>
 <pre>${user_table_form(value=user_table_value)}</pre>
+<p>Rendered, the table would look like this:</p>
+<img alt="_images/users.png" src="_images/users.png" />
 <p>Keep in mind that since the form generators are declarative, you can use mixins and other class trickery to reduce
 your code further (although it is not advised to use this to fool your fellow developer).  Can you think of a way
 to reduce the 14 lines of python code above to 8?</p>
