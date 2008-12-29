@@ -61,7 +61,72 @@
 <dl class="class">
 <dt id="sprox.configbase.ConfigBase">
 <!--[sprox.configbase.ConfigBase]-->class <tt class="descclassname">sprox.configbase.</tt><tt class="descname">ConfigBase</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.configbase.ConfigBase" title="Permalink to this definition">¶</a></dt>
-<dd>Bases: <a title="(in Python v2.7)" class="reference external" href="http://docs.python.org/dev/library/functions.html#object"><tt class="xref docutils literal"><span class="pre">object</span></tt></a></dd></dl>
+<dd><p>Bases: <a title="(in Python v2.7)" class="reference external" href="http://docs.python.org/dev/library/functions.html#object"><tt class="xref docutils literal"><span class="pre">object</span></tt></a></p>
+<p>Base class for all configurable classes in Sprox.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Modifiers:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="40%" />
+<col width="28%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>__entity__ (__model__)</td>
+<td>Entity used for metadata extraction.</td>
+<td>None</td>
+</tr>
+<tr><td>__sprox_id_</td>
+<td>Id for use in the widget.</td>
+<td>None</td>
+</tr>
+<tr><td>__provider_type_selector_type__</td>
+<td>A type for selecting the provider.</td>
+<td>ProviderTypeSelector</td>
+</tr>
+<tr><td>__field_order__</td>
+<td>A list of ordered field names.</td>
+<td>None</td>
+</tr>
+<tr><td>__hide_fields__</td>
+<td>Fields marked as hidden.</td>
+<td>[]</td>
+</tr>
+<tr><td>__disable_fields__</td>
+<td>Field marked as disabled.</td>
+<td>[]</td>
+</tr>
+<tr><td>__omit_fields__</td>
+<td>Fields removed from the field list.</td>
+<td>[]</td>
+</tr>
+<tr><td>__limit_fields__</td>
+<td>Limit the field list to this.</td>
+<td>None</td>
+</tr>
+<tr><td>__field_attrs__</td>
+<td>attr parmater to set to the field.</td>
+<td>{}</td>
+</tr>
+<tr><td>__metadata_type__</td>
+<td>Metadata associated with this config.</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 </div>
 <div class="section" id="exceptions">
