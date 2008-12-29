@@ -164,6 +164,52 @@ Sqlalchemy and ToscaWidgets are the supported libraries.</p>
 <a class="reference external image-reference" href="http://www.toscawidgets.org"><img alt="_images/toscawidgets-logo.jpg" src="_images/toscawidgets-logo.jpg" /></a>
 <a class="reference external image-reference" href="http://www.sqlalchemy.org"><img alt="_images/sqlalchemy-logo.gif" src="_images/sqlalchemy-logo.gif" /></a>
 </div>
+<div class="section" id="development">
+<h1>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h1>
+<p>Sprox is developed using test driven development.  Most development is done using unit testing, levereging the valuable nose and
+coverage packages.  This ensures that the test is in a known working state before releases, and that development can take some wild
+turns without affecting overall functionality.  Sprox was born from dbsprockets which was primarily table based.  The Sprox project was
+started since there was a large change in the API, even though the inner workings and overall design paradigms have not changed.  Sprox
+borrows some conceptual ideas from Rum, a project started to make creating easier crud interactions through WSGI.
+Sprox is only released as a beta with 90% or higher coverage, 100% code coverage is the expectation for a release candidate.  Here
+is the current code coverage.:</p>
+<pre>Name                      Stmts   Exec  Cover   Missing
+-------------------------------------------------------
+sprox                         0      0   100%
+sprox.configbase             77     77   100%
+sprox.entitiesbase           16     16   100%
+sprox.fillerbase             65     64    98%   90
+sprox.formbase               86     81    94%   155, 162, 166, 210, 222
+sprox.iprovider              33     33   100%
+sprox.metadata               45     35    77%   34, 39-40, 46-47, 58, 72-73, 79-80
+sprox.providerselector       77     59    76%   15-16, 28-29, 32, 35, 38, 41, 58, 67, 77-80, 89, 97, 103-104, 120
+sprox.saormprovider         207    205    99%   262-263
+sprox.sprockets              59     45    76%   46-47, 56, 67, 102-103, 111-112, 124-126, 129-131, 134
+sprox.tablebase              13     13   100%
+sprox.util                    9      9   100%
+sprox.validators             11     11   100%
+sprox.validatorselector      52     50    96%   47, 95
+sprox.viewbase              105     99    94%   73, 140, 147-148, 151-152
+sprox.widgets                 1      1   100%
+sprox.widgets.templates       0      0   100%
+sprox.widgets.widgets       105     82    78%   63, 70-75, 80-90, 96-98, 102-104
+sprox.widgetselector         40     38    95%   44, 48
+-------------------------------------------------------
+TOTAL                      1001    918    91%
+----------------------------------------------------------------------
+Ran 116 tests in 9.352s</pre>
+<p>Sprox also utilizes a number of doctests, which you will find througout the module-level api documentation.  This means that the docs
+you see here are known to work, and should stay that way, even as development progresses.  Sprox is an open source project, and can
+be found at <a class="reference external" href="http://www.bitbucket.org/percious/sprox/src/">bitbucket</a>.  If you have a great idea of how to make sprox better, feel
+free to fork off your own copy and send a pull request.</p>
+</div>
+<div class="section" id="license">
+<h1>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h1>
+<p>Sprox is licensed under the liberal MIT license.  This means you can do what you want with it.  Include it in your own package, sell
+it for a profit, modify it for your needs.  We really don&#8217;t care how you use it, but it should be noted that preferential support
+is given to those consumers who give back to the open source community, participate in Sprox development and help us find and solve
+those pesky corner cases.</p>
+</div>
 <div class="section" id="modules">
 <h1>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h1>
 <ul>
@@ -248,6 +294,8 @@ Sqlalchemy and ToscaWidgets are the supported libraries.</p>
 <li><a class="reference external" href="#api">API</a><ul>
 </ul>
 </li>
+<li><a class="reference external" href="#development">Development</a></li>
+<li><a class="reference external" href="#license">License</a></li>
 <li><a class="reference external" href="#modules">Modules</a><ul>
 </ul>
 </li>
