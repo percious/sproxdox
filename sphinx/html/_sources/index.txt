@@ -123,6 +123,13 @@ API
 
    class_diagram
 
+Sprox has the ability to hook any widget library or object mapping library into it's shoestrings, but as of this time
+Sqlalchemy and ToscaWidgets are the supported libraries.
+
+.. image:: images/toscawidgets-logo.jpg
+    :target: http://www.toscawidgets.org
+.. image:: images/sqlalchemy-logo.gif
+    :target: http://www.sqlalchemy.org
 Modules
 =============
 

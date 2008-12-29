@@ -277,7 +277,6 @@ sprox.widgets.PropertySingleSelectField.adapt_value method modules/sprox.widgets
 sprox.widgets.RecordViewWidget.adapt_value method modules/sprox.widgets.html
 sprox.iprovider.IProvider class modules/sprox.iprovider.html
 sprox.widgets.PropertyMixin.adapt_value method modules/sprox.widgets.html
-sprox.metadata.FieldsMetadata.keys method modules/sprox.metadata.html
 sprox.widgets.EntityLabelWidget.register_resources method modules/sprox.widgets.html
 sprox.metadata.FieldsMetadata.values method modules/sprox.metadata.html
 sprox.widgets.SproxCalendarDatePicker.displays_on attribute modules/sprox.widgets.html
@@ -377,6 +376,7 @@ sprox.saormprovider.SAORMProvider.get_fields method modules/sprox.saormprovider.
 sprox.widgets.EntityDefWidget.update_params method modules/sprox.widgets.html
 sprox.widgets.SproxTableForm.walk method modules/sprox.widgets.html
 sprox.widgets.RecordFieldWidget.retrieve_css method modules/sprox.widgets.html
+sprox.widgets.PropertySingleSelectField.display method modules/sprox.widgets.html
 sprox.widgets.SproxCalendarDatePicker.retrieve_javascript method modules/sprox.widgets.html
 sprox.widgets.ContainerWidget.id_path_elem attribute modules/sprox.widgets.html
 sprox.widgets.SproxDataGrid.add_call method modules/sprox.widgets.html
@@ -668,7 +668,7 @@ sprox.saormprovider.SAORMProvider.get_view_field_name method modules/sprox.saorm
 sprox.widgets.RecordViewWidget.displays_on attribute modules/sprox.widgets.html
 sprox.saormprovider.SAORMProvider.dictify method modules/sprox.saormprovider.html
 sprox.metadata.FieldMetadata.setdefault method modules/sprox.metadata.html
-sprox.widgets.PropertySingleSelectField.display method modules/sprox.widgets.html
+sprox.metadata.FieldsMetadata.keys method modules/sprox.metadata.html
 sprox.widgets.SproxCalendarDatePicker.update_params method modules/sprox.widgets.html
 sprox.widgetselector.EntitiesViewWidgetSelector class modules/sprox.widgetselector.html
 sprox.metadata.Metadata.setdefault method modules/sprox.metadata.html
