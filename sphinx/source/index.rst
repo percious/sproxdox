@@ -155,31 +155,40 @@ is the current code coverage.::
     sprox                         0      0   100%
     sprox.configbase             77     77   100%
     sprox.entitiesbase           16     16   100%
-    sprox.fillerbase             65     64    98%   90
-    sprox.formbase               86     81    94%   155, 162, 166, 210, 222
+    sprox.fillerbase             64     64   100%
+    sprox.formbase               83     83   100%
     sprox.iprovider              33     33   100%
-    sprox.metadata               45     35    77%   34, 39-40, 46-47, 58, 72-73, 79-80
-    sprox.providerselector       77     59    76%   15-16, 28-29, 32, 35, 38, 41, 58, 67, 77-80, 89, 97, 103-104, 120
-    sprox.saormprovider         207    205    99%   262-263
-    sprox.sprockets              59     45    76%   46-47, 56, 67, 102-103, 111-112, 124-126, 129-131, 134
+    sprox.metadata               51     51   100%
+    sprox.providerselector       70     70   100%
+    sprox.recordviewbase         15     15   100%
+    sprox.saormprovider         207    207   100%
+    sprox.sprockets              55     55   100%
     sprox.tablebase              13     13   100%
     sprox.util                    9      9   100%
     sprox.validators             11     11   100%
-    sprox.validatorselector      52     50    96%   47, 95
-    sprox.viewbase              105     99    94%   73, 140, 147-148, 151-152
+    sprox.validatorselector      52     52   100%
+    sprox.viewbase               97     97   100%
     sprox.widgets                 1      1   100%
     sprox.widgets.templates       0      0   100%
-    sprox.widgets.widgets       105     82    78%   63, 70-75, 80-90, 96-98, 102-104
-    sprox.widgetselector         40     38    95%   44, 48
+    sprox.widgets.widgets        78     76    97%   70-71
+    sprox.widgetselector         40     40   100%
     -------------------------------------------------------
-    TOTAL                      1001    918    91%
+    TOTAL                       972    970    99%
     ----------------------------------------------------------------------
-    Ran 116 tests in 9.352s
+    Ran 186 tests in 16.859s
+
+    OK
 
 Sprox also utilizes a number of doctests, which you will find througout the module-level api documentation.  This means that the docs
 you see here are known to work, and should stay that way, even as development progresses.  Sprox is an open source project, and can
 be found at `bitbucket <http://www.bitbucket.org/percious/sprox/src/>`_.  If you have a great idea of how to make sprox better, feel
 free to fork off your own copy and send a pull request.
+
+Current Release
+=================
+
+0.5b5
+
 
 License
 ===========
