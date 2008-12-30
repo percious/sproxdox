@@ -155,13 +155,13 @@ is the current code coverage.::
     sprox                         0      0   100%
     sprox.configbase             77     77   100%
     sprox.entitiesbase           16     16   100%
-    sprox.fillerbase             64     64   100%
+    sprox.fillerbase             66     66   100%
     sprox.formbase               83     83   100%
     sprox.iprovider              33     33   100%
     sprox.metadata               51     51   100%
     sprox.providerselector       70     70   100%
     sprox.recordviewbase         15     15   100%
-    sprox.saormprovider         207    207   100%
+    sprox.saormprovider         214    214   100%
     sprox.sprockets              55     55   100%
     sprox.tablebase              13     13   100%
     sprox.util                    9      9   100%
@@ -173,9 +173,9 @@ is the current code coverage.::
     sprox.widgets.widgets        78     76    97%   70-71
     sprox.widgetselector         40     40   100%
     -------------------------------------------------------
-    TOTAL                       972    970    99%
+    TOTAL                       981    979    99%
     ----------------------------------------------------------------------
-    Ran 186 tests in 16.859s
+    Ran 189 tests in 17.439s
 
     OK
 
@@ -187,7 +187,7 @@ free to fork off your own copy and send a pull request.
 Current Release
 =================
 
-0.5b5
+0.5rc1
 
 
 License
