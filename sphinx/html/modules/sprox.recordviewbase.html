@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>sprox.recordviewbase &mdash; Sprox v0.5 documentation</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+          URL_ROOT:    '../',
+          VERSION:     '0.5',
+          COLLAPSE_MODINDEX: false,
+          FILE_SUFFIX: '.html'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Sprox v0.5 documentation" href="../index.html" />
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+  <li>
+  <a href="../index.html"><b>Sprox 0.5</b></a>
+  </li>
+
+  
+    <li> <b>/</b> <a href=""><tt class="docutils literal"><span class="pre">sprox.recordviewbase</span></tt></a></li>
+  
+
+      </ul>
+    </div>
+  <div class="document">
+    <div class="documentwrapper">
+      <div class="bodywrapper">
+      <div class="body">
+        
+  
+  <div class="section" id="module-sprox.recordviewbase">
+<h1><tt class="xref docutils literal"><span class="pre">sprox.recordviewbase</span></tt><a class="headerlink" href="#module-sprox.recordviewbase" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="sprox.recordviewbase.RecordViewBase">
+<!--[sprox.recordviewbase.RecordViewBase]-->class <tt class="descclassname">sprox.recordviewbase.</tt><tt class="descname">RecordViewBase</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.recordviewbase.RecordViewBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a title="sprox.viewbase.ViewBase" class="reference external" href="sprox.viewbase.html#sprox.viewbase.ViewBase"><tt class="xref docutils literal"><span class="pre">sprox.viewbase.ViewBase</span></tt></a></p>
+<p>This class allows you to credate a table widget.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Modifiers:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>see modifiers in <a title="" class="reference external" href="sprox.viewbase.html"><tt class="xref docutils literal"><span class="pre">sprox.viewbase</span></tt></a></p>
+<p>Here is an example listing of the towns in the test database.</p>
+<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.test.base</span> <span class="kn">import</span> <span class="n">Town</span><span class="p">,</span> <span class="n">setup_database</span><span class="p">,</span> <span class="n">setup_records</span><span class="p">,</span> <span class="n">User</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="n">setup_database</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">user</span> <span class="o">=</span> <span class="n">setup_records</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">UserRecordView</span><span class="p">(</span><span class="n">RecordViewBase</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">__model__</span> <span class="o">=</span> <span class="n">User</span>
+<span class="gp">... </span>    <span class="n">__omit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;created&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">user_view</span> <span class="o">=</span> <span class="n">UserRecordView</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.fillerbase</span> <span class="kn">import</span> <span class="n">RecordFiller</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">UserRecordFiller</span><span class="p">(</span><span class="n">RecordFiller</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">__model__</span> <span class="o">=</span> <span class="n">User</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">user_filler</span> <span class="o">=</span> <span class="n">UserRecordFiller</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="o">=</span> <span class="n">user_filler</span><span class="o">.</span><span class="n">get_value</span><span class="p">({</span><span class="s">&#39;user_id&#39;</span><span class="p">:</span><span class="mf">1</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">user_view</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">)</span>
+<span class="go">&lt;table xmlns=&quot;http://www.w3.org/1999/xhtml&quot; class=&quot;recordviewwidget&quot;&gt;</span>
+<span class="go">&lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Value&lt;/th&gt;&lt;/tr&gt;</span>
+<span class="go">&lt;tr class=&quot;recordfieldwidget&quot;&gt;</span>
+<span class="go">    &lt;td&gt;</span>
+<span class="go">        &lt;b&gt;_password&lt;/b&gt;</span>
+<span class="go">    &lt;/td&gt;</span>
+<span class="go">    &lt;td&gt;</span>
+<span class="go">    &lt;/td&gt;</span>
+<span class="go">&lt;/tr&gt;</span>
+<span class="go">&lt;tr class=&quot;recordfieldwidget&quot;&gt;</span>
+<span class="go">    &lt;td&gt;</span>
+<span class="go">        &lt;b&gt;user_id&lt;/b&gt;</span>
+<span class="go">    &lt;/td&gt;</span>
+<span class="go">    &lt;td&gt; 1</span>
+<span class="go">    &lt;/td&gt;</span>
+<span class="go">&lt;/tr&gt;</span>
+<span class="go">&lt;tr class=&quot;recordfieldwidget&quot;&gt;</span>
+<span class="go">    &lt;td&gt;</span>
+<span class="go">        &lt;b&gt;user_name&lt;/b&gt;</span>
+<span class="go">    &lt;/td&gt;</span>
+<span class="go">    &lt;td&gt; asdf</span>
+<span class="go">    &lt;/td&gt;</span>
+<span class="go">&lt;/tr&gt;</span>
+<span class="go">&lt;tr class=&quot;recordfieldwidget&quot;&gt;</span>
+<span class="go">    &lt;td&gt;</span>
+<span class="go">        &lt;b&gt;email_address&lt;/b&gt;</span>
+<span class="go">    &lt;/td&gt;</span>
+<span class="go">    &lt;td&gt; asdf@asdf.com</span>
+<span class="go">    &lt;/td&gt;</span>
+<span class="go">&lt;/tr&gt;</span>
+<span class="go">&lt;tr class=&quot;recordfieldwidget&quot;&gt;</span>
+<span class="go">    &lt;td&gt;</span>
+<span class="go">        &lt;b&gt;display_name&lt;/b&gt;</span>
+<span class="go">    &lt;/td&gt;</span>
+<span class="go">    &lt;td&gt;</span>
+<span class="go">    &lt;/td&gt;</span>
+<span class="go">&lt;/tr&gt;</span>
+<span class="go">&lt;tr class=&quot;recordfieldwidget&quot;&gt;</span>
+<span class="go">    &lt;td&gt;</span>
+<span class="go">        &lt;b&gt;town_id&lt;/b&gt;</span>
+<span class="go">    &lt;/td&gt;</span>
+<span class="go">    &lt;td&gt; 1</span>
+<span class="go">    &lt;/td&gt;</span>
+<span class="go">&lt;/tr&gt;</span>
+<span class="go">&lt;tr class=&quot;recordfieldwidget&quot;&gt;</span>
+<span class="go">    &lt;td&gt;</span>
+<span class="go">        &lt;b&gt;town&lt;/b&gt;</span>
+<span class="go">    &lt;/td&gt;</span>
+<span class="go">    &lt;td&gt; 1</span>
+<span class="go">    &lt;/td&gt;</span>
+<span class="go">&lt;/tr&gt;</span>
+<span class="go">&lt;tr class=&quot;recordfieldwidget&quot;&gt;</span>
+<span class="go">    &lt;td&gt;</span>
+<span class="go">        &lt;b&gt;password&lt;/b&gt;</span>
+<span class="go">    &lt;/td&gt;</span>
+<span class="go">    &lt;td&gt;</span>
+<span class="go">    &lt;/td&gt;</span>
+<span class="go">&lt;/tr&gt;</span>
+<span class="go">&lt;tr class=&quot;recordfieldwidget&quot;&gt;</span>
+<span class="go">    &lt;td&gt;</span>
+<span class="go">        &lt;b&gt;groups&lt;/b&gt;</span>
+<span class="go">    &lt;/td&gt;</span>
+<span class="go">    &lt;td&gt; 5</span>
+<span class="go">    &lt;/td&gt;</span>
+<span class="go">&lt;/tr&gt;</span>
+<span class="go">&lt;/table&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">rollback</span><span class="p">()</span>
+</pre></div>
+</dd></dl>
+
+</div>
+</div>
+
+
+        <h1>Discuss</h1>
+        <div id="disqus_thread"></div>
+           <script type="text/javascript" src="http://disqus.com/forums/sproxdox/embed.js"></script>
+           <noscript><a href="http://sproxdox.disqus.com/?url=ref">View the discussion thread.</a></noscript>
+           <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+      </div>
+
+  </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/sprox_logo.png" alt="Logo"/>
+            </a></p>
+            <h3><a href="../index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href=""><tt class="docutils literal"><span class="pre">sprox.recordviewbase</span></tt></a><ul>
+<li><a class="reference external" href="#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../_sources/modules/sprox.recordviewbase.txt">Show Source</a></li>
+            </ul>
+          <h3>Quick search</h3>
+            <form class="search" action="../search.html" method="get">
+              <input type="text" name="q" size="18" /> <input type="submit" value="Go" />
+              <input type="hidden" name="check_keywords" value="yes" />
+              <input type="hidden" name="area" value="default" />
+            </form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+  <li>
+  <a href="../index.html"><b>Sprox 0.5</b></a>
+  </li>
+
+  
+    <li> <b>/</b> <a href=""><tt class="docutils literal"><span class="pre">sprox.recordviewbase</span></tt></a></li>
+  
+
+      </ul>
+    </div>
+
+    <div class="footer">
+      &copy; Copyright 2008, Christopher Perkins.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.5.
+    </div>
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+  var links = document.getElementsByTagName('a');
+  var query = '?';
+  for(var i = 0; i < links.length; i++) {
+    if(links[i].href.indexOf('#disqus_thread') >= 0) {
+      query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+    }
+  }
+  document.write('<script type="text/javascript" src="http://disqus.com/forums/sproxdox/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6778746-1");
+pageTracker._trackPageview();
+} catch(err) {}
+//]]>
+</script>
+
+
+  </body>
+</html>

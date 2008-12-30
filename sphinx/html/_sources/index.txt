@@ -201,6 +201,7 @@ Modules
     modules/sprox.configbase
     modules/sprox.viewbase
     modules/sprox.entitiesbase
+    modules/sprox.recordviewbase
     modules/sprox.widgetselector
     modules/sprox.validatorselector
     modules/sprox.validators

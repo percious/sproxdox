@@ -97,12 +97,12 @@
 <p>see modifiers in <a title="" class="reference external" href="sprox.viewbase.html"><tt class="xref docutils literal"><span class="pre">sprox.viewbase</span></tt></a></p>
 <p>Here is an example listing of the towns in the test database.</p>
 <div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.test.base</span> <span class="kn">import</span> <span class="n">Town</span><span class="p">,</span> <span class="n">setup_database</span><span class="p">,</span> <span class="n">setup_records</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">connection</span> <span class="o">=</span> <span class="n">setup_database</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="n">setup_database</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">user</span> <span class="o">=</span> <span class="n">setup_records</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">TownTable</span><span class="p">(</span><span class="n">TableBase</span><span class="p">):</span>
 <span class="gp">... </span>   <span class="n">__model__</span> <span class="o">=</span> <span class="n">Town</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">town_table</span> <span class="o">=</span> <span class="n">TownTable</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">town_table</span><span class="o">.</span><span class="n">__widget__</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">town_table</span><span class="p">()</span>
 <span class="go">&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;</span>
 <span class="go">&lt;table class=&quot;grid&quot;&gt;</span>
 <span class="go">    &lt;thead&gt;</span>

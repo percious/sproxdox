@@ -188,7 +188,7 @@ selection.</td>
 <p>One of the more useful things sprox does for you is to fill in the arguments to a drop down automatically.
 Here is the userform, limited to just the town field, which gets populated with the towns.</p>
 <div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.test.base</span> <span class="kn">import</span> <span class="n">User</span><span class="p">,</span> <span class="n">setup_database</span><span class="p">,</span> <span class="n">setup_records</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">connection</span> <span class="o">=</span> <span class="n">setup_database</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="n">setup_database</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">user</span> <span class="o">=</span> <span class="n">setup_records</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">TownForm</span><span class="p">(</span><span class="n">FormBase</span><span class="p">):</span>
 <span class="gp">... </span>   <span class="n">__model__</span> <span class="o">=</span> <span class="n">User</span>
@@ -196,7 +196,7 @@ Here is the userform, limited to just the town field, which gets populated with 
 <span class="go">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">town_form</span> <span class="o">=</span> <span class="n">TownForm</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
 <span class="go">&gt;&gt;&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">town_form</span><span class="o">.</span><span class="n">__widget__</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">town_form</span><span class="p">()</span>
 <span class="go">&lt;form xmlns=&quot;http://www.w3.org/1999/xhtml&quot; action=&quot;&quot; method=&quot;post&quot; class=&quot;required tableform&quot;&gt;</span>
 <span class="go">    &lt;div&gt;</span>
 <span class="go">            &lt;input type=&quot;hidden&quot; name=&quot;sprox_id&quot; class=&quot;hiddenfield&quot; id=&quot;sprox_id&quot; value=&quot;&quot; /&gt;</span>
@@ -220,7 +220,13 @@ Here is the userform, limited to just the town field, which gets populated with 
 <span class="go">        &lt;/tr&gt;</span>
 <span class="go">    &lt;/table&gt;</span>
 <span class="go">&lt;/form&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">rollback</span><span class="p">()</span>
+</pre></div>
+<p>Forms created with sprox can be validated as you would any other widget.</p>
+<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">town_form</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;town&#39;</span><span class="p">:</span><span class="mf">1</span><span class="p">})</span>
+<span class="gp">...</span>
+<span class="go">Invalid: sprox_id: Missing value</span>
+</pre></div>
+<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">rollback</span><span class="p">()</span>
 </pre></div>
 <dl class="method">
 <dt id="sprox.formbase.FormBase.validate">
@@ -266,7 +272,8 @@ matches the field data.</td>
 </tbody>
 </table>
 <p>Here is an example registration form, as generated from the vase User model.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.test.model</span> <span class="kn">import</span> <span class="n">User</span>
+<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.test.base</span> <span class="kn">import</span> <span class="n">setup_database</span><span class="p">,</span> <span class="n">setup_records</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.test.model</span> <span class="kn">import</span> <span class="n">User</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.formbase</span> <span class="kn">import</span> <span class="n">AddRecordForm</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">formencode</span> <span class="kn">import</span> <span class="n">Schema</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">formencode.validators</span> <span class="kn">import</span> <span class="n">FieldsMatch</span>
@@ -285,7 +292,7 @@ matches the field data.</td>
 <span class="gp">... </span>    <span class="n">display_name</span>           <span class="o">=</span> <span class="n">TextField</span>
 <span class="gp">... </span>    <span class="n">verify_password</span>        <span class="o">=</span> <span class="n">PasswordField</span><span class="p">(</span><span class="s">&#39;verify_password&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">registration_form</span> <span class="o">=</span> <span class="n">RegistrationForm</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">registration_form</span><span class="o">.</span><span class="n">__widget__</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">registration_form</span><span class="p">()</span>
 <span class="go">&lt;form xmlns=&quot;http://www.w3.org/1999/xhtml&quot; action=&quot;&quot; method=&quot;post&quot; class=&quot;required tableform&quot;&gt;</span>
 <span class="go">    &lt;div&gt;</span>
 <span class="go">            &lt;input type=&quot;hidden&quot; name=&quot;sprox_id&quot; class=&quot;hiddenfield&quot; id=&quot;sprox_id&quot; value=&quot;&quot; /&gt;</span>
@@ -343,6 +350,22 @@ matches the field data.</td>
 <span class="go">    &lt;/table&gt;</span>
 <span class="go">&lt;/form&gt;</span>
 </pre></div>
+<p>What is unique about the AddRecord form, is that if the fields in the database are labeled unique, it will
+automatically vaidate against uniqueness for that field.  Here is a simple user form definition, where the
+user_name in the model is unique:</p>
+<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="n">setup_database</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">user</span> <span class="o">=</span> <span class="n">setup_records</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">AddUserForm</span><span class="p">(</span><span class="n">AddRecordForm</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">__entity__</span> <span class="o">=</span> <span class="n">User</span>
+<span class="gp">... </span>    <span class="n">__limit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;user_name&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">user_form</span> <span class="o">=</span> <span class="n">AddUserForm</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">user_form</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;sprox_id&#39;</span><span class="p">:</span><span class="s">&#39;asdf&#39;</span><span class="p">,</span> <span class="s">&#39;user_name&#39;</span><span class="p">:</span><span class="s">u&#39;asdf&#39;</span><span class="p">})</span> <span class="c"># doctest: +SKIP</span>
+<span class="gp">...</span>
+<span class="go">Invalid: user_name: That value already exists</span>
+</pre></div>
+<p>The validation fails because there is already a user with the user_name &#8216;asdf&#8217; in the database</p>
+<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">rollback</span><span class="p">()</span>
+</pre></div>
 <dl class="method">
 <dt id="sprox.formbase.AddRecordForm.validate">
 <!--[sprox.formbase.AddRecordForm.validate]--><tt class="descname">validate</tt><big>(</big><em>params</em><big>)</big><a class="headerlink" href="#sprox.formbase.AddRecordForm.validate" title="Permalink to this definition">¶</a></dt>
@@ -371,7 +394,7 @@ matches the field data.</td>
 <span class="gp">... </span>    <span class="n">__model__</span> <span class="o">=</span> <span class="n">User</span>
 <span class="gp">... </span>    <span class="n">__limit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;user_name&#39;</span><span class="p">,</span> <span class="s">&#39;email_address&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">disabled_user_form</span> <span class="o">=</span> <span class="n">DisabledUserForm</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">disabled_user_form</span><span class="o">.</span><span class="n">__widget__</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">user_name</span><span class="o">=</span><span class="s">&#39;percious&#39;</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="s">&#39;chris@percious.com&#39;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">disabled_user_form</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">user_name</span><span class="o">=</span><span class="s">&#39;percious&#39;</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="s">&#39;chris@percious.com&#39;</span><span class="p">))</span>
 <span class="go">&lt;form xmlns=&quot;http://www.w3.org/1999/xhtml&quot; action=&quot;&quot; method=&quot;post&quot; class=&quot;required tableform&quot;&gt;</span>
 <span class="go">    &lt;div&gt;</span>
 <span class="go">            &lt;input type=&quot;hidden&quot; name=&quot;user_name&quot; class=&quot;hiddenfield&quot; id=&quot;user_name&quot; value=&quot;&quot; /&gt;</span>

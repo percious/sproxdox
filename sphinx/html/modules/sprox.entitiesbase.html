@@ -61,7 +61,44 @@
 <dl class="class">
 <dt id="sprox.entitiesbase.EntitiesBase">
 <!--[sprox.entitiesbase.EntitiesBase]-->class <tt class="descclassname">sprox.entitiesbase.</tt><tt class="descname">EntitiesBase</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.entitiesbase.EntitiesBase" title="Permalink to this definition">¶</a></dt>
-<dd>Bases: <a title="sprox.viewbase.ViewBase" class="reference external" href="sprox.viewbase.html#sprox.viewbase.ViewBase"><tt class="xref docutils literal"><span class="pre">sprox.viewbase.ViewBase</span></tt></a></dd></dl>
+<dd><p>Bases: <a title="sprox.viewbase.ViewBase" class="reference external" href="sprox.viewbase.html#sprox.viewbase.ViewBase"><tt class="xref docutils literal"><span class="pre">sprox.viewbase.ViewBase</span></tt></a></p>
+<p>This view can display all of the entities for a given provider.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Modifiers:</th><td class="field-body">see <tt class="xref docutils literal"><span class="pre">sprox.viewbase.ViewBase</span></tt></td>
+</tr>
+<tr class="field"><th class="field-name">Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.test.base</span> <span class="kn">import</span> <span class="n">setup_database</span><span class="p">,</span> <span class="n">User</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="n">setup_database</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">EntitiesBaseTest</span><span class="p">(</span><span class="n">EntitiesBase</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">__entity__</span> <span class="o">=</span> <span class="n">User</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">base</span> <span class="o">=</span> <span class="n">EntitiesBaseTest</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">base</span><span class="p">()</span>
+<span class="go">&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; class=&quot;containerwidget&quot;&gt;</span>
+<span class="go">&lt;div class=&quot;entitylabelwidget&quot;&gt;</span>
+<span class="go">&lt;a href=&quot;Example/&quot;&gt;Example&lt;/a&gt;</span>
+<span class="go">&lt;/div&gt;</span>
+<span class="go">&lt;div class=&quot;entitylabelwidget&quot;&gt;</span>
+<span class="go">&lt;a href=&quot;Group/&quot;&gt;Group&lt;/a&gt;</span>
+<span class="go">&lt;/div&gt;</span>
+<span class="go">&lt;div class=&quot;entitylabelwidget&quot;&gt;</span>
+<span class="go">&lt;a href=&quot;Permission/&quot;&gt;Permission&lt;/a&gt;</span>
+<span class="go">&lt;/div&gt;</span>
+<span class="go">&lt;div class=&quot;entitylabelwidget&quot;&gt;</span>
+<span class="go">&lt;a href=&quot;Town/&quot;&gt;Town&lt;/a&gt;</span>
+<span class="go">&lt;/div&gt;</span>
+<span class="go">&lt;div class=&quot;entitylabelwidget&quot;&gt;</span>
+<span class="go">&lt;a href=&quot;User/&quot;&gt;User&lt;/a&gt;</span>
+<span class="go">&lt;/div&gt;</span>
+<span class="go">&lt;/div&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">rollback</span><span class="p">()</span>
+</pre></div>
+</dd></dl>
 
 </div>
 </div>

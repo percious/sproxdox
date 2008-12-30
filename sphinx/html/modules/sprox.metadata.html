@@ -57,19 +57,10 @@
   <div class="section" id="module-sprox.metadata">
 <h1><tt class="xref docutils literal"><span class="pre">sprox.metadata</span></tt><a class="headerlink" href="#module-sprox.metadata" title="Permalink to this headline">¶</a></h1>
 <p>matadata Module</p>
-<p>this contains the class which definies the generic interface for metadata
-that is used in form generation later in the pipeline</p>
-<p>Classes:
-Name                               Description
-Metadata                           general metadata function
-DatabaseMetadata                   describes the fields as entries in the dictionary
-FieldsMetadata                     describes the columns as entries in the dictionary
-FieldMetadata                      generic type this is not used right now.</p>
-<p>Exceptions:
-MetadataError</p>
-<p>Functions:
-None</p>
-<p>Copyright (c) 2007 Christopher Perkins
+<p>This contains the class which defines the generic interface for metadata.
+Basically, it provides an interface for how data is extracted from the provider
+for widget generation.</p>
+<p>Copyright (c) 2008 Christopher Perkins
 Original Version by Christopher Perkins 2007
 Released under MIT license.</p>
 <div class="section" id="classes">
@@ -78,6 +69,13 @@ Released under MIT license.</p>
 <dt id="sprox.metadata.Metadata">
 <!--[sprox.metadata.Metadata]-->class <tt class="descclassname">sprox.metadata.</tt><tt class="descname">Metadata</tt><big>(</big><em>provider</em>, <em>entity=None</em><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="(in Python v2.7)" class="reference external" href="http://docs.python.org/dev/library/stdtypes.html#dict"><tt class="xref docutils literal"><span class="pre">dict</span></tt></a></p>
+<p>Base Metadata class</p>
+<p>Metadatas are dictionary-like.  They map attributes
+of the entity they wrap, so that attributes of the entity
+can be examined without being explicitly set.  Elements
+of a metadata can be set if they are not already part of the
+wrapped entity.  This allows for customization of the
+metadata without modification to the wrapped metadata.</p>
 <dl class="method">
 <dt id="sprox.metadata.Metadata.clear">
 <!--[sprox.metadata.Metadata.clear]--><tt class="descname">clear</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata.clear" title="Permalink to this definition">¶</a></dt>
@@ -164,6 +162,7 @@ If key is not found, d is returned if given, otherwise KeyError is raised</dd></
 <dt id="sprox.metadata.EntitiesMetadata">
 <!--[sprox.metadata.EntitiesMetadata]-->class <tt class="descclassname">sprox.metadata.</tt><tt class="descname">EntitiesMetadata</tt><big>(</big><em>provider</em>, <em>entity=None</em><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="sprox.metadata.Metadata" class="reference internal" href="#sprox.metadata.Metadata"><tt class="xref docutils literal"><span class="pre">sprox.metadata.Metadata</span></tt></a></p>
+<p>A class to extract entities from a database definition.</p>
 <dl class="method">
 <dt id="sprox.metadata.EntitiesMetadata.clear">
 <!--[sprox.metadata.EntitiesMetadata.clear]--><tt class="descname">clear</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata.clear" title="Permalink to this definition">¶</a></dt>
@@ -250,6 +249,7 @@ If key is not found, d is returned if given, otherwise KeyError is raised</dd></
 <dt id="sprox.metadata.FieldMetadata">
 <!--[sprox.metadata.FieldMetadata]-->class <tt class="descclassname">sprox.metadata.</tt><tt class="descname">FieldMetadata</tt><big>(</big><em>provider</em>, <em>entity=None</em><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="sprox.metadata.Metadata" class="reference internal" href="#sprox.metadata.Metadata"><tt class="xref docutils literal"><span class="pre">sprox.metadata.Metadata</span></tt></a></p>
+<p>In the future, if the Field attributes need to be extracted, this is where it will happen.</p>
 <dl class="method">
 <dt id="sprox.metadata.FieldMetadata.clear">
 <!--[sprox.metadata.FieldMetadata.clear]--><tt class="descname">clear</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata.clear" title="Permalink to this definition">¶</a></dt>
@@ -336,6 +336,7 @@ If key is not found, d is returned if given, otherwise KeyError is raised</dd></
 <dt id="sprox.metadata.FieldsMetadata">
 <!--[sprox.metadata.FieldsMetadata]-->class <tt class="descclassname">sprox.metadata.</tt><tt class="descname">FieldsMetadata</tt><big>(</big><em>provider</em>, <em>entity</em><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="sprox.metadata.Metadata" class="reference internal" href="#sprox.metadata.Metadata"><tt class="xref docutils literal"><span class="pre">sprox.metadata.Metadata</span></tt></a></p>
+<p>A class to extract fields from an entity.</p>
 <dl class="method">
 <dt id="sprox.metadata.FieldsMetadata.clear">
 <!--[sprox.metadata.FieldsMetadata.clear]--><tt class="descname">clear</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata.clear" title="Permalink to this definition">¶</a></dt>
