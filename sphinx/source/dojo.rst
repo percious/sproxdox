@@ -25,7 +25,7 @@ First, we instantiate the Sprox filler and tablebase as we normally would, this 
 the Dojo-specific classes. ::
 
     from sprox.dojo.tablebase import DojoTableBase
-    from sprox.dojo.fillerbase import TableFiller
+    from sprox.dojo.fillerbase import DojoTableFiller
 
     class UserTable(DojoTableBase):
         __model__ = User
@@ -34,7 +34,7 @@ the Dojo-specific classes. ::
 
     user_table = UserTable(DBSession)
 
-    class UserTableFiller(TableFiller):
+    class UserTableFiller(DojoTableFiller):
         __model__ = User
         __limit_fields__ = ['user_id', 'user_name', 'display_name', 'email_address']
 

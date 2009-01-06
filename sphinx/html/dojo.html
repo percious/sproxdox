@@ -75,7 +75,7 @@ template frame, as well as the crud to fill out the table.</p>
 First, we instantiate the Sprox filler and tablebase as we normally would, this time with
 the Dojo-specific classes.</p>
 <div class="highlight"><pre><span class="kn">from</span> <span class="nn">sprox.dojo.tablebase</span> <span class="kn">import</span> <span class="n">DojoTableBase</span>
-<span class="kn">from</span> <span class="nn">sprox.dojo.fillerbase</span> <span class="kn">import</span> <span class="n">TableFiller</span>
+<span class="kn">from</span> <span class="nn">sprox.dojo.fillerbase</span> <span class="kn">import</span> <span class="n">DojoTableFiller</span>
 
 <span class="k">class</span> <span class="nc">UserTable</span><span class="p">(</span><span class="n">DojoTableBase</span><span class="p">):</span>
     <span class="n">__model__</span> <span class="o">=</span> <span class="n">User</span>
@@ -84,7 +84,7 @@ the Dojo-specific classes.</p>
 
 <span class="n">user_table</span> <span class="o">=</span> <span class="n">UserTable</span><span class="p">(</span><span class="n">DBSession</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">UserTableFiller</span><span class="p">(</span><span class="n">TableFiller</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">UserTableFiller</span><span class="p">(</span><span class="n">DojoTableFiller</span><span class="p">):</span>
     <span class="n">__model__</span> <span class="o">=</span> <span class="n">User</span>
     <span class="n">__limit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;user_id&#39;</span><span class="p">,</span> <span class="s">&#39;user_name&#39;</span><span class="p">,</span> <span class="s">&#39;display_name&#39;</span><span class="p">,</span> <span class="s">&#39;email_address&#39;</span><span class="p">]</span>
 
