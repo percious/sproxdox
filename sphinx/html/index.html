@@ -51,19 +51,30 @@
   <div class="section" id="sprox">
 <h1>Sprox<a class="headerlink" href="#sprox" title="Permalink to this headline">¶</a></h1>
 <p>Sprox is a widget generation library that has a slightly different take on the problem of creating
-custom forms directly from schemas.
+custom web content directly from database schemas.
 Sprox provides an easy way to create forms for web content which are: automatically generated, easy to customize,
 and validated.  Sprox also has powerful tools to help you display your content the way you want to with table
-and record viewers.  Sprox also provides a way to fill your widgets, be them forms, or otherwise with customizable
+and record viewers.  Sprox provides a way to fill your widgets, whether they are forms or other content with customizable
 data.</p>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <p>Sprox is installable from pypi.:</p>
 <pre>easy_install sprox</pre>
 </div>
+<div class="section" id="schema-based-widget-generation">
+<h2>Schema Based Widget Generation<a class="headerlink" href="#schema-based-widget-generation" title="Permalink to this headline">¶</a></h2>
+<p>Well, that&#8217;s a mouthfull!  Sprox provides a bridge between database schema and the forms you want to customize for the web.
+Sprox has an IProvider, which basically tells sprox how to interpret data extracted from the database manipulation library.
+Sprox comes packaged with a provider for SQLAlchemy.  It is important to understand that Sprox expects that the
+database manipulation library will have a unique way to map database objects to table schema.  The mapped objects are
+often referred to as models, in Sprox, these are called entities, because Sprox has abstracted the manipulation of table and
+field schema to the point where they interface other parts of the system in a similar manner.</p>
+<p>SQLAlchemy&#8217;s Object Relational Mapper provides a basis for many of the examples in this documentation.  Here is the
+<a class="reference external" href="test_model.html">Model</a> used in this documentation.</p>
+</div>
 <div class="section" id="form-generation">
 <h2>Form Generation<a class="headerlink" href="#form-generation" title="Permalink to this headline">¶</a></h2>
-<p>Sprox has a simple but powerful way to manipulate forms.
+<p>Sprox has a simple but powerful way to generate forms.
 Here is the simplest way to create a form based on a &#8220;User&#8221; class.:</p>
 <div class="highlight"><pre><span class="kn">from</span> <span class="nn">sprox.formbase</span> <span class="kn">import</span> <span class="n">AddRecordForm</span>
 
@@ -72,7 +83,7 @@ Here is the simplest way to create a form based on a &#8220;User&#8221; class.:<
 
 <span class="n">user_form</span> <span class="o">=</span> <span class="n">UserForm</span><span class="p">(</span><span class="n">DBSession</span><span class="p">)</span>
 </pre></div>
-<p>That form can then be passed into the tmpl_context, just like if it were a regular ToscaWidgets form.  But
+<p>That form can then be passed into a template, just like if it were a regular ToscaWidgets form.  But
 you ask, &#8220;Why do you need to pass in the DBSession?&#8221;  Well, in fact the session is not required to be passed in,
 but if you want Sprox to pick up the data for the drop-down menus, and multiple select fields, it needs a way
 to connect to the database in order to get the appropriate data.
@@ -170,25 +181,30 @@ Sqlalchemy and ToscaWidgets are the supported libraries.</p>
 </div>
 <div class="section" id="development">
 <h1>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h1>
-<p>Sprox is developed using test driven development.  Most development is done using unit testing, levereging the valuable nose and
-coverage packages.  This ensures that the test is in a known working state before releases, and that development can take some wild
+<p>Sprox is developed using test driven development.  Most development is done using unit testing, leveraging the valuable nose and
+coverage packages.  This ensures that the Sprox library is in a known working state before releases, and that development can take some wild
 turns without affecting overall functionality.  Sprox was born from dbsprockets which was primarily table based.  The Sprox project was
 started since there was a large change in the API, even though the inner workings and overall design paradigms have not changed.  Sprox
 borrows some conceptual ideas from Rum, a project started to make creating easier crud interactions through WSGI.
 Sprox is only released as a beta with 90% or higher coverage, 100% code coverage is the expectation for a release candidate.  Here
 is the current code coverage.:</p>
-<pre>Name                      Stmts   Exec  Cover   Missing
+<pre>$ nose --with-coverage --cover-package=sprox --cover-erase
+...
+Name                      Stmts   Exec  Cover   Missing
 -------------------------------------------------------
 sprox                         0      0   100%
 sprox.configbase             77     77   100%
+sprox.dojo                    0      0   100%
+sprox.dojo.fillerbase         9      9   100%
+sprox.dojo.sprockets         18     18   100%
+sprox.dojo.tablebase         12     12   100%
 sprox.entitiesbase           16     16   100%
-sprox.fillerbase             66     66   100%
-sprox.formbase               83     83   100%
+sprox.fillerbase             72     72   100%
+sprox.formbase               87     87   100%
 sprox.iprovider              33     33   100%
 sprox.metadata               51     51   100%
 sprox.providerselector       70     70   100%
-sprox.recordviewbase         15     15   100%
-sprox.saormprovider         214    214   100%
+sprox.saormprovider         229    229   100%
 sprox.sprockets              55     55   100%
 sprox.tablebase              13     13   100%
 sprox.util                    9      9   100%
@@ -196,13 +212,14 @@ sprox.validators             11     11   100%
 sprox.validatorselector      52     52   100%
 sprox.viewbase               97     97   100%
 sprox.widgets                 1      1   100%
+sprox.widgets.dojo           19     19   100%
 sprox.widgets.templates       0      0   100%
-sprox.widgets.widgets        78     76    97%   70-71
+sprox.widgets.widgets        78     78   100%
 sprox.widgetselector         40     40   100%
 -------------------------------------------------------
-TOTAL                       981    979    99%
+TOTAL                      1049   1049   100%
 ----------------------------------------------------------------------
-Ran 189 tests in 17.439s
+Ran 199 tests in 15.766s
 
 OK</pre>
 <p>Sprox also utilizes a number of doctests, which you will find througout the module-level api documentation.  This means that the docs
@@ -212,7 +229,7 @@ free to fork off your own copy and send a pull request.</p>
 </div>
 <div class="section" id="current-release">
 <h1>Current Release<a class="headerlink" href="#current-release" title="Permalink to this headline">¶</a></h1>
-<p>0.5rc1</p>
+<p>0.5rc4</p>
 </div>
 <div class="section" id="license">
 <h1>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h1>
@@ -221,8 +238,8 @@ it for a profit, modify it for your needs.  We really don&#8217;t care how you u
 is given to those consumers who give back to the open source community, participate in Sprox development and help us find and solve
 those pesky corner cases.</p>
 </div>
-<div class="section" id="modules">
-<h1>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="core-modules">
+<h1>Core Modules<a class="headerlink" href="#core-modules" title="Permalink to this headline">¶</a></h1>
 <ul>
 <li><a class="reference external" href="modules/sprox.formbase.html"><tt class="docutils literal"><span class="pre">sprox.formbase</span></tt></a></li>
 </ul>
@@ -272,6 +289,27 @@ those pesky corner cases.</p>
 <li><a class="reference external" href="modules/sprox.util.html"><tt class="docutils literal"><span class="pre">sprox.util</span></tt></a></li>
 </ul>
 </div>
+<div class="section" id="dojo-support">
+<h1>Dojo Support<a class="headerlink" href="#dojo-support" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+Sprox now supports <a class="reference external" href="http://www.dojotoolkit.com">Dojo</a>.  Dojo is a Javascript library which allows developers to deliver considerably richer
+content through the web.  Sprox&#8217;s initial dojo support provides table widgets for your application
+which can literally scroll through millions of records, all through the browser.  Support is somewhat
+crude at this point, limited to just displaying the data and crud links, but you can expect to see editable/sorted/filtered
+data in the future.</blockquote>
+<ul>
+<li><a class="reference external" href="dojo.html">General Dojo Usage Information</a></li>
+</ul>
+<div class="section" id="dojo-related-modules">
+<h2>Dojo Related Modules<a class="headerlink" href="#dojo-related-modules" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><a class="reference external" href="modules/sprox.dojo.tablebase.html"><tt class="docutils literal"><span class="pre">sprox.dojo.tablebase</span></tt></a></li>
+</ul>
+<ul>
+<li><a class="reference external" href="modules/sprox.dojo.fillerbase.html"><tt class="docutils literal"><span class="pre">sprox.dojo.fillerbase</span></tt></a></li>
+</ul>
+</div>
+</div>
 <div class="section" id="useful-links">
 <h1>Useful Links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h1>
 <p>Repository <a class="reference external" href="http://www.bitbucket.org/percious/sprox/src/">http://www.bitbucket.org/percious/sprox/src/</a></p>
@@ -297,6 +335,7 @@ those pesky corner cases.</p>
             <ul>
 <li><a class="reference external" href="">Sprox</a><ul>
 <li><a class="reference external" href="#installation">Installation</a></li>
+<li><a class="reference external" href="#schema-based-widget-generation">Schema Based Widget Generation</a></li>
 <li><a class="reference external" href="#form-generation">Form Generation</a></li>
 <li><a class="reference external" href="#table-generation">Table Generation</a></li>
 <li><a class="reference external" href="#sprox-the-big-picture">Sprox, the big picture</a><ul>
@@ -311,7 +350,13 @@ those pesky corner cases.</p>
 <li><a class="reference external" href="#development">Development</a></li>
 <li><a class="reference external" href="#current-release">Current Release</a></li>
 <li><a class="reference external" href="#license">License</a></li>
-<li><a class="reference external" href="#modules">Modules</a><ul>
+<li><a class="reference external" href="#core-modules">Core Modules</a><ul>
+</ul>
+</li>
+<li><a class="reference external" href="#dojo-support">Dojo Support</a><ul>
+<li><a class="reference external" href="#dojo-related-modules">Dojo Related Modules</a><ul>
+</ul>
+</li>
 </ul>
 </li>
 <li><a class="reference external" href="#useful-links">Useful Links</a></li>

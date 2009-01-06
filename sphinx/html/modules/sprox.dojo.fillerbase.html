@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sprox.viewbase &mdash; Sprox v0.5 documentation</title>
+    <title>sprox.dojo.fillerbase &mdash; Sprox v0.5 documentation</title>
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -19,8 +19,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="top" title="Sprox v0.5 documentation" href="../index.html" />
-    <link rel="next" title="sprox.entitiesbase" href="sprox.entitiesbase.html" />
-    <link rel="prev" title="sprox.configbase" href="sprox.configbase.html" />
+    <link rel="prev" title="sprox.dojo.tablebase" href="sprox.dojo.tablebase.html" />
   </head>
   <body>
     <div class="related">
@@ -33,17 +32,14 @@
           <a href="../modindex.html" title="Global Module Index"
              accesskey="M">modules</a> |</li>
         <li class="right" >
-          <a href="sprox.entitiesbase.html" title="sprox.entitiesbase"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="sprox.configbase.html" title="sprox.configbase"
+          <a href="sprox.dojo.tablebase.html" title="sprox.dojo.tablebase"
              accesskey="P">previous</a> |</li>
   <li>
   <a href="../index.html"><b>Sprox 0.5</b></a>
   </li>
 
   
-    <li> <b>/</b> <a href=""><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.viewbase</span></tt></a></li>
+    <li> <b>/</b> <a href=""><tt class="docutils literal"><span class="pre">sprox.dojo.fillerbase</span></tt></a></li>
   
 
       </ul>
@@ -54,68 +50,29 @@
       <div class="body">
         
   
-  <div class="section" id="module-sprox.viewbase">
-<h1><tt class="xref docutils literal"><span class="pre">sprox.viewbase</span></tt><a class="headerlink" href="#module-sprox.viewbase" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-sprox.dojo.fillerbase">
+<h1><tt class="xref docutils literal"><span class="pre">sprox.dojo.fillerbase</span></tt><a class="headerlink" href="#module-sprox.dojo.fillerbase" title="Permalink to this headline">¶</a></h1>
+<p>fillerbase Module</p>
+<p>Classes to help fill widgets with data</p>
+<p>Copyright (c) 2008 Christopher Perkins
+Original Version by Christopher Perkins 2008
+Released under MIT license.</p>
 <div class="section" id="classes">
 <h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
-<dt id="sprox.viewbase.ViewBase">
-<!--[sprox.viewbase.ViewBase]-->class <tt class="descclassname">sprox.viewbase.</tt><tt class="descname">ViewBase</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.viewbase.ViewBase" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a title="sprox.configbase.ConfigBase" class="reference external" href="sprox.configbase.html#sprox.configbase.ConfigBase"><tt class="xref docutils literal"><span class="pre">sprox.configbase.ConfigBase</span></tt></a></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name">Modifiers:</th><td class="field-body"></td>
-</tr>
-</tbody>
-</table>
-<table border="1" class="docutils">
-<colgroup>
-<col width="32%" />
-<col width="40%" />
-<col width="28%" />
-</colgroup>
-<thead valign="bottom">
-<tr><th class="head">Name</th>
-<th class="head">Description</th>
-<th class="head">Default</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr><td>__widget_selector_type__</td>
-<td>What class to use for widget selection.</td>
-<td>WidgetSelector</td>
-</tr>
-<tr><td>__field_widgets__</td>
-<td>A dictionary of widgets to replace the
-ones that would be chosen by the selector</td>
-<td>{}</td>
-</tr>
-<tr><td>__field_widget_types__</td>
-<td>A dictionary of types of widgets, allowing
-sprox to determine the widget args</td>
-<td>{}</td>
-</tr>
-<tr><td>__base_widget_type__</td>
-<td>The base widget for this config</td>
-<td>Widget</td>
-</tr>
-<tr><td>__widget_selector__</td>
-<td>an instantiated object to use for widget
-selection.</td>
-<td>None</td>
-</tr>
-</tbody>
-</table>
-<p>Also, see the <a title="" class="reference external" href="sprox.configbase.html"><tt class="xref docutils literal"><span class="pre">sprox.configbase</span></tt></a> modifiers.</p>
-</dd></dl>
+<dt id="sprox.dojo.fillerbase.DojoTableFiller">
+<!--[sprox.dojo.fillerbase.DojoTableFiller]-->class <tt class="descclassname">sprox.dojo.fillerbase.</tt><tt class="descname">DojoTableFiller</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.dojo.fillerbase.DojoTableFiller" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a title="sprox.fillerbase.TableFiller" class="reference external" href="sprox.fillerbase.html#sprox.fillerbase.TableFiller"><tt class="xref docutils literal"><span class="pre">sprox.fillerbase.TableFiller</span></tt></a></p>
+<dl class="method">
+<dt id="sprox.dojo.fillerbase.DojoTableFiller.get_count">
+<!--[sprox.dojo.fillerbase.DojoTableFiller.get_count]--><tt class="descname">get_count</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.dojo.fillerbase.DojoTableFiller.get_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
-<dl class="class">
-<dt id="sprox.viewbase.ClassViewer">
-<!--[sprox.viewbase.ClassViewer]-->class <tt class="descclassname">sprox.viewbase.</tt><tt class="descname">ClassViewer</tt><big>(</big><em>klass</em><big>)</big><a class="headerlink" href="#sprox.viewbase.ClassViewer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref docutils literal"><span class="pre">object</span></tt></p>
-<p>class wrapper to expose items of a class.  Needed to pass classes to TW as params</p>
+<dl class="method">
+<dt id="sprox.dojo.fillerbase.DojoTableFiller.get_value">
+<!--[sprox.dojo.fillerbase.DojoTableFiller.get_value]--><tt class="descname">get_value</tt><big>(</big><em>value=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.dojo.fillerbase.DojoTableFiller.get_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </div>
@@ -138,19 +95,17 @@ selection.</td>
             </a></p>
             <h3><a href="../index.html">Table Of Contents</a></h3>
             <ul>
-<li><a class="reference external" href=""><tt class="docutils literal"><span class="pre">sprox.viewbase</span></tt></a><ul>
+<li><a class="reference external" href=""><tt class="docutils literal"><span class="pre">sprox.dojo.fillerbase</span></tt></a><ul>
 <li><a class="reference external" href="#classes">Classes</a></li>
 </ul>
 </li>
 </ul>
 
             <h4>Previous topic</h4>
-            <p class="topless"><a href="sprox.configbase.html" title="previous chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.configbase</span></tt></a></p>
-            <h4>Next topic</h4>
-            <p class="topless"><a href="sprox.entitiesbase.html" title="next chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.entitiesbase</span></tt></a></p>
+            <p class="topless"><a href="sprox.dojo.tablebase.html" title="previous chapter"><tt class="docutils literal"><span class="pre">sprox.dojo.tablebase</span></tt></a></p>
             <h3>This Page</h3>
             <ul class="this-page-menu">
-              <li><a href="../_sources/modules/sprox.viewbase.txt">Show Source</a></li>
+              <li><a href="../_sources/modules/sprox.dojo.fillerbase.txt">Show Source</a></li>
             </ul>
           <h3>Quick search</h3>
             <form class="search" action="../search.html" method="get">
@@ -172,17 +127,14 @@ selection.</td>
           <a href="../modindex.html" title="Global Module Index"
              accesskey="M">modules</a> |</li>
         <li class="right" >
-          <a href="sprox.entitiesbase.html" title="sprox.entitiesbase"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="sprox.configbase.html" title="sprox.configbase"
+          <a href="sprox.dojo.tablebase.html" title="sprox.dojo.tablebase"
              accesskey="P">previous</a> |</li>
   <li>
   <a href="../index.html"><b>Sprox 0.5</b></a>
   </li>
 
   
-    <li> <b>/</b> <a href=""><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.viewbase</span></tt></a></li>
+    <li> <b>/</b> <a href=""><tt class="docutils literal"><span class="pre">sprox.dojo.fillerbase</span></tt></a></li>
   
 
       </ul>

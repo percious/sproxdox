@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sprox.validatorselector &mdash; Sprox v0.5 documentation</title>
+    <title>sprox.dojo.tablebase &mdash; Sprox v0.5 documentation</title>
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -19,8 +19,8 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="top" title="Sprox v0.5 documentation" href="../index.html" />
-    <link rel="next" title="sprox.validators" href="sprox.validators.html" />
-    <link rel="prev" title="sprox.widgetselector" href="sprox.widgetselector.html" />
+    <link rel="next" title="sprox.dojo.fillerbase" href="sprox.dojo.fillerbase.html" />
+    <link rel="prev" title="sprox.util" href="sprox.util.html" />
   </head>
   <body>
     <div class="related">
@@ -33,17 +33,17 @@
           <a href="../modindex.html" title="Global Module Index"
              accesskey="M">modules</a> |</li>
         <li class="right" >
-          <a href="sprox.validators.html" title="sprox.validators"
+          <a href="sprox.dojo.fillerbase.html" title="sprox.dojo.fillerbase"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="sprox.widgetselector.html" title="sprox.widgetselector"
+          <a href="sprox.util.html" title="sprox.util"
              accesskey="P">previous</a> |</li>
   <li>
   <a href="../index.html"><b>Sprox 0.5</b></a>
   </li>
 
   
-    <li> <b>/</b> <a href=""><tt class="docutils literal docutils literal"><span class="pre">sprox.validatorselector</span></tt></a></li>
+    <li> <b>/</b> <a href=""><tt class="docutils literal docutils literal"><span class="pre">sprox.dojo.tablebase</span></tt></a></li>
   
 
       </ul>
@@ -54,55 +54,24 @@
       <div class="body">
         
   
-  <div class="section" id="module-sprox.validatorselector">
-<h1><tt class="xref docutils literal"><span class="pre">sprox.validatorselector</span></tt><a class="headerlink" href="#module-sprox.validatorselector" title="Permalink to this headline">¶</a></h1>
-<p>validatorselecter Module</p>
-<p>this contains the class which allows the ViewConfig to select the appropriate validator for the given field</p>
-<p>Classes:
-Name                               Description
-ValidatorSelecter                     Parent Class
-SAValidatorSelector                   Selecter Based on sqlalchemy field types
-DatabaseViewValidatorSelector         Database View always selects the same validator
-TableDefValidatorSelector             Table def fields use the same validator</p>
-<p>Exceptions:
-None</p>
-<p>Functions:
-None</p>
-<p>Copyright (c) 2007 Christopher Perkins
-Original Version by Christopher Perkins 2007
-Released under MIT license.</p>
+  <div class="section" id="module-sprox.dojo.tablebase">
+<h1><tt class="xref docutils literal"><span class="pre">sprox.dojo.tablebase</span></tt><a class="headerlink" href="#module-sprox.dojo.tablebase" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="classes">
 <h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
-<dt id="sprox.validatorselector.SAValidatorSelector">
-<!--[sprox.validatorselector.SAValidatorSelector]-->class <tt class="descclassname">sprox.validatorselector.</tt><tt class="descname">SAValidatorSelector</tt><big>(</big><em>provider</em><big>)</big><a class="headerlink" href="#sprox.validatorselector.SAValidatorSelector" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a title="sprox.validatorselector.ValidatorSelector" class="reference internal" href="#sprox.validatorselector.ValidatorSelector"><tt class="xref docutils literal"><span class="pre">sprox.validatorselector.ValidatorSelector</span></tt></a></p>
-<dl class="attribute">
-<dt id="sprox.validatorselector.SAValidatorSelector.name_based_validators">
-<!--[sprox.validatorselector.SAValidatorSelector.name_based_validators]--><tt class="descname">name_based_validators</tt><a class="headerlink" href="#sprox.validatorselector.SAValidatorSelector.name_based_validators" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="sprox.validatorselector.SAValidatorSelector.select">
-<!--[sprox.validatorselector.SAValidatorSelector.select]--><tt class="descname">select</tt><big>(</big><em>field</em><big>)</big><a class="headerlink" href="#sprox.validatorselector.SAValidatorSelector.select" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="sprox.validatorselector.ValidatorSelector">
-<!--[sprox.validatorselector.ValidatorSelector]-->class <tt class="descclassname">sprox.validatorselector.</tt><tt class="descname">ValidatorSelector</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.validatorselector.ValidatorSelector" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref docutils literal"><span class="pre">object</span></tt></p>
-<dl class="attribute">
-<dt id="sprox.validatorselector.ValidatorSelector.name_based_validators">
-<!--[sprox.validatorselector.ValidatorSelector.name_based_validators]--><tt class="descname">name_based_validators</tt><a class="headerlink" href="#sprox.validatorselector.ValidatorSelector.name_based_validators" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="sprox.validatorselector.ValidatorSelector.select">
-<!--[sprox.validatorselector.ValidatorSelector.select]--><tt class="descname">select</tt><big>(</big><em>field</em><big>)</big><a class="headerlink" href="#sprox.validatorselector.ValidatorSelector.select" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
+<dt id="sprox.dojo.tablebase.DojoTableBase">
+<!--[sprox.dojo.tablebase.DojoTableBase]-->class <tt class="descclassname">sprox.dojo.tablebase.</tt><tt class="descname">DojoTableBase</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.dojo.tablebase.DojoTableBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a title="sprox.tablebase.TableBase" class="reference external" href="sprox.tablebase.html#sprox.tablebase.TableBase"><tt class="xref docutils literal"><span class="pre">sprox.tablebase.TableBase</span></tt></a></p>
+<p>This class allows you to credate a table widget.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Modifiers:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>see modifiers in <a title="" class="reference external" href="sprox.tablebase.html"><tt class="xref docutils literal"><span class="pre">sprox.tablebase</span></tt></a></p>
 </dd></dl>
 
 </div>
@@ -125,19 +94,19 @@ Released under MIT license.</p>
             </a></p>
             <h3><a href="../index.html">Table Of Contents</a></h3>
             <ul>
-<li><a class="reference external" href=""><tt class="docutils literal"><span class="pre">sprox.validatorselector</span></tt></a><ul>
+<li><a class="reference external" href=""><tt class="docutils literal"><span class="pre">sprox.dojo.tablebase</span></tt></a><ul>
 <li><a class="reference external" href="#classes">Classes</a></li>
 </ul>
 </li>
 </ul>
 
             <h4>Previous topic</h4>
-            <p class="topless"><a href="sprox.widgetselector.html" title="previous chapter"><tt class="docutils literal docutils literal"><span class="pre">sprox.widgetselector</span></tt></a></p>
+            <p class="topless"><a href="sprox.util.html" title="previous chapter"><tt class="docutils literal"><span class="pre">sprox.util</span></tt></a></p>
             <h4>Next topic</h4>
-            <p class="topless"><a href="sprox.validators.html" title="next chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.validators</span></tt></a></p>
+            <p class="topless"><a href="sprox.dojo.fillerbase.html" title="next chapter"><tt class="docutils literal docutils literal"><span class="pre">sprox.dojo.fillerbase</span></tt></a></p>
             <h3>This Page</h3>
             <ul class="this-page-menu">
-              <li><a href="../_sources/modules/sprox.validatorselector.txt">Show Source</a></li>
+              <li><a href="../_sources/modules/sprox.dojo.tablebase.txt">Show Source</a></li>
             </ul>
           <h3>Quick search</h3>
             <form class="search" action="../search.html" method="get">
@@ -159,17 +128,17 @@ Released under MIT license.</p>
           <a href="../modindex.html" title="Global Module Index"
              accesskey="M">modules</a> |</li>
         <li class="right" >
-          <a href="sprox.validators.html" title="sprox.validators"
+          <a href="sprox.dojo.fillerbase.html" title="sprox.dojo.fillerbase"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="sprox.widgetselector.html" title="sprox.widgetselector"
+          <a href="sprox.util.html" title="sprox.util"
              accesskey="P">previous</a> |</li>
   <li>
   <a href="../index.html"><b>Sprox 0.5</b></a>
   </li>
 
   
-    <li> <b>/</b> <a href=""><tt class="docutils literal docutils literal"><span class="pre">sprox.validatorselector</span></tt></a></li>
+    <li> <b>/</b> <a href=""><tt class="docutils literal docutils literal"><span class="pre">sprox.dojo.tablebase</span></tt></a></li>
   
 
       </ul>

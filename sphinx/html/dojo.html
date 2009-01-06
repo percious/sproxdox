@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>General Dojo Usage Information &mdash; Sprox v0.5 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+          URL_ROOT:    '',
+          VERSION:     '0.5',
+          COLLAPSE_MODINDEX: false,
+          FILE_SUFFIX: '.html'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Sprox v0.5 documentation" href="index.html" />
+    <link rel="next" title="sprox.dojo.tablebase" href="modules/sprox.dojo.tablebase.html" />
+    <link rel="prev" title="sprox.util" href="modules/sprox.util.html" />
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+        <li class="right" >
+          <a href="modules/sprox.dojo.tablebase.html" title="sprox.dojo.tablebase"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="modules/sprox.util.html" title="sprox.util"
+             accesskey="P">previous</a> |</li>
+  <li>
+  <a href="index.html"><b>Sprox 0.5</b></a>
+  </li>
+
+  
+    <li> <b>/</b> <a href="">General Dojo Usage Information</a></li>
+  
+
+      </ul>
+    </div>
+  <div class="document">
+    <div class="documentwrapper">
+      <div class="bodywrapper">
+      <div class="body">
+        
+  
+  <div class="section" id="general-dojo-usage-information">
+<h1>General Dojo Usage Information<a class="headerlink" href="#general-dojo-usage-information" title="Permalink to this headline">¶</a></h1>
+<p>Sprox has with it a set of widgets capable of providing more interactive
+web content, using the powerful Dojo library.  By leveraging the existing
+Dojo Toscawidget library, Sprox is able to create customizable, scrollable
+tables on your web page.</p>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Since Sprox does not depend on tw.dojo by default, you must first install this package:</p>
+<pre>easy_install tw.dojo</pre>
+</div>
+<div class="section" id="ajaxy-goodness">
+<h2>Ajaxy Goodness<a class="headerlink" href="#ajaxy-goodness" title="Permalink to this headline">¶</a></h2>
+<p>Dojo uses Asynchronous Javascript to fill it&#8217;s tables.  This means that your controller
+will have to support two requests.  The first request creates a wire-frame for the table,
+the second will fill the table with data.  Luckily, Sprox can help you provide the proper
+template frame, as well as the crud to fill out the table.</p>
+<p>Here is a short example where we display the username, email, and display name from the example model.
+First, we instantiate the Sprox filler and tablebase as we normally would, this time with
+the Dojo-specific classes.</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">sprox.dojo.tablebase</span> <span class="kn">import</span> <span class="n">DojoTableBase</span>
+<span class="kn">from</span> <span class="nn">sprox.dojo.fillerbase</span> <span class="kn">import</span> <span class="n">TableFiller</span>
+
+<span class="k">class</span> <span class="nc">UserTable</span><span class="p">(</span><span class="n">DojoTableBase</span><span class="p">):</span>
+    <span class="n">__model__</span> <span class="o">=</span> <span class="n">User</span>
+    <span class="n">__limit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;user_name&#39;</span><span class="p">,</span> <span class="s">&#39;display_name&#39;</span><span class="p">,</span> <span class="s">&#39;email_address&#39;</span><span class="p">]</span>
+    <span class="n">__url__</span> <span class="o">=</span> <span class="s">&#39;data&#39;</span>
+
+<span class="n">user_table</span> <span class="o">=</span> <span class="n">UserTable</span><span class="p">(</span><span class="n">DBSession</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">UserTableFiller</span><span class="p">(</span><span class="n">TableFiller</span><span class="p">):</span>
+    <span class="n">__model__</span> <span class="o">=</span> <span class="n">User</span>
+    <span class="n">__limit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;user_id&#39;</span><span class="p">,</span> <span class="s">&#39;user_name&#39;</span><span class="p">,</span> <span class="s">&#39;display_name&#39;</span><span class="p">,</span> <span class="s">&#39;email_address&#39;</span><span class="p">]</span>
+
+<span class="n">user_table_filler</span> <span class="o">=</span> <span class="n">UserTableFiller</span><span class="p">(</span><span class="n">DBSession</span><span class="p">)</span>
+</pre></div>
+<p>Notice the new __url__ directive.  This tells the widget where we should get the data from.
+Also note that we need to include the &#8216;user_id&#8217; field.  This is because Dojo requires a unique
+identifier to render it&#8217;s data.  We need to tell Sprox to include that unique field.</p>
+<p>Then, we need to add two more functions to our controller class (as in TG2).:</p>
+<div class="highlight"><pre><span class="nd">@expose</span><span class="p">(</span><span class="s">&#39;tgtest.templates.users&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">users</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+    <span class="n">pylons</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">widget</span> <span class="o">=</span> <span class="n">user_table</span>
+    <span class="k">return</span> <span class="nb">dict</span><span class="p">()</span>
+
+<span class="nd">@expose</span><span class="p">(</span><span class="s">&#39;json&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">user_table_filler</span><span class="o">.</span><span class="n">get_value</span><span class="p">({},</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+</pre></div>
+<p>In our users template, we provide a call to the widget.  The rest of the work is done by Dojo on the
+client side.</p>
+<pre>${tmpl_context.widget()}</pre>
+</div>
+</div>
+
+
+        <h1>Discuss</h1>
+        <div id="disqus_thread"></div>
+           <script type="text/javascript" src="http://disqus.com/forums/sproxdox/embed.js"></script>
+           <noscript><a href="http://sproxdox.disqus.com/?url=ref">View the discussion thread.</a></noscript>
+           <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+      </div>
+
+  </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/sprox_logo.png" alt="Logo"/>
+            </a></p>
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="">General Dojo Usage Information</a><ul>
+<li><a class="reference external" href="#installation">Installation</a></li>
+<li><a class="reference external" href="#ajaxy-goodness">Ajaxy Goodness</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="modules/sprox.util.html" title="previous chapter"><tt class="docutils literal"><span class="pre">sprox.util</span></tt></a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="modules/sprox.dojo.tablebase.html" title="next chapter"><tt class="docutils literal"><span class="pre">sprox.dojo.tablebase</span></tt></a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/dojo.txt">Show Source</a></li>
+            </ul>
+          <h3>Quick search</h3>
+            <form class="search" action="search.html" method="get">
+              <input type="text" name="q" size="18" /> <input type="submit" value="Go" />
+              <input type="hidden" name="check_keywords" value="yes" />
+              <input type="hidden" name="area" value="default" />
+            </form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+        <li class="right" >
+          <a href="modules/sprox.dojo.tablebase.html" title="sprox.dojo.tablebase"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="modules/sprox.util.html" title="sprox.util"
+             accesskey="P">previous</a> |</li>
+  <li>
+  <a href="index.html"><b>Sprox 0.5</b></a>
+  </li>
+
+  
+    <li> <b>/</b> <a href="">General Dojo Usage Information</a></li>
+  
+
+      </ul>
+    </div>
+
+    <div class="footer">
+      &copy; Copyright 2008, Christopher Perkins.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.5.
+    </div>
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+  var links = document.getElementsByTagName('a');
+  var query = '?';
+  for(var i = 0; i < links.length; i++) {
+    if(links[i].href.indexOf('#disqus_thread') >= 0) {
+      query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+    }
+  }
+  document.write('<script type="text/javascript" src="http://disqus.com/forums/sproxdox/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6778746-1");
+pageTracker._trackPageview();
+} catch(err) {}
+//]]>
+</script>
+
+
+  </body>
+</html>
