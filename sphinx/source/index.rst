@@ -197,16 +197,13 @@ is the current code coverage.::
 
     OK
 
-Sprox also utilizes a number of doctests, which you will find througout the module-level api documentation.  This means that the docs
-you see here are known to work, and should stay that way, even as development progresses.  Sprox is an open source project, and can
-be found at `bitbucket <http://www.bitbucket.org/percious/sprox/src/>`_.  If you have a great idea of how to make sprox better, feel
-free to fork off your own copy and send a pull request.
+Sprox is an open source project, and can be found at `bitbucket <http://www.bitbucket.org/percious/sprox/src/>`_.  
+If you have a great idea of how to make sprox better, feel free to fork off your own copy and send a pull request.
 
 Current Release
 =================
 
-0.5rc4
-
+0.5
 
 License
 ===========
@@ -262,7 +259,18 @@ Dojo Related Modules
     modules/sprox.dojo.tablebase
     modules/sprox.dojo.fillerbase
 
+About These Docs
+==================
+This documentation is generated partly from doctests within sprox, which you will find througout the module-level api documentation.  
+This means that the docs you see here are in a known working state before release, and should stay that way, even as development progresses.
+Even the trunk will have it's tests executed before commit, so that should remain stable with respect to the docs.  The examples you see
+through out these docs are all based on an example model which is also used throughout in testing.
 
+.. toctree::
+   :maxdepth: 1 
+   
+   test_model
+    
 Useful Links
 ==============
 

@@ -73,13 +73,15 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.test.base</span> <span class="kn">import</span> <span class="n">setup_database</span><span class="p">,</span> <span class="n">User</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="n">setup_database</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">EntitiesBaseTest</span><span class="p">(</span><span class="n">EntitiesBase</span><span class="p">):</span>
+<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.entitiesbase</span> <span class="kn">import</span> <span class="n">EntitiesBase</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyEntitiesBase</span><span class="p">(</span><span class="n">EntitiesBase</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">__entity__</span> <span class="o">=</span> <span class="n">User</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">base</span> <span class="o">=</span> <span class="n">EntitiesBaseTest</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">base</span> <span class="o">=</span> <span class="n">MyEntitiesBase</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">base</span><span class="p">()</span>
 <span class="go">&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; class=&quot;containerwidget&quot;&gt;</span>
+<span class="go">&lt;div class=&quot;entitylabelwidget&quot;&gt;</span>
+<span class="go">&lt;a href=&quot;Document/&quot;&gt;Document&lt;/a&gt;</span>
+<span class="go">&lt;/div&gt;</span>
 <span class="go">&lt;div class=&quot;entitylabelwidget&quot;&gt;</span>
 <span class="go">&lt;a href=&quot;Example/&quot;&gt;Example&lt;/a&gt;</span>
 <span class="go">&lt;/div&gt;</span>
@@ -96,7 +98,6 @@
 <span class="go">&lt;a href=&quot;User/&quot;&gt;User&lt;/a&gt;</span>
 <span class="go">&lt;/div&gt;</span>
 <span class="go">&lt;/div&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">rollback</span><span class="p">()</span>
 </pre></div>
 </dd></dl>
 

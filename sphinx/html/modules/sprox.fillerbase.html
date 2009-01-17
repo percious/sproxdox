@@ -43,7 +43,7 @@
   </li>
 
   
-    <li> <b>/</b> <a href=""><tt class="docutils literal docutils literal"><span class="pre">sprox.fillerbase</span></tt></a></li>
+    <li> <b>/</b> <a href=""><tt class="docutils literal"><span class="pre">sprox.fillerbase</span></tt></a></li>
   
 
       </ul>
@@ -77,7 +77,6 @@ Released under MIT license.</p>
 </table>
 <p>see <a title="" class="reference external" href="sprox.configbase.html"><tt class="xref docutils literal"><span class="pre">sprox.configbase</span></tt></a>.</p>
 <p>The base filler class.</p>
-<blockquote>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -102,7 +101,6 @@ and limit for a TableFiller.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">filler</span><span class="o">.</span><span class="n">get_value</span><span class="p">()</span>
 <span class="go">{}</span>
 </pre></div>
-</blockquote>
 <dl class="method">
 <dt id="sprox.fillerbase.FillerBase.get_value">
 <!--[sprox.fillerbase.FillerBase.get_value]--><tt class="descname">get_value</tt><big>(</big><em>values=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.FillerBase.get_value" title="Permalink to this definition">¶</a></dt>
@@ -114,27 +112,94 @@ and limit for a TableFiller.</p>
 <dt id="sprox.fillerbase.TableFiller">
 <!--[sprox.fillerbase.TableFiller]-->class <tt class="descclassname">sprox.fillerbase.</tt><tt class="descname">TableFiller</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.TableFiller" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="sprox.fillerbase.FillerBase" class="reference internal" href="#sprox.fillerbase.FillerBase"><tt class="xref docutils literal"><span class="pre">sprox.fillerbase.FillerBase</span></tt></a></p>
-<p>This is the base class for generating table data for use in table widgets.</p>
-<p>This class will automatically parse relations and choose values for the related items to dispay based
-on the __possible_field_names_modifier__ .</p>
-<p>Here is how we would get the values to fill up a user&#8217;s table.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.test.base</span> <span class="kn">import</span> <span class="n">User</span><span class="p">,</span> <span class="n">setup_database</span><span class="p">,</span> <span class="n">setup_records</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="n">setup_database</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">user</span> <span class="o">=</span> <span class="n">setup_records</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">UsersFiller</span><span class="p">(</span><span class="n">TableFiller</span><span class="p">):</span>
+<p>This is the base class for generating table data for use in table widgets.  The TableFiller uses
+it&#8217;s provider to obtain a dictionary of information about the __entity__ this Filler defines.
+This class is especially useful when you need to return a json stream, because it allows for
+customization of attributes.  A package which has similar functionality to this is TurboJson,
+but TurboJson is rules-based, where the semantics for generating dictionaries follows the same
+<a title="" class="reference external" href="sprox.configbase.html"><tt class="xref docutils literal"><span class="pre">sprox.configbase</span></tt></a> methodology.</p>
+<p>Modifiers defined in this class</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="40%" />
+<col width="28%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Default</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>__actions__</td>
+<td>Whether or not to include actions in the
+output.</td>
+<td>True</td>
+</tr>
+<tr><td>__metadata_type__</td>
+<td>How should we get data from the provider.</td>
+<td>FieldsMetadata</td>
+</tr>
+<tr><td>__possible_field_names__</td>
+<td>See explanation below.</td>
+<td>See below.</td>
+</tr>
+</tbody>
+</table>
+<p>see modifiers also in <a title="" class="reference external" href="sprox.configbase.html"><tt class="xref docutils literal"><span class="pre">sprox.configbase</span></tt></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Relations:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>By default, TableFiller will populate relations (join or foreign_key) with either the value
+from the related table, or a comma-separated list of values.  These values are derived from 
+the related object given the field names provided by the __possible_field_names__ modifier.
+For instance, if you have a User class which is related to Groups, the groups item in the result
+dictionaries will be populated with Group.group_name.  The default field names are:
+_name, name, description, title.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Restful actions:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>By default, Table filler provides an &#8220;__actions__&#8221; item in the resultant dictionary list.  This provides
+and edit, and (javascript) delete link which provide edit and DELETE functionality as HTML verbs in REST.
+For more information on developing RESTful URLs, please visit <a class="reference external" href="http://microformats.org/wiki/rest/urls/">http://microformats.org/wiki/rest/urls</a> .</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>Here is how we would get the values to fill up a user&#8217;s table, minus the action column, and created date.</p>
+<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">UsersFiller</span><span class="p">(</span><span class="n">TableFiller</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">__model__</span> <span class="o">=</span> <span class="n">User</span>
+<span class="gp">... </span>    <span class="n">__actions__</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="gp">... </span>    <span class="n">__omit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;created&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">users_filler</span> <span class="o">=</span> <span class="n">UsersFiller</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="o">=</span> <span class="n">users_filler</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="p">{},</span> <span class="n">limit</span><span class="o">=</span><span class="mf">20</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mf">0</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="c"># doctest: +SKIP</span>
-<span class="go">[{&#39;town&#39;: u&#39;Arvada&#39;, &#39;user_id&#39;: u&#39;1&#39;, &#39;created&#39;: u&#39;2008-12-28 17:33:11.078931&#39;,</span>
-<span class="go">  &#39;user_name&#39;: u&#39;asdf&#39;, &#39;town_id&#39;: u&#39;1&#39;, &#39;groups&#39;: u&#39;4&#39;, &#39;_password&#39;: &#39;******&#39;,</span>
-<span class="go">  &#39;password&#39;: &#39;******&#39;, &#39;email_address&#39;: u&#39;asdf@asdf.com&#39;, &#39;display_name&#39;: u&#39;None&#39;}]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">rollback</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">value</span> <span class="c">#doctest: +IGNORE_WHITESPACE</span>
+<span class="go">[{&#39;town&#39;: u&#39;Arvada&#39;, &#39;user_id&#39;: u&#39;1&#39;, &#39;user_name&#39;: u&#39;asdf&#39;, </span>
+<span class="go">&#39;town_id&#39;: u&#39;1&#39;, &#39;groups&#39;: u&#39;4&#39;, &#39;_password&#39;: &#39;******&#39;, &#39;password&#39;: &#39;******&#39;, </span>
+<span class="go">&#39;email_address&#39;: u&#39;asdf@asdf.com&#39;, &#39;display_name&#39;: u&#39;None&#39;}]</span>
 </pre></div>
 <dl class="method">
 <dt id="sprox.fillerbase.TableFiller.get_count">
 <!--[sprox.fillerbase.TableFiller.get_count]--><tt class="descname">get_count</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.fillerbase.TableFiller.get_count" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd>Returns the total number of items possible for retrieval.  This can only be
+executed after a get_value() call.  This call is useful for creating pagination in the context
+of a user interface.</dd></dl>
 
 <dl class="method">
 <dt id="sprox.fillerbase.TableFiller.get_value">
@@ -151,6 +216,12 @@ on the __possible_field_names_modifier__ .</p>
 <dt>limit</dt>
 <dd><p class="first last">number of records to return</p>
 </dd>
+<dt>order_by</dt>
+<dd><p class="first last">name of the column to the return values ordered by</p>
+</dd>
+<dt>desc</dt>
+<dd><p class="first last">order the columns in descending order</p>
+</dd>
 </dl>
 </td>
 </tr>
@@ -164,6 +235,34 @@ on the __possible_field_names_modifier__ .</p>
 <dt id="sprox.fillerbase.EditFormFiller">
 <!--[sprox.fillerbase.EditFormFiller]-->class <tt class="descclassname">sprox.fillerbase.</tt><tt class="descname">EditFormFiller</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.EditFormFiller" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="sprox.fillerbase.FormFiller" class="reference internal" href="#sprox.fillerbase.FormFiller"><tt class="xref docutils literal"><span class="pre">sprox.fillerbase.FormFiller</span></tt></a></p>
+<p>This class will help to return a single record for use within a form or otherwise.
+The values are returned in dictionary form.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Modifiers:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>see <a title="" class="reference external" href="sprox.configbase.html"><tt class="xref docutils literal"><span class="pre">sprox.configbase</span></tt></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">UserFiller</span><span class="p">(</span><span class="n">EditFormFiller</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">__model__</span> <span class="o">=</span> <span class="n">User</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">users_filler</span> <span class="o">=</span> <span class="n">UsersFiller</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="o">=</span> <span class="n">users_filler</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;user_id&#39;</span><span class="p">:</span><span class="s">&#39;1&#39;</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="c"># doctest: +SKIP</span>
+<span class="go">{&#39;town&#39;: u&#39;Arvada&#39;, &#39;user_id&#39;: u&#39;1&#39;, &#39;created&#39;: u&#39;2008-12-28 17:33:11.078931&#39;,</span>
+<span class="go">  &#39;user_name&#39;: u&#39;asdf&#39;, &#39;town_id&#39;: u&#39;1&#39;, &#39;groups&#39;: u&#39;4&#39;, &#39;_password&#39;: &#39;******&#39;,</span>
+<span class="go">  &#39;password&#39;: &#39;******&#39;, &#39;email_address&#39;: u&#39;asdf@asdf.com&#39;, &#39;display_name&#39;: u&#39;None&#39;}</span>
+</pre></div>
 <dl class="method">
 <dt id="sprox.fillerbase.EditFormFiller.get_value">
 <!--[sprox.fillerbase.EditFormFiller.get_value]--><tt class="descname">get_value</tt><big>(</big><em>values=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.EditFormFiller.get_value" title="Permalink to this definition">¶</a></dt>
@@ -244,7 +343,7 @@ on the __possible_field_names_modifier__ .</p>
             <h4>Previous topic</h4>
             <p class="topless"><a href="sprox.tablebase.html" title="previous chapter"><tt class="docutils literal"><span class="pre">sprox.tablebase</span></tt></a></p>
             <h4>Next topic</h4>
-            <p class="topless"><a href="sprox.configbase.html" title="next chapter"><tt class="docutils literal docutils literal"><span class="pre">sprox.configbase</span></tt></a></p>
+            <p class="topless"><a href="sprox.configbase.html" title="next chapter"><tt class="docutils literal"><span class="pre">sprox.configbase</span></tt></a></p>
             <h3>This Page</h3>
             <ul class="this-page-menu">
               <li><a href="../_sources/modules/sprox.fillerbase.txt">Show Source</a></li>
@@ -279,7 +378,7 @@ on the __possible_field_names_modifier__ .</p>
   </li>
 
   
-    <li> <b>/</b> <a href=""><tt class="docutils literal docutils literal"><span class="pre">sprox.fillerbase</span></tt></a></li>
+    <li> <b>/</b> <a href=""><tt class="docutils literal"><span class="pre">sprox.fillerbase</span></tt></a></li>
   
 
       </ul>

@@ -43,7 +43,7 @@
   </li>
 
   
-    <li> <b>/</b> <a href=""><tt class="docutils literal"><span class="pre">sprox.recordviewbase</span></tt></a></li>
+    <li> <b>/</b> <a href=""><tt class="docutils literal docutils literal"><span class="pre">sprox.recordviewbase</span></tt></a></li>
   
 
       </ul>
@@ -73,10 +73,8 @@
 </table>
 <p>see modifiers in <a title="" class="reference external" href="sprox.viewbase.html"><tt class="xref docutils literal"><span class="pre">sprox.viewbase</span></tt></a></p>
 <p>Here is an example listing of the first user in the test database.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.test.base</span> <span class="kn">import</span> <span class="n">Town</span><span class="p">,</span> <span class="n">setup_database</span><span class="p">,</span> <span class="n">setup_records</span><span class="p">,</span> <span class="n">User</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="n">setup_database</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">user</span> <span class="o">=</span> <span class="n">setup_records</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">UserRecordView</span><span class="p">(</span><span class="n">RecordViewBase</span><span class="p">):</span>
+<p>from sprox.test.base import User</p>
+<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">UserRecordView</span><span class="p">(</span><span class="n">RecordViewBase</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">__model__</span> <span class="o">=</span> <span class="n">User</span>
 <span class="gp">... </span>    <span class="n">__omit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;created&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">user_view</span> <span class="o">=</span> <span class="n">UserRecordView</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
@@ -152,7 +150,6 @@
 <span class="go">    &lt;/td&gt;</span>
 <span class="go">&lt;/tr&gt;</span>
 <span class="go">&lt;/table&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">session</span><span class="o">.</span><span class="n">rollback</span><span class="p">()</span>
 </pre></div>
 </dd></dl>
 
@@ -183,7 +180,7 @@
 </ul>
 
             <h4>Previous topic</h4>
-            <p class="topless"><a href="sprox.entitiesbase.html" title="previous chapter"><tt class="docutils literal"><span class="pre">sprox.entitiesbase</span></tt></a></p>
+            <p class="topless"><a href="sprox.entitiesbase.html" title="previous chapter"><tt class="docutils literal docutils literal"><span class="pre">sprox.entitiesbase</span></tt></a></p>
             <h4>Next topic</h4>
             <p class="topless"><a href="sprox.widgetselector.html" title="next chapter"><tt class="docutils literal"><span class="pre">sprox.widgetselector</span></tt></a></p>
             <h3>This Page</h3>
@@ -220,7 +217,7 @@
   </li>
 
   
-    <li> <b>/</b> <a href=""><tt class="docutils literal"><span class="pre">sprox.recordviewbase</span></tt></a></li>
+    <li> <b>/</b> <a href=""><tt class="docutils literal docutils literal"><span class="pre">sprox.recordviewbase</span></tt></a></li>
   
 
       </ul>
