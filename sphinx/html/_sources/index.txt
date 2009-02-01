@@ -203,7 +203,7 @@ If you have a great idea of how to make sprox better, feel free to fork off your
 Current Release
 =================
 
-0.5
+|version|
 
 License
 ===========
