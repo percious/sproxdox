@@ -1,6 +1,6 @@
 # Sphinx inventory version 1
 # Project: Sprox
-# Version: 0.5.2
+# Version: 0.5.4
 sprox.sprockets mod modules/sprox.sprockets.html
 sprox.tablebase mod modules/sprox.tablebase.html
 sprox.iprovider mod modules/sprox.iprovider.html
@@ -17,6 +17,7 @@ sprox.validators mod modules/sprox.validators.html
 sprox.widgets mod modules/sprox.widgets.html
 sprox.saormprovider mod modules/sprox.saormprovider.html
 sprox.metadata mod modules/sprox.metadata.html
+sprox.dojo.formbase mod modules/sprox.dojo.formbase.html
 sprox.entitiesbase mod modules/sprox.entitiesbase.html
 sprox.widgetselector mod modules/sprox.widgetselector.html
 sprox.iprovider.IProvider.get_field method modules/sprox.iprovider.html
@@ -40,7 +41,6 @@ sprox.widgets.PropertySingleSelectField.register_resources method modules/sprox.
 sprox.widgets.TableDefWidget.register_resources method modules/sprox.widgets.html
 sprox.validatorselector.ValidatorSelector.select method modules/sprox.validatorselector.html
 sprox.widgets.SproxCalendarDateTimePicker.display method modules/sprox.widgets.html
-sprox.widgets.PropertyMultipleSelectField.value_at_request attribute modules/sprox.widgets.html
 sprox.util.MultiDict.update method modules/sprox.util.html
 sprox.widgets.ModelLabelWidget.id_path_elem attribute modules/sprox.widgets.html
 sprox.widgets.PropertySingleSelectField.update_params method modules/sprox.widgets.html
@@ -97,15 +97,14 @@ sprox.widgets.TableDefWidget.walk method modules/sprox.widgets.html
 sprox.widgets.SproxTableForm.retrieve_javascript method modules/sprox.widgets.html
 sprox.widgets.PropertyMultipleSelectField.retrieve_css method modules/sprox.widgets.html
 sprox.widgetselector.SAWidgetSelector class modules/sprox.widgetselector.html
-sprox.widgets.TableDefWidget.key attribute modules/sprox.widgets.html
 sprox.widgets.TableLabelWidget.adapt_value method modules/sprox.widgets.html
 sprox.widgets.SproxCalendarDateTimePicker.children_deep attribute modules/sprox.widgets.html
 sprox.metadata.Metadata.copy method modules/sprox.metadata.html
 sprox.metadata.FieldMetadata.items method modules/sprox.metadata.html
 sprox.widgets.PropertyMultipleSelectField.add_call method modules/sprox.widgets.html
+sprox.dojo.formbase.DojoAddRecordForm class modules/sprox.dojo.formbase.html
 sprox.metadata.Metadata.update method modules/sprox.metadata.html
 sprox.widgets.SproxCalendarDateTimePicker.id_path_elem attribute modules/sprox.widgets.html
-sprox.widgets.SproxCalendarDateTimePicker.generate_schema method modules/sprox.widgets.html
 sprox.tablebase.TableBase class modules/sprox.tablebase.html
 sprox.widgets.SproxCalendarDatePicker.adapt_value method modules/sprox.widgets.html
 sprox.widgets.EntityDefWidget.display method modules/sprox.widgets.html
@@ -131,6 +130,7 @@ sprox.widgets.ModelLabelWidget.adapt_value method modules/sprox.widgets.html
 sprox.widgets.RecordFieldWidget.clone method modules/sprox.widgets.html
 sprox.widgets.TableLabelWidget.ifilter_children method modules/sprox.widgets.html
 sprox.widgets.SproxCalendarDateTimePicker.engine_name attribute modules/sprox.widgets.html
+sprox.widgets.EntityLabelWidget.adapt_value method modules/sprox.widgets.html
 sprox.metadata.FieldsMetadata.clear method modules/sprox.metadata.html
 sprox.widgets.SproxCalendarDatePicker.ifilter_children method modules/sprox.widgets.html
 sprox.widgets.TableDefWidget.add_call method modules/sprox.widgets.html
@@ -150,7 +150,6 @@ sprox.widgets.SproxCalendarDatePicker.update_attrs method modules/sprox.widgets.
 sprox.saormprovider.SAORMProviderError class modules/sprox.saormprovider.html
 sprox.saormprovider.SAORMProvider.is_unique method modules/sprox.saormprovider.html
 sprox.widgets.SproxDataGrid.is_root attribute modules/sprox.widgets.html
-sprox.widgets.TableDefWidget.path attribute modules/sprox.widgets.html
 sprox.widgets.SproxCheckBox.key attribute modules/sprox.widgets.html
 sprox.widgets.PropertyMultipleSelectField.path attribute modules/sprox.widgets.html
 sprox.saormprovider.SAORMProvider.query method modules/sprox.saormprovider.html
@@ -172,14 +171,14 @@ sprox.widgets.RecordViewWidget.get_default method modules/sprox.widgets.html
 sprox.widgets.SproxTimePicker.value_at_request attribute modules/sprox.widgets.html
 sprox.widgets.PropertyMixin.prepare_dict method modules/sprox.widgets.html
 sprox.widgets.RecordFieldWidget.prepare_dict method modules/sprox.widgets.html
-sprox.widgets.ModelLabelWidget.ifilter_children method modules/sprox.widgets.html
+sprox.saormprovider.SAORMProviderError.args attribute modules/sprox.saormprovider.html
 sprox.widgets.PropertyMixin.add_call method modules/sprox.widgets.html
 sprox.iprovider.IProvider.create method modules/sprox.iprovider.html
-sprox.widgets.EntityLabelWidget.adapt_value method modules/sprox.widgets.html
+sprox.widgets.TableDefWidget.key attribute modules/sprox.widgets.html
 sprox.widgets.PropertyMultipleSelectField.clone method modules/sprox.widgets.html
 sprox.widgets.ModelLabelWidget.displays_on attribute modules/sprox.widgets.html
 sprox.widgets.RecordViewWidget.retrieve_css method modules/sprox.widgets.html
-sprox.widgets.SproxCheckBox.update_params method modules/sprox.widgets.html
+sprox.sprockets.SprocketCache.filler_type method modules/sprox.sprockets.html
 sprox.widgets.TableLabelWidget.prepare_dict method modules/sprox.widgets.html
 sprox.widgets.SproxTableForm.id_path_elem attribute modules/sprox.widgets.html
 sprox.widgets.EntityLabelWidget.displays_on attribute modules/sprox.widgets.html
@@ -192,7 +191,6 @@ sprox.util.MultiDict.popitem method modules/sprox.util.html
 sprox.widgets.SproxTableForm.name_path_elem attribute modules/sprox.widgets.html
 sprox.metadata.EntitiesMetadata.iterkeys method modules/sprox.metadata.html
 sprox.widgets.SproxCalendarDatePicker.get_calendar_lang_file_link method modules/sprox.widgets.html
-sprox.formbase.DisabledForm.validate method modules/sprox.formbase.html
 sprox.widgets.PropertyMultipleSelectField.get_default method modules/sprox.widgets.html
 sprox.widgets.SproxCalendarDatePicker.get_default method modules/sprox.widgets.html
 sprox.widgets.PropertySingleSelectField.add_call method modules/sprox.widgets.html
@@ -226,6 +224,7 @@ sprox.widgets.SproxTimePicker.ifilter_children method modules/sprox.widgets.html
 sprox.metadata.EntitiesMetadata.copy method modules/sprox.metadata.html
 sprox.widgets.PropertySingleSelectField.name attribute modules/sprox.widgets.html
 sprox.widgets.SproxTimePicker.key attribute modules/sprox.widgets.html
+sprox.widgetselector.SAWidgetSelector.default_multiple_select_field_widget_type method modules/sprox.widgetselector.html
 sprox.widgets.SproxCheckBox.walk method modules/sprox.widgets.html
 sprox.widgets.EntityDefWidget.retrieve_javascript method modules/sprox.widgets.html
 sprox.widgets.PropertyMixin.root attribute modules/sprox.widgets.html
@@ -234,7 +233,7 @@ sprox.widgets.SproxCheckBox.render method modules/sprox.widgets.html
 sprox.widgets.TableDefWidget.retrieve_css method modules/sprox.widgets.html
 sprox.saormprovider.SAORMProvider.get_default_values method modules/sprox.saormprovider.html
 sprox.widgets.SproxCalendarDatePicker.id_path_elem attribute modules/sprox.widgets.html
-sprox.metadata.FieldsMetadata.values method modules/sprox.metadata.html
+sprox.widgets.SproxCheckBox.propagate_errors method modules/sprox.widgets.html
 sprox.widgets.TableLabelWidget.register_resources method modules/sprox.widgets.html
 sprox.iprovider.IProvider.get_default_values method modules/sprox.iprovider.html
 sprox.widgets.RecordFieldWidget.retrieve_resources method modules/sprox.widgets.html
@@ -244,7 +243,7 @@ sprox.widgets.TableDefWidget.display method modules/sprox.widgets.html
 sprox.widgets.ModelLabelWidget.add_call method modules/sprox.widgets.html
 sprox.formbase.FormBase class modules/sprox.formbase.html
 sprox.widgets.EntityDefWidget.add_call method modules/sprox.widgets.html
-sprox.saormprovider.SAORMProviderError.args attribute modules/sprox.saormprovider.html
+sprox.widgets.PropertyMultipleSelectField.value_at_request attribute modules/sprox.widgets.html
 sprox.widgets.SproxDataGrid.path attribute modules/sprox.widgets.html
 sprox.widgets.PropertyMixin.is_root attribute modules/sprox.widgets.html
 sprox.widgets.SproxDataGrid.id_path_elem attribute modules/sprox.widgets.html
@@ -276,7 +275,7 @@ sprox.saormprovider.SAORMProvider.get method modules/sprox.saormprovider.html
 sprox.widgets.SproxDataGrid.get_column method modules/sprox.widgets.html
 sprox.widgets.SproxTableForm.retrieve_resources method modules/sprox.widgets.html
 sprox.widgets.SproxDataGrid.adapt_value method modules/sprox.widgets.html
-sprox.sprockets.SprocketCache.filler_type method modules/sprox.sprockets.html
+sprox.widgets.SproxCheckBox.update_params method modules/sprox.widgets.html
 sprox.widgets.PropertyMultipleSelectField.is_required attribute modules/sprox.widgets.html
 sprox.widgets.SproxCalendarDateTimePicker.post_init method modules/sprox.widgets.html
 sprox.widgets.SproxCheckBox class modules/sprox.widgets.html
@@ -287,11 +286,12 @@ sprox.widgets.PropertySingleSelectField.adapt_value method modules/sprox.widgets
 sprox.widgets.RecordViewWidget.adapt_value method modules/sprox.widgets.html
 sprox.iprovider.IProvider class modules/sprox.iprovider.html
 sprox.widgets.PropertyMixin.adapt_value method modules/sprox.widgets.html
+sprox.metadata.FieldsMetadata.keys method modules/sprox.metadata.html
 sprox.widgets.EntityLabelWidget.register_resources method modules/sprox.widgets.html
-sprox.widgets.SproxCheckBox.propagate_errors method modules/sprox.widgets.html
+sprox.metadata.FieldsMetadata.values method modules/sprox.metadata.html
 sprox.widgets.SproxCalendarDatePicker.displays_on attribute modules/sprox.widgets.html
 sprox.widgets.RecordViewWidget.id_path_elem attribute modules/sprox.widgets.html
-sprox.widgets.SproxTableForm.update_params method modules/sprox.widgets.html
+sprox.dojo.formbase.DojoEditableForm class modules/sprox.dojo.formbase.html
 sprox.widgets.SproxCalendarDateTimePicker.displays_on attribute modules/sprox.widgets.html
 sprox.widgets.SproxCalendarDateTimePicker.safe_validate method modules/sprox.widgets.html
 sprox.widgets.ContainerWidget.prepare_dict method modules/sprox.widgets.html
@@ -323,7 +323,7 @@ sprox.widgets.SproxCalendarDatePicker.propagate_errors method modules/sprox.widg
 sprox.metadata.FieldMetadata.itervalues method modules/sprox.metadata.html
 sprox.widgets.PropertyMultipleSelectField.key attribute modules/sprox.widgets.html
 sprox.widgets.RecordViewWidget.prepare_dict method modules/sprox.widgets.html
-sprox.widgets.SproxCalendarDateTimePicker.ifilter_children method modules/sprox.widgets.html
+sprox.widgets.SproxTableForm.update_params method modules/sprox.widgets.html
 sprox.widgetselector.WidgetSelector class modules/sprox.widgetselector.html
 sprox.widgetselector.EntityDefWidgetSelector class modules/sprox.widgetselector.html
 sprox.saormprovider.SAORMProvider.get_primary_field method modules/sprox.saormprovider.html
@@ -358,7 +358,8 @@ sprox.widgets.SproxCalendarDateTimePicker.is_root attribute modules/sprox.widget
 sprox.widgets.ContainerWidget.display method modules/sprox.widgets.html
 sprox.metadata.FieldsMetadata.has_key method modules/sprox.metadata.html
 sprox.widgets.SproxCheckBox.get_default method modules/sprox.widgets.html
-sprox.metadata.FieldMetadata.iteritems method modules/sprox.metadata.html
+sprox.widgets.ModelLabelWidget.ifilter_children method modules/sprox.widgets.html
+sprox.widgets.SproxCalendarDateTimePicker.generate_schema method modules/sprox.widgets.html
 sprox.widgets.ContainerWidget.clone method modules/sprox.widgets.html
 sprox.metadata.EntitiesMetadata.get method modules/sprox.metadata.html
 sprox.widgets.ContainerWidget.retrieve_javascript method modules/sprox.widgets.html
@@ -390,6 +391,7 @@ sprox.widgets.SproxCalendarDatePicker.retrieve_javascript method modules/sprox.w
 sprox.widgets.ContainerWidget.id_path_elem attribute modules/sprox.widgets.html
 sprox.widgets.SproxDataGrid.add_call method modules/sprox.widgets.html
 sprox.widgets.SproxCalendarDateTimePicker.name_path_elem attribute modules/sprox.widgets.html
+sprox.widgets.ModelLabelWidget.retrieve_css method modules/sprox.widgets.html
 sprox.widgets.SproxTimePicker.clone method modules/sprox.widgets.html
 sprox.widgets.EntityLabelWidget.retrieve_javascript method modules/sprox.widgets.html
 sprox.metadata.FieldMetadata.has_key method modules/sprox.metadata.html
@@ -432,7 +434,8 @@ sprox.widgets.SproxCalendarDatePicker.clone method modules/sprox.widgets.html
 sprox.widgets.TableDefWidget.post_init method modules/sprox.widgets.html
 sprox.widgets.SproxTimePicker.update_attrs method modules/sprox.widgets.html
 sprox.widgets.SproxDataGrid.retrieve_javascript method modules/sprox.widgets.html
-sprox.metadata.FieldMetadata.popitem method modules/sprox.metadata.html
+sprox.widgets.TableDefWidget.path attribute modules/sprox.widgets.html
+sprox.widgetselector.SAWidgetSelector.default_single_select_field_widget_type method modules/sprox.widgetselector.html
 sprox.widgets.EntityDefWidget.adapt_value method modules/sprox.widgets.html
 sprox.iprovider.IProvider.update method modules/sprox.iprovider.html
 sprox.widgets.PropertyMixin.displays_on attribute modules/sprox.widgets.html
@@ -457,6 +460,7 @@ sprox.widgets.SproxCheckBox.clone method modules/sprox.widgets.html
 sprox.widgets.TableDefWidget.ifilter_children method modules/sprox.widgets.html
 sprox.formbase.DisabledForm class modules/sprox.formbase.html
 sprox.widgets.SproxTimePicker.is_required attribute modules/sprox.widgets.html
+sprox.widgets.SproxCalendarDateTimePicker.ifilter_children method modules/sprox.widgets.html
 sprox.dojo.fillerbase.DojoTableFiller class modules/sprox.dojo.fillerbase.html
 sprox.metadata.Metadata.iterkeys method modules/sprox.metadata.html
 sprox.widgets.TableLabelWidget.children_deep attribute modules/sprox.widgets.html
@@ -508,7 +512,6 @@ sprox.widgets.PropertyMultipleSelectField.is_root attribute modules/sprox.widget
 sprox.metadata.FieldMetadata.get method modules/sprox.metadata.html
 sprox.widgets.PropertyMultipleSelectField.generate_schema method modules/sprox.widgets.html
 sprox.widgets.PropertyMultipleSelectField.adapt_value method modules/sprox.widgets.html
-sprox.metadata.EntitiesMetadata class modules/sprox.metadata.html
 sprox.widgets.PropertyMultipleSelectField.root attribute modules/sprox.widgets.html
 sprox.widgets.SproxTimePicker.engine_name attribute modules/sprox.widgets.html
 sprox.widgets.EntityDefWidget.key attribute modules/sprox.widgets.html
@@ -540,6 +543,7 @@ sprox.widgets.RecordFieldWidget.root attribute modules/sprox.widgets.html
 sprox.widgets.SproxCalendarDatePicker.prepare_dict method modules/sprox.widgets.html
 sprox.widgets.EntityLabelWidget.post_init method modules/sprox.widgets.html
 sprox.widgets.RecordFieldWidget class modules/sprox.widgets.html
+sprox.metadata.FieldMetadata.iteritems method modules/sprox.metadata.html
 sprox.widgets.ModelLabelWidget.get_default method modules/sprox.widgets.html
 sprox.widgets.SproxTableForm.is_root attribute modules/sprox.widgets.html
 sprox.widgets.RecordViewWidget.retrieve_javascript method modules/sprox.widgets.html
@@ -565,9 +569,9 @@ sprox.widgets.SproxCalendarDatePicker.id attribute modules/sprox.widgets.html
 sprox.saormprovider.SAORMProvider.is_nullable method modules/sprox.saormprovider.html
 sprox.widgets.SproxCheckBox.name attribute modules/sprox.widgets.html
 sprox.widgets.PropertyMultipleSelectField.prepare_dict method modules/sprox.widgets.html
-sprox.widgets.SproxTimePicker.is_root attribute modules/sprox.widgets.html
+sprox.dojo.formbase.DojoEditableForm.validate method modules/sprox.dojo.formbase.html
 sprox.metadata.MetadataError.message attribute modules/sprox.metadata.html
-sprox.widgets.PropertySingleSelectField.display method modules/sprox.widgets.html
+sprox.metadata.EntitiesMetadata class modules/sprox.metadata.html
 sprox.widgets.SproxTimePicker.id attribute modules/sprox.widgets.html
 sprox.widgets.EntityLabelWidget.retrieve_css method modules/sprox.widgets.html
 sprox.metadata.FieldsMetadata.iteritems method modules/sprox.metadata.html
@@ -628,7 +632,7 @@ sprox.widgets.PropertySingleSelectField.walk method modules/sprox.widgets.html
 sprox.widgets.PropertyMultipleSelectField.displays_on attribute modules/sprox.widgets.html
 sprox.widgets.RecordFieldWidget.children_deep attribute modules/sprox.widgets.html
 sprox.saormprovider.SAORMProvider class modules/sprox.saormprovider.html
-sprox.widgets.ModelLabelWidget.retrieve_css method modules/sprox.widgets.html
+sprox.formbase.DisabledForm.validate method modules/sprox.formbase.html
 sprox.widgets.PropertyMultipleSelectField.name attribute modules/sprox.widgets.html
 sprox.dojo.tablebase.DojoTableBase class modules/sprox.dojo.tablebase.html
 sprox.widgets.SproxTimePicker.root attribute modules/sprox.widgets.html
@@ -637,7 +641,7 @@ sprox.widgets.SproxCalendarDatePicker.error_at_request attribute modules/sprox.w
 sprox.widgets.SproxCalendarDateTimePicker.validate method modules/sprox.widgets.html
 sprox.widgets.SproxDataGrid.retrieve_resources method modules/sprox.widgets.html
 sprox.widgets.SproxTableForm.generate_schema method modules/sprox.widgets.html
-sprox.widgets.SproxDataGrid class modules/sprox.widgets.html
+sprox.widgets.TableDefWidget class modules/sprox.widgets.html
 sprox.widgets.SproxCalendarDatePicker.is_root attribute modules/sprox.widgets.html
 sprox.widgets.SproxCalendarDatePicker.value_at_request attribute modules/sprox.widgets.html
 sprox.widgets.SproxTableForm.propagate_errors method modules/sprox.widgets.html
@@ -660,6 +664,7 @@ sprox.widgets.RecordViewWidget.register_resources method modules/sprox.widgets.h
 sprox.saormprovider.SAORMProvider.get_relations method modules/sprox.saormprovider.html
 sprox.widgets.PropertyMixin.children_deep attribute modules/sprox.widgets.html
 sprox.widgets.TableDefWidget.prepare_dict method modules/sprox.widgets.html
+sprox.widgets.SproxTimePicker.is_root attribute modules/sprox.widgets.html
 sprox.widgets.ContainerWidget.get_default method modules/sprox.widgets.html
 sprox.widgets.PropertySingleSelectField.id_path_elem attribute modules/sprox.widgets.html
 sprox.widgets.RecordFieldWidget.add_call method modules/sprox.widgets.html
@@ -678,7 +683,7 @@ sprox.saormprovider.SAORMProvider.get_view_field_name method modules/sprox.saorm
 sprox.widgets.RecordViewWidget.displays_on attribute modules/sprox.widgets.html
 sprox.saormprovider.SAORMProvider.dictify method modules/sprox.saormprovider.html
 sprox.metadata.FieldMetadata.setdefault method modules/sprox.metadata.html
-sprox.metadata.FieldsMetadata.keys method modules/sprox.metadata.html
+sprox.widgets.PropertySingleSelectField.display method modules/sprox.widgets.html
 sprox.widgets.SproxCalendarDatePicker.update_params method modules/sprox.widgets.html
 sprox.widgetselector.EntitiesViewWidgetSelector class modules/sprox.widgetselector.html
 sprox.metadata.Metadata.setdefault method modules/sprox.metadata.html
@@ -689,15 +694,17 @@ sprox.metadata.FieldsMetadata.pop method modules/sprox.metadata.html
 sprox.util.MultiDict.get method modules/sprox.util.html
 sprox.widgets.PropertyMultipleSelectField.validator method modules/sprox.widgets.html
 sprox.widgets.PropertySingleSelectField.name_path_elem attribute modules/sprox.widgets.html
+sprox.metadata.FieldMetadata.popitem method modules/sprox.metadata.html
 sprox.widgets.RecordViewWidget.path attribute modules/sprox.widgets.html
 sprox.widgets.RecordFieldWidget.displays_on attribute modules/sprox.widgets.html
+sprox.dojo.formbase.DojoAddRecordForm.validate method modules/sprox.dojo.formbase.html
 sprox.widgets.SproxCalendarDateTimePicker.retrieve_resources method modules/sprox.widgets.html
 sprox.fillerbase.TableFiller.get_count method modules/sprox.fillerbase.html
 sprox.widgets.PropertySingleSelectField.children_deep attribute modules/sprox.widgets.html
 sprox.widgets.TableLabelWidget class modules/sprox.widgets.html
 sprox.metadata.FieldMetadata.copy method modules/sprox.metadata.html
 sprox.widgets.PropertyMultipleSelectField.name_path_elem attribute modules/sprox.widgets.html
-sprox.widgets.TableDefWidget class modules/sprox.widgets.html
+sprox.widgets.SproxDataGrid class modules/sprox.widgets.html
 sprox.sprockets.ConfigCache class modules/sprox.sprockets.html
 sprox.widgets.PropertyMixin.render method modules/sprox.widgets.html
 sprox.widgets.PropertySingleSelectField.get_default method modules/sprox.widgets.html

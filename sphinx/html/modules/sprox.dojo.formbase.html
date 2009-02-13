@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>sprox.dojo.formbase &mdash; Sprox v0.5.4 documentation</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+          URL_ROOT:    '../',
+          VERSION:     '0.5.4',
+          COLLAPSE_MODINDEX: false,
+          FILE_SUFFIX: '.html'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Sprox v0.5.4 documentation" href="../index.html" />
+    <link rel="next" title="test_model" href="../test_model.html" />
+    <link rel="prev" title="sprox.dojo.fillerbase" href="sprox.dojo.fillerbase.html" />
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+        <li class="right" >
+          <a href="../test_model.html" title="test_model"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="sprox.dojo.fillerbase.html" title="sprox.dojo.fillerbase"
+             accesskey="P">previous</a> |</li>
+  <li>
+  <a href="../index.html"><b>Sprox 0.5.4</b></a>
+  </li>
+
+  
+    <li> <b>/</b> <a href=""><tt class="docutils literal"><span class="pre">sprox.dojo.formbase</span></tt></a></li>
+  
+
+      </ul>
+    </div>
+  <div class="document">
+    <div class="documentwrapper">
+      <div class="bodywrapper">
+      <div class="body">
+        
+  
+  <div class="section" id="module-sprox.dojo.formbase">
+<h1><tt class="xref docutils literal"><span class="pre">sprox.dojo.formbase</span></tt><a class="headerlink" href="#module-sprox.dojo.formbase" title="Permalink to this headline">¶</a></h1>
+<p>fillerbase Module</p>
+<p>Classes to help fill widgets with data</p>
+<p>Copyright (c) 2008 Christopher Perkins
+Original Version by Christopher Perkins 2008
+Released under MIT license.</p>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="sprox.dojo.formbase.DojoEditableForm">
+<!--[sprox.dojo.formbase.DojoEditableForm]-->class <tt class="descclassname">sprox.dojo.formbase.</tt><tt class="descname">DojoEditableForm</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.dojo.formbase.DojoEditableForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a title="sprox.formbase.EditableForm" class="reference external" href="sprox.formbase.html#sprox.formbase.EditableForm"><tt class="xref docutils literal"><span class="pre">sprox.formbase.EditableForm</span></tt></a></p>
+<p>Creates a form for editing records that has select shuttles for the multiple relations.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Modifiers:</th><td class="field-body">see <a title="sprox.formbase.FormBase" class="reference external" href="sprox.formbase.html#sprox.formbase.FormBase"><tt class="xref docutils literal"><span class="pre">sprox.formbase.FormBase</span></tt></a></td>
+</tr>
+<tr class="field"><th class="field-name">Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.dojo.formbase</span> <span class="kn">import</span> <span class="n">DojoEditableForm</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">formencode</span> <span class="kn">import</span> <span class="n">Schema</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">formencode.validators</span> <span class="kn">import</span> <span class="n">FieldsMatch</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Form</span><span class="p">(</span><span class="n">DojoEditableForm</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">__model__</span> <span class="o">=</span> <span class="n">User</span>
+<span class="gp">... </span>    <span class="n">__limit_fields__</span>       <span class="o">=</span> <span class="p">[</span><span class="s">&#39;user_name&#39;</span><span class="p">,</span> <span class="s">&#39;groups&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">edit_form</span> <span class="o">=</span> <span class="n">Form</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">edit_form</span><span class="p">()</span>
+<span class="go">&lt;form xmlns=&quot;http://www.w3.org/1999/xhtml&quot; action=&quot;&quot; method=&quot;post&quot; class=&quot;has_error required tableform&quot;&gt;</span>
+<span class="go">    &lt;div&gt;</span>
+<span class="go">            &lt;input type=&quot;hidden&quot; name=&quot;sprox_id&quot; class=&quot;has_error hiddenfield&quot; id=&quot;sprox_id&quot; /&gt;</span>
+<span class="go">            &lt;span class=&quot;fielderror&quot;&gt;Missing value&lt;/span&gt;</span>
+<span class="go">            &lt;input type=&quot;hidden&quot; name=&quot;_method&quot; class=&quot;sproxmethodputhiddenfield&quot; id=&quot;_method&quot; value=&quot;PUT&quot; /&gt;</span>
+<span class="go">    &lt;/div&gt;</span>
+<span class="go">    &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;2&quot;&gt;</span>
+<span class="go">        &lt;tr id=&quot;user_name.container&quot; class=&quot;even&quot; title=&quot;&quot;&gt;</span>
+<span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
+<span class="go">                &lt;label id=&quot;user_name.label&quot; for=&quot;user_name&quot; class=&quot;fieldlabel&quot;&gt;User Name&lt;/label&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">            &lt;td class=&quot;fieldcol&quot;&gt;</span>
+<span class="go">                &lt;input type=&quot;text&quot; name=&quot;user_name&quot; class=&quot;textfield&quot; id=&quot;user_name&quot; value=&quot;&quot; /&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">        &lt;/tr&gt;&lt;tr id=&quot;.container&quot; class=&quot;odd&quot; title=&quot;&quot;&gt;</span>
+<span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
+<span class="go">                &lt;label id=&quot;.label&quot; for=&quot;&quot; class=&quot;fieldlabel&quot;&gt;Groups&lt;/label&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">            &lt;td class=&quot;fieldcol&quot;&gt;</span>
+<span class="go">                &lt;div dojoType=&quot;twdojo.SelectShuttle&quot; id=&quot;groups_SelectShuttle&quot;&gt;</span>
+<span class="go">    &lt;div style=&quot;float:left; padding: 5px; width:10em;&quot;&gt;</span>
+<span class="go">        Available&lt;br /&gt;</span>
+<span class="go">        &lt;select class=&quot;shuttle&quot; id=&quot;groups_src&quot; multiple=&quot;multiple&quot; name=&quot;&quot; size=&quot;5&quot;&gt;</span>
+<span class="go">                &lt;option value=&quot;1&quot;&gt;0&lt;/option&gt;&lt;option value=&quot;2&quot;&gt;1&lt;/option&gt;&lt;option value=&quot;3&quot;&gt;2&lt;/option&gt;&lt;option value=&quot;4&quot;&gt;3&lt;/option&gt;&lt;option value=&quot;5&quot;&gt;4&lt;/option&gt;</span>
+<span class="go">        &lt;/select&gt;</span>
+<span class="go">    &lt;/div&gt;</span>
+<span class="go">    &lt;div style=&quot;float:left; padding: 25px 5px 5px 0px;&quot; id=&quot;groups_Buttons&quot;&gt;</span>
+<span class="go">        &lt;button class=&quot;shuttle&quot; id=&quot;groups_AllRightButton&quot;&gt;&amp;gt;&amp;gt;&lt;/button&gt;&lt;br /&gt;</span>
+<span class="go">        &lt;button class=&quot;shuttle&quot; id=&quot;groups_RightButton&quot;&gt;&amp;gt;&lt;/button&gt;&lt;br /&gt;</span>
+<span class="go">        &lt;button class=&quot;shuttle&quot; id=&quot;groups_LeftButton&quot;&gt;&amp;lt;&lt;/button&gt;&lt;br /&gt;</span>
+<span class="go">        &lt;button class=&quot;shuttle&quot; id=&quot;groups_AllLeftButton&quot;&gt;&amp;lt;&amp;lt;&lt;/button&gt;</span>
+<span class="go">    &lt;/div&gt;</span>
+<span class="go">    &lt;div style=&quot;float:left; padding: 5px; width:10em;&quot;&gt;</span>
+<span class="go">            Selected&lt;br /&gt;</span>
+<span class="go">            &lt;select class=&quot;shuttle&quot; id=&quot;groups&quot; multiple=&quot;multiple&quot; name=&quot;groups&quot; size=&quot;5&quot;&gt;</span>
+<span class="go">            &lt;/select&gt;</span>
+<span class="go">    &lt;/div&gt;</span>
+<span class="go">    &lt;script type=&quot;text/javascript&quot;&gt;</span>
+<span class="go">    //create an object of this type here</span>
+<span class="go">    &lt;/script&gt;</span>
+<span class="go">&lt;/div&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">        &lt;/tr&gt;&lt;tr id=&quot;submit.container&quot; class=&quot;even&quot; title=&quot;&quot;&gt;</span>
+<span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">            &lt;td class=&quot;fieldcol&quot;&gt;</span>
+<span class="go">                &lt;input type=&quot;submit&quot; class=&quot;submitbutton&quot; value=&quot;Submit&quot; /&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">        &lt;/tr&gt;</span>
+<span class="go">    &lt;/table&gt;</span>
+<span class="go">&lt;/form&gt;</span>
+</pre></div>
+<dl class="method">
+<dt id="sprox.dojo.formbase.DojoEditableForm.validate">
+<!--[sprox.dojo.formbase.DojoEditableForm.validate]--><tt class="descname">validate</tt><big>(</big><em>params</em><big>)</big><a class="headerlink" href="#sprox.dojo.formbase.DojoEditableForm.validate" title="Permalink to this definition">¶</a></dt>
+<dd>A pass-thru to the widget&#8217;s validate function.</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sprox.dojo.formbase.DojoAddRecordForm">
+<!--[sprox.dojo.formbase.DojoAddRecordForm]-->class <tt class="descclassname">sprox.dojo.formbase.</tt><tt class="descname">DojoAddRecordForm</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.dojo.formbase.DojoAddRecordForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a title="sprox.formbase.AddRecordForm" class="reference external" href="sprox.formbase.html#sprox.formbase.AddRecordForm"><tt class="xref docutils literal"><span class="pre">sprox.formbase.AddRecordForm</span></tt></a></p>
+<p>Creates a form for adding records that has select shuttles for the multiple relations.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Modifiers:</th><td class="field-body">see <a title="sprox.formbase.FormBase" class="reference external" href="sprox.formbase.html#sprox.formbase.FormBase"><tt class="xref docutils literal"><span class="pre">sprox.formbase.FormBase</span></tt></a></td>
+</tr>
+<tr class="field"><th class="field-name">Usage:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.dojo.formbase</span> <span class="kn">import</span> <span class="n">DojoAddRecordForm</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">formencode</span> <span class="kn">import</span> <span class="n">Schema</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">formencode.validators</span> <span class="kn">import</span> <span class="n">FieldsMatch</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Form</span><span class="p">(</span><span class="n">DojoAddRecordForm</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">__model__</span> <span class="o">=</span> <span class="n">User</span>
+<span class="gp">... </span>    <span class="n">__limit_fields__</span>       <span class="o">=</span> <span class="p">[</span><span class="s">&#39;user_name&#39;</span><span class="p">,</span> <span class="s">&#39;groups&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">add_form</span> <span class="o">=</span> <span class="n">Form</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">add_form</span><span class="p">()</span>
+<span class="go">&lt;form xmlns=&quot;http://www.w3.org/1999/xhtml&quot; action=&quot;&quot; method=&quot;post&quot; class=&quot;has_error required tableform&quot;&gt;</span>
+<span class="go">    &lt;div&gt;</span>
+<span class="go">            &lt;input type=&quot;hidden&quot; name=&quot;sprox_id&quot; class=&quot;has_error hiddenfield&quot; id=&quot;sprox_id&quot; /&gt;</span>
+<span class="go">            &lt;span class=&quot;fielderror&quot;&gt;Missing value&lt;/span&gt;</span>
+<span class="go">    &lt;/div&gt;</span>
+<span class="go">    &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;2&quot;&gt;</span>
+<span class="go">        &lt;tr id=&quot;user_name.container&quot; class=&quot;even&quot; title=&quot;&quot;&gt;</span>
+<span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
+<span class="go">                &lt;label id=&quot;user_name.label&quot; for=&quot;user_name&quot; class=&quot;fieldlabel&quot;&gt;User Name&lt;/label&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">            &lt;td class=&quot;fieldcol&quot;&gt;</span>
+<span class="go">                &lt;input type=&quot;text&quot; name=&quot;user_name&quot; class=&quot;textfield&quot; id=&quot;user_name&quot; value=&quot;&quot; /&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">        &lt;/tr&gt;&lt;tr id=&quot;.container&quot; class=&quot;odd&quot; title=&quot;&quot;&gt;</span>
+<span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
+<span class="go">                &lt;label id=&quot;.label&quot; for=&quot;&quot; class=&quot;fieldlabel&quot;&gt;Groups&lt;/label&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">            &lt;td class=&quot;fieldcol&quot;&gt;</span>
+<span class="go">                &lt;div dojoType=&quot;twdojo.SelectShuttle&quot; id=&quot;groups_SelectShuttle&quot;&gt;</span>
+<span class="go">    &lt;div style=&quot;float:left; padding: 5px; width:10em;&quot;&gt;</span>
+<span class="go">        Available&lt;br /&gt;</span>
+<span class="go">        &lt;select class=&quot;shuttle&quot; id=&quot;groups_src&quot; multiple=&quot;multiple&quot; name=&quot;&quot; size=&quot;5&quot;&gt;</span>
+<span class="go">                &lt;option value=&quot;1&quot;&gt;0&lt;/option&gt;&lt;option value=&quot;2&quot;&gt;1&lt;/option&gt;&lt;option value=&quot;3&quot;&gt;2&lt;/option&gt;&lt;option value=&quot;4&quot;&gt;3&lt;/option&gt;&lt;option value=&quot;5&quot;&gt;4&lt;/option&gt;</span>
+<span class="go">        &lt;/select&gt;</span>
+<span class="go">    &lt;/div&gt;</span>
+<span class="go">    &lt;div style=&quot;float:left; padding: 25px 5px 5px 0px;&quot; id=&quot;groups_Buttons&quot;&gt;</span>
+<span class="go">        &lt;button class=&quot;shuttle&quot; id=&quot;groups_AllRightButton&quot;&gt;&amp;gt;&amp;gt;&lt;/button&gt;&lt;br /&gt;</span>
+<span class="go">        &lt;button class=&quot;shuttle&quot; id=&quot;groups_RightButton&quot;&gt;&amp;gt;&lt;/button&gt;&lt;br /&gt;</span>
+<span class="go">        &lt;button class=&quot;shuttle&quot; id=&quot;groups_LeftButton&quot;&gt;&amp;lt;&lt;/button&gt;&lt;br /&gt;</span>
+<span class="go">        &lt;button class=&quot;shuttle&quot; id=&quot;groups_AllLeftButton&quot;&gt;&amp;lt;&amp;lt;&lt;/button&gt;</span>
+<span class="go">    &lt;/div&gt;</span>
+<span class="go">    &lt;div style=&quot;float:left; padding: 5px; width:10em;&quot;&gt;</span>
+<span class="go">            Selected&lt;br /&gt;</span>
+<span class="go">            &lt;select class=&quot;shuttle&quot; id=&quot;groups&quot; multiple=&quot;multiple&quot; name=&quot;groups&quot; size=&quot;5&quot;&gt;</span>
+<span class="go">            &lt;/select&gt;</span>
+<span class="go">    &lt;/div&gt;</span>
+<span class="go">    &lt;script type=&quot;text/javascript&quot;&gt;</span>
+<span class="go">    //create an object of this type here</span>
+<span class="go">    &lt;/script&gt;</span>
+<span class="go">&lt;/div&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">        &lt;/tr&gt;&lt;tr id=&quot;submit.container&quot; class=&quot;even&quot; title=&quot;&quot;&gt;</span>
+<span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">            &lt;td class=&quot;fieldcol&quot;&gt;</span>
+<span class="go">                &lt;input type=&quot;submit&quot; class=&quot;submitbutton&quot; value=&quot;Submit&quot; /&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">        &lt;/tr&gt;</span>
+<span class="go">    &lt;/table&gt;</span>
+<span class="go">&lt;/form&gt;</span>
+</pre></div>
+<dl class="method">
+<dt id="sprox.dojo.formbase.DojoAddRecordForm.validate">
+<!--[sprox.dojo.formbase.DojoAddRecordForm.validate]--><tt class="descname">validate</tt><big>(</big><em>params</em><big>)</big><a class="headerlink" href="#sprox.dojo.formbase.DojoAddRecordForm.validate" title="Permalink to this definition">¶</a></dt>
+<dd>A pass-thru to the widget&#8217;s validate function.</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+        <h1>Discuss</h1>
+        <div id="disqus_thread"></div>
+           <script type="text/javascript" src="http://disqus.com/forums/sproxdox/embed.js"></script>
+           <noscript><a href="http://sproxdox.disqus.com/?url=ref">View the discussion thread.</a></noscript>
+           <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+      </div>
+
+  </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/sprox_logo.png" alt="Logo"/>
+            </a></p>
+            <h3><a href="../index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href=""><tt class="docutils literal"><span class="pre">sprox.dojo.formbase</span></tt></a><ul>
+<li><a class="reference external" href="#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="sprox.dojo.fillerbase.html" title="previous chapter"><tt class="docutils literal"><span class="pre">sprox.dojo.fillerbase</span></tt></a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="../test_model.html" title="next chapter"><tt class="docutils literal"><span class="pre">test_model</span></tt></a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../_sources/modules/sprox.dojo.formbase.txt">Show Source</a></li>
+            </ul>
+          <h3>Quick search</h3>
+            <form class="search" action="../search.html" method="get">
+              <input type="text" name="q" size="18" /> <input type="submit" value="Go" />
+              <input type="hidden" name="check_keywords" value="yes" />
+              <input type="hidden" name="area" value="default" />
+            </form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+        <li class="right" >
+          <a href="../test_model.html" title="test_model"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="sprox.dojo.fillerbase.html" title="sprox.dojo.fillerbase"
+             accesskey="P">previous</a> |</li>
+  <li>
+  <a href="../index.html"><b>Sprox 0.5.4</b></a>
+  </li>
+
+  
+    <li> <b>/</b> <a href=""><tt class="docutils literal"><span class="pre">sprox.dojo.formbase</span></tt></a></li>
+  
+
+      </ul>
+    </div>
+
+    <div class="footer">
+      &copy; Copyright 2008, Christopher Perkins.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.5.
+    </div>
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+  var links = document.getElementsByTagName('a');
+  var query = '?';
+  for(var i = 0; i < links.length; i++) {
+    if(links[i].href.indexOf('#disqus_thread') >= 0) {
+      query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+    }
+  }
+  document.write('<script type="text/javascript" src="http://disqus.com/forums/sproxdox/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6778746-1");
+pageTracker._trackPageview();
+} catch(err) {}
+//]]>
+</script>
+
+
+  </body>
+</html>

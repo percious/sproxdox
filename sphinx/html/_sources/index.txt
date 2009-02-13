@@ -166,36 +166,41 @@ is the current code coverage.::
     ...
     Name                      Stmts   Exec  Cover   Missing
     -------------------------------------------------------
-    sprox                         0      0   100%
-    sprox.configbase             77     77   100%
-    sprox.dojo                    0      0   100%
-    sprox.dojo.fillerbase         9      9   100%
-    sprox.dojo.sprockets         18     18   100%
-    sprox.dojo.tablebase         12     12   100%
-    sprox.entitiesbase           16     16   100%
-    sprox.fillerbase             72     72   100%
-    sprox.formbase               87     87   100%
-    sprox.iprovider              33     33   100%
-    sprox.metadata               51     51   100%
-    sprox.providerselector       70     70   100%
-    sprox.saormprovider         229    229   100%
-    sprox.sprockets              55     55   100%
-    sprox.tablebase              13     13   100%
-    sprox.util                    9      9   100%
-    sprox.validators             11     11   100%
-    sprox.validatorselector      52     52   100%
-    sprox.viewbase               97     97   100%
-    sprox.widgets                 1      1   100%
-    sprox.widgets.dojo           19     19   100%
-    sprox.widgets.templates       0      0   100%
-    sprox.widgets.widgets        78     78   100%
-    sprox.widgetselector         40     40   100%
+    sprox                         0      0   100%   
+    sprox.configbase             77     77   100%   
+    sprox.dojo                    0      0   100%   
+    sprox.dojo.fillerbase        14     14   100%   
+    sprox.dojo.formbase          11     11   100%   
+    sprox.dojo.sprockets         18     18   100%   
+    sprox.dojo.tablebase         10     10   100%   
+    sprox.dummyentity             1      1   100%   
+    sprox.entitiesbase           15     15   100%   
+    sprox.fillerbase             74     74   100%   
+    sprox.formbase              106    106   100%   
+    sprox.iprovider              33     33   100%   
+    sprox.metadata               51     51   100%   
+    sprox.providerselector       73     73   100%   
+    sprox.saormprovider         261    261   100%   
+    sprox.sprockets              55     55   100%   
+    sprox.tablebase              13     13   100%   
+    sprox.util                    9      9   100%   
+    sprox.validators             11     11   100%   
+    sprox.validatorselector      52     52   100%   
+    sprox.viewbase              117    117   100%   
+    sprox.widgets                 1      1   100%   
+    sprox.widgets.dojo           40     40   100%   
+    sprox.widgets.templates       0      0   100%   
+    sprox.widgets.widgets        80     78    97%   77-78
+    sprox.widgetselector         46     46   100%   
     -------------------------------------------------------
-    TOTAL                      1049   1049   100%
+    TOTAL                      1168   1166    99%   
     ----------------------------------------------------------------------
-    Ran 199 tests in 15.766s
-
+    Ran 215 tests in 22.849s
+    
     OK
+
+    *note the two lines of code *are* tested, just not in an at-once fashion,
+    due to a bug with coverage and nose.
 
 Sprox is an open source project, and can be found at `bitbucket <http://www.bitbucket.org/percious/sprox/src/>`_.  
 If you have a great idea of how to make sprox better, feel free to fork off your own copy and send a pull request.
@@ -258,6 +263,7 @@ Dojo Related Modules
 
     modules/sprox.dojo.tablebase
     modules/sprox.dojo.fillerbase
+    modules/sprox.dojo.formbase
 
 About These Docs
 ==================
