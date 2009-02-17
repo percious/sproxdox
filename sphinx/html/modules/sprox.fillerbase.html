@@ -3,24 +3,25 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sprox.fillerbase &mdash; Sprox v0.5.4 documentation</title>
+    <title>sprox.fillerbase &mdash; Sprox v0.5.5 documentation</title>
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-          URL_ROOT:    '../',
-          VERSION:     '0.5.4',
-          COLLAPSE_MODINDEX: false,
-          FILE_SUFFIX: '.html'
+        URL_ROOT:    '../',
+        VERSION:     '0.5.5',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="top" title="Sprox v0.5.4 documentation" href="../index.html" />
+    <link rel="top" title="Sprox v0.5.5 documentation" href="../index.html" />
     <link rel="next" title="sprox.configbase" href="sprox.configbase.html" />
-    <link rel="prev" title="sprox.tablebase" href="sprox.tablebase.html" />
+    <link rel="prev" title="sprox.tablebase" href="sprox.tablebase.html" /> 
   </head>
   <body>
     <div class="related">
@@ -39,7 +40,7 @@
           <a href="sprox.tablebase.html" title="sprox.tablebase"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.5.4</b></a>
+  <a href="../index.html"><b>Sprox 0.5.5</b></a>
   </li>
 
   
@@ -47,7 +48,7 @@
   
 
       </ul>
-    </div>
+    </div>  
   <div class="document">
     <div class="documentwrapper">
       <div class="bodywrapper">
@@ -75,7 +76,7 @@ Released under MIT license.</p>
 </tr>
 </tbody>
 </table>
-<p>see <a title="" class="reference external" href="sprox.configbase.html"><tt class="xref docutils literal"><span class="pre">sprox.configbase</span></tt></a>.</p>
+<p>see <a title="" class="reference external" href="sprox.configbase.html#module-sprox.configbase"><tt class="xref docutils literal"><span class="pre">sprox.configbase</span></tt></a>.</p>
 <p>The base filler class.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -97,10 +98,11 @@ and limit for a TableFiller.</p>
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">filler</span> <span class="o">=</span> <span class="n">FillerBase</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">filler</span> <span class="o">=</span> <span class="n">FillerBase</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">filler</span><span class="o">.</span><span class="n">get_value</span><span class="p">()</span>
 <span class="go">{}</span>
 </pre></div>
+</div>
 <dl class="method">
 <dt id="sprox.fillerbase.FillerBase.get_value">
 <!--[sprox.fillerbase.FillerBase.get_value]--><tt class="descname">get_value</tt><big>(</big><em>values=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.FillerBase.get_value" title="Permalink to this definition">¶</a></dt>
@@ -117,7 +119,7 @@ it&#8217;s provider to obtain a dictionary of information about the __entity__ t
 This class is especially useful when you need to return a json stream, because it allows for
 customization of attributes.  A package which has similar functionality to this is TurboJson,
 but TurboJson is rules-based, where the semantics for generating dictionaries follows the same
-<a title="" class="reference external" href="sprox.configbase.html"><tt class="xref docutils literal"><span class="pre">sprox.configbase</span></tt></a> methodology.</p>
+<a title="" class="reference external" href="sprox.configbase.html#module-sprox.configbase"><tt class="xref docutils literal"><span class="pre">sprox.configbase</span></tt></a> methodology.</p>
 <p>Modifiers defined in this class</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -147,7 +149,7 @@ output.</td>
 </tr>
 </tbody>
 </table>
-<p>see modifiers also in <a title="" class="reference external" href="sprox.configbase.html"><tt class="xref docutils literal"><span class="pre">sprox.configbase</span></tt></a>.</p>
+<p>see modifiers also in <a title="" class="reference external" href="sprox.configbase.html#module-sprox.configbase"><tt class="xref docutils literal"><span class="pre">sprox.configbase</span></tt></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -183,7 +185,7 @@ For more information on developing RESTful URLs, please visit <a class="referenc
 </tbody>
 </table>
 <p>Here is how we would get the values to fill up a user&#8217;s table, minus the action column, and created date.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">UsersFiller</span><span class="p">(</span><span class="n">TableFiller</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">UsersFiller</span><span class="p">(</span><span class="n">TableFiller</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">__model__</span> <span class="o">=</span> <span class="n">User</span>
 <span class="gp">... </span>    <span class="n">__actions__</span> <span class="o">=</span> <span class="bp">False</span>
 <span class="gp">... </span>    <span class="n">__omit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;created&#39;</span><span class="p">]</span>
@@ -194,6 +196,7 @@ For more information on developing RESTful URLs, please visit <a class="referenc
 <span class="go">&#39;town_id&#39;: u&#39;1&#39;, &#39;groups&#39;: u&#39;4&#39;, &#39;_password&#39;: &#39;******&#39;, &#39;password&#39;: &#39;******&#39;, </span>
 <span class="go">&#39;email_address&#39;: u&#39;asdf@asdf.com&#39;, &#39;display_name&#39;: u&#39;None&#39;}]</span>
 </pre></div>
+</div>
 <dl class="method">
 <dt id="sprox.fillerbase.TableFiller.get_count">
 <!--[sprox.fillerbase.TableFiller.get_count]--><tt class="descname">get_count</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.fillerbase.TableFiller.get_count" title="Permalink to this definition">¶</a></dt>
@@ -245,7 +248,7 @@ The values are returned in dictionary form.</p>
 </tr>
 </tbody>
 </table>
-<p>see <a title="" class="reference external" href="sprox.configbase.html"><tt class="xref docutils literal"><span class="pre">sprox.configbase</span></tt></a>.</p>
+<p>see <a title="" class="reference external" href="sprox.configbase.html#module-sprox.configbase"><tt class="xref docutils literal"><span class="pre">sprox.configbase</span></tt></a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -254,7 +257,7 @@ The values are returned in dictionary form.</p>
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">UserFiller</span><span class="p">(</span><span class="n">EditFormFiller</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">UserFiller</span><span class="p">(</span><span class="n">EditFormFiller</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">__model__</span> <span class="o">=</span> <span class="n">User</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">users_filler</span> <span class="o">=</span> <span class="n">UsersFiller</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="o">=</span> <span class="n">users_filler</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;user_id&#39;</span><span class="p">:</span><span class="s">&#39;1&#39;</span><span class="p">})</span>
@@ -263,6 +266,7 @@ The values are returned in dictionary form.</p>
 <span class="go">  &#39;user_name&#39;: u&#39;asdf&#39;, &#39;town_id&#39;: u&#39;1&#39;, &#39;groups&#39;: u&#39;4&#39;, &#39;_password&#39;: &#39;******&#39;,</span>
 <span class="go">  &#39;password&#39;: &#39;******&#39;, &#39;email_address&#39;: u&#39;asdf@asdf.com&#39;, &#39;display_name&#39;: u&#39;None&#39;}</span>
 </pre></div>
+</div>
 <dl class="method">
 <dt id="sprox.fillerbase.EditFormFiller.get_value">
 <!--[sprox.fillerbase.EditFormFiller.get_value]--><tt class="descname">get_value</tt><big>(</big><em>values=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.EditFormFiller.get_value" title="Permalink to this definition">¶</a></dt>
@@ -374,7 +378,7 @@ The values are returned in dictionary form.</p>
           <a href="sprox.tablebase.html" title="sprox.tablebase"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.5.4</b></a>
+  <a href="../index.html"><b>Sprox 0.5.5</b></a>
   </li>
 
   
@@ -386,7 +390,7 @@ The values are returned in dictionary form.</p>
 
     <div class="footer">
       &copy; Copyright 2008, Christopher Perkins.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.5.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.5.1.
     </div>
 
 <script type="text/javascript">

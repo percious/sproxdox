@@ -3,24 +3,25 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>General Dojo Usage Information &mdash; Sprox v0.5.4 documentation</title>
+    <title>General Dojo Usage Information &mdash; Sprox v0.5.5 documentation</title>
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-          URL_ROOT:    '',
-          VERSION:     '0.5.4',
-          COLLAPSE_MODINDEX: false,
-          FILE_SUFFIX: '.html'
+        URL_ROOT:    '',
+        VERSION:     '0.5.5',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="top" title="Sprox v0.5.4 documentation" href="index.html" />
+    <link rel="top" title="Sprox v0.5.5 documentation" href="index.html" />
     <link rel="next" title="sprox.dojo.tablebase" href="modules/sprox.dojo.tablebase.html" />
-    <link rel="prev" title="sprox.util" href="modules/sprox.util.html" />
+    <link rel="prev" title="sprox.util" href="modules/sprox.util.html" /> 
   </head>
   <body>
     <div class="related">
@@ -39,7 +40,7 @@
           <a href="modules/sprox.util.html" title="sprox.util"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="index.html"><b>Sprox 0.5.4</b></a>
+  <a href="index.html"><b>Sprox 0.5.5</b></a>
   </li>
 
   
@@ -47,7 +48,7 @@
   
 
       </ul>
-    </div>
+    </div>  
   <div class="document">
     <div class="documentwrapper">
       <div class="bodywrapper">
@@ -63,7 +64,8 @@ tables on your web page.</p>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <p>Since Sprox does not depend on tw.dojo by default, you must first install this package:</p>
-<pre>easy_install tw.dojo</pre>
+<div class="highlight-python"><pre>easy_install tw.dojo</pre>
+</div>
 </div>
 <div class="section" id="ajaxy-goodness">
 <h2>Ajaxy Goodness<a class="headerlink" href="#ajaxy-goodness" title="Permalink to this headline">¶</a></h2>
@@ -74,7 +76,7 @@ template frame, as well as the crud to fill out the table.</p>
 <p>Here is a short example where we display the username, email, and display name from the example model.
 First, we instantiate the Sprox filler and tablebase as we normally would, this time with
 the Dojo-specific classes.</p>
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">sprox.dojo.tablebase</span> <span class="kn">import</span> <span class="n">DojoTableBase</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">sprox.dojo.tablebase</span> <span class="kn">import</span> <span class="n">DojoTableBase</span>
 <span class="kn">from</span> <span class="nn">sprox.dojo.fillerbase</span> <span class="kn">import</span> <span class="n">DojoTableFiller</span>
 
 <span class="k">class</span> <span class="nc">UserTable</span><span class="p">(</span><span class="n">DojoTableBase</span><span class="p">):</span>
@@ -90,11 +92,12 @@ the Dojo-specific classes.</p>
 
 <span class="n">user_table_filler</span> <span class="o">=</span> <span class="n">UserTableFiller</span><span class="p">(</span><span class="n">DBSession</span><span class="p">)</span>
 </pre></div>
+</div>
 <p>Notice the new __url__ directive.  This tells the widget where we should get the data from.
 Also note that we need to include the &#8216;user_id&#8217; field.  This is because Dojo requires a unique
 identifier to render it&#8217;s data.  We need to tell Sprox to include that unique field.</p>
 <p>Then, we need to add two more functions to our controller class (as in TG2).:</p>
-<div class="highlight"><pre><span class="nd">@expose</span><span class="p">(</span><span class="s">&#39;tgtest.templates.users&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@expose</span><span class="p">(</span><span class="s">&#39;tgtest.templates.users&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">users</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
     <span class="n">pylons</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">widget</span> <span class="o">=</span> <span class="n">user_table</span>
     <span class="k">return</span> <span class="nb">dict</span><span class="p">()</span>
@@ -103,9 +106,11 @@ identifier to render it&#8217;s data.  We need to tell Sprox to include that uni
 <span class="k">def</span> <span class="nf">data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">user_table_filler</span><span class="o">.</span><span class="n">get_value</span><span class="p">({},</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
 </pre></div>
+</div>
 <p>In our users template, we provide a call to the widget.  The rest of the work is done by Dojo on the
 client side.</p>
-<pre>${tmpl_context.widget()}</pre>
+<div class="highlight-python"><pre>${tmpl_context.widget()}</pre>
+</div>
 </div>
 </div>
 
@@ -167,7 +172,7 @@ client side.</p>
           <a href="modules/sprox.util.html" title="sprox.util"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="index.html"><b>Sprox 0.5.4</b></a>
+  <a href="index.html"><b>Sprox 0.5.5</b></a>
   </li>
 
   
@@ -179,7 +184,7 @@ client side.</p>
 
     <div class="footer">
       &copy; Copyright 2008, Christopher Perkins.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.5.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.5.1.
     </div>
 
 <script type="text/javascript">

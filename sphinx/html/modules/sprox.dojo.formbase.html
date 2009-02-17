@@ -3,24 +3,25 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sprox.dojo.formbase &mdash; Sprox v0.5.4 documentation</title>
+    <title>sprox.dojo.formbase &mdash; Sprox v0.5.5 documentation</title>
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-          URL_ROOT:    '../',
-          VERSION:     '0.5.4',
-          COLLAPSE_MODINDEX: false,
-          FILE_SUFFIX: '.html'
+        URL_ROOT:    '../',
+        VERSION:     '0.5.5',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="top" title="Sprox v0.5.4 documentation" href="../index.html" />
+    <link rel="top" title="Sprox v0.5.5 documentation" href="../index.html" />
     <link rel="next" title="test_model" href="../test_model.html" />
-    <link rel="prev" title="sprox.dojo.fillerbase" href="sprox.dojo.fillerbase.html" />
+    <link rel="prev" title="sprox.dojo.fillerbase" href="sprox.dojo.fillerbase.html" /> 
   </head>
   <body>
     <div class="related">
@@ -39,15 +40,15 @@
           <a href="sprox.dojo.fillerbase.html" title="sprox.dojo.fillerbase"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.5.4</b></a>
+  <a href="../index.html"><b>Sprox 0.5.5</b></a>
   </li>
 
   
-    <li> <b>/</b> <a href=""><tt class="docutils literal"><span class="pre">sprox.dojo.formbase</span></tt></a></li>
+    <li> <b>/</b> <a href=""><tt class="docutils literal docutils literal"><span class="pre">sprox.dojo.formbase</span></tt></a></li>
   
 
       </ul>
-    </div>
+    </div>  
   <div class="document">
     <div class="documentwrapper">
       <div class="bodywrapper">
@@ -78,7 +79,7 @@ Released under MIT license.</p>
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.dojo.formbase</span> <span class="kn">import</span> <span class="n">DojoEditableForm</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.dojo.formbase</span> <span class="kn">import</span> <span class="n">DojoEditableForm</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">formencode</span> <span class="kn">import</span> <span class="n">Schema</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">formencode.validators</span> <span class="kn">import</span> <span class="n">FieldsMatch</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Form</span><span class="p">(</span><span class="n">DojoEditableForm</span><span class="p">):</span>
@@ -138,6 +139,7 @@ Released under MIT license.</p>
 <span class="go">    &lt;/table&gt;</span>
 <span class="go">&lt;/form&gt;</span>
 </pre></div>
+</div>
 <dl class="method">
 <dt id="sprox.dojo.formbase.DojoEditableForm.validate">
 <!--[sprox.dojo.formbase.DojoEditableForm.validate]--><tt class="descname">validate</tt><big>(</big><em>params</em><big>)</big><a class="headerlink" href="#sprox.dojo.formbase.DojoEditableForm.validate" title="Permalink to this definition">¶</a></dt>
@@ -160,7 +162,7 @@ Released under MIT license.</p>
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.dojo.formbase</span> <span class="kn">import</span> <span class="n">DojoAddRecordForm</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.dojo.formbase</span> <span class="kn">import</span> <span class="n">DojoAddRecordForm</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">formencode</span> <span class="kn">import</span> <span class="n">Schema</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">formencode.validators</span> <span class="kn">import</span> <span class="n">FieldsMatch</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Form</span><span class="p">(</span><span class="n">DojoAddRecordForm</span><span class="p">):</span>
@@ -219,6 +221,7 @@ Released under MIT license.</p>
 <span class="go">    &lt;/table&gt;</span>
 <span class="go">&lt;/form&gt;</span>
 </pre></div>
+</div>
 <dl class="method">
 <dt id="sprox.dojo.formbase.DojoAddRecordForm.validate">
 <!--[sprox.dojo.formbase.DojoAddRecordForm.validate]--><tt class="descname">validate</tt><big>(</big><em>params</em><big>)</big><a class="headerlink" href="#sprox.dojo.formbase.DojoAddRecordForm.validate" title="Permalink to this definition">¶</a></dt>
@@ -253,7 +256,7 @@ Released under MIT license.</p>
 </ul>
 
             <h4>Previous topic</h4>
-            <p class="topless"><a href="sprox.dojo.fillerbase.html" title="previous chapter"><tt class="docutils literal"><span class="pre">sprox.dojo.fillerbase</span></tt></a></p>
+            <p class="topless"><a href="sprox.dojo.fillerbase.html" title="previous chapter"><tt class="docutils literal docutils literal"><span class="pre">sprox.dojo.fillerbase</span></tt></a></p>
             <h4>Next topic</h4>
             <p class="topless"><a href="../test_model.html" title="next chapter"><tt class="docutils literal"><span class="pre">test_model</span></tt></a></p>
             <h3>This Page</h3>
@@ -286,11 +289,11 @@ Released under MIT license.</p>
           <a href="sprox.dojo.fillerbase.html" title="sprox.dojo.fillerbase"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.5.4</b></a>
+  <a href="../index.html"><b>Sprox 0.5.5</b></a>
   </li>
 
   
-    <li> <b>/</b> <a href=""><tt class="docutils literal"><span class="pre">sprox.dojo.formbase</span></tt></a></li>
+    <li> <b>/</b> <a href=""><tt class="docutils literal docutils literal"><span class="pre">sprox.dojo.formbase</span></tt></a></li>
   
 
       </ul>
@@ -298,7 +301,7 @@ Released under MIT license.</p>
 
     <div class="footer">
       &copy; Copyright 2008, Christopher Perkins.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.5.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.5.1.
     </div>
 
 <script type="text/javascript">

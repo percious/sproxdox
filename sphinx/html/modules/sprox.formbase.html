@@ -3,24 +3,25 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sprox.formbase &mdash; Sprox v0.5.4 documentation</title>
+    <title>sprox.formbase &mdash; Sprox v0.5.5 documentation</title>
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-          URL_ROOT:    '../',
-          VERSION:     '0.5.4',
-          COLLAPSE_MODINDEX: false,
-          FILE_SUFFIX: '.html'
+        URL_ROOT:    '../',
+        VERSION:     '0.5.5',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="top" title="Sprox v0.5.4 documentation" href="../index.html" />
+    <link rel="top" title="Sprox v0.5.5 documentation" href="../index.html" />
     <link rel="next" title="sprox.tablebase" href="sprox.tablebase.html" />
-    <link rel="prev" title="Class Diagram" href="../class_diagram.html" />
+    <link rel="prev" title="Class Diagram" href="../class_diagram.html" /> 
   </head>
   <body>
     <div class="related">
@@ -39,7 +40,7 @@
           <a href="../class_diagram.html" title="Class Diagram"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.5.4</b></a>
+  <a href="../index.html"><b>Sprox 0.5.5</b></a>
   </li>
 
   
@@ -47,7 +48,7 @@
   
 
       </ul>
-    </div>
+    </div>  
   <div class="document">
     <div class="documentwrapper">
       <div class="bodywrapper">
@@ -188,7 +189,7 @@ selection.</td>
 </table>
 <p>One of the more useful things sprox does for you is to fill in the arguments to a drop down automatically.
 Here is the userform, limited to just the town field, which gets populated with the towns.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.formbase</span> <span class="kn">import</span> <span class="n">FormBase</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.formbase</span> <span class="kn">import</span> <span class="n">FormBase</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">UserOnlyTownForm</span><span class="p">(</span><span class="n">FormBase</span><span class="p">):</span>
 <span class="gp">... </span>   <span class="n">__model__</span> <span class="o">=</span> <span class="n">User</span>
 <span class="gp">... </span>   <span class="n">__limit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;town&#39;</span><span class="p">]</span>
@@ -220,11 +221,13 @@ Here is the userform, limited to just the town field, which gets populated with 
 <span class="go">    &lt;/table&gt;</span>
 <span class="go">&lt;/form&gt;</span>
 </pre></div>
+</div>
 <p>Forms created with sprox can be validated as you would any other widget.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">town_form</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;town&#39;</span><span class="p">:</span><span class="mf">1</span><span class="p">})</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">town_form</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;town&#39;</span><span class="p">:</span><span class="mf">1</span><span class="p">})</span>
 <span class="gp">...</span>
 <span class="go">Invalid: sprox_id: Missing value</span>
 </pre></div>
+</div>
 <dl class="method">
 <dt id="sprox.formbase.FormBase.validate">
 <!--[sprox.formbase.FormBase.validate]--><tt class="descname">validate</tt><big>(</big><em>params</em><big>)</big><a class="headerlink" href="#sprox.formbase.FormBase.validate" title="Permalink to this definition">¶</a></dt>
@@ -269,7 +272,7 @@ matches the field data.</td>
 </tbody>
 </table>
 <p>Here is an example registration form, as generated from the vase User model.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.formbase</span> <span class="kn">import</span> <span class="n">AddRecordForm</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.formbase</span> <span class="kn">import</span> <span class="n">AddRecordForm</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">formencode</span> <span class="kn">import</span> <span class="n">Schema</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">formencode.validators</span> <span class="kn">import</span> <span class="n">FieldsMatch</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">tw.forms</span> <span class="kn">import</span> <span class="n">PasswordField</span><span class="p">,</span> <span class="n">TextField</span>
@@ -345,10 +348,11 @@ matches the field data.</td>
 <span class="go">    &lt;/table&gt;</span>
 <span class="go">&lt;/form&gt;</span>
 </pre></div>
+</div>
 <p>What is unique about the AddRecord form, is that if the fields in the database are labeled unique, it will
 automatically vaidate against uniqueness for that field.  Here is a simple user form definition, where the
 user_name in the model is unique:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">AddUserForm</span><span class="p">(</span><span class="n">AddRecordForm</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">AddUserForm</span><span class="p">(</span><span class="n">AddRecordForm</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">__entity__</span> <span class="o">=</span> <span class="n">User</span>
 <span class="gp">... </span>    <span class="n">__limit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;user_name&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">user_form</span> <span class="o">=</span> <span class="n">AddUserForm</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
@@ -356,6 +360,7 @@ user_name in the model is unique:</p>
 <span class="gp">...</span>
 <span class="go">Invalid: user_name: That value already exists</span>
 </pre></div>
+</div>
 <p>The validation fails because there is already a user with the user_name &#8216;asdf&#8217; in the database</p>
 <dl class="method">
 <dt id="sprox.formbase.AddRecordForm.validate">
@@ -379,7 +384,7 @@ user_name in the model is unique:</p>
 </table>
 <p>see <a title="sprox.formbase.FormBase" class="reference internal" href="#sprox.formbase.FormBase"><tt class="xref docutils literal"><span class="pre">sprox.formbase.FormBase</span></tt></a></p>
 <p>Here is an example disabled form with only the user_name and email fields.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.test.model</span> <span class="kn">import</span> <span class="n">User</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.test.model</span> <span class="kn">import</span> <span class="n">User</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.formbase</span> <span class="kn">import</span> <span class="n">DisabledForm</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">DisabledUserForm</span><span class="p">(</span><span class="n">DisabledForm</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">__model__</span> <span class="o">=</span> <span class="n">User</span>
@@ -417,6 +422,7 @@ user_name in the model is unique:</p>
 <span class="go">    &lt;/table&gt;</span>
 <span class="go">&lt;/form&gt;</span>
 </pre></div>
+</div>
 <p>You may notice in the above example that disabled fields pass in a hidden value for each disabled field.</p>
 <dl class="method">
 <dt id="sprox.formbase.DisabledForm.validate">
@@ -499,7 +505,7 @@ user_name in the model is unique:</p>
           <a href="../class_diagram.html" title="Class Diagram"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.5.4</b></a>
+  <a href="../index.html"><b>Sprox 0.5.5</b></a>
   </li>
 
   
@@ -511,7 +517,7 @@ user_name in the model is unique:</p>
 
     <div class="footer">
       &copy; Copyright 2008, Christopher Perkins.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.5.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.5.1.
     </div>
 
 <script type="text/javascript">

@@ -3,24 +3,25 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sprox.widgets &mdash; Sprox v0.5.4 documentation</title>
+    <title>sprox.widgets &mdash; Sprox v0.5.5 documentation</title>
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-          URL_ROOT:    '../',
-          VERSION:     '0.5.4',
-          COLLAPSE_MODINDEX: false,
-          FILE_SUFFIX: '.html'
+        URL_ROOT:    '../',
+        VERSION:     '0.5.5',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="top" title="Sprox v0.5.4 documentation" href="../index.html" />
+    <link rel="top" title="Sprox v0.5.5 documentation" href="../index.html" />
     <link rel="next" title="sprox.util" href="sprox.util.html" />
-    <link rel="prev" title="sprox.iprovider" href="sprox.iprovider.html" />
+    <link rel="prev" title="sprox.iprovider" href="sprox.iprovider.html" /> 
   </head>
   <body>
     <div class="related">
@@ -39,7 +40,7 @@
           <a href="sprox.iprovider.html" title="sprox.iprovider"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.5.4</b></a>
+  <a href="../index.html"><b>Sprox 0.5.5</b></a>
   </li>
 
   
@@ -47,7 +48,7 @@
   
 
       </ul>
-    </div>
+    </div>  
   <div class="document">
     <div class="documentwrapper">
       <div class="bodywrapper">
@@ -124,7 +125,7 @@ render to retrieve a value</dd></dl>
 id for each widget in the tree in a format which allows to re-recreate
 the nested structure.
 Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -134,6 +135,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">id</span>
 <span class="go">&#39;A_B_C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -145,7 +147,7 @@ Example:</p>
 <dt id="sprox.widgets.ContainerWidget.ifilter_children">
 <!--[sprox.widgets.ContainerWidget.ifilter_children]--><tt class="descname">ifilter_children</tt><big>(</big><em>filter</em><big>)</big><a class="headerlink" href="#sprox.widgets.ContainerWidget.ifilter_children" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an iterator for all children applying a filter to them.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">aa</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ab</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ba</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
@@ -155,6 +157,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">ifilter_children</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">w</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">))]</span>
 <span class="go">[&#39;aa&#39;, &#39;ab&#39;]</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -169,7 +172,7 @@ Example:</p>
 parameters sent to the root widget so it reaches this widget when
 displaying.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -179,6 +182,7 @@ displaying.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">key</span>
 <span class="go">&#39;.B.C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -248,7 +252,7 @@ from the instance or the class.</p>
 will be automatically called to fetch fresh results on every request. 
 Parameters not found either on the class, the instance or the keyword 
 args to <cite>display</cite> or <cite>render</cite> will be set to None.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyWidget</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyWidget</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="s">&quot;bar&quot;</span><span class="p">,</span> <span class="s">&quot;null&quot;</span><span class="p">]</span>
 <span class="gp">... </span>    <span class="n">foo</span> <span class="o">=</span> <span class="s">&quot;foo&quot;</span>
 <span class="gp">...</span>
@@ -266,6 +270,7 @@ args to <cite>display</cite> or <cite>render</cite> will be set to None.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="s">&#39;foo&#39;</span><span class="p">]</span>
 <span class="go">&#39;overriden&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -274,7 +279,7 @@ args to <cite>display</cite> or <cite>render</cite> will be set to None.</p>
 <dd><p>Does a pre-order walk on widget tree rooted at self optionally 
 applying a filter on them.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;c&#39;</span><span class="p">)]),</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;d&#39;</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">())</span>
 <span class="go">&#39;abcd&#39;</span>
@@ -288,6 +293,7 @@ applying a filter on them.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">_id</span> <span class="o">==</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">))</span>
 <span class="go">&#39;&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -381,7 +387,7 @@ render to retrieve a value</dd></dl>
 id for each widget in the tree in a format which allows to re-recreate
 the nested structure.
 Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -391,6 +397,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">id</span>
 <span class="go">&#39;A_B_C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -402,7 +409,7 @@ Example:</p>
 <dt id="sprox.widgets.SproxCalendarDatePicker.ifilter_children">
 <!--[sprox.widgets.SproxCalendarDatePicker.ifilter_children]--><tt class="descname">ifilter_children</tt><big>(</big><em>filter</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.ifilter_children" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an iterator for all children applying a filter to them.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">aa</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ab</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ba</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
@@ -412,6 +419,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">ifilter_children</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">w</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">))]</span>
 <span class="go">[&#39;aa&#39;, &#39;ab&#39;]</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -431,7 +439,7 @@ Example:</p>
 parameters sent to the root widget so it reaches this widget when
 displaying.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -441,6 +449,7 @@ displaying.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">key</span>
 <span class="go">&#39;.B.C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -519,12 +528,15 @@ validation fails the original value will be returned unmodified.</dd></dl>
 <dd><p>Fetches values from the dict and inserts the in the attrs dict.</p>
 <p>This is useful when you want to avoid boiler-place at the template:</p>
 <p>Instead of:</p>
-<pre>&lt;foo bar='$bar' zoo='$zoo' /&gt;</pre>
+<div class="highlight-python"><pre>&lt;foo bar='$bar' zoo='$zoo' /&gt;</pre>
+</div>
 <p>Do:</p>
-<pre>&lt;foo py:attrs="attrs" /&gt;</pre>
+<div class="highlight-python"><pre>&lt;foo py:attrs="attrs" /&gt;</pre>
+</div>
 <p>And inside update_params:</p>
-<div class="highlight"><pre><span class="bp">self</span><span class="o">.</span><span class="n">update_attrs</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">,</span> <span class="s">&#39;zoo&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="bp">self</span><span class="o">.</span><span class="n">update_attrs</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">,</span> <span class="s">&#39;zoo&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
 <p>(&#8216;bar&#8217; and &#8216;zoo&#8217; need to be listed at <tt class="docutils literal"><span class="pre">params</span></tt>)</p>
 </dd></dl>
 
@@ -555,7 +567,7 @@ be passed explicitly to <tt class="docutils literal"><span class="pre">display</
 <dd><p>Does a pre-order walk on widget tree rooted at self optionally 
 applying a filter on them.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;c&#39;</span><span class="p">)]),</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;d&#39;</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">())</span>
 <span class="go">&#39;abcd&#39;</span>
@@ -569,6 +581,7 @@ applying a filter on them.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">_id</span> <span class="o">==</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">))</span>
 <span class="go">&#39;&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -662,7 +675,7 @@ render to retrieve a value</dd></dl>
 id for each widget in the tree in a format which allows to re-recreate
 the nested structure.
 Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -672,6 +685,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">id</span>
 <span class="go">&#39;A_B_C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -683,7 +697,7 @@ Example:</p>
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.ifilter_children">
 <!--[sprox.widgets.SproxCalendarDateTimePicker.ifilter_children]--><tt class="descname">ifilter_children</tt><big>(</big><em>filter</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.ifilter_children" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an iterator for all children applying a filter to them.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">aa</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ab</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ba</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
@@ -693,6 +707,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">ifilter_children</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">w</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">))]</span>
 <span class="go">[&#39;aa&#39;, &#39;ab&#39;]</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -712,7 +727,7 @@ Example:</p>
 parameters sent to the root widget so it reaches this widget when
 displaying.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -722,6 +737,7 @@ displaying.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">key</span>
 <span class="go">&#39;.B.C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -800,12 +816,15 @@ validation fails the original value will be returned unmodified.</dd></dl>
 <dd><p>Fetches values from the dict and inserts the in the attrs dict.</p>
 <p>This is useful when you want to avoid boiler-place at the template:</p>
 <p>Instead of:</p>
-<pre>&lt;foo bar='$bar' zoo='$zoo' /&gt;</pre>
+<div class="highlight-python"><pre>&lt;foo bar='$bar' zoo='$zoo' /&gt;</pre>
+</div>
 <p>Do:</p>
-<pre>&lt;foo py:attrs="attrs" /&gt;</pre>
+<div class="highlight-python"><pre>&lt;foo py:attrs="attrs" /&gt;</pre>
+</div>
 <p>And inside update_params:</p>
-<div class="highlight"><pre><span class="bp">self</span><span class="o">.</span><span class="n">update_attrs</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">,</span> <span class="s">&#39;zoo&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="bp">self</span><span class="o">.</span><span class="n">update_attrs</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">,</span> <span class="s">&#39;zoo&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
 <p>(&#8216;bar&#8217; and &#8216;zoo&#8217; need to be listed at <tt class="docutils literal"><span class="pre">params</span></tt>)</p>
 </dd></dl>
 
@@ -836,7 +855,7 @@ be passed explicitly to <tt class="docutils literal"><span class="pre">display</
 <dd><p>Does a pre-order walk on widget tree rooted at self optionally 
 applying a filter on them.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;c&#39;</span><span class="p">)]),</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;d&#39;</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">())</span>
 <span class="go">&#39;abcd&#39;</span>
@@ -850,6 +869,7 @@ applying a filter on them.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">_id</span> <span class="o">==</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">))</span>
 <span class="go">&#39;&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -936,7 +956,7 @@ render to retrieve a value</dd></dl>
 id for each widget in the tree in a format which allows to re-recreate
 the nested structure.
 Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -946,6 +966,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">id</span>
 <span class="go">&#39;A_B_C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -957,7 +978,7 @@ Example:</p>
 <dt id="sprox.widgets.SproxCheckBox.ifilter_children">
 <!--[sprox.widgets.SproxCheckBox.ifilter_children]--><tt class="descname">ifilter_children</tt><big>(</big><em>filter</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCheckBox.ifilter_children" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an iterator for all children applying a filter to them.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">aa</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ab</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ba</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
@@ -967,6 +988,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">ifilter_children</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">w</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">))]</span>
 <span class="go">[&#39;aa&#39;, &#39;ab&#39;]</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -986,7 +1008,7 @@ Example:</p>
 parameters sent to the root widget so it reaches this widget when
 displaying.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -996,6 +1018,7 @@ displaying.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">key</span>
 <span class="go">&#39;.B.C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -1074,12 +1097,15 @@ validation fails the original value will be returned unmodified.</dd></dl>
 <dd><p>Fetches values from the dict and inserts the in the attrs dict.</p>
 <p>This is useful when you want to avoid boiler-place at the template:</p>
 <p>Instead of:</p>
-<pre>&lt;foo bar='$bar' zoo='$zoo' /&gt;</pre>
+<div class="highlight-python"><pre>&lt;foo bar='$bar' zoo='$zoo' /&gt;</pre>
+</div>
 <p>Do:</p>
-<pre>&lt;foo py:attrs="attrs" /&gt;</pre>
+<div class="highlight-python"><pre>&lt;foo py:attrs="attrs" /&gt;</pre>
+</div>
 <p>And inside update_params:</p>
-<div class="highlight"><pre><span class="bp">self</span><span class="o">.</span><span class="n">update_attrs</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">,</span> <span class="s">&#39;zoo&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="bp">self</span><span class="o">.</span><span class="n">update_attrs</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">,</span> <span class="s">&#39;zoo&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
 <p>(&#8216;bar&#8217; and &#8216;zoo&#8217; need to be listed at <tt class="docutils literal"><span class="pre">params</span></tt>)</p>
 </dd></dl>
 
@@ -1107,7 +1133,7 @@ be passed explicitly to <tt class="docutils literal"><span class="pre">display</
 respectively; anything in <tt class="docutils literal"><span class="pre">true_values</span></tt> is true, anything in
 <tt class="docutils literal"><span class="pre">false_values</span></tt> is false, case-insensitive).  The first item of
 those lists is considered the preferred form.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">StringBoolean</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">StringBoolean</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">to_python</span><span class="p">(</span><span class="s">&#39;yes&#39;</span><span class="p">),</span> <span class="n">s</span><span class="o">.</span><span class="n">to_python</span><span class="p">(</span><span class="s">&#39;no&#39;</span><span class="p">)</span>
 <span class="go">(True, False)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">to_python</span><span class="p">(</span><span class="mf">1</span><span class="p">),</span> <span class="n">s</span><span class="o">.</span><span class="n">to_python</span><span class="p">(</span><span class="s">&#39;N&#39;</span><span class="p">)</span>
@@ -1117,6 +1143,7 @@ those lists is considered the preferred form.</p>
     <span class="o">...</span>
 <span class="nc">Invalid</span>: <span class="n-Identifier">Value should be &#39;true&#39; or &#39;false&#39;</span>
 </pre></div>
+</div>
 <p><strong>Messages</strong></p>
 <dl class="docutils">
 <dt><tt class="docutils literal"><span class="pre">badType</span></tt>:</dt>
@@ -1141,7 +1168,7 @@ those lists is considered the preferred form.</p>
 <dd><p>Does a pre-order walk on widget tree rooted at self optionally 
 applying a filter on them.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;c&#39;</span><span class="p">)]),</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;d&#39;</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">())</span>
 <span class="go">&#39;abcd&#39;</span>
@@ -1155,6 +1182,7 @@ applying a filter on them.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">_id</span> <span class="o">==</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">))</span>
 <span class="go">&#39;&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -1237,7 +1265,7 @@ static </em><tt class="descname">get_field_getter</tt><big>(</big><em>columns</e
 id for each widget in the tree in a format which allows to re-recreate
 the nested structure.
 Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -1247,6 +1275,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">id</span>
 <span class="go">&#39;A_B_C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -1258,7 +1287,7 @@ Example:</p>
 <dt id="sprox.widgets.SproxDataGrid.ifilter_children">
 <!--[sprox.widgets.SproxDataGrid.ifilter_children]--><tt class="descname">ifilter_children</tt><big>(</big><em>filter</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxDataGrid.ifilter_children" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an iterator for all children applying a filter to them.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">aa</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ab</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ba</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
@@ -1268,6 +1297,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">ifilter_children</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">w</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">))]</span>
 <span class="go">[&#39;aa&#39;, &#39;ab&#39;]</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -1282,7 +1312,7 @@ Example:</p>
 parameters sent to the root widget so it reaches this widget when
 displaying.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -1292,6 +1322,7 @@ displaying.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">key</span>
 <span class="go">&#39;.B.C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -1356,7 +1387,7 @@ passing the kw argument&#8217;s dict to <cite>update_params</cite>.</dd></dl>
 <dd><p>Does a pre-order walk on widget tree rooted at self optionally 
 applying a filter on them.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;c&#39;</span><span class="p">)]),</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;d&#39;</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">())</span>
 <span class="go">&#39;abcd&#39;</span>
@@ -1370,6 +1401,7 @@ applying a filter on them.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">_id</span> <span class="o">==</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">))</span>
 <span class="go">&#39;&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -1456,7 +1488,7 @@ render to retrieve a value</dd></dl>
 id for each widget in the tree in a format which allows to re-recreate
 the nested structure.
 Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -1466,6 +1498,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">id</span>
 <span class="go">&#39;A_B_C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -1482,7 +1515,7 @@ Example:</p>
 <dt id="sprox.widgets.SproxTableForm.ifilter_children">
 <!--[sprox.widgets.SproxTableForm.ifilter_children]--><tt class="descname">ifilter_children</tt><big>(</big><em>filter</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxTableForm.ifilter_children" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an iterator for all children applying a filter to them.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">aa</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ab</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ba</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
@@ -1492,6 +1525,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">ifilter_children</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">w</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">))]</span>
 <span class="go">[&#39;aa&#39;, &#39;ab&#39;]</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -1516,7 +1550,7 @@ Example:</p>
 parameters sent to the root widget so it reaches this widget when
 displaying.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -1526,6 +1560,7 @@ displaying.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">key</span>
 <span class="go">&#39;.B.C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -1604,12 +1639,15 @@ validation fails the original value will be returned unmodified.</dd></dl>
 <dd><p>Fetches values from the dict and inserts the in the attrs dict.</p>
 <p>This is useful when you want to avoid boiler-place at the template:</p>
 <p>Instead of:</p>
-<pre>&lt;foo bar='$bar' zoo='$zoo' /&gt;</pre>
+<div class="highlight-python"><pre>&lt;foo bar='$bar' zoo='$zoo' /&gt;</pre>
+</div>
 <p>Do:</p>
-<pre>&lt;foo py:attrs="attrs" /&gt;</pre>
+<div class="highlight-python"><pre>&lt;foo py:attrs="attrs" /&gt;</pre>
+</div>
 <p>And inside update_params:</p>
-<div class="highlight"><pre><span class="bp">self</span><span class="o">.</span><span class="n">update_attrs</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">,</span> <span class="s">&#39;zoo&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="bp">self</span><span class="o">.</span><span class="n">update_attrs</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">,</span> <span class="s">&#39;zoo&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
 <p>(&#8216;bar&#8217; and &#8216;zoo&#8217; need to be listed at <tt class="docutils literal"><span class="pre">params</span></tt>)</p>
 </dd></dl>
 
@@ -1640,16 +1678,18 @@ set to true, then extra fields are not passed back in the results.</p>
 <p>Validators are associated with keys either with a class syntax, or
 as keyword arguments (class syntax is usually easier).  Something
 like:</p>
-<div class="highlight"><pre><span class="k">class</span> <span class="nc">MySchema</span><span class="p">(</span><span class="n">Schema</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MySchema</span><span class="p">(</span><span class="n">Schema</span><span class="p">):</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">Validators</span><span class="o">.</span><span class="n">PlainText</span><span class="p">()</span>
     <span class="n">phone</span> <span class="o">=</span> <span class="n">Validators</span><span class="o">.</span><span class="n">PhoneNumber</span><span class="p">()</span>
 </pre></div>
+</div>
 <p>These will not be available as actual instance variables, but will
 be collected in a dictionary.  To remove a validator in a subclass
 that is present in a superclass, set it to None, like:</p>
-<div class="highlight"><pre><span class="k">class</span> <span class="nc">MySubSchema</span><span class="p">(</span><span class="n">MySchema</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MySubSchema</span><span class="p">(</span><span class="n">MySchema</span><span class="p">):</span>
     <span class="n">name</span> <span class="o">=</span> <span class="bp">None</span>
 </pre></div>
+</div>
 <p>Note that missing fields are handled at the Schema level.  Missing
 fields can have the &#8216;missing&#8217; message set to specify the error
 message, or if that does not exist the <em>schema</em> message
@@ -1682,7 +1722,7 @@ message, or if that does not exist the <em>schema</em> message
 <dd><p>Does a pre-order walk on widget tree rooted at self optionally 
 applying a filter on them.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;c&#39;</span><span class="p">)]),</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;d&#39;</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">())</span>
 <span class="go">&#39;abcd&#39;</span>
@@ -1696,6 +1736,7 @@ applying a filter on them.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">_id</span> <span class="o">==</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">))</span>
 <span class="go">&#39;&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -1789,7 +1830,7 @@ render to retrieve a value</dd></dl>
 id for each widget in the tree in a format which allows to re-recreate
 the nested structure.
 Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -1799,6 +1840,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">id</span>
 <span class="go">&#39;A_B_C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -1810,7 +1852,7 @@ Example:</p>
 <dt id="sprox.widgets.SproxTimePicker.ifilter_children">
 <!--[sprox.widgets.SproxTimePicker.ifilter_children]--><tt class="descname">ifilter_children</tt><big>(</big><em>filter</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxTimePicker.ifilter_children" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an iterator for all children applying a filter to them.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">aa</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ab</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ba</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
@@ -1820,6 +1862,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">ifilter_children</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">w</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">))]</span>
 <span class="go">[&#39;aa&#39;, &#39;ab&#39;]</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -1839,7 +1882,7 @@ Example:</p>
 parameters sent to the root widget so it reaches this widget when
 displaying.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -1849,6 +1892,7 @@ displaying.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">key</span>
 <span class="go">&#39;.B.C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -1927,12 +1971,15 @@ validation fails the original value will be returned unmodified.</dd></dl>
 <dd><p>Fetches values from the dict and inserts the in the attrs dict.</p>
 <p>This is useful when you want to avoid boiler-place at the template:</p>
 <p>Instead of:</p>
-<pre>&lt;foo bar='$bar' zoo='$zoo' /&gt;</pre>
+<div class="highlight-python"><pre>&lt;foo bar='$bar' zoo='$zoo' /&gt;</pre>
+</div>
 <p>Do:</p>
-<pre>&lt;foo py:attrs="attrs" /&gt;</pre>
+<div class="highlight-python"><pre>&lt;foo py:attrs="attrs" /&gt;</pre>
+</div>
 <p>And inside update_params:</p>
-<div class="highlight"><pre><span class="bp">self</span><span class="o">.</span><span class="n">update_attrs</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">,</span> <span class="s">&#39;zoo&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="bp">self</span><span class="o">.</span><span class="n">update_attrs</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">,</span> <span class="s">&#39;zoo&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
 <p>(&#8216;bar&#8217; and &#8216;zoo&#8217; need to be listed at <tt class="docutils literal"><span class="pre">params</span></tt>)</p>
 </dd></dl>
 
@@ -1963,7 +2010,7 @@ be passed explicitly to <tt class="docutils literal"><span class="pre">display</
 <dd><p>Does a pre-order walk on widget tree rooted at self optionally 
 applying a filter on them.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;c&#39;</span><span class="p">)]),</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;d&#39;</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">())</span>
 <span class="go">&#39;abcd&#39;</span>
@@ -1977,6 +2024,7 @@ applying a filter on them.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">_id</span> <span class="o">==</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">))</span>
 <span class="go">&#39;&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -2047,7 +2095,7 @@ render to retrieve a value</dd></dl>
 id for each widget in the tree in a format which allows to re-recreate
 the nested structure.
 Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -2057,6 +2105,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">id</span>
 <span class="go">&#39;A_B_C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -2068,7 +2117,7 @@ Example:</p>
 <dt id="sprox.widgets.EntityDefWidget.ifilter_children">
 <!--[sprox.widgets.EntityDefWidget.ifilter_children]--><tt class="descname">ifilter_children</tt><big>(</big><em>filter</em><big>)</big><a class="headerlink" href="#sprox.widgets.EntityDefWidget.ifilter_children" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an iterator for all children applying a filter to them.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">aa</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ab</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ba</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
@@ -2078,6 +2127,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">ifilter_children</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">w</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">))]</span>
 <span class="go">[&#39;aa&#39;, &#39;ab&#39;]</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -2092,7 +2142,7 @@ Example:</p>
 parameters sent to the root widget so it reaches this widget when
 displaying.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -2102,6 +2152,7 @@ displaying.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">key</span>
 <span class="go">&#39;.B.C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -2171,7 +2222,7 @@ from the instance or the class.</p>
 will be automatically called to fetch fresh results on every request. 
 Parameters not found either on the class, the instance or the keyword 
 args to <cite>display</cite> or <cite>render</cite> will be set to None.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyWidget</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyWidget</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="s">&quot;bar&quot;</span><span class="p">,</span> <span class="s">&quot;null&quot;</span><span class="p">]</span>
 <span class="gp">... </span>    <span class="n">foo</span> <span class="o">=</span> <span class="s">&quot;foo&quot;</span>
 <span class="gp">...</span>
@@ -2189,6 +2240,7 @@ args to <cite>display</cite> or <cite>render</cite> will be set to None.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="s">&#39;foo&#39;</span><span class="p">]</span>
 <span class="go">&#39;overriden&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -2197,7 +2249,7 @@ args to <cite>display</cite> or <cite>render</cite> will be set to None.</p>
 <dd><p>Does a pre-order walk on widget tree rooted at self optionally 
 applying a filter on them.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;c&#39;</span><span class="p">)]),</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;d&#39;</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">())</span>
 <span class="go">&#39;abcd&#39;</span>
@@ -2211,6 +2263,7 @@ applying a filter on them.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">_id</span> <span class="o">==</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">))</span>
 <span class="go">&#39;&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -2281,7 +2334,7 @@ render to retrieve a value</dd></dl>
 id for each widget in the tree in a format which allows to re-recreate
 the nested structure.
 Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -2291,6 +2344,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">id</span>
 <span class="go">&#39;A_B_C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -2302,7 +2356,7 @@ Example:</p>
 <dt id="sprox.widgets.EntityLabelWidget.ifilter_children">
 <!--[sprox.widgets.EntityLabelWidget.ifilter_children]--><tt class="descname">ifilter_children</tt><big>(</big><em>filter</em><big>)</big><a class="headerlink" href="#sprox.widgets.EntityLabelWidget.ifilter_children" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an iterator for all children applying a filter to them.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">aa</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ab</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ba</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
@@ -2312,6 +2366,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">ifilter_children</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">w</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">))]</span>
 <span class="go">[&#39;aa&#39;, &#39;ab&#39;]</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -2326,7 +2381,7 @@ Example:</p>
 parameters sent to the root widget so it reaches this widget when
 displaying.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -2336,6 +2391,7 @@ displaying.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">key</span>
 <span class="go">&#39;.B.C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -2405,7 +2461,7 @@ from the instance or the class.</p>
 will be automatically called to fetch fresh results on every request. 
 Parameters not found either on the class, the instance or the keyword 
 args to <cite>display</cite> or <cite>render</cite> will be set to None.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyWidget</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyWidget</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="s">&quot;bar&quot;</span><span class="p">,</span> <span class="s">&quot;null&quot;</span><span class="p">]</span>
 <span class="gp">... </span>    <span class="n">foo</span> <span class="o">=</span> <span class="s">&quot;foo&quot;</span>
 <span class="gp">...</span>
@@ -2423,6 +2479,7 @@ args to <cite>display</cite> or <cite>render</cite> will be set to None.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="s">&#39;foo&#39;</span><span class="p">]</span>
 <span class="go">&#39;overriden&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -2431,7 +2488,7 @@ args to <cite>display</cite> or <cite>render</cite> will be set to None.</p>
 <dd><p>Does a pre-order walk on widget tree rooted at self optionally 
 applying a filter on them.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;c&#39;</span><span class="p">)]),</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;d&#39;</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">())</span>
 <span class="go">&#39;abcd&#39;</span>
@@ -2445,6 +2502,7 @@ applying a filter on them.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">_id</span> <span class="o">==</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">))</span>
 <span class="go">&#39;&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -2515,7 +2573,7 @@ render to retrieve a value</dd></dl>
 id for each widget in the tree in a format which allows to re-recreate
 the nested structure.
 Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -2525,6 +2583,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">id</span>
 <span class="go">&#39;A_B_C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -2536,7 +2595,7 @@ Example:</p>
 <dt id="sprox.widgets.ModelLabelWidget.ifilter_children">
 <!--[sprox.widgets.ModelLabelWidget.ifilter_children]--><tt class="descname">ifilter_children</tt><big>(</big><em>filter</em><big>)</big><a class="headerlink" href="#sprox.widgets.ModelLabelWidget.ifilter_children" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an iterator for all children applying a filter to them.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">aa</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ab</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ba</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
@@ -2546,6 +2605,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">ifilter_children</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">w</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">))]</span>
 <span class="go">[&#39;aa&#39;, &#39;ab&#39;]</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -2560,7 +2620,7 @@ Example:</p>
 parameters sent to the root widget so it reaches this widget when
 displaying.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -2570,6 +2630,7 @@ displaying.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">key</span>
 <span class="go">&#39;.B.C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -2639,7 +2700,7 @@ from the instance or the class.</p>
 will be automatically called to fetch fresh results on every request. 
 Parameters not found either on the class, the instance or the keyword 
 args to <cite>display</cite> or <cite>render</cite> will be set to None.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyWidget</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyWidget</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="s">&quot;bar&quot;</span><span class="p">,</span> <span class="s">&quot;null&quot;</span><span class="p">]</span>
 <span class="gp">... </span>    <span class="n">foo</span> <span class="o">=</span> <span class="s">&quot;foo&quot;</span>
 <span class="gp">...</span>
@@ -2657,6 +2718,7 @@ args to <cite>display</cite> or <cite>render</cite> will be set to None.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="s">&#39;foo&#39;</span><span class="p">]</span>
 <span class="go">&#39;overriden&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -2665,7 +2727,7 @@ args to <cite>display</cite> or <cite>render</cite> will be set to None.</p>
 <dd><p>Does a pre-order walk on widget tree rooted at self optionally 
 applying a filter on them.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;c&#39;</span><span class="p">)]),</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;d&#39;</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">())</span>
 <span class="go">&#39;abcd&#39;</span>
@@ -2679,6 +2741,7 @@ applying a filter on them.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">_id</span> <span class="o">==</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">))</span>
 <span class="go">&#39;&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -2749,7 +2812,7 @@ render to retrieve a value</dd></dl>
 id for each widget in the tree in a format which allows to re-recreate
 the nested structure.
 Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -2759,6 +2822,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">id</span>
 <span class="go">&#39;A_B_C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -2770,7 +2834,7 @@ Example:</p>
 <dt id="sprox.widgets.PropertyMixin.ifilter_children">
 <!--[sprox.widgets.PropertyMixin.ifilter_children]--><tt class="descname">ifilter_children</tt><big>(</big><em>filter</em><big>)</big><a class="headerlink" href="#sprox.widgets.PropertyMixin.ifilter_children" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an iterator for all children applying a filter to them.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">aa</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ab</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ba</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
@@ -2780,6 +2844,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">ifilter_children</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">w</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">))]</span>
 <span class="go">[&#39;aa&#39;, &#39;ab&#39;]</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -2794,7 +2859,7 @@ Example:</p>
 parameters sent to the root widget so it reaches this widget when
 displaying.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -2804,6 +2869,7 @@ displaying.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">key</span>
 <span class="go">&#39;.B.C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -2873,7 +2939,7 @@ from the instance or the class.</p>
 will be automatically called to fetch fresh results on every request. 
 Parameters not found either on the class, the instance or the keyword 
 args to <cite>display</cite> or <cite>render</cite> will be set to None.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyWidget</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyWidget</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="s">&quot;bar&quot;</span><span class="p">,</span> <span class="s">&quot;null&quot;</span><span class="p">]</span>
 <span class="gp">... </span>    <span class="n">foo</span> <span class="o">=</span> <span class="s">&quot;foo&quot;</span>
 <span class="gp">...</span>
@@ -2891,6 +2957,7 @@ args to <cite>display</cite> or <cite>render</cite> will be set to None.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="s">&#39;foo&#39;</span><span class="p">]</span>
 <span class="go">&#39;overriden&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -2899,7 +2966,7 @@ args to <cite>display</cite> or <cite>render</cite> will be set to None.</p>
 <dd><p>Does a pre-order walk on widget tree rooted at self optionally 
 applying a filter on them.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;c&#39;</span><span class="p">)]),</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;d&#39;</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">())</span>
 <span class="go">&#39;abcd&#39;</span>
@@ -2913,6 +2980,7 @@ applying a filter on them.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">_id</span> <span class="o">==</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">))</span>
 <span class="go">&#39;&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -2998,7 +3066,7 @@ render to retrieve a value</dd></dl>
 id for each widget in the tree in a format which allows to re-recreate
 the nested structure.
 Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -3008,6 +3076,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">id</span>
 <span class="go">&#39;A_B_C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -3019,7 +3088,7 @@ Example:</p>
 <dt id="sprox.widgets.PropertyMultipleSelectField.ifilter_children">
 <!--[sprox.widgets.PropertyMultipleSelectField.ifilter_children]--><tt class="descname">ifilter_children</tt><big>(</big><em>filter</em><big>)</big><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.ifilter_children" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an iterator for all children applying a filter to them.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">aa</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ab</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ba</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
@@ -3029,6 +3098,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">ifilter_children</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">w</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">))]</span>
 <span class="go">[&#39;aa&#39;, &#39;ab&#39;]</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -3048,7 +3118,7 @@ Example:</p>
 parameters sent to the root widget so it reaches this widget when
 displaying.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -3058,6 +3128,7 @@ displaying.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">key</span>
 <span class="go">&#39;.B.C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -3136,12 +3207,15 @@ validation fails the original value will be returned unmodified.</dd></dl>
 <dd><p>Fetches values from the dict and inserts the in the attrs dict.</p>
 <p>This is useful when you want to avoid boiler-place at the template:</p>
 <p>Instead of:</p>
-<pre>&lt;foo bar='$bar' zoo='$zoo' /&gt;</pre>
+<div class="highlight-python"><pre>&lt;foo bar='$bar' zoo='$zoo' /&gt;</pre>
+</div>
 <p>Do:</p>
-<pre>&lt;foo py:attrs="attrs" /&gt;</pre>
+<div class="highlight-python"><pre>&lt;foo py:attrs="attrs" /&gt;</pre>
+</div>
 <p>And inside update_params:</p>
-<div class="highlight"><pre><span class="bp">self</span><span class="o">.</span><span class="n">update_attrs</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">,</span> <span class="s">&#39;zoo&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="bp">self</span><span class="o">.</span><span class="n">update_attrs</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">,</span> <span class="s">&#39;zoo&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
 <p>(&#8216;bar&#8217; and &#8216;zoo&#8217; need to be listed at <tt class="docutils literal"><span class="pre">params</span></tt>)</p>
 </dd></dl>
 
@@ -3186,7 +3260,7 @@ be passed explicitly to <tt class="docutils literal"><span class="pre">display</
 <dd><p>Does a pre-order walk on widget tree rooted at self optionally 
 applying a filter on them.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;c&#39;</span><span class="p">)]),</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;d&#39;</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">())</span>
 <span class="go">&#39;abcd&#39;</span>
@@ -3200,6 +3274,7 @@ applying a filter on them.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">_id</span> <span class="o">==</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">))</span>
 <span class="go">&#39;&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -3286,7 +3361,7 @@ render to retrieve a value</dd></dl>
 id for each widget in the tree in a format which allows to re-recreate
 the nested structure.
 Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -3296,6 +3371,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">id</span>
 <span class="go">&#39;A_B_C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -3307,7 +3383,7 @@ Example:</p>
 <dt id="sprox.widgets.PropertySingleSelectField.ifilter_children">
 <!--[sprox.widgets.PropertySingleSelectField.ifilter_children]--><tt class="descname">ifilter_children</tt><big>(</big><em>filter</em><big>)</big><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.ifilter_children" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an iterator for all children applying a filter to them.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">aa</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ab</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ba</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
@@ -3317,6 +3393,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">ifilter_children</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">w</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">))]</span>
 <span class="go">[&#39;aa&#39;, &#39;ab&#39;]</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -3336,7 +3413,7 @@ Example:</p>
 parameters sent to the root widget so it reaches this widget when
 displaying.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -3346,6 +3423,7 @@ displaying.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">key</span>
 <span class="go">&#39;.B.C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -3424,12 +3502,15 @@ validation fails the original value will be returned unmodified.</dd></dl>
 <dd><p>Fetches values from the dict and inserts the in the attrs dict.</p>
 <p>This is useful when you want to avoid boiler-place at the template:</p>
 <p>Instead of:</p>
-<pre>&lt;foo bar='$bar' zoo='$zoo' /&gt;</pre>
+<div class="highlight-python"><pre>&lt;foo bar='$bar' zoo='$zoo' /&gt;</pre>
+</div>
 <p>Do:</p>
-<pre>&lt;foo py:attrs="attrs" /&gt;</pre>
+<div class="highlight-python"><pre>&lt;foo py:attrs="attrs" /&gt;</pre>
+</div>
 <p>And inside update_params:</p>
-<div class="highlight"><pre><span class="bp">self</span><span class="o">.</span><span class="n">update_attrs</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">,</span> <span class="s">&#39;zoo&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="bp">self</span><span class="o">.</span><span class="n">update_attrs</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">,</span> <span class="s">&#39;zoo&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
 <p>(&#8216;bar&#8217; and &#8216;zoo&#8217; need to be listed at <tt class="docutils literal"><span class="pre">params</span></tt>)</p>
 </dd></dl>
 
@@ -3474,7 +3555,7 @@ be passed explicitly to <tt class="docutils literal"><span class="pre">display</
 <dd><p>Does a pre-order walk on widget tree rooted at self optionally 
 applying a filter on them.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;c&#39;</span><span class="p">)]),</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;d&#39;</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">())</span>
 <span class="go">&#39;abcd&#39;</span>
@@ -3488,6 +3569,7 @@ applying a filter on them.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">_id</span> <span class="o">==</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">))</span>
 <span class="go">&#39;&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -3558,7 +3640,7 @@ render to retrieve a value</dd></dl>
 id for each widget in the tree in a format which allows to re-recreate
 the nested structure.
 Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -3568,6 +3650,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">id</span>
 <span class="go">&#39;A_B_C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -3579,7 +3662,7 @@ Example:</p>
 <dt id="sprox.widgets.RecordFieldWidget.ifilter_children">
 <!--[sprox.widgets.RecordFieldWidget.ifilter_children]--><tt class="descname">ifilter_children</tt><big>(</big><em>filter</em><big>)</big><a class="headerlink" href="#sprox.widgets.RecordFieldWidget.ifilter_children" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an iterator for all children applying a filter to them.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">aa</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ab</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ba</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
@@ -3589,6 +3672,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">ifilter_children</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">w</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">))]</span>
 <span class="go">[&#39;aa&#39;, &#39;ab&#39;]</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -3603,7 +3687,7 @@ Example:</p>
 parameters sent to the root widget so it reaches this widget when
 displaying.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -3613,6 +3697,7 @@ displaying.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">key</span>
 <span class="go">&#39;.B.C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -3682,7 +3767,7 @@ from the instance or the class.</p>
 will be automatically called to fetch fresh results on every request. 
 Parameters not found either on the class, the instance or the keyword 
 args to <cite>display</cite> or <cite>render</cite> will be set to None.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyWidget</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyWidget</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="s">&quot;bar&quot;</span><span class="p">,</span> <span class="s">&quot;null&quot;</span><span class="p">]</span>
 <span class="gp">... </span>    <span class="n">foo</span> <span class="o">=</span> <span class="s">&quot;foo&quot;</span>
 <span class="gp">...</span>
@@ -3700,6 +3785,7 @@ args to <cite>display</cite> or <cite>render</cite> will be set to None.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="s">&#39;foo&#39;</span><span class="p">]</span>
 <span class="go">&#39;overriden&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -3708,7 +3794,7 @@ args to <cite>display</cite> or <cite>render</cite> will be set to None.</p>
 <dd><p>Does a pre-order walk on widget tree rooted at self optionally 
 applying a filter on them.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;c&#39;</span><span class="p">)]),</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;d&#39;</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">())</span>
 <span class="go">&#39;abcd&#39;</span>
@@ -3722,6 +3808,7 @@ applying a filter on them.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">_id</span> <span class="o">==</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">))</span>
 <span class="go">&#39;&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -3792,7 +3879,7 @@ render to retrieve a value</dd></dl>
 id for each widget in the tree in a format which allows to re-recreate
 the nested structure.
 Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -3802,6 +3889,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">id</span>
 <span class="go">&#39;A_B_C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -3813,7 +3901,7 @@ Example:</p>
 <dt id="sprox.widgets.RecordViewWidget.ifilter_children">
 <!--[sprox.widgets.RecordViewWidget.ifilter_children]--><tt class="descname">ifilter_children</tt><big>(</big><em>filter</em><big>)</big><a class="headerlink" href="#sprox.widgets.RecordViewWidget.ifilter_children" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an iterator for all children applying a filter to them.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">aa</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ab</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ba</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
@@ -3823,6 +3911,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">ifilter_children</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">w</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">))]</span>
 <span class="go">[&#39;aa&#39;, &#39;ab&#39;]</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -3837,7 +3926,7 @@ Example:</p>
 parameters sent to the root widget so it reaches this widget when
 displaying.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -3847,6 +3936,7 @@ displaying.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">key</span>
 <span class="go">&#39;.B.C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -3916,7 +4006,7 @@ from the instance or the class.</p>
 will be automatically called to fetch fresh results on every request. 
 Parameters not found either on the class, the instance or the keyword 
 args to <cite>display</cite> or <cite>render</cite> will be set to None.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyWidget</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyWidget</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="s">&quot;bar&quot;</span><span class="p">,</span> <span class="s">&quot;null&quot;</span><span class="p">]</span>
 <span class="gp">... </span>    <span class="n">foo</span> <span class="o">=</span> <span class="s">&quot;foo&quot;</span>
 <span class="gp">...</span>
@@ -3934,6 +4024,7 @@ args to <cite>display</cite> or <cite>render</cite> will be set to None.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="s">&#39;foo&#39;</span><span class="p">]</span>
 <span class="go">&#39;overriden&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -3942,7 +4033,7 @@ args to <cite>display</cite> or <cite>render</cite> will be set to None.</p>
 <dd><p>Does a pre-order walk on widget tree rooted at self optionally 
 applying a filter on them.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;c&#39;</span><span class="p">)]),</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;d&#39;</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">())</span>
 <span class="go">&#39;abcd&#39;</span>
@@ -3956,6 +4047,7 @@ applying a filter on them.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">_id</span> <span class="o">==</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">))</span>
 <span class="go">&#39;&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -4026,7 +4118,7 @@ render to retrieve a value</dd></dl>
 id for each widget in the tree in a format which allows to re-recreate
 the nested structure.
 Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -4036,6 +4128,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">id</span>
 <span class="go">&#39;A_B_C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -4047,7 +4140,7 @@ Example:</p>
 <dt id="sprox.widgets.TableDefWidget.ifilter_children">
 <!--[sprox.widgets.TableDefWidget.ifilter_children]--><tt class="descname">ifilter_children</tt><big>(</big><em>filter</em><big>)</big><a class="headerlink" href="#sprox.widgets.TableDefWidget.ifilter_children" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an iterator for all children applying a filter to them.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">aa</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ab</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ba</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
@@ -4057,6 +4150,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">ifilter_children</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">w</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">))]</span>
 <span class="go">[&#39;aa&#39;, &#39;ab&#39;]</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -4071,7 +4165,7 @@ Example:</p>
 parameters sent to the root widget so it reaches this widget when
 displaying.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -4081,6 +4175,7 @@ displaying.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">key</span>
 <span class="go">&#39;.B.C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -4150,7 +4245,7 @@ from the instance or the class.</p>
 will be automatically called to fetch fresh results on every request. 
 Parameters not found either on the class, the instance or the keyword 
 args to <cite>display</cite> or <cite>render</cite> will be set to None.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyWidget</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyWidget</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="s">&quot;bar&quot;</span><span class="p">,</span> <span class="s">&quot;null&quot;</span><span class="p">]</span>
 <span class="gp">... </span>    <span class="n">foo</span> <span class="o">=</span> <span class="s">&quot;foo&quot;</span>
 <span class="gp">...</span>
@@ -4168,6 +4263,7 @@ args to <cite>display</cite> or <cite>render</cite> will be set to None.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="s">&#39;foo&#39;</span><span class="p">]</span>
 <span class="go">&#39;overriden&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -4176,7 +4272,7 @@ args to <cite>display</cite> or <cite>render</cite> will be set to None.</p>
 <dd><p>Does a pre-order walk on widget tree rooted at self optionally 
 applying a filter on them.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;c&#39;</span><span class="p">)]),</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;d&#39;</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">())</span>
 <span class="go">&#39;abcd&#39;</span>
@@ -4190,6 +4286,7 @@ applying a filter on them.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">_id</span> <span class="o">==</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">))</span>
 <span class="go">&#39;&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -4260,7 +4357,7 @@ render to retrieve a value</dd></dl>
 id for each widget in the tree in a format which allows to re-recreate
 the nested structure.
 Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -4270,6 +4367,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">id</span>
 <span class="go">&#39;A_B_C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -4281,7 +4379,7 @@ Example:</p>
 <dt id="sprox.widgets.TableLabelWidget.ifilter_children">
 <!--[sprox.widgets.TableLabelWidget.ifilter_children]--><tt class="descname">ifilter_children</tt><big>(</big><em>filter</em><big>)</big><a class="headerlink" href="#sprox.widgets.TableLabelWidget.ifilter_children" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an iterator for all children applying a filter to them.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Widgets</span><span class="p">(</span><span class="n">WidgetsList</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">aa</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ab</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
 <span class="gp">... </span>    <span class="n">ba</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">()</span>
@@ -4291,6 +4389,7 @@ Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">ifilter_children</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">w</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">))]</span>
 <span class="go">[&#39;aa&#39;, &#39;ab&#39;]</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -4305,7 +4404,7 @@ Example:</p>
 parameters sent to the root widget so it reaches this widget when
 displaying.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">A</span> <span class="o">=</span> <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>    <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">... </span>        <span class="n">Widget</span><span class="p">(</span><span class="s">&quot;C&quot;</span><span class="p">)</span>
 <span class="gp">... </span>        <span class="p">])</span>
@@ -4315,6 +4414,7 @@ displaying.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">key</span>
 <span class="go">&#39;.B.C&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="attribute">
@@ -4384,7 +4484,7 @@ from the instance or the class.</p>
 will be automatically called to fetch fresh results on every request. 
 Parameters not found either on the class, the instance or the keyword 
 args to <cite>display</cite> or <cite>render</cite> will be set to None.</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyWidget</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyWidget</span><span class="p">(</span><span class="n">Widget</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="s">&quot;bar&quot;</span><span class="p">,</span> <span class="s">&quot;null&quot;</span><span class="p">]</span>
 <span class="gp">... </span>    <span class="n">foo</span> <span class="o">=</span> <span class="s">&quot;foo&quot;</span>
 <span class="gp">...</span>
@@ -4402,6 +4502,7 @@ args to <cite>display</cite> or <cite>render</cite> will be set to None.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="s">&#39;foo&#39;</span><span class="p">]</span>
 <span class="go">&#39;overriden&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -4410,7 +4511,7 @@ args to <cite>display</cite> or <cite>render</cite> will be set to None.</p>
 <dd><p>Does a pre-order walk on widget tree rooted at self optionally 
 applying a filter on them.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">W</span> <span class="o">=</span> <span class="n">Widget</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="n">children</span><span class="o">=</span><span class="p">[</span><span class="n">W</span><span class="p">(</span><span class="s">&#39;c&#39;</span><span class="p">)]),</span> <span class="n">W</span><span class="p">(</span><span class="s">&#39;d&#39;</span><span class="p">)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">())</span>
 <span class="go">&#39;abcd&#39;</span>
@@ -4424,6 +4525,7 @@ applying a filter on them.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">w</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">_id</span> <span class="o">==</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">))</span>
 <span class="go">&#39;&#39;</span>
 </pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -4488,7 +4590,7 @@ applying a filter on them.</p>
           <a href="sprox.iprovider.html" title="sprox.iprovider"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.5.4</b></a>
+  <a href="../index.html"><b>Sprox 0.5.5</b></a>
   </li>
 
   
@@ -4500,7 +4602,7 @@ applying a filter on them.</p>
 
     <div class="footer">
       &copy; Copyright 2008, Christopher Perkins.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.5.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.5.1.
     </div>
 
 <script type="text/javascript">

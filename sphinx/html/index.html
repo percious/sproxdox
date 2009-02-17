@@ -3,23 +3,24 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Sprox &mdash; Sprox v0.5.4 documentation</title>
+    <title>Sprox &mdash; Sprox v0.5.5 documentation</title>
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-          URL_ROOT:    '',
-          VERSION:     '0.5.4',
-          COLLAPSE_MODINDEX: false,
-          FILE_SUFFIX: '.html'
+        URL_ROOT:    '',
+        VERSION:     '0.5.5',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="top" title="Sprox v0.5.4 documentation" href="" />
-    <link rel="next" title="Class Diagram" href="class_diagram.html" />
+    <link rel="top" title="Sprox v0.5.5 documentation" href="" />
+    <link rel="next" title="Class Diagram" href="class_diagram.html" /> 
   </head>
   <body>
     <div class="related">
@@ -35,13 +36,13 @@
           <a href="class_diagram.html" title="Class Diagram"
              accesskey="N">next</a> |</li>
   <li>
-  <a href=""><b>Sprox 0.5.4</b></a>
+  <a href=""><b>Sprox 0.5.5</b></a>
   </li>
 
   
 
       </ul>
-    </div>
+    </div>  
   <div class="document">
     <div class="documentwrapper">
       <div class="bodywrapper">
@@ -59,7 +60,8 @@ data.</p>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <p>Sprox is installable from pypi.:</p>
-<pre>easy_install sprox</pre>
+<div class="highlight-python"><pre>easy_install sprox</pre>
+</div>
 </div>
 <div class="section" id="schema-based-widget-generation">
 <h2>Schema Based Widget Generation<a class="headerlink" href="#schema-based-widget-generation" title="Permalink to this headline">¶</a></h2>
@@ -76,13 +78,14 @@ field schema to the point where they interface other parts of the system in a si
 <h2>Form Generation<a class="headerlink" href="#form-generation" title="Permalink to this headline">¶</a></h2>
 <p>Sprox has a simple but powerful way to generate forms.
 Here is the simplest way to create a form based on a &#8220;User&#8221; class.:</p>
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">sprox.formbase</span> <span class="kn">import</span> <span class="n">AddRecordForm</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">sprox.formbase</span> <span class="kn">import</span> <span class="n">AddRecordForm</span>
 
 <span class="k">class</span> <span class="nc">UserForm</span><span class="p">(</span><span class="n">AddRecordForm</span><span class="p">):</span>
     <span class="n">__model__</span> <span class="o">=</span> <span class="n">User</span>
 
 <span class="n">user_form</span> <span class="o">=</span> <span class="n">UserForm</span><span class="p">(</span><span class="n">DBSession</span><span class="p">)</span>
 </pre></div>
+</div>
 <p>That form can then be passed into a template, just like if it were a regular ToscaWidgets form.  But
 you ask, &#8220;Why do you need to pass in the DBSession?&#8221;  Well, in fact the session is not required to be passed in,
 but if you want Sprox to pick up the data for the drop-down menus, and multiple select fields, it needs a way
@@ -90,7 +93,7 @@ to connect to the database in order to get the appropriate data.
 You might say, &#8220;Ok, but that form gives me a lot of junk I don&#8217;t want, and the password field is going to have to be verified
 if we wanted to say, make a registration form.&#8221;  Well, remember Sprox is fully customizable.  Here is an example registration
 form based on Sprox, complete with password validation.:</p>
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">sprox.formbase</span> <span class="kn">import</span> <span class="n">AddRecordForm</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">sprox.formbase</span> <span class="kn">import</span> <span class="n">AddRecordForm</span>
 <span class="kn">from</span> <span class="nn">formencode</span> <span class="kn">import</span> <span class="n">Schema</span>
 <span class="kn">from</span> <span class="nn">formencode.validators</span> <span class="kn">import</span> <span class="n">FieldsMatch</span>
 <span class="kn">from</span> <span class="nn">tw.forms</span> <span class="kn">import</span> <span class="n">PasswordField</span><span class="p">,</span> <span class="n">TextField</span>
@@ -111,6 +114,7 @@ form based on Sprox, complete with password validation.:</p>
 
 <span class="n">registration_form</span> <span class="o">=</span> <span class="n">RegistrationForm</span><span class="p">(</span><span class="n">DBSession</span><span class="p">)</span>
 </pre></div>
+</div>
 <p>Which makes a form that looks something like this:</p>
 <img alt="_images/registration_form.png" src="_images/registration_form.png" />
 <p>Notice first that we have made three fields required set the order, and omitted the fields that
@@ -119,7 +123,7 @@ was a text area).  Lastly we add a verify_password field that is not in the curr
 if you were to alter the schema for your database, any fields you added to your User model would also be added to this form.
 If you wanted to avoid this, you would use __limit_fields__ instead of __omit_fields__.
 There are many other __modifiers__ for FormBase in Sprox, you can use them to generate the forms you desire in
-any number of combinations.  For more information see <a title="" class="reference external" href="modules/sprox.formbase.html"><tt class="xref docutils literal"><span class="pre">sprox.formbase</span></tt></a> and <a title="" class="reference external" href="modules/sprox.fillerbase.html"><tt class="xref docutils literal"><span class="pre">sprox.fillerbase</span></tt></a>.</p>
+any number of combinations.  For more information see <a title="" class="reference external" href="modules/sprox.formbase.html#module-sprox.formbase"><tt class="xref docutils literal"><span class="pre">sprox.formbase</span></tt></a> and <a title="" class="reference external" href="modules/sprox.fillerbase.html#module-sprox.fillerbase"><tt class="xref docutils literal"><span class="pre">sprox.fillerbase</span></tt></a>.</p>
 </div>
 <div class="section" id="table-generation">
 <h2>Table Generation<a class="headerlink" href="#table-generation" title="Permalink to this headline">¶</a></h2>
@@ -127,7 +131,7 @@ any number of combinations.  For more information see <a title="" class="referen
 almost the same challenge.  After all, in an editable form, you must retrieve the data from the database in order
 to fill in the form entries.  Well, Sprox makes this easy too.  Here is some code to list out the users and their
 email addresses:</p>
-<div class="highlight"><pre><span class="kn">from</span> <span class="nn">sprox.tablebase</span> <span class="kn">import</span> <span class="n">TableBase</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">sprox.tablebase</span> <span class="kn">import</span> <span class="n">TableBase</span>
 <span class="kn">from</span> <span class="nn">sprox.fillerbase</span> <span class="kn">import</span> <span class="n">TableFiller</span>
 
 <span class="k">class</span> <span class="nc">UserTable</span><span class="p">(</span><span class="n">TableBase</span><span class="p">):</span>
@@ -142,8 +146,10 @@ email addresses:</p>
 
 <span class="n">user_table_value</span> <span class="o">=</span> <span class="n">UserTableFiller</span><span class="p">(</span><span class="n">DBSession</span><span class="p">)</span><span class="o">.</span><span class="n">get_value</span><span class="p">()</span>
 </pre></div>
+</div>
 <p>And your template code would look like this:</p>
-<pre>${user_table_form(value=user_table_value)}</pre>
+<div class="highlight-python"><pre>${user_table_form(value=user_table_value)}</pre>
+</div>
 <p>Rendered, the table would look like this:</p>
 <img alt="_images/users.png" src="_images/users.png" />
 <p>Keep in mind that since the form generators are declarative, you can use mixins and other class trickery to reduce
@@ -170,7 +176,7 @@ for your project.</p>
 <div class="section" id="api">
 <h1>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h1>
 <ul>
-<li><a class="reference external" href="class_diagram.html">Class Diagram</a><ul class="simple">
+<li class="toctree-l1"><a class="reference external" href="class_diagram.html">Class Diagram</a><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -188,7 +194,7 @@ started since there was a large change in the API, even though the inner working
 borrows some conceptual ideas from Rum, a project started to make creating easier crud interactions through WSGI.
 Sprox is only released as a beta with 90% or higher coverage, 100% code coverage is the expectation for a release candidate.  Here
 is the current code coverage.:</p>
-<pre>$ nose --with-coverage --cover-package=sprox --cover-erase
+<div class="highlight-python"><pre>$ nose --with-coverage --cover-package=sprox --cover-erase
 ...
 Name                      Stmts   Exec  Cover   Missing
 -------------------------------------------------------
@@ -227,12 +233,13 @@ OK
 
 *note the two lines of code *are* tested, just not in an at-once fashion,
 due to a bug with coverage and nose.</pre>
+</div>
 <p>Sprox is an open source project, and can be found at <a class="reference external" href="http://www.bitbucket.org/percious/sprox/src/">bitbucket</a>.
 If you have a great idea of how to make sprox better, feel free to fork off your own copy and send a pull request.</p>
 </div>
 <div class="section" id="current-release">
 <h1>Current Release<a class="headerlink" href="#current-release" title="Permalink to this headline">¶</a></h1>
-<p>0.5.4</p>
+<p>0.5.5</p>
 </div>
 <div class="section" id="license">
 <h1>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h1>
@@ -244,52 +251,52 @@ those pesky corner cases.</p>
 <div class="section" id="core-modules">
 <h1>Core Modules<a class="headerlink" href="#core-modules" title="Permalink to this headline">¶</a></h1>
 <ul>
-<li><a class="reference external" href="modules/sprox.formbase.html"><tt class="docutils literal"><span class="pre">sprox.formbase</span></tt></a></li>
+<li class="toctree-l1"><a class="reference external" href="modules/sprox.formbase.html"><tt class="docutils literal"><span class="pre">sprox.formbase</span></tt></a></li>
 </ul>
 <ul>
-<li><a class="reference external" href="modules/sprox.tablebase.html"><tt class="docutils literal"><span class="pre">sprox.tablebase</span></tt></a></li>
+<li class="toctree-l1"><a class="reference external" href="modules/sprox.tablebase.html"><tt class="docutils literal"><span class="pre">sprox.tablebase</span></tt></a></li>
 </ul>
 <ul>
-<li><a class="reference external" href="modules/sprox.fillerbase.html"><tt class="docutils literal"><span class="pre">sprox.fillerbase</span></tt></a></li>
+<li class="toctree-l1"><a class="reference external" href="modules/sprox.fillerbase.html"><tt class="docutils literal"><span class="pre">sprox.fillerbase</span></tt></a></li>
 </ul>
 <ul>
-<li><a class="reference external" href="modules/sprox.configbase.html"><tt class="docutils literal"><span class="pre">sprox.configbase</span></tt></a></li>
+<li class="toctree-l1"><a class="reference external" href="modules/sprox.configbase.html"><tt class="docutils literal"><span class="pre">sprox.configbase</span></tt></a></li>
 </ul>
 <ul>
-<li><a class="reference external" href="modules/sprox.viewbase.html"><tt class="docutils literal"><span class="pre">sprox.viewbase</span></tt></a></li>
+<li class="toctree-l1"><a class="reference external" href="modules/sprox.viewbase.html"><tt class="docutils literal"><span class="pre">sprox.viewbase</span></tt></a></li>
 </ul>
 <ul>
-<li><a class="reference external" href="modules/sprox.entitiesbase.html"><tt class="docutils literal"><span class="pre">sprox.entitiesbase</span></tt></a></li>
+<li class="toctree-l1"><a class="reference external" href="modules/sprox.entitiesbase.html"><tt class="docutils literal"><span class="pre">sprox.entitiesbase</span></tt></a></li>
 </ul>
 <ul>
-<li><a class="reference external" href="modules/sprox.recordviewbase.html"><tt class="docutils literal"><span class="pre">sprox.recordviewbase</span></tt></a></li>
+<li class="toctree-l1"><a class="reference external" href="modules/sprox.recordviewbase.html"><tt class="docutils literal"><span class="pre">sprox.recordviewbase</span></tt></a></li>
 </ul>
 <ul>
-<li><a class="reference external" href="modules/sprox.widgetselector.html"><tt class="docutils literal"><span class="pre">sprox.widgetselector</span></tt></a></li>
+<li class="toctree-l1"><a class="reference external" href="modules/sprox.widgetselector.html"><tt class="docutils literal"><span class="pre">sprox.widgetselector</span></tt></a></li>
 </ul>
 <ul>
-<li><a class="reference external" href="modules/sprox.validatorselector.html"><tt class="docutils literal"><span class="pre">sprox.validatorselector</span></tt></a></li>
+<li class="toctree-l1"><a class="reference external" href="modules/sprox.validatorselector.html"><tt class="docutils literal"><span class="pre">sprox.validatorselector</span></tt></a></li>
 </ul>
 <ul>
-<li><a class="reference external" href="modules/sprox.validators.html"><tt class="docutils literal"><span class="pre">sprox.validators</span></tt></a></li>
+<li class="toctree-l1"><a class="reference external" href="modules/sprox.validators.html"><tt class="docutils literal"><span class="pre">sprox.validators</span></tt></a></li>
 </ul>
 <ul>
-<li><a class="reference external" href="modules/sprox.sprockets.html"><tt class="docutils literal"><span class="pre">sprox.sprockets</span></tt></a></li>
+<li class="toctree-l1"><a class="reference external" href="modules/sprox.sprockets.html"><tt class="docutils literal"><span class="pre">sprox.sprockets</span></tt></a></li>
 </ul>
 <ul>
-<li><a class="reference external" href="modules/sprox.metadata.html"><tt class="docutils literal"><span class="pre">sprox.metadata</span></tt></a></li>
+<li class="toctree-l1"><a class="reference external" href="modules/sprox.metadata.html"><tt class="docutils literal"><span class="pre">sprox.metadata</span></tt></a></li>
 </ul>
 <ul>
-<li><a class="reference external" href="modules/sprox.saormprovider.html"><tt class="docutils literal"><span class="pre">sprox.saormprovider</span></tt></a></li>
+<li class="toctree-l1"><a class="reference external" href="modules/sprox.saormprovider.html"><tt class="docutils literal"><span class="pre">sprox.saormprovider</span></tt></a></li>
 </ul>
 <ul>
-<li><a class="reference external" href="modules/sprox.iprovider.html"><tt class="docutils literal"><span class="pre">sprox.iprovider</span></tt></a></li>
+<li class="toctree-l1"><a class="reference external" href="modules/sprox.iprovider.html"><tt class="docutils literal"><span class="pre">sprox.iprovider</span></tt></a></li>
 </ul>
 <ul>
-<li><a class="reference external" href="modules/sprox.widgets.html"><tt class="docutils literal"><span class="pre">sprox.widgets</span></tt></a></li>
+<li class="toctree-l1"><a class="reference external" href="modules/sprox.widgets.html"><tt class="docutils literal"><span class="pre">sprox.widgets</span></tt></a></li>
 </ul>
 <ul>
-<li><a class="reference external" href="modules/sprox.util.html"><tt class="docutils literal"><span class="pre">sprox.util</span></tt></a></li>
+<li class="toctree-l1"><a class="reference external" href="modules/sprox.util.html"><tt class="docutils literal"><span class="pre">sprox.util</span></tt></a></li>
 </ul>
 </div>
 <div class="section" id="dojo-support">
@@ -301,18 +308,18 @@ which can literally scroll through millions of records, all through the browser.
 crude at this point, limited to just displaying the data and crud links, but you can expect to see editable/sorted/filtered
 data in the future.</blockquote>
 <ul>
-<li><a class="reference external" href="dojo.html">General Dojo Usage Information</a></li>
+<li class="toctree-l1"><a class="reference external" href="dojo.html">General Dojo Usage Information</a></li>
 </ul>
 <div class="section" id="dojo-related-modules">
 <h2>Dojo Related Modules<a class="headerlink" href="#dojo-related-modules" title="Permalink to this headline">¶</a></h2>
 <ul>
-<li><a class="reference external" href="modules/sprox.dojo.tablebase.html"><tt class="docutils literal"><span class="pre">sprox.dojo.tablebase</span></tt></a></li>
+<li class="toctree-l1"><a class="reference external" href="modules/sprox.dojo.tablebase.html"><tt class="docutils literal"><span class="pre">sprox.dojo.tablebase</span></tt></a></li>
 </ul>
 <ul>
-<li><a class="reference external" href="modules/sprox.dojo.fillerbase.html"><tt class="docutils literal"><span class="pre">sprox.dojo.fillerbase</span></tt></a></li>
+<li class="toctree-l1"><a class="reference external" href="modules/sprox.dojo.fillerbase.html"><tt class="docutils literal"><span class="pre">sprox.dojo.fillerbase</span></tt></a></li>
 </ul>
 <ul>
-<li><a class="reference external" href="modules/sprox.dojo.formbase.html"><tt class="docutils literal"><span class="pre">sprox.dojo.formbase</span></tt></a></li>
+<li class="toctree-l1"><a class="reference external" href="modules/sprox.dojo.formbase.html"><tt class="docutils literal"><span class="pre">sprox.dojo.formbase</span></tt></a></li>
 </ul>
 </div>
 </div>
@@ -323,7 +330,7 @@ This means that the docs you see here are in a known working state before releas
 Even the trunk will have it&#8217;s tests executed before commit, so that should remain stable with respect to the docs.  The examples you see
 through out these docs are all based on an example model which is also used throughout in testing.</p>
 <ul>
-<li><a class="reference external" href="test_model.html"><tt class="docutils literal"><span class="pre">test_model</span></tt></a></li>
+<li class="toctree-l1"><a class="reference external" href="test_model.html"><tt class="docutils literal"><span class="pre">test_model</span></tt></a></li>
 </ul>
 </div>
 <div class="section" id="useful-links">
@@ -410,7 +417,7 @@ through out these docs are all based on an example model which is also used thro
           <a href="class_diagram.html" title="Class Diagram"
              accesskey="N">next</a> |</li>
   <li>
-  <a href=""><b>Sprox 0.5.4</b></a>
+  <a href=""><b>Sprox 0.5.5</b></a>
   </li>
 
   
@@ -420,7 +427,7 @@ through out these docs are all based on an example model which is also used thro
 
     <div class="footer">
       &copy; Copyright 2008, Christopher Perkins.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.5.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.5.1.
     </div>
 
 <script type="text/javascript">
