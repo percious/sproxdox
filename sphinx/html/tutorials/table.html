@@ -1,0 +1,535 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Table Tutorial &mdash; Sprox v0.6 documentation</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.6',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="Sprox v0.6 documentation" href="../index.html" />
+    <link rel="next" title="Form Tutorial" href="form.html" />
+    <link rel="prev" title="Sprox" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+        <li class="right" >
+          <a href="form.html" title="Form Tutorial"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Sprox"
+             accesskey="P">previous</a> |</li>
+  <li>
+  <a href="../index.html"><b>Sprox 0.6</b></a>
+  </li>
+
+  
+    <li> <b>/</b> <a href="">Table Tutorial</a></li>
+  
+
+      </ul>
+    </div>  
+  <div class="document">
+    <div class="documentwrapper">
+      <div class="bodywrapper">
+      <div class="body">
+        
+  
+  <div class="section" id="table-tutorial">
+<h1>Table Tutorial<a class="headerlink" href="#table-tutorial" title="Permalink to this headline">¶</a></h1>
+<p>Here you can find out how to create forms with sprox, including infinitely scrolling
+tables provided by Dojo.  Many of these examples will provide server code based on TurboGears2, but
+sprox will work with any wsgi application you have ToscaWidgets mounted in.  We will assume
+the reader is somewhat versed in TurboGears2&#8217;s <a title="(in TG2 v2.0)" class="reference external" href="http://turbogears.org/2.0/docs/modules/tgcontroller.html#tg.controllers.RestController"><tt class="xref docutils literal"><span class="pre">tg.controllers.RestController</span></tt></a>.</p>
+<div class="section" id="establishing-the-model-definition">
+<h2>Establishing the Model Definition<a class="headerlink" href="#establishing-the-model-definition" title="Permalink to this headline">¶</a></h2>
+<p>Let us first assume the following model for this demonstration.:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">Column</span><span class="p">,</span> <span class="n">Integer</span><span class="p">,</span> <span class="n">String</span><span class="p">,</span> <span class="n">Date</span><span class="p">,</span> <span class="n">Text</span><span class="p">,</span> <span class="n">ForeignKey</span><span class="p">,</span> <span class="n">Table</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy.orm</span> <span class="kn">import</span> <span class="n">relation</span>
+
+<span class="kn">from</span> <span class="nn">moviedemo.model</span> <span class="kn">import</span> <span class="n">DeclarativeBase</span><span class="p">,</span> <span class="n">metadata</span>
+
+<span class="n">movie_directors_table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="s">&#39;movie_directors&#39;</span><span class="p">,</span> <span class="n">metadata</span><span class="p">,</span>
+                              <span class="n">Column</span><span class="p">(</span><span class="s">&#39;movie_id&#39;</span><span class="p">,</span> <span class="n">Integer</span><span class="p">,</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="s">&#39;movies.movie_id&#39;</span><span class="p">),</span> <span class="n">primary_key</span> <span class="o">=</span> <span class="bp">True</span><span class="p">),</span>
+                              <span class="n">Column</span><span class="p">(</span><span class="s">&#39;director_id&#39;</span><span class="p">,</span> <span class="n">Integer</span><span class="p">,</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="s">&#39;directors.director_id&#39;</span><span class="p">),</span> <span class="n">primary_key</span> <span class="o">=</span> <span class="bp">True</span><span class="p">))</span>
+
+<span class="k">class</span> <span class="nc">Genre</span><span class="p">(</span><span class="n">DeclarativeBase</span><span class="p">):</span>
+    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s">&quot;genres&quot;</span>
+    <span class="n">genre_id</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="mf">100</span><span class="p">))</span>
+
+<span class="k">class</span> <span class="nc">Movie</span><span class="p">(</span><span class="n">DeclarativeBase</span><span class="p">):</span>
+    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s">&quot;movies&quot;</span>
+    <span class="n">movie_id</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="mf">100</span><span class="p">),</span> <span class="n">nullable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Text</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">genre_id</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="s">&#39;genres.genre_id&#39;</span><span class="p">))</span>
+    <span class="n">genre</span> <span class="o">=</span> <span class="n">relation</span><span class="p">(</span><span class="s">&#39;Genre&#39;</span><span class="p">,</span> <span class="n">backref</span><span class="o">=</span><span class="s">&#39;movies&#39;</span><span class="p">)</span>
+    <span class="n">release_date</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Date</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Director</span><span class="p">(</span><span class="n">DeclarativeBase</span><span class="p">):</span>
+    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s">&quot;directors&quot;</span>
+    <span class="n">movie_id</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="mf">100</span><span class="p">),</span> <span class="n">nullable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">movies</span> <span class="o">=</span> <span class="n">relation</span><span class="p">(</span><span class="n">Movie</span><span class="p">,</span> <span class="n">secondary_join</span><span class="o">=</span><span class="n">movie_directors_table</span><span class="p">,</span> <span class="n">backref</span><span class="o">=</span><span class="s">&quot;directors&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="basic-table-definition">
+<h2>Basic Table Definition<a class="headerlink" href="#basic-table-definition" title="Permalink to this headline">¶</a></h2>
+<p>Here, we create a <a title="sprox.tablebase.TableBase" class="reference external" href="../modules/sprox.tablebase.html#sprox.tablebase.TableBase"><tt class="xref docutils literal"><span class="pre">sprox.tablebase.TableBase</span></tt></a> for the movie.:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">tg.controllers</span> <span class="kn">import</span> <span class="n">RestController</span><span class="p">,</span> <span class="n">redirect</span>
+<span class="kn">from</span> <span class="nn">moviedemo.model</span> <span class="kn">import</span> <span class="n">DBSession</span><span class="p">,</span> <span class="n">Movie</span><span class="p">,</span> <span class="n">Genre</span><span class="p">,</span> <span class="n">Director</span>
+<span class="kn">from</span> <span class="nn">sprox.tablebase</span> <span class="kn">import</span> <span class="n">TableBase</span>
+
+<span class="k">class</span> <span class="nc">MovieTable</span><span class="p">(</span><span class="n">TableBase</span><span class="p">):</span>
+    <span class="n">__model__</span> <span class="o">=</span> <span class="n">Movie</span>
+
+<span class="n">movie_table</span> <span class="o">=</span> <span class="n">MovieTable</span><span class="p">(</span><span class="n">DBSession</span><span class="p">);</span>
+
+<span class="k">class</span> <span class="nc">SproxMovieController</span><span class="p">(</span><span class="n">RestController</span><span class="p">):</span>
+
+    <span class="nd">@expose</span><span class="p">(</span><span class="s">&#39;moviedemo.templates.sproxdemo.movies.get_all&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">get_all</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">tmpl_context</span><span class="o">.</span><span class="n">widget</span> <span class="o">=</span> <span class="n">movie_table</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>And some template code:</p>
+<div class="highlight-python"><pre>&lt;html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"&gt;
+  &lt;xi:include href="master.html" /&gt;
+&lt;head/&gt;
+&lt;body&gt;
+  &lt;div style="height:0px;"&gt; &amp;nbsp; &lt;/div&gt;
+  &lt;div&gt;
+    &lt;div style="float:left width: 80%"&gt;
+      &lt;h1 style="margin-top:1px;"&gt;Movie Listing&lt;/h1&gt;
+      &lt;a href='new/'&gt;New Movie&lt;/a&gt;
+      ${tmpl_context.widget()}
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</div>
+<p>Which produces something like this:</p>
+<img alt="../_images/simple_table.png" src="../_images/simple_table.png" />
+</div>
+<div class="section" id="displaying-actual-data">
+<h2>Displaying Actual Data<a class="headerlink" href="#displaying-actual-data" title="Permalink to this headline">¶</a></h2>
+<p>Now, we have a form, but there are no entries for that form.  Lets add
+a <a title="sprox.fillerbase.TableFiller" class="reference external" href="../modules/sprox.fillerbase.html#sprox.fillerbase.TableFiller"><tt class="xref docutils literal"><span class="pre">sprox.fillerbase.TableFiller</span></tt></a> to provide data for the form.:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">sprox.fillerbase</span> <span class="kn">import</span> <span class="n">TableFiller</span>
+
+<span class="k">class</span> <span class="nc">MovieTableFiller</span><span class="p">(</span><span class="n">TableFiller</span><span class="p">):</span>
+    <span class="n">__model__</span> <span class="o">=</span> <span class="n">Movie</span>
+
+<span class="n">movie_filler</span> <span class="o">=</span> <span class="n">MovieTableFiller</span><span class="p">(</span><span class="n">DBSession</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Then we add that to our controller method:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@expose</span><span class="p">(</span><span class="s">&#39;moviedemo.templates.sproxdemo.movies.get_all&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">get_all</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">tmpl_context</span><span class="o">.</span><span class="n">widget</span> <span class="o">=</span> <span class="n">movie_table</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">movie_filler</span><span class="o">.</span><span class="n">get_value</span><span class="p">()</span>
+    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Our template&#8217;s call of the widget changes like this:</p>
+<div class="highlight-python"><pre>${tmpl_context.widget(value=value)}</pre>
+</div>
+<p>Resulting in the data being shown.</p>
+<img alt="../_images/table_values.png" src="../_images/table_values.png" />
+<p>You may have noticed that the genre, and directors fields are already populated.
+Sprox pulls data from the relations you set up in your model definition, and displays them
+according to a default set of fieldnames as provided by the <a title="sprox.viewbase.ViewBase" class="reference external" href="../modules/sprox.viewbase.html#sprox.viewbase.ViewBase"><tt class="xref docutils literal"><span class="pre">sprox.viewbase.ViewBase</span></tt></a>.  This may
+be altered by providing an additional __possible_field_names__ modifier.</p>
+</div>
+<div class="section" id="removing-unwanted-fields">
+<h2>Removing unwanted fields<a class="headerlink" href="#removing-unwanted-fields" title="Permalink to this headline">¶</a></h2>
+<p>This table is not really pleasing to an end-user because of the movie_id and genre_id fields
+so let&#8217;s omit them.  Our table definition becomes:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MovieTable</span><span class="p">(</span><span class="n">TableBase</span><span class="p">):</span>
+    <span class="n">__model__</span> <span class="o">=</span> <span class="n">Movie</span>
+    <span class="n">__omit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;movie_id&#39;</span><span class="p">,</span> <span class="s">&#39;genre_id&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>which looks like this:</p>
+<img alt="../_images/table_omit.png" src="../_images/table_omit.png" />
+<p>You can modify the filler to omit this data also, but it is not necessary.  The view
+will only view the fields specified by your TableBase class.  <a title="sprox.tablebase.TableBase" class="reference external" href="../modules/sprox.tablebase.html#sprox.tablebase.TableBase"><tt class="xref docutils literal"><span class="pre">sprox.tablebase.TableBase</span></tt></a> provides a number
+of modifiers that allow you to define how the table is displayed.</p>
+</div>
+<div class="section" id="removing-the-actions-field">
+<h2>Removing the actions field<a class="headerlink" href="#removing-the-actions-field" title="Permalink to this headline">¶</a></h2>
+<p>Often times, you will want to omit the &#8220;actions&#8221; field from the table.  It may be that
+you simply want to display the data, with no other allowable actions to perform.  We can
+modify our table to do just that:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MovieTable</span><span class="p">(</span><span class="n">TableBase</span><span class="p">):</span>
+   <span class="n">__model__</span> <span class="o">=</span> <span class="n">Movie</span>
+   <span class="n">__omit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;movie_id&#39;</span><span class="p">,</span> <span class="s">&#39;genre_id&#39;</span><span class="p">,</span> <span class="s">&#39;__actions__&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="custom-field-data-display">
+<h2>Custom field data display<a class="headerlink" href="#custom-field-data-display" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes it makes sense to provide your own data.  What would happen if we wanted to display
+the Director&#8217;s names as links to another page that lists the movies which they directed?  Let&#8217;s
+see how that would look:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MovieTableFiller</span><span class="p">(</span><span class="n">TableFiller</span><span class="p">):</span>
+   <span class="n">__model__</span> <span class="o">=</span> <span class="n">Movie</span>
+   <span class="k">def</span> <span class="nf">directors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+       <span class="n">directors</span> <span class="o">=</span> <span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s">&#39;&lt;a href=&quot;/directors/&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">director_id</span><span class="p">)</span><span class="o">+</span><span class="s">&#39;&quot;&gt;&#39;</span><span class="o">+</span><span class="n">d</span><span class="o">.</span><span class="n">name</span><span class="o">+</span><span class="s">&#39;&lt;/a&gt;&#39;</span>
+                              <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">directors</span><span class="p">])</span>
+       <span class="k">return</span> <span class="n">directors</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="s">&#39;&lt;div&gt;&#39;</span><span class="p">,</span> <span class="s">&#39;&lt;/div&gt;&#39;</span><span class="p">))</span>
+
+<span class="k">class</span> <span class="nc">MovieTable</span><span class="p">(</span><span class="n">TableBase</span><span class="p">):</span>
+    <span class="n">__model__</span> <span class="o">=</span> <span class="n">Movie</span>
+    <span class="n">__omit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;movie_id&#39;</span><span class="p">,</span> <span class="s">&#39;genre_id&#39;</span><span class="p">,</span> <span class="s">&#39;__actions__&#39;</span><span class="p">]</span>
+    <span class="n">__xml_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;directors&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>And now you can see the resulting directors are listed as hrefs:</p>
+<img alt="../_images/table_directors.png" src="../_images/table_directors.png" />
+<p>There are two new features from 0.6 in this example.  The first is that you may specify any
+function in your filler, and if that function matches the name of a field in the Fillers __entity__
+it will use that function to produce a string output for filling of that row of data.  The function
+takes a reference to the parent object, so if you are overriding a relation (as we are in this example)
+you have full access to the object&#8217;s scope.</p>
+<p>The second new feature is the modifier __xml_fields__ which tells the simple table rendering ToscaWidget
+not to escape the html tags.  This allows the links to &#8220;work&#8221; in our example.</p>
+</div>
+<div class="section" id="adding-a-new-field">
+<h2>Adding a new Field<a class="headerlink" href="#adding-a-new-field" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes you want to augment the field entries with one of your own.  Let&#8217;s add a &#8220;similar movies&#8221; column
+that displays movies of the same genre.  First, we must modify the table view to include our new column.:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MovieTable</span><span class="p">(</span><span class="n">TableBase</span><span class="p">):</span>
+    <span class="n">__model__</span> <span class="o">=</span> <span class="n">Movie</span>
+    <span class="n">__omit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;movie_id&#39;</span><span class="p">,</span> <span class="s">&#39;genre_id&#39;</span><span class="p">,</span> <span class="s">&#39;__actions__&#39;</span><span class="p">]</span>
+    <span class="n">__xml_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;directors&#39;</span><span class="p">]</span>
+    <span class="n">__add_fields__</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;related_movies&#39;</span><span class="p">:</span><span class="bp">None</span><span class="p">}</span>
+
+<span class="n">movie_table</span> <span class="o">=</span> <span class="n">MovieTable</span><span class="p">(</span><span class="n">DBSession</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>We also need to modify the filler to include the new column, and define a function for it&#8217;s display.:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MovieTableFiller</span><span class="p">(</span><span class="n">TableFiller</span><span class="p">):</span>
+    <span class="n">__model__</span> <span class="o">=</span> <span class="n">Movie</span>
+    <span class="n">__add_fields__</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;related_movies&#39;</span><span class="p">:</span><span class="bp">None</span><span class="p">}</span>
+    <span class="k">def</span> <span class="nf">directors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="n">directors</span> <span class="o">=</span> <span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s">&#39;&lt;a href=&quot;/directors/&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">director_id</span><span class="p">)</span><span class="o">+</span><span class="s">&#39;&quot;&gt;&#39;</span><span class="o">+</span><span class="n">d</span><span class="o">.</span><span class="n">name</span><span class="o">+</span><span class="s">&#39;&lt;/a&gt;&#39;</span>
+                               <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">directors</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">directors</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="s">&#39;&lt;div&gt;&#39;</span><span class="p">,</span> <span class="s">&#39;&lt;/div&gt;&#39;</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">related_movies</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">movie</span><span class="o">.</span><span class="n">title</span> <span class="k">for</span> <span class="n">movie</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">genre</span><span class="o">.</span><span class="n">movies</span> <span class="k">if</span> <span class="n">movie</span><span class="o">!=</span><span class="n">obj</span><span class="p">])</span>
+
+<span class="n">movie_filler</span> <span class="o">=</span> <span class="n">MovieTableFiller</span><span class="p">(</span><span class="n">DBSession</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The resultant table should look something like this:</p>
+<img alt="../_images/table_new_column.png" src="../_images/table_new_column.png" />
+</div>
+<div class="section" id="changing-the-tablefiller-s-query">
+<h2>Changing the TableFiller&#8217;s query<a class="headerlink" href="#changing-the-tablefiller-s-query" title="Permalink to this headline">¶</a></h2>
+<p>It is likely at some point that you will want to override sprox&#8217;s table querying mechanism.  Maybe you want
+to provide pagination or limit the results to a specific subset of records.  Let&#8217;s add a new Controller
+for the directors that print&#8217;s their name and displays the movies they directed.  Here&#8217;s the new controller
+code:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">SproxDirectorController</span><span class="p">(</span><span class="n">RestController</span><span class="p">):</span>
+
+    <span class="nd">@expose</span><span class="p">(</span><span class="s">&#39;moviedemo.templates.sproxdemo.directors.get_one&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">get_one</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">director_id</span><span class="p">):</span>
+        <span class="n">tmpl_context</span><span class="o">.</span><span class="n">widget</span> <span class="o">=</span> <span class="n">director_movie_table</span>
+        <span class="n">director</span> <span class="o">=</span> <span class="n">DBSession</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">Director</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">director_id</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">director_movie_filler</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">director</span><span class="o">=</span><span class="n">director</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">director</span><span class="o">=</span><span class="n">director</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Our director template could look something like this:</p>
+<div class="highlight-python"><pre>&lt;html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"&gt;
+  &lt;xi:include href="master.html" /&gt;
+&lt;head/&gt;
+&lt;body&gt;
+  &lt;div style="height:0px;"&gt; &amp;nbsp; &lt;/div&gt;
+  &lt;div&gt;
+    &lt;div style="float:left width: 80%"&gt;
+      &lt;h1&gt;${director.name}&lt;/h1&gt;
+      &lt;h2 style="margin-top:1px;"&gt;Movies Directed&lt;/h2&gt;
+      ${tmpl_context.widget(value=value)}
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</div>
+<p>And our director-specific TableFiller:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">DirectorMovieTableFiller</span><span class="p">(</span><span class="n">TableFiller</span><span class="p">):</span>
+    <span class="n">__model__</span> <span class="o">=</span> <span class="n">Movie</span>
+    <span class="n">__add_fields__</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;related_movies&#39;</span><span class="p">:</span><span class="bp">None</span><span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">directors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+        <span class="n">director</span> <span class="o">=</span> <span class="n">kw</span><span class="p">[</span><span class="s">&#39;director&#39;</span><span class="p">]</span>
+        <span class="n">directors</span> <span class="o">=</span> <span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s">&#39;&lt;a href=&quot;/directors/&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">director_id</span><span class="p">)</span><span class="o">+</span><span class="s">&#39;&quot;&gt;&#39;</span><span class="o">+</span><span class="n">d</span><span class="o">.</span><span class="n">name</span><span class="o">+</span><span class="s">&#39;&lt;/a&gt;&#39;</span>
+                               <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">directors</span> <span class="k">if</span> <span class="n">d</span><span class="o">!=</span><span class="n">director</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">directors</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="s">&#39;&lt;div&gt;&#39;</span><span class="p">,</span> <span class="s">&#39;&lt;/div&gt;&#39;</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">related_movies</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">movie</span><span class="o">.</span><span class="n">title</span> <span class="k">for</span> <span class="n">movie</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">genre</span><span class="o">.</span><span class="n">movies</span> <span class="k">if</span> <span class="n">movie</span><span class="o">!=</span><span class="n">obj</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">_do_get_provider_count_and_objs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">director</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+        <span class="n">movies</span> <span class="o">=</span> <span class="n">DBSession</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">Movie</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">Movie</span><span class="o">.</span><span class="n">directors</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">director</span><span class="p">))</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">movies</span><span class="p">),</span> <span class="n">movies</span>
+
+<span class="n">director_movie_filler</span> <span class="o">=</span> <span class="n">DirectorMovieTableFiller</span><span class="p">(</span><span class="n">DBSession</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The first difference you may notice is that we have added a _do_get_provider_count_and_objs method.
+This method defines how the query should be performed for the given filler.  In this case, we are
+filtering only on Movies which have the indicated director.  The director value comes in from your get_value
+call inside the controller.  The function returns both a length and a list of objects.  The length
+is the length of all objects that may be queried, the list of objects is just those the user
+wants for the given context.  This is particularly useful when designing paginated tables.</p>
+<p>You may also notice that we have changed the directors method to
+include the director in the call.  Sprox will also pass variables in from the get_value call to
+your field methods if you specify parameters for those variables in your method call.</p>
+<p>Our TableBase code is largely unchanged.:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">DirectorMovieTable</span><span class="p">(</span><span class="n">TableBase</span><span class="p">):</span>
+    <span class="n">__model__</span> <span class="o">=</span> <span class="n">Movie</span>
+    <span class="n">__omit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;movie_id&#39;</span><span class="p">,</span> <span class="s">&#39;genre_id&#39;</span><span class="p">,</span> <span class="s">&#39;__actions__&#39;</span><span class="p">]</span>
+    <span class="n">__xml_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;directors&#39;</span><span class="p">]</span>
+    <span class="n">__add_fields__</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;related_movies&#39;</span><span class="p">:</span><span class="bp">None</span><span class="p">}</span>
+
+<span class="n">director_movie_table</span> <span class="o">=</span> <span class="n">DirectorMovieTable</span><span class="p">(</span><span class="n">DBSession</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>And the resulting page.</p>
+<img alt="../_images/table_director.png" src="../_images/table_director.png" />
+</div>
+<div class="section" id="changing-the-column-header-names">
+<h2>Changing the Column Header Names<a class="headerlink" href="#changing-the-column-header-names" title="Permalink to this headline">¶</a></h2>
+<p>While the column names are functional, they aren&#8217;t pretty, and in the case of the director
+page, it really should say &#8220;other directors&#8221;.  Let&#8217;s use the __headers__ modifier
+and change that.:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">DirectorMovieTable</span><span class="p">(</span><span class="n">TableBase</span><span class="p">):</span>
+    <span class="n">__model__</span> <span class="o">=</span> <span class="n">Movie</span>
+    <span class="n">__omit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;movie_id&#39;</span><span class="p">,</span> <span class="s">&#39;genre_id&#39;</span><span class="p">,</span> <span class="s">&#39;__actions__&#39;</span><span class="p">]</span>
+    <span class="n">__xml_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;other directors&#39;</span><span class="p">]</span>
+    <span class="n">__add_fields__</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;related_movies&#39;</span><span class="p">:</span><span class="bp">None</span><span class="p">}</span>
+    <span class="n">__headers__</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;directors&#39;</span><span class="p">:</span> <span class="s">&#39;other directors&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>And the compulsory screenshot:</p>
+<img alt="../_images/table_header.png" src="../_images/table_header.png" />
+</div>
+<div class="section" id="adding-dojo-to-the-mix">
+<h2>Adding Dojo to the mix<a class="headerlink" href="#adding-dojo-to-the-mix" title="Permalink to this headline">¶</a></h2>
+<p>Dojo is a JavaScript library that sprox uses to create tables that are infinitely scrolling.  This is
+especially handy if you don&#8217;t want to go through the trouble of writing pagination code.  The first thing
+we need to do is install tw.dojo, which is a toscawidget wrapper for the library:</p>
+<div class="highlight-python"><pre>easy_install tw.dojo</pre>
+</div>
+<p>Next we modify our Table code to utilize the sprox dojo filler and table classes:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">sprox.dojo.tablebase</span> <span class="kn">import</span> <span class="n">DojoTableBase</span> <span class="k">as</span> <span class="n">TableBase</span>
+<span class="kn">from</span> <span class="nn">sprox.dojo.fillerbase</span> <span class="kn">import</span> <span class="n">DojoTableFiller</span> <span class="k">as</span> <span class="n">TableFiller</span>
+
+<span class="k">class</span> <span class="nc">MovieTableFiller</span><span class="p">(</span><span class="n">TableFiller</span><span class="p">):</span>
+    <span class="n">__model__</span> <span class="o">=</span> <span class="n">Movie</span>
+    <span class="n">__add_fields__</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;related_movies&#39;</span><span class="p">:</span><span class="bp">None</span><span class="p">}</span>
+    <span class="k">def</span> <span class="nf">directors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="n">directors</span> <span class="o">=</span> <span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s">&#39;&lt;a href=&quot;/directors/&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">director_id</span><span class="p">)</span><span class="o">+</span><span class="s">&#39;&quot;&gt;&#39;</span><span class="o">+</span><span class="n">d</span><span class="o">.</span><span class="n">name</span><span class="o">+</span><span class="s">&#39;&lt;/a&gt;&#39;</span>
+                               <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">directors</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">directors</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="s">&#39;&lt;div&gt;&#39;</span><span class="p">,</span> <span class="s">&#39;&lt;/div&gt;&#39;</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">related_movies</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">movie</span><span class="o">.</span><span class="n">title</span> <span class="k">for</span> <span class="n">movie</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">genre</span><span class="o">.</span><span class="n">movies</span> <span class="k">if</span> <span class="n">movie</span><span class="o">!=</span><span class="n">obj</span><span class="p">])</span>
+
+<span class="n">movie_filler</span> <span class="o">=</span> <span class="n">MovieTableFiller</span><span class="p">(</span><span class="n">DBSession</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">MovieTable</span><span class="p">(</span><span class="n">TableBase</span><span class="p">):</span>
+    <span class="n">__model__</span> <span class="o">=</span> <span class="n">Movie</span>
+    <span class="n">__omit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;movie_id&#39;</span><span class="p">,</span> <span class="s">&#39;genre_id&#39;</span><span class="p">,</span> <span class="s">&#39;__actions__&#39;</span><span class="p">]</span>
+    <span class="n">__xml_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;directors&#39;</span><span class="p">]</span>
+    <span class="n">__add_fields__</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;related_movies&#39;</span><span class="p">:</span><span class="bp">None</span><span class="p">}</span>
+    <span class="n">__url__</span> <span class="o">=</span> <span class="s">&quot;/movies.json&quot;</span>
+
+<span class="n">movie_table</span> <span class="o">=</span> <span class="n">MovieTable</span><span class="p">(</span><span class="n">DBSession</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now if you take a look at our movie page you will see that there is a table, but no data:</p>
+<img alt="../_images/table_dojo_nodata.png" src="../_images/table_dojo_nodata.png" />
+<p>This is because dojo has a different method of obtaining the table data.  It performs an Ajax call back to the
+server to retrieve a stream of data.  We need to change our controller method to publish this stream:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">SproxDirectorController</span><span class="p">(</span><span class="n">RestController</span><span class="p">):</span>
+
+    <span class="nd">@expose</span><span class="p">(</span><span class="s">&#39;moviedemo.templates.sproxdemo.directors.get_one&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">get_one</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">director_id</span><span class="p">):</span>
+        <span class="n">tmpl_context</span><span class="o">.</span><span class="n">widget</span> <span class="o">=</span> <span class="n">director_movie_table</span>
+        <span class="n">director</span> <span class="o">=</span> <span class="n">DBSession</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">Director</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">director_id</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">director_movie_filler</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">director</span><span class="o">=</span><span class="n">director</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">director</span><span class="o">=</span><span class="n">director</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Once we fix this we get our data back:</p>
+<img alt="../_images/table_dojo_data.png" src="../_images/table_dojo_data.png" />
+</div>
+<div class="section" id="changing-column-widths">
+<h2>Changing column widths<a class="headerlink" href="#changing-column-widths" title="Permalink to this headline">¶</a></h2>
+<p>Sprox sets all column widths to 10em by default.  This will probably need to be modified in order for your
+data to look right.  Here is how we do that:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MovieTable</span><span class="p">(</span><span class="n">TableBase</span><span class="p">):</span>
+    <span class="n">__model__</span> <span class="o">=</span> <span class="n">Movie</span>
+    <span class="n">__omit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;movie_id&#39;</span><span class="p">,</span> <span class="s">&#39;genre_id&#39;</span><span class="p">,</span> <span class="s">&#39;__actions__&#39;</span><span class="p">]</span>
+    <span class="n">__xml_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;directors&#39;</span><span class="p">]</span>
+    <span class="n">__add_fields__</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;related_movies&#39;</span><span class="p">:</span><span class="bp">None</span><span class="p">}</span>
+    <span class="n">__column_widths__</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;description&#39;</span><span class="p">:</span><span class="s">&quot;30em&quot;</span><span class="p">,</span>
+                         <span class="s">&#39;release_date&#39;</span><span class="p">:</span><span class="s">&quot;7em&quot;</span><span class="p">,</span>
+                         <span class="s">&#39;genre&#39;</span><span class="p">:</span><span class="s">&quot;4em&quot;</span><span class="p">,</span>
+                         <span class="p">}</span>
+    <span class="n">__url__</span> <span class="o">=</span> <span class="s">&quot;/movies.json&quot;</span>
+</pre></div>
+</div>
+<p>And here is how it looks after modification:</p>
+<img alt="../_images/table_column_widths.png" src="../_images/table_column_widths.png" />
+</div>
+<div class="section" id="conclusions">
+<h2>Conclusions<a class="headerlink" href="#conclusions" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+        <h1>Discuss</h1>
+        <div id="disqus_thread"></div>
+           <script type="text/javascript" src="http://disqus.com/forums/sproxdox/embed.js"></script>
+           <noscript><a href="http://sproxdox.disqus.com/?url=ref">View the discussion thread.</a></noscript>
+           <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+      </div>
+
+  </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/sprox_logo.png" alt="Logo"/>
+            </a></p>
+            <h3><a href="../index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="">Table Tutorial</a><ul>
+<li><a class="reference external" href="#establishing-the-model-definition">Establishing the Model Definition</a></li>
+<li><a class="reference external" href="#basic-table-definition">Basic Table Definition</a></li>
+<li><a class="reference external" href="#displaying-actual-data">Displaying Actual Data</a></li>
+<li><a class="reference external" href="#removing-unwanted-fields">Removing unwanted fields</a></li>
+<li><a class="reference external" href="#removing-the-actions-field">Removing the actions field</a></li>
+<li><a class="reference external" href="#custom-field-data-display">Custom field data display</a></li>
+<li><a class="reference external" href="#adding-a-new-field">Adding a new Field</a></li>
+<li><a class="reference external" href="#changing-the-tablefiller-s-query">Changing the TableFiller&#8217;s query</a></li>
+<li><a class="reference external" href="#changing-the-column-header-names">Changing the Column Header Names</a></li>
+<li><a class="reference external" href="#adding-dojo-to-the-mix">Adding Dojo to the mix</a></li>
+<li><a class="reference external" href="#changing-column-widths">Changing column widths</a></li>
+<li><a class="reference external" href="#conclusions">Conclusions</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="../index.html" title="previous chapter">Sprox</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="form.html" title="next chapter">Form Tutorial</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="../_sources/tutorials/table.txt">Show Source</a></li>
+            </ul>
+          <h3>Quick search</h3>
+            <form class="search" action="../search.html" method="get">
+              <input type="text" name="q" size="18" /> <input type="submit" value="Go" />
+              <input type="hidden" name="check_keywords" value="yes" />
+              <input type="hidden" name="area" value="default" />
+            </form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+        <li class="right" >
+          <a href="form.html" title="Form Tutorial"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Sprox"
+             accesskey="P">previous</a> |</li>
+  <li>
+  <a href="../index.html"><b>Sprox 0.6</b></a>
+  </li>
+
+  
+    <li> <b>/</b> <a href="">Table Tutorial</a></li>
+  
+
+      </ul>
+    </div>
+
+    <div class="footer">
+      &copy; Copyright 2008, Christopher Perkins.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.5.1.
+    </div>
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+  var links = document.getElementsByTagName('a');
+  var query = '?';
+  for(var i = 0; i < links.length; i++) {
+    if(links[i].href.indexOf('#disqus_thread') >= 0) {
+      query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+    }
+  }
+  document.write('<script type="text/javascript" src="http://disqus.com/forums/sproxdox/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6778746-1");
+pageTracker._trackPageview();
+} catch(err) {}
+//]]>
+</script>
+
+
+  </body>
+</html>

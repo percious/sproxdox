@@ -84,6 +84,7 @@ If you wanted to avoid this, you would use __limit_fields__ instead of __omit_fi
 There are many other __modifiers__ for FormBase in Sprox, you can use them to generate the forms you desire in
 any number of combinations.  For more information see :mod:`sprox.formbase` and :mod:`sprox.fillerbase`.
 
+
 Table Generation
 -----------------------
 Most people look for things that render forms, but fail to realize that generating tabular formed data provides
@@ -130,6 +131,18 @@ for your project.
 .. toctree::
    :maxdepth: 2
 
+Tutorials
+====================
+Here are a couple of tutorials that express the most common ways sprox is used.  It is recommended that you have
+some knowledge of TG2 when looking them over.
+
+.. toctree::
+    :maxdepth: 1
+
+    ./tutorials/table
+    ./tutorials/form
+
+
 Indices and tables
 ==================
 
@@ -172,35 +185,32 @@ is the current code coverage.::
     sprox.dojo.fillerbase        14     14   100%   
     sprox.dojo.formbase          11     11   100%   
     sprox.dojo.sprockets         18     18   100%   
-    sprox.dojo.tablebase         10     10   100%   
+    sprox.dojo.tablebase         30     30   100%   
     sprox.dummyentity             1      1   100%   
     sprox.entitiesbase           15     15   100%   
-    sprox.fillerbase             74     74   100%   
-    sprox.formbase              106    106   100%   
+    sprox.fillerbase             87     87   100%   
+    sprox.formbase              108    108   100%   
     sprox.iprovider              33     33   100%   
     sprox.metadata               51     51   100%   
     sprox.providerselector       73     73   100%   
-    sprox.saormprovider         261    261   100%   
+    sprox.saormprovider         262    262   100%   
     sprox.sprockets              55     55   100%   
-    sprox.tablebase              13     13   100%   
+    sprox.tablebase              41     41   100%   
     sprox.util                    9      9   100%   
     sprox.validators             11     11   100%   
     sprox.validatorselector      52     52   100%   
-    sprox.viewbase              117    117   100%   
+    sprox.viewbase              120    120   100%   
     sprox.widgets                 1      1   100%   
-    sprox.widgets.dojo           40     40   100%   
+    sprox.widgets.dojo           79     79   100%   
     sprox.widgets.templates       0      0   100%   
-    sprox.widgets.widgets        80     78    97%   77-78
+    sprox.widgets.widgets        80     80   100%   
     sprox.widgetselector         46     46   100%   
     -------------------------------------------------------
-    TOTAL                      1168   1166    99%   
+    TOTAL                      1274   1274   100%   
     ----------------------------------------------------------------------
-    Ran 215 tests in 22.849s
+    Ran 221 tests in 22.017s
     
     OK
-
-    *note the two lines of code *are* tested, just not in an at-once fashion,
-    due to a bug with coverage and nose.
 
 Sprox is an open source project, and can be found at `bitbucket <http://www.bitbucket.org/percious/sprox/src/>`_.  
 If you have a great idea of how to make sprox better, feel free to fork off your own copy and send a pull request.

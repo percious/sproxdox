@@ -3,13 +3,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sprox.tablebase &mdash; Sprox v0.5.5 documentation</title>
+    <title>sprox.tablebase &mdash; Sprox v0.6 documentation</title>
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.5.5',
+        VERSION:     '0.6',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -19,7 +19,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="top" title="Sprox v0.5.5 documentation" href="../index.html" />
+    <link rel="top" title="Sprox v0.6 documentation" href="../index.html" />
     <link rel="next" title="sprox.fillerbase" href="sprox.fillerbase.html" />
     <link rel="prev" title="sprox.formbase" href="sprox.formbase.html" /> 
   </head>
@@ -40,11 +40,11 @@
           <a href="sprox.formbase.html" title="sprox.formbase"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.5.5</b></a>
+  <a href="../index.html"><b>Sprox 0.6</b></a>
   </li>
 
   
-    <li> <b>/</b> <a href=""><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.tablebase</span></tt></a></li>
+    <li> <b>/</b> <a href=""><tt class="docutils literal docutils literal"><span class="pre">sprox.tablebase</span></tt></a></li>
   
 
       </ul>
@@ -97,6 +97,19 @@
 <td>A dictionay of field/header pairs.</td>
 <td>{}</td>
 </tr>
+<tr><td>__column_widths__</td>
+<td>A dictionay of field/width(string) pairs.</td>
+<td>{}</td>
+</tr>
+<tr><td>__default_column_width__</td>
+<td>Header size to use when not specified in
+__column_widths__</td>
+<td>&#8216;10em&#8217;</td>
+</tr>
+<tr><td>__xml_fields__</td>
+<td>fields whos values should show as html</td>
+<td>&nbsp;</td>
+</tr>
 </tbody>
 </table>
 <p>see modifiers in <a title="" class="reference external" href="sprox.viewbase.html#module-sprox.viewbase"><tt class="xref docutils literal"><span class="pre">sprox.viewbase</span></tt></a></p>
@@ -110,10 +123,11 @@
 <span class="go">&lt;table class=&quot;grid&quot;&gt;</span>
 <span class="go">    &lt;thead&gt;</span>
 <span class="go">        &lt;tr&gt;</span>
-<span class="go">            &lt;th&gt;&lt;/th&gt;</span>
 <span class="go">            &lt;th class=&quot;col_0&quot;&gt;</span>
-<span class="go">            town_id</span>
+<span class="go">            actions</span>
 <span class="go">            &lt;/th&gt;&lt;th class=&quot;col_1&quot;&gt;</span>
+<span class="go">            town_id</span>
+<span class="go">            &lt;/th&gt;&lt;th class=&quot;col_2&quot;&gt;</span>
 <span class="go">            name</span>
 <span class="go">            &lt;/th&gt;</span>
 <span class="go">        &lt;/tr&gt;</span>
@@ -196,13 +210,29 @@ You can omit the links by adding &#8216;__actions__&#8217; to omitted fields as 
 <span class="go">    &lt;/thead&gt;</span>
 <span class="go">    &lt;tbody&gt;</span>
 <span class="go">        &lt;tr class=&quot;even&quot;&gt;</span>
-<span class="go">            &lt;td&gt;1&lt;/td&gt;&lt;td&gt;Arvada&lt;/td&gt;</span>
+<span class="go">            &lt;td&gt;</span>
+<span class="go">                        1</span>
+<span class="go">            &lt;/td&gt;&lt;td&gt;</span>
+<span class="go">                        Arvada</span>
+<span class="go">            &lt;/td&gt;</span>
 <span class="go">        &lt;/tr&gt;&lt;tr class=&quot;odd&quot;&gt;</span>
-<span class="go">            &lt;td&gt;2&lt;/td&gt;&lt;td&gt;Denver&lt;/td&gt;</span>
+<span class="go">            &lt;td&gt;</span>
+<span class="go">                        2</span>
+<span class="go">            &lt;/td&gt;&lt;td&gt;</span>
+<span class="go">                        Denver</span>
+<span class="go">            &lt;/td&gt;</span>
 <span class="go">        &lt;/tr&gt;&lt;tr class=&quot;even&quot;&gt;</span>
-<span class="go">            &lt;td&gt;3&lt;/td&gt;&lt;td&gt;Golden&lt;/td&gt;</span>
+<span class="go">            &lt;td&gt;</span>
+<span class="go">                        3</span>
+<span class="go">            &lt;/td&gt;&lt;td&gt;</span>
+<span class="go">                        Golden</span>
+<span class="go">            &lt;/td&gt;</span>
 <span class="go">        &lt;/tr&gt;&lt;tr class=&quot;odd&quot;&gt;</span>
-<span class="go">            &lt;td&gt;4&lt;/td&gt;&lt;td&gt;Boulder&lt;/td&gt;</span>
+<span class="go">            &lt;td&gt;</span>
+<span class="go">                        4</span>
+<span class="go">            &lt;/td&gt;&lt;td&gt;</span>
+<span class="go">                        Boulder</span>
+<span class="go">            &lt;/td&gt;</span>
 <span class="go">        &lt;/tr&gt;</span>
 <span class="go">    &lt;/tbody&gt;</span>
 <span class="go">&lt;/table&gt;</span>
@@ -238,7 +268,7 @@ You can omit the links by adding &#8216;__actions__&#8217; to omitted fields as 
 </ul>
 
             <h4>Previous topic</h4>
-            <p class="topless"><a href="sprox.formbase.html" title="previous chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.formbase</span></tt></a></p>
+            <p class="topless"><a href="sprox.formbase.html" title="previous chapter"><tt class="docutils literal"><span class="pre">sprox.formbase</span></tt></a></p>
             <h4>Next topic</h4>
             <p class="topless"><a href="sprox.fillerbase.html" title="next chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.fillerbase</span></tt></a></p>
             <h3>This Page</h3>
@@ -271,11 +301,11 @@ You can omit the links by adding &#8216;__actions__&#8217; to omitted fields as 
           <a href="sprox.formbase.html" title="sprox.formbase"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.5.5</b></a>
+  <a href="../index.html"><b>Sprox 0.6</b></a>
   </li>
 
   
-    <li> <b>/</b> <a href=""><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.tablebase</span></tt></a></li>
+    <li> <b>/</b> <a href=""><tt class="docutils literal docutils literal"><span class="pre">sprox.tablebase</span></tt></a></li>
   
 
       </ul>

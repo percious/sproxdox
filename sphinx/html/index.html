@@ -3,13 +3,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Sprox &mdash; Sprox v0.5.5 documentation</title>
+    <title>Sprox &mdash; Sprox v0.6 documentation</title>
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.5.5',
+        VERSION:     '0.6',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -19,8 +19,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="top" title="Sprox v0.5.5 documentation" href="" />
-    <link rel="next" title="Class Diagram" href="class_diagram.html" /> 
+    <link rel="top" title="Sprox v0.6 documentation" href="" />
+    <link rel="next" title="Table Tutorial" href="tutorials/table.html" /> 
   </head>
   <body>
     <div class="related">
@@ -33,10 +33,10 @@
           <a href="modindex.html" title="Global Module Index"
              accesskey="M">modules</a> |</li>
         <li class="right" >
-          <a href="class_diagram.html" title="Class Diagram"
+          <a href="tutorials/table.html" title="Table Tutorial"
              accesskey="N">next</a> |</li>
   <li>
-  <a href=""><b>Sprox 0.5.5</b></a>
+  <a href=""><b>Sprox 0.6</b></a>
   </li>
 
   
@@ -165,6 +165,17 @@ any part of the form at any level of abstraction, you can create your own form g
 for your project.</p>
 </div>
 </div>
+<div class="section" id="tutorials">
+<h1>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h1>
+<p>Here are a couple of tutorials that express the most common ways sprox is used.  It is recommended that you have
+some knowledge of TG2 when looking them over.</p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="tutorials/table.html">Table Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="tutorials/form.html">Form Tutorial</a></li>
+</ul>
+</div>
 <div class="section" id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
@@ -204,42 +215,39 @@ sprox.dojo                    0      0   100%
 sprox.dojo.fillerbase        14     14   100%
 sprox.dojo.formbase          11     11   100%
 sprox.dojo.sprockets         18     18   100%
-sprox.dojo.tablebase         10     10   100%
+sprox.dojo.tablebase         30     30   100%
 sprox.dummyentity             1      1   100%
 sprox.entitiesbase           15     15   100%
-sprox.fillerbase             74     74   100%
-sprox.formbase              106    106   100%
+sprox.fillerbase             87     87   100%
+sprox.formbase              108    108   100%
 sprox.iprovider              33     33   100%
 sprox.metadata               51     51   100%
 sprox.providerselector       73     73   100%
-sprox.saormprovider         261    261   100%
+sprox.saormprovider         262    262   100%
 sprox.sprockets              55     55   100%
-sprox.tablebase              13     13   100%
+sprox.tablebase              41     41   100%
 sprox.util                    9      9   100%
 sprox.validators             11     11   100%
 sprox.validatorselector      52     52   100%
-sprox.viewbase              117    117   100%
+sprox.viewbase              120    120   100%
 sprox.widgets                 1      1   100%
-sprox.widgets.dojo           40     40   100%
+sprox.widgets.dojo           79     79   100%
 sprox.widgets.templates       0      0   100%
-sprox.widgets.widgets        80     78    97%   77-78
+sprox.widgets.widgets        80     80   100%
 sprox.widgetselector         46     46   100%
 -------------------------------------------------------
-TOTAL                      1168   1166    99%
+TOTAL                      1274   1274   100%
 ----------------------------------------------------------------------
-Ran 215 tests in 22.849s
+Ran 221 tests in 22.017s
 
-OK
-
-*note the two lines of code *are* tested, just not in an at-once fashion,
-due to a bug with coverage and nose.</pre>
+OK</pre>
 </div>
 <p>Sprox is an open source project, and can be found at <a class="reference external" href="http://www.bitbucket.org/percious/sprox/src/">bitbucket</a>.
 If you have a great idea of how to make sprox better, feel free to fork off your own copy and send a pull request.</p>
 </div>
 <div class="section" id="current-release">
 <h1>Current Release<a class="headerlink" href="#current-release" title="Permalink to this headline">¶</a></h1>
-<p>0.5.5</p>
+<p>0.6</p>
 </div>
 <div class="section" id="license">
 <h1>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h1>
@@ -366,6 +374,9 @@ through out these docs are all based on an example model which is also used thro
 </li>
 </ul>
 </li>
+<li><a class="reference external" href="#tutorials">Tutorials</a><ul>
+</ul>
+</li>
 <li><a class="reference external" href="#indices-and-tables">Indices and tables</a></li>
 <li><a class="reference external" href="#api">API</a><ul>
 </ul>
@@ -389,7 +400,7 @@ through out these docs are all based on an example model which is also used thro
 </ul>
 
             <h4>Next topic</h4>
-            <p class="topless"><a href="class_diagram.html" title="next chapter">Class Diagram</a></p>
+            <p class="topless"><a href="tutorials/table.html" title="next chapter">Table Tutorial</a></p>
             <h3>This Page</h3>
             <ul class="this-page-menu">
               <li><a href="_sources/index.txt">Show Source</a></li>
@@ -414,10 +425,10 @@ through out these docs are all based on an example model which is also used thro
           <a href="modindex.html" title="Global Module Index"
              accesskey="M">modules</a> |</li>
         <li class="right" >
-          <a href="class_diagram.html" title="Class Diagram"
+          <a href="tutorials/table.html" title="Table Tutorial"
              accesskey="N">next</a> |</li>
   <li>
-  <a href=""><b>Sprox 0.5.5</b></a>
+  <a href=""><b>Sprox 0.6</b></a>
   </li>
 
   

@@ -3,13 +3,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sprox.widgets &mdash; Sprox v0.5.5 documentation</title>
+    <title>sprox.widgets &mdash; Sprox v0.6 documentation</title>
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.5.5',
+        VERSION:     '0.6',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -19,7 +19,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="top" title="Sprox v0.5.5 documentation" href="../index.html" />
+    <link rel="top" title="Sprox v0.6 documentation" href="../index.html" />
     <link rel="next" title="sprox.util" href="sprox.util.html" />
     <link rel="prev" title="sprox.iprovider" href="sprox.iprovider.html" /> 
   </head>
@@ -40,7 +40,7 @@
           <a href="sprox.iprovider.html" title="sprox.iprovider"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.5.5</b></a>
+  <a href="../index.html"><b>Sprox 0.6</b></a>
   </li>
 
   
@@ -348,14 +348,6 @@ around.</p>
 <dd>Where the widget is being displayed on</dd></dl>
 
 <dl class="attribute">
-<dt id="sprox.widgets.SproxCalendarDatePicker.engine_name">
-<!--[sprox.widgets.SproxCalendarDatePicker.engine_name]--><tt class="descname">engine_name</tt><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.engine_name" title="Permalink to this definition">¶</a></dt>
-<dd>The engine name will default to the default_view configured in the
-middleware if templates are available for that engine.
-If no templates are available then it will default to use Genshi for
-backwards compatibility.</dd></dl>
-
-<dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDatePicker.error_at_request">
 <!--[sprox.widgets.SproxCalendarDatePicker.error_at_request]--><tt class="descname">error_at_request</tt><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.error_at_request" title="Permalink to this definition">¶</a></dt>
 <dd>Validation error for current request.</dd></dl>
@@ -551,8 +543,8 @@ validation fails the original value will be returned unmodified.</dd></dl>
 <dd><p>Validate value using validator if widget has one. If validation fails
 a formencode.Invalid exception will be raised.</p>
 <p>If <tt class="docutils literal"><span class="pre">use_request_local</span></tt> is True and validation fails the exception and
-value will be placed at request local storage so if the widget is 
-redisplayed in the same request <tt class="docutils literal"><span class="pre">error</span></tt> and <tt class="docutils literal"><span class="pre">value</span></tt> don&#8217;t have to 
+value will be placed at request local storage so if the widget is
+redisplayed in the same request <tt class="docutils literal"><span class="pre">error</span></tt> and <tt class="docutils literal"><span class="pre">value</span></tt> don&#8217;t have to
 be passed explicitly to <tt class="docutils literal"><span class="pre">display</span></tt>.</p>
 </dd></dl>
 
@@ -634,14 +626,6 @@ around.</p>
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.displays_on">
 <!--[sprox.widgets.SproxCalendarDateTimePicker.displays_on]--><tt class="descname">displays_on</tt><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.displays_on" title="Permalink to this definition">¶</a></dt>
 <dd>Where the widget is being displayed on</dd></dl>
-
-<dl class="attribute">
-<dt id="sprox.widgets.SproxCalendarDateTimePicker.engine_name">
-<!--[sprox.widgets.SproxCalendarDateTimePicker.engine_name]--><tt class="descname">engine_name</tt><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.engine_name" title="Permalink to this definition">¶</a></dt>
-<dd>The engine name will default to the default_view configured in the
-middleware if templates are available for that engine.
-If no templates are available then it will default to use Genshi for
-backwards compatibility.</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.error_at_request">
@@ -839,8 +823,8 @@ validation fails the original value will be returned unmodified.</dd></dl>
 <dd><p>Validate value using validator if widget has one. If validation fails
 a formencode.Invalid exception will be raised.</p>
 <p>If <tt class="docutils literal"><span class="pre">use_request_local</span></tt> is True and validation fails the exception and
-value will be placed at request local storage so if the widget is 
-redisplayed in the same request <tt class="docutils literal"><span class="pre">error</span></tt> and <tt class="docutils literal"><span class="pre">value</span></tt> don&#8217;t have to 
+value will be placed at request local storage so if the widget is
+redisplayed in the same request <tt class="docutils literal"><span class="pre">error</span></tt> and <tt class="docutils literal"><span class="pre">value</span></tt> don&#8217;t have to
 be passed explicitly to <tt class="docutils literal"><span class="pre">display</span></tt>.</p>
 </dd></dl>
 
@@ -922,14 +906,6 @@ around.</p>
 <dt id="sprox.widgets.SproxCheckBox.displays_on">
 <!--[sprox.widgets.SproxCheckBox.displays_on]--><tt class="descname">displays_on</tt><a class="headerlink" href="#sprox.widgets.SproxCheckBox.displays_on" title="Permalink to this definition">¶</a></dt>
 <dd>Where the widget is being displayed on</dd></dl>
-
-<dl class="attribute">
-<dt id="sprox.widgets.SproxCheckBox.engine_name">
-<!--[sprox.widgets.SproxCheckBox.engine_name]--><tt class="descname">engine_name</tt><a class="headerlink" href="#sprox.widgets.SproxCheckBox.engine_name" title="Permalink to this definition">¶</a></dt>
-<dd>The engine name will default to the default_view configured in the
-middleware if templates are available for that engine.
-If no templates are available then it will default to use Genshi for
-backwards compatibility.</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCheckBox.error_at_request">
@@ -1120,8 +1096,8 @@ validation fails the original value will be returned unmodified.</dd></dl>
 <dd><p>Validate value using validator if widget has one. If validation fails
 a formencode.Invalid exception will be raised.</p>
 <p>If <tt class="docutils literal"><span class="pre">use_request_local</span></tt> is True and validation fails the exception and
-value will be placed at request local storage so if the widget is 
-redisplayed in the same request <tt class="docutils literal"><span class="pre">error</span></tt> and <tt class="docutils literal"><span class="pre">value</span></tt> don&#8217;t have to 
+value will be placed at request local storage so if the widget is
+redisplayed in the same request <tt class="docutils literal"><span class="pre">error</span></tt> and <tt class="docutils literal"><span class="pre">value</span></tt> don&#8217;t have to
 be passed explicitly to <tt class="docutils literal"><span class="pre">display</span></tt>.</p>
 </dd></dl>
 
@@ -1242,8 +1218,9 @@ around.</p>
 <dl class="method">
 <dt id="sprox.widgets.SproxDataGrid.get_column">
 <!--[sprox.widgets.SproxDataGrid.get_column]--><tt class="descname">get_column</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxDataGrid.get_column" title="Permalink to this definition">¶</a></dt>
-<dd>Returns Column with specified name.
-Raises KeyError if no such column exists.</dd></dl>
+<dd><p>Return Column with specified name.</p>
+<p>Raises KeyError if no such column exists.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxDataGrid.get_default">
@@ -1256,7 +1233,7 @@ render to retrieve a value</dd></dl>
 <dt id="sprox.widgets.SproxDataGrid.get_field_getter">
 <!--[sprox.widgets.SproxDataGrid.get_field_getter]--><em class="property">
 static </em><tt class="descname">get_field_getter</tt><big>(</big><em>columns</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxDataGrid.get_field_getter" title="Permalink to this definition">¶</a></dt>
-<dd>Returns a function to access the fields of table by row, col</dd></dl>
+<dd>Return a function to access the fields of table by row, col.</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxDataGrid.id">
@@ -1454,14 +1431,6 @@ around.</p>
 <dt id="sprox.widgets.SproxTableForm.displays_on">
 <!--[sprox.widgets.SproxTableForm.displays_on]--><tt class="descname">displays_on</tt><a class="headerlink" href="#sprox.widgets.SproxTableForm.displays_on" title="Permalink to this definition">¶</a></dt>
 <dd>Where the widget is being displayed on</dd></dl>
-
-<dl class="attribute">
-<dt id="sprox.widgets.SproxTableForm.engine_name">
-<!--[sprox.widgets.SproxTableForm.engine_name]--><tt class="descname">engine_name</tt><a class="headerlink" href="#sprox.widgets.SproxTableForm.engine_name" title="Permalink to this definition">¶</a></dt>
-<dd>The engine name will default to the default_view configured in the
-middleware if templates are available for that engine.
-If no templates are available then it will default to use Genshi for
-backwards compatibility.</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxTableForm.error_at_request">
@@ -1662,8 +1631,8 @@ validation fails the original value will be returned unmodified.</dd></dl>
 <dd><p>Validate value using validator if widget has one. If validation fails
 a formencode.Invalid exception will be raised.</p>
 <p>If <tt class="docutils literal"><span class="pre">use_request_local</span></tt> is True and validation fails the exception and
-value will be placed at request local storage so if the widget is 
-redisplayed in the same request <tt class="docutils literal"><span class="pre">error</span></tt> and <tt class="docutils literal"><span class="pre">value</span></tt> don&#8217;t have to 
+value will be placed at request local storage so if the widget is
+redisplayed in the same request <tt class="docutils literal"><span class="pre">error</span></tt> and <tt class="docutils literal"><span class="pre">value</span></tt> don&#8217;t have to
 be passed explicitly to <tt class="docutils literal"><span class="pre">display</span></tt>.</p>
 </dd></dl>
 
@@ -1789,14 +1758,6 @@ around.</p>
 <dt id="sprox.widgets.SproxTimePicker.displays_on">
 <!--[sprox.widgets.SproxTimePicker.displays_on]--><tt class="descname">displays_on</tt><a class="headerlink" href="#sprox.widgets.SproxTimePicker.displays_on" title="Permalink to this definition">¶</a></dt>
 <dd>Where the widget is being displayed on</dd></dl>
-
-<dl class="attribute">
-<dt id="sprox.widgets.SproxTimePicker.engine_name">
-<!--[sprox.widgets.SproxTimePicker.engine_name]--><tt class="descname">engine_name</tt><a class="headerlink" href="#sprox.widgets.SproxTimePicker.engine_name" title="Permalink to this definition">¶</a></dt>
-<dd>The engine name will default to the default_view configured in the
-middleware if templates are available for that engine.
-If no templates are available then it will default to use Genshi for
-backwards compatibility.</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxTimePicker.error_at_request">
@@ -1994,8 +1955,8 @@ validation fails the original value will be returned unmodified.</dd></dl>
 <dd><p>Validate value using validator if widget has one. If validation fails
 a formencode.Invalid exception will be raised.</p>
 <p>If <tt class="docutils literal"><span class="pre">use_request_local</span></tt> is True and validation fails the exception and
-value will be placed at request local storage so if the widget is 
-redisplayed in the same request <tt class="docutils literal"><span class="pre">error</span></tt> and <tt class="docutils literal"><span class="pre">value</span></tt> don&#8217;t have to 
+value will be placed at request local storage so if the widget is
+redisplayed in the same request <tt class="docutils literal"><span class="pre">error</span></tt> and <tt class="docutils literal"><span class="pre">value</span></tt> don&#8217;t have to
 be passed explicitly to <tt class="docutils literal"><span class="pre">display</span></tt>.</p>
 </dd></dl>
 
@@ -3034,14 +2995,6 @@ around.</p>
 <dd>Where the widget is being displayed on</dd></dl>
 
 <dl class="attribute">
-<dt id="sprox.widgets.PropertyMultipleSelectField.engine_name">
-<!--[sprox.widgets.PropertyMultipleSelectField.engine_name]--><tt class="descname">engine_name</tt><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.engine_name" title="Permalink to this definition">¶</a></dt>
-<dd>The engine name will default to the default_view configured in the
-middleware if templates are available for that engine.
-If no templates are available then it will default to use Genshi for
-backwards compatibility.</dd></dl>
-
-<dl class="attribute">
 <dt id="sprox.widgets.PropertyMultipleSelectField.error_at_request">
 <!--[sprox.widgets.PropertyMultipleSelectField.error_at_request]--><tt class="descname">error_at_request</tt><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.error_at_request" title="Permalink to this definition">¶</a></dt>
 <dd>Validation error for current request.</dd></dl>
@@ -3230,8 +3183,8 @@ validation fails the original value will be returned unmodified.</dd></dl>
 <dd><p>Validate value using validator if widget has one. If validation fails
 a formencode.Invalid exception will be raised.</p>
 <p>If <tt class="docutils literal"><span class="pre">use_request_local</span></tt> is True and validation fails the exception and
-value will be placed at request local storage so if the widget is 
-redisplayed in the same request <tt class="docutils literal"><span class="pre">error</span></tt> and <tt class="docutils literal"><span class="pre">value</span></tt> don&#8217;t have to 
+value will be placed at request local storage so if the widget is
+redisplayed in the same request <tt class="docutils literal"><span class="pre">error</span></tt> and <tt class="docutils literal"><span class="pre">value</span></tt> don&#8217;t have to
 be passed explicitly to <tt class="docutils literal"><span class="pre">display</span></tt>.</p>
 </dd></dl>
 
@@ -3327,14 +3280,6 @@ around.</p>
 <dt id="sprox.widgets.PropertySingleSelectField.displays_on">
 <!--[sprox.widgets.PropertySingleSelectField.displays_on]--><tt class="descname">displays_on</tt><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.displays_on" title="Permalink to this definition">¶</a></dt>
 <dd>Where the widget is being displayed on</dd></dl>
-
-<dl class="attribute">
-<dt id="sprox.widgets.PropertySingleSelectField.engine_name">
-<!--[sprox.widgets.PropertySingleSelectField.engine_name]--><tt class="descname">engine_name</tt><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.engine_name" title="Permalink to this definition">¶</a></dt>
-<dd>The engine name will default to the default_view configured in the
-middleware if templates are available for that engine.
-If no templates are available then it will default to use Genshi for
-backwards compatibility.</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.PropertySingleSelectField.error_at_request">
@@ -3525,8 +3470,8 @@ validation fails the original value will be returned unmodified.</dd></dl>
 <dd><p>Validate value using validator if widget has one. If validation fails
 a formencode.Invalid exception will be raised.</p>
 <p>If <tt class="docutils literal"><span class="pre">use_request_local</span></tt> is True and validation fails the exception and
-value will be placed at request local storage so if the widget is 
-redisplayed in the same request <tt class="docutils literal"><span class="pre">error</span></tt> and <tt class="docutils literal"><span class="pre">value</span></tt> don&#8217;t have to 
+value will be placed at request local storage so if the widget is
+redisplayed in the same request <tt class="docutils literal"><span class="pre">error</span></tt> and <tt class="docutils literal"><span class="pre">value</span></tt> don&#8217;t have to
 be passed explicitly to <tt class="docutils literal"><span class="pre">display</span></tt>.</p>
 </dd></dl>
 
@@ -4590,7 +4535,7 @@ applying a filter on them.</p>
           <a href="sprox.iprovider.html" title="sprox.iprovider"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.5.5</b></a>
+  <a href="../index.html"><b>Sprox 0.6</b></a>
   </li>
 
   
