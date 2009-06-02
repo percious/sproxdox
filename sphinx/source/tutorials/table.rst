@@ -386,5 +386,13 @@ And here is how it looks after modification:
 
 .. image:: images/table_column_widths.png
 
-Conclusions
+To Summarize
 -------------
+TableBase and TableFiller provide an easy path for display of data to a webpage.  They can be heavily
+customized, especially with the advent of field_methods in 0.6, which allow you to provide a python
+function for field data display.  tw.dojo gives TableFiller and TableBase with the capability to 
+have an ajaxy interface with infinite scrolling.  If you'd like to review the code used to create this
+tutorial, please::
+
+    svn co http://pythontutorials.googlecode.com/svn/tutorials/moviedemo/trunk moviedemo
+
