@@ -3,13 +3,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sprox.formbase &mdash; Sprox v0.6 documentation</title>
+    <title>sprox.formbase &mdash; Sprox v0.6.1 documentation</title>
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6',
+        VERSION:     '0.6.1',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -19,7 +19,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="top" title="Sprox v0.6 documentation" href="../index.html" />
+    <link rel="top" title="Sprox v0.6.1 documentation" href="../index.html" />
     <link rel="next" title="sprox.tablebase" href="sprox.tablebase.html" />
     <link rel="prev" title="Class Diagram" href="../class_diagram.html" /> 
   </head>
@@ -40,7 +40,7 @@
           <a href="../class_diagram.html" title="Class Diagram"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6</b></a>
+  <a href="../index.html"><b>Sprox 0.6.1</b></a>
   </li>
 
   
@@ -196,14 +196,13 @@ Here is the userform, limited to just the town field, which gets populated with 
 <span class="go">&gt;&gt;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">town_form</span> <span class="o">=</span> <span class="n">UserOnlyTownForm</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
 <span class="go">&gt;&gt;&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">town_form</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">town_form</span><span class="p">()</span> <span class="c"># doctest: +XML</span>
 <span class="go">&lt;form action=&quot;&quot; method=&quot;post&quot; class=&quot;required tableform&quot;&gt;</span>
 <span class="go">    &lt;div&gt;</span>
-<span class="go">&lt;BLANKLINE&gt;</span>
-<span class="go">            &lt;input type=&quot;hidden&quot; name=&quot;sprox_id&quot; class=&quot;hiddenfield&quot; id=&quot;sprox_id&quot; value=&quot;&quot; /&gt;</span>
+<span class="go">            &lt;input type=&quot;hidden&quot; id=&quot;sprox_id&quot; class=&quot;hiddenfield&quot; name=&quot;sprox_id&quot; value=&quot;&quot; /&gt;</span>
 <span class="go">    &lt;/div&gt;</span>
 <span class="go">    &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;2&quot; &gt;</span>
-<span class="go">        &lt;tr class=&quot;even&quot; id=&quot;town.container&quot; title=&quot;&quot; &gt;            </span>
+<span class="go">        &lt;tr class=&quot;even&quot; id=&quot;town.container&quot; title=&quot;&quot; &gt;</span>
 <span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
 <span class="go">                &lt;label id=&quot;town.label&quot; for=&quot;town&quot; class=&quot;fieldlabel&quot;&gt;Town&lt;/label&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
@@ -217,24 +216,28 @@ Here is the userform, limited to just the town field, which gets populated with 
 <span class="go">&lt;/select&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">        &lt;/tr&gt;</span>
-<span class="go">        &lt;tr class=&quot;odd&quot; id=&quot;submit.container&quot; title=&quot;&quot; &gt;            </span>
+<span class="go">        &lt;tr class=&quot;odd&quot; id=&quot;submit.container&quot; title=&quot;&quot; &gt;</span>
 <span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
 <span class="go">                &lt;label id=&quot;submit.label&quot; for=&quot;submit&quot; class=&quot;fieldlabel&quot;&gt;&lt;/label&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">            &lt;td class=&quot;fieldcol&quot; &gt;</span>
-<span class="go">                &lt;input type=&quot;submit&quot; name=&quot;&quot; class=&quot;submitbutton&quot; id=&quot;None&quot; value=&quot;Submit&quot; /&gt;</span>
+<span class="go">                &lt;input type=&quot;submit&quot; class=&quot;submitbutton&quot; value=&quot;Submit&quot; /&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">        &lt;/tr&gt;</span>
 <span class="go">    &lt;/table&gt;</span>
 <span class="go">&lt;/form&gt;</span>
 </pre></div>
 </div>
-<p>Forms created with sprox can be validated as you would any other widget.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">town_form</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;town&#39;</span><span class="p">:</span><span class="mf">1</span><span class="p">})</span>
-<span class="gp">...</span>
-<span class="go">Invalid: sprox_id: Missing value</span>
-</pre></div>
-</div>
+<p>Forms created with sprox can be validated as you would any other widget.
+&gt;&gt;&gt; class UserOnlyTownForm(FormBase):
+...    __model__ = User
+...    __limit_fields__ = [&#8216;town&#8217;]
+...    __required_fields__ = [&#8216;town&#8217;]
+&gt;&gt;&gt; town_form = UserOnlyTownForm(session)
+&gt;&gt;&gt; town_form.validate(params={&#8216;sprox_id&#8217;:1})
+Traceback (most recent call last):
+...
+Invalid: town: Missing value</p>
 <dl class="method">
 <dt id="sprox.formbase.FormBase.validate">
 <!--[sprox.formbase.FormBase.validate]--><tt class="descname">validate</tt><big>(</big><em>params</em>, <em>state=None</em><big>)</big><a class="headerlink" href="#sprox.formbase.FormBase.validate" title="Permalink to this definition">¶</a></dt>
@@ -297,67 +300,66 @@ matches the field data.</td>
 <span class="gp">... </span>    <span class="n">display_name</span>           <span class="o">=</span> <span class="n">TextField</span>
 <span class="gp">... </span>    <span class="n">verify_password</span>        <span class="o">=</span> <span class="n">PasswordField</span><span class="p">(</span><span class="s">&#39;verify_password&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">registration_form</span> <span class="o">=</span> <span class="n">RegistrationForm</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">registration_form</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">registration_form</span><span class="p">()</span> <span class="c"># doctest: +XML</span>
 <span class="go">&lt;form action=&quot;&quot; method=&quot;post&quot; class=&quot;required tableform&quot;&gt;</span>
 <span class="go">    &lt;div&gt;</span>
-<span class="go">&lt;BLANKLINE&gt;</span>
-<span class="go">            &lt;input type=&quot;hidden&quot; name=&quot;sprox_id&quot; class=&quot;hiddenfield&quot; id=&quot;sprox_id&quot; value=&quot;&quot; /&gt;</span>
+<span class="go">            &lt;input type=&quot;hidden&quot; id=&quot;sprox_id&quot; class=&quot;hiddenfield&quot; name=&quot;sprox_id&quot; value=&quot;&quot; /&gt;</span>
 <span class="go">    &lt;/div&gt;</span>
 <span class="go">    &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;2&quot; &gt;</span>
-<span class="go">        &lt;tr class=&quot;even&quot; id=&quot;user_name.container&quot; title=&quot;&quot; &gt;            </span>
+<span class="go">        &lt;tr class=&quot;even&quot; id=&quot;user_name.container&quot; title=&quot;&quot; &gt;</span>
 <span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
 <span class="go">                &lt;label id=&quot;user_name.label&quot; for=&quot;user_name&quot; class=&quot;fieldlabel required&quot;&gt;User Name&lt;/label&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">            &lt;td class=&quot;fieldcol&quot; &gt;</span>
-<span class="go">                &lt;input type=&quot;text&quot; name=&quot;user_name&quot; class=&quot;textfield required&quot; id=&quot;user_name&quot; value=&quot;&quot; /&gt;</span>
+<span class="go">                &lt;input type=&quot;text&quot; id=&quot;user_name&quot; class=&quot;textfield required&quot; name=&quot;user_name&quot; value=&quot;&quot; /&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">        &lt;/tr&gt;</span>
-<span class="go">        &lt;tr class=&quot;odd&quot; id=&quot;email_address.container&quot; title=&quot;&quot; &gt;            </span>
+<span class="go">        &lt;tr class=&quot;odd&quot; id=&quot;email_address.container&quot; title=&quot;&quot; &gt;</span>
 <span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
 <span class="go">                &lt;label id=&quot;email_address.label&quot; for=&quot;email_address&quot; class=&quot;fieldlabel required&quot;&gt;Email Address&lt;/label&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">            &lt;td class=&quot;fieldcol&quot; &gt;</span>
-<span class="go">                &lt;input type=&quot;text&quot; name=&quot;email_address&quot; class=&quot;textfield required&quot; id=&quot;email_address&quot; value=&quot;&quot; /&gt;</span>
+<span class="go">                &lt;input type=&quot;text&quot; id=&quot;email_address&quot; class=&quot;textfield required&quot; name=&quot;email_address&quot; value=&quot;&quot; /&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">        &lt;/tr&gt;</span>
-<span class="go">        &lt;tr class=&quot;even&quot; id=&quot;display_name.container&quot; title=&quot;&quot; &gt;            </span>
+<span class="go">        &lt;tr class=&quot;even&quot; id=&quot;display_name.container&quot; title=&quot;&quot; &gt;</span>
 <span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
 <span class="go">                &lt;label id=&quot;display_name.label&quot; for=&quot;display_name&quot; class=&quot;fieldlabel&quot;&gt;Display Name&lt;/label&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">            &lt;td class=&quot;fieldcol&quot; &gt;</span>
-<span class="go">                &lt;input type=&quot;text&quot; name=&quot;display_name&quot; class=&quot;textfield&quot; id=&quot;display_name&quot; value=&quot;&quot; /&gt;</span>
+<span class="go">                &lt;input type=&quot;text&quot; id=&quot;display_name&quot; class=&quot;textfield&quot; name=&quot;display_name&quot; value=&quot;&quot; /&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">        &lt;/tr&gt;</span>
-<span class="go">        &lt;tr class=&quot;odd&quot; id=&quot;password.container&quot; title=&quot;&quot; &gt;            </span>
+<span class="go">        &lt;tr class=&quot;odd&quot; id=&quot;password.container&quot; title=&quot;&quot; &gt;</span>
 <span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
 <span class="go">                &lt;label id=&quot;password.label&quot; for=&quot;password&quot; class=&quot;fieldlabel required&quot;&gt;Password&lt;/label&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">            &lt;td class=&quot;fieldcol&quot; &gt;</span>
-<span class="go">                &lt;input type=&quot;password&quot; name=&quot;password&quot; class=&quot;required passwordfield&quot; id=&quot;password&quot; value=&quot;&quot; /&gt;</span>
+<span class="go">                &lt;input type=&quot;password&quot; id=&quot;password&quot; class=&quot;required passwordfield&quot; name=&quot;password&quot; value=&quot;&quot; /&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">        &lt;/tr&gt;</span>
-<span class="go">        &lt;tr class=&quot;even&quot; id=&quot;verify_password.container&quot; title=&quot;&quot; &gt;            </span>
+<span class="go">        &lt;tr class=&quot;even&quot; id=&quot;verify_password.container&quot; title=&quot;&quot; &gt;</span>
 <span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
 <span class="go">                &lt;label id=&quot;verify_password.label&quot; for=&quot;verify_password&quot; class=&quot;fieldlabel&quot;&gt;Verify Password&lt;/label&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">            &lt;td class=&quot;fieldcol&quot; &gt;</span>
-<span class="go">                &lt;input type=&quot;password&quot; name=&quot;verify_password&quot; class=&quot;passwordfield&quot; id=&quot;verify_password&quot; value=&quot;&quot; /&gt;</span>
+<span class="go">                &lt;input type=&quot;password&quot; id=&quot;verify_password&quot; class=&quot;passwordfield&quot; name=&quot;verify_password&quot; value=&quot;&quot; /&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">        &lt;/tr&gt;</span>
-<span class="go">        &lt;tr class=&quot;odd&quot; id=&quot;town_id.container&quot; title=&quot;&quot; &gt;            </span>
+<span class="go">        &lt;tr class=&quot;odd&quot; id=&quot;town_id.container&quot; title=&quot;&quot; &gt;</span>
 <span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
 <span class="go">                &lt;label id=&quot;town_id.label&quot; for=&quot;town_id&quot; class=&quot;fieldlabel&quot;&gt;Town Id&lt;/label&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">            &lt;td class=&quot;fieldcol&quot; &gt;</span>
-<span class="go">                &lt;input type=&quot;text&quot; name=&quot;town_id&quot; class=&quot;textfield&quot; id=&quot;town_id&quot; value=&quot;&quot; /&gt;</span>
+<span class="go">                &lt;input type=&quot;text&quot; id=&quot;town_id&quot; class=&quot;textfield&quot; name=&quot;town_id&quot; value=&quot;&quot; /&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">        &lt;/tr&gt;</span>
-<span class="go">        &lt;tr class=&quot;even&quot; id=&quot;submit.container&quot; title=&quot;&quot; &gt;            </span>
+<span class="go">        &lt;tr class=&quot;even&quot; id=&quot;submit.container&quot; title=&quot;&quot; &gt;</span>
 <span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
 <span class="go">                &lt;label id=&quot;submit.label&quot; for=&quot;submit&quot; class=&quot;fieldlabel&quot;&gt;&lt;/label&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">            &lt;td class=&quot;fieldcol&quot; &gt;</span>
-<span class="go">                &lt;input type=&quot;submit&quot; name=&quot;&quot; class=&quot;submitbutton&quot; id=&quot;None&quot; value=&quot;Submit&quot; /&gt;</span>
+<span class="go">                &lt;input type=&quot;submit&quot; class=&quot;submitbutton&quot; value=&quot;Submit&quot; /&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">        &lt;/tr&gt;</span>
 <span class="go">    &lt;/table&gt;</span>
@@ -405,26 +407,23 @@ user_name in the model is unique:</p>
 <span class="gp">... </span>    <span class="n">__model__</span> <span class="o">=</span> <span class="n">User</span>
 <span class="gp">... </span>    <span class="n">__limit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;user_name&#39;</span><span class="p">,</span> <span class="s">&#39;email_address&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">disabled_user_form</span> <span class="o">=</span> <span class="n">DisabledUserForm</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">disabled_user_form</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">user_name</span><span class="o">=</span><span class="s">&#39;percious&#39;</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="s">&#39;chris@percious.com&#39;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">disabled_user_form</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">user_name</span><span class="o">=</span><span class="s">&#39;percious&#39;</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="s">&#39;chris@percious.com&#39;</span><span class="p">))</span>  <span class="c"># doctest: +XML</span>
 <span class="go">&lt;form action=&quot;&quot; method=&quot;post&quot; class=&quot;required tableform&quot;&gt;</span>
 <span class="go">    &lt;div&gt;</span>
-<span class="go">&lt;BLANKLINE&gt;</span>
-<span class="go">            &lt;input type=&quot;hidden&quot; name=&quot;user_name&quot; class=&quot;hiddenfield&quot; id=&quot;user_name&quot; value=&quot;&quot; /&gt;</span>
-<span class="go">&lt;BLANKLINE&gt;</span>
-<span class="go">            &lt;input type=&quot;hidden&quot; name=&quot;email_address&quot; class=&quot;hiddenfield&quot; id=&quot;email_address&quot; value=&quot;&quot; /&gt;</span>
-<span class="go">&lt;BLANKLINE&gt;</span>
-<span class="go">            &lt;input type=&quot;hidden&quot; name=&quot;sprox_id&quot; class=&quot;hiddenfield&quot; id=&quot;sprox_id&quot; value=&quot;&quot; /&gt;</span>
+<span class="go">            &lt;input type=&quot;hidden&quot; id=&quot;user_name&quot; class=&quot;hiddenfield&quot; name=&quot;user_name&quot; value=&quot;&quot; /&gt;</span>
+<span class="go">            &lt;input type=&quot;hidden&quot; id=&quot;email_address&quot; class=&quot;hiddenfield&quot; name=&quot;email_address&quot; value=&quot;&quot; /&gt;</span>
+<span class="go">            &lt;input type=&quot;hidden&quot; id=&quot;sprox_id&quot; class=&quot;hiddenfield&quot; name=&quot;sprox_id&quot; value=&quot;&quot; /&gt;</span>
 <span class="go">    &lt;/div&gt;</span>
 <span class="go">    &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;2&quot; &gt;</span>
-<span class="go">        &lt;tr class=&quot;even&quot; id=&quot;user_name.container&quot; title=&quot;&quot; &gt;            </span>
+<span class="go">        &lt;tr class=&quot;even&quot; id=&quot;user_name.container&quot; title=&quot;&quot; &gt;</span>
 <span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
 <span class="go">                &lt;label id=&quot;user_name.label&quot; for=&quot;user_name&quot; class=&quot;fieldlabel&quot;&gt;User Name&lt;/label&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">            &lt;td class=&quot;fieldcol&quot; &gt;</span>
-<span class="go">                &lt;input type=&quot;text&quot; name=&quot;user_name&quot; class=&quot;textfield&quot; id=&quot;user_name&quot; value=&quot;&quot; disabled=&quot;disabled&quot; /&gt;</span>
+<span class="go">                &lt;input type=&quot;text&quot; id=&quot;user_name&quot; class=&quot;textfield&quot; name=&quot;user_name&quot; value=&quot;&quot; disabled=&quot;disabled&quot; /&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">        &lt;/tr&gt;</span>
-<span class="go">        &lt;tr class=&quot;odd&quot; id=&quot;email_address.container&quot; title=&quot;&quot; &gt;            </span>
+<span class="go">        &lt;tr class=&quot;odd&quot; id=&quot;email_address.container&quot; title=&quot;&quot; &gt;</span>
 <span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
 <span class="go">                &lt;label id=&quot;email_address.label&quot; for=&quot;email_address&quot; class=&quot;fieldlabel&quot;&gt;Email Address&lt;/label&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
@@ -432,12 +431,12 @@ user_name in the model is unique:</p>
 <span class="go">                &lt;textarea id=&quot;email_address&quot; name=&quot;email_address&quot; class=&quot;textarea&quot; disabled=&quot;disabled&quot; rows=&quot;7&quot; cols=&quot;50&quot;&gt;&lt;/textarea&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">        &lt;/tr&gt;</span>
-<span class="go">        &lt;tr class=&quot;even&quot; id=&quot;submit.container&quot; title=&quot;&quot; &gt;            </span>
+<span class="go">        &lt;tr class=&quot;even&quot; id=&quot;submit.container&quot; title=&quot;&quot; &gt;</span>
 <span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
 <span class="go">                &lt;label id=&quot;submit.label&quot; for=&quot;submit&quot; class=&quot;fieldlabel&quot;&gt;&lt;/label&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">            &lt;td class=&quot;fieldcol&quot; &gt;</span>
-<span class="go">                &lt;input type=&quot;submit&quot; name=&quot;&quot; class=&quot;submitbutton&quot; id=&quot;None&quot; value=&quot;Submit&quot; /&gt;</span>
+<span class="go">                &lt;input type=&quot;submit&quot; class=&quot;submitbutton&quot; value=&quot;Submit&quot; /&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">        &lt;/tr&gt;</span>
 <span class="go">    &lt;/table&gt;</span>
@@ -526,7 +525,7 @@ user_name in the model is unique:</p>
           <a href="../class_diagram.html" title="Class Diagram"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6</b></a>
+  <a href="../index.html"><b>Sprox 0.6.1</b></a>
   </li>
 
   

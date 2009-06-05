@@ -3,13 +3,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sprox.dojo.formbase &mdash; Sprox v0.6 documentation</title>
+    <title>sprox.dojo.formbase &mdash; Sprox v0.6.1 documentation</title>
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6',
+        VERSION:     '0.6.1',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -19,7 +19,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="top" title="Sprox v0.6 documentation" href="../index.html" />
+    <link rel="top" title="Sprox v0.6.1 documentation" href="../index.html" />
     <link rel="next" title="test_model" href="../test_model.html" />
     <link rel="prev" title="sprox.dojo.fillerbase" href="sprox.dojo.fillerbase.html" /> 
   </head>
@@ -40,7 +40,7 @@
           <a href="sprox.dojo.fillerbase.html" title="sprox.dojo.fillerbase"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6</b></a>
+  <a href="../index.html"><b>Sprox 0.6.1</b></a>
   </li>
 
   
@@ -86,13 +86,10 @@ Released under MIT license.</p>
 <span class="gp">... </span>    <span class="n">__model__</span> <span class="o">=</span> <span class="n">User</span>
 <span class="gp">... </span>    <span class="n">__limit_fields__</span>       <span class="o">=</span> <span class="p">[</span><span class="s">&#39;user_name&#39;</span><span class="p">,</span> <span class="s">&#39;groups&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">edit_form</span> <span class="o">=</span> <span class="n">Form</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">edit_form</span><span class="p">()</span>
-<span class="go">&lt;form action=&quot;&quot; method=&quot;post&quot; class=&quot;has_error required tableform&quot;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">edit_form</span><span class="p">()</span> <span class="c"># doctest: +XML</span>
+<span class="go">&lt;form action=&quot;&quot; method=&quot;post&quot; class=&quot;required tableform&quot;&gt;</span>
 <span class="go">    &lt;div&gt;</span>
-<span class="go">&lt;BLANKLINE&gt;</span>
-<span class="go">            &lt;input type=&quot;hidden&quot; name=&quot;sprox_id&quot; class=&quot;has_error hiddenfield&quot; id=&quot;sprox_id&quot; value=&quot;None&quot; /&gt;</span>
-<span class="go">            &lt;span class=&quot;fielderror&quot;&gt;Missing value&lt;/span&gt;</span>
-<span class="go">&lt;BLANKLINE&gt;</span>
+<span class="go">            &lt;input type=&quot;hidden&quot; id=&quot;sprox_id&quot; class=&quot;hiddenfield&quot; name=&quot;sprox_id&quot; value=&quot;&quot; /&gt;</span>
 <span class="go">            &lt;input xmlns=&quot;http://www.w3.org/1999/xhtml&quot;</span>
 <span class="go">       xmlns:py=&quot;http://genshi.edgewall.org/&quot;</span>
 <span class="go">       type=&quot;hidden&quot; name=&quot;_method&quot; class=&quot;sproxmethodputhiddenfield&quot; id=&quot;_method&quot;</span>
@@ -100,15 +97,15 @@ Released under MIT license.</p>
 <span class="go">       py:attrs=&quot;attrs&quot; /&gt;</span>
 <span class="go">    &lt;/div&gt;</span>
 <span class="go">    &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;2&quot; &gt;</span>
-<span class="go">        &lt;tr class=&quot;even&quot; id=&quot;user_name.container&quot; title=&quot;&quot; &gt;            </span>
+<span class="go">        &lt;tr class=&quot;even&quot; id=&quot;user_name.container&quot; title=&quot;&quot; &gt;</span>
 <span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
 <span class="go">                &lt;label id=&quot;user_name.label&quot; for=&quot;user_name&quot; class=&quot;fieldlabel&quot;&gt;User Name&lt;/label&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">            &lt;td class=&quot;fieldcol&quot; &gt;</span>
-<span class="go">                &lt;input type=&quot;text&quot; name=&quot;user_name&quot; class=&quot;textfield&quot; id=&quot;user_name&quot; value=&quot;&quot; /&gt;</span>
+<span class="go">                &lt;input type=&quot;text&quot; id=&quot;user_name&quot; class=&quot;textfield&quot; name=&quot;user_name&quot; value=&quot;&quot; /&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">        &lt;/tr&gt;</span>
-<span class="go">        &lt;tr class=&quot;odd&quot; id=&quot;.container&quot; title=&quot;&quot; &gt;            </span>
+<span class="go">        &lt;tr class=&quot;odd&quot; id=&quot;.container&quot; title=&quot;&quot; &gt;</span>
 <span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
 <span class="go">                &lt;label id=&quot;.label&quot; for=&quot;&quot; class=&quot;fieldlabel&quot;&gt;Groups&lt;/label&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
@@ -137,12 +134,12 @@ Released under MIT license.</p>
 <span class="go">&lt;/div&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">        &lt;/tr&gt;</span>
-<span class="go">        &lt;tr class=&quot;even&quot; id=&quot;submit.container&quot; title=&quot;&quot; &gt;            </span>
+<span class="go">        &lt;tr class=&quot;even&quot; id=&quot;submit.container&quot; title=&quot;&quot; &gt;</span>
 <span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
 <span class="go">                &lt;label id=&quot;submit.label&quot; for=&quot;submit&quot; class=&quot;fieldlabel&quot;&gt;&lt;/label&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">            &lt;td class=&quot;fieldcol&quot; &gt;</span>
-<span class="go">                &lt;input type=&quot;submit&quot; name=&quot;&quot; class=&quot;submitbutton&quot; id=&quot;None&quot; value=&quot;Submit&quot; /&gt;</span>
+<span class="go">                &lt;input type=&quot;submit&quot; class=&quot;submitbutton&quot; value=&quot;Submit&quot; /&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">        &lt;/tr&gt;</span>
 <span class="go">    &lt;/table&gt;</span>
@@ -178,57 +175,40 @@ Released under MIT license.</p>
 <span class="gp">... </span>    <span class="n">__model__</span> <span class="o">=</span> <span class="n">User</span>
 <span class="gp">... </span>    <span class="n">__limit_fields__</span>       <span class="o">=</span> <span class="p">[</span><span class="s">&#39;user_name&#39;</span><span class="p">,</span> <span class="s">&#39;groups&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">add_form</span> <span class="o">=</span> <span class="n">Form</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">add_form</span><span class="p">()</span>
-<span class="go">&lt;form action=&quot;&quot; method=&quot;post&quot; class=&quot;has_error required tableform&quot;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">add_form</span><span class="p">()</span> <span class="c"># doctest: +XML</span>
+<span class="go">&lt;form action=&quot;&quot; method=&quot;post&quot; class=&quot;required tableform&quot;&gt;</span>
 <span class="go">    &lt;div&gt;</span>
-<span class="go">&lt;BLANKLINE&gt;</span>
-<span class="go">            &lt;input type=&quot;hidden&quot; name=&quot;sprox_id&quot; class=&quot;has_error hiddenfield&quot; id=&quot;sprox_id&quot; value=&quot;None&quot; /&gt;</span>
-<span class="go">            &lt;span class=&quot;fielderror&quot;&gt;Missing value&lt;/span&gt;</span>
+<span class="go">            &lt;input type=&quot;hidden&quot; id=&quot;sprox_id&quot; class=&quot;hiddenfield&quot; name=&quot;sprox_id&quot; value=&quot;&quot; /&gt;</span>
 <span class="go">    &lt;/div&gt;</span>
 <span class="go">    &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;2&quot; &gt;</span>
-<span class="go">        &lt;tr class=&quot;even&quot; id=&quot;user_name.container&quot; title=&quot;&quot; &gt;            </span>
+<span class="go">        &lt;tr class=&quot;even&quot; id=&quot;user_name.container&quot; title=&quot;&quot; &gt;</span>
 <span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
 <span class="go">                &lt;label id=&quot;user_name.label&quot; for=&quot;user_name&quot; class=&quot;fieldlabel&quot;&gt;User Name&lt;/label&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">            &lt;td class=&quot;fieldcol&quot; &gt;</span>
-<span class="go">                &lt;input type=&quot;text&quot; name=&quot;user_name&quot; class=&quot;textfield&quot; id=&quot;user_name&quot; value=&quot;&quot; /&gt;</span>
+<span class="go">                &lt;input type=&quot;text&quot; id=&quot;user_name&quot; class=&quot;textfield&quot; name=&quot;user_name&quot; value=&quot;&quot; /&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">        &lt;/tr&gt;</span>
-<span class="go">        &lt;tr class=&quot;odd&quot; id=&quot;.container&quot; title=&quot;&quot; &gt;            </span>
+<span class="go">        &lt;tr class=&quot;odd&quot; id=&quot;groups.container&quot; title=&quot;&quot; &gt;</span>
 <span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
-<span class="go">                &lt;label id=&quot;.label&quot; for=&quot;&quot; class=&quot;fieldlabel&quot;&gt;Groups&lt;/label&gt;</span>
+<span class="go">                &lt;label id=&quot;groups.label&quot; for=&quot;groups&quot; class=&quot;fieldlabel&quot;&gt;Groups&lt;/label&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">            &lt;td class=&quot;fieldcol&quot; &gt;</span>
-<span class="go">                &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; dojoType=&quot;twdojo.SelectShuttle&quot; id=&quot;groups_SelectShuttle&quot;&gt;</span>
-<span class="go">    &lt;div style=&quot;float:left; padding: 5px; width:10em;&quot;&gt;</span>
-<span class="go">        Available&lt;br /&gt;</span>
-<span class="go">        &lt;select class=&quot;shuttle&quot; id=&quot;groups_src&quot; multiple=&quot;multiple&quot; name=&quot;&quot; size=&quot;5&quot;&gt;</span>
-<span class="go">                &lt;option value=&quot;1&quot;&gt;0&lt;/option&gt;&lt;option value=&quot;2&quot;&gt;1&lt;/option&gt;&lt;option value=&quot;3&quot;&gt;2&lt;/option&gt;&lt;option value=&quot;4&quot;&gt;3&lt;/option&gt;&lt;option value=&quot;5&quot;&gt;4&lt;/option&gt;</span>
-<span class="go">        &lt;/select&gt;</span>
-<span class="go">    &lt;/div&gt;</span>
-<span class="go">    &lt;div style=&quot;float:left; padding: 25px 5px 5px 0px;&quot; id=&quot;groups_Buttons&quot;&gt;</span>
-<span class="go">        &lt;button class=&quot;shuttle&quot; id=&quot;groups_AllRightButton&quot;&gt;&amp;gt;&amp;gt;&lt;/button&gt;&lt;br /&gt;</span>
-<span class="go">        &lt;button class=&quot;shuttle&quot; id=&quot;groups_RightButton&quot;&gt;&amp;gt;&lt;/button&gt;&lt;br /&gt;</span>
-<span class="go">        &lt;button class=&quot;shuttle&quot; id=&quot;groups_LeftButton&quot;&gt;&amp;lt;&lt;/button&gt;&lt;br /&gt;</span>
-<span class="go">        &lt;button class=&quot;shuttle&quot; id=&quot;groups_AllLeftButton&quot;&gt;&amp;lt;&amp;lt;&lt;/button&gt;</span>
-<span class="go">    &lt;/div&gt;</span>
-<span class="go">    &lt;div style=&quot;float:left; padding: 5px; width:10em;&quot;&gt;</span>
-<span class="go">            Selected&lt;br /&gt;</span>
-<span class="go">            &lt;select class=&quot;shuttle&quot; id=&quot;groups&quot; multiple=&quot;multiple&quot; name=&quot;groups&quot; size=&quot;5&quot;&gt;</span>
-<span class="go">            &lt;/select&gt;</span>
-<span class="go">    &lt;/div&gt;</span>
-<span class="go">    &lt;script type=&quot;text/javascript&quot;&gt;</span>
-<span class="go">    //create an object of this type here</span>
-<span class="go">    &lt;/script&gt;</span>
-<span class="go">&lt;/div&gt;</span>
+<span class="go">                &lt;select name=&quot;groups&quot; class=&quot;propertymultipleselectfield&quot; id=&quot;groups&quot; multiple=&quot;multiple&quot; size=&quot;5&quot;&gt;</span>
+<span class="go">        &lt;option value=&quot;1&quot;&gt;0&lt;/option&gt;</span>
+<span class="go">        &lt;option value=&quot;2&quot;&gt;1&lt;/option&gt;</span>
+<span class="go">        &lt;option value=&quot;3&quot;&gt;2&lt;/option&gt;</span>
+<span class="go">        &lt;option value=&quot;4&quot;&gt;3&lt;/option&gt;</span>
+<span class="go">        &lt;option value=&quot;5&quot;&gt;4&lt;/option&gt;</span>
+<span class="go">&lt;/select&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">        &lt;/tr&gt;</span>
-<span class="go">        &lt;tr class=&quot;even&quot; id=&quot;submit.container&quot; title=&quot;&quot; &gt;            </span>
+<span class="go">        &lt;tr class=&quot;even&quot; id=&quot;submit.container&quot; title=&quot;&quot; &gt;</span>
 <span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
 <span class="go">                &lt;label id=&quot;submit.label&quot; for=&quot;submit&quot; class=&quot;fieldlabel&quot;&gt;&lt;/label&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">            &lt;td class=&quot;fieldcol&quot; &gt;</span>
-<span class="go">                &lt;input type=&quot;submit&quot; name=&quot;&quot; class=&quot;submitbutton&quot; id=&quot;None&quot; value=&quot;Submit&quot; /&gt;</span>
+<span class="go">                &lt;input type=&quot;submit&quot; class=&quot;submitbutton&quot; value=&quot;Submit&quot; /&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">        &lt;/tr&gt;</span>
 <span class="go">    &lt;/table&gt;</span>
@@ -302,7 +282,7 @@ Released under MIT license.</p>
           <a href="sprox.dojo.fillerbase.html" title="sprox.dojo.fillerbase"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6</b></a>
+  <a href="../index.html"><b>Sprox 0.6.1</b></a>
   </li>
 
   

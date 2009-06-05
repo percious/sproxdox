@@ -180,35 +180,35 @@ is the current code coverage.::
     Name                      Stmts   Exec  Cover   Missing
     -------------------------------------------------------
     sprox                         0      0   100%   
-    sprox.configbase             77     77   100%   
+    sprox.configbase             78     78   100%   
     sprox.dojo                    0      0   100%   
     sprox.dojo.fillerbase        14     14   100%   
-    sprox.dojo.formbase          11     11   100%   
+    sprox.dojo.formbase           9      9   100%   
     sprox.dojo.sprockets         18     18   100%   
     sprox.dojo.tablebase         30     30   100%   
     sprox.dummyentity             1      1   100%   
     sprox.entitiesbase           15     15   100%   
-    sprox.fillerbase             87     87   100%   
-    sprox.formbase              108    108   100%   
+    sprox.fillerbase             91     91   100%   
+    sprox.formbase              143    143   100%   
     sprox.iprovider              33     33   100%   
     sprox.metadata               51     51   100%   
     sprox.providerselector       73     73   100%   
     sprox.saormprovider         262    262   100%   
     sprox.sprockets              55     55   100%   
-    sprox.tablebase              41     41   100%   
+    sprox.tablebase              45     45   100%   
     sprox.util                    9      9   100%   
     sprox.validators             11     11   100%   
     sprox.validatorselector      52     52   100%   
-    sprox.viewbase              120    120   100%   
+    sprox.viewbase              123    123   100%   
     sprox.widgets                 1      1   100%   
     sprox.widgets.dojo           79     79   100%   
     sprox.widgets.templates       0      0   100%   
-    sprox.widgets.widgets        80     80   100%   
+    sprox.widgets.widgets        81     81   100%   
     sprox.widgetselector         46     46   100%   
     -------------------------------------------------------
-    TOTAL                      1274   1274   100%   
+    TOTAL                      1320   1320   100%   
     ----------------------------------------------------------------------
-    Ran 221 tests in 22.017s
+    Ran 232 tests in 27.451s
     
     OK
 
