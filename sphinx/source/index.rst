@@ -183,13 +183,13 @@ is the current code coverage.::
     sprox.configbase             78     78   100%   
     sprox.dojo                    0      0   100%   
     sprox.dojo.fillerbase        14     14   100%   
-    sprox.dojo.formbase           9      9   100%   
+    sprox.dojo.formbase          11     11   100%   
     sprox.dojo.sprockets         18     18   100%   
     sprox.dojo.tablebase         30     30   100%   
     sprox.dummyentity             1      1   100%   
     sprox.entitiesbase           15     15   100%   
-    sprox.fillerbase             91     91   100%   
-    sprox.formbase              143    143   100%   
+    sprox.fillerbase             92     92   100%   
+    sprox.formbase              146    146   100%   
     sprox.iprovider              33     33   100%   
     sprox.metadata               51     51   100%   
     sprox.providerselector       73     73   100%   
@@ -199,18 +199,19 @@ is the current code coverage.::
     sprox.util                    9      9   100%   
     sprox.validators             11     11   100%   
     sprox.validatorselector      52     52   100%   
-    sprox.viewbase              123    123   100%   
+    sprox.viewbase              126    126   100%   
     sprox.widgets                 1      1   100%   
     sprox.widgets.dojo           79     79   100%   
     sprox.widgets.templates       0      0   100%   
     sprox.widgets.widgets        81     81   100%   
     sprox.widgetselector         46     46   100%   
     -------------------------------------------------------
-    TOTAL                      1320   1320   100%   
+    TOTAL                      1329   1329   100%   
     ----------------------------------------------------------------------
-    Ran 232 tests in 27.451s
+    Ran 233 tests in 24.895s
     
     OK
+
 
 Sprox is an open source project, and can be found at `bitbucket <http://www.bitbucket.org/percious/sprox/src/>`_.  
 If you have a great idea of how to make sprox better, feel free to fork off your own copy and send a pull request.

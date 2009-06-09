@@ -3,13 +3,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Form Tutorial &mdash; Sprox v0.6.1 documentation</title>
+    <title>Form Tutorial &mdash; Sprox v0.6.2 documentation</title>
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.1',
+        VERSION:     '0.6.2',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -19,7 +19,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="top" title="Sprox v0.6.1 documentation" href="../index.html" />
+    <link rel="top" title="Sprox v0.6.2 documentation" href="../index.html" />
     <link rel="next" title="Class Diagram" href="../class_diagram.html" />
     <link rel="prev" title="Table Tutorial" href="table.html" /> 
   </head>
@@ -40,7 +40,7 @@
           <a href="table.html" title="Table Tutorial"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.1</b></a>
+  <a href="../index.html"><b>Sprox 0.6.2</b></a>
   </li>
 
   
@@ -57,9 +57,341 @@
   
   <div class="section" id="form-tutorial">
 <h1>Form Tutorial<a class="headerlink" href="#form-tutorial" title="Permalink to this headline">¶</a></h1>
-<p>This is [going to be] a succinct explanation on how to use sprox&#8217;s form rendering capabilities.</p>
+<p>This is a succinct explanation on how to use sprox&#8217;s form rendering capabilities. Many of
+these examples will provide server code based on TurboGears2, but
+sprox will work with any wsgi application you have ToscaWidgets mounted in.  We will assume
+the reader is somewhat versed in TurboGears2&#8217;s <a title="(in TG2 v2.0)" class="reference external" href="http://turbogears.org/2.0/docs/modules/tgcontroller.html#tg.controllers.RestController"><tt class="xref docutils literal"><span class="pre">tg.controllers.RestController</span></tt></a>.
+Note that this is the same technology the Turbogears2 admin is based on, so this
+knowledge is valuable to understand how to configure the admin for your purposes.</p>
+<div class="section" id="establishing-the-model-definition">
+<h2>Establishing the Model Definition<a class="headerlink" href="#establishing-the-model-definition" title="Permalink to this headline">¶</a></h2>
+<p>Let us first assume the following model for this demonstration.:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">Column</span><span class="p">,</span> <span class="n">Integer</span><span class="p">,</span> <span class="n">String</span><span class="p">,</span> <span class="n">Date</span><span class="p">,</span> <span class="n">Text</span><span class="p">,</span> <span class="n">ForeignKey</span><span class="p">,</span> <span class="n">Table</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy.orm</span> <span class="kn">import</span> <span class="n">relation</span>
+
+<span class="kn">from</span> <span class="nn">moviedemo.model</span> <span class="kn">import</span> <span class="n">DeclarativeBase</span><span class="p">,</span> <span class="n">metadata</span>
+
+<span class="n">movie_directors_table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="s">&#39;movie_directors&#39;</span><span class="p">,</span> <span class="n">metadata</span><span class="p">,</span>
+                              <span class="n">Column</span><span class="p">(</span><span class="s">&#39;movie_id&#39;</span><span class="p">,</span> <span class="n">Integer</span><span class="p">,</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="s">&#39;movies.movie_id&#39;</span><span class="p">),</span> <span class="n">primary_key</span> <span class="o">=</span> <span class="bp">True</span><span class="p">),</span>
+                              <span class="n">Column</span><span class="p">(</span><span class="s">&#39;director_id&#39;</span><span class="p">,</span> <span class="n">Integer</span><span class="p">,</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="s">&#39;directors.director_id&#39;</span><span class="p">),</span> <span class="n">primary_key</span> <span class="o">=</span> <span class="bp">True</span><span class="p">))</span>
+
+<span class="k">class</span> <span class="nc">Genre</span><span class="p">(</span><span class="n">DeclarativeBase</span><span class="p">):</span>
+    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s">&quot;genres&quot;</span>
+    <span class="n">genre_id</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="mf">100</span><span class="p">))</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="mf">200</span><span class="p">))</span>
+
+<span class="k">class</span> <span class="nc">Movie</span><span class="p">(</span><span class="n">DeclarativeBase</span><span class="p">):</span>
+    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s">&quot;movies&quot;</span>
+    <span class="n">movie_id</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="mf">100</span><span class="p">),</span> <span class="n">nullable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Text</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">genre_id</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="s">&#39;genres.genre_id&#39;</span><span class="p">))</span>
+    <span class="n">genre</span> <span class="o">=</span> <span class="n">relation</span><span class="p">(</span><span class="s">&#39;Genre&#39;</span><span class="p">,</span> <span class="n">backref</span><span class="o">=</span><span class="s">&#39;movies&#39;</span><span class="p">)</span>
+    <span class="n">release_date</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Date</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Director</span><span class="p">(</span><span class="n">DeclarativeBase</span><span class="p">):</span>
+    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s">&quot;directors&quot;</span>
+    <span class="n">movie_id</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="mf">100</span><span class="p">),</span> <span class="n">nullable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="n">movies</span> <span class="o">=</span> <span class="n">relation</span><span class="p">(</span><span class="n">Movie</span><span class="p">,</span> <span class="n">secondary_join</span><span class="o">=</span><span class="n">movie_directors_table</span><span class="p">,</span> <span class="n">backref</span><span class="o">=</span><span class="s">&quot;directors&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="the-basic-sprox-form">
-<h2>The basic sprox form<a class="headerlink" href="#the-basic-sprox-form" title="Permalink to this headline">¶</a></h2>
+<h2>The Basic Sprox Form<a class="headerlink" href="#the-basic-sprox-form" title="Permalink to this headline">¶</a></h2>
+<p>Here is how we create a basic form for adding a new Movie to the database:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">NewMovieForm</span><span class="p">(</span><span class="n">AddRecordForm</span><span class="p">):</span>
+    <span class="n">__model__</span> <span class="o">=</span> <span class="n">Movie</span>
+<span class="n">new_movie_form</span> <span class="o">=</span> <span class="n">NewMovieForm</span><span class="p">(</span><span class="n">DBSession</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And our controller code would look something like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@expose</span><span class="p">(</span><span class="s">&#39;moviedemo.templates.sproxdemo.movies.new&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">new</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+    <span class="n">tmpl_context</span><span class="o">.</span><span class="n">widget</span> <span class="o">=</span> <span class="n">new_movie_form</span>
+    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">kw</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You may have noticed that we are passing keywords into the method.  This is so that the
+values previously typed by the user can be displayed on failed validation.</p>
+<p>And finally, our template code:</p>
+<div class="highlight-python"><pre>&lt;html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"&gt;
+  &lt;xi:include href="master.html" /&gt;
+&lt;head/&gt;
+&lt;body&gt;
+  &lt;div style="height:0px;"&gt; &amp;nbsp; &lt;/div&gt;
+  &lt;div&gt;
+    &lt;div style="float:left width: 80%"&gt;
+      &lt;h2 style="margin-top:1px;&gt;Create New Movie&lt;/h2&gt;
+      ${tmpl_context.widget(value=value)}
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</div>
+<p>Which produces a form like this:</p>
+<img alt="../_images/form_basic.png" src="../_images/form_basic.png" />
+</div>
+<div class="section" id="omitting-fields">
+<h2>Omitting Fields<a class="headerlink" href="#omitting-fields" title="Permalink to this headline">¶</a></h2>
+<p>Now, we can use the __omit_fields__ modifier to remove the &#8220;movie_id&#8221; and &#8220;genre_id&#8221; fields,
+as they will be of little use to our users.  Our form code now becomes:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">NewMovieForm</span><span class="p">(</span><span class="n">AddRecordForm</span><span class="p">):</span>
+    <span class="n">__model__</span> <span class="o">=</span> <span class="n">Movie</span>
+    <span class="n">__omit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;genre_id&#39;</span><span class="p">,</span> <span class="s">&#39;movie_id&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The rendered form now looks like this:</p>
+<img alt="../_images/form_omit.png" src="../_images/form_omit.png" />
+</div>
+<div class="section" id="limiting-fields">
+<h2>Limiting fields<a class="headerlink" href="#limiting-fields" title="Permalink to this headline">¶</a></h2>
+<p>If you have more omitted fields than required fields, you might want to use the __limit_fields__
+operator to eliminate the fields you don&#8217;t want.  The same above form will be rendered with the
+following code:</p>
+<div class="highlight-python"><pre>class NewMovieForm(AddRecordForm):
+    __model__ = Movie[
+    __limit_fields__ = ['title', 'description', 'release_date', 'genre', 'directors']</pre>
+</div>
+</div>
+<div class="section" id="field-ordering">
+<h2>Field Ordering<a class="headerlink" href="#field-ordering" title="Permalink to this headline">¶</a></h2>
+<p>If you want the fields displayed in a ordering different from that of the specified schema,
+you may use field_ordering to do so.  Here is our form with the fields moved around a bit:</p>
+<div class="highlight-python"><pre>class NewMovieForm(AddRecordForm):
+__model__ = Movie
+    __omit_fields__ = ['movie_id', 'genre_id']
+    __field_order__ = ['title', 'description', 'genre', 'directors']</pre>
+</div>
+<p>Notice how the release_date field that was not specified was still appended to the end of the form.</p>
+<img alt="../_images/form_order.png" src="../_images/form_order.png" />
+</div>
+<div class="section" id="overriding-field-attributes">
+<h2>Overriding Field Attributes<a class="headerlink" href="#overriding-field-attributes" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes we will want to modify some of the HTML attributes associated with a field.  This is as easy
+as passing a __field_attrs__ modifier to our form definition.  Here is how we could modify the description
+to have only 2 rows:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">NewMovieForm</span><span class="p">(</span><span class="n">AddRecordForm</span><span class="p">):</span>
+    <span class="n">__model__</span> <span class="o">=</span> <span class="n">Movie</span>
+    <span class="n">__omit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;movie_id&#39;</span><span class="p">,</span> <span class="s">&#39;genre_id&#39;</span><span class="p">]</span>
+    <span class="n">__field_attrs__</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;description&#39;</span><span class="p">:{</span><span class="s">&#39;rows&#39;</span><span class="p">:</span><span class="s">&#39;2&#39;</span><span class="p">}}</span>
+</pre></div>
+</div>
+<p>Here is the resultant form:</p>
+<img alt="../_images/attrs.png" src="../_images/attrs.png" />
+</div>
+<div class="section" id="overriding-a-form-field">
+<h2>Overriding a Form Field<a class="headerlink" href="#overriding-a-form-field" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes you want to override a field all together.  Sprox allows you to do this by providing
+an attribute to your form class declaratively.  Simply instantiate your field within the widget
+and it will override the widget used for that field.  Let&#8217;s change the movie title to a password
+field just for fun.:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">tw.forms.fields</span> <span class="kn">import</span> <span class="n">PasswordField</span>
+
+<span class="k">class</span> <span class="nc">NewMovieForm</span><span class="p">(</span><span class="n">AddRecordForm</span><span class="p">):</span>
+    <span class="n">__model__</span> <span class="o">=</span> <span class="n">Movie</span>
+    <span class="n">__omit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;movie_id&#39;</span><span class="p">,</span> <span class="s">&#39;genre_id&#39;</span><span class="p">]</span>
+    <span class="n">__field_attrs__</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;description&#39;</span><span class="p">:{</span><span class="s">&#39;rows&#39;</span><span class="p">:</span><span class="s">&#39;2&#39;</span><span class="p">}}</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">PasswordField</span>
+</pre></div>
+</div>
+<img alt="../_images/password.png" src="../_images/password.png" />
+<p>You can see now that the title is &#8220;stared&#8221; out.  Note that you may also send an &#8220;instance&#8221; of
+a widget for a field, but you must pass in the fieldname to the widget.  This is a limitation
+of ToscaWidgets. (You may not change the &#8220;id&#8221; of a widget after it has been created.):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">title</span> <span class="o">=</span> <span class="n">PasswordField</span><span class="p">(</span><span class="s">&#39;title&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="field-widget-args">
+<h2>Field Widget Args<a class="headerlink" href="#field-widget-args" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes you want to provide sprox with a class for a field, and have sprox set the arguments
+to a widget, but you either want to provide an additional argument, or override one of the arguments
+that sprox chooses.  For this, pass a dictionary into the __file_widget_args__ parameter with the
+key being the field you would like to pass the arg into, and the value a dictionary of args to set
+for that field.</p>
+</div>
+<div class="section" id="custom-dropdown-field-names">
+<h2>Custom Dropdown Field Names<a class="headerlink" href="#custom-dropdown-field-names" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes you want to display a field to the user for the dropdown that has not been selected by
+sprox.  This is easy to override.  Simply pass the field names for the select boxes you want to
+display into the __dropdown_field_names__ modifier.:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">NewMovieForm</span><span class="p">(</span><span class="n">AddRecordForm</span><span class="p">):</span>
+    <span class="n">__model__</span> <span class="o">=</span> <span class="n">Movie</span>
+    <span class="n">__omit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;movie_id&#39;</span><span class="p">,</span> <span class="s">&#39;genre_id&#39;</span><span class="p">]</span>
+    <span class="n">__field_order__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;title&#39;</span><span class="p">,</span> <span class="s">&#39;description&#39;</span><span class="p">,</span> <span class="s">&#39;genre&#39;</span><span class="p">,</span> <span class="s">&#39;directors&#39;</span><span class="p">]</span>
+    <span class="n">__dropdown_field_names__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;description&#39;</span><span class="p">,</span> <span class="s">&#39;name&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>If you want to be more specific about which fields should display which field, you can pass
+a dictionary into the __dropdown_field_names__ modifier.:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">NewMovieForm</span><span class="p">(</span><span class="n">AddRecordForm</span><span class="p">):</span>
+    <span class="n">__model__</span> <span class="o">=</span> <span class="n">Movie</span>
+    <span class="n">__omit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;movie_id&#39;</span><span class="p">,</span> <span class="s">&#39;genre_id&#39;</span><span class="p">]</span>
+    <span class="n">__field_order__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;title&#39;</span><span class="p">,</span> <span class="s">&#39;description&#39;</span><span class="p">,</span> <span class="s">&#39;genre&#39;</span><span class="p">,</span> <span class="s">&#39;directors&#39;</span><span class="p">]</span>
+    <span class="n">__dropdown_field_names__</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;genre&#39;</span><span class="p">:</span><span class="s">&#39;description&#39;</span><span class="p">,</span> <span class="s">&#39;directors&#39;</span><span class="p">:</span><span class="s">&#39;name&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Either will produce a new dropdown like this:</p>
+<img alt="../_images/form_dropdown.png" src="../_images/form_dropdown.png" />
+</div>
+<div class="section" id="creating-custom-dropdown-data">
+<h2>Creating Custom Dropdown Data<a class="headerlink" href="#creating-custom-dropdown-data" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes providing a fieldname alone is not enough of a customization to que your users into what
+they should be selecting.  For this example, we will provide both name and description for the Genre field.
+This requires us to override the genre widget with one of our choosing.  We will exend the existing
+sprox dropdown widget, modifying the update_params method to inject both name and description into
+the dropdown.  This requires some knowledge of ToscaWidgets in general, but this recipe will work
+for the majority of developers looking to modify their dropdowns in a custom manner.</p>
+<p>First, we extend the Sprox SingleSelect Field as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">sprox.widgets</span> <span class="kn">import</span> <span class="n">PropertySingleSelectField</span>
+
+<span class="k">class</span> <span class="nc">GenreField</span><span class="p">(</span><span class="n">PropertySingleSelectField</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_my_update_params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="n">genres</span> <span class="o">=</span> <span class="n">DBSession</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">Genre</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+        <span class="n">options</span> <span class="o">=</span> <span class="p">[(</span><span class="n">genre</span><span class="o">.</span><span class="n">genre_id</span><span class="p">,</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s"> (</span><span class="si">%s</span><span class="s">)&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">genre</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">genre</span><span class="o">.</span><span class="n">description</span><span class="p">))</span>
+                            <span class="k">for</span> <span class="n">genre</span> <span class="ow">in</span> <span class="n">genres</span><span class="p">]</span>
+        <span class="n">d</span><span class="p">[</span><span class="s">&#39;options&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">options</span>
+        <span class="k">return</span> <span class="n">d</span>
+</pre></div>
+</div>
+<p>Then we include our new widget in the definition of the our movie form:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">NewMovieForm</span><span class="p">(</span><span class="n">AddRecordForm</span><span class="p">):</span>
+    <span class="n">__model__</span> <span class="o">=</span> <span class="n">Movie</span>
+    <span class="n">__omit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;movie_id&#39;</span><span class="p">,</span> <span class="s">&#39;genre_id&#39;</span><span class="p">]</span>
+    <span class="n">__field_order__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;title&#39;</span><span class="p">,</span> <span class="s">&#39;description&#39;</span><span class="p">,</span> <span class="s">&#39;genre&#39;</span><span class="p">,</span> <span class="s">&#39;directors&#39;</span><span class="p">]</span>
+    <span class="n">__dropdown_field_names__</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;genre&#39;</span><span class="p">:</span><span class="s">&#39;description&#39;</span><span class="p">,</span> <span class="s">&#39;directors&#39;</span><span class="p">:</span><span class="s">&#39;name&#39;</span><span class="p">}</span>
+    <span class="n">genre</span> <span class="o">=</span> <span class="n">GenreField</span>
+</pre></div>
+</div>
+<p>Here is the resulting dropdown:</p>
+<img alt="../_images/form_update_params.png" src="../_images/form_update_params.png" />
+</div>
+<div class="section" id="adding-a-new-field">
+<h2>Adding a New Field<a class="headerlink" href="#adding-a-new-field" title="Permalink to this headline">¶</a></h2>
+<p>There may come a time when you want to add a field to your view which is not part of your
+database model.  The classic case for this is password validation, where you want to provide
+a second entry field to ensure the user has provided a correct password, but you do not
+want/need that data to be stored in the database.  Here is how we would go about
+adding a second description field to our widget.:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">tw.forms.fields</span> <span class="kn">import</span> <span class="n">TextArea</span>
+
+<span class="k">class</span> <span class="nc">NewMovieForm</span><span class="p">(</span><span class="n">AddRecordForm</span><span class="p">):</span>
+    <span class="n">__model__</span> <span class="o">=</span> <span class="n">Movie</span>
+    <span class="n">__omit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;movie_id&#39;</span><span class="p">,</span> <span class="s">&#39;genre_id&#39;</span><span class="p">]</span>
+    <span class="n">__field_order__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;title&#39;</span><span class="p">,</span> <span class="s">&#39;description&#39;</span><span class="p">,</span> <span class="s">&#39;description2&#39;</span><span class="p">,</span> <span class="s">&#39;genre&#39;</span><span class="p">,</span> <span class="s">&#39;directors&#39;</span><span class="p">]</span>
+    <span class="n">description2</span> <span class="o">=</span> <span class="n">TextArea</span><span class="p">(</span><span class="s">&#39;description2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For additional widgets, you must provide an instance of the widget since sprox will not
+have enough information about the schema of the widget in order to populate it correctly.
+Here&#8217;s what our form now looks like:</p>
+<img alt="../_images/add_field.png" src="../_images/add_field.png" />
+</div>
+<div class="section" id="dojo">
+<h2>Dojo<a class="headerlink" href="#dojo" title="Permalink to this headline">¶</a></h2>
+<p>Your users may not appreciate the simplicity of a standard multi-select.  Getting users
+to hold down the Control key while selecting multiple items is difficult.  Luckily
+we have built a widget utilizing the Dojo library which makes this a little more
+intuative for the users.  If you would like to take advantage of this capability, all
+we must do is swap out our AddRecordForm with the one provided by sprox.dojo.  The
+code looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">sprox.dojo.formbase</span> <span class="kn">import</span> <span class="n">DojoAddRecordForm</span>
+<span class="k">class</span> <span class="nc">NewMovieForm</span><span class="p">(</span><span class="n">DojoAddRecordForm</span><span class="p">):</span>
+    <span class="n">__model__</span> <span class="o">=</span> <span class="n">Movie</span>
+    <span class="n">__omit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;movie_id&#39;</span><span class="p">,</span> <span class="s">&#39;genre_id&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>And results in a working select shuttle widget like this:</p>
+<img alt="../_images/dojo.png" src="../_images/dojo.png" />
+</div>
+<div class="section" id="validation">
+<h2>Validation<a class="headerlink" href="#validation" title="Permalink to this headline">¶</a></h2>
+<p>Turbogears2 has some great tools for validation that work well with sprox.  In order
+to validate our form, we must first give the form a place to POST to, with a
+new method in our controller that looks like:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@validate</span><span class="p">(</span><span class="n">new_movie_form</span><span class="p">,</span> <span class="n">error_handler</span><span class="o">=</span><span class="n">new</span><span class="p">)</span>
+<span class="nd">@expose</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+    <span class="k">del</span> <span class="n">kw</span><span class="p">[</span><span class="s">&#39;sprox_id&#39;</span><span class="p">]</span>
+    <span class="n">kw</span><span class="p">[</span><span class="s">&#39;genre&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">DBSession</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">Genre</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">kw</span><span class="p">[</span><span class="s">&#39;genre&#39;</span><span class="p">])</span>
+    <span class="n">kw</span><span class="p">[</span><span class="s">&#39;directors&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">DBSession</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">Director</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span> <span class="k">for</span> <span class="nb">id</span> <span class="ow">in</span> <span class="n">kw</span><span class="p">[</span><span class="s">&#39;directors&#39;</span><span class="p">]]</span>
+    <span class="n">kw</span><span class="p">[</span><span class="s">&#39;release_date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">kw</span><span class="p">[</span><span class="s">&#39;release_date&#39;</span><span class="p">],</span><span class="s">&quot;%Y-%m-</span><span class="si">%d</span><span class="s">&quot;</span><span class="p">)</span>
+    <span class="n">movie</span> <span class="o">=</span> <span class="n">Movie</span><span class="p">(</span><span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+    <span class="n">DBSession</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">movie</span><span class="p">)</span>
+    <span class="n">flash</span><span class="p">(</span><span class="s">&#39;your movie was successfully added&#39;</span><span class="p">)</span>
+    <span class="n">redirect</span><span class="p">(</span><span class="s">&#39;/movies/&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A couple of things about this.  First, we must remove the sprox_id from the keywords
+because they conflict with the Movie definition.  This variable may go away in future
+versions. genre and directors both need to be converted into their related objects before
+they are applied to the object, and the release_date needs to be formatted as a datetime object
+if you are using sqlite.</p>
+<p>Here is what the form looks like on a failed validation:</p>
+<img alt="../_images/validation.png" src="../_images/validation.png" />
+</div>
+<div class="section" id="overriding-a-validator">
+<h2>Overriding a Validator<a class="headerlink" href="#overriding-a-validator" title="Permalink to this headline">¶</a></h2>
+<p>Often times you will want to provide your own custom field validator. The best way to
+do this is to add the validator declaratively to your Form Definition:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">formencode.validators</span> <span class="kn">import</span> <span class="n">String</span>
+<span class="k">class</span> <span class="nc">NewMovieForm</span><span class="p">(</span><span class="n">DojoAddRecordForm</span><span class="p">):</span>
+    <span class="n">__model__</span> <span class="o">=</span> <span class="n">Movie</span>
+    <span class="n">__omit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;movie_id&#39;</span><span class="p">,</span> <span class="s">&#39;genre_id&#39;</span><span class="p">]</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">String</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mf">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The resulting validation message looks like this:</p>
+<img alt="../_images/validator.png" src="../_images/validator.png" />
+</div>
+<div class="section" id="overriding-both-field-and-validator">
+<h2>Overriding both Field and Validator<a class="headerlink" href="#overriding-both-field-and-validator" title="Permalink to this headline">¶</a></h2>
+<p>Ah, you may have realized that sometimes you must override both widget and validator.  Sprox
+handles this too, by providing a :class:sprox.formbase.Field class that you can use to wrap
+your widget and validator together.:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">formencode.validators</span> <span class="kn">import</span> <span class="n">String</span>
+<span class="kn">from</span> <span class="nn">sprox.formbase</span> <span class="kn">import</span> <span class="n">Field</span>
+<span class="kn">from</span> <span class="nn">tw.forms.fields</span> <span class="kn">import</span> <span class="n">PasswordField</span>
+
+<span class="k">class</span> <span class="nc">NewMovieForm</span><span class="p">(</span><span class="n">DojoAddRecordForm</span><span class="p">):</span>
+    <span class="n">__model__</span> <span class="o">=</span> <span class="n">Movie</span>
+    <span class="n">__omit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;movie_id&#39;</span><span class="p">,</span> <span class="s">&#39;genre_id&#39;</span><span class="p">]</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">PasswordField</span><span class="p">,</span> <span class="n">String</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mf">4</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Again, the field class does not care if you pass instances or class of the widget.</p>
+<img alt="../_images/field.png" src="../_images/field.png" />
+</div>
+<div class="section" id="required-fields">
+<h2>Required Fields<a class="headerlink" href="#required-fields" title="Permalink to this headline">¶</a></h2>
+<p>You can tell sprox to make a field required even if it is nullable in the database by passing
+the fieldname into a list of the __require_fields__ modifier.:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">NewMovieForm</span><span class="p">(</span><span class="n">DojoAddRecordForm</span><span class="p">):</span>
+    <span class="n">__model__</span> <span class="o">=</span> <span class="n">Movie</span>
+    <span class="n">__omit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;movie_id&#39;</span><span class="p">,</span> <span class="s">&#39;genre_id&#39;</span><span class="p">]</span>
+    <span class="n">__require_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;description&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>And the form now sports a validation error:</p>
+<img alt="../_images/require.png" src="../_images/require.png" />
+</div>
+<div class="section" id="form-validation">
+<h2>Form Validation<a class="headerlink" href="#form-validation" title="Permalink to this headline">¶</a></h2>
+<p>You can validate at the form level as well.  This is particularly interesting if you need to
+compare two fields.  See the example on the index page.</p>
+</div>
+<div class="section" id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p><a title="sprox.formbase.FormBase" class="reference external" href="../modules/sprox.formbase.html#sprox.formbase.FormBase"><tt class="xref docutils literal"><span class="pre">sprox.formbase.FormBase</span></tt></a> class provides a flexible mechanism for creating customized forms.
+It provides sensicle widgets and validators based on your schema, but can be overridden for your own
+needs.  FormBase provides declarative addition of fields, ways to limit and omit fields to a set that
+is appropriate for your application.  Sprox provides automated drop-down boxes, as well as providing
+a way to override those widgets for your purposes.  sprox.dojo provides a select shuttle widget to allow your
+users to enjoy a more friendly interface.</p>
 </div>
 </div>
 
@@ -81,7 +413,24 @@
             <h3><a href="../index.html">Table Of Contents</a></h3>
             <ul>
 <li><a class="reference external" href="">Form Tutorial</a><ul>
-<li><a class="reference external" href="#the-basic-sprox-form">The basic sprox form</a></li>
+<li><a class="reference external" href="#establishing-the-model-definition">Establishing the Model Definition</a></li>
+<li><a class="reference external" href="#the-basic-sprox-form">The Basic Sprox Form</a></li>
+<li><a class="reference external" href="#omitting-fields">Omitting Fields</a></li>
+<li><a class="reference external" href="#limiting-fields">Limiting fields</a></li>
+<li><a class="reference external" href="#field-ordering">Field Ordering</a></li>
+<li><a class="reference external" href="#overriding-field-attributes">Overriding Field Attributes</a></li>
+<li><a class="reference external" href="#overriding-a-form-field">Overriding a Form Field</a></li>
+<li><a class="reference external" href="#field-widget-args">Field Widget Args</a></li>
+<li><a class="reference external" href="#custom-dropdown-field-names">Custom Dropdown Field Names</a></li>
+<li><a class="reference external" href="#creating-custom-dropdown-data">Creating Custom Dropdown Data</a></li>
+<li><a class="reference external" href="#adding-a-new-field">Adding a New Field</a></li>
+<li><a class="reference external" href="#dojo">Dojo</a></li>
+<li><a class="reference external" href="#validation">Validation</a></li>
+<li><a class="reference external" href="#overriding-a-validator">Overriding a Validator</a></li>
+<li><a class="reference external" href="#overriding-both-field-and-validator">Overriding both Field and Validator</a></li>
+<li><a class="reference external" href="#required-fields">Required Fields</a></li>
+<li><a class="reference external" href="#form-validation">Form Validation</a></li>
+<li><a class="reference external" href="#conclusion">Conclusion</a></li>
 </ul>
 </li>
 </ul>
@@ -120,7 +469,7 @@
           <a href="table.html" title="Table Tutorial"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.1</b></a>
+  <a href="../index.html"><b>Sprox 0.6.2</b></a>
   </li>
 
   

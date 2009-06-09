@@ -1,7 +1,7 @@
 Table Tutorial
 =================================
 
-Here you can find out how to create forms with sprox, including infinitely scrolling
+Here you can find out how to create tables with sprox, including infinitely scrolling
 tables provided by Dojo.  Many of these examples will provide server code based on TurboGears2, but
 sprox will work with any wsgi application you have ToscaWidgets mounted in.  We will assume
 the reader is somewhat versed in TurboGears2's :class:`tg.controllers.RestController`.
