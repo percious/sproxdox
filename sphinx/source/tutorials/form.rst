@@ -166,7 +166,7 @@ Field Widget Args
 
 Sometimes you want to provide sprox with a class for a field, and have sprox set the arguments
 to a widget, but you either want to provide an additional argument, or override one of the arguments
-that sprox chooses.  For this, pass a dictionary into the __file_widget_args__ parameter with the
+that sprox chooses.  For this, pass a dictionary into the __field_widget_args__ parameter with the
 key being the field you would like to pass the arg into, and the value a dictionary of args to set
 for that field.
 
