@@ -1,15 +1,18 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sprox.fillerbase &mdash; Sprox v0.6.5 documentation</title>
+    <title>sprox.fillerbase &mdash; Sprox v0.6.7 documentation</title>
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.5',
+        VERSION:     '0.6.7',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -17,9 +20,7 @@
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="top" title="Sprox v0.6.5 documentation" href="../index.html" />
+    <link rel="top" title="Sprox v0.6.7 documentation" href="../index.html" />
     <link rel="next" title="sprox.configbase" href="sprox.configbase.html" />
     <link rel="prev" title="sprox.tablebase" href="sprox.tablebase.html" /> 
   </head>
@@ -40,7 +41,7 @@
           <a href="sprox.tablebase.html" title="sprox.tablebase"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.5</b></a>
+  <a href="../index.html"><b>Sprox 0.6.7</b></a>
   </li>
 
   
@@ -49,12 +50,13 @@
 
       </ul>
     </div>  
+
+    <div class="document">
   <div class="document">
     <div class="documentwrapper">
       <div class="bodywrapper">
       <div class="body">
         
-  
   <div class="section" id="module-sprox.fillerbase">
 <h1><tt class="xref docutils literal"><span class="pre">sprox.fillerbase</span></tt><a class="headerlink" href="#module-sprox.fillerbase" title="Permalink to this headline">¶</a></h1>
 <p>fillerbase Module</p>
@@ -66,7 +68,7 @@ Released under MIT license.</p>
 <h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="sprox.fillerbase.FillerBase">
-<!--[sprox.fillerbase.FillerBase]-->class <tt class="descclassname">sprox.fillerbase.</tt><tt class="descname">FillerBase</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.FillerBase" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sprox.fillerbase.</tt><tt class="descname">FillerBase</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.FillerBase" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="sprox.configbase.ConfigBase" class="reference external" href="sprox.configbase.html#sprox.configbase.ConfigBase"><tt class="xref docutils literal"><span class="pre">sprox.configbase.ConfigBase</span></tt></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -105,14 +107,14 @@ and limit for a TableFiller.</p>
 </div>
 <dl class="method">
 <dt id="sprox.fillerbase.FillerBase.get_value">
-<!--[sprox.fillerbase.FillerBase.get_value]--><tt class="descname">get_value</tt><big>(</big><em>values=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.FillerBase.get_value" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_value</tt><big>(</big><em>values=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.FillerBase.get_value" title="Permalink to this definition">¶</a></dt>
 <dd>The main function for getting data to fill widgets,</dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="sprox.fillerbase.TableFiller">
-<!--[sprox.fillerbase.TableFiller]-->class <tt class="descclassname">sprox.fillerbase.</tt><tt class="descname">TableFiller</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.TableFiller" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sprox.fillerbase.</tt><tt class="descname">TableFiller</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.TableFiller" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="sprox.fillerbase.FillerBase" class="reference internal" href="#sprox.fillerbase.FillerBase"><tt class="xref docutils literal"><span class="pre">sprox.fillerbase.FillerBase</span></tt></a></p>
 <p>This is the base class for generating table data for use in table widgets.  The TableFiller uses
 it&#8217;s provider to obtain a dictionary of information about the __entity__ this Filler defines.
@@ -160,7 +162,7 @@ edit and delete link.</td>
 </tbody>
 </table>
 <p>By default, TableFiller will populate relations (join or foreign_key) with either the value
-from the related table, or a comma-separated list of values.  These values are derived from 
+from the related table, or a comma-separated list of values.  These values are derived from
 the related object given the field names provided by the __possible_field_names__ modifier.
 For instance, if you have a User class which is related to Groups, the groups item in the result
 dictionaries will be populated with Group.group_name.  The default field names are:
@@ -191,23 +193,23 @@ For more information on developing RESTful URLs, please visit <a class="referenc
 <span class="gp">... </span>    <span class="n">__actions__</span> <span class="o">=</span> <span class="bp">False</span>
 <span class="gp">... </span>    <span class="n">__omit_fields__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;created&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">users_filler</span> <span class="o">=</span> <span class="n">UsersFiller</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="o">=</span> <span class="n">users_filler</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="p">{},</span> <span class="n">limit</span><span class="o">=</span><span class="mf">20</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mf">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="o">=</span> <span class="n">users_filler</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="p">{},</span> <span class="n">limit</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">value</span> <span class="c">#doctest: +IGNORE_WHITESPACE</span>
-<span class="go">[{&#39;town&#39;: u&#39;Arvada&#39;, &#39;user_id&#39;: u&#39;1&#39;, &#39;user_name&#39;: u&#39;asdf&#39;, </span>
-<span class="go">&#39;town_id&#39;: u&#39;1&#39;, &#39;groups&#39;: u&#39;4&#39;, &#39;_password&#39;: &#39;******&#39;, &#39;password&#39;: &#39;******&#39;, </span>
+<span class="go">[{&#39;town&#39;: u&#39;Arvada&#39;, &#39;user_id&#39;: u&#39;1&#39;, &#39;user_name&#39;: u&#39;asdf&#39;,</span>
+<span class="go">&#39;town_id&#39;: u&#39;1&#39;, &#39;groups&#39;: u&#39;4&#39;, &#39;_password&#39;: &#39;******&#39;, &#39;password&#39;: &#39;******&#39;,</span>
 <span class="go">&#39;email_address&#39;: u&#39;asdf@asdf.com&#39;, &#39;display_name&#39;: u&#39;None&#39;}]</span>
 </pre></div>
 </div>
 <dl class="method">
 <dt id="sprox.fillerbase.TableFiller.get_count">
-<!--[sprox.fillerbase.TableFiller.get_count]--><tt class="descname">get_count</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.fillerbase.TableFiller.get_count" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_count</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.fillerbase.TableFiller.get_count" title="Permalink to this definition">¶</a></dt>
 <dd>Returns the total number of items possible for retrieval.  This can only be
 executed after a get_value() call.  This call is useful for creating pagination in the context
 of a user interface.</dd></dl>
 
 <dl class="method">
 <dt id="sprox.fillerbase.TableFiller.get_value">
-<!--[sprox.fillerbase.TableFiller.get_value]--><tt class="descname">get_value</tt><big>(</big><em>values=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.TableFiller.get_value" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_value</tt><big>(</big><em>values=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.TableFiller.get_value" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the values to fill a form widget.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -237,7 +239,7 @@ of a user interface.</dd></dl>
 
 <dl class="class">
 <dt id="sprox.fillerbase.EditFormFiller">
-<!--[sprox.fillerbase.EditFormFiller]-->class <tt class="descclassname">sprox.fillerbase.</tt><tt class="descname">EditFormFiller</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.EditFormFiller" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sprox.fillerbase.</tt><tt class="descname">EditFormFiller</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.EditFormFiller" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="sprox.fillerbase.FormFiller" class="reference internal" href="#sprox.fillerbase.FormFiller"><tt class="xref docutils literal"><span class="pre">sprox.fillerbase.FormFiller</span></tt></a></p>
 <p>This class will help to return a single record for use within a form or otherwise.
 The values are returned in dictionary form.</p>
@@ -270,51 +272,51 @@ The values are returned in dictionary form.</p>
 </div>
 <dl class="method">
 <dt id="sprox.fillerbase.EditFormFiller.get_value">
-<!--[sprox.fillerbase.EditFormFiller.get_value]--><tt class="descname">get_value</tt><big>(</big><em>values=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.EditFormFiller.get_value" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_value</tt><big>(</big><em>values=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.EditFormFiller.get_value" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="sprox.fillerbase.FormFiller">
-<!--[sprox.fillerbase.FormFiller]-->class <tt class="descclassname">sprox.fillerbase.</tt><tt class="descname">FormFiller</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.FormFiller" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sprox.fillerbase.</tt><tt class="descname">FormFiller</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.FormFiller" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="sprox.fillerbase.FillerBase" class="reference internal" href="#sprox.fillerbase.FillerBase"><tt class="xref docutils literal"><span class="pre">sprox.fillerbase.FillerBase</span></tt></a></p>
 <dl class="method">
 <dt id="sprox.fillerbase.FormFiller.get_value">
-<!--[sprox.fillerbase.FormFiller.get_value]--><tt class="descname">get_value</tt><big>(</big><em>values=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.FormFiller.get_value" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_value</tt><big>(</big><em>values=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.FormFiller.get_value" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="sprox.fillerbase.AddFormFiller">
-<!--[sprox.fillerbase.AddFormFiller]-->class <tt class="descclassname">sprox.fillerbase.</tt><tt class="descname">AddFormFiller</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.AddFormFiller" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sprox.fillerbase.</tt><tt class="descname">AddFormFiller</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.AddFormFiller" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="sprox.fillerbase.FormFiller" class="reference internal" href="#sprox.fillerbase.FormFiller"><tt class="xref docutils literal"><span class="pre">sprox.fillerbase.FormFiller</span></tt></a></p>
 <dl class="method">
 <dt id="sprox.fillerbase.AddFormFiller.get_value">
-<!--[sprox.fillerbase.AddFormFiller.get_value]--><tt class="descname">get_value</tt><big>(</big><em>values=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.AddFormFiller.get_value" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_value</tt><big>(</big><em>values=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.AddFormFiller.get_value" title="Permalink to this definition">¶</a></dt>
 <dd>xxx: get the server/entity defaults.</dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="sprox.fillerbase.ModelDefFiller">
-<!--[sprox.fillerbase.ModelDefFiller]-->class <tt class="descclassname">sprox.fillerbase.</tt><tt class="descname">ModelDefFiller</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.ModelDefFiller" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sprox.fillerbase.</tt><tt class="descname">ModelDefFiller</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.ModelDefFiller" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="sprox.fillerbase.FillerBase" class="reference internal" href="#sprox.fillerbase.FillerBase"><tt class="xref docutils literal"><span class="pre">sprox.fillerbase.FillerBase</span></tt></a></p>
 <dl class="method">
 <dt id="sprox.fillerbase.ModelDefFiller.get_value">
-<!--[sprox.fillerbase.ModelDefFiller.get_value]--><tt class="descname">get_value</tt><big>(</big><em>values=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.ModelDefFiller.get_value" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_value</tt><big>(</big><em>values=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.ModelDefFiller.get_value" title="Permalink to this definition">¶</a></dt>
 <dd>The main function for getting data to fill widgets,</dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="sprox.fillerbase.ModelsFiller">
-<!--[sprox.fillerbase.ModelsFiller]-->class <tt class="descclassname">sprox.fillerbase.</tt><tt class="descname">ModelsFiller</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.ModelsFiller" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sprox.fillerbase.</tt><tt class="descname">ModelsFiller</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.ModelsFiller" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="sprox.fillerbase.FillerBase" class="reference internal" href="#sprox.fillerbase.FillerBase"><tt class="xref docutils literal"><span class="pre">sprox.fillerbase.FillerBase</span></tt></a></p>
 <dl class="method">
 <dt id="sprox.fillerbase.ModelsFiller.get_value">
-<!--[sprox.fillerbase.ModelsFiller.get_value]--><tt class="descname">get_value</tt><big>(</big><em>values=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.ModelsFiller.get_value" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_value</tt><big>(</big><em>values=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.fillerbase.ModelsFiller.get_value" title="Permalink to this definition">¶</a></dt>
 <dd>The main function for getting data to fill widgets,</dd></dl>
 
 </dd></dl>
@@ -346,19 +348,29 @@ The values are returned in dictionary form.</p>
 </ul>
 
             <h4>Previous topic</h4>
-            <p class="topless"><a href="sprox.tablebase.html" title="previous chapter"><tt class="docutils literal"><span class="pre">sprox.tablebase</span></tt></a></p>
+            <p class="topless"><a href="sprox.tablebase.html"
+                                  title="previous chapter"><tt class="docutils literal"><span class="pre">sprox.tablebase</span></tt></a></p>
             <h4>Next topic</h4>
-            <p class="topless"><a href="sprox.configbase.html" title="next chapter"><tt class="docutils literal docutils literal"><span class="pre">sprox.configbase</span></tt></a></p>
+            <p class="topless"><a href="sprox.configbase.html"
+                                  title="next chapter"><tt class="docutils literal docutils literal"><span class="pre">sprox.configbase</span></tt></a></p>
             <h3>This Page</h3>
             <ul class="this-page-menu">
-              <li><a href="../_sources/modules/sprox.fillerbase.txt">Show Source</a></li>
+              <li><a href="../_sources/modules/sprox.fillerbase.txt"
+                     rel="nofollow">Show Source</a></li>
             </ul>
-          <h3>Quick search</h3>
-            <form class="search" action="../search.html" method="get">
-              <input type="text" name="q" size="18" /> <input type="submit" value="Go" />
-              <input type="hidden" name="check_keywords" value="yes" />
-              <input type="hidden" name="area" value="default" />
-            </form>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -368,18 +380,18 @@ The values are returned in dictionary form.</p>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
+             >index</a></li>
         <li class="right" >
           <a href="../modindex.html" title="Global Module Index"
-             accesskey="M">modules</a> |</li>
+             >modules</a> |</li>
         <li class="right" >
           <a href="sprox.configbase.html" title="sprox.configbase"
-             accesskey="N">next</a> |</li>
+             >next</a> |</li>
         <li class="right" >
           <a href="sprox.tablebase.html" title="sprox.tablebase"
-             accesskey="P">previous</a> |</li>
+             >previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.5</b></a>
+  <a href="../index.html"><b>Sprox 0.6.7</b></a>
   </li>
 
   
@@ -391,7 +403,7 @@ The values are returned in dictionary form.</p>
 
     <div class="footer">
       &copy; Copyright 2008, Christopher Perkins.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.5.1.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
     </div>
 
 <script type="text/javascript">

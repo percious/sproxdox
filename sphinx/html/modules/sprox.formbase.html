@@ -1,15 +1,18 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sprox.formbase &mdash; Sprox v0.6.5 documentation</title>
+    <title>sprox.formbase &mdash; Sprox v0.6.7 documentation</title>
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.5',
+        VERSION:     '0.6.7',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -17,9 +20,7 @@
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="top" title="Sprox v0.6.5 documentation" href="../index.html" />
+    <link rel="top" title="Sprox v0.6.7 documentation" href="../index.html" />
     <link rel="next" title="sprox.tablebase" href="sprox.tablebase.html" />
     <link rel="prev" title="Class Diagram" href="../class_diagram.html" /> 
   </head>
@@ -40,7 +41,7 @@
           <a href="../class_diagram.html" title="Class Diagram"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.5</b></a>
+  <a href="../index.html"><b>Sprox 0.6.7</b></a>
   </li>
 
   
@@ -49,12 +50,13 @@
 
       </ul>
     </div>  
+
+    <div class="document">
   <div class="document">
     <div class="documentwrapper">
       <div class="bodywrapper">
       <div class="body">
         
-  
   <div class="section" id="module-sprox.formbase">
 <h1><tt class="xref docutils literal"><span class="pre">sprox.formbase</span></tt><a class="headerlink" href="#module-sprox.formbase" title="Permalink to this headline">¶</a></h1>
 <p>formbase Module</p>
@@ -66,7 +68,7 @@ Released under MIT license.</p>
 <h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="sprox.formbase.FormBase">
-<!--[sprox.formbase.FormBase]-->class <tt class="descclassname">sprox.formbase.</tt><tt class="descname">FormBase</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.formbase.FormBase" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sprox.formbase.</tt><tt class="descname">FormBase</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.formbase.FormBase" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="sprox.viewbase.ViewBase" class="reference external" href="sprox.viewbase.html#sprox.viewbase.ViewBase"><tt class="xref docutils literal"><span class="pre">sprox.viewbase.ViewBase</span></tt></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -240,14 +242,14 @@ Traceback (most recent call last):
 Invalid: town: Missing value</p>
 <dl class="method">
 <dt id="sprox.formbase.FormBase.validate">
-<!--[sprox.formbase.FormBase.validate]--><tt class="descname">validate</tt><big>(</big><em>params</em>, <em>state=None</em><big>)</big><a class="headerlink" href="#sprox.formbase.FormBase.validate" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">validate</tt><big>(</big><em>params</em>, <em>state=None</em><big>)</big><a class="headerlink" href="#sprox.formbase.FormBase.validate" title="Permalink to this definition">¶</a></dt>
 <dd>A pass-thru to the widget&#8217;s validate function.</dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="sprox.formbase.AddRecordForm">
-<!--[sprox.formbase.AddRecordForm]-->class <tt class="descclassname">sprox.formbase.</tt><tt class="descname">AddRecordForm</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.formbase.AddRecordForm" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sprox.formbase.</tt><tt class="descname">AddRecordForm</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.formbase.AddRecordForm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="sprox.formbase.FormBase" class="reference internal" href="#sprox.formbase.FormBase"><tt class="xref docutils literal"><span class="pre">sprox.formbase.FormBase</span></tt></a></p>
 <p>An editable form who&#8217;s purpose is record addition.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -346,15 +348,7 @@ matches the field data.</td>
 <span class="go">                &lt;input type=&quot;password&quot; id=&quot;verify_password&quot; class=&quot;passwordfield&quot; name=&quot;verify_password&quot; value=&quot;&quot; /&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">        &lt;/tr&gt;</span>
-<span class="go">        &lt;tr class=&quot;odd&quot; id=&quot;town_id.container&quot; title=&quot;&quot; &gt;</span>
-<span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
-<span class="go">                &lt;label id=&quot;town_id.label&quot; for=&quot;town_id&quot; class=&quot;fieldlabel&quot;&gt;Town Id&lt;/label&gt;</span>
-<span class="go">            &lt;/td&gt;</span>
-<span class="go">            &lt;td class=&quot;fieldcol&quot; &gt;</span>
-<span class="go">                &lt;input type=&quot;text&quot; id=&quot;town_id&quot; class=&quot;textfield&quot; name=&quot;town_id&quot; value=&quot;&quot; /&gt;</span>
-<span class="go">            &lt;/td&gt;</span>
-<span class="go">        &lt;/tr&gt;</span>
-<span class="go">        &lt;tr class=&quot;even&quot; id=&quot;submit.container&quot; title=&quot;&quot; &gt;</span>
+<span class="go">        &lt;tr class=&quot;odd&quot; id=&quot;submit.container&quot; title=&quot;&quot; &gt;</span>
 <span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
 <span class="go">                &lt;label id=&quot;submit.label&quot; for=&quot;submit&quot; class=&quot;fieldlabel&quot;&gt;&lt;/label&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
@@ -381,14 +375,14 @@ user_name in the model is unique:</p>
 <p>The validation fails because there is already a user with the user_name &#8216;asdf&#8217; in the database</p>
 <dl class="method">
 <dt id="sprox.formbase.AddRecordForm.validate">
-<!--[sprox.formbase.AddRecordForm.validate]--><tt class="descname">validate</tt><big>(</big><em>params</em>, <em>state=None</em><big>)</big><a class="headerlink" href="#sprox.formbase.AddRecordForm.validate" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">validate</tt><big>(</big><em>params</em>, <em>state=None</em><big>)</big><a class="headerlink" href="#sprox.formbase.AddRecordForm.validate" title="Permalink to this definition">¶</a></dt>
 <dd>A pass-thru to the widget&#8217;s validate function.</dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="sprox.formbase.DisabledForm">
-<!--[sprox.formbase.DisabledForm]-->class <tt class="descclassname">sprox.formbase.</tt><tt class="descname">DisabledForm</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.formbase.DisabledForm" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sprox.formbase.</tt><tt class="descname">DisabledForm</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.formbase.DisabledForm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="sprox.formbase.FormBase" class="reference internal" href="#sprox.formbase.FormBase"><tt class="xref docutils literal"><span class="pre">sprox.formbase.FormBase</span></tt></a></p>
 <p>A form who&#8217;s set of fields is disabled.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -446,21 +440,21 @@ user_name in the model is unique:</p>
 <p>You may notice in the above example that disabled fields pass in a hidden value for each disabled field.</p>
 <dl class="method">
 <dt id="sprox.formbase.DisabledForm.validate">
-<!--[sprox.formbase.DisabledForm.validate]--><tt class="descname">validate</tt><big>(</big><em>params</em>, <em>state=None</em><big>)</big><a class="headerlink" href="#sprox.formbase.DisabledForm.validate" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">validate</tt><big>(</big><em>params</em>, <em>state=None</em><big>)</big><a class="headerlink" href="#sprox.formbase.DisabledForm.validate" title="Permalink to this definition">¶</a></dt>
 <dd>A pass-thru to the widget&#8217;s validate function.</dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="sprox.formbase.EditableForm">
-<!--[sprox.formbase.EditableForm]-->class <tt class="descclassname">sprox.formbase.</tt><tt class="descname">EditableForm</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.formbase.EditableForm" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sprox.formbase.</tt><tt class="descname">EditableForm</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.formbase.EditableForm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="sprox.formbase.FormBase" class="reference internal" href="#sprox.formbase.FormBase"><tt class="xref docutils literal"><span class="pre">sprox.formbase.FormBase</span></tt></a></p>
 <p>A form for editing a record.
 :Modifiers:</p>
 <p>see <a title="sprox.formbase.FormBase" class="reference internal" href="#sprox.formbase.FormBase"><tt class="xref docutils literal"><span class="pre">sprox.formbase.FormBase</span></tt></a></p>
 <dl class="method">
 <dt id="sprox.formbase.EditableForm.validate">
-<!--[sprox.formbase.EditableForm.validate]--><tt class="descname">validate</tt><big>(</big><em>params</em>, <em>state=None</em><big>)</big><a class="headerlink" href="#sprox.formbase.EditableForm.validate" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">validate</tt><big>(</big><em>params</em>, <em>state=None</em><big>)</big><a class="headerlink" href="#sprox.formbase.EditableForm.validate" title="Permalink to this definition">¶</a></dt>
 <dd>A pass-thru to the widget&#8217;s validate function.</dd></dl>
 
 </dd></dl>
@@ -492,19 +486,29 @@ user_name in the model is unique:</p>
 </ul>
 
             <h4>Previous topic</h4>
-            <p class="topless"><a href="../class_diagram.html" title="previous chapter">Class Diagram</a></p>
+            <p class="topless"><a href="../class_diagram.html"
+                                  title="previous chapter">Class Diagram</a></p>
             <h4>Next topic</h4>
-            <p class="topless"><a href="sprox.tablebase.html" title="next chapter"><tt class="docutils literal docutils literal"><span class="pre">sprox.tablebase</span></tt></a></p>
+            <p class="topless"><a href="sprox.tablebase.html"
+                                  title="next chapter"><tt class="docutils literal docutils literal"><span class="pre">sprox.tablebase</span></tt></a></p>
             <h3>This Page</h3>
             <ul class="this-page-menu">
-              <li><a href="../_sources/modules/sprox.formbase.txt">Show Source</a></li>
+              <li><a href="../_sources/modules/sprox.formbase.txt"
+                     rel="nofollow">Show Source</a></li>
             </ul>
-          <h3>Quick search</h3>
-            <form class="search" action="../search.html" method="get">
-              <input type="text" name="q" size="18" /> <input type="submit" value="Go" />
-              <input type="hidden" name="check_keywords" value="yes" />
-              <input type="hidden" name="area" value="default" />
-            </form>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -514,18 +518,18 @@ user_name in the model is unique:</p>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
+             >index</a></li>
         <li class="right" >
           <a href="../modindex.html" title="Global Module Index"
-             accesskey="M">modules</a> |</li>
+             >modules</a> |</li>
         <li class="right" >
           <a href="sprox.tablebase.html" title="sprox.tablebase"
-             accesskey="N">next</a> |</li>
+             >next</a> |</li>
         <li class="right" >
           <a href="../class_diagram.html" title="Class Diagram"
-             accesskey="P">previous</a> |</li>
+             >previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.5</b></a>
+  <a href="../index.html"><b>Sprox 0.6.7</b></a>
   </li>
 
   
@@ -537,7 +541,7 @@ user_name in the model is unique:</p>
 
     <div class="footer">
       &copy; Copyright 2008, Christopher Perkins.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.5.1.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
     </div>
 
 <script type="text/javascript">

@@ -1,15 +1,18 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sprox.metadata &mdash; Sprox v0.6.5 documentation</title>
+    <title>sprox.metadata &mdash; Sprox v0.6.7 documentation</title>
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.5',
+        VERSION:     '0.6.7',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -17,9 +20,7 @@
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="top" title="Sprox v0.6.5 documentation" href="../index.html" />
+    <link rel="top" title="Sprox v0.6.7 documentation" href="../index.html" />
     <link rel="next" title="sprox.saormprovider" href="sprox.saormprovider.html" />
     <link rel="prev" title="sprox.sprockets" href="sprox.sprockets.html" /> 
   </head>
@@ -40,7 +41,7 @@
           <a href="sprox.sprockets.html" title="sprox.sprockets"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.5</b></a>
+  <a href="../index.html"><b>Sprox 0.6.7</b></a>
   </li>
 
   
@@ -49,12 +50,13 @@
 
       </ul>
     </div>  
+
+    <div class="document">
   <div class="document">
     <div class="documentwrapper">
       <div class="bodywrapper">
       <div class="body">
         
-  
   <div class="section" id="module-sprox.metadata">
 <h1><tt class="xref docutils literal"><span class="pre">sprox.metadata</span></tt><a class="headerlink" href="#module-sprox.metadata" title="Permalink to this headline">¶</a></h1>
 <p>matadata Module</p>
@@ -68,7 +70,7 @@ Released under MIT license.</p>
 <h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="sprox.metadata.Metadata">
-<!--[sprox.metadata.Metadata]-->class <tt class="descclassname">sprox.metadata.</tt><tt class="descname">Metadata</tt><big>(</big><em>provider</em>, <em>entity=None</em><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sprox.metadata.</tt><tt class="descname">Metadata</tt><big>(</big><em>provider</em>, <em>entity=None</em><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="(in Python v2.7)" class="reference external" href="http://docs.python.org/dev/library/stdtypes.html#dict"><tt class="xref docutils literal"><span class="pre">dict</span></tt></a></p>
 <p>Base Metadata class</p>
 <p>Metadatas are dictionary-like.  They map attributes
@@ -79,343 +81,347 @@ wrapped entity.  This allows for customization of the
 metadata without modification to the wrapped metadata.</p>
 <dl class="method">
 <dt id="sprox.metadata.Metadata.clear">
-<!--[sprox.metadata.Metadata.clear]--><tt class="descname">clear</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata.clear" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">clear</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata.clear" title="Permalink to this definition">¶</a></dt>
 <dd>D.clear() -&gt; None.  Remove all items from D.</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.Metadata.copy">
-<!--[sprox.metadata.Metadata.copy]--><tt class="descname">copy</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata.copy" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">copy</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata.copy" title="Permalink to this definition">¶</a></dt>
 <dd>D.copy() -&gt; a shallow copy of D</dd></dl>
 
 <dl class="staticmethod">
 <dt id="sprox.metadata.Metadata.fromkeys">
-<!--[sprox.metadata.Metadata.fromkeys]--><em class="property">
-static </em><tt class="descname">fromkeys</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata.fromkeys" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><tt class="descname">fromkeys</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata.fromkeys" title="Permalink to this definition">¶</a></dt>
 <dd>dict.fromkeys(S[,v]) -&gt; New dict with keys from S and values equal to v.
 v defaults to None.</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.Metadata.get">
-<!--[sprox.metadata.Metadata.get]--><tt class="descname">get</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata.get" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata.get" title="Permalink to this definition">¶</a></dt>
 <dd>D.get(k[,d]) -&gt; D[k] if k in D, else d.  d defaults to None.</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.Metadata.has_key">
-<!--[sprox.metadata.Metadata.has_key]--><tt class="descname">has_key</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata.has_key" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">has_key</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata.has_key" title="Permalink to this definition">¶</a></dt>
 <dd>D.has_key(k) -&gt; True if D has a key k, else False</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.Metadata.items">
-<!--[sprox.metadata.Metadata.items]--><tt class="descname">items</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata.items" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">items</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata.items" title="Permalink to this definition">¶</a></dt>
 <dd>D.items() -&gt; list of D&#8217;s (key, value) pairs, as 2-tuples</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.Metadata.iteritems">
-<!--[sprox.metadata.Metadata.iteritems]--><tt class="descname">iteritems</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata.iteritems" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">iteritems</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata.iteritems" title="Permalink to this definition">¶</a></dt>
 <dd>D.iteritems() -&gt; an iterator over the (key, value) items of D</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.Metadata.iterkeys">
-<!--[sprox.metadata.Metadata.iterkeys]--><tt class="descname">iterkeys</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata.iterkeys" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">iterkeys</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata.iterkeys" title="Permalink to this definition">¶</a></dt>
 <dd>D.iterkeys() -&gt; an iterator over the keys of D</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.Metadata.itervalues">
-<!--[sprox.metadata.Metadata.itervalues]--><tt class="descname">itervalues</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata.itervalues" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">itervalues</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata.itervalues" title="Permalink to this definition">¶</a></dt>
 <dd>D.itervalues() -&gt; an iterator over the values of D</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.Metadata.keys">
-<!--[sprox.metadata.Metadata.keys]--><tt class="descname">keys</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata.keys" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">keys</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata.keys" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.Metadata.pop">
-<!--[sprox.metadata.Metadata.pop]--><tt class="descname">pop</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata.pop" title="Permalink to this definition">¶</a></dt>
-<dd>D.pop(k[,d]) -&gt; v, remove specified key and return the corresponding value
+<tt class="descname">pop</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata.pop" title="Permalink to this definition">¶</a></dt>
+<dd>D.pop(k[,d]) -&gt; v, remove specified key and return the corresponding value.
 If key is not found, d is returned if given, otherwise KeyError is raised</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.Metadata.popitem">
-<!--[sprox.metadata.Metadata.popitem]--><tt class="descname">popitem</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata.popitem" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">popitem</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata.popitem" title="Permalink to this definition">¶</a></dt>
 <dd>D.popitem() -&gt; (k, v), remove and return some (key, value) pair as a
-2-tuple; but raise KeyError if D is empty</dd></dl>
+2-tuple; but raise KeyError if D is empty.</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.Metadata.setdefault">
-<!--[sprox.metadata.Metadata.setdefault]--><tt class="descname">setdefault</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata.setdefault" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">setdefault</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata.setdefault" title="Permalink to this definition">¶</a></dt>
 <dd>D.setdefault(k[,d]) -&gt; D.get(k,d), also set D[k]=d if k not in D</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.Metadata.update">
-<!--[sprox.metadata.Metadata.update]--><tt class="descname">update</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata.update" title="Permalink to this definition">¶</a></dt>
-<dd>D.update(E, <a href="#id1"><span class="problematic" id="id2">**</span></a>F) -&gt; None.  Update D from E and F: for k in E: D[k] = E[k]
-(if E has keys else: for (k, v) in E: D[k] = v) then: for k in F: D[k] = F[k]</dd></dl>
+<tt class="descname">update</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata.update" title="Permalink to this definition">¶</a></dt>
+<dd>D.update(E, <a href="#id1"><span class="problematic" id="id2">**</span></a>F) -&gt; None.  Update D from dict/iterable E and F.
+If E has a .keys() method, does:     for k in E: D[k] = E[k]
+If E lacks .keys() method, does:     for (k, v) in E: D[k] = v
+In either case, this is followed by: for k in F: D[k] = F[k]</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.Metadata.values">
-<!--[sprox.metadata.Metadata.values]--><tt class="descname">values</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata.values" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">values</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.Metadata.values" title="Permalink to this definition">¶</a></dt>
 <dd>D.values() -&gt; list of D&#8217;s values</dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="sprox.metadata.EntitiesMetadata">
-<!--[sprox.metadata.EntitiesMetadata]-->class <tt class="descclassname">sprox.metadata.</tt><tt class="descname">EntitiesMetadata</tt><big>(</big><em>provider</em>, <em>entity=None</em><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sprox.metadata.</tt><tt class="descname">EntitiesMetadata</tt><big>(</big><em>provider</em>, <em>entity=None</em><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="sprox.metadata.Metadata" class="reference internal" href="#sprox.metadata.Metadata"><tt class="xref docutils literal"><span class="pre">sprox.metadata.Metadata</span></tt></a></p>
 <p>A class to extract entities from a database definition.</p>
 <dl class="method">
 <dt id="sprox.metadata.EntitiesMetadata.clear">
-<!--[sprox.metadata.EntitiesMetadata.clear]--><tt class="descname">clear</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata.clear" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">clear</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata.clear" title="Permalink to this definition">¶</a></dt>
 <dd>D.clear() -&gt; None.  Remove all items from D.</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.EntitiesMetadata.copy">
-<!--[sprox.metadata.EntitiesMetadata.copy]--><tt class="descname">copy</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata.copy" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">copy</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata.copy" title="Permalink to this definition">¶</a></dt>
 <dd>D.copy() -&gt; a shallow copy of D</dd></dl>
 
 <dl class="staticmethod">
 <dt id="sprox.metadata.EntitiesMetadata.fromkeys">
-<!--[sprox.metadata.EntitiesMetadata.fromkeys]--><em class="property">
-static </em><tt class="descname">fromkeys</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata.fromkeys" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><tt class="descname">fromkeys</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata.fromkeys" title="Permalink to this definition">¶</a></dt>
 <dd>dict.fromkeys(S[,v]) -&gt; New dict with keys from S and values equal to v.
 v defaults to None.</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.EntitiesMetadata.get">
-<!--[sprox.metadata.EntitiesMetadata.get]--><tt class="descname">get</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata.get" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata.get" title="Permalink to this definition">¶</a></dt>
 <dd>D.get(k[,d]) -&gt; D[k] if k in D, else d.  d defaults to None.</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.EntitiesMetadata.has_key">
-<!--[sprox.metadata.EntitiesMetadata.has_key]--><tt class="descname">has_key</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata.has_key" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">has_key</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata.has_key" title="Permalink to this definition">¶</a></dt>
 <dd>D.has_key(k) -&gt; True if D has a key k, else False</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.EntitiesMetadata.items">
-<!--[sprox.metadata.EntitiesMetadata.items]--><tt class="descname">items</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata.items" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">items</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata.items" title="Permalink to this definition">¶</a></dt>
 <dd>D.items() -&gt; list of D&#8217;s (key, value) pairs, as 2-tuples</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.EntitiesMetadata.iteritems">
-<!--[sprox.metadata.EntitiesMetadata.iteritems]--><tt class="descname">iteritems</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata.iteritems" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">iteritems</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata.iteritems" title="Permalink to this definition">¶</a></dt>
 <dd>D.iteritems() -&gt; an iterator over the (key, value) items of D</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.EntitiesMetadata.iterkeys">
-<!--[sprox.metadata.EntitiesMetadata.iterkeys]--><tt class="descname">iterkeys</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata.iterkeys" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">iterkeys</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata.iterkeys" title="Permalink to this definition">¶</a></dt>
 <dd>D.iterkeys() -&gt; an iterator over the keys of D</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.EntitiesMetadata.itervalues">
-<!--[sprox.metadata.EntitiesMetadata.itervalues]--><tt class="descname">itervalues</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata.itervalues" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">itervalues</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata.itervalues" title="Permalink to this definition">¶</a></dt>
 <dd>D.itervalues() -&gt; an iterator over the values of D</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.EntitiesMetadata.keys">
-<!--[sprox.metadata.EntitiesMetadata.keys]--><tt class="descname">keys</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata.keys" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">keys</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata.keys" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.EntitiesMetadata.pop">
-<!--[sprox.metadata.EntitiesMetadata.pop]--><tt class="descname">pop</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata.pop" title="Permalink to this definition">¶</a></dt>
-<dd>D.pop(k[,d]) -&gt; v, remove specified key and return the corresponding value
+<tt class="descname">pop</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata.pop" title="Permalink to this definition">¶</a></dt>
+<dd>D.pop(k[,d]) -&gt; v, remove specified key and return the corresponding value.
 If key is not found, d is returned if given, otherwise KeyError is raised</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.EntitiesMetadata.popitem">
-<!--[sprox.metadata.EntitiesMetadata.popitem]--><tt class="descname">popitem</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata.popitem" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">popitem</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata.popitem" title="Permalink to this definition">¶</a></dt>
 <dd>D.popitem() -&gt; (k, v), remove and return some (key, value) pair as a
-2-tuple; but raise KeyError if D is empty</dd></dl>
+2-tuple; but raise KeyError if D is empty.</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.EntitiesMetadata.setdefault">
-<!--[sprox.metadata.EntitiesMetadata.setdefault]--><tt class="descname">setdefault</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata.setdefault" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">setdefault</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata.setdefault" title="Permalink to this definition">¶</a></dt>
 <dd>D.setdefault(k[,d]) -&gt; D.get(k,d), also set D[k]=d if k not in D</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.EntitiesMetadata.update">
-<!--[sprox.metadata.EntitiesMetadata.update]--><tt class="descname">update</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata.update" title="Permalink to this definition">¶</a></dt>
-<dd>D.update(E, <a href="#id3"><span class="problematic" id="id4">**</span></a>F) -&gt; None.  Update D from E and F: for k in E: D[k] = E[k]
-(if E has keys else: for (k, v) in E: D[k] = v) then: for k in F: D[k] = F[k]</dd></dl>
+<tt class="descname">update</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata.update" title="Permalink to this definition">¶</a></dt>
+<dd>D.update(E, <a href="#id3"><span class="problematic" id="id4">**</span></a>F) -&gt; None.  Update D from dict/iterable E and F.
+If E has a .keys() method, does:     for k in E: D[k] = E[k]
+If E lacks .keys() method, does:     for (k, v) in E: D[k] = v
+In either case, this is followed by: for k in F: D[k] = F[k]</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.EntitiesMetadata.values">
-<!--[sprox.metadata.EntitiesMetadata.values]--><tt class="descname">values</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata.values" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">values</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.EntitiesMetadata.values" title="Permalink to this definition">¶</a></dt>
 <dd>D.values() -&gt; list of D&#8217;s values</dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="sprox.metadata.FieldMetadata">
-<!--[sprox.metadata.FieldMetadata]-->class <tt class="descclassname">sprox.metadata.</tt><tt class="descname">FieldMetadata</tt><big>(</big><em>provider</em>, <em>entity=None</em><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sprox.metadata.</tt><tt class="descname">FieldMetadata</tt><big>(</big><em>provider</em>, <em>entity=None</em><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="sprox.metadata.Metadata" class="reference internal" href="#sprox.metadata.Metadata"><tt class="xref docutils literal"><span class="pre">sprox.metadata.Metadata</span></tt></a></p>
 <p>In the future, if the Field attributes need to be extracted, this is where it will happen.</p>
 <dl class="method">
 <dt id="sprox.metadata.FieldMetadata.clear">
-<!--[sprox.metadata.FieldMetadata.clear]--><tt class="descname">clear</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata.clear" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">clear</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata.clear" title="Permalink to this definition">¶</a></dt>
 <dd>D.clear() -&gt; None.  Remove all items from D.</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.FieldMetadata.copy">
-<!--[sprox.metadata.FieldMetadata.copy]--><tt class="descname">copy</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata.copy" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">copy</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata.copy" title="Permalink to this definition">¶</a></dt>
 <dd>D.copy() -&gt; a shallow copy of D</dd></dl>
 
 <dl class="staticmethod">
 <dt id="sprox.metadata.FieldMetadata.fromkeys">
-<!--[sprox.metadata.FieldMetadata.fromkeys]--><em class="property">
-static </em><tt class="descname">fromkeys</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata.fromkeys" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><tt class="descname">fromkeys</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata.fromkeys" title="Permalink to this definition">¶</a></dt>
 <dd>dict.fromkeys(S[,v]) -&gt; New dict with keys from S and values equal to v.
 v defaults to None.</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.FieldMetadata.get">
-<!--[sprox.metadata.FieldMetadata.get]--><tt class="descname">get</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata.get" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata.get" title="Permalink to this definition">¶</a></dt>
 <dd>D.get(k[,d]) -&gt; D[k] if k in D, else d.  d defaults to None.</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.FieldMetadata.has_key">
-<!--[sprox.metadata.FieldMetadata.has_key]--><tt class="descname">has_key</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata.has_key" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">has_key</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata.has_key" title="Permalink to this definition">¶</a></dt>
 <dd>D.has_key(k) -&gt; True if D has a key k, else False</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.FieldMetadata.items">
-<!--[sprox.metadata.FieldMetadata.items]--><tt class="descname">items</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata.items" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">items</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata.items" title="Permalink to this definition">¶</a></dt>
 <dd>D.items() -&gt; list of D&#8217;s (key, value) pairs, as 2-tuples</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.FieldMetadata.iteritems">
-<!--[sprox.metadata.FieldMetadata.iteritems]--><tt class="descname">iteritems</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata.iteritems" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">iteritems</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata.iteritems" title="Permalink to this definition">¶</a></dt>
 <dd>D.iteritems() -&gt; an iterator over the (key, value) items of D</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.FieldMetadata.iterkeys">
-<!--[sprox.metadata.FieldMetadata.iterkeys]--><tt class="descname">iterkeys</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata.iterkeys" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">iterkeys</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata.iterkeys" title="Permalink to this definition">¶</a></dt>
 <dd>D.iterkeys() -&gt; an iterator over the keys of D</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.FieldMetadata.itervalues">
-<!--[sprox.metadata.FieldMetadata.itervalues]--><tt class="descname">itervalues</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata.itervalues" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">itervalues</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata.itervalues" title="Permalink to this definition">¶</a></dt>
 <dd>D.itervalues() -&gt; an iterator over the values of D</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.FieldMetadata.keys">
-<!--[sprox.metadata.FieldMetadata.keys]--><tt class="descname">keys</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata.keys" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">keys</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata.keys" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.FieldMetadata.pop">
-<!--[sprox.metadata.FieldMetadata.pop]--><tt class="descname">pop</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata.pop" title="Permalink to this definition">¶</a></dt>
-<dd>D.pop(k[,d]) -&gt; v, remove specified key and return the corresponding value
+<tt class="descname">pop</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata.pop" title="Permalink to this definition">¶</a></dt>
+<dd>D.pop(k[,d]) -&gt; v, remove specified key and return the corresponding value.
 If key is not found, d is returned if given, otherwise KeyError is raised</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.FieldMetadata.popitem">
-<!--[sprox.metadata.FieldMetadata.popitem]--><tt class="descname">popitem</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata.popitem" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">popitem</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata.popitem" title="Permalink to this definition">¶</a></dt>
 <dd>D.popitem() -&gt; (k, v), remove and return some (key, value) pair as a
-2-tuple; but raise KeyError if D is empty</dd></dl>
+2-tuple; but raise KeyError if D is empty.</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.FieldMetadata.setdefault">
-<!--[sprox.metadata.FieldMetadata.setdefault]--><tt class="descname">setdefault</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata.setdefault" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">setdefault</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata.setdefault" title="Permalink to this definition">¶</a></dt>
 <dd>D.setdefault(k[,d]) -&gt; D.get(k,d), also set D[k]=d if k not in D</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.FieldMetadata.update">
-<!--[sprox.metadata.FieldMetadata.update]--><tt class="descname">update</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata.update" title="Permalink to this definition">¶</a></dt>
-<dd>D.update(E, <a href="#id5"><span class="problematic" id="id6">**</span></a>F) -&gt; None.  Update D from E and F: for k in E: D[k] = E[k]
-(if E has keys else: for (k, v) in E: D[k] = v) then: for k in F: D[k] = F[k]</dd></dl>
+<tt class="descname">update</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata.update" title="Permalink to this definition">¶</a></dt>
+<dd>D.update(E, <a href="#id5"><span class="problematic" id="id6">**</span></a>F) -&gt; None.  Update D from dict/iterable E and F.
+If E has a .keys() method, does:     for k in E: D[k] = E[k]
+If E lacks .keys() method, does:     for (k, v) in E: D[k] = v
+In either case, this is followed by: for k in F: D[k] = F[k]</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.FieldMetadata.values">
-<!--[sprox.metadata.FieldMetadata.values]--><tt class="descname">values</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata.values" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">values</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldMetadata.values" title="Permalink to this definition">¶</a></dt>
 <dd>D.values() -&gt; list of D&#8217;s values</dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="sprox.metadata.FieldsMetadata">
-<!--[sprox.metadata.FieldsMetadata]-->class <tt class="descclassname">sprox.metadata.</tt><tt class="descname">FieldsMetadata</tt><big>(</big><em>provider</em>, <em>entity</em><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sprox.metadata.</tt><tt class="descname">FieldsMetadata</tt><big>(</big><em>provider</em>, <em>entity</em><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="sprox.metadata.Metadata" class="reference internal" href="#sprox.metadata.Metadata"><tt class="xref docutils literal"><span class="pre">sprox.metadata.Metadata</span></tt></a></p>
 <p>A class to extract fields from an entity.</p>
 <dl class="method">
 <dt id="sprox.metadata.FieldsMetadata.clear">
-<!--[sprox.metadata.FieldsMetadata.clear]--><tt class="descname">clear</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata.clear" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">clear</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata.clear" title="Permalink to this definition">¶</a></dt>
 <dd>D.clear() -&gt; None.  Remove all items from D.</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.FieldsMetadata.copy">
-<!--[sprox.metadata.FieldsMetadata.copy]--><tt class="descname">copy</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata.copy" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">copy</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata.copy" title="Permalink to this definition">¶</a></dt>
 <dd>D.copy() -&gt; a shallow copy of D</dd></dl>
 
 <dl class="staticmethod">
 <dt id="sprox.metadata.FieldsMetadata.fromkeys">
-<!--[sprox.metadata.FieldsMetadata.fromkeys]--><em class="property">
-static </em><tt class="descname">fromkeys</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata.fromkeys" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><tt class="descname">fromkeys</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata.fromkeys" title="Permalink to this definition">¶</a></dt>
 <dd>dict.fromkeys(S[,v]) -&gt; New dict with keys from S and values equal to v.
 v defaults to None.</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.FieldsMetadata.get">
-<!--[sprox.metadata.FieldsMetadata.get]--><tt class="descname">get</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata.get" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata.get" title="Permalink to this definition">¶</a></dt>
 <dd>D.get(k[,d]) -&gt; D[k] if k in D, else d.  d defaults to None.</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.FieldsMetadata.has_key">
-<!--[sprox.metadata.FieldsMetadata.has_key]--><tt class="descname">has_key</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata.has_key" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">has_key</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata.has_key" title="Permalink to this definition">¶</a></dt>
 <dd>D.has_key(k) -&gt; True if D has a key k, else False</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.FieldsMetadata.items">
-<!--[sprox.metadata.FieldsMetadata.items]--><tt class="descname">items</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata.items" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">items</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata.items" title="Permalink to this definition">¶</a></dt>
 <dd>D.items() -&gt; list of D&#8217;s (key, value) pairs, as 2-tuples</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.FieldsMetadata.iteritems">
-<!--[sprox.metadata.FieldsMetadata.iteritems]--><tt class="descname">iteritems</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata.iteritems" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">iteritems</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata.iteritems" title="Permalink to this definition">¶</a></dt>
 <dd>D.iteritems() -&gt; an iterator over the (key, value) items of D</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.FieldsMetadata.iterkeys">
-<!--[sprox.metadata.FieldsMetadata.iterkeys]--><tt class="descname">iterkeys</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata.iterkeys" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">iterkeys</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata.iterkeys" title="Permalink to this definition">¶</a></dt>
 <dd>D.iterkeys() -&gt; an iterator over the keys of D</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.FieldsMetadata.itervalues">
-<!--[sprox.metadata.FieldsMetadata.itervalues]--><tt class="descname">itervalues</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata.itervalues" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">itervalues</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata.itervalues" title="Permalink to this definition">¶</a></dt>
 <dd>D.itervalues() -&gt; an iterator over the values of D</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.FieldsMetadata.keys">
-<!--[sprox.metadata.FieldsMetadata.keys]--><tt class="descname">keys</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata.keys" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">keys</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata.keys" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.FieldsMetadata.pop">
-<!--[sprox.metadata.FieldsMetadata.pop]--><tt class="descname">pop</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata.pop" title="Permalink to this definition">¶</a></dt>
-<dd>D.pop(k[,d]) -&gt; v, remove specified key and return the corresponding value
+<tt class="descname">pop</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata.pop" title="Permalink to this definition">¶</a></dt>
+<dd>D.pop(k[,d]) -&gt; v, remove specified key and return the corresponding value.
 If key is not found, d is returned if given, otherwise KeyError is raised</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.FieldsMetadata.popitem">
-<!--[sprox.metadata.FieldsMetadata.popitem]--><tt class="descname">popitem</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata.popitem" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">popitem</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata.popitem" title="Permalink to this definition">¶</a></dt>
 <dd>D.popitem() -&gt; (k, v), remove and return some (key, value) pair as a
-2-tuple; but raise KeyError if D is empty</dd></dl>
+2-tuple; but raise KeyError if D is empty.</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.FieldsMetadata.setdefault">
-<!--[sprox.metadata.FieldsMetadata.setdefault]--><tt class="descname">setdefault</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata.setdefault" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">setdefault</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata.setdefault" title="Permalink to this definition">¶</a></dt>
 <dd>D.setdefault(k[,d]) -&gt; D.get(k,d), also set D[k]=d if k not in D</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.FieldsMetadata.update">
-<!--[sprox.metadata.FieldsMetadata.update]--><tt class="descname">update</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata.update" title="Permalink to this definition">¶</a></dt>
-<dd>D.update(E, <a href="#id7"><span class="problematic" id="id8">**</span></a>F) -&gt; None.  Update D from E and F: for k in E: D[k] = E[k]
-(if E has keys else: for (k, v) in E: D[k] = v) then: for k in F: D[k] = F[k]</dd></dl>
+<tt class="descname">update</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata.update" title="Permalink to this definition">¶</a></dt>
+<dd>D.update(E, <a href="#id7"><span class="problematic" id="id8">**</span></a>F) -&gt; None.  Update D from dict/iterable E and F.
+If E has a .keys() method, does:     for k in E: D[k] = E[k]
+If E lacks .keys() method, does:     for (k, v) in E: D[k] = v
+In either case, this is followed by: for k in F: D[k] = F[k]</dd></dl>
 
 <dl class="method">
 <dt id="sprox.metadata.FieldsMetadata.values">
-<!--[sprox.metadata.FieldsMetadata.values]--><tt class="descname">values</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata.values" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">values</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.metadata.FieldsMetadata.values" title="Permalink to this definition">¶</a></dt>
 <dd>D.values() -&gt; list of D&#8217;s values</dd></dl>
 
 </dd></dl>
@@ -425,33 +431,33 @@ If key is not found, d is returned if given, otherwise KeyError is raised</dd></
 <h2>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="sprox.metadata.MetadataError">
-<!--[sprox.metadata.MetadataError]-->class <tt class="descclassname">sprox.metadata.</tt><tt class="descname">MetadataError</tt><a class="headerlink" href="#sprox.metadata.MetadataError" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sprox.metadata.</tt><tt class="descname">MetadataError</tt><a class="headerlink" href="#sprox.metadata.MetadataError" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="(in Python v2.7)" class="reference external" href="http://docs.python.org/dev/library/exceptions.html#exceptions.Exception"><tt class="xref docutils literal"><span class="pre">exceptions.Exception</span></tt></a></p>
 <dl class="attribute">
 <dt id="sprox.metadata.MetadataError.args">
-<!--[sprox.metadata.MetadataError.args]--><tt class="descname">args</tt><a class="headerlink" href="#sprox.metadata.MetadataError.args" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">args</tt><a class="headerlink" href="#sprox.metadata.MetadataError.args" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.metadata.MetadataError.message">
-<!--[sprox.metadata.MetadataError.message]--><tt class="descname">message</tt><a class="headerlink" href="#sprox.metadata.MetadataError.message" title="Permalink to this definition">¶</a></dt>
-<dd>exception message</dd></dl>
+<tt class="descname">message</tt><a class="headerlink" href="#sprox.metadata.MetadataError.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="sprox.metadata.NotFoundError">
-<!--[sprox.metadata.NotFoundError]-->class <tt class="descclassname">sprox.metadata.</tt><tt class="descname">NotFoundError</tt><a class="headerlink" href="#sprox.metadata.NotFoundError" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sprox.metadata.</tt><tt class="descname">NotFoundError</tt><a class="headerlink" href="#sprox.metadata.NotFoundError" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="(in Python v2.7)" class="reference external" href="http://docs.python.org/dev/library/exceptions.html#exceptions.Exception"><tt class="xref docutils literal"><span class="pre">exceptions.Exception</span></tt></a></p>
 <dl class="attribute">
 <dt id="sprox.metadata.NotFoundError.args">
-<!--[sprox.metadata.NotFoundError.args]--><tt class="descname">args</tt><a class="headerlink" href="#sprox.metadata.NotFoundError.args" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">args</tt><a class="headerlink" href="#sprox.metadata.NotFoundError.args" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.metadata.NotFoundError.message">
-<!--[sprox.metadata.NotFoundError.message]--><tt class="descname">message</tt><a class="headerlink" href="#sprox.metadata.NotFoundError.message" title="Permalink to this definition">¶</a></dt>
-<dd>exception message</dd></dl>
+<tt class="descname">message</tt><a class="headerlink" href="#sprox.metadata.NotFoundError.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -483,19 +489,29 @@ If key is not found, d is returned if given, otherwise KeyError is raised</dd></
 </ul>
 
             <h4>Previous topic</h4>
-            <p class="topless"><a href="sprox.sprockets.html" title="previous chapter"><tt class="docutils literal"><span class="pre">sprox.sprockets</span></tt></a></p>
+            <p class="topless"><a href="sprox.sprockets.html"
+                                  title="previous chapter"><tt class="docutils literal"><span class="pre">sprox.sprockets</span></tt></a></p>
             <h4>Next topic</h4>
-            <p class="topless"><a href="sprox.saormprovider.html" title="next chapter"><tt class="docutils literal docutils literal"><span class="pre">sprox.saormprovider</span></tt></a></p>
+            <p class="topless"><a href="sprox.saormprovider.html"
+                                  title="next chapter"><tt class="docutils literal docutils literal"><span class="pre">sprox.saormprovider</span></tt></a></p>
             <h3>This Page</h3>
             <ul class="this-page-menu">
-              <li><a href="../_sources/modules/sprox.metadata.txt">Show Source</a></li>
+              <li><a href="../_sources/modules/sprox.metadata.txt"
+                     rel="nofollow">Show Source</a></li>
             </ul>
-          <h3>Quick search</h3>
-            <form class="search" action="../search.html" method="get">
-              <input type="text" name="q" size="18" /> <input type="submit" value="Go" />
-              <input type="hidden" name="check_keywords" value="yes" />
-              <input type="hidden" name="area" value="default" />
-            </form>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -505,18 +521,18 @@ If key is not found, d is returned if given, otherwise KeyError is raised</dd></
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
+             >index</a></li>
         <li class="right" >
           <a href="../modindex.html" title="Global Module Index"
-             accesskey="M">modules</a> |</li>
+             >modules</a> |</li>
         <li class="right" >
           <a href="sprox.saormprovider.html" title="sprox.saormprovider"
-             accesskey="N">next</a> |</li>
+             >next</a> |</li>
         <li class="right" >
           <a href="sprox.sprockets.html" title="sprox.sprockets"
-             accesskey="P">previous</a> |</li>
+             >previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.5</b></a>
+  <a href="../index.html"><b>Sprox 0.6.7</b></a>
   </li>
 
   
@@ -528,7 +544,7 @@ If key is not found, d is returned if given, otherwise KeyError is raised</dd></
 
     <div class="footer">
       &copy; Copyright 2008, Christopher Perkins.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.5.1.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
     </div>
 
 <script type="text/javascript">

@@ -1,15 +1,18 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sprox.entitiesbase &mdash; Sprox v0.6.5 documentation</title>
+    <title>sprox.entitiesbase &mdash; Sprox v0.6.7 documentation</title>
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.5',
+        VERSION:     '0.6.7',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -17,9 +20,7 @@
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="top" title="Sprox v0.6.5 documentation" href="../index.html" />
+    <link rel="top" title="Sprox v0.6.7 documentation" href="../index.html" />
     <link rel="next" title="sprox.recordviewbase" href="sprox.recordviewbase.html" />
     <link rel="prev" title="sprox.viewbase" href="sprox.viewbase.html" /> 
   </head>
@@ -40,7 +41,7 @@
           <a href="sprox.viewbase.html" title="sprox.viewbase"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.5</b></a>
+  <a href="../index.html"><b>Sprox 0.6.7</b></a>
   </li>
 
   
@@ -49,19 +50,20 @@
 
       </ul>
     </div>  
+
+    <div class="document">
   <div class="document">
     <div class="documentwrapper">
       <div class="bodywrapper">
       <div class="body">
         
-  
   <div class="section" id="module-sprox.entitiesbase">
 <h1><tt class="xref docutils literal"><span class="pre">sprox.entitiesbase</span></tt><a class="headerlink" href="#module-sprox.entitiesbase" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="classes">
 <h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="sprox.entitiesbase.EntitiesBase">
-<!--[sprox.entitiesbase.EntitiesBase]-->class <tt class="descclassname">sprox.entitiesbase.</tt><tt class="descname">EntitiesBase</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.entitiesbase.EntitiesBase" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sprox.entitiesbase.</tt><tt class="descname">EntitiesBase</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.entitiesbase.EntitiesBase" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a title="sprox.viewbase.ViewBase" class="reference external" href="sprox.viewbase.html#sprox.viewbase.ViewBase"><tt class="xref docutils literal"><span class="pre">sprox.viewbase.ViewBase</span></tt></a></p>
 <p>This view can display all of the entities for a given provider.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -81,7 +83,19 @@
 <span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">base</span><span class="p">()</span>
 <span class="go">&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot; class=&quot;containerwidget&quot;&gt;</span>
 <span class="go">&lt;div class=&quot;entitylabelwidget&quot;&gt;</span>
+<span class="go">&lt;a href=&quot;Department/&quot;&gt;Department&lt;/a&gt;</span>
+<span class="go">&lt;/div&gt;</span>
+<span class="go">&lt;div class=&quot;entitylabelwidget&quot;&gt;</span>
 <span class="go">&lt;a href=&quot;Document/&quot;&gt;Document&lt;/a&gt;</span>
+<span class="go">&lt;/div&gt;</span>
+<span class="go">&lt;div class=&quot;entitylabelwidget&quot;&gt;</span>
+<span class="go">&lt;a href=&quot;DocumentCategory/&quot;&gt;DocumentCategory&lt;/a&gt;</span>
+<span class="go">&lt;/div&gt;</span>
+<span class="go">&lt;div class=&quot;entitylabelwidget&quot;&gt;</span>
+<span class="go">&lt;a href=&quot;DocumentCategoryReference/&quot;&gt;DocumentCategoryReference&lt;/a&gt;</span>
+<span class="go">&lt;/div&gt;</span>
+<span class="go">&lt;div class=&quot;entitylabelwidget&quot;&gt;</span>
+<span class="go">&lt;a href=&quot;DocumentCategoryTag/&quot;&gt;DocumentCategoryTag&lt;/a&gt;</span>
 <span class="go">&lt;/div&gt;</span>
 <span class="go">&lt;div class=&quot;entitylabelwidget&quot;&gt;</span>
 <span class="go">&lt;a href=&quot;Example/&quot;&gt;Example&lt;/a&gt;</span>
@@ -133,19 +147,29 @@
 </ul>
 
             <h4>Previous topic</h4>
-            <p class="topless"><a href="sprox.viewbase.html" title="previous chapter"><tt class="docutils literal docutils literal"><span class="pre">sprox.viewbase</span></tt></a></p>
+            <p class="topless"><a href="sprox.viewbase.html"
+                                  title="previous chapter"><tt class="docutils literal docutils literal"><span class="pre">sprox.viewbase</span></tt></a></p>
             <h4>Next topic</h4>
-            <p class="topless"><a href="sprox.recordviewbase.html" title="next chapter"><tt class="docutils literal"><span class="pre">sprox.recordviewbase</span></tt></a></p>
+            <p class="topless"><a href="sprox.recordviewbase.html"
+                                  title="next chapter"><tt class="docutils literal"><span class="pre">sprox.recordviewbase</span></tt></a></p>
             <h3>This Page</h3>
             <ul class="this-page-menu">
-              <li><a href="../_sources/modules/sprox.entitiesbase.txt">Show Source</a></li>
+              <li><a href="../_sources/modules/sprox.entitiesbase.txt"
+                     rel="nofollow">Show Source</a></li>
             </ul>
-          <h3>Quick search</h3>
-            <form class="search" action="../search.html" method="get">
-              <input type="text" name="q" size="18" /> <input type="submit" value="Go" />
-              <input type="hidden" name="check_keywords" value="yes" />
-              <input type="hidden" name="area" value="default" />
-            </form>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -155,18 +179,18 @@
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
+             >index</a></li>
         <li class="right" >
           <a href="../modindex.html" title="Global Module Index"
-             accesskey="M">modules</a> |</li>
+             >modules</a> |</li>
         <li class="right" >
           <a href="sprox.recordviewbase.html" title="sprox.recordviewbase"
-             accesskey="N">next</a> |</li>
+             >next</a> |</li>
         <li class="right" >
           <a href="sprox.viewbase.html" title="sprox.viewbase"
-             accesskey="P">previous</a> |</li>
+             >previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.5</b></a>
+  <a href="../index.html"><b>Sprox 0.6.7</b></a>
   </li>
 
   
@@ -178,7 +202,7 @@
 
     <div class="footer">
       &copy; Copyright 2008, Christopher Perkins.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.5.1.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
     </div>
 
 <script type="text/javascript">

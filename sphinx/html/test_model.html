@@ -1,15 +1,18 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>test_model &mdash; Sprox v0.6.5 documentation</title>
+    <title>test_model &mdash; Sprox v0.6.7 documentation</title>
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.6.5',
+        VERSION:     '0.6.7',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -17,9 +20,7 @@
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="top" title="Sprox v0.6.5 documentation" href="index.html" />
+    <link rel="top" title="Sprox v0.6.7 documentation" href="index.html" />
     <link rel="prev" title="sprox.dojo.formbase" href="modules/sprox.dojo.formbase.html" /> 
   </head>
   <body>
@@ -36,7 +37,7 @@
           <a href="modules/sprox.dojo.formbase.html" title="sprox.dojo.formbase"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="index.html"><b>Sprox 0.6.5</b></a>
+  <a href="index.html"><b>Sprox 0.6.7</b></a>
   </li>
 
   
@@ -45,12 +46,13 @@
 
       </ul>
     </div>  
+
+    <div class="document">
   <div class="document">
     <div class="documentwrapper">
       <div class="bodywrapper">
       <div class="body">
         
-  
   <div class="section" id="test-model">
 <h1><tt class="xref docutils literal"><span class="pre">test_model</span></tt><a class="headerlink" href="#test-model" title="Permalink to this headline">¶</a></h1>
 <p>Here is the model used for many of the examples in this documentation.  It is based
@@ -98,8 +100,8 @@ It is similar, but with a few modifications.:</p>
     <span class="n">__tablename__</span> <span class="o">=</span> <span class="s">&#39;tg_group&#39;</span>
 
     <span class="n">group_id</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">autoincrement</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-    <span class="n">group_name</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Unicode</span><span class="p">(</span><span class="mf">16</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-    <span class="n">display_name</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Unicode</span><span class="p">(</span><span class="mf">255</span><span class="p">))</span>
+    <span class="n">group_name</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Unicode</span><span class="p">(</span><span class="mi">16</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">display_name</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Unicode</span><span class="p">(</span><span class="mi">255</span><span class="p">))</span>
     <span class="n">created</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">DateTime</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">)</span>
     <span class="n">users</span> <span class="o">=</span> <span class="n">relation</span><span class="p">(</span><span class="s">&#39;User&#39;</span><span class="p">,</span> <span class="n">secondary</span><span class="o">=</span><span class="n">user_group_table</span><span class="p">,</span> <span class="n">backref</span><span class="o">=</span><span class="s">&#39;groups&#39;</span><span class="p">)</span>
 
@@ -109,7 +111,7 @@ It is similar, but with a few modifications.:</p>
 <span class="k">class</span> <span class="nc">Town</span><span class="p">(</span><span class="n">DeclarativeBase</span><span class="p">):</span>
     <span class="n">__tablename__</span> <span class="o">=</span> <span class="s">&#39;town&#39;</span>
     <span class="n">town_id</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="mf">32</span><span class="p">))</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="mi">32</span><span class="p">))</span>
 
 <span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">DeclarativeBase</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Reasonably basic User definition. Probably would want additional</span>
@@ -118,10 +120,10 @@ It is similar, but with a few modifications.:</p>
     <span class="n">__tablename__</span> <span class="o">=</span> <span class="s">&#39;tg_user&#39;</span>
 
     <span class="n">user_id</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">autoincrement</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-    <span class="n">user_name</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Unicode</span><span class="p">(</span><span class="mf">16</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-    <span class="n">email_address</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Unicode</span><span class="p">(</span><span class="mf">255</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-    <span class="n">display_name</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Unicode</span><span class="p">(</span><span class="mf">255</span><span class="p">))</span>
-    <span class="n">_password</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s">&#39;password&#39;</span><span class="p">,</span> <span class="n">Unicode</span><span class="p">(</span><span class="mf">40</span><span class="p">))</span>
+    <span class="n">user_name</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Unicode</span><span class="p">(</span><span class="mi">16</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">email_address</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Unicode</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">display_name</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Unicode</span><span class="p">(</span><span class="mi">255</span><span class="p">))</span>
+    <span class="n">_password</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="s">&#39;password&#39;</span><span class="p">,</span> <span class="n">Unicode</span><span class="p">(</span><span class="mi">40</span><span class="p">))</span>
     <span class="n">created</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">DateTime</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">)</span>
     <span class="n">town_id</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="s">&#39;town.town_id&#39;</span><span class="p">))</span>
     <span class="n">town</span> <span class="o">=</span> <span class="n">relation</span><span class="p">(</span><span class="n">Town</span><span class="p">)</span>
@@ -132,9 +134,9 @@ It is similar, but with a few modifications.:</p>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">permissions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">perms</span> <span class="o">=</span> <span class="n">set</span><span class="p">()</span>
+        <span class="n">perms</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">groups</span><span class="p">:</span>
-            <span class="n">perms</span> <span class="o">=</span> <span class="n">perms</span> <span class="o">|</span> <span class="n">set</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">permissions</span><span class="p">)</span>
+            <span class="n">perms</span> <span class="o">=</span> <span class="n">perms</span> <span class="o">|</span> <span class="nb">set</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">permissions</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">perms</span>
 
     <span class="nd">@classmethod</span>
@@ -180,7 +182,7 @@ It is similar, but with a few modifications.:</p>
 
         <span class="c">#creates a salted sha password</span>
         <span class="n">salt</span> <span class="o">=</span> <span class="n">sha1</span><span class="p">()</span>
-        <span class="n">salt</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">urandom</span><span class="p">(</span><span class="mf">60</span><span class="p">))</span>
+        <span class="n">salt</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">urandom</span><span class="p">(</span><span class="mi">60</span><span class="p">))</span>
         <span class="nb">hash</span> <span class="o">=</span> <span class="n">sha1</span><span class="p">()</span>
         <span class="nb">hash</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">password_8bit</span> <span class="o">+</span> <span class="n">salt</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">())</span>
         <span class="n">hashed_password</span> <span class="o">=</span> <span class="n">salt</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span> <span class="o">+</span> <span class="nb">hash</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
@@ -202,9 +204,9 @@ It is similar, but with a few modifications.:</p>
 <span class="sd">        @type password: unicode object</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">hashed_pass</span> <span class="o">=</span> <span class="n">sha1</span><span class="p">()</span>
-        <span class="n">hashed_pass</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">password</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">password</span><span class="p">[:</span><span class="mf">40</span><span class="p">])</span>
+        <span class="n">hashed_pass</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">password</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">password</span><span class="p">[:</span><span class="mi">40</span><span class="p">])</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">password</span><span class="p">[</span><span class="mf">40</span><span class="p">:]</span> <span class="o">==</span> <span class="n">hashed_pass</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">password</span><span class="p">[</span><span class="mi">40</span><span class="p">:]</span> <span class="o">==</span> <span class="n">hashed_pass</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
 
 
 <span class="k">class</span> <span class="nc">Permission</span><span class="p">(</span><span class="n">DeclarativeBase</span><span class="p">):</span>
@@ -213,8 +215,8 @@ It is similar, but with a few modifications.:</p>
     <span class="n">__tablename__</span> <span class="o">=</span> <span class="s">&#39;tg_permission&#39;</span>
 
     <span class="n">permission_id</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">autoincrement</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-    <span class="n">permission_name</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Unicode</span><span class="p">(</span><span class="mf">16</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-    <span class="n">description</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Unicode</span><span class="p">(</span><span class="mf">255</span><span class="p">))</span>
+    <span class="n">permission_name</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Unicode</span><span class="p">(</span><span class="mi">16</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Unicode</span><span class="p">(</span><span class="mi">255</span><span class="p">))</span>
     <span class="n">groups</span> <span class="o">=</span> <span class="n">relation</span><span class="p">(</span><span class="n">Group</span><span class="p">,</span> <span class="n">secondary</span><span class="o">=</span><span class="n">group_permission_table</span><span class="p">,</span>
                       <span class="n">backref</span><span class="o">=</span><span class="s">&#39;permissions&#39;</span><span class="p">)</span>
 
@@ -226,8 +228,8 @@ It is similar, but with a few modifications.:</p>
     <span class="n">blob</span>            <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">BLOB</span>          <span class="p">)</span>
     <span class="n">binary</span>          <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Binary</span>        <span class="p">)</span>
     <span class="n">boolean</span>         <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Boolean</span>       <span class="p">)</span>
-    <span class="n">char</span>            <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">CHAR</span><span class="p">(</span><span class="mf">200</span><span class="p">)</span>     <span class="p">)</span>
-    <span class="n">cLOB</span>            <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">CLOB</span><span class="p">(</span><span class="mf">200</span><span class="p">)</span>     <span class="p">)</span>
+    <span class="n">char</span>            <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">CHAR</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>     <span class="p">)</span>
+    <span class="n">cLOB</span>            <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">CLOB</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>     <span class="p">)</span>
     <span class="n">date_</span>           <span class="o">=</span> <span class="n">Column</span><span class="p">(</span> <span class="n">DATE</span>         <span class="p">)</span>
     <span class="n">datetime_</span>       <span class="o">=</span> <span class="n">Column</span><span class="p">(</span> <span class="n">DATETIME</span>     <span class="p">)</span>
     <span class="n">decimal</span>         <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">DECIMAL</span>       <span class="p">)</span>
@@ -236,20 +238,20 @@ It is similar, but with a few modifications.:</p>
     <span class="n">float__</span>         <span class="o">=</span> <span class="n">Column</span><span class="p">(</span> <span class="n">FLOAT</span>        <span class="p">)</span>
     <span class="n">float_</span>          <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Float</span>         <span class="p">)</span>
     <span class="n">int_</span>            <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">INT</span>           <span class="p">)</span>
-    <span class="n">integer</span>         <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">10</span><span class="p">)</span>
+    <span class="n">integer</span>         <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
    <span class="c"># (NCHAR =       #Column NCHAR          )</span>
     <span class="n">numeric</span>         <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Numeric</span>       <span class="p">)</span>
     <span class="n">pickletype</span>      <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">PickleType</span>    <span class="p">)</span>
     <span class="n">smallint</span>        <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">SMALLINT</span>      <span class="p">)</span>
     <span class="n">smalliunteger</span>   <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">SmallInteger</span>  <span class="p">)</span>
-    <span class="n">string</span>          <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="mf">20</span><span class="p">)</span>    <span class="p">)</span>
-    <span class="n">text</span>            <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="mf">20</span><span class="p">)</span>      <span class="p">)</span>
+    <span class="n">string</span>          <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>    <span class="p">)</span>
+    <span class="n">text</span>            <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">TEXT</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>      <span class="p">)</span>
     <span class="n">time_</span>           <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">TIME</span>          <span class="p">)</span>
     <span class="n">time</span>            <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Time</span>          <span class="p">)</span>
     <span class="n">timestamp</span>       <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">TIMESTAMP</span>     <span class="p">)</span>
-    <span class="n">unicode_</span>        <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Unicode</span><span class="p">(</span><span class="mf">200</span><span class="p">)</span>  <span class="p">)</span>
-    <span class="n">varchar</span>         <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">VARCHAR</span><span class="p">(</span><span class="mf">200</span><span class="p">)</span>  <span class="p">)</span>
-    <span class="n">password</span>        <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="mf">20</span><span class="p">)</span>    <span class="p">)</span>
+    <span class="n">unicode_</span>        <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Unicode</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>  <span class="p">)</span>
+    <span class="n">varchar</span>         <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">VARCHAR</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>  <span class="p">)</span>
+    <span class="n">password</span>        <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>    <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -270,17 +272,26 @@ It is similar, but with a few modifications.:</p>
               <img class="logo" src="_static/sprox_logo.png" alt="Logo"/>
             </a></p>
             <h4>Previous topic</h4>
-            <p class="topless"><a href="modules/sprox.dojo.formbase.html" title="previous chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.dojo.formbase</span></tt></a></p>
+            <p class="topless"><a href="modules/sprox.dojo.formbase.html"
+                                  title="previous chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.dojo.formbase</span></tt></a></p>
             <h3>This Page</h3>
             <ul class="this-page-menu">
-              <li><a href="_sources/test_model.txt">Show Source</a></li>
+              <li><a href="_sources/test_model.txt"
+                     rel="nofollow">Show Source</a></li>
             </ul>
-          <h3>Quick search</h3>
-            <form class="search" action="search.html" method="get">
-              <input type="text" name="q" size="18" /> <input type="submit" value="Go" />
-              <input type="hidden" name="check_keywords" value="yes" />
-              <input type="hidden" name="area" value="default" />
-            </form>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -290,15 +301,15 @@ It is similar, but with a few modifications.:</p>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
+             >index</a></li>
         <li class="right" >
           <a href="modindex.html" title="Global Module Index"
-             accesskey="M">modules</a> |</li>
+             >modules</a> |</li>
         <li class="right" >
           <a href="modules/sprox.dojo.formbase.html" title="sprox.dojo.formbase"
-             accesskey="P">previous</a> |</li>
+             >previous</a> |</li>
   <li>
-  <a href="index.html"><b>Sprox 0.6.5</b></a>
+  <a href="index.html"><b>Sprox 0.6.7</b></a>
   </li>
 
   
@@ -310,7 +321,7 @@ It is similar, but with a few modifications.:</p>
 
     <div class="footer">
       &copy; Copyright 2008, Christopher Perkins.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.5.1.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
     </div>
 
 <script type="text/javascript">
