@@ -1,4 +1,6 @@
 
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -6,21 +8,22 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sprox.dojo.tablebase &mdash; Sprox v0.6.7 documentation</title>
+    <title>sprox.dojo.tablebase &mdash; Sprox v0.6.11 documentation</title>
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.7',
-        COLLAPSE_MODINDEX: false,
+        VERSION:     '0.6.11',
+        COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Sprox v0.6.7 documentation" href="../index.html" />
+    <link rel="top" title="Sprox v0.6.11 documentation" href="../index.html" />
     <link rel="next" title="sprox.dojo.fillerbase" href="sprox.dojo.fillerbase.html" />
     <link rel="prev" title="General Dojo Usage Information" href="../dojo.html" /> 
   </head>
@@ -32,8 +35,8 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../modindex.html" title="Global Module Index"
-             accesskey="M">modules</a> |</li>
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li class="right" >
           <a href="sprox.dojo.fillerbase.html" title="sprox.dojo.fillerbase"
              accesskey="N">next</a> |</li>
@@ -41,11 +44,11 @@
           <a href="../dojo.html" title="General Dojo Usage Information"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.7</b></a>
+  <a href="../index.html"><b>Sprox 0.6.11</b></a>
   </li>
 
   
-    <li> <b>/</b> <a href=""><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.dojo.tablebase</span></tt></a></li>
+    <li> <b>/</b> <a href="#"><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.dojo.tablebase</span></tt></a></li>
   
 
       </ul>
@@ -58,19 +61,19 @@
       <div class="body">
         
   <div class="section" id="module-sprox.dojo.tablebase">
-<h1><tt class="xref docutils literal"><span class="pre">sprox.dojo.tablebase</span></tt><a class="headerlink" href="#module-sprox.dojo.tablebase" title="Permalink to this headline">¶</a></h1>
+<span id="sprox-dojo-tablebase"></span><h1><a class="reference internal" href="#module-sprox.dojo.tablebase" title="sprox.dojo.tablebase"><tt class="xref py py-mod docutils literal"><span class="pre">sprox.dojo.tablebase</span></tt></a><a class="headerlink" href="#module-sprox.dojo.tablebase" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="classes">
 <h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="sprox.dojo.tablebase.DojoTableBase">
 <em class="property">class </em><tt class="descclassname">sprox.dojo.tablebase.</tt><tt class="descname">DojoTableBase</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.dojo.tablebase.DojoTableBase" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a title="sprox.tablebase.TableBase" class="reference external" href="sprox.tablebase.html#sprox.tablebase.TableBase"><tt class="xref docutils literal"><span class="pre">sprox.tablebase.TableBase</span></tt></a></p>
+<dd><p>Bases: <a class="reference internal" href="sprox.tablebase.html#sprox.tablebase.TableBase" title="sprox.tablebase.TableBase"><tt class="xref py py-class docutils literal"><span class="pre">sprox.tablebase.TableBase</span></tt></a></p>
 <p>This class allows you to credate a table widget.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Modifiers:</th><td class="field-body"></td>
+<tr class="field"><th class="field-name">Modifiers :</th><td class="field-body"></td>
 </tr>
 </tbody>
 </table>
@@ -99,7 +102,7 @@ column_options attribute</td>
 </tr>
 </tbody>
 </table>
-<p>also see modifiers in <a title="" class="reference external" href="sprox.tablebase.html#module-sprox.tablebase"><tt class="xref docutils literal"><span class="pre">sprox.tablebase</span></tt></a></p>
+<p>also see modifiers in <a class="reference internal" href="sprox.tablebase.html#module-sprox.tablebase" title="sprox.tablebase"><tt class="xref py py-mod docutils literal"><span class="pre">sprox.tablebase</span></tt></a></p>
 </dd></dl>
 
 </div>
@@ -120,38 +123,38 @@ column_options attribute</td>
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/sprox_logo.png" alt="Logo"/>
             </a></p>
-            <h3><a href="../index.html">Table Of Contents</a></h3>
-            <ul>
-<li><a class="reference external" href=""><tt class="docutils literal"><span class="pre">sprox.dojo.tablebase</span></tt></a><ul>
-<li><a class="reference external" href="#classes">Classes</a></li>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">sprox.dojo.tablebase</span></tt></a><ul>
+<li><a class="reference internal" href="#classes">Classes</a></li>
 </ul>
 </li>
 </ul>
 
-            <h4>Previous topic</h4>
-            <p class="topless"><a href="../dojo.html"
-                                  title="previous chapter">General Dojo Usage Information</a></p>
-            <h4>Next topic</h4>
-            <p class="topless"><a href="sprox.dojo.fillerbase.html"
-                                  title="next chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.dojo.fillerbase</span></tt></a></p>
-            <h3>This Page</h3>
-            <ul class="this-page-menu">
-              <li><a href="../_sources/modules/sprox.dojo.tablebase.txt"
-                     rel="nofollow">Show Source</a></li>
-            </ul>
-          <div id="searchbox" style="display: none">
-            <h3>Quick search</h3>
-              <form class="search" action="../search.html" method="get">
-                <input type="text" name="q" size="18" />
-                <input type="submit" value="Go" />
-                <input type="hidden" name="check_keywords" value="yes" />
-                <input type="hidden" name="area" value="default" />
-              </form>
-              <p class="searchtip" style="font-size: 90%">
-              Enter search terms or a module, class or function name.
-              </p>
-          </div>
-          <script type="text/javascript">$('#searchbox').show(0);</script>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../dojo.html"
+                        title="previous chapter">General Dojo Usage Information</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="sprox.dojo.fillerbase.html"
+                        title="next chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.dojo.fillerbase</span></tt></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/modules/sprox.dojo.tablebase.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -163,7 +166,7 @@ column_options attribute</td>
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../modindex.html" title="Global Module Index"
+          <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
           <a href="sprox.dojo.fillerbase.html" title="sprox.dojo.fillerbase"
@@ -172,19 +175,19 @@ column_options attribute</td>
           <a href="../dojo.html" title="General Dojo Usage Information"
              >previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.7</b></a>
+  <a href="../index.html"><b>Sprox 0.6.11</b></a>
   </li>
 
   
-    <li> <b>/</b> <a href=""><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.dojo.tablebase</span></tt></a></li>
+    <li> <b>/</b> <a href="#"><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.dojo.tablebase</span></tt></a></li>
   
 
       </ul>
     </div>
 
     <div class="footer">
-      &copy; Copyright 2008, Christopher Perkins.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
+        &copy; Copyright 2008, Christopher Perkins.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.4.
     </div>
 
 <script type="text/javascript">

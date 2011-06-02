@@ -1,4 +1,6 @@
 
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -6,21 +8,22 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Form Tutorial &mdash; Sprox v0.6.7 documentation</title>
+    <title>Form Tutorial &mdash; Sprox v0.6.11 documentation</title>
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.7',
-        COLLAPSE_MODINDEX: false,
+        VERSION:     '0.6.11',
+        COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Sprox v0.6.7 documentation" href="../index.html" />
+    <link rel="top" title="Sprox v0.6.11 documentation" href="../index.html" />
     <link rel="next" title="Class Diagram" href="../class_diagram.html" />
     <link rel="prev" title="Table Tutorial" href="table.html" /> 
   </head>
@@ -32,8 +35,8 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../modindex.html" title="Global Module Index"
-             accesskey="M">modules</a> |</li>
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li class="right" >
           <a href="../class_diagram.html" title="Class Diagram"
              accesskey="N">next</a> |</li>
@@ -41,11 +44,11 @@
           <a href="table.html" title="Table Tutorial"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.7</b></a>
+  <a href="../index.html"><b>Sprox 0.6.11</b></a>
   </li>
 
   
-    <li> <b>/</b> <a href="">Form Tutorial</a></li>
+    <li> <b>/</b> <a href="#">Form Tutorial</a></li>
   
 
       </ul>
@@ -62,7 +65,7 @@
 <p>This is a succinct explanation on how to use sprox&#8217;s form rendering capabilities. Many of
 these examples will provide server code based on TurboGears2, but
 sprox will work with any wsgi application you have ToscaWidgets mounted in.  We will assume
-the reader is somewhat versed in TurboGears2&#8217;s <a title="(in TG2 v2.0)" class="reference external" href="http://turbogears.org/2.0/docs/modules/tgcontroller.html#tg.controllers.RestController"><tt class="xref docutils literal"><span class="pre">tg.controllers.RestController</span></tt></a>.
+the reader is somewhat versed in TurboGears2&#8217;s <a class="reference external" href="http://turbogears.org/2.0/docs/modules/tgcontroller.html#tg.controllers.RestController" title="(in TG2 v2.0)"><tt class="xref py py-class docutils literal"><span class="pre">tg.controllers.RestController</span></tt></a>.
 Note that this is the same technology the Turbogears2 admin is based on, so this
 knowledge is valuable to understand how to configure the admin for your purposes.</p>
 <div class="section" id="establishing-the-model-definition">
@@ -388,7 +391,7 @@ compare two fields.  See the example on the index page.</p>
 </div>
 <div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
-<p><a title="sprox.formbase.FormBase" class="reference external" href="../modules/sprox.formbase.html#sprox.formbase.FormBase"><tt class="xref docutils literal"><span class="pre">sprox.formbase.FormBase</span></tt></a> class provides a flexible mechanism for creating customized forms.
+<p><a class="reference internal" href="../modules/sprox.formbase.html#sprox.formbase.FormBase" title="sprox.formbase.FormBase"><tt class="xref py py-class docutils literal"><span class="pre">sprox.formbase.FormBase</span></tt></a> class provides a flexible mechanism for creating customized forms.
 It provides sensicle widgets and validators based on your schema, but can be overridden for your own
 needs.  FormBase provides declarative addition of fields, ways to limit and omit fields to a set that
 is appropriate for your application.  Sprox provides automated drop-down boxes, as well as providing
@@ -412,55 +415,55 @@ users to enjoy a more friendly interface.</p>
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/sprox_logo.png" alt="Logo"/>
             </a></p>
-            <h3><a href="../index.html">Table Of Contents</a></h3>
-            <ul>
-<li><a class="reference external" href="">Form Tutorial</a><ul>
-<li><a class="reference external" href="#establishing-the-model-definition">Establishing the Model Definition</a></li>
-<li><a class="reference external" href="#the-basic-sprox-form">The Basic Sprox Form</a></li>
-<li><a class="reference external" href="#omitting-fields">Omitting Fields</a></li>
-<li><a class="reference external" href="#limiting-fields">Limiting fields</a></li>
-<li><a class="reference external" href="#field-ordering">Field Ordering</a></li>
-<li><a class="reference external" href="#overriding-field-attributes">Overriding Field Attributes</a></li>
-<li><a class="reference external" href="#overriding-a-form-field">Overriding a Form Field</a></li>
-<li><a class="reference external" href="#field-widget-args">Field Widget Args</a></li>
-<li><a class="reference external" href="#custom-dropdown-field-names">Custom Dropdown Field Names</a></li>
-<li><a class="reference external" href="#creating-custom-dropdown-data">Creating Custom Dropdown Data</a></li>
-<li><a class="reference external" href="#adding-a-new-field">Adding a New Field</a></li>
-<li><a class="reference external" href="#dojo">Dojo</a></li>
-<li><a class="reference external" href="#validation">Validation</a></li>
-<li><a class="reference external" href="#overriding-a-validator">Overriding a Validator</a></li>
-<li><a class="reference external" href="#overriding-both-field-and-validator">Overriding both Field and Validator</a></li>
-<li><a class="reference external" href="#required-fields">Required Fields</a></li>
-<li><a class="reference external" href="#form-validation">Form Validation</a></li>
-<li><a class="reference external" href="#conclusion">Conclusion</a></li>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Form Tutorial</a><ul>
+<li><a class="reference internal" href="#establishing-the-model-definition">Establishing the Model Definition</a></li>
+<li><a class="reference internal" href="#the-basic-sprox-form">The Basic Sprox Form</a></li>
+<li><a class="reference internal" href="#omitting-fields">Omitting Fields</a></li>
+<li><a class="reference internal" href="#limiting-fields">Limiting fields</a></li>
+<li><a class="reference internal" href="#field-ordering">Field Ordering</a></li>
+<li><a class="reference internal" href="#overriding-field-attributes">Overriding Field Attributes</a></li>
+<li><a class="reference internal" href="#overriding-a-form-field">Overriding a Form Field</a></li>
+<li><a class="reference internal" href="#field-widget-args">Field Widget Args</a></li>
+<li><a class="reference internal" href="#custom-dropdown-field-names">Custom Dropdown Field Names</a></li>
+<li><a class="reference internal" href="#creating-custom-dropdown-data">Creating Custom Dropdown Data</a></li>
+<li><a class="reference internal" href="#adding-a-new-field">Adding a New Field</a></li>
+<li><a class="reference internal" href="#dojo">Dojo</a></li>
+<li><a class="reference internal" href="#validation">Validation</a></li>
+<li><a class="reference internal" href="#overriding-a-validator">Overriding a Validator</a></li>
+<li><a class="reference internal" href="#overriding-both-field-and-validator">Overriding both Field and Validator</a></li>
+<li><a class="reference internal" href="#required-fields">Required Fields</a></li>
+<li><a class="reference internal" href="#form-validation">Form Validation</a></li>
+<li><a class="reference internal" href="#conclusion">Conclusion</a></li>
 </ul>
 </li>
 </ul>
 
-            <h4>Previous topic</h4>
-            <p class="topless"><a href="table.html"
-                                  title="previous chapter">Table Tutorial</a></p>
-            <h4>Next topic</h4>
-            <p class="topless"><a href="../class_diagram.html"
-                                  title="next chapter">Class Diagram</a></p>
-            <h3>This Page</h3>
-            <ul class="this-page-menu">
-              <li><a href="../_sources/tutorials/form.txt"
-                     rel="nofollow">Show Source</a></li>
-            </ul>
-          <div id="searchbox" style="display: none">
-            <h3>Quick search</h3>
-              <form class="search" action="../search.html" method="get">
-                <input type="text" name="q" size="18" />
-                <input type="submit" value="Go" />
-                <input type="hidden" name="check_keywords" value="yes" />
-                <input type="hidden" name="area" value="default" />
-              </form>
-              <p class="searchtip" style="font-size: 90%">
-              Enter search terms or a module, class or function name.
-              </p>
-          </div>
-          <script type="text/javascript">$('#searchbox').show(0);</script>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="table.html"
+                        title="previous chapter">Table Tutorial</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../class_diagram.html"
+                        title="next chapter">Class Diagram</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/tutorials/form.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -472,7 +475,7 @@ users to enjoy a more friendly interface.</p>
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../modindex.html" title="Global Module Index"
+          <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
           <a href="../class_diagram.html" title="Class Diagram"
@@ -481,19 +484,19 @@ users to enjoy a more friendly interface.</p>
           <a href="table.html" title="Table Tutorial"
              >previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.7</b></a>
+  <a href="../index.html"><b>Sprox 0.6.11</b></a>
   </li>
 
   
-    <li> <b>/</b> <a href="">Form Tutorial</a></li>
+    <li> <b>/</b> <a href="#">Form Tutorial</a></li>
   
 
       </ul>
     </div>
 
     <div class="footer">
-      &copy; Copyright 2008, Christopher Perkins.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
+        &copy; Copyright 2008, Christopher Perkins.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.4.
     </div>
 
 <script type="text/javascript">

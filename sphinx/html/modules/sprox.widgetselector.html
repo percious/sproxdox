@@ -1,4 +1,6 @@
 
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -6,21 +8,22 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sprox.widgetselector &mdash; Sprox v0.6.7 documentation</title>
+    <title>sprox.widgetselector &mdash; Sprox v0.6.11 documentation</title>
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.7',
-        COLLAPSE_MODINDEX: false,
+        VERSION:     '0.6.11',
+        COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Sprox v0.6.7 documentation" href="../index.html" />
+    <link rel="top" title="Sprox v0.6.11 documentation" href="../index.html" />
     <link rel="next" title="sprox.validatorselector" href="sprox.validatorselector.html" />
     <link rel="prev" title="sprox.recordviewbase" href="sprox.recordviewbase.html" /> 
   </head>
@@ -32,8 +35,8 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../modindex.html" title="Global Module Index"
-             accesskey="M">modules</a> |</li>
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li class="right" >
           <a href="sprox.validatorselector.html" title="sprox.validatorselector"
              accesskey="N">next</a> |</li>
@@ -41,11 +44,11 @@
           <a href="sprox.recordviewbase.html" title="sprox.recordviewbase"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.7</b></a>
+  <a href="../index.html"><b>Sprox 0.6.11</b></a>
   </li>
 
   
-    <li> <b>/</b> <a href=""><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.widgetselector</span></tt></a></li>
+    <li> <b>/</b> <a href="#"><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.widgetselector</span></tt></a></li>
   
 
       </ul>
@@ -58,7 +61,7 @@
       <div class="body">
         
   <div class="section" id="module-sprox.widgetselector">
-<h1><tt class="xref docutils literal"><span class="pre">sprox.widgetselector</span></tt><a class="headerlink" href="#module-sprox.widgetselector" title="Permalink to this headline">¶</a></h1>
+<span id="sprox-widgetselector"></span><h1><a class="reference internal" href="#module-sprox.widgetselector" title="sprox.widgetselector"><tt class="xref py py-mod docutils literal"><span class="pre">sprox.widgetselector</span></tt></a><a class="headerlink" href="#module-sprox.widgetselector" title="Permalink to this headline">¶</a></h1>
 <p>widgetselecter Module</p>
 <p>this contains the class which allows the ViewConfig to select the appropriate widget for the given field</p>
 <p>Classes:
@@ -89,16 +92,18 @@ Released under MIT license.</p>
 <dl class="class">
 <dt id="sprox.widgetselector.SAWidgetSelector">
 <em class="property">class </em><tt class="descclassname">sprox.widgetselector.</tt><tt class="descname">SAWidgetSelector</tt><a class="headerlink" href="#sprox.widgetselector.SAWidgetSelector" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a title="sprox.widgetselector.WidgetSelector" class="reference internal" href="#sprox.widgetselector.WidgetSelector"><tt class="xref docutils literal"><span class="pre">sprox.widgetselector.WidgetSelector</span></tt></a></p>
+<dd><p>Bases: <a class="reference internal" href="#sprox.widgetselector.WidgetSelector" title="sprox.widgetselector.WidgetSelector"><tt class="xref py py-class docutils literal"><span class="pre">sprox.widgetselector.WidgetSelector</span></tt></a></p>
 <dl class="attribute">
 <dt id="sprox.widgetselector.SAWidgetSelector.default_multiple_select_field_widget_type">
 <tt class="descname">default_multiple_select_field_widget_type</tt><a class="headerlink" href="#sprox.widgetselector.SAWidgetSelector.default_multiple_select_field_widget_type" title="Permalink to this definition">¶</a></dt>
-<dd>alias of <tt class="xref docutils literal"><span class="pre">PropertyMultipleSelectField</span></tt></dd></dl>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">PropertyMultipleSelectField</span></tt></p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgetselector.SAWidgetSelector.default_single_select_field_widget_type">
 <tt class="descname">default_single_select_field_widget_type</tt><a class="headerlink" href="#sprox.widgetselector.SAWidgetSelector.default_single_select_field_widget_type" title="Permalink to this definition">¶</a></dt>
-<dd>alias of <tt class="xref docutils literal"><span class="pre">PropertySingleSelectField</span></tt></dd></dl>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">PropertySingleSelectField</span></tt></p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgetselector.SAWidgetSelector.select">
@@ -110,7 +115,7 @@ Released under MIT license.</p>
 <dl class="class">
 <dt id="sprox.widgetselector.EntitiesViewWidgetSelector">
 <em class="property">class </em><tt class="descclassname">sprox.widgetselector.</tt><tt class="descname">EntitiesViewWidgetSelector</tt><a class="headerlink" href="#sprox.widgetselector.EntitiesViewWidgetSelector" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a title="sprox.widgetselector.WidgetSelector" class="reference internal" href="#sprox.widgetselector.WidgetSelector"><tt class="xref docutils literal"><span class="pre">sprox.widgetselector.WidgetSelector</span></tt></a></p>
+<dd><p>Bases: <a class="reference internal" href="#sprox.widgetselector.WidgetSelector" title="sprox.widgetselector.WidgetSelector"><tt class="xref py py-class docutils literal"><span class="pre">sprox.widgetselector.WidgetSelector</span></tt></a></p>
 <dl class="method">
 <dt id="sprox.widgetselector.EntitiesViewWidgetSelector.select">
 <tt class="descname">select</tt><big>(</big><em>field</em><big>)</big><a class="headerlink" href="#sprox.widgetselector.EntitiesViewWidgetSelector.select" title="Permalink to this definition">¶</a></dt>
@@ -121,7 +126,7 @@ Released under MIT license.</p>
 <dl class="class">
 <dt id="sprox.widgetselector.EntityDefWidgetSelector">
 <em class="property">class </em><tt class="descclassname">sprox.widgetselector.</tt><tt class="descname">EntityDefWidgetSelector</tt><a class="headerlink" href="#sprox.widgetselector.EntityDefWidgetSelector" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a title="sprox.widgetselector.WidgetSelector" class="reference internal" href="#sprox.widgetselector.WidgetSelector"><tt class="xref docutils literal"><span class="pre">sprox.widgetselector.WidgetSelector</span></tt></a></p>
+<dd><p>Bases: <a class="reference internal" href="#sprox.widgetselector.WidgetSelector" title="sprox.widgetselector.WidgetSelector"><tt class="xref py py-class docutils literal"><span class="pre">sprox.widgetselector.WidgetSelector</span></tt></a></p>
 <dl class="method">
 <dt id="sprox.widgetselector.EntityDefWidgetSelector.select">
 <tt class="descname">select</tt><big>(</big><em>field</em><big>)</big><a class="headerlink" href="#sprox.widgetselector.EntityDefWidgetSelector.select" title="Permalink to this definition">¶</a></dt>
@@ -147,38 +152,38 @@ Released under MIT license.</p>
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/sprox_logo.png" alt="Logo"/>
             </a></p>
-            <h3><a href="../index.html">Table Of Contents</a></h3>
-            <ul>
-<li><a class="reference external" href=""><tt class="docutils literal"><span class="pre">sprox.widgetselector</span></tt></a><ul>
-<li><a class="reference external" href="#classes">Classes</a></li>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">sprox.widgetselector</span></tt></a><ul>
+<li><a class="reference internal" href="#classes">Classes</a></li>
 </ul>
 </li>
 </ul>
 
-            <h4>Previous topic</h4>
-            <p class="topless"><a href="sprox.recordviewbase.html"
-                                  title="previous chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.recordviewbase</span></tt></a></p>
-            <h4>Next topic</h4>
-            <p class="topless"><a href="sprox.validatorselector.html"
-                                  title="next chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.validatorselector</span></tt></a></p>
-            <h3>This Page</h3>
-            <ul class="this-page-menu">
-              <li><a href="../_sources/modules/sprox.widgetselector.txt"
-                     rel="nofollow">Show Source</a></li>
-            </ul>
-          <div id="searchbox" style="display: none">
-            <h3>Quick search</h3>
-              <form class="search" action="../search.html" method="get">
-                <input type="text" name="q" size="18" />
-                <input type="submit" value="Go" />
-                <input type="hidden" name="check_keywords" value="yes" />
-                <input type="hidden" name="area" value="default" />
-              </form>
-              <p class="searchtip" style="font-size: 90%">
-              Enter search terms or a module, class or function name.
-              </p>
-          </div>
-          <script type="text/javascript">$('#searchbox').show(0);</script>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="sprox.recordviewbase.html"
+                        title="previous chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.recordviewbase</span></tt></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="sprox.validatorselector.html"
+                        title="next chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.validatorselector</span></tt></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/modules/sprox.widgetselector.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -190,7 +195,7 @@ Released under MIT license.</p>
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../modindex.html" title="Global Module Index"
+          <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
           <a href="sprox.validatorselector.html" title="sprox.validatorselector"
@@ -199,19 +204,19 @@ Released under MIT license.</p>
           <a href="sprox.recordviewbase.html" title="sprox.recordviewbase"
              >previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.7</b></a>
+  <a href="../index.html"><b>Sprox 0.6.11</b></a>
   </li>
 
   
-    <li> <b>/</b> <a href=""><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.widgetselector</span></tt></a></li>
+    <li> <b>/</b> <a href="#"><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.widgetselector</span></tt></a></li>
   
 
       </ul>
     </div>
 
     <div class="footer">
-      &copy; Copyright 2008, Christopher Perkins.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
+        &copy; Copyright 2008, Christopher Perkins.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.4.
     </div>
 
 <script type="text/javascript">

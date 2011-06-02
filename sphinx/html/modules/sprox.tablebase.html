@@ -1,4 +1,6 @@
 
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -6,21 +8,22 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sprox.tablebase &mdash; Sprox v0.6.7 documentation</title>
+    <title>sprox.tablebase &mdash; Sprox v0.6.11 documentation</title>
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.7',
-        COLLAPSE_MODINDEX: false,
+        VERSION:     '0.6.11',
+        COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Sprox v0.6.7 documentation" href="../index.html" />
+    <link rel="top" title="Sprox v0.6.11 documentation" href="../index.html" />
     <link rel="next" title="sprox.fillerbase" href="sprox.fillerbase.html" />
     <link rel="prev" title="sprox.formbase" href="sprox.formbase.html" /> 
   </head>
@@ -32,8 +35,8 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../modindex.html" title="Global Module Index"
-             accesskey="M">modules</a> |</li>
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li class="right" >
           <a href="sprox.fillerbase.html" title="sprox.fillerbase"
              accesskey="N">next</a> |</li>
@@ -41,11 +44,11 @@
           <a href="sprox.formbase.html" title="sprox.formbase"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.7</b></a>
+  <a href="../index.html"><b>Sprox 0.6.11</b></a>
   </li>
 
   
-    <li> <b>/</b> <a href=""><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.tablebase</span></tt></a></li>
+    <li> <b>/</b> <a href="#"><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.tablebase</span></tt></a></li>
   
 
       </ul>
@@ -58,19 +61,19 @@
       <div class="body">
         
   <div class="section" id="module-sprox.tablebase">
-<h1><tt class="xref docutils literal"><span class="pre">sprox.tablebase</span></tt><a class="headerlink" href="#module-sprox.tablebase" title="Permalink to this headline">¶</a></h1>
+<span id="sprox-tablebase"></span><h1><a class="reference internal" href="#module-sprox.tablebase" title="sprox.tablebase"><tt class="xref py py-mod docutils literal"><span class="pre">sprox.tablebase</span></tt></a><a class="headerlink" href="#module-sprox.tablebase" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="classes">
 <h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="sprox.tablebase.TableBase">
 <em class="property">class </em><tt class="descclassname">sprox.tablebase.</tt><tt class="descname">TableBase</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.tablebase.TableBase" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a title="sprox.viewbase.ViewBase" class="reference external" href="sprox.viewbase.html#sprox.viewbase.ViewBase"><tt class="xref docutils literal"><span class="pre">sprox.viewbase.ViewBase</span></tt></a></p>
+<dd><p>Bases: <a class="reference internal" href="sprox.viewbase.html#sprox.viewbase.ViewBase" title="sprox.viewbase.ViewBase"><tt class="xref py py-class docutils literal"><span class="pre">sprox.viewbase.ViewBase</span></tt></a></p>
 <p>This class allows you to create a table widget.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Modifiers:</th><td class="field-body"></td>
+<tr class="field"><th class="field-name">Modifiers :</th><td class="field-body"></td>
 </tr>
 </tbody>
 </table>
@@ -114,7 +117,7 @@ __column_widths__</td>
 </tr>
 </tbody>
 </table>
-<p>see modifiers in <a title="" class="reference external" href="sprox.viewbase.html#module-sprox.viewbase"><tt class="xref docutils literal"><span class="pre">sprox.viewbase</span></tt></a></p>
+<p>see modifiers in <a class="reference internal" href="sprox.viewbase.html#module-sprox.viewbase" title="sprox.viewbase"><tt class="xref py py-mod docutils literal"><span class="pre">sprox.viewbase</span></tt></a></p>
 <p>Here is an example listing of the towns in the test database.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sprox.tablebase</span> <span class="kn">import</span> <span class="n">TableBase</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">TownTable</span><span class="p">(</span><span class="n">TableBase</span><span class="p">):</span>
@@ -126,9 +129,9 @@ __column_widths__</td>
 <span class="go">       id=&quot;None&quot; class=&quot;grid&quot;&gt;</span>
 <span class="go">    &lt;thead&gt;</span>
 <span class="go">        &lt;tr&gt;</span>
-<span class="go">                &lt;th  class=&quot;col_0&quot;&gt;actions&lt;/th&gt;</span>
-<span class="go">                &lt;th  class=&quot;col_1&quot;&gt;town_id&lt;/th&gt;</span>
-<span class="go">                &lt;th  class=&quot;col_2&quot;&gt;name&lt;/th&gt;</span>
+<span class="go">                &lt;th class=&quot;col_0&quot;&gt;actions&lt;/th&gt;</span>
+<span class="go">                &lt;th class=&quot;col_1&quot;&gt;town_id&lt;/th&gt;</span>
+<span class="go">                &lt;th class=&quot;col_2&quot;&gt;name&lt;/th&gt;</span>
 <span class="go">        &lt;/tr&gt;</span>
 <span class="go">    &lt;/thead&gt;</span>
 <span class="go">    &lt;tbody&gt;</span>
@@ -145,44 +148,49 @@ Here is how we fill the table with data using TableFillerBase</p>
 <span class="gp">... </span>    <span class="n">__model__</span> <span class="o">=</span> <span class="n">Town</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">town_filler</span> <span class="o">=</span> <span class="n">TownFiller</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="o">=</span> <span class="n">town_filler</span><span class="o">.</span><span class="n">get_value</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">town_table</span><span class="o">.</span><span class="n">__widget__</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">)</span> <span class="c">#doctest: +SKIP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">town_table</span><span class="o">.</span><span class="n">__widget__</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">)</span> 
 <span class="go">&lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;</span>
-<span class="go">&lt;table class=&quot;grid&quot;&gt;</span>
+<span class="go">&lt;div&gt;</span>
+<span class="go">&lt;table</span>
+<span class="go">       id=&quot;None&quot; class=&quot;grid&quot;&gt;</span>
 <span class="go">    &lt;thead&gt;</span>
 <span class="go">        &lt;tr&gt;</span>
-<span class="go">            &lt;th&gt;&lt;/th&gt;</span>
-<span class="go">            &lt;th class=&quot;col_0&quot;&gt;</span>
-<span class="go">            town_id</span>
-<span class="go">            &lt;/th&gt;&lt;th class=&quot;col_1&quot;&gt;</span>
-<span class="go">            name</span>
-<span class="go">            &lt;/th&gt;</span>
+<span class="go">                &lt;th class=&quot;col_0&quot;&gt;town_id&lt;/th&gt;</span>
+<span class="go">                &lt;th class=&quot;col_1&quot;&gt;name&lt;/th&gt;</span>
 <span class="go">        &lt;/tr&gt;</span>
 <span class="go">    &lt;/thead&gt;</span>
 <span class="go">    &lt;tbody&gt;</span>
 <span class="go">        &lt;tr class=&quot;even&quot;&gt;</span>
-<span class="go">            &lt;td&gt;</span>
-<span class="go">            &lt;a href=&quot;1/edit&quot;&gt;edit&lt;/a&gt; |</span>
-<span class="go">            &lt;a href=&quot;1/delete&quot;&gt;delete&lt;/a&gt;</span>
+<span class="go">            &lt;td class=&quot;col_0&quot;&gt;</span>
+<span class="go">                    1</span>
 <span class="go">            &lt;/td&gt;</span>
-<span class="go">            &lt;td&gt;1&lt;/td&gt;&lt;td&gt;Arvada&lt;/td&gt;</span>
-<span class="go">        &lt;/tr&gt;&lt;tr class=&quot;odd&quot;&gt;</span>
-<span class="go">            &lt;td&gt;</span>
-<span class="go">            &lt;a href=&quot;2/edit&quot;&gt;edit&lt;/a&gt; |</span>
-<span class="go">            &lt;a href=&quot;2/delete&quot;&gt;delete&lt;/a&gt;</span>
+<span class="go">            &lt;td class=&quot;col_1&quot;&gt;</span>
+<span class="go">                    Arvada</span>
 <span class="go">            &lt;/td&gt;</span>
-<span class="go">            &lt;td&gt;2&lt;/td&gt;&lt;td&gt;Denver&lt;/td&gt;</span>
-<span class="go">        &lt;/tr&gt;&lt;tr class=&quot;even&quot;&gt;</span>
-<span class="go">            &lt;td&gt;</span>
-<span class="go">            &lt;a href=&quot;3/edit&quot;&gt;edit&lt;/a&gt; |</span>
-<span class="go">            &lt;a href=&quot;3/delete&quot;&gt;delete&lt;/a&gt;</span>
+<span class="go">        &lt;/tr&gt;</span>
+<span class="go">        &lt;tr class=&quot;odd&quot;&gt;</span>
+<span class="go">            &lt;td class=&quot;col_0&quot;&gt;</span>
+<span class="go">                    2</span>
 <span class="go">            &lt;/td&gt;</span>
-<span class="go">            &lt;td&gt;3&lt;/td&gt;&lt;td&gt;Golden&lt;/td&gt;</span>
-<span class="go">        &lt;/tr&gt;&lt;tr class=&quot;odd&quot;&gt;</span>
-<span class="go">            &lt;td&gt;</span>
-<span class="go">            &lt;a href=&quot;4/edit&quot;&gt;edit&lt;/a&gt; |</span>
-<span class="go">            &lt;a href=&quot;4/delete&quot;&gt;delete&lt;/a&gt;</span>
+<span class="go">            &lt;td class=&quot;col_1&quot;&gt;</span>
+<span class="go">                    Denver</span>
 <span class="go">            &lt;/td&gt;</span>
-<span class="go">            &lt;td&gt;4&lt;/td&gt;&lt;td&gt;Boulder&lt;/td&gt;</span>
+<span class="go">        &lt;/tr&gt;</span>
+<span class="go">        &lt;tr class=&quot;even&quot;&gt;</span>
+<span class="go">            &lt;td class=&quot;col_0&quot;&gt;</span>
+<span class="go">                    3</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">            &lt;td class=&quot;col_1&quot;&gt;</span>
+<span class="go">                    Golden</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">        &lt;/tr&gt;</span>
+<span class="go">        &lt;tr class=&quot;odd&quot;&gt;</span>
+<span class="go">            &lt;td class=&quot;col_0&quot;&gt;</span>
+<span class="go">                    4</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">            &lt;td class=&quot;col_1&quot;&gt;</span>
+<span class="go">                    Boulder</span>
+<span class="go">            &lt;/td&gt;</span>
 <span class="go">        &lt;/tr&gt;</span>
 <span class="go">    &lt;/tbody&gt;</span>
 <span class="go">&lt;/table&gt;</span>
@@ -201,40 +209,40 @@ You can omit the links by adding &#8216;__actions__&#8217; to omitted fields as 
 <span class="go">       id=&quot;None&quot; class=&quot;grid&quot;&gt;</span>
 <span class="go">    &lt;thead&gt;</span>
 <span class="go">        &lt;tr&gt;</span>
-<span class="go">                &lt;th  class=&quot;col_0&quot;&gt;town_id&lt;/th&gt;</span>
-<span class="go">                &lt;th  class=&quot;col_1&quot;&gt;name&lt;/th&gt;</span>
+<span class="go">                &lt;th class=&quot;col_0&quot;&gt;town_id&lt;/th&gt;</span>
+<span class="go">                &lt;th class=&quot;col_1&quot;&gt;name&lt;/th&gt;</span>
 <span class="go">        &lt;/tr&gt;</span>
 <span class="go">    &lt;/thead&gt;</span>
 <span class="go">    &lt;tbody&gt;</span>
 <span class="go">        &lt;tr class=&quot;even&quot;&gt;</span>
-<span class="go">            &lt;td&gt;</span>
+<span class="go">            &lt;td class=&quot;col_0&quot;&gt;</span>
 <span class="go">                    1</span>
 <span class="go">            &lt;/td&gt;</span>
-<span class="go">            &lt;td&gt;</span>
+<span class="go">            &lt;td class=&quot;col_1&quot;&gt;</span>
 <span class="go">                    Arvada</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">        &lt;/tr&gt;</span>
 <span class="go">        &lt;tr class=&quot;odd&quot;&gt;</span>
-<span class="go">            &lt;td&gt;</span>
+<span class="go">            &lt;td class=&quot;col_0&quot;&gt;</span>
 <span class="go">                    2</span>
 <span class="go">            &lt;/td&gt;</span>
-<span class="go">            &lt;td&gt;</span>
+<span class="go">            &lt;td class=&quot;col_1&quot;&gt;</span>
 <span class="go">                    Denver</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">        &lt;/tr&gt;</span>
 <span class="go">        &lt;tr class=&quot;even&quot;&gt;</span>
-<span class="go">            &lt;td&gt;</span>
+<span class="go">            &lt;td class=&quot;col_0&quot;&gt;</span>
 <span class="go">                    3</span>
 <span class="go">            &lt;/td&gt;</span>
-<span class="go">            &lt;td&gt;</span>
+<span class="go">            &lt;td class=&quot;col_1&quot;&gt;</span>
 <span class="go">                    Golden</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">        &lt;/tr&gt;</span>
 <span class="go">        &lt;tr class=&quot;odd&quot;&gt;</span>
-<span class="go">            &lt;td&gt;</span>
+<span class="go">            &lt;td class=&quot;col_0&quot;&gt;</span>
 <span class="go">                    4</span>
 <span class="go">            &lt;/td&gt;</span>
-<span class="go">            &lt;td&gt;</span>
+<span class="go">            &lt;td class=&quot;col_1&quot;&gt;</span>
 <span class="go">                    Boulder</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">        &lt;/tr&gt;</span>
@@ -263,38 +271,38 @@ You can omit the links by adding &#8216;__actions__&#8217; to omitted fields as 
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/sprox_logo.png" alt="Logo"/>
             </a></p>
-            <h3><a href="../index.html">Table Of Contents</a></h3>
-            <ul>
-<li><a class="reference external" href=""><tt class="docutils literal"><span class="pre">sprox.tablebase</span></tt></a><ul>
-<li><a class="reference external" href="#classes">Classes</a></li>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">sprox.tablebase</span></tt></a><ul>
+<li><a class="reference internal" href="#classes">Classes</a></li>
 </ul>
 </li>
 </ul>
 
-            <h4>Previous topic</h4>
-            <p class="topless"><a href="sprox.formbase.html"
-                                  title="previous chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.formbase</span></tt></a></p>
-            <h4>Next topic</h4>
-            <p class="topless"><a href="sprox.fillerbase.html"
-                                  title="next chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.fillerbase</span></tt></a></p>
-            <h3>This Page</h3>
-            <ul class="this-page-menu">
-              <li><a href="../_sources/modules/sprox.tablebase.txt"
-                     rel="nofollow">Show Source</a></li>
-            </ul>
-          <div id="searchbox" style="display: none">
-            <h3>Quick search</h3>
-              <form class="search" action="../search.html" method="get">
-                <input type="text" name="q" size="18" />
-                <input type="submit" value="Go" />
-                <input type="hidden" name="check_keywords" value="yes" />
-                <input type="hidden" name="area" value="default" />
-              </form>
-              <p class="searchtip" style="font-size: 90%">
-              Enter search terms or a module, class or function name.
-              </p>
-          </div>
-          <script type="text/javascript">$('#searchbox').show(0);</script>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="sprox.formbase.html"
+                        title="previous chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.formbase</span></tt></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="sprox.fillerbase.html"
+                        title="next chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.fillerbase</span></tt></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/modules/sprox.tablebase.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -306,7 +314,7 @@ You can omit the links by adding &#8216;__actions__&#8217; to omitted fields as 
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../modindex.html" title="Global Module Index"
+          <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
           <a href="sprox.fillerbase.html" title="sprox.fillerbase"
@@ -315,19 +323,19 @@ You can omit the links by adding &#8216;__actions__&#8217; to omitted fields as 
           <a href="sprox.formbase.html" title="sprox.formbase"
              >previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.7</b></a>
+  <a href="../index.html"><b>Sprox 0.6.11</b></a>
   </li>
 
   
-    <li> <b>/</b> <a href=""><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.tablebase</span></tt></a></li>
+    <li> <b>/</b> <a href="#"><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.tablebase</span></tt></a></li>
   
 
       </ul>
     </div>
 
     <div class="footer">
-      &copy; Copyright 2008, Christopher Perkins.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
+        &copy; Copyright 2008, Christopher Perkins.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.4.
     </div>
 
 <script type="text/javascript">

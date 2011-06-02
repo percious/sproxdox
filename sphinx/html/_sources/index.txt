@@ -177,38 +177,39 @@ is the current code coverage.::
 
     $ nose --with-coverage --cover-package=sprox --cover-erase
     ...
-    Name                      Stmts   Exec  Cover   Missing
+    Name                      Stmts   Miss  Cover   Missing
     -------------------------------------------------------
     sprox                         0      0   100%   
-    sprox.configbase             78     78   100%   
+    sprox.configbase             78      0   100%   
     sprox.dojo                    0      0   100%   
-    sprox.dojo.fillerbase        14     14   100%   
-    sprox.dojo.formbase          11     11   100%   
-    sprox.dojo.sprockets         18     18   100%   
-    sprox.dojo.tablebase         30     30   100%   
-    sprox.dummyentity             1      1   100%   
-    sprox.entitiesbase           15     15   100%   
-    sprox.fillerbase             92     92   100%   
-    sprox.formbase              146    146   100%   
-    sprox.iprovider              33     33   100%   
-    sprox.metadata               51     51   100%   
-    sprox.providerselector       73     73   100%   
-    sprox.saormprovider         262    262   100%   
-    sprox.sprockets              55     55   100%   
-    sprox.tablebase              45     45   100%   
-    sprox.util                    9      9   100%   
-    sprox.validators             11     11   100%   
-    sprox.validatorselector      52     52   100%   
-    sprox.viewbase              126    126   100%   
-    sprox.widgets                 1      1   100%   
-    sprox.widgets.dojo           79     79   100%   
+    sprox.dojo.fillerbase        14      0   100%   
+    sprox.dojo.formbase          11      0   100%   
+    sprox.dojo.sprockets         18      0   100%   
+    sprox.dojo.tablebase         30      0   100%   
+    sprox.dummyentity             1      0   100%   
+    sprox.entitiesbase           15      0   100%   
+    sprox.fillerbase            104      0   100%   
+    sprox.formbase              155      0   100%   
+    sprox.iprovider              33      0   100%   
+    sprox.metadata               52      0   100%   
+    sprox.mootools                0      0   100%   
+    sprox.providerselector       72      0   100%   
+    sprox.saormprovider         339      0   100%   
+    sprox.sprockets              55      0   100%   
+    sprox.tablebase              45      0   100%   
+    sprox.util                    9      0   100%   
+    sprox.validators             11      0   100%   
+    sprox.validatorselector      52      0   100%   
+    sprox.viewbase              130      0   100%   
+    sprox.widgets                 1      0   100%   
+    sprox.widgets.dojo           85      0   100%   
     sprox.widgets.templates       0      0   100%   
-    sprox.widgets.widgets        81     81   100%   
-    sprox.widgetselector         46     46   100%   
+    sprox.widgets.widgets        90      0   100%   
+    sprox.widgetselector         51      0   100%   
     -------------------------------------------------------
-    TOTAL                      1329   1329   100%   
+    TOTAL                      1451      0   100%   
     ----------------------------------------------------------------------
-    Ran 233 tests in 24.895s
+    Ran 242 tests in 5.755s
     
     OK
 

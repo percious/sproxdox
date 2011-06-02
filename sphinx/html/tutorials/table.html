@@ -1,4 +1,6 @@
 
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -6,21 +8,22 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Table Tutorial &mdash; Sprox v0.6.7 documentation</title>
+    <title>Table Tutorial &mdash; Sprox v0.6.11 documentation</title>
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.7',
-        COLLAPSE_MODINDEX: false,
+        VERSION:     '0.6.11',
+        COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Sprox v0.6.7 documentation" href="../index.html" />
+    <link rel="top" title="Sprox v0.6.11 documentation" href="../index.html" />
     <link rel="next" title="Form Tutorial" href="form.html" />
     <link rel="prev" title="Sprox" href="../index.html" /> 
   </head>
@@ -32,8 +35,8 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../modindex.html" title="Global Module Index"
-             accesskey="M">modules</a> |</li>
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li class="right" >
           <a href="form.html" title="Form Tutorial"
              accesskey="N">next</a> |</li>
@@ -41,11 +44,11 @@
           <a href="../index.html" title="Sprox"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.7</b></a>
+  <a href="../index.html"><b>Sprox 0.6.11</b></a>
   </li>
 
   
-    <li> <b>/</b> <a href="">Table Tutorial</a></li>
+    <li> <b>/</b> <a href="#">Table Tutorial</a></li>
   
 
       </ul>
@@ -62,7 +65,7 @@
 <p>Here you can find out how to create tables with sprox, including infinitely scrolling
 tables provided by Dojo.  Many of these examples will provide server code based on TurboGears2, but
 sprox will work with any wsgi application you have ToscaWidgets mounted in.  We will assume
-the reader is somewhat versed in TurboGears2&#8217;s <a title="(in TG2 v2.0)" class="reference external" href="http://turbogears.org/2.0/docs/modules/tgcontroller.html#tg.controllers.RestController"><tt class="xref docutils literal"><span class="pre">tg.controllers.RestController</span></tt></a>.</p>
+the reader is somewhat versed in TurboGears2&#8217;s <a class="reference external" href="http://turbogears.org/2.0/docs/modules/tgcontroller.html#tg.controllers.RestController" title="(in TG2 v2.0)"><tt class="xref py py-class docutils literal"><span class="pre">tg.controllers.RestController</span></tt></a>.</p>
 <div class="section" id="establishing-the-model-definition">
 <h2>Establishing the Model Definition<a class="headerlink" href="#establishing-the-model-definition" title="Permalink to this headline">¶</a></h2>
 <p>Let us first assume the following model for this demonstration.:</p>
@@ -99,7 +102,7 @@ the reader is somewhat versed in TurboGears2&#8217;s <a title="(in TG2 v2.0)" cl
 </div>
 <div class="section" id="basic-table-definition">
 <h2>Basic Table Definition<a class="headerlink" href="#basic-table-definition" title="Permalink to this headline">¶</a></h2>
-<p>Here, we create a <a title="sprox.tablebase.TableBase" class="reference external" href="../modules/sprox.tablebase.html#sprox.tablebase.TableBase"><tt class="xref docutils literal"><span class="pre">sprox.tablebase.TableBase</span></tt></a> for the movie.:</p>
+<p>Here, we create a <a class="reference internal" href="../modules/sprox.tablebase.html#sprox.tablebase.TableBase" title="sprox.tablebase.TableBase"><tt class="xref py py-class docutils literal"><span class="pre">sprox.tablebase.TableBase</span></tt></a> for the movie.:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">tg.controllers</span> <span class="kn">import</span> <span class="n">RestController</span><span class="p">,</span> <span class="n">redirect</span>
 <span class="kn">from</span> <span class="nn">moviedemo.model</span> <span class="kn">import</span> <span class="n">DBSession</span><span class="p">,</span> <span class="n">Movie</span><span class="p">,</span> <span class="n">Genre</span><span class="p">,</span> <span class="n">Director</span>
 <span class="kn">from</span> <span class="nn">sprox.tablebase</span> <span class="kn">import</span> <span class="n">TableBase</span>
@@ -141,7 +144,7 @@ the reader is somewhat versed in TurboGears2&#8217;s <a title="(in TG2 v2.0)" cl
 <div class="section" id="displaying-actual-data">
 <h2>Displaying Actual Data<a class="headerlink" href="#displaying-actual-data" title="Permalink to this headline">¶</a></h2>
 <p>Now, we have a form, but there are no entries for that form.  Lets add
-a <a title="sprox.fillerbase.TableFiller" class="reference external" href="../modules/sprox.fillerbase.html#sprox.fillerbase.TableFiller"><tt class="xref docutils literal"><span class="pre">sprox.fillerbase.TableFiller</span></tt></a> to provide data for the form.:</p>
+a <a class="reference internal" href="../modules/sprox.fillerbase.html#sprox.fillerbase.TableFiller" title="sprox.fillerbase.TableFiller"><tt class="xref py py-class docutils literal"><span class="pre">sprox.fillerbase.TableFiller</span></tt></a> to provide data for the form.:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">sprox.fillerbase</span> <span class="kn">import</span> <span class="n">TableFiller</span>
 
 <span class="k">class</span> <span class="nc">MovieTableFiller</span><span class="p">(</span><span class="n">TableFiller</span><span class="p">):</span>
@@ -165,7 +168,7 @@ a <a title="sprox.fillerbase.TableFiller" class="reference external" href="../mo
 <img alt="../_images/table_values.png" src="../_images/table_values.png" />
 <p>You may have noticed that the genre, and directors fields are already populated.
 Sprox pulls data from the relations you set up in your model definition, and displays them
-according to a default set of fieldnames as provided by the <a title="sprox.viewbase.ViewBase" class="reference external" href="../modules/sprox.viewbase.html#sprox.viewbase.ViewBase"><tt class="xref docutils literal"><span class="pre">sprox.viewbase.ViewBase</span></tt></a>.  This may
+according to a default set of fieldnames as provided by the <a class="reference internal" href="../modules/sprox.viewbase.html#sprox.viewbase.ViewBase" title="sprox.viewbase.ViewBase"><tt class="xref py py-class docutils literal"><span class="pre">sprox.viewbase.ViewBase</span></tt></a>.  This may
 be altered by providing an additional __possible_field_names__ modifier.</p>
 </div>
 <div class="section" id="removing-unwanted-fields">
@@ -180,7 +183,7 @@ so let&#8217;s omit them.  Our table definition becomes:</p>
 <p>which looks like this:</p>
 <img alt="../_images/table_omit.png" src="../_images/table_omit.png" />
 <p>You can modify the filler to omit this data also, but it is not necessary.  The view
-will only view the fields specified by your TableBase class.  <a title="sprox.tablebase.TableBase" class="reference external" href="../modules/sprox.tablebase.html#sprox.tablebase.TableBase"><tt class="xref docutils literal"><span class="pre">sprox.tablebase.TableBase</span></tt></a> provides a number
+will only view the fields specified by your TableBase class.  <a class="reference internal" href="../modules/sprox.tablebase.html#sprox.tablebase.TableBase" title="sprox.tablebase.TableBase"><tt class="xref py py-class docutils literal"><span class="pre">sprox.tablebase.TableBase</span></tt></a> provides a number
 of modifiers that allow you to define how the table is displayed.</p>
 </div>
 <div class="section" id="removing-the-actions-field">
@@ -443,49 +446,49 @@ tutorial, please:</p>
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/sprox_logo.png" alt="Logo"/>
             </a></p>
-            <h3><a href="../index.html">Table Of Contents</a></h3>
-            <ul>
-<li><a class="reference external" href="">Table Tutorial</a><ul>
-<li><a class="reference external" href="#establishing-the-model-definition">Establishing the Model Definition</a></li>
-<li><a class="reference external" href="#basic-table-definition">Basic Table Definition</a></li>
-<li><a class="reference external" href="#displaying-actual-data">Displaying Actual Data</a></li>
-<li><a class="reference external" href="#removing-unwanted-fields">Removing unwanted fields</a></li>
-<li><a class="reference external" href="#removing-the-actions-field">Removing the actions field</a></li>
-<li><a class="reference external" href="#custom-field-data-display">Custom field data display</a></li>
-<li><a class="reference external" href="#adding-a-new-field">Adding a new Field</a></li>
-<li><a class="reference external" href="#changing-the-tablefiller-s-query">Changing the TableFiller&#8217;s query</a></li>
-<li><a class="reference external" href="#changing-the-column-header-names">Changing the Column Header Names</a></li>
-<li><a class="reference external" href="#adding-dojo-to-the-mix">Adding Dojo to the mix</a></li>
-<li><a class="reference external" href="#changing-column-widths">Changing column widths</a></li>
-<li><a class="reference external" href="#to-summarize">To Summarize</a></li>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Table Tutorial</a><ul>
+<li><a class="reference internal" href="#establishing-the-model-definition">Establishing the Model Definition</a></li>
+<li><a class="reference internal" href="#basic-table-definition">Basic Table Definition</a></li>
+<li><a class="reference internal" href="#displaying-actual-data">Displaying Actual Data</a></li>
+<li><a class="reference internal" href="#removing-unwanted-fields">Removing unwanted fields</a></li>
+<li><a class="reference internal" href="#removing-the-actions-field">Removing the actions field</a></li>
+<li><a class="reference internal" href="#custom-field-data-display">Custom field data display</a></li>
+<li><a class="reference internal" href="#adding-a-new-field">Adding a new Field</a></li>
+<li><a class="reference internal" href="#changing-the-tablefiller-s-query">Changing the TableFiller&#8217;s query</a></li>
+<li><a class="reference internal" href="#changing-the-column-header-names">Changing the Column Header Names</a></li>
+<li><a class="reference internal" href="#adding-dojo-to-the-mix">Adding Dojo to the mix</a></li>
+<li><a class="reference internal" href="#changing-column-widths">Changing column widths</a></li>
+<li><a class="reference internal" href="#to-summarize">To Summarize</a></li>
 </ul>
 </li>
 </ul>
 
-            <h4>Previous topic</h4>
-            <p class="topless"><a href="../index.html"
-                                  title="previous chapter">Sprox</a></p>
-            <h4>Next topic</h4>
-            <p class="topless"><a href="form.html"
-                                  title="next chapter">Form Tutorial</a></p>
-            <h3>This Page</h3>
-            <ul class="this-page-menu">
-              <li><a href="../_sources/tutorials/table.txt"
-                     rel="nofollow">Show Source</a></li>
-            </ul>
-          <div id="searchbox" style="display: none">
-            <h3>Quick search</h3>
-              <form class="search" action="../search.html" method="get">
-                <input type="text" name="q" size="18" />
-                <input type="submit" value="Go" />
-                <input type="hidden" name="check_keywords" value="yes" />
-                <input type="hidden" name="area" value="default" />
-              </form>
-              <p class="searchtip" style="font-size: 90%">
-              Enter search terms or a module, class or function name.
-              </p>
-          </div>
-          <script type="text/javascript">$('#searchbox').show(0);</script>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../index.html"
+                        title="previous chapter">Sprox</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="form.html"
+                        title="next chapter">Form Tutorial</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/tutorials/table.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -497,7 +500,7 @@ tutorial, please:</p>
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../modindex.html" title="Global Module Index"
+          <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
           <a href="form.html" title="Form Tutorial"
@@ -506,19 +509,19 @@ tutorial, please:</p>
           <a href="../index.html" title="Sprox"
              >previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.7</b></a>
+  <a href="../index.html"><b>Sprox 0.6.11</b></a>
   </li>
 
   
-    <li> <b>/</b> <a href="">Table Tutorial</a></li>
+    <li> <b>/</b> <a href="#">Table Tutorial</a></li>
   
 
       </ul>
     </div>
 
     <div class="footer">
-      &copy; Copyright 2008, Christopher Perkins.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
+        &copy; Copyright 2008, Christopher Perkins.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.4.
     </div>
 
 <script type="text/javascript">

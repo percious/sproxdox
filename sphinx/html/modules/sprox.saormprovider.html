@@ -1,4 +1,6 @@
 
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -6,21 +8,22 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sprox.saormprovider &mdash; Sprox v0.6.7 documentation</title>
+    <title>sprox.saormprovider &mdash; Sprox v0.6.11 documentation</title>
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.7',
-        COLLAPSE_MODINDEX: false,
+        VERSION:     '0.6.11',
+        COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Sprox v0.6.7 documentation" href="../index.html" />
+    <link rel="top" title="Sprox v0.6.11 documentation" href="../index.html" />
     <link rel="next" title="sprox.iprovider" href="sprox.iprovider.html" />
     <link rel="prev" title="sprox.metadata" href="sprox.metadata.html" /> 
   </head>
@@ -32,8 +35,8 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../modindex.html" title="Global Module Index"
-             accesskey="M">modules</a> |</li>
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li class="right" >
           <a href="sprox.iprovider.html" title="sprox.iprovider"
              accesskey="N">next</a> |</li>
@@ -41,11 +44,11 @@
           <a href="sprox.metadata.html" title="sprox.metadata"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.7</b></a>
+  <a href="../index.html"><b>Sprox 0.6.11</b></a>
   </li>
 
   
-    <li> <b>/</b> <a href=""><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.saormprovider</span></tt></a></li>
+    <li> <b>/</b> <a href="#"><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.saormprovider</span></tt></a></li>
   
 
       </ul>
@@ -58,7 +61,7 @@
       <div class="body">
         
   <div class="section" id="module-sprox.saormprovider">
-<h1><tt class="xref docutils literal"><span class="pre">sprox.saormprovider</span></tt><a class="headerlink" href="#module-sprox.saormprovider" title="Permalink to this headline">¶</a></h1>
+<span id="sprox-saormprovider"></span><h1><a class="reference internal" href="#module-sprox.saormprovider" title="sprox.saormprovider"><tt class="xref py py-mod docutils literal"><span class="pre">sprox.saormprovider</span></tt></a><a class="headerlink" href="#module-sprox.saormprovider" title="Permalink to this headline">¶</a></h1>
 <p>saprovider Module</p>
 <p>this contains the class which allows dbsprockets to interface with sqlalchemy.</p>
 <p>Classes:
@@ -68,7 +71,7 @@ SAProvider                         sqlalchemy metadata/crud provider</p>
 None</p>
 <p>Functions:
 None</p>
-<p>Copyright (c) 2007 Christopher Perkins
+<p>Copyright (c) 2011 Christopher Perkins
 Original Version by Christopher Perkins 2007
 Released under MIT license.</p>
 <div class="section" id="classes">
@@ -76,7 +79,7 @@ Released under MIT license.</p>
 <dl class="class">
 <dt id="sprox.saormprovider.SAORMProvider">
 <em class="property">class </em><tt class="descclassname">sprox.saormprovider.</tt><tt class="descname">SAORMProvider</tt><big>(</big><em>hint=None</em>, <em>**hints</em><big>)</big><a class="headerlink" href="#sprox.saormprovider.SAORMProvider" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a title="sprox.iprovider.IProvider" class="reference external" href="sprox.iprovider.html#sprox.iprovider.IProvider"><tt class="xref docutils literal"><span class="pre">sprox.iprovider.IProvider</span></tt></a></p>
+<dd><p>Bases: <a class="reference internal" href="sprox.iprovider.html#sprox.iprovider.IProvider" title="sprox.iprovider.IProvider"><tt class="xref py py-class docutils literal"><span class="pre">sprox.iprovider.IProvider</span></tt></a></p>
 <dl class="method">
 <dt id="sprox.saormprovider.SAORMProvider.create">
 <tt class="descname">create</tt><big>(</big><em>entity</em>, <em>params</em><big>)</big><a class="headerlink" href="#sprox.saormprovider.SAORMProvider.create" title="Permalink to this definition">¶</a></dt>
@@ -200,7 +203,7 @@ Released under MIT license.</p>
 <dl class="class">
 <dt id="sprox.saormprovider.SAORMProviderError">
 <em class="property">class </em><tt class="descclassname">sprox.saormprovider.</tt><tt class="descname">SAORMProviderError</tt><a class="headerlink" href="#sprox.saormprovider.SAORMProviderError" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a title="(in Python v2.7)" class="reference external" href="http://docs.python.org/dev/library/exceptions.html#exceptions.Exception"><tt class="xref docutils literal"><span class="pre">exceptions.Exception</span></tt></a></p>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></tt></p>
 <dl class="attribute">
 <dt id="sprox.saormprovider.SAORMProviderError.args">
 <tt class="descname">args</tt><a class="headerlink" href="#sprox.saormprovider.SAORMProviderError.args" title="Permalink to this definition">¶</a></dt>
@@ -231,39 +234,39 @@ Released under MIT license.</p>
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/sprox_logo.png" alt="Logo"/>
             </a></p>
-            <h3><a href="../index.html">Table Of Contents</a></h3>
-            <ul>
-<li><a class="reference external" href=""><tt class="docutils literal"><span class="pre">sprox.saormprovider</span></tt></a><ul>
-<li><a class="reference external" href="#classes">Classes</a></li>
-<li><a class="reference external" href="#exceptions">Exceptions</a></li>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">sprox.saormprovider</span></tt></a><ul>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+<li><a class="reference internal" href="#exceptions">Exceptions</a></li>
 </ul>
 </li>
 </ul>
 
-            <h4>Previous topic</h4>
-            <p class="topless"><a href="sprox.metadata.html"
-                                  title="previous chapter"><tt class="docutils literal docutils literal"><span class="pre">sprox.metadata</span></tt></a></p>
-            <h4>Next topic</h4>
-            <p class="topless"><a href="sprox.iprovider.html"
-                                  title="next chapter"><tt class="docutils literal docutils literal"><span class="pre">sprox.iprovider</span></tt></a></p>
-            <h3>This Page</h3>
-            <ul class="this-page-menu">
-              <li><a href="../_sources/modules/sprox.saormprovider.txt"
-                     rel="nofollow">Show Source</a></li>
-            </ul>
-          <div id="searchbox" style="display: none">
-            <h3>Quick search</h3>
-              <form class="search" action="../search.html" method="get">
-                <input type="text" name="q" size="18" />
-                <input type="submit" value="Go" />
-                <input type="hidden" name="check_keywords" value="yes" />
-                <input type="hidden" name="area" value="default" />
-              </form>
-              <p class="searchtip" style="font-size: 90%">
-              Enter search terms or a module, class or function name.
-              </p>
-          </div>
-          <script type="text/javascript">$('#searchbox').show(0);</script>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="sprox.metadata.html"
+                        title="previous chapter"><tt class="docutils literal docutils literal"><span class="pre">sprox.metadata</span></tt></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="sprox.iprovider.html"
+                        title="next chapter"><tt class="docutils literal docutils literal"><span class="pre">sprox.iprovider</span></tt></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/modules/sprox.saormprovider.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -275,7 +278,7 @@ Released under MIT license.</p>
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../modindex.html" title="Global Module Index"
+          <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
           <a href="sprox.iprovider.html" title="sprox.iprovider"
@@ -284,19 +287,19 @@ Released under MIT license.</p>
           <a href="sprox.metadata.html" title="sprox.metadata"
              >previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.7</b></a>
+  <a href="../index.html"><b>Sprox 0.6.11</b></a>
   </li>
 
   
-    <li> <b>/</b> <a href=""><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.saormprovider</span></tt></a></li>
+    <li> <b>/</b> <a href="#"><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.saormprovider</span></tt></a></li>
   
 
       </ul>
     </div>
 
     <div class="footer">
-      &copy; Copyright 2008, Christopher Perkins.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
+        &copy; Copyright 2008, Christopher Perkins.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.4.
     </div>
 
 <script type="text/javascript">

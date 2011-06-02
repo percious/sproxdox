@@ -1,4 +1,6 @@
 
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -6,21 +8,22 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sprox.widgets &mdash; Sprox v0.6.7 documentation</title>
+    <title>sprox.widgets &mdash; Sprox v0.6.11 documentation</title>
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.7',
-        COLLAPSE_MODINDEX: false,
+        VERSION:     '0.6.11',
+        COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Sprox v0.6.7 documentation" href="../index.html" />
+    <link rel="top" title="Sprox v0.6.11 documentation" href="../index.html" />
     <link rel="next" title="sprox.util" href="sprox.util.html" />
     <link rel="prev" title="sprox.iprovider" href="sprox.iprovider.html" /> 
   </head>
@@ -32,8 +35,8 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../modindex.html" title="Global Module Index"
-             accesskey="M">modules</a> |</li>
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li class="right" >
           <a href="sprox.util.html" title="sprox.util"
              accesskey="N">next</a> |</li>
@@ -41,11 +44,11 @@
           <a href="sprox.iprovider.html" title="sprox.iprovider"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.7</b></a>
+  <a href="../index.html"><b>Sprox 0.6.11</b></a>
   </li>
 
   
-    <li> <b>/</b> <a href=""><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.widgets</span></tt></a></li>
+    <li> <b>/</b> <a href="#"><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.widgets</span></tt></a></li>
   
 
       </ul>
@@ -58,13 +61,13 @@
       <div class="body">
         
   <div class="section" id="module-sprox.widgets">
-<h1><tt class="xref docutils literal"><span class="pre">sprox.widgets</span></tt><a class="headerlink" href="#module-sprox.widgets" title="Permalink to this headline">¶</a></h1>
+<span id="sprox-widgets"></span><h1><a class="reference internal" href="#module-sprox.widgets" title="sprox.widgets"><tt class="xref py py-mod docutils literal"><span class="pre">sprox.widgets</span></tt></a><a class="headerlink" href="#module-sprox.widgets" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="classes">
 <h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="sprox.widgets.ContainerWidget">
 <em class="property">class </em><tt class="descclassname">sprox.widgets.</tt><tt class="descname">ContainerWidget</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.ContainerWidget" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref docutils literal"><span class="pre">tw.core.base.Widget</span></tt></p>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">tw.core.base.Widget</span></tt></p>
 <dl class="method">
 <dt id="sprox.widgets.ContainerWidget.adapt_value">
 <tt class="descname">adapt_value</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.ContainerWidget.adapt_value" title="Permalink to this definition">¶</a></dt>
@@ -82,8 +85,9 @@
 <dl class="method">
 <dt id="sprox.widgets.ContainerWidget.add_call">
 <tt class="descname">add_call</tt><big>(</big><em>call</em>, <em>location='bodybottom'</em><big>)</big><a class="headerlink" href="#sprox.widgets.ContainerWidget.add_call" title="Permalink to this definition">¶</a></dt>
-<dd>Adds a <tt class="xref docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
-widget is rendered.</dd></dl>
+<dd><p>Adds a <tt class="xref py py-func docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
+widget is rendered.</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.ContainerWidget.children_deep">
@@ -101,7 +105,7 @@ widget is rendered.</dd></dl>
 <dd><p>Renders a widget and adapts the output. This method <strong>must</strong> be used
 to display child widgets inside their parent&#8217;s template so output is
 adapted.</p>
-<p>Unlike <tt class="xref docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
+<p>Unlike <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
 returns adapted output compatible with the template the widget is being
 rendered on. For example, this is needed so Genshi doesn&#8217;t autoescape
 string output from mako and to serialize Genshi output on the other way
@@ -111,14 +115,16 @@ around.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.ContainerWidget.displays_on">
 <tt class="descname">displays_on</tt><a class="headerlink" href="#sprox.widgets.ContainerWidget.displays_on" title="Permalink to this definition">¶</a></dt>
-<dd>Where the widget is being displayed on</dd></dl>
+<dd><p>Where the widget is being displayed on</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.ContainerWidget.get_default">
 <tt class="descname">get_default</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.ContainerWidget.get_default" title="Permalink to this definition">¶</a></dt>
-<dd>Returns the default value for the widget. If the default is a funtion
+<dd><p>Returns the default value for the widget. If the default is a funtion
 that it can be called without arguments it will be called on each
-render to retrieve a value</dd></dl>
+render to retrieve a value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.ContainerWidget.id">
@@ -165,7 +171,8 @@ Example:</p>
 <dl class="attribute">
 <dt id="sprox.widgets.ContainerWidget.is_root">
 <tt class="descname">is_root</tt><a class="headerlink" href="#sprox.widgets.ContainerWidget.is_root" title="Permalink to this definition">¶</a></dt>
-<dd>True if the widget doesn&#8217;t have a parent</dd></dl>
+<dd><p>True if the widget doesn&#8217;t have a parent</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.ContainerWidget.key">
@@ -190,33 +197,37 @@ displaying.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.ContainerWidget.path">
 <tt class="descname">path</tt><a class="headerlink" href="#sprox.widgets.ContainerWidget.path" title="Permalink to this definition">¶</a></dt>
-<dd>Iterates a walk from this widget to the root of the tree</dd></dl>
+<dd><p>Iterates a walk from this widget to the root of the tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.ContainerWidget.post_init">
 <tt class="descname">post_init</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.ContainerWidget.post_init" title="Permalink to this definition">¶</a></dt>
-<dd>This method is called for all <tt class="xref docutils literal"><span class="pre">tw.api.Widget</span></tt> base classes to
+<dd><p>This method is called for all <tt class="xref py py-class docutils literal"><span class="pre">tw.api.Widget</span></tt> base classes to
 perform final setup after the widget is initialized but before it is
-locked.</dd></dl>
+locked.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.ContainerWidget.prepare_dict">
 <tt class="descname">prepare_dict</tt><big>(</big><em>value</em>, <em>d</em>, <em>adapt=True</em><big>)</big><a class="headerlink" href="#sprox.widgets.ContainerWidget.prepare_dict" title="Permalink to this definition">¶</a></dt>
-<dd>Prepares the all kw arguments sent to <cite>display</cite> or <cite>render</cite> before
-passing the kw argument&#8217;s dict to <cite>update_params</cite>.</dd></dl>
+<dd><p>Prepares the all kw arguments sent to <cite>display</cite> or <cite>render</cite> before
+passing the kw argument&#8217;s dict to <cite>update_params</cite>.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.ContainerWidget.register_resources">
 <tt class="descname">register_resources</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.ContainerWidget.register_resources" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register the resources required by this Widget with
-<tt class="xref docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
-<p>This method is called whenever a <tt class="xref docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
+<tt class="xref py py-attr docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
+<p>This method is called whenever a <tt class="xref py py-class docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.ContainerWidget.render">
 <tt class="descname">render</tt><big>(</big><em>value=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.ContainerWidget.render" title="Permalink to this definition">¶</a></dt>
-<dd>Renders a widget as an unicode string.</dd></dl>
+<dd><p>Renders a widget as an unicode string.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.ContainerWidget.retrieve_css">
@@ -236,7 +247,8 @@ passing the kw argument&#8217;s dict to <cite>update_params</cite>.</dd></dl>
 <dl class="attribute">
 <dt id="sprox.widgets.ContainerWidget.root">
 <tt class="descname">root</tt><a class="headerlink" href="#sprox.widgets.ContainerWidget.root" title="Permalink to this definition">¶</a></dt>
-<dd>The root of this widget tree</dd></dl>
+<dd><p>The root of this widget tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.ContainerWidget.update_params">
@@ -303,7 +315,7 @@ applying a filter on them.</p>
 <dl class="class">
 <dt id="sprox.widgets.SproxCalendarDatePicker">
 <em class="property">class </em><tt class="descclassname">sprox.widgets.</tt><tt class="descname">SproxCalendarDatePicker</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref docutils literal"><span class="pre">tw.forms.calendars.CalendarDatePicker</span></tt></p>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">tw.forms.calendars.CalendarDatePicker</span></tt></p>
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDatePicker.adapt_value">
 <tt class="descname">adapt_value</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.adapt_value" title="Permalink to this definition">¶</a></dt>
@@ -312,14 +324,16 @@ applying a filter on them.</p>
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDatePicker.add_call">
 <tt class="descname">add_call</tt><big>(</big><em>call</em>, <em>location='bodybottom'</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.add_call" title="Permalink to this definition">¶</a></dt>
-<dd>Adds a <tt class="xref docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
-widget is rendered.</dd></dl>
+<dd><p>Adds a <tt class="xref py py-func docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
+widget is rendered.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDatePicker.adjust_value">
 <tt class="descname">adjust_value</tt><big>(</big><em>value</em>, <em>validator=None</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.adjust_value" title="Permalink to this definition">¶</a></dt>
-<dd>Adjusts the python value sent to <tt class="xref docutils literal"><span class="pre">InputWidget.display()</span></tt> with
-the validator so it can be rendered in the template.</dd></dl>
+<dd><p>Adjusts the python value sent to <tt class="xref py py-meth docutils literal"><span class="pre">InputWidget.display()</span></tt> with
+the validator so it can be rendered in the template.</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDatePicker.children_deep">
@@ -337,7 +351,7 @@ the validator so it can be rendered in the template.</dd></dl>
 <dd><p>Renders a widget and adapts the output. This method <strong>must</strong> be used
 to display child widgets inside their parent&#8217;s template so output is
 adapted.</p>
-<p>Unlike <tt class="xref docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
+<p>Unlike <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
 returns adapted output compatible with the template the widget is being
 rendered on. For example, this is needed so Genshi doesn&#8217;t autoescape
 string output from mako and to serialize Genshi output on the other way
@@ -347,32 +361,37 @@ around.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDatePicker.displays_on">
 <tt class="descname">displays_on</tt><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.displays_on" title="Permalink to this definition">¶</a></dt>
-<dd>Where the widget is being displayed on</dd></dl>
+<dd><p>Where the widget is being displayed on</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDatePicker.error_at_request">
 <tt class="descname">error_at_request</tt><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.error_at_request" title="Permalink to this definition">¶</a></dt>
-<dd>Validation error for current request.</dd></dl>
+<dd><p>Validation error for current request.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDatePicker.generate_schema">
 <tt class="descname">generate_schema</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.generate_schema" title="Permalink to this definition">¶</a></dt>
-<dd>If the widget has children this method generates a <cite>Schema</cite> to validate
-including the validators from all children once these are all known.</dd></dl>
+<dd><p>If the widget has children this method generates a <cite>Schema</cite> to validate
+including the validators from all children once these are all known.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDatePicker.get_calendar_lang_file_link">
 <tt class="descname">get_calendar_lang_file_link</tt><big>(</big><em>lang</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.get_calendar_lang_file_link" title="Permalink to this definition">¶</a></dt>
-<dd>Returns a CalendarLangFileLink containing a list of name
+<dd><p>Returns a CalendarLangFileLink containing a list of name
 patterns to try in turn to find the correct calendar locale
-file to use.</dd></dl>
+file to use.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDatePicker.get_default">
 <tt class="descname">get_default</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.get_default" title="Permalink to this definition">¶</a></dt>
-<dd>Returns the default value for the widget. If the default is a funtion
+<dd><p>Returns the default value for the widget. If the default is a funtion
 that it can be called without arguments it will be called on each
-render to retrieve a value</dd></dl>
+render to retrieve a value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDatePicker.id">
@@ -424,7 +443,8 @@ Example:</p>
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDatePicker.is_root">
 <tt class="descname">is_root</tt><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.is_root" title="Permalink to this definition">¶</a></dt>
-<dd>True if the widget doesn&#8217;t have a parent</dd></dl>
+<dd><p>True if the widget doesn&#8217;t have a parent</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDatePicker.key">
@@ -459,18 +479,21 @@ displaying.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDatePicker.path">
 <tt class="descname">path</tt><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.path" title="Permalink to this definition">¶</a></dt>
-<dd>Iterates a walk from this widget to the root of the tree</dd></dl>
+<dd><p>Iterates a walk from this widget to the root of the tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDatePicker.post_init">
 <tt class="descname">post_init</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.post_init" title="Permalink to this definition">¶</a></dt>
-<dd>Takes care of post-initialization of InputWidgets.</dd></dl>
+<dd><p>Takes care of post-initialization of InputWidgets.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDatePicker.prepare_dict">
 <tt class="descname">prepare_dict</tt><big>(</big><em>value</em>, <em>kw</em>, <em>adapt=True</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.prepare_dict" title="Permalink to this definition">¶</a></dt>
-<dd>Prepares the dict sent to the template with functions to access the
-children&#8217;s errors if any.</dd></dl>
+<dd><p>Prepares the dict sent to the template with functions to access the
+children&#8217;s errors if any.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDatePicker.propagate_errors">
@@ -481,14 +504,15 @@ children&#8217;s errors if any.</dd></dl>
 <dt id="sprox.widgets.SproxCalendarDatePicker.register_resources">
 <tt class="descname">register_resources</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.register_resources" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register the resources required by this Widget with
-<tt class="xref docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
-<p>This method is called whenever a <tt class="xref docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
+<tt class="xref py py-attr docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
+<p>This method is called whenever a <tt class="xref py py-class docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDatePicker.render">
 <tt class="descname">render</tt><big>(</big><em>value=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.render" title="Permalink to this definition">¶</a></dt>
-<dd>Renders a widget as an unicode string.</dd></dl>
+<dd><p>Renders a widget as an unicode string.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDatePicker.retrieve_css">
@@ -508,13 +532,15 @@ children&#8217;s errors if any.</dd></dl>
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDatePicker.root">
 <tt class="descname">root</tt><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.root" title="Permalink to this definition">¶</a></dt>
-<dd>The root of this widget tree</dd></dl>
+<dd><p>The root of this widget tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDatePicker.safe_validate">
 <tt class="descname">safe_validate</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.safe_validate" title="Permalink to this definition">¶</a></dt>
-<dd>Tries to coerce the value to python using the validator. If
-validation fails the original value will be returned unmodified.</dd></dl>
+<dd><p>Tries to coerce the value to python using the validator. If
+validation fails the original value will be returned unmodified.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDatePicker.update_attrs">
@@ -553,7 +579,8 @@ be passed explicitly to <tt class="docutils literal"><span class="pre">display</
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDatePicker.value_at_request">
 <tt class="descname">value_at_request</tt><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.value_at_request" title="Permalink to this definition">¶</a></dt>
-<dd>Value being validated in current request.</dd></dl>
+<dd><p>Value being validated in current request.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDatePicker.walk">
@@ -583,7 +610,7 @@ applying a filter on them.</p>
 <dl class="class">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker">
 <em class="property">class </em><tt class="descclassname">sprox.widgets.</tt><tt class="descname">SproxCalendarDateTimePicker</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref docutils literal"><span class="pre">tw.forms.calendars.CalendarDateTimePicker</span></tt></p>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">tw.forms.calendars.CalendarDateTimePicker</span></tt></p>
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.adapt_value">
 <tt class="descname">adapt_value</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.adapt_value" title="Permalink to this definition">¶</a></dt>
@@ -592,14 +619,16 @@ applying a filter on them.</p>
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.add_call">
 <tt class="descname">add_call</tt><big>(</big><em>call</em>, <em>location='bodybottom'</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.add_call" title="Permalink to this definition">¶</a></dt>
-<dd>Adds a <tt class="xref docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
-widget is rendered.</dd></dl>
+<dd><p>Adds a <tt class="xref py py-func docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
+widget is rendered.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.adjust_value">
 <tt class="descname">adjust_value</tt><big>(</big><em>value</em>, <em>validator=None</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.adjust_value" title="Permalink to this definition">¶</a></dt>
-<dd>Adjusts the python value sent to <tt class="xref docutils literal"><span class="pre">InputWidget.display()</span></tt> with
-the validator so it can be rendered in the template.</dd></dl>
+<dd><p>Adjusts the python value sent to <tt class="xref py py-meth docutils literal"><span class="pre">InputWidget.display()</span></tt> with
+the validator so it can be rendered in the template.</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.children_deep">
@@ -617,7 +646,7 @@ the validator so it can be rendered in the template.</dd></dl>
 <dd><p>Renders a widget and adapts the output. This method <strong>must</strong> be used
 to display child widgets inside their parent&#8217;s template so output is
 adapted.</p>
-<p>Unlike <tt class="xref docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
+<p>Unlike <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
 returns adapted output compatible with the template the widget is being
 rendered on. For example, this is needed so Genshi doesn&#8217;t autoescape
 string output from mako and to serialize Genshi output on the other way
@@ -627,32 +656,37 @@ around.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.displays_on">
 <tt class="descname">displays_on</tt><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.displays_on" title="Permalink to this definition">¶</a></dt>
-<dd>Where the widget is being displayed on</dd></dl>
+<dd><p>Where the widget is being displayed on</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.error_at_request">
 <tt class="descname">error_at_request</tt><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.error_at_request" title="Permalink to this definition">¶</a></dt>
-<dd>Validation error for current request.</dd></dl>
+<dd><p>Validation error for current request.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.generate_schema">
 <tt class="descname">generate_schema</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.generate_schema" title="Permalink to this definition">¶</a></dt>
-<dd>If the widget has children this method generates a <cite>Schema</cite> to validate
-including the validators from all children once these are all known.</dd></dl>
+<dd><p>If the widget has children this method generates a <cite>Schema</cite> to validate
+including the validators from all children once these are all known.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.get_calendar_lang_file_link">
 <tt class="descname">get_calendar_lang_file_link</tt><big>(</big><em>lang</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.get_calendar_lang_file_link" title="Permalink to this definition">¶</a></dt>
-<dd>Returns a CalendarLangFileLink containing a list of name
+<dd><p>Returns a CalendarLangFileLink containing a list of name
 patterns to try in turn to find the correct calendar locale
-file to use.</dd></dl>
+file to use.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.get_default">
 <tt class="descname">get_default</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.get_default" title="Permalink to this definition">¶</a></dt>
-<dd>Returns the default value for the widget. If the default is a funtion
+<dd><p>Returns the default value for the widget. If the default is a funtion
 that it can be called without arguments it will be called on each
-render to retrieve a value</dd></dl>
+render to retrieve a value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.id">
@@ -704,7 +738,8 @@ Example:</p>
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.is_root">
 <tt class="descname">is_root</tt><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.is_root" title="Permalink to this definition">¶</a></dt>
-<dd>True if the widget doesn&#8217;t have a parent</dd></dl>
+<dd><p>True if the widget doesn&#8217;t have a parent</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.key">
@@ -739,18 +774,21 @@ displaying.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.path">
 <tt class="descname">path</tt><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.path" title="Permalink to this definition">¶</a></dt>
-<dd>Iterates a walk from this widget to the root of the tree</dd></dl>
+<dd><p>Iterates a walk from this widget to the root of the tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.post_init">
 <tt class="descname">post_init</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.post_init" title="Permalink to this definition">¶</a></dt>
-<dd>Takes care of post-initialization of InputWidgets.</dd></dl>
+<dd><p>Takes care of post-initialization of InputWidgets.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.prepare_dict">
 <tt class="descname">prepare_dict</tt><big>(</big><em>value</em>, <em>kw</em>, <em>adapt=True</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.prepare_dict" title="Permalink to this definition">¶</a></dt>
-<dd>Prepares the dict sent to the template with functions to access the
-children&#8217;s errors if any.</dd></dl>
+<dd><p>Prepares the dict sent to the template with functions to access the
+children&#8217;s errors if any.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.propagate_errors">
@@ -761,14 +799,15 @@ children&#8217;s errors if any.</dd></dl>
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.register_resources">
 <tt class="descname">register_resources</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.register_resources" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register the resources required by this Widget with
-<tt class="xref docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
-<p>This method is called whenever a <tt class="xref docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
+<tt class="xref py py-attr docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
+<p>This method is called whenever a <tt class="xref py py-class docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.render">
 <tt class="descname">render</tt><big>(</big><em>value=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.render" title="Permalink to this definition">¶</a></dt>
-<dd>Renders a widget as an unicode string.</dd></dl>
+<dd><p>Renders a widget as an unicode string.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.retrieve_css">
@@ -788,13 +827,15 @@ children&#8217;s errors if any.</dd></dl>
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.root">
 <tt class="descname">root</tt><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.root" title="Permalink to this definition">¶</a></dt>
-<dd>The root of this widget tree</dd></dl>
+<dd><p>The root of this widget tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.safe_validate">
 <tt class="descname">safe_validate</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.safe_validate" title="Permalink to this definition">¶</a></dt>
-<dd>Tries to coerce the value to python using the validator. If
-validation fails the original value will be returned unmodified.</dd></dl>
+<dd><p>Tries to coerce the value to python using the validator. If
+validation fails the original value will be returned unmodified.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.update_attrs">
@@ -833,7 +874,8 @@ be passed explicitly to <tt class="docutils literal"><span class="pre">display</
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.value_at_request">
 <tt class="descname">value_at_request</tt><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.value_at_request" title="Permalink to this definition">¶</a></dt>
-<dd>Value being validated in current request.</dd></dl>
+<dd><p>Value being validated in current request.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.walk">
@@ -863,7 +905,7 @@ applying a filter on them.</p>
 <dl class="class">
 <dt id="sprox.widgets.SproxCheckBox">
 <em class="property">class </em><tt class="descclassname">sprox.widgets.</tt><tt class="descname">SproxCheckBox</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCheckBox" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref docutils literal"><span class="pre">tw.forms.fields.InputField</span></tt></p>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">tw.forms.fields.InputField</span></tt></p>
 <dl class="method">
 <dt id="sprox.widgets.SproxCheckBox.adapt_value">
 <tt class="descname">adapt_value</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCheckBox.adapt_value" title="Permalink to this definition">¶</a></dt>
@@ -872,14 +914,16 @@ applying a filter on them.</p>
 <dl class="method">
 <dt id="sprox.widgets.SproxCheckBox.add_call">
 <tt class="descname">add_call</tt><big>(</big><em>call</em>, <em>location='bodybottom'</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCheckBox.add_call" title="Permalink to this definition">¶</a></dt>
-<dd>Adds a <tt class="xref docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
-widget is rendered.</dd></dl>
+<dd><p>Adds a <tt class="xref py py-func docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
+widget is rendered.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCheckBox.adjust_value">
 <tt class="descname">adjust_value</tt><big>(</big><em>value</em>, <em>validator=None</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCheckBox.adjust_value" title="Permalink to this definition">¶</a></dt>
-<dd>Adjusts the python value sent to <tt class="xref docutils literal"><span class="pre">InputWidget.display()</span></tt> with
-the validator so it can be rendered in the template.</dd></dl>
+<dd><p>Adjusts the python value sent to <tt class="xref py py-meth docutils literal"><span class="pre">InputWidget.display()</span></tt> with
+the validator so it can be rendered in the template.</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCheckBox.children_deep">
@@ -897,7 +941,7 @@ the validator so it can be rendered in the template.</dd></dl>
 <dd><p>Renders a widget and adapts the output. This method <strong>must</strong> be used
 to display child widgets inside their parent&#8217;s template so output is
 adapted.</p>
-<p>Unlike <tt class="xref docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
+<p>Unlike <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
 returns adapted output compatible with the template the widget is being
 rendered on. For example, this is needed so Genshi doesn&#8217;t autoescape
 string output from mako and to serialize Genshi output on the other way
@@ -907,25 +951,29 @@ around.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCheckBox.displays_on">
 <tt class="descname">displays_on</tt><a class="headerlink" href="#sprox.widgets.SproxCheckBox.displays_on" title="Permalink to this definition">¶</a></dt>
-<dd>Where the widget is being displayed on</dd></dl>
+<dd><p>Where the widget is being displayed on</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCheckBox.error_at_request">
 <tt class="descname">error_at_request</tt><a class="headerlink" href="#sprox.widgets.SproxCheckBox.error_at_request" title="Permalink to this definition">¶</a></dt>
-<dd>Validation error for current request.</dd></dl>
+<dd><p>Validation error for current request.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCheckBox.generate_schema">
 <tt class="descname">generate_schema</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCheckBox.generate_schema" title="Permalink to this definition">¶</a></dt>
-<dd>If the widget has children this method generates a <cite>Schema</cite> to validate
-including the validators from all children once these are all known.</dd></dl>
+<dd><p>If the widget has children this method generates a <cite>Schema</cite> to validate
+including the validators from all children once these are all known.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCheckBox.get_default">
 <tt class="descname">get_default</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCheckBox.get_default" title="Permalink to this definition">¶</a></dt>
-<dd>Returns the default value for the widget. If the default is a funtion
+<dd><p>Returns the default value for the widget. If the default is a funtion
 that it can be called without arguments it will be called on each
-render to retrieve a value</dd></dl>
+render to retrieve a value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCheckBox.id">
@@ -977,7 +1025,8 @@ Example:</p>
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCheckBox.is_root">
 <tt class="descname">is_root</tt><a class="headerlink" href="#sprox.widgets.SproxCheckBox.is_root" title="Permalink to this definition">¶</a></dt>
-<dd>True if the widget doesn&#8217;t have a parent</dd></dl>
+<dd><p>True if the widget doesn&#8217;t have a parent</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCheckBox.key">
@@ -1012,18 +1061,21 @@ displaying.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCheckBox.path">
 <tt class="descname">path</tt><a class="headerlink" href="#sprox.widgets.SproxCheckBox.path" title="Permalink to this definition">¶</a></dt>
-<dd>Iterates a walk from this widget to the root of the tree</dd></dl>
+<dd><p>Iterates a walk from this widget to the root of the tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCheckBox.post_init">
 <tt class="descname">post_init</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCheckBox.post_init" title="Permalink to this definition">¶</a></dt>
-<dd>Takes care of post-initialization of InputWidgets.</dd></dl>
+<dd><p>Takes care of post-initialization of InputWidgets.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCheckBox.prepare_dict">
 <tt class="descname">prepare_dict</tt><big>(</big><em>value</em>, <em>kw</em>, <em>adapt=True</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCheckBox.prepare_dict" title="Permalink to this definition">¶</a></dt>
-<dd>Prepares the dict sent to the template with functions to access the
-children&#8217;s errors if any.</dd></dl>
+<dd><p>Prepares the dict sent to the template with functions to access the
+children&#8217;s errors if any.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCheckBox.propagate_errors">
@@ -1034,14 +1086,15 @@ children&#8217;s errors if any.</dd></dl>
 <dt id="sprox.widgets.SproxCheckBox.register_resources">
 <tt class="descname">register_resources</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCheckBox.register_resources" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register the resources required by this Widget with
-<tt class="xref docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
-<p>This method is called whenever a <tt class="xref docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
+<tt class="xref py py-attr docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
+<p>This method is called whenever a <tt class="xref py py-class docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCheckBox.render">
 <tt class="descname">render</tt><big>(</big><em>value=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCheckBox.render" title="Permalink to this definition">¶</a></dt>
-<dd>Renders a widget as an unicode string.</dd></dl>
+<dd><p>Renders a widget as an unicode string.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCheckBox.retrieve_css">
@@ -1061,13 +1114,15 @@ children&#8217;s errors if any.</dd></dl>
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCheckBox.root">
 <tt class="descname">root</tt><a class="headerlink" href="#sprox.widgets.SproxCheckBox.root" title="Permalink to this definition">¶</a></dt>
-<dd>The root of this widget tree</dd></dl>
+<dd><p>The root of this widget tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCheckBox.safe_validate">
 <tt class="descname">safe_validate</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCheckBox.safe_validate" title="Permalink to this definition">¶</a></dt>
-<dd>Tries to coerce the value to python using the validator. If
-validation fails the original value will be returned unmodified.</dd></dl>
+<dd><p>Tries to coerce the value to python using the validator. If
+validation fails the original value will be returned unmodified.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCheckBox.update_attrs">
@@ -1106,12 +1161,14 @@ be passed explicitly to <tt class="docutils literal"><span class="pre">display</
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCheckBox.validator">
 <tt class="descname">validator</tt><a class="headerlink" href="#sprox.widgets.SproxCheckBox.validator" title="Permalink to this definition">¶</a></dt>
-<dd>alias of <tt class="xref docutils literal"><span class="pre">StringBool</span></tt></dd></dl>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">StringBool</span></tt></p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCheckBox.value_at_request">
 <tt class="descname">value_at_request</tt><a class="headerlink" href="#sprox.widgets.SproxCheckBox.value_at_request" title="Permalink to this definition">¶</a></dt>
-<dd>Value being validated in current request.</dd></dl>
+<dd><p>Value being validated in current request.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCheckBox.walk">
@@ -1141,7 +1198,7 @@ applying a filter on them.</p>
 <dl class="class">
 <dt id="sprox.widgets.SproxDataGrid">
 <em class="property">class </em><tt class="descclassname">sprox.widgets.</tt><tt class="descname">SproxDataGrid</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxDataGrid" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref docutils literal"><span class="pre">tw.forms.datagrid.DataGrid</span></tt></p>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">tw.forms.datagrid.DataGrid</span></tt></p>
 <dl class="method">
 <dt id="sprox.widgets.SproxDataGrid.adapt_value">
 <tt class="descname">adapt_value</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxDataGrid.adapt_value" title="Permalink to this definition">¶</a></dt>
@@ -1159,8 +1216,9 @@ applying a filter on them.</p>
 <dl class="method">
 <dt id="sprox.widgets.SproxDataGrid.add_call">
 <tt class="descname">add_call</tt><big>(</big><em>call</em>, <em>location='bodybottom'</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxDataGrid.add_call" title="Permalink to this definition">¶</a></dt>
-<dd>Adds a <tt class="xref docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
-widget is rendered.</dd></dl>
+<dd><p>Adds a <tt class="xref py py-func docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
+widget is rendered.</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxDataGrid.children_deep">
@@ -1178,7 +1236,7 @@ widget is rendered.</dd></dl>
 <dd><p>Renders a widget and adapts the output. This method <strong>must</strong> be used
 to display child widgets inside their parent&#8217;s template so output is
 adapted.</p>
-<p>Unlike <tt class="xref docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
+<p>Unlike <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
 returns adapted output compatible with the template the widget is being
 rendered on. For example, this is needed so Genshi doesn&#8217;t autoescape
 string output from mako and to serialize Genshi output on the other way
@@ -1188,7 +1246,8 @@ around.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.SproxDataGrid.displays_on">
 <tt class="descname">displays_on</tt><a class="headerlink" href="#sprox.widgets.SproxDataGrid.displays_on" title="Permalink to this definition">¶</a></dt>
-<dd>Where the widget is being displayed on</dd></dl>
+<dd><p>Where the widget is being displayed on</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxDataGrid.get_column">
@@ -1200,14 +1259,16 @@ around.</p>
 <dl class="method">
 <dt id="sprox.widgets.SproxDataGrid.get_default">
 <tt class="descname">get_default</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.SproxDataGrid.get_default" title="Permalink to this definition">¶</a></dt>
-<dd>Returns the default value for the widget. If the default is a funtion
+<dd><p>Returns the default value for the widget. If the default is a funtion
 that it can be called without arguments it will be called on each
-render to retrieve a value</dd></dl>
+render to retrieve a value</p>
+</dd></dl>
 
 <dl class="staticmethod">
 <dt id="sprox.widgets.SproxDataGrid.get_field_getter">
 <em class="property">static </em><tt class="descname">get_field_getter</tt><big>(</big><em>columns</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxDataGrid.get_field_getter" title="Permalink to this definition">¶</a></dt>
-<dd>Return a function to access the fields of table by row, col.</dd></dl>
+<dd><p>Return a function to access the fields of table by row, col.</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxDataGrid.id">
@@ -1254,7 +1315,8 @@ Example:</p>
 <dl class="attribute">
 <dt id="sprox.widgets.SproxDataGrid.is_root">
 <tt class="descname">is_root</tt><a class="headerlink" href="#sprox.widgets.SproxDataGrid.is_root" title="Permalink to this definition">¶</a></dt>
-<dd>True if the widget doesn&#8217;t have a parent</dd></dl>
+<dd><p>True if the widget doesn&#8217;t have a parent</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxDataGrid.key">
@@ -1279,33 +1341,37 @@ displaying.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.SproxDataGrid.path">
 <tt class="descname">path</tt><a class="headerlink" href="#sprox.widgets.SproxDataGrid.path" title="Permalink to this definition">¶</a></dt>
-<dd>Iterates a walk from this widget to the root of the tree</dd></dl>
+<dd><p>Iterates a walk from this widget to the root of the tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxDataGrid.post_init">
 <tt class="descname">post_init</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxDataGrid.post_init" title="Permalink to this definition">¶</a></dt>
-<dd>This method is called for all <tt class="xref docutils literal"><span class="pre">tw.api.Widget</span></tt> base classes to
+<dd><p>This method is called for all <tt class="xref py py-class docutils literal"><span class="pre">tw.api.Widget</span></tt> base classes to
 perform final setup after the widget is initialized but before it is
-locked.</dd></dl>
+locked.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxDataGrid.prepare_dict">
 <tt class="descname">prepare_dict</tt><big>(</big><em>value</em>, <em>d</em>, <em>adapt=True</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxDataGrid.prepare_dict" title="Permalink to this definition">¶</a></dt>
-<dd>Prepares the all kw arguments sent to <cite>display</cite> or <cite>render</cite> before
-passing the kw argument&#8217;s dict to <cite>update_params</cite>.</dd></dl>
+<dd><p>Prepares the all kw arguments sent to <cite>display</cite> or <cite>render</cite> before
+passing the kw argument&#8217;s dict to <cite>update_params</cite>.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxDataGrid.register_resources">
 <tt class="descname">register_resources</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.SproxDataGrid.register_resources" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register the resources required by this Widget with
-<tt class="xref docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
-<p>This method is called whenever a <tt class="xref docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
+<tt class="xref py py-attr docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
+<p>This method is called whenever a <tt class="xref py py-class docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxDataGrid.render">
 <tt class="descname">render</tt><big>(</big><em>value=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxDataGrid.render" title="Permalink to this definition">¶</a></dt>
-<dd>Renders a widget as an unicode string.</dd></dl>
+<dd><p>Renders a widget as an unicode string.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxDataGrid.retrieve_css">
@@ -1325,7 +1391,8 @@ passing the kw argument&#8217;s dict to <cite>update_params</cite>.</dd></dl>
 <dl class="attribute">
 <dt id="sprox.widgets.SproxDataGrid.root">
 <tt class="descname">root</tt><a class="headerlink" href="#sprox.widgets.SproxDataGrid.root" title="Permalink to this definition">¶</a></dt>
-<dd>The root of this widget tree</dd></dl>
+<dd><p>The root of this widget tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxDataGrid.update_params">
@@ -1360,7 +1427,7 @@ applying a filter on them.</p>
 <dl class="class">
 <dt id="sprox.widgets.SproxTableForm">
 <em class="property">class </em><tt class="descclassname">sprox.widgets.</tt><tt class="descname">SproxTableForm</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxTableForm" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref docutils literal"><span class="pre">tw.forms.fields.TableForm</span></tt></p>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">tw.forms.fields.TableForm</span></tt></p>
 <dl class="method">
 <dt id="sprox.widgets.SproxTableForm.adapt_value">
 <tt class="descname">adapt_value</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxTableForm.adapt_value" title="Permalink to this definition">¶</a></dt>
@@ -1369,14 +1436,16 @@ applying a filter on them.</p>
 <dl class="method">
 <dt id="sprox.widgets.SproxTableForm.add_call">
 <tt class="descname">add_call</tt><big>(</big><em>call</em>, <em>location='bodybottom'</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxTableForm.add_call" title="Permalink to this definition">¶</a></dt>
-<dd>Adds a <tt class="xref docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
-widget is rendered.</dd></dl>
+<dd><p>Adds a <tt class="xref py py-func docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
+widget is rendered.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxTableForm.adjust_value">
 <tt class="descname">adjust_value</tt><big>(</big><em>value</em>, <em>validator=None</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxTableForm.adjust_value" title="Permalink to this definition">¶</a></dt>
-<dd>Adjusts the python value sent to <tt class="xref docutils literal"><span class="pre">InputWidget.display()</span></tt> with
-the validator so it can be rendered in the template.</dd></dl>
+<dd><p>Adjusts the python value sent to <tt class="xref py py-meth docutils literal"><span class="pre">InputWidget.display()</span></tt> with
+the validator so it can be rendered in the template.</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxTableForm.children_deep">
@@ -1394,7 +1463,7 @@ the validator so it can be rendered in the template.</dd></dl>
 <dd><p>Renders a widget and adapts the output. This method <strong>must</strong> be used
 to display child widgets inside their parent&#8217;s template so output is
 adapted.</p>
-<p>Unlike <tt class="xref docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
+<p>Unlike <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
 returns adapted output compatible with the template the widget is being
 rendered on. For example, this is needed so Genshi doesn&#8217;t autoescape
 string output from mako and to serialize Genshi output on the other way
@@ -1404,25 +1473,29 @@ around.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.SproxTableForm.displays_on">
 <tt class="descname">displays_on</tt><a class="headerlink" href="#sprox.widgets.SproxTableForm.displays_on" title="Permalink to this definition">¶</a></dt>
-<dd>Where the widget is being displayed on</dd></dl>
+<dd><p>Where the widget is being displayed on</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxTableForm.error_at_request">
 <tt class="descname">error_at_request</tt><a class="headerlink" href="#sprox.widgets.SproxTableForm.error_at_request" title="Permalink to this definition">¶</a></dt>
-<dd>Validation error for current request.</dd></dl>
+<dd><p>Validation error for current request.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxTableForm.generate_schema">
 <tt class="descname">generate_schema</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.SproxTableForm.generate_schema" title="Permalink to this definition">¶</a></dt>
-<dd>If the widget has children this method generates a <cite>Schema</cite> to validate
-including the validators from all children once these are all known.</dd></dl>
+<dd><p>If the widget has children this method generates a <cite>Schema</cite> to validate
+including the validators from all children once these are all known.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxTableForm.get_default">
 <tt class="descname">get_default</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.SproxTableForm.get_default" title="Permalink to this definition">¶</a></dt>
-<dd>Returns the default value for the widget. If the default is a funtion
+<dd><p>Returns the default value for the widget. If the default is a funtion
 that it can be called without arguments it will be called on each
-render to retrieve a value</dd></dl>
+render to retrieve a value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxTableForm.id">
@@ -1484,7 +1557,8 @@ Example:</p>
 <dl class="attribute">
 <dt id="sprox.widgets.SproxTableForm.is_root">
 <tt class="descname">is_root</tt><a class="headerlink" href="#sprox.widgets.SproxTableForm.is_root" title="Permalink to this definition">¶</a></dt>
-<dd>True if the widget doesn&#8217;t have a parent</dd></dl>
+<dd><p>True if the widget doesn&#8217;t have a parent</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxTableForm.key">
@@ -1519,7 +1593,8 @@ displaying.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.SproxTableForm.path">
 <tt class="descname">path</tt><a class="headerlink" href="#sprox.widgets.SproxTableForm.path" title="Permalink to this definition">¶</a></dt>
-<dd>Iterates a walk from this widget to the root of the tree</dd></dl>
+<dd><p>Iterates a walk from this widget to the root of the tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxTableForm.post_init">
@@ -1529,8 +1604,9 @@ displaying.</p>
 <dl class="method">
 <dt id="sprox.widgets.SproxTableForm.prepare_dict">
 <tt class="descname">prepare_dict</tt><big>(</big><em>value</em>, <em>kw</em>, <em>adapt=True</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxTableForm.prepare_dict" title="Permalink to this definition">¶</a></dt>
-<dd>Prepares the dict sent to the template with functions to access the
-children&#8217;s errors if any.</dd></dl>
+<dd><p>Prepares the dict sent to the template with functions to access the
+children&#8217;s errors if any.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxTableForm.propagate_errors">
@@ -1541,14 +1617,15 @@ children&#8217;s errors if any.</dd></dl>
 <dt id="sprox.widgets.SproxTableForm.register_resources">
 <tt class="descname">register_resources</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.SproxTableForm.register_resources" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register the resources required by this Widget with
-<tt class="xref docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
-<p>This method is called whenever a <tt class="xref docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
+<tt class="xref py py-attr docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
+<p>This method is called whenever a <tt class="xref py py-class docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxTableForm.render">
 <tt class="descname">render</tt><big>(</big><em>value=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxTableForm.render" title="Permalink to this definition">¶</a></dt>
-<dd>Renders a widget as an unicode string.</dd></dl>
+<dd><p>Renders a widget as an unicode string.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxTableForm.retrieve_css">
@@ -1568,13 +1645,15 @@ children&#8217;s errors if any.</dd></dl>
 <dl class="attribute">
 <dt id="sprox.widgets.SproxTableForm.root">
 <tt class="descname">root</tt><a class="headerlink" href="#sprox.widgets.SproxTableForm.root" title="Permalink to this definition">¶</a></dt>
-<dd>The root of this widget tree</dd></dl>
+<dd><p>The root of this widget tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxTableForm.safe_validate">
 <tt class="descname">safe_validate</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxTableForm.safe_validate" title="Permalink to this definition">¶</a></dt>
-<dd>Tries to coerce the value to python using the validator. If
-validation fails the original value will be returned unmodified.</dd></dl>
+<dd><p>Tries to coerce the value to python using the validator. If
+validation fails the original value will be returned unmodified.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxTableForm.update_attrs">
@@ -1613,7 +1692,8 @@ be passed explicitly to <tt class="docutils literal"><span class="pre">display</
 <dl class="attribute">
 <dt id="sprox.widgets.SproxTableForm.value_at_request">
 <tt class="descname">value_at_request</tt><a class="headerlink" href="#sprox.widgets.SproxTableForm.value_at_request" title="Permalink to this definition">¶</a></dt>
-<dd>Value being validated in current request.</dd></dl>
+<dd><p>Value being validated in current request.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxTableForm.walk">
@@ -1643,7 +1723,7 @@ applying a filter on them.</p>
 <dl class="class">
 <dt id="sprox.widgets.SproxTimePicker">
 <em class="property">class </em><tt class="descclassname">sprox.widgets.</tt><tt class="descname">SproxTimePicker</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxTimePicker" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref docutils literal"><span class="pre">tw.forms.calendars.CalendarDateTimePicker</span></tt></p>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">tw.forms.calendars.CalendarDateTimePicker</span></tt></p>
 <dl class="method">
 <dt id="sprox.widgets.SproxTimePicker.adapt_value">
 <tt class="descname">adapt_value</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxTimePicker.adapt_value" title="Permalink to this definition">¶</a></dt>
@@ -1652,14 +1732,16 @@ applying a filter on them.</p>
 <dl class="method">
 <dt id="sprox.widgets.SproxTimePicker.add_call">
 <tt class="descname">add_call</tt><big>(</big><em>call</em>, <em>location='bodybottom'</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxTimePicker.add_call" title="Permalink to this definition">¶</a></dt>
-<dd>Adds a <tt class="xref docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
-widget is rendered.</dd></dl>
+<dd><p>Adds a <tt class="xref py py-func docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
+widget is rendered.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxTimePicker.adjust_value">
 <tt class="descname">adjust_value</tt><big>(</big><em>value</em>, <em>validator=None</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxTimePicker.adjust_value" title="Permalink to this definition">¶</a></dt>
-<dd>Adjusts the python value sent to <tt class="xref docutils literal"><span class="pre">InputWidget.display()</span></tt> with
-the validator so it can be rendered in the template.</dd></dl>
+<dd><p>Adjusts the python value sent to <tt class="xref py py-meth docutils literal"><span class="pre">InputWidget.display()</span></tt> with
+the validator so it can be rendered in the template.</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxTimePicker.children_deep">
@@ -1677,7 +1759,7 @@ the validator so it can be rendered in the template.</dd></dl>
 <dd><p>Renders a widget and adapts the output. This method <strong>must</strong> be used
 to display child widgets inside their parent&#8217;s template so output is
 adapted.</p>
-<p>Unlike <tt class="xref docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
+<p>Unlike <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
 returns adapted output compatible with the template the widget is being
 rendered on. For example, this is needed so Genshi doesn&#8217;t autoescape
 string output from mako and to serialize Genshi output on the other way
@@ -1687,32 +1769,37 @@ around.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.SproxTimePicker.displays_on">
 <tt class="descname">displays_on</tt><a class="headerlink" href="#sprox.widgets.SproxTimePicker.displays_on" title="Permalink to this definition">¶</a></dt>
-<dd>Where the widget is being displayed on</dd></dl>
+<dd><p>Where the widget is being displayed on</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxTimePicker.error_at_request">
 <tt class="descname">error_at_request</tt><a class="headerlink" href="#sprox.widgets.SproxTimePicker.error_at_request" title="Permalink to this definition">¶</a></dt>
-<dd>Validation error for current request.</dd></dl>
+<dd><p>Validation error for current request.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxTimePicker.generate_schema">
 <tt class="descname">generate_schema</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.SproxTimePicker.generate_schema" title="Permalink to this definition">¶</a></dt>
-<dd>If the widget has children this method generates a <cite>Schema</cite> to validate
-including the validators from all children once these are all known.</dd></dl>
+<dd><p>If the widget has children this method generates a <cite>Schema</cite> to validate
+including the validators from all children once these are all known.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxTimePicker.get_calendar_lang_file_link">
 <tt class="descname">get_calendar_lang_file_link</tt><big>(</big><em>lang</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxTimePicker.get_calendar_lang_file_link" title="Permalink to this definition">¶</a></dt>
-<dd>Returns a CalendarLangFileLink containing a list of name
+<dd><p>Returns a CalendarLangFileLink containing a list of name
 patterns to try in turn to find the correct calendar locale
-file to use.</dd></dl>
+file to use.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxTimePicker.get_default">
 <tt class="descname">get_default</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.SproxTimePicker.get_default" title="Permalink to this definition">¶</a></dt>
-<dd>Returns the default value for the widget. If the default is a funtion
+<dd><p>Returns the default value for the widget. If the default is a funtion
 that it can be called without arguments it will be called on each
-render to retrieve a value</dd></dl>
+render to retrieve a value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxTimePicker.id">
@@ -1764,7 +1851,8 @@ Example:</p>
 <dl class="attribute">
 <dt id="sprox.widgets.SproxTimePicker.is_root">
 <tt class="descname">is_root</tt><a class="headerlink" href="#sprox.widgets.SproxTimePicker.is_root" title="Permalink to this definition">¶</a></dt>
-<dd>True if the widget doesn&#8217;t have a parent</dd></dl>
+<dd><p>True if the widget doesn&#8217;t have a parent</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxTimePicker.key">
@@ -1799,18 +1887,21 @@ displaying.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.SproxTimePicker.path">
 <tt class="descname">path</tt><a class="headerlink" href="#sprox.widgets.SproxTimePicker.path" title="Permalink to this definition">¶</a></dt>
-<dd>Iterates a walk from this widget to the root of the tree</dd></dl>
+<dd><p>Iterates a walk from this widget to the root of the tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxTimePicker.post_init">
 <tt class="descname">post_init</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxTimePicker.post_init" title="Permalink to this definition">¶</a></dt>
-<dd>Takes care of post-initialization of InputWidgets.</dd></dl>
+<dd><p>Takes care of post-initialization of InputWidgets.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxTimePicker.prepare_dict">
 <tt class="descname">prepare_dict</tt><big>(</big><em>value</em>, <em>kw</em>, <em>adapt=True</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxTimePicker.prepare_dict" title="Permalink to this definition">¶</a></dt>
-<dd>Prepares the dict sent to the template with functions to access the
-children&#8217;s errors if any.</dd></dl>
+<dd><p>Prepares the dict sent to the template with functions to access the
+children&#8217;s errors if any.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxTimePicker.propagate_errors">
@@ -1821,14 +1912,15 @@ children&#8217;s errors if any.</dd></dl>
 <dt id="sprox.widgets.SproxTimePicker.register_resources">
 <tt class="descname">register_resources</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.SproxTimePicker.register_resources" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register the resources required by this Widget with
-<tt class="xref docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
-<p>This method is called whenever a <tt class="xref docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
+<tt class="xref py py-attr docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
+<p>This method is called whenever a <tt class="xref py py-class docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxTimePicker.render">
 <tt class="descname">render</tt><big>(</big><em>value=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxTimePicker.render" title="Permalink to this definition">¶</a></dt>
-<dd>Renders a widget as an unicode string.</dd></dl>
+<dd><p>Renders a widget as an unicode string.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxTimePicker.retrieve_css">
@@ -1848,13 +1940,15 @@ children&#8217;s errors if any.</dd></dl>
 <dl class="attribute">
 <dt id="sprox.widgets.SproxTimePicker.root">
 <tt class="descname">root</tt><a class="headerlink" href="#sprox.widgets.SproxTimePicker.root" title="Permalink to this definition">¶</a></dt>
-<dd>The root of this widget tree</dd></dl>
+<dd><p>The root of this widget tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxTimePicker.safe_validate">
 <tt class="descname">safe_validate</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxTimePicker.safe_validate" title="Permalink to this definition">¶</a></dt>
-<dd>Tries to coerce the value to python using the validator. If
-validation fails the original value will be returned unmodified.</dd></dl>
+<dd><p>Tries to coerce the value to python using the validator. If
+validation fails the original value will be returned unmodified.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxTimePicker.update_attrs">
@@ -1893,7 +1987,8 @@ be passed explicitly to <tt class="docutils literal"><span class="pre">display</
 <dl class="attribute">
 <dt id="sprox.widgets.SproxTimePicker.value_at_request">
 <tt class="descname">value_at_request</tt><a class="headerlink" href="#sprox.widgets.SproxTimePicker.value_at_request" title="Permalink to this definition">¶</a></dt>
-<dd>Value being validated in current request.</dd></dl>
+<dd><p>Value being validated in current request.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxTimePicker.walk">
@@ -1923,7 +2018,7 @@ applying a filter on them.</p>
 <dl class="class">
 <dt id="sprox.widgets.EntityDefWidget">
 <em class="property">class </em><tt class="descclassname">sprox.widgets.</tt><tt class="descname">EntityDefWidget</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.EntityDefWidget" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref docutils literal"><span class="pre">tw.core.base.Widget</span></tt></p>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">tw.core.base.Widget</span></tt></p>
 <dl class="method">
 <dt id="sprox.widgets.EntityDefWidget.adapt_value">
 <tt class="descname">adapt_value</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.EntityDefWidget.adapt_value" title="Permalink to this definition">¶</a></dt>
@@ -1941,8 +2036,9 @@ applying a filter on them.</p>
 <dl class="method">
 <dt id="sprox.widgets.EntityDefWidget.add_call">
 <tt class="descname">add_call</tt><big>(</big><em>call</em>, <em>location='bodybottom'</em><big>)</big><a class="headerlink" href="#sprox.widgets.EntityDefWidget.add_call" title="Permalink to this definition">¶</a></dt>
-<dd>Adds a <tt class="xref docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
-widget is rendered.</dd></dl>
+<dd><p>Adds a <tt class="xref py py-func docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
+widget is rendered.</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.EntityDefWidget.children_deep">
@@ -1960,7 +2056,7 @@ widget is rendered.</dd></dl>
 <dd><p>Renders a widget and adapts the output. This method <strong>must</strong> be used
 to display child widgets inside their parent&#8217;s template so output is
 adapted.</p>
-<p>Unlike <tt class="xref docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
+<p>Unlike <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
 returns adapted output compatible with the template the widget is being
 rendered on. For example, this is needed so Genshi doesn&#8217;t autoescape
 string output from mako and to serialize Genshi output on the other way
@@ -1970,14 +2066,16 @@ around.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.EntityDefWidget.displays_on">
 <tt class="descname">displays_on</tt><a class="headerlink" href="#sprox.widgets.EntityDefWidget.displays_on" title="Permalink to this definition">¶</a></dt>
-<dd>Where the widget is being displayed on</dd></dl>
+<dd><p>Where the widget is being displayed on</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.EntityDefWidget.get_default">
 <tt class="descname">get_default</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.EntityDefWidget.get_default" title="Permalink to this definition">¶</a></dt>
-<dd>Returns the default value for the widget. If the default is a funtion
+<dd><p>Returns the default value for the widget. If the default is a funtion
 that it can be called without arguments it will be called on each
-render to retrieve a value</dd></dl>
+render to retrieve a value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.EntityDefWidget.id">
@@ -2024,7 +2122,8 @@ Example:</p>
 <dl class="attribute">
 <dt id="sprox.widgets.EntityDefWidget.is_root">
 <tt class="descname">is_root</tt><a class="headerlink" href="#sprox.widgets.EntityDefWidget.is_root" title="Permalink to this definition">¶</a></dt>
-<dd>True if the widget doesn&#8217;t have a parent</dd></dl>
+<dd><p>True if the widget doesn&#8217;t have a parent</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.EntityDefWidget.key">
@@ -2049,33 +2148,37 @@ displaying.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.EntityDefWidget.path">
 <tt class="descname">path</tt><a class="headerlink" href="#sprox.widgets.EntityDefWidget.path" title="Permalink to this definition">¶</a></dt>
-<dd>Iterates a walk from this widget to the root of the tree</dd></dl>
+<dd><p>Iterates a walk from this widget to the root of the tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.EntityDefWidget.post_init">
 <tt class="descname">post_init</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.EntityDefWidget.post_init" title="Permalink to this definition">¶</a></dt>
-<dd>This method is called for all <tt class="xref docutils literal"><span class="pre">tw.api.Widget</span></tt> base classes to
+<dd><p>This method is called for all <tt class="xref py py-class docutils literal"><span class="pre">tw.api.Widget</span></tt> base classes to
 perform final setup after the widget is initialized but before it is
-locked.</dd></dl>
+locked.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.EntityDefWidget.prepare_dict">
 <tt class="descname">prepare_dict</tt><big>(</big><em>value</em>, <em>d</em>, <em>adapt=True</em><big>)</big><a class="headerlink" href="#sprox.widgets.EntityDefWidget.prepare_dict" title="Permalink to this definition">¶</a></dt>
-<dd>Prepares the all kw arguments sent to <cite>display</cite> or <cite>render</cite> before
-passing the kw argument&#8217;s dict to <cite>update_params</cite>.</dd></dl>
+<dd><p>Prepares the all kw arguments sent to <cite>display</cite> or <cite>render</cite> before
+passing the kw argument&#8217;s dict to <cite>update_params</cite>.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.EntityDefWidget.register_resources">
 <tt class="descname">register_resources</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.EntityDefWidget.register_resources" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register the resources required by this Widget with
-<tt class="xref docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
-<p>This method is called whenever a <tt class="xref docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
+<tt class="xref py py-attr docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
+<p>This method is called whenever a <tt class="xref py py-class docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.EntityDefWidget.render">
 <tt class="descname">render</tt><big>(</big><em>value=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.EntityDefWidget.render" title="Permalink to this definition">¶</a></dt>
-<dd>Renders a widget as an unicode string.</dd></dl>
+<dd><p>Renders a widget as an unicode string.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.EntityDefWidget.retrieve_css">
@@ -2095,7 +2198,8 @@ passing the kw argument&#8217;s dict to <cite>update_params</cite>.</dd></dl>
 <dl class="attribute">
 <dt id="sprox.widgets.EntityDefWidget.root">
 <tt class="descname">root</tt><a class="headerlink" href="#sprox.widgets.EntityDefWidget.root" title="Permalink to this definition">¶</a></dt>
-<dd>The root of this widget tree</dd></dl>
+<dd><p>The root of this widget tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.EntityDefWidget.update_params">
@@ -2162,7 +2266,7 @@ applying a filter on them.</p>
 <dl class="class">
 <dt id="sprox.widgets.EntityLabelWidget">
 <em class="property">class </em><tt class="descclassname">sprox.widgets.</tt><tt class="descname">EntityLabelWidget</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.EntityLabelWidget" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref docutils literal"><span class="pre">tw.core.base.Widget</span></tt></p>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">tw.core.base.Widget</span></tt></p>
 <dl class="method">
 <dt id="sprox.widgets.EntityLabelWidget.adapt_value">
 <tt class="descname">adapt_value</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.EntityLabelWidget.adapt_value" title="Permalink to this definition">¶</a></dt>
@@ -2180,8 +2284,9 @@ applying a filter on them.</p>
 <dl class="method">
 <dt id="sprox.widgets.EntityLabelWidget.add_call">
 <tt class="descname">add_call</tt><big>(</big><em>call</em>, <em>location='bodybottom'</em><big>)</big><a class="headerlink" href="#sprox.widgets.EntityLabelWidget.add_call" title="Permalink to this definition">¶</a></dt>
-<dd>Adds a <tt class="xref docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
-widget is rendered.</dd></dl>
+<dd><p>Adds a <tt class="xref py py-func docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
+widget is rendered.</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.EntityLabelWidget.children_deep">
@@ -2199,7 +2304,7 @@ widget is rendered.</dd></dl>
 <dd><p>Renders a widget and adapts the output. This method <strong>must</strong> be used
 to display child widgets inside their parent&#8217;s template so output is
 adapted.</p>
-<p>Unlike <tt class="xref docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
+<p>Unlike <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
 returns adapted output compatible with the template the widget is being
 rendered on. For example, this is needed so Genshi doesn&#8217;t autoescape
 string output from mako and to serialize Genshi output on the other way
@@ -2209,14 +2314,16 @@ around.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.EntityLabelWidget.displays_on">
 <tt class="descname">displays_on</tt><a class="headerlink" href="#sprox.widgets.EntityLabelWidget.displays_on" title="Permalink to this definition">¶</a></dt>
-<dd>Where the widget is being displayed on</dd></dl>
+<dd><p>Where the widget is being displayed on</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.EntityLabelWidget.get_default">
 <tt class="descname">get_default</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.EntityLabelWidget.get_default" title="Permalink to this definition">¶</a></dt>
-<dd>Returns the default value for the widget. If the default is a funtion
+<dd><p>Returns the default value for the widget. If the default is a funtion
 that it can be called without arguments it will be called on each
-render to retrieve a value</dd></dl>
+render to retrieve a value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.EntityLabelWidget.id">
@@ -2263,7 +2370,8 @@ Example:</p>
 <dl class="attribute">
 <dt id="sprox.widgets.EntityLabelWidget.is_root">
 <tt class="descname">is_root</tt><a class="headerlink" href="#sprox.widgets.EntityLabelWidget.is_root" title="Permalink to this definition">¶</a></dt>
-<dd>True if the widget doesn&#8217;t have a parent</dd></dl>
+<dd><p>True if the widget doesn&#8217;t have a parent</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.EntityLabelWidget.key">
@@ -2288,33 +2396,37 @@ displaying.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.EntityLabelWidget.path">
 <tt class="descname">path</tt><a class="headerlink" href="#sprox.widgets.EntityLabelWidget.path" title="Permalink to this definition">¶</a></dt>
-<dd>Iterates a walk from this widget to the root of the tree</dd></dl>
+<dd><p>Iterates a walk from this widget to the root of the tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.EntityLabelWidget.post_init">
 <tt class="descname">post_init</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.EntityLabelWidget.post_init" title="Permalink to this definition">¶</a></dt>
-<dd>This method is called for all <tt class="xref docutils literal"><span class="pre">tw.api.Widget</span></tt> base classes to
+<dd><p>This method is called for all <tt class="xref py py-class docutils literal"><span class="pre">tw.api.Widget</span></tt> base classes to
 perform final setup after the widget is initialized but before it is
-locked.</dd></dl>
+locked.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.EntityLabelWidget.prepare_dict">
 <tt class="descname">prepare_dict</tt><big>(</big><em>value</em>, <em>d</em>, <em>adapt=True</em><big>)</big><a class="headerlink" href="#sprox.widgets.EntityLabelWidget.prepare_dict" title="Permalink to this definition">¶</a></dt>
-<dd>Prepares the all kw arguments sent to <cite>display</cite> or <cite>render</cite> before
-passing the kw argument&#8217;s dict to <cite>update_params</cite>.</dd></dl>
+<dd><p>Prepares the all kw arguments sent to <cite>display</cite> or <cite>render</cite> before
+passing the kw argument&#8217;s dict to <cite>update_params</cite>.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.EntityLabelWidget.register_resources">
 <tt class="descname">register_resources</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.EntityLabelWidget.register_resources" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register the resources required by this Widget with
-<tt class="xref docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
-<p>This method is called whenever a <tt class="xref docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
+<tt class="xref py py-attr docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
+<p>This method is called whenever a <tt class="xref py py-class docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.EntityLabelWidget.render">
 <tt class="descname">render</tt><big>(</big><em>value=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.EntityLabelWidget.render" title="Permalink to this definition">¶</a></dt>
-<dd>Renders a widget as an unicode string.</dd></dl>
+<dd><p>Renders a widget as an unicode string.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.EntityLabelWidget.retrieve_css">
@@ -2334,7 +2446,8 @@ passing the kw argument&#8217;s dict to <cite>update_params</cite>.</dd></dl>
 <dl class="attribute">
 <dt id="sprox.widgets.EntityLabelWidget.root">
 <tt class="descname">root</tt><a class="headerlink" href="#sprox.widgets.EntityLabelWidget.root" title="Permalink to this definition">¶</a></dt>
-<dd>The root of this widget tree</dd></dl>
+<dd><p>The root of this widget tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.EntityLabelWidget.update_params">
@@ -2401,7 +2514,7 @@ applying a filter on them.</p>
 <dl class="class">
 <dt id="sprox.widgets.ModelLabelWidget">
 <em class="property">class </em><tt class="descclassname">sprox.widgets.</tt><tt class="descname">ModelLabelWidget</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.ModelLabelWidget" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref docutils literal"><span class="pre">tw.core.base.Widget</span></tt></p>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">tw.core.base.Widget</span></tt></p>
 <dl class="method">
 <dt id="sprox.widgets.ModelLabelWidget.adapt_value">
 <tt class="descname">adapt_value</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.ModelLabelWidget.adapt_value" title="Permalink to this definition">¶</a></dt>
@@ -2419,8 +2532,9 @@ applying a filter on them.</p>
 <dl class="method">
 <dt id="sprox.widgets.ModelLabelWidget.add_call">
 <tt class="descname">add_call</tt><big>(</big><em>call</em>, <em>location='bodybottom'</em><big>)</big><a class="headerlink" href="#sprox.widgets.ModelLabelWidget.add_call" title="Permalink to this definition">¶</a></dt>
-<dd>Adds a <tt class="xref docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
-widget is rendered.</dd></dl>
+<dd><p>Adds a <tt class="xref py py-func docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
+widget is rendered.</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.ModelLabelWidget.children_deep">
@@ -2438,7 +2552,7 @@ widget is rendered.</dd></dl>
 <dd><p>Renders a widget and adapts the output. This method <strong>must</strong> be used
 to display child widgets inside their parent&#8217;s template so output is
 adapted.</p>
-<p>Unlike <tt class="xref docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
+<p>Unlike <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
 returns adapted output compatible with the template the widget is being
 rendered on. For example, this is needed so Genshi doesn&#8217;t autoescape
 string output from mako and to serialize Genshi output on the other way
@@ -2448,14 +2562,16 @@ around.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.ModelLabelWidget.displays_on">
 <tt class="descname">displays_on</tt><a class="headerlink" href="#sprox.widgets.ModelLabelWidget.displays_on" title="Permalink to this definition">¶</a></dt>
-<dd>Where the widget is being displayed on</dd></dl>
+<dd><p>Where the widget is being displayed on</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.ModelLabelWidget.get_default">
 <tt class="descname">get_default</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.ModelLabelWidget.get_default" title="Permalink to this definition">¶</a></dt>
-<dd>Returns the default value for the widget. If the default is a funtion
+<dd><p>Returns the default value for the widget. If the default is a funtion
 that it can be called without arguments it will be called on each
-render to retrieve a value</dd></dl>
+render to retrieve a value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.ModelLabelWidget.id">
@@ -2502,7 +2618,8 @@ Example:</p>
 <dl class="attribute">
 <dt id="sprox.widgets.ModelLabelWidget.is_root">
 <tt class="descname">is_root</tt><a class="headerlink" href="#sprox.widgets.ModelLabelWidget.is_root" title="Permalink to this definition">¶</a></dt>
-<dd>True if the widget doesn&#8217;t have a parent</dd></dl>
+<dd><p>True if the widget doesn&#8217;t have a parent</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.ModelLabelWidget.key">
@@ -2527,33 +2644,37 @@ displaying.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.ModelLabelWidget.path">
 <tt class="descname">path</tt><a class="headerlink" href="#sprox.widgets.ModelLabelWidget.path" title="Permalink to this definition">¶</a></dt>
-<dd>Iterates a walk from this widget to the root of the tree</dd></dl>
+<dd><p>Iterates a walk from this widget to the root of the tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.ModelLabelWidget.post_init">
 <tt class="descname">post_init</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.ModelLabelWidget.post_init" title="Permalink to this definition">¶</a></dt>
-<dd>This method is called for all <tt class="xref docutils literal"><span class="pre">tw.api.Widget</span></tt> base classes to
+<dd><p>This method is called for all <tt class="xref py py-class docutils literal"><span class="pre">tw.api.Widget</span></tt> base classes to
 perform final setup after the widget is initialized but before it is
-locked.</dd></dl>
+locked.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.ModelLabelWidget.prepare_dict">
 <tt class="descname">prepare_dict</tt><big>(</big><em>value</em>, <em>d</em>, <em>adapt=True</em><big>)</big><a class="headerlink" href="#sprox.widgets.ModelLabelWidget.prepare_dict" title="Permalink to this definition">¶</a></dt>
-<dd>Prepares the all kw arguments sent to <cite>display</cite> or <cite>render</cite> before
-passing the kw argument&#8217;s dict to <cite>update_params</cite>.</dd></dl>
+<dd><p>Prepares the all kw arguments sent to <cite>display</cite> or <cite>render</cite> before
+passing the kw argument&#8217;s dict to <cite>update_params</cite>.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.ModelLabelWidget.register_resources">
 <tt class="descname">register_resources</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.ModelLabelWidget.register_resources" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register the resources required by this Widget with
-<tt class="xref docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
-<p>This method is called whenever a <tt class="xref docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
+<tt class="xref py py-attr docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
+<p>This method is called whenever a <tt class="xref py py-class docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.ModelLabelWidget.render">
 <tt class="descname">render</tt><big>(</big><em>value=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.ModelLabelWidget.render" title="Permalink to this definition">¶</a></dt>
-<dd>Renders a widget as an unicode string.</dd></dl>
+<dd><p>Renders a widget as an unicode string.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.ModelLabelWidget.retrieve_css">
@@ -2573,7 +2694,8 @@ passing the kw argument&#8217;s dict to <cite>update_params</cite>.</dd></dl>
 <dl class="attribute">
 <dt id="sprox.widgets.ModelLabelWidget.root">
 <tt class="descname">root</tt><a class="headerlink" href="#sprox.widgets.ModelLabelWidget.root" title="Permalink to this definition">¶</a></dt>
-<dd>The root of this widget tree</dd></dl>
+<dd><p>The root of this widget tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.ModelLabelWidget.update_params">
@@ -2640,7 +2762,7 @@ applying a filter on them.</p>
 <dl class="class">
 <dt id="sprox.widgets.PropertyMixin">
 <em class="property">class </em><tt class="descclassname">sprox.widgets.</tt><tt class="descname">PropertyMixin</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.PropertyMixin" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref docutils literal"><span class="pre">tw.core.base.Widget</span></tt></p>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">tw.core.base.Widget</span></tt></p>
 <dl class="method">
 <dt id="sprox.widgets.PropertyMixin.adapt_value">
 <tt class="descname">adapt_value</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.PropertyMixin.adapt_value" title="Permalink to this definition">¶</a></dt>
@@ -2658,8 +2780,9 @@ applying a filter on them.</p>
 <dl class="method">
 <dt id="sprox.widgets.PropertyMixin.add_call">
 <tt class="descname">add_call</tt><big>(</big><em>call</em>, <em>location='bodybottom'</em><big>)</big><a class="headerlink" href="#sprox.widgets.PropertyMixin.add_call" title="Permalink to this definition">¶</a></dt>
-<dd>Adds a <tt class="xref docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
-widget is rendered.</dd></dl>
+<dd><p>Adds a <tt class="xref py py-func docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
+widget is rendered.</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.PropertyMixin.children_deep">
@@ -2677,7 +2800,7 @@ widget is rendered.</dd></dl>
 <dd><p>Renders a widget and adapts the output. This method <strong>must</strong> be used
 to display child widgets inside their parent&#8217;s template so output is
 adapted.</p>
-<p>Unlike <tt class="xref docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
+<p>Unlike <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
 returns adapted output compatible with the template the widget is being
 rendered on. For example, this is needed so Genshi doesn&#8217;t autoescape
 string output from mako and to serialize Genshi output on the other way
@@ -2687,14 +2810,16 @@ around.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.PropertyMixin.displays_on">
 <tt class="descname">displays_on</tt><a class="headerlink" href="#sprox.widgets.PropertyMixin.displays_on" title="Permalink to this definition">¶</a></dt>
-<dd>Where the widget is being displayed on</dd></dl>
+<dd><p>Where the widget is being displayed on</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertyMixin.get_default">
 <tt class="descname">get_default</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.PropertyMixin.get_default" title="Permalink to this definition">¶</a></dt>
-<dd>Returns the default value for the widget. If the default is a funtion
+<dd><p>Returns the default value for the widget. If the default is a funtion
 that it can be called without arguments it will be called on each
-render to retrieve a value</dd></dl>
+render to retrieve a value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.PropertyMixin.id">
@@ -2741,7 +2866,8 @@ Example:</p>
 <dl class="attribute">
 <dt id="sprox.widgets.PropertyMixin.is_root">
 <tt class="descname">is_root</tt><a class="headerlink" href="#sprox.widgets.PropertyMixin.is_root" title="Permalink to this definition">¶</a></dt>
-<dd>True if the widget doesn&#8217;t have a parent</dd></dl>
+<dd><p>True if the widget doesn&#8217;t have a parent</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.PropertyMixin.key">
@@ -2766,33 +2892,37 @@ displaying.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.PropertyMixin.path">
 <tt class="descname">path</tt><a class="headerlink" href="#sprox.widgets.PropertyMixin.path" title="Permalink to this definition">¶</a></dt>
-<dd>Iterates a walk from this widget to the root of the tree</dd></dl>
+<dd><p>Iterates a walk from this widget to the root of the tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertyMixin.post_init">
 <tt class="descname">post_init</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.PropertyMixin.post_init" title="Permalink to this definition">¶</a></dt>
-<dd>This method is called for all <tt class="xref docutils literal"><span class="pre">tw.api.Widget</span></tt> base classes to
+<dd><p>This method is called for all <tt class="xref py py-class docutils literal"><span class="pre">tw.api.Widget</span></tt> base classes to
 perform final setup after the widget is initialized but before it is
-locked.</dd></dl>
+locked.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertyMixin.prepare_dict">
 <tt class="descname">prepare_dict</tt><big>(</big><em>value</em>, <em>d</em>, <em>adapt=True</em><big>)</big><a class="headerlink" href="#sprox.widgets.PropertyMixin.prepare_dict" title="Permalink to this definition">¶</a></dt>
-<dd>Prepares the all kw arguments sent to <cite>display</cite> or <cite>render</cite> before
-passing the kw argument&#8217;s dict to <cite>update_params</cite>.</dd></dl>
+<dd><p>Prepares the all kw arguments sent to <cite>display</cite> or <cite>render</cite> before
+passing the kw argument&#8217;s dict to <cite>update_params</cite>.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertyMixin.register_resources">
 <tt class="descname">register_resources</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.PropertyMixin.register_resources" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register the resources required by this Widget with
-<tt class="xref docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
-<p>This method is called whenever a <tt class="xref docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
+<tt class="xref py py-attr docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
+<p>This method is called whenever a <tt class="xref py py-class docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertyMixin.render">
 <tt class="descname">render</tt><big>(</big><em>value=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.PropertyMixin.render" title="Permalink to this definition">¶</a></dt>
-<dd>Renders a widget as an unicode string.</dd></dl>
+<dd><p>Renders a widget as an unicode string.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertyMixin.retrieve_css">
@@ -2812,7 +2942,8 @@ passing the kw argument&#8217;s dict to <cite>update_params</cite>.</dd></dl>
 <dl class="attribute">
 <dt id="sprox.widgets.PropertyMixin.root">
 <tt class="descname">root</tt><a class="headerlink" href="#sprox.widgets.PropertyMixin.root" title="Permalink to this definition">¶</a></dt>
-<dd>The root of this widget tree</dd></dl>
+<dd><p>The root of this widget tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertyMixin.update_params">
@@ -2879,7 +3010,7 @@ applying a filter on them.</p>
 <dl class="class">
 <dt id="sprox.widgets.PropertyMultipleSelectField">
 <em class="property">class </em><tt class="descclassname">sprox.widgets.</tt><tt class="descname">PropertyMultipleSelectField</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref docutils literal"><span class="pre">tw.forms.fields.MultipleSelectField</span></tt>, <tt class="xref docutils literal"><span class="pre">sprox.widgets.widgets.PropertyMixin</span></tt></p>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">tw.forms.fields.MultipleSelectField</span></tt>, <tt class="xref py py-class docutils literal"><span class="pre">sprox.widgets.widgets.PropertyMixin</span></tt></p>
 <dl class="method">
 <dt id="sprox.widgets.PropertyMultipleSelectField.adapt_value">
 <tt class="descname">adapt_value</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.adapt_value" title="Permalink to this definition">¶</a></dt>
@@ -2888,8 +3019,9 @@ applying a filter on them.</p>
 <dl class="method">
 <dt id="sprox.widgets.PropertyMultipleSelectField.add_call">
 <tt class="descname">add_call</tt><big>(</big><em>call</em>, <em>location='bodybottom'</em><big>)</big><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.add_call" title="Permalink to this definition">¶</a></dt>
-<dd>Adds a <tt class="xref docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
-widget is rendered.</dd></dl>
+<dd><p>Adds a <tt class="xref py py-func docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
+widget is rendered.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertyMultipleSelectField.adjust_value">
@@ -2912,7 +3044,7 @@ widget is rendered.</dd></dl>
 <dd><p>Renders a widget and adapts the output. This method <strong>must</strong> be used
 to display child widgets inside their parent&#8217;s template so output is
 adapted.</p>
-<p>Unlike <tt class="xref docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
+<p>Unlike <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
 returns adapted output compatible with the template the widget is being
 rendered on. For example, this is needed so Genshi doesn&#8217;t autoescape
 string output from mako and to serialize Genshi output on the other way
@@ -2922,25 +3054,29 @@ around.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.PropertyMultipleSelectField.displays_on">
 <tt class="descname">displays_on</tt><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.displays_on" title="Permalink to this definition">¶</a></dt>
-<dd>Where the widget is being displayed on</dd></dl>
+<dd><p>Where the widget is being displayed on</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.PropertyMultipleSelectField.error_at_request">
 <tt class="descname">error_at_request</tt><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.error_at_request" title="Permalink to this definition">¶</a></dt>
-<dd>Validation error for current request.</dd></dl>
+<dd><p>Validation error for current request.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertyMultipleSelectField.generate_schema">
 <tt class="descname">generate_schema</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.generate_schema" title="Permalink to this definition">¶</a></dt>
-<dd>If the widget has children this method generates a <cite>Schema</cite> to validate
-including the validators from all children once these are all known.</dd></dl>
+<dd><p>If the widget has children this method generates a <cite>Schema</cite> to validate
+including the validators from all children once these are all known.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertyMultipleSelectField.get_default">
 <tt class="descname">get_default</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.get_default" title="Permalink to this definition">¶</a></dt>
-<dd>Returns the default value for the widget. If the default is a funtion
+<dd><p>Returns the default value for the widget. If the default is a funtion
 that it can be called without arguments it will be called on each
-render to retrieve a value</dd></dl>
+render to retrieve a value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.PropertyMultipleSelectField.id">
@@ -2992,7 +3128,8 @@ Example:</p>
 <dl class="attribute">
 <dt id="sprox.widgets.PropertyMultipleSelectField.is_root">
 <tt class="descname">is_root</tt><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.is_root" title="Permalink to this definition">¶</a></dt>
-<dd>True if the widget doesn&#8217;t have a parent</dd></dl>
+<dd><p>True if the widget doesn&#8217;t have a parent</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.PropertyMultipleSelectField.key">
@@ -3027,7 +3164,8 @@ displaying.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.PropertyMultipleSelectField.path">
 <tt class="descname">path</tt><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.path" title="Permalink to this definition">¶</a></dt>
-<dd>Iterates a walk from this widget to the root of the tree</dd></dl>
+<dd><p>Iterates a walk from this widget to the root of the tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertyMultipleSelectField.post_init">
@@ -3037,8 +3175,9 @@ displaying.</p>
 <dl class="method">
 <dt id="sprox.widgets.PropertyMultipleSelectField.prepare_dict">
 <tt class="descname">prepare_dict</tt><big>(</big><em>value</em>, <em>kw</em>, <em>adapt=True</em><big>)</big><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.prepare_dict" title="Permalink to this definition">¶</a></dt>
-<dd>Prepares the dict sent to the template with functions to access the
-children&#8217;s errors if any.</dd></dl>
+<dd><p>Prepares the dict sent to the template with functions to access the
+children&#8217;s errors if any.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertyMultipleSelectField.propagate_errors">
@@ -3049,14 +3188,15 @@ children&#8217;s errors if any.</dd></dl>
 <dt id="sprox.widgets.PropertyMultipleSelectField.register_resources">
 <tt class="descname">register_resources</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.register_resources" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register the resources required by this Widget with
-<tt class="xref docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
-<p>This method is called whenever a <tt class="xref docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
+<tt class="xref py py-attr docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
+<p>This method is called whenever a <tt class="xref py py-class docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertyMultipleSelectField.render">
 <tt class="descname">render</tt><big>(</big><em>value=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.render" title="Permalink to this definition">¶</a></dt>
-<dd>Renders a widget as an unicode string.</dd></dl>
+<dd><p>Renders a widget as an unicode string.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertyMultipleSelectField.retrieve_css">
@@ -3076,13 +3216,15 @@ children&#8217;s errors if any.</dd></dl>
 <dl class="attribute">
 <dt id="sprox.widgets.PropertyMultipleSelectField.root">
 <tt class="descname">root</tt><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.root" title="Permalink to this definition">¶</a></dt>
-<dd>The root of this widget tree</dd></dl>
+<dd><p>The root of this widget tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertyMultipleSelectField.safe_validate">
 <tt class="descname">safe_validate</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.safe_validate" title="Permalink to this definition">¶</a></dt>
-<dd>Tries to coerce the value to python using the validator. If
-validation fails the original value will be returned unmodified.</dd></dl>
+<dd><p>Tries to coerce the value to python using the validator. If
+validation fails the original value will be returned unmodified.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertyMultipleSelectField.update_attrs">
@@ -3121,12 +3263,14 @@ be passed explicitly to <tt class="docutils literal"><span class="pre">display</
 <dl class="attribute">
 <dt id="sprox.widgets.PropertyMultipleSelectField.validator">
 <tt class="descname">validator</tt><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.validator" title="Permalink to this definition">¶</a></dt>
-<dd>alias of <tt class="xref docutils literal"><span class="pre">DefaultValidator</span></tt></dd></dl>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">DefaultValidator</span></tt></p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.PropertyMultipleSelectField.value_at_request">
 <tt class="descname">value_at_request</tt><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.value_at_request" title="Permalink to this definition">¶</a></dt>
-<dd>Value being validated in current request.</dd></dl>
+<dd><p>Value being validated in current request.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertyMultipleSelectField.walk">
@@ -3156,7 +3300,7 @@ applying a filter on them.</p>
 <dl class="class">
 <dt id="sprox.widgets.PropertySingleSelectField">
 <em class="property">class </em><tt class="descclassname">sprox.widgets.</tt><tt class="descname">PropertySingleSelectField</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref docutils literal"><span class="pre">tw.forms.fields.SingleSelectField</span></tt>, <tt class="xref docutils literal"><span class="pre">sprox.widgets.widgets.PropertyMixin</span></tt></p>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">tw.forms.fields.SingleSelectField</span></tt>, <tt class="xref py py-class docutils literal"><span class="pre">sprox.widgets.widgets.PropertyMixin</span></tt></p>
 <dl class="method">
 <dt id="sprox.widgets.PropertySingleSelectField.adapt_value">
 <tt class="descname">adapt_value</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.adapt_value" title="Permalink to this definition">¶</a></dt>
@@ -3165,14 +3309,16 @@ applying a filter on them.</p>
 <dl class="method">
 <dt id="sprox.widgets.PropertySingleSelectField.add_call">
 <tt class="descname">add_call</tt><big>(</big><em>call</em>, <em>location='bodybottom'</em><big>)</big><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.add_call" title="Permalink to this definition">¶</a></dt>
-<dd>Adds a <tt class="xref docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
-widget is rendered.</dd></dl>
+<dd><p>Adds a <tt class="xref py py-func docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
+widget is rendered.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertySingleSelectField.adjust_value">
 <tt class="descname">adjust_value</tt><big>(</big><em>value</em>, <em>validator=None</em><big>)</big><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.adjust_value" title="Permalink to this definition">¶</a></dt>
-<dd>Adjusts the python value sent to <tt class="xref docutils literal"><span class="pre">InputWidget.display()</span></tt> with
-the validator so it can be rendered in the template.</dd></dl>
+<dd><p>Adjusts the python value sent to <tt class="xref py py-meth docutils literal"><span class="pre">InputWidget.display()</span></tt> with
+the validator so it can be rendered in the template.</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.PropertySingleSelectField.children_deep">
@@ -3190,7 +3336,7 @@ the validator so it can be rendered in the template.</dd></dl>
 <dd><p>Renders a widget and adapts the output. This method <strong>must</strong> be used
 to display child widgets inside their parent&#8217;s template so output is
 adapted.</p>
-<p>Unlike <tt class="xref docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
+<p>Unlike <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
 returns adapted output compatible with the template the widget is being
 rendered on. For example, this is needed so Genshi doesn&#8217;t autoescape
 string output from mako and to serialize Genshi output on the other way
@@ -3200,25 +3346,29 @@ around.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.PropertySingleSelectField.displays_on">
 <tt class="descname">displays_on</tt><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.displays_on" title="Permalink to this definition">¶</a></dt>
-<dd>Where the widget is being displayed on</dd></dl>
+<dd><p>Where the widget is being displayed on</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.PropertySingleSelectField.error_at_request">
 <tt class="descname">error_at_request</tt><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.error_at_request" title="Permalink to this definition">¶</a></dt>
-<dd>Validation error for current request.</dd></dl>
+<dd><p>Validation error for current request.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertySingleSelectField.generate_schema">
 <tt class="descname">generate_schema</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.generate_schema" title="Permalink to this definition">¶</a></dt>
-<dd>If the widget has children this method generates a <cite>Schema</cite> to validate
-including the validators from all children once these are all known.</dd></dl>
+<dd><p>If the widget has children this method generates a <cite>Schema</cite> to validate
+including the validators from all children once these are all known.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertySingleSelectField.get_default">
 <tt class="descname">get_default</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.get_default" title="Permalink to this definition">¶</a></dt>
-<dd>Returns the default value for the widget. If the default is a funtion
+<dd><p>Returns the default value for the widget. If the default is a funtion
 that it can be called without arguments it will be called on each
-render to retrieve a value</dd></dl>
+render to retrieve a value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.PropertySingleSelectField.id">
@@ -3270,7 +3420,8 @@ Example:</p>
 <dl class="attribute">
 <dt id="sprox.widgets.PropertySingleSelectField.is_root">
 <tt class="descname">is_root</tt><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.is_root" title="Permalink to this definition">¶</a></dt>
-<dd>True if the widget doesn&#8217;t have a parent</dd></dl>
+<dd><p>True if the widget doesn&#8217;t have a parent</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.PropertySingleSelectField.key">
@@ -3305,18 +3456,21 @@ displaying.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.PropertySingleSelectField.path">
 <tt class="descname">path</tt><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.path" title="Permalink to this definition">¶</a></dt>
-<dd>Iterates a walk from this widget to the root of the tree</dd></dl>
+<dd><p>Iterates a walk from this widget to the root of the tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertySingleSelectField.post_init">
 <tt class="descname">post_init</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.post_init" title="Permalink to this definition">¶</a></dt>
-<dd>Takes care of post-initialization of InputWidgets.</dd></dl>
+<dd><p>Takes care of post-initialization of InputWidgets.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertySingleSelectField.prepare_dict">
 <tt class="descname">prepare_dict</tt><big>(</big><em>value</em>, <em>kw</em>, <em>adapt=True</em><big>)</big><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.prepare_dict" title="Permalink to this definition">¶</a></dt>
-<dd>Prepares the dict sent to the template with functions to access the
-children&#8217;s errors if any.</dd></dl>
+<dd><p>Prepares the dict sent to the template with functions to access the
+children&#8217;s errors if any.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertySingleSelectField.propagate_errors">
@@ -3327,14 +3481,15 @@ children&#8217;s errors if any.</dd></dl>
 <dt id="sprox.widgets.PropertySingleSelectField.register_resources">
 <tt class="descname">register_resources</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.register_resources" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register the resources required by this Widget with
-<tt class="xref docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
-<p>This method is called whenever a <tt class="xref docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
+<tt class="xref py py-attr docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
+<p>This method is called whenever a <tt class="xref py py-class docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertySingleSelectField.render">
 <tt class="descname">render</tt><big>(</big><em>value=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.render" title="Permalink to this definition">¶</a></dt>
-<dd>Renders a widget as an unicode string.</dd></dl>
+<dd><p>Renders a widget as an unicode string.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertySingleSelectField.retrieve_css">
@@ -3354,13 +3509,15 @@ children&#8217;s errors if any.</dd></dl>
 <dl class="attribute">
 <dt id="sprox.widgets.PropertySingleSelectField.root">
 <tt class="descname">root</tt><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.root" title="Permalink to this definition">¶</a></dt>
-<dd>The root of this widget tree</dd></dl>
+<dd><p>The root of this widget tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertySingleSelectField.safe_validate">
 <tt class="descname">safe_validate</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.safe_validate" title="Permalink to this definition">¶</a></dt>
-<dd>Tries to coerce the value to python using the validator. If
-validation fails the original value will be returned unmodified.</dd></dl>
+<dd><p>Tries to coerce the value to python using the validator. If
+validation fails the original value will be returned unmodified.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertySingleSelectField.update_attrs">
@@ -3399,12 +3556,14 @@ be passed explicitly to <tt class="docutils literal"><span class="pre">display</
 <dl class="attribute">
 <dt id="sprox.widgets.PropertySingleSelectField.validator">
 <tt class="descname">validator</tt><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.validator" title="Permalink to this definition">¶</a></dt>
-<dd>alias of <tt class="xref docutils literal"><span class="pre">DefaultValidator</span></tt></dd></dl>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">DefaultValidator</span></tt></p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.PropertySingleSelectField.value_at_request">
 <tt class="descname">value_at_request</tt><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.value_at_request" title="Permalink to this definition">¶</a></dt>
-<dd>Value being validated in current request.</dd></dl>
+<dd><p>Value being validated in current request.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertySingleSelectField.walk">
@@ -3434,7 +3593,7 @@ applying a filter on them.</p>
 <dl class="class">
 <dt id="sprox.widgets.RecordFieldWidget">
 <em class="property">class </em><tt class="descclassname">sprox.widgets.</tt><tt class="descname">RecordFieldWidget</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.RecordFieldWidget" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref docutils literal"><span class="pre">tw.core.base.Widget</span></tt></p>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">tw.core.base.Widget</span></tt></p>
 <dl class="method">
 <dt id="sprox.widgets.RecordFieldWidget.adapt_value">
 <tt class="descname">adapt_value</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.RecordFieldWidget.adapt_value" title="Permalink to this definition">¶</a></dt>
@@ -3452,8 +3611,9 @@ applying a filter on them.</p>
 <dl class="method">
 <dt id="sprox.widgets.RecordFieldWidget.add_call">
 <tt class="descname">add_call</tt><big>(</big><em>call</em>, <em>location='bodybottom'</em><big>)</big><a class="headerlink" href="#sprox.widgets.RecordFieldWidget.add_call" title="Permalink to this definition">¶</a></dt>
-<dd>Adds a <tt class="xref docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
-widget is rendered.</dd></dl>
+<dd><p>Adds a <tt class="xref py py-func docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
+widget is rendered.</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.RecordFieldWidget.children_deep">
@@ -3471,7 +3631,7 @@ widget is rendered.</dd></dl>
 <dd><p>Renders a widget and adapts the output. This method <strong>must</strong> be used
 to display child widgets inside their parent&#8217;s template so output is
 adapted.</p>
-<p>Unlike <tt class="xref docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
+<p>Unlike <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
 returns adapted output compatible with the template the widget is being
 rendered on. For example, this is needed so Genshi doesn&#8217;t autoescape
 string output from mako and to serialize Genshi output on the other way
@@ -3481,14 +3641,16 @@ around.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.RecordFieldWidget.displays_on">
 <tt class="descname">displays_on</tt><a class="headerlink" href="#sprox.widgets.RecordFieldWidget.displays_on" title="Permalink to this definition">¶</a></dt>
-<dd>Where the widget is being displayed on</dd></dl>
+<dd><p>Where the widget is being displayed on</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.RecordFieldWidget.get_default">
 <tt class="descname">get_default</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.RecordFieldWidget.get_default" title="Permalink to this definition">¶</a></dt>
-<dd>Returns the default value for the widget. If the default is a funtion
+<dd><p>Returns the default value for the widget. If the default is a funtion
 that it can be called without arguments it will be called on each
-render to retrieve a value</dd></dl>
+render to retrieve a value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.RecordFieldWidget.id">
@@ -3535,7 +3697,8 @@ Example:</p>
 <dl class="attribute">
 <dt id="sprox.widgets.RecordFieldWidget.is_root">
 <tt class="descname">is_root</tt><a class="headerlink" href="#sprox.widgets.RecordFieldWidget.is_root" title="Permalink to this definition">¶</a></dt>
-<dd>True if the widget doesn&#8217;t have a parent</dd></dl>
+<dd><p>True if the widget doesn&#8217;t have a parent</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.RecordFieldWidget.key">
@@ -3560,33 +3723,37 @@ displaying.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.RecordFieldWidget.path">
 <tt class="descname">path</tt><a class="headerlink" href="#sprox.widgets.RecordFieldWidget.path" title="Permalink to this definition">¶</a></dt>
-<dd>Iterates a walk from this widget to the root of the tree</dd></dl>
+<dd><p>Iterates a walk from this widget to the root of the tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.RecordFieldWidget.post_init">
 <tt class="descname">post_init</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.RecordFieldWidget.post_init" title="Permalink to this definition">¶</a></dt>
-<dd>This method is called for all <tt class="xref docutils literal"><span class="pre">tw.api.Widget</span></tt> base classes to
+<dd><p>This method is called for all <tt class="xref py py-class docutils literal"><span class="pre">tw.api.Widget</span></tt> base classes to
 perform final setup after the widget is initialized but before it is
-locked.</dd></dl>
+locked.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.RecordFieldWidget.prepare_dict">
 <tt class="descname">prepare_dict</tt><big>(</big><em>value</em>, <em>d</em>, <em>adapt=True</em><big>)</big><a class="headerlink" href="#sprox.widgets.RecordFieldWidget.prepare_dict" title="Permalink to this definition">¶</a></dt>
-<dd>Prepares the all kw arguments sent to <cite>display</cite> or <cite>render</cite> before
-passing the kw argument&#8217;s dict to <cite>update_params</cite>.</dd></dl>
+<dd><p>Prepares the all kw arguments sent to <cite>display</cite> or <cite>render</cite> before
+passing the kw argument&#8217;s dict to <cite>update_params</cite>.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.RecordFieldWidget.register_resources">
 <tt class="descname">register_resources</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.RecordFieldWidget.register_resources" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register the resources required by this Widget with
-<tt class="xref docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
-<p>This method is called whenever a <tt class="xref docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
+<tt class="xref py py-attr docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
+<p>This method is called whenever a <tt class="xref py py-class docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.RecordFieldWidget.render">
 <tt class="descname">render</tt><big>(</big><em>value=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.RecordFieldWidget.render" title="Permalink to this definition">¶</a></dt>
-<dd>Renders a widget as an unicode string.</dd></dl>
+<dd><p>Renders a widget as an unicode string.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.RecordFieldWidget.retrieve_css">
@@ -3606,7 +3773,8 @@ passing the kw argument&#8217;s dict to <cite>update_params</cite>.</dd></dl>
 <dl class="attribute">
 <dt id="sprox.widgets.RecordFieldWidget.root">
 <tt class="descname">root</tt><a class="headerlink" href="#sprox.widgets.RecordFieldWidget.root" title="Permalink to this definition">¶</a></dt>
-<dd>The root of this widget tree</dd></dl>
+<dd><p>The root of this widget tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.RecordFieldWidget.update_params">
@@ -3673,7 +3841,7 @@ applying a filter on them.</p>
 <dl class="class">
 <dt id="sprox.widgets.RecordViewWidget">
 <em class="property">class </em><tt class="descclassname">sprox.widgets.</tt><tt class="descname">RecordViewWidget</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.RecordViewWidget" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref docutils literal"><span class="pre">tw.core.base.Widget</span></tt></p>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">tw.core.base.Widget</span></tt></p>
 <dl class="method">
 <dt id="sprox.widgets.RecordViewWidget.adapt_value">
 <tt class="descname">adapt_value</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.RecordViewWidget.adapt_value" title="Permalink to this definition">¶</a></dt>
@@ -3691,8 +3859,9 @@ applying a filter on them.</p>
 <dl class="method">
 <dt id="sprox.widgets.RecordViewWidget.add_call">
 <tt class="descname">add_call</tt><big>(</big><em>call</em>, <em>location='bodybottom'</em><big>)</big><a class="headerlink" href="#sprox.widgets.RecordViewWidget.add_call" title="Permalink to this definition">¶</a></dt>
-<dd>Adds a <tt class="xref docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
-widget is rendered.</dd></dl>
+<dd><p>Adds a <tt class="xref py py-func docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
+widget is rendered.</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.RecordViewWidget.children_deep">
@@ -3710,7 +3879,7 @@ widget is rendered.</dd></dl>
 <dd><p>Renders a widget and adapts the output. This method <strong>must</strong> be used
 to display child widgets inside their parent&#8217;s template so output is
 adapted.</p>
-<p>Unlike <tt class="xref docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
+<p>Unlike <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
 returns adapted output compatible with the template the widget is being
 rendered on. For example, this is needed so Genshi doesn&#8217;t autoescape
 string output from mako and to serialize Genshi output on the other way
@@ -3720,14 +3889,16 @@ around.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.RecordViewWidget.displays_on">
 <tt class="descname">displays_on</tt><a class="headerlink" href="#sprox.widgets.RecordViewWidget.displays_on" title="Permalink to this definition">¶</a></dt>
-<dd>Where the widget is being displayed on</dd></dl>
+<dd><p>Where the widget is being displayed on</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.RecordViewWidget.get_default">
 <tt class="descname">get_default</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.RecordViewWidget.get_default" title="Permalink to this definition">¶</a></dt>
-<dd>Returns the default value for the widget. If the default is a funtion
+<dd><p>Returns the default value for the widget. If the default is a funtion
 that it can be called without arguments it will be called on each
-render to retrieve a value</dd></dl>
+render to retrieve a value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.RecordViewWidget.id">
@@ -3774,7 +3945,8 @@ Example:</p>
 <dl class="attribute">
 <dt id="sprox.widgets.RecordViewWidget.is_root">
 <tt class="descname">is_root</tt><a class="headerlink" href="#sprox.widgets.RecordViewWidget.is_root" title="Permalink to this definition">¶</a></dt>
-<dd>True if the widget doesn&#8217;t have a parent</dd></dl>
+<dd><p>True if the widget doesn&#8217;t have a parent</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.RecordViewWidget.key">
@@ -3799,33 +3971,37 @@ displaying.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.RecordViewWidget.path">
 <tt class="descname">path</tt><a class="headerlink" href="#sprox.widgets.RecordViewWidget.path" title="Permalink to this definition">¶</a></dt>
-<dd>Iterates a walk from this widget to the root of the tree</dd></dl>
+<dd><p>Iterates a walk from this widget to the root of the tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.RecordViewWidget.post_init">
 <tt class="descname">post_init</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.RecordViewWidget.post_init" title="Permalink to this definition">¶</a></dt>
-<dd>This method is called for all <tt class="xref docutils literal"><span class="pre">tw.api.Widget</span></tt> base classes to
+<dd><p>This method is called for all <tt class="xref py py-class docutils literal"><span class="pre">tw.api.Widget</span></tt> base classes to
 perform final setup after the widget is initialized but before it is
-locked.</dd></dl>
+locked.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.RecordViewWidget.prepare_dict">
 <tt class="descname">prepare_dict</tt><big>(</big><em>value</em>, <em>d</em>, <em>adapt=True</em><big>)</big><a class="headerlink" href="#sprox.widgets.RecordViewWidget.prepare_dict" title="Permalink to this definition">¶</a></dt>
-<dd>Prepares the all kw arguments sent to <cite>display</cite> or <cite>render</cite> before
-passing the kw argument&#8217;s dict to <cite>update_params</cite>.</dd></dl>
+<dd><p>Prepares the all kw arguments sent to <cite>display</cite> or <cite>render</cite> before
+passing the kw argument&#8217;s dict to <cite>update_params</cite>.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.RecordViewWidget.register_resources">
 <tt class="descname">register_resources</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.RecordViewWidget.register_resources" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register the resources required by this Widget with
-<tt class="xref docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
-<p>This method is called whenever a <tt class="xref docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
+<tt class="xref py py-attr docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
+<p>This method is called whenever a <tt class="xref py py-class docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.RecordViewWidget.render">
 <tt class="descname">render</tt><big>(</big><em>value=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.RecordViewWidget.render" title="Permalink to this definition">¶</a></dt>
-<dd>Renders a widget as an unicode string.</dd></dl>
+<dd><p>Renders a widget as an unicode string.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.RecordViewWidget.retrieve_css">
@@ -3845,7 +4021,8 @@ passing the kw argument&#8217;s dict to <cite>update_params</cite>.</dd></dl>
 <dl class="attribute">
 <dt id="sprox.widgets.RecordViewWidget.root">
 <tt class="descname">root</tt><a class="headerlink" href="#sprox.widgets.RecordViewWidget.root" title="Permalink to this definition">¶</a></dt>
-<dd>The root of this widget tree</dd></dl>
+<dd><p>The root of this widget tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.RecordViewWidget.update_params">
@@ -3912,7 +4089,7 @@ applying a filter on them.</p>
 <dl class="class">
 <dt id="sprox.widgets.TableDefWidget">
 <em class="property">class </em><tt class="descclassname">sprox.widgets.</tt><tt class="descname">TableDefWidget</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.TableDefWidget" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref docutils literal"><span class="pre">tw.core.base.Widget</span></tt></p>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">tw.core.base.Widget</span></tt></p>
 <dl class="method">
 <dt id="sprox.widgets.TableDefWidget.adapt_value">
 <tt class="descname">adapt_value</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.TableDefWidget.adapt_value" title="Permalink to this definition">¶</a></dt>
@@ -3930,8 +4107,9 @@ applying a filter on them.</p>
 <dl class="method">
 <dt id="sprox.widgets.TableDefWidget.add_call">
 <tt class="descname">add_call</tt><big>(</big><em>call</em>, <em>location='bodybottom'</em><big>)</big><a class="headerlink" href="#sprox.widgets.TableDefWidget.add_call" title="Permalink to this definition">¶</a></dt>
-<dd>Adds a <tt class="xref docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
-widget is rendered.</dd></dl>
+<dd><p>Adds a <tt class="xref py py-func docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
+widget is rendered.</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.TableDefWidget.children_deep">
@@ -3949,7 +4127,7 @@ widget is rendered.</dd></dl>
 <dd><p>Renders a widget and adapts the output. This method <strong>must</strong> be used
 to display child widgets inside their parent&#8217;s template so output is
 adapted.</p>
-<p>Unlike <tt class="xref docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
+<p>Unlike <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
 returns adapted output compatible with the template the widget is being
 rendered on. For example, this is needed so Genshi doesn&#8217;t autoescape
 string output from mako and to serialize Genshi output on the other way
@@ -3959,14 +4137,16 @@ around.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.TableDefWidget.displays_on">
 <tt class="descname">displays_on</tt><a class="headerlink" href="#sprox.widgets.TableDefWidget.displays_on" title="Permalink to this definition">¶</a></dt>
-<dd>Where the widget is being displayed on</dd></dl>
+<dd><p>Where the widget is being displayed on</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.TableDefWidget.get_default">
 <tt class="descname">get_default</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.TableDefWidget.get_default" title="Permalink to this definition">¶</a></dt>
-<dd>Returns the default value for the widget. If the default is a funtion
+<dd><p>Returns the default value for the widget. If the default is a funtion
 that it can be called without arguments it will be called on each
-render to retrieve a value</dd></dl>
+render to retrieve a value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.TableDefWidget.id">
@@ -4013,7 +4193,8 @@ Example:</p>
 <dl class="attribute">
 <dt id="sprox.widgets.TableDefWidget.is_root">
 <tt class="descname">is_root</tt><a class="headerlink" href="#sprox.widgets.TableDefWidget.is_root" title="Permalink to this definition">¶</a></dt>
-<dd>True if the widget doesn&#8217;t have a parent</dd></dl>
+<dd><p>True if the widget doesn&#8217;t have a parent</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.TableDefWidget.key">
@@ -4038,33 +4219,37 @@ displaying.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.TableDefWidget.path">
 <tt class="descname">path</tt><a class="headerlink" href="#sprox.widgets.TableDefWidget.path" title="Permalink to this definition">¶</a></dt>
-<dd>Iterates a walk from this widget to the root of the tree</dd></dl>
+<dd><p>Iterates a walk from this widget to the root of the tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.TableDefWidget.post_init">
 <tt class="descname">post_init</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.TableDefWidget.post_init" title="Permalink to this definition">¶</a></dt>
-<dd>This method is called for all <tt class="xref docutils literal"><span class="pre">tw.api.Widget</span></tt> base classes to
+<dd><p>This method is called for all <tt class="xref py py-class docutils literal"><span class="pre">tw.api.Widget</span></tt> base classes to
 perform final setup after the widget is initialized but before it is
-locked.</dd></dl>
+locked.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.TableDefWidget.prepare_dict">
 <tt class="descname">prepare_dict</tt><big>(</big><em>value</em>, <em>d</em>, <em>adapt=True</em><big>)</big><a class="headerlink" href="#sprox.widgets.TableDefWidget.prepare_dict" title="Permalink to this definition">¶</a></dt>
-<dd>Prepares the all kw arguments sent to <cite>display</cite> or <cite>render</cite> before
-passing the kw argument&#8217;s dict to <cite>update_params</cite>.</dd></dl>
+<dd><p>Prepares the all kw arguments sent to <cite>display</cite> or <cite>render</cite> before
+passing the kw argument&#8217;s dict to <cite>update_params</cite>.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.TableDefWidget.register_resources">
 <tt class="descname">register_resources</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.TableDefWidget.register_resources" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register the resources required by this Widget with
-<tt class="xref docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
-<p>This method is called whenever a <tt class="xref docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
+<tt class="xref py py-attr docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
+<p>This method is called whenever a <tt class="xref py py-class docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.TableDefWidget.render">
 <tt class="descname">render</tt><big>(</big><em>value=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.TableDefWidget.render" title="Permalink to this definition">¶</a></dt>
-<dd>Renders a widget as an unicode string.</dd></dl>
+<dd><p>Renders a widget as an unicode string.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.TableDefWidget.retrieve_css">
@@ -4084,7 +4269,8 @@ passing the kw argument&#8217;s dict to <cite>update_params</cite>.</dd></dl>
 <dl class="attribute">
 <dt id="sprox.widgets.TableDefWidget.root">
 <tt class="descname">root</tt><a class="headerlink" href="#sprox.widgets.TableDefWidget.root" title="Permalink to this definition">¶</a></dt>
-<dd>The root of this widget tree</dd></dl>
+<dd><p>The root of this widget tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.TableDefWidget.update_params">
@@ -4151,7 +4337,7 @@ applying a filter on them.</p>
 <dl class="class">
 <dt id="sprox.widgets.TableLabelWidget">
 <em class="property">class </em><tt class="descclassname">sprox.widgets.</tt><tt class="descname">TableLabelWidget</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.TableLabelWidget" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref docutils literal"><span class="pre">tw.core.base.Widget</span></tt></p>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">tw.core.base.Widget</span></tt></p>
 <dl class="method">
 <dt id="sprox.widgets.TableLabelWidget.adapt_value">
 <tt class="descname">adapt_value</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.TableLabelWidget.adapt_value" title="Permalink to this definition">¶</a></dt>
@@ -4169,8 +4355,9 @@ applying a filter on them.</p>
 <dl class="method">
 <dt id="sprox.widgets.TableLabelWidget.add_call">
 <tt class="descname">add_call</tt><big>(</big><em>call</em>, <em>location='bodybottom'</em><big>)</big><a class="headerlink" href="#sprox.widgets.TableLabelWidget.add_call" title="Permalink to this definition">¶</a></dt>
-<dd>Adds a <tt class="xref docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
-widget is rendered.</dd></dl>
+<dd><p>Adds a <tt class="xref py py-func docutils literal"><span class="pre">tw.api.js_function()</span></tt> call that will be made when the
+widget is rendered.</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.TableLabelWidget.children_deep">
@@ -4188,7 +4375,7 @@ widget is rendered.</dd></dl>
 <dd><p>Renders a widget and adapts the output. This method <strong>must</strong> be used
 to display child widgets inside their parent&#8217;s template so output is
 adapted.</p>
-<p>Unlike <tt class="xref docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
+<p>Unlike <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.render()</span></tt>, <tt class="xref py py-meth docutils literal"><span class="pre">tw.api.Widget.display()</span></tt>
 returns adapted output compatible with the template the widget is being
 rendered on. For example, this is needed so Genshi doesn&#8217;t autoescape
 string output from mako and to serialize Genshi output on the other way
@@ -4198,14 +4385,16 @@ around.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.TableLabelWidget.displays_on">
 <tt class="descname">displays_on</tt><a class="headerlink" href="#sprox.widgets.TableLabelWidget.displays_on" title="Permalink to this definition">¶</a></dt>
-<dd>Where the widget is being displayed on</dd></dl>
+<dd><p>Where the widget is being displayed on</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.TableLabelWidget.get_default">
 <tt class="descname">get_default</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.TableLabelWidget.get_default" title="Permalink to this definition">¶</a></dt>
-<dd>Returns the default value for the widget. If the default is a funtion
+<dd><p>Returns the default value for the widget. If the default is a funtion
 that it can be called without arguments it will be called on each
-render to retrieve a value</dd></dl>
+render to retrieve a value</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.TableLabelWidget.id">
@@ -4252,7 +4441,8 @@ Example:</p>
 <dl class="attribute">
 <dt id="sprox.widgets.TableLabelWidget.is_root">
 <tt class="descname">is_root</tt><a class="headerlink" href="#sprox.widgets.TableLabelWidget.is_root" title="Permalink to this definition">¶</a></dt>
-<dd>True if the widget doesn&#8217;t have a parent</dd></dl>
+<dd><p>True if the widget doesn&#8217;t have a parent</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.TableLabelWidget.key">
@@ -4277,33 +4467,37 @@ displaying.</p>
 <dl class="attribute">
 <dt id="sprox.widgets.TableLabelWidget.path">
 <tt class="descname">path</tt><a class="headerlink" href="#sprox.widgets.TableLabelWidget.path" title="Permalink to this definition">¶</a></dt>
-<dd>Iterates a walk from this widget to the root of the tree</dd></dl>
+<dd><p>Iterates a walk from this widget to the root of the tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.TableLabelWidget.post_init">
 <tt class="descname">post_init</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.TableLabelWidget.post_init" title="Permalink to this definition">¶</a></dt>
-<dd>This method is called for all <tt class="xref docutils literal"><span class="pre">tw.api.Widget</span></tt> base classes to
+<dd><p>This method is called for all <tt class="xref py py-class docutils literal"><span class="pre">tw.api.Widget</span></tt> base classes to
 perform final setup after the widget is initialized but before it is
-locked.</dd></dl>
+locked.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.TableLabelWidget.prepare_dict">
 <tt class="descname">prepare_dict</tt><big>(</big><em>value</em>, <em>d</em>, <em>adapt=True</em><big>)</big><a class="headerlink" href="#sprox.widgets.TableLabelWidget.prepare_dict" title="Permalink to this definition">¶</a></dt>
-<dd>Prepares the all kw arguments sent to <cite>display</cite> or <cite>render</cite> before
-passing the kw argument&#8217;s dict to <cite>update_params</cite>.</dd></dl>
+<dd><p>Prepares the all kw arguments sent to <cite>display</cite> or <cite>render</cite> before
+passing the kw argument&#8217;s dict to <cite>update_params</cite>.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.TableLabelWidget.register_resources">
 <tt class="descname">register_resources</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.widgets.TableLabelWidget.register_resources" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register the resources required by this Widget with
-<tt class="xref docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
-<p>This method is called whenever a <tt class="xref docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
+<tt class="xref py py-attr docutils literal"><span class="pre">tw.framework</span></tt> for inclusion in the page.</p>
+<p>This method is called whenever a <tt class="xref py py-class docutils literal"><span class="pre">Widget</span></tt> is rendered</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.TableLabelWidget.render">
 <tt class="descname">render</tt><big>(</big><em>value=None</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.TableLabelWidget.render" title="Permalink to this definition">¶</a></dt>
-<dd>Renders a widget as an unicode string.</dd></dl>
+<dd><p>Renders a widget as an unicode string.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.TableLabelWidget.retrieve_css">
@@ -4323,7 +4517,8 @@ passing the kw argument&#8217;s dict to <cite>update_params</cite>.</dd></dl>
 <dl class="attribute">
 <dt id="sprox.widgets.TableLabelWidget.root">
 <tt class="descname">root</tt><a class="headerlink" href="#sprox.widgets.TableLabelWidget.root" title="Permalink to this definition">¶</a></dt>
-<dd>The root of this widget tree</dd></dl>
+<dd><p>The root of this widget tree</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.TableLabelWidget.update_params">
@@ -4405,38 +4600,38 @@ applying a filter on them.</p>
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/sprox_logo.png" alt="Logo"/>
             </a></p>
-            <h3><a href="../index.html">Table Of Contents</a></h3>
-            <ul>
-<li><a class="reference external" href=""><tt class="docutils literal"><span class="pre">sprox.widgets</span></tt></a><ul>
-<li><a class="reference external" href="#classes">Classes</a></li>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">sprox.widgets</span></tt></a><ul>
+<li><a class="reference internal" href="#classes">Classes</a></li>
 </ul>
 </li>
 </ul>
 
-            <h4>Previous topic</h4>
-            <p class="topless"><a href="sprox.iprovider.html"
-                                  title="previous chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.iprovider</span></tt></a></p>
-            <h4>Next topic</h4>
-            <p class="topless"><a href="sprox.util.html"
-                                  title="next chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.util</span></tt></a></p>
-            <h3>This Page</h3>
-            <ul class="this-page-menu">
-              <li><a href="../_sources/modules/sprox.widgets.txt"
-                     rel="nofollow">Show Source</a></li>
-            </ul>
-          <div id="searchbox" style="display: none">
-            <h3>Quick search</h3>
-              <form class="search" action="../search.html" method="get">
-                <input type="text" name="q" size="18" />
-                <input type="submit" value="Go" />
-                <input type="hidden" name="check_keywords" value="yes" />
-                <input type="hidden" name="area" value="default" />
-              </form>
-              <p class="searchtip" style="font-size: 90%">
-              Enter search terms or a module, class or function name.
-              </p>
-          </div>
-          <script type="text/javascript">$('#searchbox').show(0);</script>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="sprox.iprovider.html"
+                        title="previous chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.iprovider</span></tt></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="sprox.util.html"
+                        title="next chapter"><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.util</span></tt></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/modules/sprox.widgets.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -4448,7 +4643,7 @@ applying a filter on them.</p>
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../modindex.html" title="Global Module Index"
+          <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
           <a href="sprox.util.html" title="sprox.util"
@@ -4457,19 +4652,19 @@ applying a filter on them.</p>
           <a href="sprox.iprovider.html" title="sprox.iprovider"
              >previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.7</b></a>
+  <a href="../index.html"><b>Sprox 0.6.11</b></a>
   </li>
 
   
-    <li> <b>/</b> <a href=""><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.widgets</span></tt></a></li>
+    <li> <b>/</b> <a href="#"><tt class="docutils literal docutils literal docutils literal"><span class="pre">sprox.widgets</span></tt></a></li>
   
 
       </ul>
     </div>
 
     <div class="footer">
-      &copy; Copyright 2008, Christopher Perkins.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
+        &copy; Copyright 2008, Christopher Perkins.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.4.
     </div>
 
 <script type="text/javascript">

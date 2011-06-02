@@ -1,4 +1,6 @@
 
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -6,21 +8,22 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sprox.dojo.formbase &mdash; Sprox v0.6.7 documentation</title>
+    <title>sprox.dojo.formbase &mdash; Sprox v0.6.11 documentation</title>
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.7',
-        COLLAPSE_MODINDEX: false,
+        VERSION:     '0.6.11',
+        COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Sprox v0.6.7 documentation" href="../index.html" />
+    <link rel="top" title="Sprox v0.6.11 documentation" href="../index.html" />
     <link rel="next" title="test_model" href="../test_model.html" />
     <link rel="prev" title="sprox.dojo.fillerbase" href="sprox.dojo.fillerbase.html" /> 
   </head>
@@ -32,8 +35,8 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../modindex.html" title="Global Module Index"
-             accesskey="M">modules</a> |</li>
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li class="right" >
           <a href="../test_model.html" title="test_model"
              accesskey="N">next</a> |</li>
@@ -41,11 +44,11 @@
           <a href="sprox.dojo.fillerbase.html" title="sprox.dojo.fillerbase"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.7</b></a>
+  <a href="../index.html"><b>Sprox 0.6.11</b></a>
   </li>
 
   
-    <li> <b>/</b> <a href=""><tt class="docutils literal docutils literal"><span class="pre">sprox.dojo.formbase</span></tt></a></li>
+    <li> <b>/</b> <a href="#"><tt class="docutils literal docutils literal"><span class="pre">sprox.dojo.formbase</span></tt></a></li>
   
 
       </ul>
@@ -58,7 +61,7 @@
       <div class="body">
         
   <div class="section" id="module-sprox.dojo.formbase">
-<h1><tt class="xref docutils literal"><span class="pre">sprox.dojo.formbase</span></tt><a class="headerlink" href="#module-sprox.dojo.formbase" title="Permalink to this headline">¶</a></h1>
+<span id="sprox-dojo-formbase"></span><h1><a class="reference internal" href="#module-sprox.dojo.formbase" title="sprox.dojo.formbase"><tt class="xref py py-mod docutils literal"><span class="pre">sprox.dojo.formbase</span></tt></a><a class="headerlink" href="#module-sprox.dojo.formbase" title="Permalink to this headline">¶</a></h1>
 <p>fillerbase Module</p>
 <p>Classes to help fill widgets with data</p>
 <p>Copyright (c) 2008 Christopher Perkins
@@ -69,15 +72,15 @@ Released under MIT license.</p>
 <dl class="class">
 <dt id="sprox.dojo.formbase.DojoEditableForm">
 <em class="property">class </em><tt class="descclassname">sprox.dojo.formbase.</tt><tt class="descname">DojoEditableForm</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.dojo.formbase.DojoEditableForm" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a title="sprox.formbase.EditableForm" class="reference external" href="sprox.formbase.html#sprox.formbase.EditableForm"><tt class="xref docutils literal"><span class="pre">sprox.formbase.EditableForm</span></tt></a></p>
+<dd><p>Bases: <a class="reference internal" href="sprox.formbase.html#sprox.formbase.EditableForm" title="sprox.formbase.EditableForm"><tt class="xref py py-class docutils literal"><span class="pre">sprox.formbase.EditableForm</span></tt></a></p>
 <p>Creates a form for editing records that has select shuttles for the multiple relations.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Modifiers:</th><td class="field-body">see <a title="sprox.formbase.FormBase" class="reference external" href="sprox.formbase.html#sprox.formbase.FormBase"><tt class="xref docutils literal"><span class="pre">sprox.formbase.FormBase</span></tt></a></td>
+<tr class="field"><th class="field-name">Modifiers :</th><td class="field-body">see <a class="reference internal" href="sprox.formbase.html#sprox.formbase.FormBase" title="sprox.formbase.FormBase"><tt class="xref py py-class docutils literal"><span class="pre">sprox.formbase.FormBase</span></tt></a></td>
 </tr>
-<tr class="field"><th class="field-name">Usage:</th><td class="field-body"></td>
+<tr class="field"><th class="field-name">Usage :</th><td class="field-body"></td>
 </tr>
 </tbody>
 </table>
@@ -88,10 +91,11 @@ Released under MIT license.</p>
 <span class="gp">... </span>    <span class="n">__model__</span> <span class="o">=</span> <span class="n">User</span>
 <span class="gp">... </span>    <span class="n">__limit_fields__</span>       <span class="o">=</span> <span class="p">[</span><span class="s">&#39;user_name&#39;</span><span class="p">,</span> <span class="s">&#39;groups&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">edit_form</span> <span class="o">=</span> <span class="n">Form</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">edit_form</span><span class="p">()</span> <span class="c"># doctest: +XML</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">edit_form</span><span class="p">()</span> 
 <span class="go">&lt;form action=&quot;&quot; method=&quot;post&quot; class=&quot;required tableform&quot;&gt;</span>
 <span class="go">    &lt;div&gt;</span>
 <span class="go">            &lt;input type=&quot;hidden&quot; id=&quot;sprox_id&quot; class=&quot;hiddenfield&quot; name=&quot;sprox_id&quot; value=&quot;&quot; /&gt;</span>
+<span class="go">            &lt;input type=&quot;hidden&quot; id=&quot;user_id&quot; class=&quot;hiddenfield&quot; name=&quot;user_id&quot; value=&quot;&quot; /&gt;</span>
 <span class="go">            &lt;input xmlns=&quot;http://www.w3.org/1999/xhtml&quot; type=&quot;hidden&quot; name=&quot;_method&quot; class=&quot;sproxmethodputhiddenfield&quot; id=&quot;_method&quot; value=&quot;PUT&quot; /&gt;</span>
 <span class="go">    &lt;/div&gt;</span>
 <span class="go">    &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;2&quot; &gt;</span>
@@ -132,7 +136,15 @@ Released under MIT license.</p>
 <span class="go">&lt;/div&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
 <span class="go">        &lt;/tr&gt;</span>
-<span class="go">        &lt;tr class=&quot;even&quot; id=&quot;submit.container&quot; title=&quot;&quot; &gt;</span>
+<span class="go">        &lt;tr class=&quot;even&quot; id=&quot;user_id.container&quot; title=&quot;&quot; &gt;</span>
+<span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
+<span class="go">                &lt;label id=&quot;user_id.label&quot; for=&quot;user_id&quot; class=&quot;fieldlabel required&quot;&gt;User Id&lt;/label&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">            &lt;td class=&quot;fieldcol&quot; &gt;</span>
+<span class="go">                &lt;input type=&quot;text&quot; id=&quot;user_id&quot; class=&quot;textfield required&quot; name=&quot;user_id&quot; value=&quot;&quot; disabled=&quot;disabled&quot; /&gt;</span>
+<span class="go">            &lt;/td&gt;</span>
+<span class="go">        &lt;/tr&gt;</span>
+<span class="go">        &lt;tr class=&quot;odd&quot; id=&quot;submit.container&quot; title=&quot;&quot; &gt;</span>
 <span class="go">            &lt;td class=&quot;labelcol&quot;&gt;</span>
 <span class="go">                &lt;label id=&quot;submit.label&quot; for=&quot;submit&quot; class=&quot;fieldlabel&quot;&gt;&lt;/label&gt;</span>
 <span class="go">            &lt;/td&gt;</span>
@@ -147,22 +159,23 @@ Released under MIT license.</p>
 <dl class="method">
 <dt id="sprox.dojo.formbase.DojoEditableForm.validate">
 <tt class="descname">validate</tt><big>(</big><em>params</em>, <em>state=None</em><big>)</big><a class="headerlink" href="#sprox.dojo.formbase.DojoEditableForm.validate" title="Permalink to this definition">¶</a></dt>
-<dd>A pass-thru to the widget&#8217;s validate function.</dd></dl>
+<dd><p>A pass-thru to the widget&#8217;s validate function.</p>
+</dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="sprox.dojo.formbase.DojoAddRecordForm">
 <em class="property">class </em><tt class="descclassname">sprox.dojo.formbase.</tt><tt class="descname">DojoAddRecordForm</tt><big>(</big><em>provider_hint=None</em>, <em>**provider_hints</em><big>)</big><a class="headerlink" href="#sprox.dojo.formbase.DojoAddRecordForm" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a title="sprox.formbase.AddRecordForm" class="reference external" href="sprox.formbase.html#sprox.formbase.AddRecordForm"><tt class="xref docutils literal"><span class="pre">sprox.formbase.AddRecordForm</span></tt></a></p>
+<dd><p>Bases: <a class="reference internal" href="sprox.formbase.html#sprox.formbase.AddRecordForm" title="sprox.formbase.AddRecordForm"><tt class="xref py py-class docutils literal"><span class="pre">sprox.formbase.AddRecordForm</span></tt></a></p>
 <p>Creates a form for adding records that has select shuttles for the multiple relations.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Modifiers:</th><td class="field-body">see <a title="sprox.formbase.FormBase" class="reference external" href="sprox.formbase.html#sprox.formbase.FormBase"><tt class="xref docutils literal"><span class="pre">sprox.formbase.FormBase</span></tt></a></td>
+<tr class="field"><th class="field-name">Modifiers :</th><td class="field-body">see <a class="reference internal" href="sprox.formbase.html#sprox.formbase.FormBase" title="sprox.formbase.FormBase"><tt class="xref py py-class docutils literal"><span class="pre">sprox.formbase.FormBase</span></tt></a></td>
 </tr>
-<tr class="field"><th class="field-name">Usage:</th><td class="field-body"></td>
+<tr class="field"><th class="field-name">Usage :</th><td class="field-body"></td>
 </tr>
 </tbody>
 </table>
@@ -173,7 +186,7 @@ Released under MIT license.</p>
 <span class="gp">... </span>    <span class="n">__model__</span> <span class="o">=</span> <span class="n">User</span>
 <span class="gp">... </span>    <span class="n">__limit_fields__</span>       <span class="o">=</span> <span class="p">[</span><span class="s">&#39;user_name&#39;</span><span class="p">,</span> <span class="s">&#39;groups&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">add_form</span> <span class="o">=</span> <span class="n">Form</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">add_form</span><span class="p">()</span> <span class="c"># doctest: +XML</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">add_form</span><span class="p">()</span> 
 <span class="go">&lt;form action=&quot;&quot; method=&quot;post&quot; class=&quot;required tableform&quot;&gt;</span>
 <span class="go">    &lt;div&gt;</span>
 <span class="go">            &lt;input type=&quot;hidden&quot; id=&quot;sprox_id&quot; class=&quot;hiddenfield&quot; name=&quot;sprox_id&quot; value=&quot;&quot; /&gt;</span>
@@ -231,7 +244,8 @@ Released under MIT license.</p>
 <dl class="method">
 <dt id="sprox.dojo.formbase.DojoAddRecordForm.validate">
 <tt class="descname">validate</tt><big>(</big><em>params</em>, <em>state=None</em><big>)</big><a class="headerlink" href="#sprox.dojo.formbase.DojoAddRecordForm.validate" title="Permalink to this definition">¶</a></dt>
-<dd>A pass-thru to the widget&#8217;s validate function.</dd></dl>
+<dd><p>A pass-thru to the widget&#8217;s validate function.</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -253,38 +267,38 @@ Released under MIT license.</p>
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/sprox_logo.png" alt="Logo"/>
             </a></p>
-            <h3><a href="../index.html">Table Of Contents</a></h3>
-            <ul>
-<li><a class="reference external" href=""><tt class="docutils literal"><span class="pre">sprox.dojo.formbase</span></tt></a><ul>
-<li><a class="reference external" href="#classes">Classes</a></li>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">sprox.dojo.formbase</span></tt></a><ul>
+<li><a class="reference internal" href="#classes">Classes</a></li>
 </ul>
 </li>
 </ul>
 
-            <h4>Previous topic</h4>
-            <p class="topless"><a href="sprox.dojo.fillerbase.html"
-                                  title="previous chapter"><tt class="docutils literal docutils literal"><span class="pre">sprox.dojo.fillerbase</span></tt></a></p>
-            <h4>Next topic</h4>
-            <p class="topless"><a href="../test_model.html"
-                                  title="next chapter"><tt class="docutils literal"><span class="pre">test_model</span></tt></a></p>
-            <h3>This Page</h3>
-            <ul class="this-page-menu">
-              <li><a href="../_sources/modules/sprox.dojo.formbase.txt"
-                     rel="nofollow">Show Source</a></li>
-            </ul>
-          <div id="searchbox" style="display: none">
-            <h3>Quick search</h3>
-              <form class="search" action="../search.html" method="get">
-                <input type="text" name="q" size="18" />
-                <input type="submit" value="Go" />
-                <input type="hidden" name="check_keywords" value="yes" />
-                <input type="hidden" name="area" value="default" />
-              </form>
-              <p class="searchtip" style="font-size: 90%">
-              Enter search terms or a module, class or function name.
-              </p>
-          </div>
-          <script type="text/javascript">$('#searchbox').show(0);</script>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="sprox.dojo.fillerbase.html"
+                        title="previous chapter"><tt class="docutils literal docutils literal"><span class="pre">sprox.dojo.fillerbase</span></tt></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../test_model.html"
+                        title="next chapter"><tt class="docutils literal"><span class="pre">test_model</span></tt></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/modules/sprox.dojo.formbase.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -296,7 +310,7 @@ Released under MIT license.</p>
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../modindex.html" title="Global Module Index"
+          <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
           <a href="../test_model.html" title="test_model"
@@ -305,19 +319,19 @@ Released under MIT license.</p>
           <a href="sprox.dojo.fillerbase.html" title="sprox.dojo.fillerbase"
              >previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.7</b></a>
+  <a href="../index.html"><b>Sprox 0.6.11</b></a>
   </li>
 
   
-    <li> <b>/</b> <a href=""><tt class="docutils literal docutils literal"><span class="pre">sprox.dojo.formbase</span></tt></a></li>
+    <li> <b>/</b> <a href="#"><tt class="docutils literal docutils literal"><span class="pre">sprox.dojo.formbase</span></tt></a></li>
   
 
       </ul>
     </div>
 
     <div class="footer">
-      &copy; Copyright 2008, Christopher Perkins.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
+        &copy; Copyright 2008, Christopher Perkins.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.4.
     </div>
 
 <script type="text/javascript">
