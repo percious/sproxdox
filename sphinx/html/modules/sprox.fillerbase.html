@@ -4,17 +4,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sprox.fillerbase &mdash; Sprox v0.6.11 documentation</title>
+    <title>sprox.fillerbase &mdash; Sprox 0.7rc1 documentation</title>
+    
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.11',
+        VERSION:     '0.7rc1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Sprox v0.6.11 documentation" href="../index.html" />
+    <link rel="top" title="Sprox 0.7rc1 documentation" href="../index.html" />
     <link rel="next" title="sprox.configbase" href="sprox.configbase.html" />
     <link rel="prev" title="sprox.tablebase" href="sprox.tablebase.html" /> 
   </head>
@@ -44,7 +47,7 @@
           <a href="sprox.tablebase.html" title="sprox.tablebase"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.11</b></a>
+  <a href="../index.html"><b>Sprox 0.7rc1</b></a>
   </li>
 
   
@@ -64,7 +67,7 @@
 <span id="sprox-fillerbase"></span><h1><a class="reference internal" href="#module-sprox.fillerbase" title="sprox.fillerbase"><tt class="xref py py-mod docutils literal"><span class="pre">sprox.fillerbase</span></tt></a><a class="headerlink" href="#module-sprox.fillerbase" title="Permalink to this headline">¶</a></h1>
 <p>fillerbase Module</p>
 <p>Classes to help fill widgets with data</p>
-<p>Copyright (c) 2008 Christopher Perkins
+<p>Copyright (c) 2008-10 Christopher Perkins
 Original Version by Christopher Perkins 2008
 Released under MIT license.</p>
 <div class="section" id="classes">
@@ -77,7 +80,7 @@ Released under MIT license.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Modifiers :</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Modifiers :</th><td class="field-body"></td>
 </tr>
 </tbody>
 </table>
@@ -87,7 +90,7 @@ Released under MIT license.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Arguments :</th><td class="field-body"><dl class="first docutils">
+<tr class="field-odd field"><th class="field-name">Arguments :</th><td class="field-body"><dl class="first docutils">
 <dt>values</dt>
 <dd><p class="first last">pass through of values.  This is typically a set of default values that is updated by the
 filler.  This is useful when updating an existing form.</p>
@@ -99,7 +102,7 @@ and limit for a TableFiller.</p>
 </dl>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Usage :</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">Usage :</th><td class="field-body"></td>
 </tr>
 </tbody>
 </table>
@@ -134,23 +137,23 @@ but TurboJson is rules-based, where the semantics for generating dictionaries fo
 <col width="28%" />
 </colgroup>
 <thead valign="bottom">
-<tr><th class="head">Name</th>
+<tr class="row-odd"><th class="head">Name</th>
 <th class="head">Description</th>
 <th class="head">Default</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td>__actions__</td>
+<tr class="row-even"><td>__actions__</td>
 <td>An overridable function to define how to
 display action links in the form.</td>
 <td>a function that creates an
 edit and delete link.</td>
 </tr>
-<tr><td>__metadata_type__</td>
+<tr class="row-odd"><td>__metadata_type__</td>
 <td>How should we get data from the provider.</td>
 <td>FieldsMetadata</td>
 </tr>
-<tr><td>__possible_field_names__</td>
+<tr class="row-even"><td>__possible_field_names__</td>
 <td>See explanation below.</td>
 <td>See below.</td>
 </tr>
@@ -161,7 +164,7 @@ edit and delete link.</td>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Relations :</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Relations :</th><td class="field-body"></td>
 </tr>
 </tbody>
 </table>
@@ -175,8 +178,8 @@ _name, name, description, title.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name" colspan="2">Restful Actions:</th></tr>
-<tr><td>&nbsp;</td><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name" colspan="2">Restful Actions:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"></td>
 </tr>
 </tbody>
 </table>
@@ -187,7 +190,7 @@ For more information on developing RESTful URLs, please visit <a class="referenc
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Usage :</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Usage :</th><td class="field-body"></td>
 </tr>
 </tbody>
 </table>
@@ -220,7 +223,7 @@ of a user interface.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Arguments :</th><td class="field-body"><dl class="first last docutils">
+<tr class="field-odd field"><th class="field-name">Arguments :</th><td class="field-body"><dl class="first last docutils">
 <dt>offset</dt>
 <dd><p class="first last">offset into the records</p>
 </dd>
@@ -252,7 +255,7 @@ The values are returned in dictionary form.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Modifiers :</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Modifiers :</th><td class="field-body"></td>
 </tr>
 </tbody>
 </table>
@@ -261,7 +264,7 @@ The values are returned in dictionary form.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Usage :</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Usage :</th><td class="field-body"></td>
 </tr>
 </tbody>
 </table>
@@ -369,7 +372,7 @@ The values are returned in dictionary form.</p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" size="18" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -399,7 +402,7 @@ The values are returned in dictionary form.</p>
           <a href="sprox.tablebase.html" title="sprox.tablebase"
              >previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.11</b></a>
+  <a href="../index.html"><b>Sprox 0.7rc1</b></a>
   </li>
 
   
@@ -411,7 +414,7 @@ The values are returned in dictionary form.</p>
 
     <div class="footer">
         &copy; Copyright 2008, Christopher Perkins.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.4.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.
     </div>
 
 <script type="text/javascript">

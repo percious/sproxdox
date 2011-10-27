@@ -4,17 +4,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sprox.saormprovider &mdash; Sprox v0.6.11 documentation</title>
+    <title>sprox.saormprovider &mdash; Sprox 0.7rc1 documentation</title>
+    
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.11',
+        VERSION:     '0.7rc1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Sprox v0.6.11 documentation" href="../index.html" />
+    <link rel="top" title="Sprox 0.7rc1 documentation" href="../index.html" />
     <link rel="next" title="sprox.iprovider" href="sprox.iprovider.html" />
     <link rel="prev" title="sprox.metadata" href="sprox.metadata.html" /> 
   </head>
@@ -44,7 +47,7 @@
           <a href="sprox.metadata.html" title="sprox.metadata"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.11</b></a>
+  <a href="../index.html"><b>Sprox 0.7rc1</b></a>
   </li>
 
   
@@ -71,19 +74,32 @@ SAProvider                         sqlalchemy metadata/crud provider</p>
 None</p>
 <p>Functions:
 None</p>
-<p>Copyright (c) 2011 Christopher Perkins
+<p>This module is deprecated</p>
+<p>Copyright (c) 2007-10 Christopher Perkins
 Original Version by Christopher Perkins 2007
 Released under MIT license.</p>
 <div class="section" id="classes">
 <h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="sprox.saormprovider.SAORMProvider">
-<em class="property">class </em><tt class="descclassname">sprox.saormprovider.</tt><tt class="descname">SAORMProvider</tt><big>(</big><em>hint=None</em>, <em>**hints</em><big>)</big><a class="headerlink" href="#sprox.saormprovider.SAORMProvider" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="sprox.iprovider.html#sprox.iprovider.IProvider" title="sprox.iprovider.IProvider"><tt class="xref py py-class docutils literal"><span class="pre">sprox.iprovider.IProvider</span></tt></a></p>
+<em class="property">class </em><tt class="descclassname">sprox.saormprovider.</tt><tt class="descname">SAORMProvider</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.saormprovider.SAORMProvider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">sprox.sa.provider.SAORMProvider</span></tt></p>
 <dl class="method">
 <dt id="sprox.saormprovider.SAORMProvider.create">
 <tt class="descname">create</tt><big>(</big><em>entity</em>, <em>params</em><big>)</big><a class="headerlink" href="#sprox.saormprovider.SAORMProvider.create" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.saormprovider.SAORMProvider.default_validator_selector_type">
+<tt class="descname">default_validator_selector_type</tt><a class="headerlink" href="#sprox.saormprovider.SAORMProvider.default_validator_selector_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">SAValidatorSelector</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.saormprovider.SAORMProvider.default_widget_selector_type">
+<tt class="descname">default_widget_selector_type</tt><a class="headerlink" href="#sprox.saormprovider.SAORMProvider.default_widget_selector_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">SAWidgetSelector</span></tt></p>
+</dd></dl>
 
 <dl class="method">
 <dt id="sprox.saormprovider.SAORMProvider.delete">
@@ -93,6 +109,11 @@ Released under MIT license.</p>
 <dl class="method">
 <dt id="sprox.saormprovider.SAORMProvider.dictify">
 <tt class="descname">dictify</tt><big>(</big><em>obj</em>, <em>fields=None</em>, <em>omit_fields=None</em><big>)</big><a class="headerlink" href="#sprox.saormprovider.SAORMProvider.dictify" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.saormprovider.SAORMProvider.flush">
+<tt class="descname">flush</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.saormprovider.SAORMProvider.flush" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -123,6 +144,21 @@ Released under MIT license.</p>
 <dl class="method">
 <dt id="sprox.saormprovider.SAORMProvider.get_field">
 <tt class="descname">get_field</tt><big>(</big><em>entity</em>, <em>name</em><big>)</big><a class="headerlink" href="#sprox.saormprovider.SAORMProvider.get_field" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.saormprovider.SAORMProvider.get_field_default">
+<tt class="descname">get_field_default</tt><big>(</big><em>field</em><big>)</big><a class="headerlink" href="#sprox.saormprovider.SAORMProvider.get_field_default" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.saormprovider.SAORMProvider.get_field_provider_specific_widget_args">
+<tt class="descname">get_field_provider_specific_widget_args</tt><big>(</big><em>entity</em>, <em>field</em>, <em>field_name</em><big>)</big><a class="headerlink" href="#sprox.saormprovider.SAORMProvider.get_field_provider_specific_widget_args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.saormprovider.SAORMProvider.get_field_widget_args">
+<tt class="descname">get_field_widget_args</tt><big>(</big><em>entity</em>, <em>field_name</em>, <em>field</em><big>)</big><a class="headerlink" href="#sprox.saormprovider.SAORMProvider.get_field_widget_args" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -181,8 +217,13 @@ Released under MIT license.</p>
 <dd></dd></dl>
 
 <dl class="method">
+<dt id="sprox.saormprovider.SAORMProvider.is_unique_field">
+<tt class="descname">is_unique_field</tt><big>(</big><em>entity</em>, <em>field_name</em><big>)</big><a class="headerlink" href="#sprox.saormprovider.SAORMProvider.is_unique_field" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="sprox.saormprovider.SAORMProvider.query">
-<tt class="descname">query</tt><big>(</big><em>entity</em>, <em>limit=None</em>, <em>offset=None</em>, <em>limit_fields=None</em>, <em>order_by=None</em>, <em>desc=False</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.saormprovider.SAORMProvider.query" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">query</tt><big>(</big><em>entity</em>, <em>limit=None</em>, <em>offset=None</em>, <em>limit_fields=None</em>, <em>order_by=None</em>, <em>desc=False</em>, <em>field_names=</em><span class="optional">[</span><span class="optional">]</span>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.saormprovider.SAORMProvider.query" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -202,8 +243,8 @@ Released under MIT license.</p>
 <h2>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="sprox.saormprovider.SAORMProviderError">
-<em class="property">class </em><tt class="descclassname">sprox.saormprovider.</tt><tt class="descname">SAORMProviderError</tt><a class="headerlink" href="#sprox.saormprovider.SAORMProviderError" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></tt></p>
+<em class="property">class </em><tt class="descclassname">sprox.saormprovider.</tt><tt class="descname">SAORMProviderError</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.saormprovider.SAORMProviderError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">sprox.sa.provider.SAORMProviderError</span></tt></p>
 <dl class="attribute">
 <dt id="sprox.saormprovider.SAORMProviderError.args">
 <tt class="descname">args</tt><a class="headerlink" href="#sprox.saormprovider.SAORMProviderError.args" title="Permalink to this definition">¶</a></dt>
@@ -257,7 +298,7 @@ Released under MIT license.</p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" size="18" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -287,7 +328,7 @@ Released under MIT license.</p>
           <a href="sprox.metadata.html" title="sprox.metadata"
              >previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.11</b></a>
+  <a href="../index.html"><b>Sprox 0.7rc1</b></a>
   </li>
 
   
@@ -299,7 +340,7 @@ Released under MIT license.</p>
 
     <div class="footer">
         &copy; Copyright 2008, Christopher Perkins.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.4.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.
     </div>
 
 <script type="text/javascript">

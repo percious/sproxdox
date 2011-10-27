@@ -4,17 +4,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sprox.widgets &mdash; Sprox v0.6.11 documentation</title>
+    <title>sprox.widgets &mdash; Sprox 0.7rc1 documentation</title>
+    
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.11',
+        VERSION:     '0.7rc1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Sprox v0.6.11 documentation" href="../index.html" />
+    <link rel="top" title="Sprox 0.7rc1 documentation" href="../index.html" />
     <link rel="next" title="sprox.util" href="sprox.util.html" />
     <link rel="prev" title="sprox.iprovider" href="sprox.iprovider.html" /> 
   </head>
@@ -44,7 +47,7 @@
           <a href="sprox.iprovider.html" title="sprox.iprovider"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.11</b></a>
+  <a href="../index.html"><b>Sprox 0.7rc1</b></a>
   </li>
 
   
@@ -71,15 +74,10 @@
 <dl class="method">
 <dt id="sprox.widgets.ContainerWidget.adapt_value">
 <tt class="descname">adapt_value</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.ContainerWidget.adapt_value" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>Adapt object <em>value</em> for rendering in this widget. Should return one of:</dt>
-<dd><ul class="first last simple">
-<li>A list of objects for repeated widgets.</li>
-<li>A dict for widgets with children, keyed by the children&#8217;s ids.</li>
-<li>Any other object the widget understands.</li>
-</ul>
-</dd>
-</dl>
+<dd><p>Adapt object <em>value</em> for rendering in this widget. Should return one of:
+* A list of objects for repeated widgets.
+* A dict for widgets with children, keyed by the children&#8217;s ids.
+* Any other object the widget understands.</p>
 </dd></dl>
 
 <dl class="method">
@@ -90,6 +88,11 @@ widget is rendered.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.ContainerWidget.available_engines">
+<tt class="descname">available_engines</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.ContainerWidget.available_engines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.ContainerWidget.children_deep">
 <tt class="descname">children_deep</tt><a class="headerlink" href="#sprox.widgets.ContainerWidget.children_deep" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -97,6 +100,31 @@ widget is rendered.</p>
 <dl class="method">
 <dt id="sprox.widgets.ContainerWidget.clone">
 <tt class="descname">clone</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.ContainerWidget.clone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.ContainerWidget.css">
+<tt class="descname">css</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.ContainerWidget.css" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.ContainerWidget.css_class__doc">
+<tt class="descname">css_class__doc</tt><em class="property"> = 'Main CSS class for this widget'</em><a class="headerlink" href="#sprox.widgets.ContainerWidget.css_class__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.ContainerWidget.css_classes">
+<tt class="descname">css_classes</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.ContainerWidget.css_classes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.ContainerWidget.css_classes__doc">
+<tt class="descname">css_classes__doc</tt><em class="property"> = 'A list with extra css classes for the widget.'</em><a class="headerlink" href="#sprox.widgets.ContainerWidget.css_classes__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.ContainerWidget.default">
+<tt class="descname">default</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.ContainerWidget.default" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -117,6 +145,11 @@ around.</p>
 <tt class="descname">displays_on</tt><a class="headerlink" href="#sprox.widgets.ContainerWidget.displays_on" title="Permalink to this definition">¶</a></dt>
 <dd><p>Where the widget is being displayed on</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.ContainerWidget.engine_name">
+<tt class="descname">engine_name</tt><em class="property"> = 'toscawidgets'</em><a class="headerlink" href="#sprox.widgets.ContainerWidget.engine_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.ContainerWidget.get_default">
@@ -147,6 +180,11 @@ Example:</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.ContainerWidget.id__doc">
+<tt class="descname">id__doc</tt><em class="property"> = 'The id of this widget. This id is used to reference a widget from its parent ``children`` attribute and is usually the DOM id of outermost HTML tag of the widget.'</em><a class="headerlink" href="#sprox.widgets.ContainerWidget.id__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.ContainerWidget.id_path_elem">
 <tt class="descname">id_path_elem</tt><a class="headerlink" href="#sprox.widgets.ContainerWidget.id_path_elem" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -175,6 +213,11 @@ Example:</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.ContainerWidget.javascript">
+<tt class="descname">javascript</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.ContainerWidget.javascript" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.ContainerWidget.key">
 <tt class="descname">key</tt><a class="headerlink" href="#sprox.widgets.ContainerWidget.key" title="Permalink to this definition">¶</a></dt>
 <dd><p>A string that can be used as a key to index the dictionary of
@@ -193,6 +236,16 @@ displaying.</p>
 </pre></div>
 </div>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.ContainerWidget.params">
+<tt class="descname">params</tt><em class="property"> = frozenset(['css_class', 'controller', 'id', 'css_classes'])</em><a class="headerlink" href="#sprox.widgets.ContainerWidget.params" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.ContainerWidget.parent">
+<tt class="descname">parent</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.ContainerWidget.parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.ContainerWidget.path">
@@ -249,6 +302,16 @@ passing the kw argument&#8217;s dict to <cite>update_params</cite>.</p>
 <tt class="descname">root</tt><a class="headerlink" href="#sprox.widgets.ContainerWidget.root" title="Permalink to this definition">¶</a></dt>
 <dd><p>The root of this widget tree</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.ContainerWidget.source_vars">
+<tt class="descname">source_vars</tt><em class="property"> = frozenset([])</em><a class="headerlink" href="#sprox.widgets.ContainerWidget.source_vars" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.ContainerWidget.template">
+<tt class="descname">template</tt><em class="property"> = 'genshi:sprox.widgets.templates.container'</em><a class="headerlink" href="#sprox.widgets.ContainerWidget.template" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.ContainerWidget.update_params">
@@ -336,6 +399,31 @@ the validator so it can be rendered in the template.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.attrs">
+<tt class="descname">attrs</tt><em class="property"> = {}</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.attrs__doc">
+<tt class="descname">attrs__doc</tt><em class="property"> = 'Extra attributes for the outermost DOM node'</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.attrs__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.available_engines">
+<tt class="descname">available_engines</tt><em class="property"> = ['mako', 'genshi']</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.available_engines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.button_text">
+<tt class="descname">button_text</tt><em class="property"> = 'Choose'</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.button_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.calendar_lang">
+<tt class="descname">calendar_lang</tt><em class="property"> = 'en'</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.calendar_lang" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDatePicker.children_deep">
 <tt class="descname">children_deep</tt><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.children_deep" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -343,6 +431,56 @@ the validator so it can be rendered in the template.</p>
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDatePicker.clone">
 <tt class="descname">clone</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.clone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.container_attrs">
+<tt class="descname">container_attrs</tt><em class="property"> = {}</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.container_attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.container_attrs__doc">
+<tt class="descname">container_attrs__doc</tt><em class="property"> = 'Extra attributes to include in the container tag around this widget'</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.container_attrs__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.css">
+<tt class="descname">css</tt><em class="property"> = [CSSLink(None, children=[], **{'modname': 'tw.forms', 'filename': 'static/calendar/calendar-system.css'})]</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.css" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.css_class__doc">
+<tt class="descname">css_class__doc</tt><em class="property"> = 'Main CSS class for this widget'</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.css_class__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.css_classes">
+<tt class="descname">css_classes</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.css_classes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.css_classes__doc">
+<tt class="descname">css_classes__doc</tt><em class="property"> = 'A list with extra css classes for the widget.'</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.css_classes__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.date_format">
+<tt class="descname">date_format</tt><em class="property"> = '%Y-%m-%d'</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.date_format" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.default">
+<tt class="descname">default</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.default" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.disabled">
+<tt class="descname">disabled</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.disabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.disabled__doc">
+<tt class="descname">disabled__doc</tt><em class="property"> = &quot;Should the field be disbaled on render and it's input ignored by the validator? UNIMPLEMENTED&quot;</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.disabled__doc" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -365,10 +503,25 @@ around.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.engine_name">
+<tt class="descname">engine_name</tt><em class="property"> = 'genshi'</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.engine_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDatePicker.error_at_request">
 <tt class="descname">error_at_request</tt><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.error_at_request" title="Permalink to this definition">¶</a></dt>
 <dd><p>Validation error for current request.</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.file_upload">
+<tt class="descname">file_upload</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.file_upload" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.force_conversion">
+<tt class="descname">force_conversion</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.force_conversion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDatePicker.generate_schema">
@@ -394,6 +547,16 @@ render to retrieve a value</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.help_text">
+<tt class="descname">help_text</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.help_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.help_text__doc">
+<tt class="descname">help_text__doc</tt><em class="property"> = 'Description of the field to aid the user'</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.help_text__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDatePicker.id">
 <tt class="descname">id</tt><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.id" title="Permalink to this definition">¶</a></dt>
 <dd><p>The calculated id of the widget. This string will provide a unique
@@ -412,6 +575,11 @@ Example:</p>
 </pre></div>
 </div>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.id__doc">
+<tt class="descname">id__doc</tt><em class="property"> = 'The id of this widget. This id is used to reference a widget from its parent ``children`` attribute and is usually the DOM id of outermost HTML tag of the widget.'</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.id__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDatePicker.id_path_elem">
@@ -441,10 +609,20 @@ Example:</p>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.is_required__doc">
+<tt class="descname">is_required__doc</tt><em class="property"> = 'Computed flag indicating if input is required from this field'</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.is_required__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDatePicker.is_root">
 <tt class="descname">is_root</tt><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.is_root" title="Permalink to this definition">¶</a></dt>
 <dd><p>True if the widget doesn&#8217;t have a parent</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.javascript">
+<tt class="descname">javascript</tt><em class="property"> = [JSLink(None, children=[], **{'modname': 'tw.forms', 'filename': 'static/calendar/calendar.js'}), JSLink(None, children=[], **{'modname': 'tw.forms', 'javascript': [JSLink(None, children=[], **{'modname': 'tw.forms', 'filename': 'static/calendar/calendar.js'})], 'filename': 'static/calendar/calendar-setup.js'})]</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.javascript" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDatePicker.key">
@@ -467,8 +645,23 @@ displaying.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.label_text">
+<tt class="descname">label_text</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.label_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.label_text__doc">
+<tt class="descname">label_text__doc</tt><em class="property"> = 'The text that should label this field'</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.label_text__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDatePicker.name">
 <tt class="descname">name</tt><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.name__doc">
+<tt class="descname">name__doc</tt><em class="property"> = 'Name for this input Widget. This is the name of the variable that will reach the controller. This parameter can only be set during widget initialization'</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.name__doc" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -477,10 +670,30 @@ displaying.</p>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.not_empty">
+<tt class="descname">not_empty</tt><em class="property"> = True</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.not_empty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.params">
+<tt class="descname">params</tt><em class="property"> = frozenset(['label_text', 'suppress_label', 'strip_name', 'button_text', 'picker_shows_time', 'disabled', 'attrs', 'container_attrs', 'help_text', 'not_empty', 'id', 'date_format', 'style', 'name', 'css_class', 'calendar_lang', 'show_error', 'css_classes', 'tzinfo', 'is_required'])</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.params" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.parent">
+<tt class="descname">parent</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDatePicker.path">
 <tt class="descname">path</tt><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.path" title="Permalink to this definition">¶</a></dt>
 <dd><p>Iterates a walk from this widget to the root of the tree</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.picker_shows_time">
+<tt class="descname">picker_shows_time</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.picker_shows_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDatePicker.post_init">
@@ -542,6 +755,56 @@ children&#8217;s errors if any.</p>
 validation fails the original value will be returned unmodified.</p>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.show_error">
+<tt class="descname">show_error</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.show_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.show_error__doc">
+<tt class="descname">show_error__doc</tt><em class="property"> = &quot;Should the field display it's own errors? Defaults to False because normally they're displayed by the container widget&quot;</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.show_error__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.source_vars">
+<tt class="descname">source_vars</tt><em class="property"> = frozenset([])</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.source_vars" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.strip_name">
+<tt class="descname">strip_name</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.strip_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.strip_name__doc">
+<tt class="descname">strip_name__doc</tt><em class="property"> = &quot;If this flag is True then the name of this widget will not be included in the fully-qualified names of the widgets in this subtree. This is useful to 'flatten-out' nested structures. This parameter can only be set during initialization.&quot;</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.strip_name__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.style">
+<tt class="descname">style</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.style" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.style__doc">
+<tt class="descname">style__doc</tt><em class="property"> = &quot;Style properties for the field. It's recommended to use css classes and stylesheets instead of this parameter&quot;</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.style__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.suppress_label">
+<tt class="descname">suppress_label</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.suppress_label" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.suppress_label__doc">
+<tt class="descname">suppress_label__doc</tt><em class="property"> = 'Allows individual widgets to suppress the attached label in their container'</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.suppress_label__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.template">
+<tt class="descname">template</tt><em class="property"> = 'tw.forms.templates.calendar'</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.template" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDatePicker.update_attrs">
 <tt class="descname">update_attrs</tt><big>(</big><em>d</em>, <em>*args</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.update_attrs" title="Permalink to this definition">¶</a></dt>
@@ -575,6 +838,11 @@ value will be placed at request local storage so if the widget is
 redisplayed in the same request <tt class="docutils literal"><span class="pre">error</span></tt> and <tt class="docutils literal"><span class="pre">value</span></tt> don&#8217;t have to
 be passed explicitly to <tt class="docutils literal"><span class="pre">display</span></tt>.</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDatePicker.validator">
+<tt class="descname">validator</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDatePicker.validator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDatePicker.value_at_request">
@@ -631,6 +899,31 @@ the validator so it can be rendered in the template.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.attrs">
+<tt class="descname">attrs</tt><em class="property"> = {}</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.attrs__doc">
+<tt class="descname">attrs__doc</tt><em class="property"> = 'Extra attributes for the outermost DOM node'</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.attrs__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.available_engines">
+<tt class="descname">available_engines</tt><em class="property"> = ['mako', 'genshi']</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.available_engines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.button_text">
+<tt class="descname">button_text</tt><em class="property"> = 'Choose'</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.button_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.calendar_lang">
+<tt class="descname">calendar_lang</tt><em class="property"> = 'en'</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.calendar_lang" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.children_deep">
 <tt class="descname">children_deep</tt><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.children_deep" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -638,6 +931,56 @@ the validator so it can be rendered in the template.</p>
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.clone">
 <tt class="descname">clone</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.clone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.container_attrs">
+<tt class="descname">container_attrs</tt><em class="property"> = {}</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.container_attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.container_attrs__doc">
+<tt class="descname">container_attrs__doc</tt><em class="property"> = 'Extra attributes to include in the container tag around this widget'</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.container_attrs__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.css">
+<tt class="descname">css</tt><em class="property"> = [CSSLink(None, children=[], **{'modname': 'tw.forms', 'filename': 'static/calendar/calendar-system.css'})]</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.css" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.css_class__doc">
+<tt class="descname">css_class__doc</tt><em class="property"> = 'Main CSS class for this widget'</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.css_class__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.css_classes">
+<tt class="descname">css_classes</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.css_classes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.css_classes__doc">
+<tt class="descname">css_classes__doc</tt><em class="property"> = 'A list with extra css classes for the widget.'</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.css_classes__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.date_format">
+<tt class="descname">date_format</tt><em class="property"> = '%Y-%m-%d %H:%M:%S'</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.date_format" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.default">
+<tt class="descname">default</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.default" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.disabled">
+<tt class="descname">disabled</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.disabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.disabled__doc">
+<tt class="descname">disabled__doc</tt><em class="property"> = &quot;Should the field be disbaled on render and it's input ignored by the validator? UNIMPLEMENTED&quot;</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.disabled__doc" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -660,10 +1003,25 @@ around.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.engine_name">
+<tt class="descname">engine_name</tt><em class="property"> = 'genshi'</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.engine_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.error_at_request">
 <tt class="descname">error_at_request</tt><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.error_at_request" title="Permalink to this definition">¶</a></dt>
 <dd><p>Validation error for current request.</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.file_upload">
+<tt class="descname">file_upload</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.file_upload" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.force_conversion">
+<tt class="descname">force_conversion</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.force_conversion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.generate_schema">
@@ -689,6 +1047,16 @@ render to retrieve a value</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.help_text">
+<tt class="descname">help_text</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.help_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.help_text__doc">
+<tt class="descname">help_text__doc</tt><em class="property"> = 'Description of the field to aid the user'</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.help_text__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.id">
 <tt class="descname">id</tt><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.id" title="Permalink to this definition">¶</a></dt>
 <dd><p>The calculated id of the widget. This string will provide a unique
@@ -707,6 +1075,11 @@ Example:</p>
 </pre></div>
 </div>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.id__doc">
+<tt class="descname">id__doc</tt><em class="property"> = 'The id of this widget. This id is used to reference a widget from its parent ``children`` attribute and is usually the DOM id of outermost HTML tag of the widget.'</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.id__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.id_path_elem">
@@ -736,10 +1109,20 @@ Example:</p>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.is_required__doc">
+<tt class="descname">is_required__doc</tt><em class="property"> = 'Computed flag indicating if input is required from this field'</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.is_required__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.is_root">
 <tt class="descname">is_root</tt><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.is_root" title="Permalink to this definition">¶</a></dt>
 <dd><p>True if the widget doesn&#8217;t have a parent</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.javascript">
+<tt class="descname">javascript</tt><em class="property"> = [JSLink(None, children=[], **{'modname': 'tw.forms', 'filename': 'static/calendar/calendar.js'}), JSLink(None, children=[], **{'modname': 'tw.forms', 'javascript': [JSLink(None, children=[], **{'modname': 'tw.forms', 'filename': 'static/calendar/calendar.js'})], 'filename': 'static/calendar/calendar-setup.js'})]</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.javascript" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.key">
@@ -762,8 +1145,23 @@ displaying.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.label_text">
+<tt class="descname">label_text</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.label_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.label_text__doc">
+<tt class="descname">label_text__doc</tt><em class="property"> = 'The text that should label this field'</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.label_text__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.name">
 <tt class="descname">name</tt><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.name__doc">
+<tt class="descname">name__doc</tt><em class="property"> = 'Name for this input Widget. This is the name of the variable that will reach the controller. This parameter can only be set during widget initialization'</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.name__doc" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -772,10 +1170,30 @@ displaying.</p>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.not_empty">
+<tt class="descname">not_empty</tt><em class="property"> = True</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.not_empty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.params">
+<tt class="descname">params</tt><em class="property"> = frozenset(['label_text', 'suppress_label', 'strip_name', 'button_text', 'picker_shows_time', 'disabled', 'attrs', 'container_attrs', 'help_text', 'not_empty', 'id', 'date_format', 'style', 'name', 'css_class', 'calendar_lang', 'show_error', 'css_classes', 'tzinfo', 'is_required'])</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.params" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.parent">
+<tt class="descname">parent</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.path">
 <tt class="descname">path</tt><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.path" title="Permalink to this definition">¶</a></dt>
 <dd><p>Iterates a walk from this widget to the root of the tree</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.picker_shows_time">
+<tt class="descname">picker_shows_time</tt><em class="property"> = True</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.picker_shows_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.post_init">
@@ -837,6 +1255,56 @@ children&#8217;s errors if any.</p>
 validation fails the original value will be returned unmodified.</p>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.show_error">
+<tt class="descname">show_error</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.show_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.show_error__doc">
+<tt class="descname">show_error__doc</tt><em class="property"> = &quot;Should the field display it's own errors? Defaults to False because normally they're displayed by the container widget&quot;</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.show_error__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.source_vars">
+<tt class="descname">source_vars</tt><em class="property"> = frozenset([])</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.source_vars" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.strip_name">
+<tt class="descname">strip_name</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.strip_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.strip_name__doc">
+<tt class="descname">strip_name__doc</tt><em class="property"> = &quot;If this flag is True then the name of this widget will not be included in the fully-qualified names of the widgets in this subtree. This is useful to 'flatten-out' nested structures. This parameter can only be set during initialization.&quot;</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.strip_name__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.style">
+<tt class="descname">style</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.style" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.style__doc">
+<tt class="descname">style__doc</tt><em class="property"> = &quot;Style properties for the field. It's recommended to use css classes and stylesheets instead of this parameter&quot;</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.style__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.suppress_label">
+<tt class="descname">suppress_label</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.suppress_label" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.suppress_label__doc">
+<tt class="descname">suppress_label__doc</tt><em class="property"> = 'Allows individual widgets to suppress the attached label in their container'</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.suppress_label__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.template">
+<tt class="descname">template</tt><em class="property"> = 'tw.forms.templates.calendar'</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.template" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="method">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.update_attrs">
 <tt class="descname">update_attrs</tt><big>(</big><em>d</em>, <em>*args</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.update_attrs" title="Permalink to this definition">¶</a></dt>
@@ -870,6 +1338,11 @@ value will be placed at request local storage so if the widget is
 redisplayed in the same request <tt class="docutils literal"><span class="pre">error</span></tt> and <tt class="docutils literal"><span class="pre">value</span></tt> don&#8217;t have to
 be passed explicitly to <tt class="docutils literal"><span class="pre">display</span></tt>.</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCalendarDateTimePicker.validator">
+<tt class="descname">validator</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxCalendarDateTimePicker.validator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCalendarDateTimePicker.value_at_request">
@@ -926,6 +1399,21 @@ the validator so it can be rendered in the template.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.attrs">
+<tt class="descname">attrs</tt><em class="property"> = {}</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.attrs__doc">
+<tt class="descname">attrs__doc</tt><em class="property"> = 'Extra attributes for the outermost DOM node'</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.attrs__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.available_engines">
+<tt class="descname">available_engines</tt><em class="property"> = ['mako', 'genshi']</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.available_engines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.SproxCheckBox.children_deep">
 <tt class="descname">children_deep</tt><a class="headerlink" href="#sprox.widgets.SproxCheckBox.children_deep" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -933,6 +1421,51 @@ the validator so it can be rendered in the template.</p>
 <dl class="method">
 <dt id="sprox.widgets.SproxCheckBox.clone">
 <tt class="descname">clone</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxCheckBox.clone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.container_attrs">
+<tt class="descname">container_attrs</tt><em class="property"> = {}</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.container_attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.container_attrs__doc">
+<tt class="descname">container_attrs__doc</tt><em class="property"> = 'Extra attributes to include in the container tag around this widget'</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.container_attrs__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.css">
+<tt class="descname">css</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.css" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.css_class__doc">
+<tt class="descname">css_class__doc</tt><em class="property"> = 'Main CSS class for this widget'</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.css_class__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.css_classes">
+<tt class="descname">css_classes</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.css_classes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.css_classes__doc">
+<tt class="descname">css_classes__doc</tt><em class="property"> = 'A list with extra css classes for the widget.'</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.css_classes__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.default">
+<tt class="descname">default</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.default" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.disabled">
+<tt class="descname">disabled</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.disabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.disabled__doc">
+<tt class="descname">disabled__doc</tt><em class="property"> = &quot;Should the field be disbaled on render and it's input ignored by the validator? UNIMPLEMENTED&quot;</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.disabled__doc" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -955,10 +1488,25 @@ around.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.engine_name">
+<tt class="descname">engine_name</tt><em class="property"> = 'genshi'</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.engine_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.SproxCheckBox.error_at_request">
 <tt class="descname">error_at_request</tt><a class="headerlink" href="#sprox.widgets.SproxCheckBox.error_at_request" title="Permalink to this definition">¶</a></dt>
 <dd><p>Validation error for current request.</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.file_upload">
+<tt class="descname">file_upload</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.file_upload" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.force_conversion">
+<tt class="descname">force_conversion</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.force_conversion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCheckBox.generate_schema">
@@ -974,6 +1522,16 @@ including the validators from all children once these are all known.</p>
 that it can be called without arguments it will be called on each
 render to retrieve a value</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.help_text">
+<tt class="descname">help_text</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.help_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.help_text__doc">
+<tt class="descname">help_text__doc</tt><em class="property"> = 'Description of the field to aid the user'</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.help_text__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCheckBox.id">
@@ -994,6 +1552,11 @@ Example:</p>
 </pre></div>
 </div>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.id__doc">
+<tt class="descname">id__doc</tt><em class="property"> = 'The id of this widget. This id is used to reference a widget from its parent ``children`` attribute and is usually the DOM id of outermost HTML tag of the widget.'</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.id__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCheckBox.id_path_elem">
@@ -1023,10 +1586,20 @@ Example:</p>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.is_required__doc">
+<tt class="descname">is_required__doc</tt><em class="property"> = 'Computed flag indicating if input is required from this field'</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.is_required__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.SproxCheckBox.is_root">
 <tt class="descname">is_root</tt><a class="headerlink" href="#sprox.widgets.SproxCheckBox.is_root" title="Permalink to this definition">¶</a></dt>
 <dd><p>True if the widget doesn&#8217;t have a parent</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.javascript">
+<tt class="descname">javascript</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.javascript" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxCheckBox.key">
@@ -1049,13 +1622,38 @@ displaying.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.label_text">
+<tt class="descname">label_text</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.label_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.label_text__doc">
+<tt class="descname">label_text__doc</tt><em class="property"> = 'The text that should label this field'</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.label_text__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.SproxCheckBox.name">
 <tt class="descname">name</tt><a class="headerlink" href="#sprox.widgets.SproxCheckBox.name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.name__doc">
+<tt class="descname">name__doc</tt><em class="property"> = 'Name for this input Widget. This is the name of the variable that will reach the controller. This parameter can only be set during widget initialization'</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.name__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.SproxCheckBox.name_path_elem">
 <tt class="descname">name_path_elem</tt><a class="headerlink" href="#sprox.widgets.SproxCheckBox.name_path_elem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.params">
+<tt class="descname">params</tt><em class="property"> = frozenset(['style', 'label_text', 'suppress_label', 'css_class', 'strip_name', 'container_attrs', 'disabled', 'attrs', 'show_error', 'css_classes', 'help_text', 'is_required', 'type', 'id', 'name'])</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.params" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.parent">
+<tt class="descname">parent</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.parent" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -1123,6 +1721,56 @@ children&#8217;s errors if any.</p>
 <dd><p>Tries to coerce the value to python using the validator. If
 validation fails the original value will be returned unmodified.</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.show_error">
+<tt class="descname">show_error</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.show_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.show_error__doc">
+<tt class="descname">show_error__doc</tt><em class="property"> = &quot;Should the field display it's own errors? Defaults to False because normally they're displayed by the container widget&quot;</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.show_error__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.source_vars">
+<tt class="descname">source_vars</tt><em class="property"> = frozenset([])</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.source_vars" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.strip_name">
+<tt class="descname">strip_name</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.strip_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.strip_name__doc">
+<tt class="descname">strip_name__doc</tt><em class="property"> = &quot;If this flag is True then the name of this widget will not be included in the fully-qualified names of the widgets in this subtree. This is useful to 'flatten-out' nested structures. This parameter can only be set during initialization.&quot;</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.strip_name__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.style">
+<tt class="descname">style</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.style" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.style__doc">
+<tt class="descname">style__doc</tt><em class="property"> = &quot;Style properties for the field. It's recommended to use css classes and stylesheets instead of this parameter&quot;</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.style__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.suppress_label">
+<tt class="descname">suppress_label</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.suppress_label" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.suppress_label__doc">
+<tt class="descname">suppress_label__doc</tt><em class="property"> = 'Allows individual widgets to suppress the attached label in their container'</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.suppress_label__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxCheckBox.template">
+<tt class="descname">template</tt><em class="property"> = 'sprox.widgets.templates.checkbox'</em><a class="headerlink" href="#sprox.widgets.SproxCheckBox.template" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxCheckBox.update_attrs">
@@ -1202,15 +1850,10 @@ applying a filter on them.</p>
 <dl class="method">
 <dt id="sprox.widgets.SproxDataGrid.adapt_value">
 <tt class="descname">adapt_value</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxDataGrid.adapt_value" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>Adapt object <em>value</em> for rendering in this widget. Should return one of:</dt>
-<dd><ul class="first last simple">
-<li>A list of objects for repeated widgets.</li>
-<li>A dict for widgets with children, keyed by the children&#8217;s ids.</li>
-<li>Any other object the widget understands.</li>
-</ul>
-</dd>
-</dl>
+<dd><p>Adapt object <em>value</em> for rendering in this widget. Should return one of:
+* A list of objects for repeated widgets.
+* A dict for widgets with children, keyed by the children&#8217;s ids.
+* Any other object the widget understands.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1221,6 +1864,11 @@ widget is rendered.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.SproxDataGrid.available_engines">
+<tt class="descname">available_engines</tt><em class="property"> = ['mako', 'genshi']</em><a class="headerlink" href="#sprox.widgets.SproxDataGrid.available_engines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.SproxDataGrid.children_deep">
 <tt class="descname">children_deep</tt><a class="headerlink" href="#sprox.widgets.SproxDataGrid.children_deep" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -1228,6 +1876,36 @@ widget is rendered.</p>
 <dl class="method">
 <dt id="sprox.widgets.SproxDataGrid.clone">
 <tt class="descname">clone</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxDataGrid.clone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxDataGrid.css">
+<tt class="descname">css</tt><em class="property"> = [CSSLink(None, children=[], **{'modname': 'tw.forms', 'filename': 'static/grid.css'})]</em><a class="headerlink" href="#sprox.widgets.SproxDataGrid.css" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxDataGrid.css_class">
+<tt class="descname">css_class</tt><em class="property"> = 'grid'</em><a class="headerlink" href="#sprox.widgets.SproxDataGrid.css_class" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxDataGrid.css_class__doc">
+<tt class="descname">css_class__doc</tt><em class="property"> = 'Main CSS class for this widget'</em><a class="headerlink" href="#sprox.widgets.SproxDataGrid.css_class__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxDataGrid.css_classes">
+<tt class="descname">css_classes</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.SproxDataGrid.css_classes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxDataGrid.css_classes__doc">
+<tt class="descname">css_classes__doc</tt><em class="property"> = 'A list with extra css classes for the widget.'</em><a class="headerlink" href="#sprox.widgets.SproxDataGrid.css_classes__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxDataGrid.default">
+<tt class="descname">default</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxDataGrid.default" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -1248,6 +1926,16 @@ around.</p>
 <tt class="descname">displays_on</tt><a class="headerlink" href="#sprox.widgets.SproxDataGrid.displays_on" title="Permalink to this definition">¶</a></dt>
 <dd><p>Where the widget is being displayed on</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxDataGrid.engine_name">
+<tt class="descname">engine_name</tt><em class="property"> = 'genshi'</em><a class="headerlink" href="#sprox.widgets.SproxDataGrid.engine_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxDataGrid.fields">
+<tt class="descname">fields</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.SproxDataGrid.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxDataGrid.get_column">
@@ -1291,6 +1979,11 @@ Example:</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.SproxDataGrid.id__doc">
+<tt class="descname">id__doc</tt><em class="property"> = 'The id of this widget. This id is used to reference a widget from its parent ``children`` attribute and is usually the DOM id of outermost HTML tag of the widget.'</em><a class="headerlink" href="#sprox.widgets.SproxDataGrid.id__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.SproxDataGrid.id_path_elem">
 <tt class="descname">id_path_elem</tt><a class="headerlink" href="#sprox.widgets.SproxDataGrid.id_path_elem" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -1319,6 +2012,11 @@ Example:</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.SproxDataGrid.javascript">
+<tt class="descname">javascript</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.SproxDataGrid.javascript" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.SproxDataGrid.key">
 <tt class="descname">key</tt><a class="headerlink" href="#sprox.widgets.SproxDataGrid.key" title="Permalink to this definition">¶</a></dt>
 <dd><p>A string that can be used as a key to index the dictionary of
@@ -1337,6 +2035,16 @@ displaying.</p>
 </pre></div>
 </div>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxDataGrid.params">
+<tt class="descname">params</tt><em class="property"> = frozenset(['pks', 'controller', 'fields', 'css_class', 'css_classes', 'id', 'xml_fields'])</em><a class="headerlink" href="#sprox.widgets.SproxDataGrid.params" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxDataGrid.parent">
+<tt class="descname">parent</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxDataGrid.parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxDataGrid.path">
@@ -1394,6 +2102,16 @@ passing the kw argument&#8217;s dict to <cite>update_params</cite>.</p>
 <dd><p>The root of this widget tree</p>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="sprox.widgets.SproxDataGrid.source_vars">
+<tt class="descname">source_vars</tt><em class="property"> = frozenset([])</em><a class="headerlink" href="#sprox.widgets.SproxDataGrid.source_vars" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxDataGrid.template">
+<tt class="descname">template</tt><em class="property"> = 'sprox.widgets.templates.datagrid'</em><a class="headerlink" href="#sprox.widgets.SproxDataGrid.template" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="method">
 <dt id="sprox.widgets.SproxDataGrid.update_params">
 <tt class="descname">update_params</tt><big>(</big><em>d</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxDataGrid.update_params" title="Permalink to this definition">¶</a></dt>
@@ -1422,12 +2140,27 @@ applying a filter on them.</p>
 </div>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="sprox.widgets.SproxDataGrid.xml_fields">
+<tt class="descname">xml_fields</tt><em class="property"> = ['actions']</em><a class="headerlink" href="#sprox.widgets.SproxDataGrid.xml_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="class">
 <dt id="sprox.widgets.SproxTableForm">
 <em class="property">class </em><tt class="descclassname">sprox.widgets.</tt><tt class="descname">SproxTableForm</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxTableForm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">tw.forms.fields.TableForm</span></tt></p>
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.action">
+<tt class="descname">action</tt><em class="property"> = ''</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.action" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.action__doc">
+<tt class="descname">action__doc</tt><em class="property"> = &quot;The url where the form's contents should be submitted&quot;</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.action__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="method">
 <dt id="sprox.widgets.SproxTableForm.adapt_value">
 <tt class="descname">adapt_value</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxTableForm.adapt_value" title="Permalink to this definition">¶</a></dt>
@@ -1448,6 +2181,21 @@ the validator so it can be rendered in the template.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.attrs">
+<tt class="descname">attrs</tt><em class="property"> = {}</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.attrs__doc">
+<tt class="descname">attrs__doc</tt><em class="property"> = 'Extra attributes for the outermost DOM node'</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.attrs__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.available_engines">
+<tt class="descname">available_engines</tt><em class="property"> = ['mako', 'genshi']</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.available_engines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.SproxTableForm.children_deep">
 <tt class="descname">children_deep</tt><a class="headerlink" href="#sprox.widgets.SproxTableForm.children_deep" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -1455,6 +2203,51 @@ the validator so it can be rendered in the template.</p>
 <dl class="method">
 <dt id="sprox.widgets.SproxTableForm.clone">
 <tt class="descname">clone</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxTableForm.clone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.container_attrs">
+<tt class="descname">container_attrs</tt><em class="property"> = {}</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.container_attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.container_attrs__doc">
+<tt class="descname">container_attrs__doc</tt><em class="property"> = 'Extra attributes to include in the container tag around this widget'</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.container_attrs__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.css">
+<tt class="descname">css</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.css" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.css_class__doc">
+<tt class="descname">css_class__doc</tt><em class="property"> = 'Main CSS class for this widget'</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.css_class__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.css_classes">
+<tt class="descname">css_classes</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.css_classes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.css_classes__doc">
+<tt class="descname">css_classes__doc</tt><em class="property"> = 'A list with extra css classes for the widget.'</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.css_classes__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.default">
+<tt class="descname">default</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.default" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.disabled">
+<tt class="descname">disabled</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.disabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.disabled__doc">
+<tt class="descname">disabled__doc</tt><em class="property"> = &quot;Should the field be disbaled on render and it's input ignored by the validator? UNIMPLEMENTED&quot;</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.disabled__doc" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -1477,10 +2270,25 @@ around.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.engine_name">
+<tt class="descname">engine_name</tt><em class="property"> = 'genshi'</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.engine_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.SproxTableForm.error_at_request">
 <tt class="descname">error_at_request</tt><a class="headerlink" href="#sprox.widgets.SproxTableForm.error_at_request" title="Permalink to this definition">¶</a></dt>
 <dd><p>Validation error for current request.</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.file_upload">
+<tt class="descname">file_upload</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.file_upload" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.force_conversion">
+<tt class="descname">force_conversion</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.force_conversion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxTableForm.generate_schema">
@@ -1496,6 +2304,21 @@ including the validators from all children once these are all known.</p>
 that it can be called without arguments it will be called on each
 render to retrieve a value</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.help_text">
+<tt class="descname">help_text</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.help_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.help_text__doc">
+<tt class="descname">help_text__doc</tt><em class="property"> = 'Description of the field to aid the user'</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.help_text__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.hover_help">
+<tt class="descname">hover_help</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.hover_help" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxTableForm.id">
@@ -1516,6 +2339,11 @@ Example:</p>
 </pre></div>
 </div>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.id__doc">
+<tt class="descname">id__doc</tt><em class="property"> = 'The id of this widget. This id is used to reference a widget from its parent ``children`` attribute and is usually the DOM id of outermost HTML tag of the widget.'</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.id__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxTableForm.id_path_elem">
@@ -1555,10 +2383,20 @@ Example:</p>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.is_required__doc">
+<tt class="descname">is_required__doc</tt><em class="property"> = 'Computed flag indicating if input is required from this field'</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.is_required__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.SproxTableForm.is_root">
 <tt class="descname">is_root</tt><a class="headerlink" href="#sprox.widgets.SproxTableForm.is_root" title="Permalink to this definition">¶</a></dt>
 <dd><p>True if the widget doesn&#8217;t have a parent</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.javascript">
+<tt class="descname">javascript</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.javascript" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxTableForm.key">
@@ -1581,13 +2419,48 @@ displaying.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.label_text">
+<tt class="descname">label_text</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.label_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.label_text__doc">
+<tt class="descname">label_text__doc</tt><em class="property"> = 'The text that should label this field'</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.label_text__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.method">
+<tt class="descname">method</tt><em class="property"> = 'post'</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.method" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.method__doc">
+<tt class="descname">method__doc</tt><em class="property"> = 'The HTTP request method to be used'</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.method__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.SproxTableForm.name">
 <tt class="descname">name</tt><a class="headerlink" href="#sprox.widgets.SproxTableForm.name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.name__doc">
+<tt class="descname">name__doc</tt><em class="property"> = 'Name for this input Widget. This is the name of the variable that will reach the controller. This parameter can only be set during widget initialization'</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.name__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.SproxTableForm.name_path_elem">
 <tt class="descname">name_path_elem</tt><a class="headerlink" href="#sprox.widgets.SproxTableForm.name_path_elem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.params">
+<tt class="descname">params</tt><em class="property"> = frozenset(['label_text', 'suppress_label', 'strip_name', 'show_children_errors', 'disabled', 'attrs', 'container_attrs', 'help_text', 'id', 'show_labels', 'submit_text', 'style', 'name', 'table_attrs', 'css_class', 'show_error', 'css_classes', 'action', 'is_required', 'method', 'hover_help'])</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.params" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.parent">
+<tt class="descname">parent</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.parent" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -1655,6 +2528,91 @@ children&#8217;s errors if any.</p>
 validation fails the original value will be returned unmodified.</p>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.show_children_errors">
+<tt class="descname">show_children_errors</tt><em class="property"> = True</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.show_children_errors" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.show_error">
+<tt class="descname">show_error</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.show_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.show_error__doc">
+<tt class="descname">show_error__doc</tt><em class="property"> = &quot;Should the field display it's own errors? Defaults to False because normally they're displayed by the container widget&quot;</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.show_error__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.show_labels">
+<tt class="descname">show_labels</tt><em class="property"> = True</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.show_labels" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.source_vars">
+<tt class="descname">source_vars</tt><em class="property"> = frozenset([])</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.source_vars" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.strip_name">
+<tt class="descname">strip_name</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.strip_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.strip_name__doc">
+<tt class="descname">strip_name__doc</tt><em class="property"> = &quot;If this flag is True then the name of this widget will not be included in the fully-qualified names of the widgets in this subtree. This is useful to 'flatten-out' nested structures. This parameter can only be set during initialization.&quot;</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.strip_name__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.style">
+<tt class="descname">style</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.style" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.style__doc">
+<tt class="descname">style__doc</tt><em class="property"> = &quot;Style properties for the field. It's recommended to use css classes and stylesheets instead of this parameter&quot;</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.style__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.submit_label__doc">
+<tt class="descname">submit_label__doc</tt><em class="property"> = 'Label text for the auto-generated submit button. If empty then no label will be generated.'</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.submit_label__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.submit_label_text">
+<tt class="descname">submit_label_text</tt><em class="property"> = ''</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.submit_label_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.submit_text">
+<tt class="descname">submit_text</tt><em class="property"> = 'Submit'</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.submit_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.submit_text__doc">
+<tt class="descname">submit_text__doc</tt><em class="property"> = 'Text that should appear in the auto-generated Submit button. If None then no submit button will be autogenerated.'</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.submit_text__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.suppress_label">
+<tt class="descname">suppress_label</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.suppress_label" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.suppress_label__doc">
+<tt class="descname">suppress_label__doc</tt><em class="property"> = 'Allows individual widgets to suppress the attached label in their container'</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.suppress_label__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.table_attrs">
+<tt class="descname">table_attrs</tt><em class="property"> = {}</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.table_attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.template">
+<tt class="descname">template</tt><em class="property"> = 'sprox.widgets.templates.tableForm'</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.template" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="method">
 <dt id="sprox.widgets.SproxTableForm.update_attrs">
 <tt class="descname">update_attrs</tt><big>(</big><em>d</em>, <em>*args</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxTableForm.update_attrs" title="Permalink to this definition">¶</a></dt>
@@ -1688,6 +2646,11 @@ value will be placed at request local storage so if the widget is
 redisplayed in the same request <tt class="docutils literal"><span class="pre">error</span></tt> and <tt class="docutils literal"><span class="pre">value</span></tt> don&#8217;t have to
 be passed explicitly to <tt class="docutils literal"><span class="pre">display</span></tt>.</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTableForm.validator">
+<tt class="descname">validator</tt><em class="property"> = &lt;Schema object 58 allow_extra_fields=True chained_validators=[] fields={} ignore_missing_keys=True pre_validators=[]&gt;</em><a class="headerlink" href="#sprox.widgets.SproxTableForm.validator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxTableForm.value_at_request">
@@ -1744,6 +2707,31 @@ the validator so it can be rendered in the template.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.attrs">
+<tt class="descname">attrs</tt><em class="property"> = {}</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.attrs__doc">
+<tt class="descname">attrs__doc</tt><em class="property"> = 'Extra attributes for the outermost DOM node'</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.attrs__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.available_engines">
+<tt class="descname">available_engines</tt><em class="property"> = ['mako', 'genshi']</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.available_engines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.button_text">
+<tt class="descname">button_text</tt><em class="property"> = 'Choose'</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.button_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.calendar_lang">
+<tt class="descname">calendar_lang</tt><em class="property"> = 'en'</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.calendar_lang" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.SproxTimePicker.children_deep">
 <tt class="descname">children_deep</tt><a class="headerlink" href="#sprox.widgets.SproxTimePicker.children_deep" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -1751,6 +2739,56 @@ the validator so it can be rendered in the template.</p>
 <dl class="method">
 <dt id="sprox.widgets.SproxTimePicker.clone">
 <tt class="descname">clone</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxTimePicker.clone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.container_attrs">
+<tt class="descname">container_attrs</tt><em class="property"> = {}</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.container_attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.container_attrs__doc">
+<tt class="descname">container_attrs__doc</tt><em class="property"> = 'Extra attributes to include in the container tag around this widget'</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.container_attrs__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.css">
+<tt class="descname">css</tt><em class="property"> = [CSSLink(None, children=[], **{'modname': 'tw.forms', 'filename': 'static/calendar/calendar-system.css'})]</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.css" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.css_class__doc">
+<tt class="descname">css_class__doc</tt><em class="property"> = 'Main CSS class for this widget'</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.css_class__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.css_classes">
+<tt class="descname">css_classes</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.css_classes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.css_classes__doc">
+<tt class="descname">css_classes__doc</tt><em class="property"> = 'A list with extra css classes for the widget.'</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.css_classes__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.date_format">
+<tt class="descname">date_format</tt><em class="property"> = '%H:%M:%S'</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.date_format" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.default">
+<tt class="descname">default</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.default" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.disabled">
+<tt class="descname">disabled</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.disabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.disabled__doc">
+<tt class="descname">disabled__doc</tt><em class="property"> = &quot;Should the field be disbaled on render and it's input ignored by the validator? UNIMPLEMENTED&quot;</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.disabled__doc" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -1773,10 +2811,25 @@ around.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.engine_name">
+<tt class="descname">engine_name</tt><em class="property"> = 'genshi'</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.engine_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.SproxTimePicker.error_at_request">
 <tt class="descname">error_at_request</tt><a class="headerlink" href="#sprox.widgets.SproxTimePicker.error_at_request" title="Permalink to this definition">¶</a></dt>
 <dd><p>Validation error for current request.</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.file_upload">
+<tt class="descname">file_upload</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.file_upload" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.force_conversion">
+<tt class="descname">force_conversion</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.force_conversion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxTimePicker.generate_schema">
@@ -1802,6 +2855,16 @@ render to retrieve a value</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.help_text">
+<tt class="descname">help_text</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.help_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.help_text__doc">
+<tt class="descname">help_text__doc</tt><em class="property"> = 'Description of the field to aid the user'</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.help_text__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.SproxTimePicker.id">
 <tt class="descname">id</tt><a class="headerlink" href="#sprox.widgets.SproxTimePicker.id" title="Permalink to this definition">¶</a></dt>
 <dd><p>The calculated id of the widget. This string will provide a unique
@@ -1820,6 +2883,11 @@ Example:</p>
 </pre></div>
 </div>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.id__doc">
+<tt class="descname">id__doc</tt><em class="property"> = 'The id of this widget. This id is used to reference a widget from its parent ``children`` attribute and is usually the DOM id of outermost HTML tag of the widget.'</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.id__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxTimePicker.id_path_elem">
@@ -1849,10 +2917,20 @@ Example:</p>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.is_required__doc">
+<tt class="descname">is_required__doc</tt><em class="property"> = 'Computed flag indicating if input is required from this field'</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.is_required__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.SproxTimePicker.is_root">
 <tt class="descname">is_root</tt><a class="headerlink" href="#sprox.widgets.SproxTimePicker.is_root" title="Permalink to this definition">¶</a></dt>
 <dd><p>True if the widget doesn&#8217;t have a parent</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.javascript">
+<tt class="descname">javascript</tt><em class="property"> = [JSLink(None, children=[], **{'modname': 'tw.forms', 'filename': 'static/calendar/calendar.js'}), JSLink(None, children=[], **{'modname': 'tw.forms', 'javascript': [JSLink(None, children=[], **{'modname': 'tw.forms', 'filename': 'static/calendar/calendar.js'})], 'filename': 'static/calendar/calendar-setup.js'})]</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.javascript" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxTimePicker.key">
@@ -1875,8 +2953,23 @@ displaying.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.label_text">
+<tt class="descname">label_text</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.label_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.label_text__doc">
+<tt class="descname">label_text__doc</tt><em class="property"> = 'The text that should label this field'</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.label_text__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.SproxTimePicker.name">
 <tt class="descname">name</tt><a class="headerlink" href="#sprox.widgets.SproxTimePicker.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.name__doc">
+<tt class="descname">name__doc</tt><em class="property"> = 'Name for this input Widget. This is the name of the variable that will reach the controller. This parameter can only be set during widget initialization'</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.name__doc" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -1885,10 +2978,30 @@ displaying.</p>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.not_empty">
+<tt class="descname">not_empty</tt><em class="property"> = True</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.not_empty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.params">
+<tt class="descname">params</tt><em class="property"> = frozenset(['label_text', 'suppress_label', 'strip_name', 'button_text', 'picker_shows_time', 'disabled', 'attrs', 'container_attrs', 'help_text', 'not_empty', 'id', 'date_format', 'style', 'name', 'css_class', 'calendar_lang', 'show_error', 'css_classes', 'tzinfo', 'is_required'])</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.params" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.parent">
+<tt class="descname">parent</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.SproxTimePicker.path">
 <tt class="descname">path</tt><a class="headerlink" href="#sprox.widgets.SproxTimePicker.path" title="Permalink to this definition">¶</a></dt>
 <dd><p>Iterates a walk from this widget to the root of the tree</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.picker_shows_time">
+<tt class="descname">picker_shows_time</tt><em class="property"> = True</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.picker_shows_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.SproxTimePicker.post_init">
@@ -1950,6 +3063,56 @@ children&#8217;s errors if any.</p>
 validation fails the original value will be returned unmodified.</p>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.show_error">
+<tt class="descname">show_error</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.show_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.show_error__doc">
+<tt class="descname">show_error__doc</tt><em class="property"> = &quot;Should the field display it's own errors? Defaults to False because normally they're displayed by the container widget&quot;</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.show_error__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.source_vars">
+<tt class="descname">source_vars</tt><em class="property"> = frozenset([])</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.source_vars" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.strip_name">
+<tt class="descname">strip_name</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.strip_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.strip_name__doc">
+<tt class="descname">strip_name__doc</tt><em class="property"> = &quot;If this flag is True then the name of this widget will not be included in the fully-qualified names of the widgets in this subtree. This is useful to 'flatten-out' nested structures. This parameter can only be set during initialization.&quot;</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.strip_name__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.style">
+<tt class="descname">style</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.style" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.style__doc">
+<tt class="descname">style__doc</tt><em class="property"> = &quot;Style properties for the field. It's recommended to use css classes and stylesheets instead of this parameter&quot;</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.style__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.suppress_label">
+<tt class="descname">suppress_label</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.suppress_label" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.suppress_label__doc">
+<tt class="descname">suppress_label__doc</tt><em class="property"> = 'Allows individual widgets to suppress the attached label in their container'</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.suppress_label__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.template">
+<tt class="descname">template</tt><em class="property"> = 'tw.forms.templates.calendar'</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.template" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="method">
 <dt id="sprox.widgets.SproxTimePicker.update_attrs">
 <tt class="descname">update_attrs</tt><big>(</big><em>d</em>, <em>*args</em><big>)</big><a class="headerlink" href="#sprox.widgets.SproxTimePicker.update_attrs" title="Permalink to this definition">¶</a></dt>
@@ -1983,6 +3146,11 @@ value will be placed at request local storage so if the widget is
 redisplayed in the same request <tt class="docutils literal"><span class="pre">error</span></tt> and <tt class="docutils literal"><span class="pre">value</span></tt> don&#8217;t have to
 be passed explicitly to <tt class="docutils literal"><span class="pre">display</span></tt>.</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.SproxTimePicker.validator">
+<tt class="descname">validator</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.SproxTimePicker.validator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.SproxTimePicker.value_at_request">
@@ -2022,15 +3190,10 @@ applying a filter on them.</p>
 <dl class="method">
 <dt id="sprox.widgets.EntityDefWidget.adapt_value">
 <tt class="descname">adapt_value</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.EntityDefWidget.adapt_value" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>Adapt object <em>value</em> for rendering in this widget. Should return one of:</dt>
-<dd><ul class="first last simple">
-<li>A list of objects for repeated widgets.</li>
-<li>A dict for widgets with children, keyed by the children&#8217;s ids.</li>
-<li>Any other object the widget understands.</li>
-</ul>
-</dd>
-</dl>
+<dd><p>Adapt object <em>value</em> for rendering in this widget. Should return one of:
+* A list of objects for repeated widgets.
+* A dict for widgets with children, keyed by the children&#8217;s ids.
+* Any other object the widget understands.</p>
 </dd></dl>
 
 <dl class="method">
@@ -2041,6 +3204,11 @@ widget is rendered.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.EntityDefWidget.available_engines">
+<tt class="descname">available_engines</tt><em class="property"> = ['genshi']</em><a class="headerlink" href="#sprox.widgets.EntityDefWidget.available_engines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.EntityDefWidget.children_deep">
 <tt class="descname">children_deep</tt><a class="headerlink" href="#sprox.widgets.EntityDefWidget.children_deep" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -2048,6 +3216,31 @@ widget is rendered.</p>
 <dl class="method">
 <dt id="sprox.widgets.EntityDefWidget.clone">
 <tt class="descname">clone</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.EntityDefWidget.clone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.EntityDefWidget.css">
+<tt class="descname">css</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.EntityDefWidget.css" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.EntityDefWidget.css_class__doc">
+<tt class="descname">css_class__doc</tt><em class="property"> = 'Main CSS class for this widget'</em><a class="headerlink" href="#sprox.widgets.EntityDefWidget.css_class__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.EntityDefWidget.css_classes">
+<tt class="descname">css_classes</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.EntityDefWidget.css_classes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.EntityDefWidget.css_classes__doc">
+<tt class="descname">css_classes__doc</tt><em class="property"> = 'A list with extra css classes for the widget.'</em><a class="headerlink" href="#sprox.widgets.EntityDefWidget.css_classes__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.EntityDefWidget.default">
+<tt class="descname">default</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.EntityDefWidget.default" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -2068,6 +3261,11 @@ around.</p>
 <tt class="descname">displays_on</tt><a class="headerlink" href="#sprox.widgets.EntityDefWidget.displays_on" title="Permalink to this definition">¶</a></dt>
 <dd><p>Where the widget is being displayed on</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.EntityDefWidget.engine_name">
+<tt class="descname">engine_name</tt><em class="property"> = 'toscawidgets'</em><a class="headerlink" href="#sprox.widgets.EntityDefWidget.engine_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.EntityDefWidget.get_default">
@@ -2098,6 +3296,11 @@ Example:</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.EntityDefWidget.id__doc">
+<tt class="descname">id__doc</tt><em class="property"> = 'The id of this widget. This id is used to reference a widget from its parent ``children`` attribute and is usually the DOM id of outermost HTML tag of the widget.'</em><a class="headerlink" href="#sprox.widgets.EntityDefWidget.id__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.EntityDefWidget.id_path_elem">
 <tt class="descname">id_path_elem</tt><a class="headerlink" href="#sprox.widgets.EntityDefWidget.id_path_elem" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -2126,6 +3329,11 @@ Example:</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.EntityDefWidget.javascript">
+<tt class="descname">javascript</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.EntityDefWidget.javascript" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.EntityDefWidget.key">
 <tt class="descname">key</tt><a class="headerlink" href="#sprox.widgets.EntityDefWidget.key" title="Permalink to this definition">¶</a></dt>
 <dd><p>A string that can be used as a key to index the dictionary of
@@ -2144,6 +3352,16 @@ displaying.</p>
 </pre></div>
 </div>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.EntityDefWidget.params">
+<tt class="descname">params</tt><em class="property"> = frozenset(['css_class', 'entity', 'id', 'css_classes'])</em><a class="headerlink" href="#sprox.widgets.EntityDefWidget.params" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.EntityDefWidget.parent">
+<tt class="descname">parent</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.EntityDefWidget.parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.EntityDefWidget.path">
@@ -2200,6 +3418,16 @@ passing the kw argument&#8217;s dict to <cite>update_params</cite>.</p>
 <tt class="descname">root</tt><a class="headerlink" href="#sprox.widgets.EntityDefWidget.root" title="Permalink to this definition">¶</a></dt>
 <dd><p>The root of this widget tree</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.EntityDefWidget.source_vars">
+<tt class="descname">source_vars</tt><em class="property"> = frozenset([])</em><a class="headerlink" href="#sprox.widgets.EntityDefWidget.source_vars" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.EntityDefWidget.template">
+<tt class="descname">template</tt><em class="property"> = 'sprox.widgets.templates.entityDef'</em><a class="headerlink" href="#sprox.widgets.EntityDefWidget.template" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.EntityDefWidget.update_params">
@@ -2270,15 +3498,10 @@ applying a filter on them.</p>
 <dl class="method">
 <dt id="sprox.widgets.EntityLabelWidget.adapt_value">
 <tt class="descname">adapt_value</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.EntityLabelWidget.adapt_value" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>Adapt object <em>value</em> for rendering in this widget. Should return one of:</dt>
-<dd><ul class="first last simple">
-<li>A list of objects for repeated widgets.</li>
-<li>A dict for widgets with children, keyed by the children&#8217;s ids.</li>
-<li>Any other object the widget understands.</li>
-</ul>
-</dd>
-</dl>
+<dd><p>Adapt object <em>value</em> for rendering in this widget. Should return one of:
+* A list of objects for repeated widgets.
+* A dict for widgets with children, keyed by the children&#8217;s ids.
+* Any other object the widget understands.</p>
 </dd></dl>
 
 <dl class="method">
@@ -2289,6 +3512,11 @@ widget is rendered.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.EntityLabelWidget.available_engines">
+<tt class="descname">available_engines</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.EntityLabelWidget.available_engines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.EntityLabelWidget.children_deep">
 <tt class="descname">children_deep</tt><a class="headerlink" href="#sprox.widgets.EntityLabelWidget.children_deep" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -2296,6 +3524,31 @@ widget is rendered.</p>
 <dl class="method">
 <dt id="sprox.widgets.EntityLabelWidget.clone">
 <tt class="descname">clone</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.EntityLabelWidget.clone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.EntityLabelWidget.css">
+<tt class="descname">css</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.EntityLabelWidget.css" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.EntityLabelWidget.css_class__doc">
+<tt class="descname">css_class__doc</tt><em class="property"> = 'Main CSS class for this widget'</em><a class="headerlink" href="#sprox.widgets.EntityLabelWidget.css_class__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.EntityLabelWidget.css_classes">
+<tt class="descname">css_classes</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.EntityLabelWidget.css_classes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.EntityLabelWidget.css_classes__doc">
+<tt class="descname">css_classes__doc</tt><em class="property"> = 'A list with extra css classes for the widget.'</em><a class="headerlink" href="#sprox.widgets.EntityLabelWidget.css_classes__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.EntityLabelWidget.default">
+<tt class="descname">default</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.EntityLabelWidget.default" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -2316,6 +3569,11 @@ around.</p>
 <tt class="descname">displays_on</tt><a class="headerlink" href="#sprox.widgets.EntityLabelWidget.displays_on" title="Permalink to this definition">¶</a></dt>
 <dd><p>Where the widget is being displayed on</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.EntityLabelWidget.engine_name">
+<tt class="descname">engine_name</tt><em class="property"> = 'toscawidgets'</em><a class="headerlink" href="#sprox.widgets.EntityLabelWidget.engine_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.EntityLabelWidget.get_default">
@@ -2346,6 +3604,11 @@ Example:</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.EntityLabelWidget.id__doc">
+<tt class="descname">id__doc</tt><em class="property"> = 'The id of this widget. This id is used to reference a widget from its parent ``children`` attribute and is usually the DOM id of outermost HTML tag of the widget.'</em><a class="headerlink" href="#sprox.widgets.EntityLabelWidget.id__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.EntityLabelWidget.id_path_elem">
 <tt class="descname">id_path_elem</tt><a class="headerlink" href="#sprox.widgets.EntityLabelWidget.id_path_elem" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -2374,6 +3637,11 @@ Example:</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.EntityLabelWidget.javascript">
+<tt class="descname">javascript</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.EntityLabelWidget.javascript" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.EntityLabelWidget.key">
 <tt class="descname">key</tt><a class="headerlink" href="#sprox.widgets.EntityLabelWidget.key" title="Permalink to this definition">¶</a></dt>
 <dd><p>A string that can be used as a key to index the dictionary of
@@ -2392,6 +3660,16 @@ displaying.</p>
 </pre></div>
 </div>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.EntityLabelWidget.params">
+<tt class="descname">params</tt><em class="property"> = frozenset(['css_class', 'controller', 'entity', 'id', 'css_classes'])</em><a class="headerlink" href="#sprox.widgets.EntityLabelWidget.params" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.EntityLabelWidget.parent">
+<tt class="descname">parent</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.EntityLabelWidget.parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.EntityLabelWidget.path">
@@ -2448,6 +3726,16 @@ passing the kw argument&#8217;s dict to <cite>update_params</cite>.</p>
 <tt class="descname">root</tt><a class="headerlink" href="#sprox.widgets.EntityLabelWidget.root" title="Permalink to this definition">¶</a></dt>
 <dd><p>The root of this widget tree</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.EntityLabelWidget.source_vars">
+<tt class="descname">source_vars</tt><em class="property"> = frozenset([])</em><a class="headerlink" href="#sprox.widgets.EntityLabelWidget.source_vars" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.EntityLabelWidget.template">
+<tt class="descname">template</tt><em class="property"> = 'genshi:sprox.widgets.templates.entityLabel'</em><a class="headerlink" href="#sprox.widgets.EntityLabelWidget.template" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.EntityLabelWidget.update_params">
@@ -2518,15 +3806,10 @@ applying a filter on them.</p>
 <dl class="method">
 <dt id="sprox.widgets.ModelLabelWidget.adapt_value">
 <tt class="descname">adapt_value</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.ModelLabelWidget.adapt_value" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>Adapt object <em>value</em> for rendering in this widget. Should return one of:</dt>
-<dd><ul class="first last simple">
-<li>A list of objects for repeated widgets.</li>
-<li>A dict for widgets with children, keyed by the children&#8217;s ids.</li>
-<li>Any other object the widget understands.</li>
-</ul>
-</dd>
-</dl>
+<dd><p>Adapt object <em>value</em> for rendering in this widget. Should return one of:
+* A list of objects for repeated widgets.
+* A dict for widgets with children, keyed by the children&#8217;s ids.
+* Any other object the widget understands.</p>
 </dd></dl>
 
 <dl class="method">
@@ -2537,6 +3820,11 @@ widget is rendered.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.ModelLabelWidget.available_engines">
+<tt class="descname">available_engines</tt><em class="property"> = ['mako', 'genshi']</em><a class="headerlink" href="#sprox.widgets.ModelLabelWidget.available_engines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.ModelLabelWidget.children_deep">
 <tt class="descname">children_deep</tt><a class="headerlink" href="#sprox.widgets.ModelLabelWidget.children_deep" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -2544,6 +3832,31 @@ widget is rendered.</p>
 <dl class="method">
 <dt id="sprox.widgets.ModelLabelWidget.clone">
 <tt class="descname">clone</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.ModelLabelWidget.clone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.ModelLabelWidget.css">
+<tt class="descname">css</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.ModelLabelWidget.css" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.ModelLabelWidget.css_class__doc">
+<tt class="descname">css_class__doc</tt><em class="property"> = 'Main CSS class for this widget'</em><a class="headerlink" href="#sprox.widgets.ModelLabelWidget.css_class__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.ModelLabelWidget.css_classes">
+<tt class="descname">css_classes</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.ModelLabelWidget.css_classes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.ModelLabelWidget.css_classes__doc">
+<tt class="descname">css_classes__doc</tt><em class="property"> = 'A list with extra css classes for the widget.'</em><a class="headerlink" href="#sprox.widgets.ModelLabelWidget.css_classes__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.ModelLabelWidget.default">
+<tt class="descname">default</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.ModelLabelWidget.default" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -2564,6 +3877,11 @@ around.</p>
 <tt class="descname">displays_on</tt><a class="headerlink" href="#sprox.widgets.ModelLabelWidget.displays_on" title="Permalink to this definition">¶</a></dt>
 <dd><p>Where the widget is being displayed on</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.ModelLabelWidget.engine_name">
+<tt class="descname">engine_name</tt><em class="property"> = 'toscawidgets'</em><a class="headerlink" href="#sprox.widgets.ModelLabelWidget.engine_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.ModelLabelWidget.get_default">
@@ -2594,6 +3912,11 @@ Example:</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.ModelLabelWidget.id__doc">
+<tt class="descname">id__doc</tt><em class="property"> = 'The id of this widget. This id is used to reference a widget from its parent ``children`` attribute and is usually the DOM id of outermost HTML tag of the widget.'</em><a class="headerlink" href="#sprox.widgets.ModelLabelWidget.id__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.ModelLabelWidget.id_path_elem">
 <tt class="descname">id_path_elem</tt><a class="headerlink" href="#sprox.widgets.ModelLabelWidget.id_path_elem" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -2622,6 +3945,11 @@ Example:</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.ModelLabelWidget.javascript">
+<tt class="descname">javascript</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.ModelLabelWidget.javascript" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.ModelLabelWidget.key">
 <tt class="descname">key</tt><a class="headerlink" href="#sprox.widgets.ModelLabelWidget.key" title="Permalink to this definition">¶</a></dt>
 <dd><p>A string that can be used as a key to index the dictionary of
@@ -2640,6 +3968,16 @@ displaying.</p>
 </pre></div>
 </div>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.ModelLabelWidget.params">
+<tt class="descname">params</tt><em class="property"> = frozenset(['css_class', 'controller', 'identifier', 'id', 'css_classes'])</em><a class="headerlink" href="#sprox.widgets.ModelLabelWidget.params" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.ModelLabelWidget.parent">
+<tt class="descname">parent</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.ModelLabelWidget.parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.ModelLabelWidget.path">
@@ -2696,6 +4034,16 @@ passing the kw argument&#8217;s dict to <cite>update_params</cite>.</p>
 <tt class="descname">root</tt><a class="headerlink" href="#sprox.widgets.ModelLabelWidget.root" title="Permalink to this definition">¶</a></dt>
 <dd><p>The root of this widget tree</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.ModelLabelWidget.source_vars">
+<tt class="descname">source_vars</tt><em class="property"> = frozenset([])</em><a class="headerlink" href="#sprox.widgets.ModelLabelWidget.source_vars" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.ModelLabelWidget.template">
+<tt class="descname">template</tt><em class="property"> = 'sprox.widgets.templates.modelLabel'</em><a class="headerlink" href="#sprox.widgets.ModelLabelWidget.template" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.ModelLabelWidget.update_params">
@@ -2766,15 +4114,10 @@ applying a filter on them.</p>
 <dl class="method">
 <dt id="sprox.widgets.PropertyMixin.adapt_value">
 <tt class="descname">adapt_value</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.PropertyMixin.adapt_value" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>Adapt object <em>value</em> for rendering in this widget. Should return one of:</dt>
-<dd><ul class="first last simple">
-<li>A list of objects for repeated widgets.</li>
-<li>A dict for widgets with children, keyed by the children&#8217;s ids.</li>
-<li>Any other object the widget understands.</li>
-</ul>
-</dd>
-</dl>
+<dd><p>Adapt object <em>value</em> for rendering in this widget. Should return one of:
+* A list of objects for repeated widgets.
+* A dict for widgets with children, keyed by the children&#8217;s ids.
+* Any other object the widget understands.</p>
 </dd></dl>
 
 <dl class="method">
@@ -2785,6 +4128,11 @@ widget is rendered.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.PropertyMixin.available_engines">
+<tt class="descname">available_engines</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.PropertyMixin.available_engines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.PropertyMixin.children_deep">
 <tt class="descname">children_deep</tt><a class="headerlink" href="#sprox.widgets.PropertyMixin.children_deep" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -2792,6 +4140,31 @@ widget is rendered.</p>
 <dl class="method">
 <dt id="sprox.widgets.PropertyMixin.clone">
 <tt class="descname">clone</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.PropertyMixin.clone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMixin.css">
+<tt class="descname">css</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.PropertyMixin.css" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMixin.css_class__doc">
+<tt class="descname">css_class__doc</tt><em class="property"> = 'Main CSS class for this widget'</em><a class="headerlink" href="#sprox.widgets.PropertyMixin.css_class__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMixin.css_classes">
+<tt class="descname">css_classes</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.PropertyMixin.css_classes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMixin.css_classes__doc">
+<tt class="descname">css_classes__doc</tt><em class="property"> = 'A list with extra css classes for the widget.'</em><a class="headerlink" href="#sprox.widgets.PropertyMixin.css_classes__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMixin.default">
+<tt class="descname">default</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.PropertyMixin.default" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -2812,6 +4185,11 @@ around.</p>
 <tt class="descname">displays_on</tt><a class="headerlink" href="#sprox.widgets.PropertyMixin.displays_on" title="Permalink to this definition">¶</a></dt>
 <dd><p>Where the widget is being displayed on</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMixin.engine_name">
+<tt class="descname">engine_name</tt><em class="property"> = 'toscawidgets'</em><a class="headerlink" href="#sprox.widgets.PropertyMixin.engine_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertyMixin.get_default">
@@ -2842,6 +4220,11 @@ Example:</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.PropertyMixin.id__doc">
+<tt class="descname">id__doc</tt><em class="property"> = 'The id of this widget. This id is used to reference a widget from its parent ``children`` attribute and is usually the DOM id of outermost HTML tag of the widget.'</em><a class="headerlink" href="#sprox.widgets.PropertyMixin.id__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.PropertyMixin.id_path_elem">
 <tt class="descname">id_path_elem</tt><a class="headerlink" href="#sprox.widgets.PropertyMixin.id_path_elem" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -2870,6 +4253,11 @@ Example:</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.PropertyMixin.javascript">
+<tt class="descname">javascript</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.PropertyMixin.javascript" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.PropertyMixin.key">
 <tt class="descname">key</tt><a class="headerlink" href="#sprox.widgets.PropertyMixin.key" title="Permalink to this definition">¶</a></dt>
 <dd><p>A string that can be used as a key to index the dictionary of
@@ -2888,6 +4276,16 @@ displaying.</p>
 </pre></div>
 </div>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMixin.params">
+<tt class="descname">params</tt><em class="property"> = frozenset(['dropdown_field_names', 'provider', 'css_class', 'css_classes', 'field_name', 'id', 'entity'])</em><a class="headerlink" href="#sprox.widgets.PropertyMixin.params" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMixin.parent">
+<tt class="descname">parent</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.PropertyMixin.parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.PropertyMixin.path">
@@ -2944,6 +4342,16 @@ passing the kw argument&#8217;s dict to <cite>update_params</cite>.</p>
 <tt class="descname">root</tt><a class="headerlink" href="#sprox.widgets.PropertyMixin.root" title="Permalink to this definition">¶</a></dt>
 <dd><p>The root of this widget tree</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMixin.source_vars">
+<tt class="descname">source_vars</tt><em class="property"> = frozenset([])</em><a class="headerlink" href="#sprox.widgets.PropertyMixin.source_vars" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMixin.template">
+<tt class="descname">template</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.PropertyMixin.template" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertyMixin.update_params">
@@ -3029,6 +4437,21 @@ widget is rendered.</p>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.attrs">
+<tt class="descname">attrs</tt><em class="property"> = {}</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.attrs__doc">
+<tt class="descname">attrs__doc</tt><em class="property"> = 'Extra attributes for the outermost DOM node'</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.attrs__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.available_engines">
+<tt class="descname">available_engines</tt><em class="property"> = ['mako', 'genshi']</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.available_engines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.PropertyMultipleSelectField.children_deep">
 <tt class="descname">children_deep</tt><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.children_deep" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -3036,6 +4459,51 @@ widget is rendered.</p>
 <dl class="method">
 <dt id="sprox.widgets.PropertyMultipleSelectField.clone">
 <tt class="descname">clone</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.clone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.container_attrs">
+<tt class="descname">container_attrs</tt><em class="property"> = {}</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.container_attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.container_attrs__doc">
+<tt class="descname">container_attrs__doc</tt><em class="property"> = 'Extra attributes to include in the container tag around this widget'</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.container_attrs__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.css">
+<tt class="descname">css</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.css" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.css_class__doc">
+<tt class="descname">css_class__doc</tt><em class="property"> = 'Main CSS class for this widget'</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.css_class__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.css_classes">
+<tt class="descname">css_classes</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.css_classes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.css_classes__doc">
+<tt class="descname">css_classes__doc</tt><em class="property"> = 'A list with extra css classes for the widget.'</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.css_classes__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.default">
+<tt class="descname">default</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.default" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.disabled">
+<tt class="descname">disabled</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.disabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.disabled__doc">
+<tt class="descname">disabled__doc</tt><em class="property"> = &quot;Should the field be disbaled on render and it's input ignored by the validator? UNIMPLEMENTED&quot;</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.disabled__doc" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -3058,10 +4526,25 @@ around.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.engine_name">
+<tt class="descname">engine_name</tt><em class="property"> = 'genshi'</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.engine_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.PropertyMultipleSelectField.error_at_request">
 <tt class="descname">error_at_request</tt><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.error_at_request" title="Permalink to this definition">¶</a></dt>
 <dd><p>Validation error for current request.</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.file_upload">
+<tt class="descname">file_upload</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.file_upload" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.force_conversion">
+<tt class="descname">force_conversion</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.force_conversion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertyMultipleSelectField.generate_schema">
@@ -3077,6 +4560,16 @@ including the validators from all children once these are all known.</p>
 that it can be called without arguments it will be called on each
 render to retrieve a value</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.help_text">
+<tt class="descname">help_text</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.help_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.help_text__doc">
+<tt class="descname">help_text__doc</tt><em class="property"> = 'Description of the field to aid the user'</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.help_text__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.PropertyMultipleSelectField.id">
@@ -3097,6 +4590,11 @@ Example:</p>
 </pre></div>
 </div>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.id__doc">
+<tt class="descname">id__doc</tt><em class="property"> = 'The id of this widget. This id is used to reference a widget from its parent ``children`` attribute and is usually the DOM id of outermost HTML tag of the widget.'</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.id__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.PropertyMultipleSelectField.id_path_elem">
@@ -3126,10 +4624,20 @@ Example:</p>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.is_required__doc">
+<tt class="descname">is_required__doc</tt><em class="property"> = 'Computed flag indicating if input is required from this field'</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.is_required__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.PropertyMultipleSelectField.is_root">
 <tt class="descname">is_root</tt><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.is_root" title="Permalink to this definition">¶</a></dt>
 <dd><p>True if the widget doesn&#8217;t have a parent</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.javascript">
+<tt class="descname">javascript</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.javascript" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.PropertyMultipleSelectField.key">
@@ -3152,13 +4660,43 @@ displaying.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.label_text">
+<tt class="descname">label_text</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.label_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.label_text__doc">
+<tt class="descname">label_text__doc</tt><em class="property"> = 'The text that should label this field'</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.label_text__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.PropertyMultipleSelectField.name">
 <tt class="descname">name</tt><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.name__doc">
+<tt class="descname">name__doc</tt><em class="property"> = 'Name for this input Widget. This is the name of the variable that will reach the controller. This parameter can only be set during widget initialization'</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.name__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.PropertyMultipleSelectField.name_path_elem">
 <tt class="descname">name_path_elem</tt><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.name_path_elem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.options">
+<tt class="descname">options</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.options" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.params">
+<tt class="descname">params</tt><em class="property"> = frozenset(['label_text', 'suppress_label', 'strip_name', 'css_classes', 'entity', 'disabled', 'attrs', 'container_attrs', 'help_text', 'field_name', 'id', 'size', 'style', 'name', 'css_class', 'dropdown_field_names', 'show_error', 'provider', 'is_required', 'options'])</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.params" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.parent">
+<tt class="descname">parent</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.parent" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -3225,6 +4763,66 @@ children&#8217;s errors if any.</p>
 <dd><p>Tries to coerce the value to python using the validator. If
 validation fails the original value will be returned unmodified.</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.selected_verb">
+<tt class="descname">selected_verb</tt><em class="property"> = 'selected'</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.selected_verb" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.show_error">
+<tt class="descname">show_error</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.show_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.show_error__doc">
+<tt class="descname">show_error__doc</tt><em class="property"> = &quot;Should the field display it's own errors? Defaults to False because normally they're displayed by the container widget&quot;</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.show_error__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.size">
+<tt class="descname">size</tt><em class="property"> = 5</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.source_vars">
+<tt class="descname">source_vars</tt><em class="property"> = frozenset([])</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.source_vars" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.strip_name">
+<tt class="descname">strip_name</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.strip_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.strip_name__doc">
+<tt class="descname">strip_name__doc</tt><em class="property"> = &quot;If this flag is True then the name of this widget will not be included in the fully-qualified names of the widgets in this subtree. This is useful to 'flatten-out' nested structures. This parameter can only be set during initialization.&quot;</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.strip_name__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.style">
+<tt class="descname">style</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.style" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.style__doc">
+<tt class="descname">style__doc</tt><em class="property"> = &quot;Style properties for the field. It's recommended to use css classes and stylesheets instead of this parameter&quot;</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.style__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.suppress_label">
+<tt class="descname">suppress_label</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.suppress_label" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.suppress_label__doc">
+<tt class="descname">suppress_label__doc</tt><em class="property"> = 'Allows individual widgets to suppress the attached label in their container'</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.suppress_label__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertyMultipleSelectField.template">
+<tt class="descname">template</tt><em class="property"> = 'tw.forms.templates.select_field'</em><a class="headerlink" href="#sprox.widgets.PropertyMultipleSelectField.template" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertyMultipleSelectField.update_attrs">
@@ -3321,6 +4919,21 @@ the validator so it can be rendered in the template.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.attrs">
+<tt class="descname">attrs</tt><em class="property"> = {}</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.attrs__doc">
+<tt class="descname">attrs__doc</tt><em class="property"> = 'Extra attributes for the outermost DOM node'</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.attrs__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.available_engines">
+<tt class="descname">available_engines</tt><em class="property"> = ['mako', 'genshi']</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.available_engines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.PropertySingleSelectField.children_deep">
 <tt class="descname">children_deep</tt><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.children_deep" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -3328,6 +4941,51 @@ the validator so it can be rendered in the template.</p>
 <dl class="method">
 <dt id="sprox.widgets.PropertySingleSelectField.clone">
 <tt class="descname">clone</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.clone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.container_attrs">
+<tt class="descname">container_attrs</tt><em class="property"> = {}</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.container_attrs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.container_attrs__doc">
+<tt class="descname">container_attrs__doc</tt><em class="property"> = 'Extra attributes to include in the container tag around this widget'</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.container_attrs__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.css">
+<tt class="descname">css</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.css" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.css_class__doc">
+<tt class="descname">css_class__doc</tt><em class="property"> = 'Main CSS class for this widget'</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.css_class__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.css_classes">
+<tt class="descname">css_classes</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.css_classes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.css_classes__doc">
+<tt class="descname">css_classes__doc</tt><em class="property"> = 'A list with extra css classes for the widget.'</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.css_classes__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.default">
+<tt class="descname">default</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.default" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.disabled">
+<tt class="descname">disabled</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.disabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.disabled__doc">
+<tt class="descname">disabled__doc</tt><em class="property"> = &quot;Should the field be disbaled on render and it's input ignored by the validator? UNIMPLEMENTED&quot;</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.disabled__doc" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -3350,10 +5008,25 @@ around.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.engine_name">
+<tt class="descname">engine_name</tt><em class="property"> = 'genshi'</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.engine_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.PropertySingleSelectField.error_at_request">
 <tt class="descname">error_at_request</tt><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.error_at_request" title="Permalink to this definition">¶</a></dt>
 <dd><p>Validation error for current request.</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.file_upload">
+<tt class="descname">file_upload</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.file_upload" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.force_conversion">
+<tt class="descname">force_conversion</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.force_conversion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertySingleSelectField.generate_schema">
@@ -3369,6 +5042,16 @@ including the validators from all children once these are all known.</p>
 that it can be called without arguments it will be called on each
 render to retrieve a value</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.help_text">
+<tt class="descname">help_text</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.help_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.help_text__doc">
+<tt class="descname">help_text__doc</tt><em class="property"> = 'Description of the field to aid the user'</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.help_text__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.PropertySingleSelectField.id">
@@ -3389,6 +5072,11 @@ Example:</p>
 </pre></div>
 </div>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.id__doc">
+<tt class="descname">id__doc</tt><em class="property"> = 'The id of this widget. This id is used to reference a widget from its parent ``children`` attribute and is usually the DOM id of outermost HTML tag of the widget.'</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.id__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.PropertySingleSelectField.id_path_elem">
@@ -3418,10 +5106,20 @@ Example:</p>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.is_required__doc">
+<tt class="descname">is_required__doc</tt><em class="property"> = 'Computed flag indicating if input is required from this field'</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.is_required__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.PropertySingleSelectField.is_root">
 <tt class="descname">is_root</tt><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.is_root" title="Permalink to this definition">¶</a></dt>
 <dd><p>True if the widget doesn&#8217;t have a parent</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.javascript">
+<tt class="descname">javascript</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.javascript" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.PropertySingleSelectField.key">
@@ -3444,13 +5142,48 @@ displaying.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.label_text">
+<tt class="descname">label_text</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.label_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.label_text__doc">
+<tt class="descname">label_text__doc</tt><em class="property"> = 'The text that should label this field'</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.label_text__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.PropertySingleSelectField.name">
 <tt class="descname">name</tt><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.name__doc">
+<tt class="descname">name__doc</tt><em class="property"> = 'Name for this input Widget. This is the name of the variable that will reach the controller. This parameter can only be set during widget initialization'</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.name__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.PropertySingleSelectField.name_path_elem">
 <tt class="descname">name_path_elem</tt><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.name_path_elem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.nullable">
+<tt class="descname">nullable</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.nullable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.options">
+<tt class="descname">options</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.options" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.params">
+<tt class="descname">params</tt><em class="property"> = frozenset(['label_text', 'suppress_label', 'strip_name', 'css_classes', 'entity', 'disabled', 'attrs', 'container_attrs', 'help_text', 'field_name', 'id', 'style', 'name', 'nullable', 'css_class', 'dropdown_field_names', 'show_error', 'provider', 'is_required', 'options'])</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.params" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.parent">
+<tt class="descname">parent</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.parent" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -3518,6 +5251,61 @@ children&#8217;s errors if any.</p>
 <dd><p>Tries to coerce the value to python using the validator. If
 validation fails the original value will be returned unmodified.</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.selected_verb">
+<tt class="descname">selected_verb</tt><em class="property"> = 'selected'</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.selected_verb" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.show_error">
+<tt class="descname">show_error</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.show_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.show_error__doc">
+<tt class="descname">show_error__doc</tt><em class="property"> = &quot;Should the field display it's own errors? Defaults to False because normally they're displayed by the container widget&quot;</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.show_error__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.source_vars">
+<tt class="descname">source_vars</tt><em class="property"> = frozenset([])</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.source_vars" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.strip_name">
+<tt class="descname">strip_name</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.strip_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.strip_name__doc">
+<tt class="descname">strip_name__doc</tt><em class="property"> = &quot;If this flag is True then the name of this widget will not be included in the fully-qualified names of the widgets in this subtree. This is useful to 'flatten-out' nested structures. This parameter can only be set during initialization.&quot;</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.strip_name__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.style">
+<tt class="descname">style</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.style" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.style__doc">
+<tt class="descname">style__doc</tt><em class="property"> = &quot;Style properties for the field. It's recommended to use css classes and stylesheets instead of this parameter&quot;</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.style__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.suppress_label">
+<tt class="descname">suppress_label</tt><em class="property"> = False</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.suppress_label" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.suppress_label__doc">
+<tt class="descname">suppress_label__doc</tt><em class="property"> = 'Allows individual widgets to suppress the attached label in their container'</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.suppress_label__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.PropertySingleSelectField.template">
+<tt class="descname">template</tt><em class="property"> = 'tw.forms.templates.select_field'</em><a class="headerlink" href="#sprox.widgets.PropertySingleSelectField.template" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.PropertySingleSelectField.update_attrs">
@@ -3597,15 +5385,10 @@ applying a filter on them.</p>
 <dl class="method">
 <dt id="sprox.widgets.RecordFieldWidget.adapt_value">
 <tt class="descname">adapt_value</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.RecordFieldWidget.adapt_value" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>Adapt object <em>value</em> for rendering in this widget. Should return one of:</dt>
-<dd><ul class="first last simple">
-<li>A list of objects for repeated widgets.</li>
-<li>A dict for widgets with children, keyed by the children&#8217;s ids.</li>
-<li>Any other object the widget understands.</li>
-</ul>
-</dd>
-</dl>
+<dd><p>Adapt object <em>value</em> for rendering in this widget. Should return one of:
+* A list of objects for repeated widgets.
+* A dict for widgets with children, keyed by the children&#8217;s ids.
+* Any other object the widget understands.</p>
 </dd></dl>
 
 <dl class="method">
@@ -3616,6 +5399,11 @@ widget is rendered.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.RecordFieldWidget.available_engines">
+<tt class="descname">available_engines</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.RecordFieldWidget.available_engines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.RecordFieldWidget.children_deep">
 <tt class="descname">children_deep</tt><a class="headerlink" href="#sprox.widgets.RecordFieldWidget.children_deep" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -3623,6 +5411,31 @@ widget is rendered.</p>
 <dl class="method">
 <dt id="sprox.widgets.RecordFieldWidget.clone">
 <tt class="descname">clone</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.RecordFieldWidget.clone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.RecordFieldWidget.css">
+<tt class="descname">css</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.RecordFieldWidget.css" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.RecordFieldWidget.css_class__doc">
+<tt class="descname">css_class__doc</tt><em class="property"> = 'Main CSS class for this widget'</em><a class="headerlink" href="#sprox.widgets.RecordFieldWidget.css_class__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.RecordFieldWidget.css_classes">
+<tt class="descname">css_classes</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.RecordFieldWidget.css_classes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.RecordFieldWidget.css_classes__doc">
+<tt class="descname">css_classes__doc</tt><em class="property"> = 'A list with extra css classes for the widget.'</em><a class="headerlink" href="#sprox.widgets.RecordFieldWidget.css_classes__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.RecordFieldWidget.default">
+<tt class="descname">default</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.RecordFieldWidget.default" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -3643,6 +5456,11 @@ around.</p>
 <tt class="descname">displays_on</tt><a class="headerlink" href="#sprox.widgets.RecordFieldWidget.displays_on" title="Permalink to this definition">¶</a></dt>
 <dd><p>Where the widget is being displayed on</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.RecordFieldWidget.engine_name">
+<tt class="descname">engine_name</tt><em class="property"> = 'toscawidgets'</em><a class="headerlink" href="#sprox.widgets.RecordFieldWidget.engine_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.RecordFieldWidget.get_default">
@@ -3673,6 +5491,11 @@ Example:</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.RecordFieldWidget.id__doc">
+<tt class="descname">id__doc</tt><em class="property"> = 'The id of this widget. This id is used to reference a widget from its parent ``children`` attribute and is usually the DOM id of outermost HTML tag of the widget.'</em><a class="headerlink" href="#sprox.widgets.RecordFieldWidget.id__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.RecordFieldWidget.id_path_elem">
 <tt class="descname">id_path_elem</tt><a class="headerlink" href="#sprox.widgets.RecordFieldWidget.id_path_elem" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -3701,6 +5524,11 @@ Example:</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.RecordFieldWidget.javascript">
+<tt class="descname">javascript</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.RecordFieldWidget.javascript" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.RecordFieldWidget.key">
 <tt class="descname">key</tt><a class="headerlink" href="#sprox.widgets.RecordFieldWidget.key" title="Permalink to this definition">¶</a></dt>
 <dd><p>A string that can be used as a key to index the dictionary of
@@ -3719,6 +5547,16 @@ displaying.</p>
 </pre></div>
 </div>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.RecordFieldWidget.params">
+<tt class="descname">params</tt><em class="property"> = frozenset(['css_class', 'field_name', 'id', 'css_classes'])</em><a class="headerlink" href="#sprox.widgets.RecordFieldWidget.params" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.RecordFieldWidget.parent">
+<tt class="descname">parent</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.RecordFieldWidget.parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.RecordFieldWidget.path">
@@ -3775,6 +5613,16 @@ passing the kw argument&#8217;s dict to <cite>update_params</cite>.</p>
 <tt class="descname">root</tt><a class="headerlink" href="#sprox.widgets.RecordFieldWidget.root" title="Permalink to this definition">¶</a></dt>
 <dd><p>The root of this widget tree</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.RecordFieldWidget.source_vars">
+<tt class="descname">source_vars</tt><em class="property"> = frozenset([])</em><a class="headerlink" href="#sprox.widgets.RecordFieldWidget.source_vars" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.RecordFieldWidget.template">
+<tt class="descname">template</tt><em class="property"> = 'genshi:sprox.widgets.templates.recordField'</em><a class="headerlink" href="#sprox.widgets.RecordFieldWidget.template" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.RecordFieldWidget.update_params">
@@ -3845,15 +5693,10 @@ applying a filter on them.</p>
 <dl class="method">
 <dt id="sprox.widgets.RecordViewWidget.adapt_value">
 <tt class="descname">adapt_value</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.RecordViewWidget.adapt_value" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>Adapt object <em>value</em> for rendering in this widget. Should return one of:</dt>
-<dd><ul class="first last simple">
-<li>A list of objects for repeated widgets.</li>
-<li>A dict for widgets with children, keyed by the children&#8217;s ids.</li>
-<li>Any other object the widget understands.</li>
-</ul>
-</dd>
-</dl>
+<dd><p>Adapt object <em>value</em> for rendering in this widget. Should return one of:
+* A list of objects for repeated widgets.
+* A dict for widgets with children, keyed by the children&#8217;s ids.
+* Any other object the widget understands.</p>
 </dd></dl>
 
 <dl class="method">
@@ -3864,6 +5707,11 @@ widget is rendered.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.RecordViewWidget.available_engines">
+<tt class="descname">available_engines</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.RecordViewWidget.available_engines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.RecordViewWidget.children_deep">
 <tt class="descname">children_deep</tt><a class="headerlink" href="#sprox.widgets.RecordViewWidget.children_deep" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -3871,6 +5719,31 @@ widget is rendered.</p>
 <dl class="method">
 <dt id="sprox.widgets.RecordViewWidget.clone">
 <tt class="descname">clone</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.RecordViewWidget.clone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.RecordViewWidget.css">
+<tt class="descname">css</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.RecordViewWidget.css" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.RecordViewWidget.css_class__doc">
+<tt class="descname">css_class__doc</tt><em class="property"> = 'Main CSS class for this widget'</em><a class="headerlink" href="#sprox.widgets.RecordViewWidget.css_class__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.RecordViewWidget.css_classes">
+<tt class="descname">css_classes</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.RecordViewWidget.css_classes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.RecordViewWidget.css_classes__doc">
+<tt class="descname">css_classes__doc</tt><em class="property"> = 'A list with extra css classes for the widget.'</em><a class="headerlink" href="#sprox.widgets.RecordViewWidget.css_classes__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.RecordViewWidget.default">
+<tt class="descname">default</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.RecordViewWidget.default" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -3891,6 +5764,11 @@ around.</p>
 <tt class="descname">displays_on</tt><a class="headerlink" href="#sprox.widgets.RecordViewWidget.displays_on" title="Permalink to this definition">¶</a></dt>
 <dd><p>Where the widget is being displayed on</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.RecordViewWidget.engine_name">
+<tt class="descname">engine_name</tt><em class="property"> = 'toscawidgets'</em><a class="headerlink" href="#sprox.widgets.RecordViewWidget.engine_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.RecordViewWidget.get_default">
@@ -3921,6 +5799,11 @@ Example:</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.RecordViewWidget.id__doc">
+<tt class="descname">id__doc</tt><em class="property"> = 'The id of this widget. This id is used to reference a widget from its parent ``children`` attribute and is usually the DOM id of outermost HTML tag of the widget.'</em><a class="headerlink" href="#sprox.widgets.RecordViewWidget.id__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.RecordViewWidget.id_path_elem">
 <tt class="descname">id_path_elem</tt><a class="headerlink" href="#sprox.widgets.RecordViewWidget.id_path_elem" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -3949,6 +5832,11 @@ Example:</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.RecordViewWidget.javascript">
+<tt class="descname">javascript</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.RecordViewWidget.javascript" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.RecordViewWidget.key">
 <tt class="descname">key</tt><a class="headerlink" href="#sprox.widgets.RecordViewWidget.key" title="Permalink to this definition">¶</a></dt>
 <dd><p>A string that can be used as a key to index the dictionary of
@@ -3967,6 +5855,16 @@ displaying.</p>
 </pre></div>
 </div>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.RecordViewWidget.params">
+<tt class="descname">params</tt><em class="property"> = frozenset(['css_class', 'entity', 'id', 'css_classes'])</em><a class="headerlink" href="#sprox.widgets.RecordViewWidget.params" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.RecordViewWidget.parent">
+<tt class="descname">parent</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.RecordViewWidget.parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.RecordViewWidget.path">
@@ -4023,6 +5921,16 @@ passing the kw argument&#8217;s dict to <cite>update_params</cite>.</p>
 <tt class="descname">root</tt><a class="headerlink" href="#sprox.widgets.RecordViewWidget.root" title="Permalink to this definition">¶</a></dt>
 <dd><p>The root of this widget tree</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.RecordViewWidget.source_vars">
+<tt class="descname">source_vars</tt><em class="property"> = frozenset([])</em><a class="headerlink" href="#sprox.widgets.RecordViewWidget.source_vars" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.RecordViewWidget.template">
+<tt class="descname">template</tt><em class="property"> = 'genshi:sprox.widgets.templates.recordViewTable'</em><a class="headerlink" href="#sprox.widgets.RecordViewWidget.template" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.RecordViewWidget.update_params">
@@ -4093,15 +6001,10 @@ applying a filter on them.</p>
 <dl class="method">
 <dt id="sprox.widgets.TableDefWidget.adapt_value">
 <tt class="descname">adapt_value</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.TableDefWidget.adapt_value" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>Adapt object <em>value</em> for rendering in this widget. Should return one of:</dt>
-<dd><ul class="first last simple">
-<li>A list of objects for repeated widgets.</li>
-<li>A dict for widgets with children, keyed by the children&#8217;s ids.</li>
-<li>Any other object the widget understands.</li>
-</ul>
-</dd>
-</dl>
+<dd><p>Adapt object <em>value</em> for rendering in this widget. Should return one of:
+* A list of objects for repeated widgets.
+* A dict for widgets with children, keyed by the children&#8217;s ids.
+* Any other object the widget understands.</p>
 </dd></dl>
 
 <dl class="method">
@@ -4112,6 +6015,11 @@ widget is rendered.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.TableDefWidget.available_engines">
+<tt class="descname">available_engines</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.TableDefWidget.available_engines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.TableDefWidget.children_deep">
 <tt class="descname">children_deep</tt><a class="headerlink" href="#sprox.widgets.TableDefWidget.children_deep" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -4119,6 +6027,31 @@ widget is rendered.</p>
 <dl class="method">
 <dt id="sprox.widgets.TableDefWidget.clone">
 <tt class="descname">clone</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.TableDefWidget.clone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.TableDefWidget.css">
+<tt class="descname">css</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.TableDefWidget.css" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.TableDefWidget.css_class__doc">
+<tt class="descname">css_class__doc</tt><em class="property"> = 'Main CSS class for this widget'</em><a class="headerlink" href="#sprox.widgets.TableDefWidget.css_class__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.TableDefWidget.css_classes">
+<tt class="descname">css_classes</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.TableDefWidget.css_classes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.TableDefWidget.css_classes__doc">
+<tt class="descname">css_classes__doc</tt><em class="property"> = 'A list with extra css classes for the widget.'</em><a class="headerlink" href="#sprox.widgets.TableDefWidget.css_classes__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.TableDefWidget.default">
+<tt class="descname">default</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.TableDefWidget.default" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -4139,6 +6072,11 @@ around.</p>
 <tt class="descname">displays_on</tt><a class="headerlink" href="#sprox.widgets.TableDefWidget.displays_on" title="Permalink to this definition">¶</a></dt>
 <dd><p>Where the widget is being displayed on</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.TableDefWidget.engine_name">
+<tt class="descname">engine_name</tt><em class="property"> = 'toscawidgets'</em><a class="headerlink" href="#sprox.widgets.TableDefWidget.engine_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.TableDefWidget.get_default">
@@ -4169,6 +6107,11 @@ Example:</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.TableDefWidget.id__doc">
+<tt class="descname">id__doc</tt><em class="property"> = 'The id of this widget. This id is used to reference a widget from its parent ``children`` attribute and is usually the DOM id of outermost HTML tag of the widget.'</em><a class="headerlink" href="#sprox.widgets.TableDefWidget.id__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.TableDefWidget.id_path_elem">
 <tt class="descname">id_path_elem</tt><a class="headerlink" href="#sprox.widgets.TableDefWidget.id_path_elem" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -4197,6 +6140,11 @@ Example:</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.TableDefWidget.javascript">
+<tt class="descname">javascript</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.TableDefWidget.javascript" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.TableDefWidget.key">
 <tt class="descname">key</tt><a class="headerlink" href="#sprox.widgets.TableDefWidget.key" title="Permalink to this definition">¶</a></dt>
 <dd><p>A string that can be used as a key to index the dictionary of
@@ -4215,6 +6163,16 @@ displaying.</p>
 </pre></div>
 </div>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.TableDefWidget.params">
+<tt class="descname">params</tt><em class="property"> = frozenset(['css_class', 'identifier', 'id', 'css_classes'])</em><a class="headerlink" href="#sprox.widgets.TableDefWidget.params" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.TableDefWidget.parent">
+<tt class="descname">parent</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.TableDefWidget.parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.TableDefWidget.path">
@@ -4271,6 +6229,16 @@ passing the kw argument&#8217;s dict to <cite>update_params</cite>.</p>
 <tt class="descname">root</tt><a class="headerlink" href="#sprox.widgets.TableDefWidget.root" title="Permalink to this definition">¶</a></dt>
 <dd><p>The root of this widget tree</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.TableDefWidget.source_vars">
+<tt class="descname">source_vars</tt><em class="property"> = frozenset([])</em><a class="headerlink" href="#sprox.widgets.TableDefWidget.source_vars" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.TableDefWidget.template">
+<tt class="descname">template</tt><em class="property"> = 'genshi:sprox.widgets.templates.tableDef'</em><a class="headerlink" href="#sprox.widgets.TableDefWidget.template" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.TableDefWidget.update_params">
@@ -4341,15 +6309,10 @@ applying a filter on them.</p>
 <dl class="method">
 <dt id="sprox.widgets.TableLabelWidget.adapt_value">
 <tt class="descname">adapt_value</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#sprox.widgets.TableLabelWidget.adapt_value" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>Adapt object <em>value</em> for rendering in this widget. Should return one of:</dt>
-<dd><ul class="first last simple">
-<li>A list of objects for repeated widgets.</li>
-<li>A dict for widgets with children, keyed by the children&#8217;s ids.</li>
-<li>Any other object the widget understands.</li>
-</ul>
-</dd>
-</dl>
+<dd><p>Adapt object <em>value</em> for rendering in this widget. Should return one of:
+* A list of objects for repeated widgets.
+* A dict for widgets with children, keyed by the children&#8217;s ids.
+* Any other object the widget understands.</p>
 </dd></dl>
 
 <dl class="method">
@@ -4360,6 +6323,11 @@ widget is rendered.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.TableLabelWidget.available_engines">
+<tt class="descname">available_engines</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.TableLabelWidget.available_engines" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.TableLabelWidget.children_deep">
 <tt class="descname">children_deep</tt><a class="headerlink" href="#sprox.widgets.TableLabelWidget.children_deep" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -4367,6 +6335,31 @@ widget is rendered.</p>
 <dl class="method">
 <dt id="sprox.widgets.TableLabelWidget.clone">
 <tt class="descname">clone</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgets.TableLabelWidget.clone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.TableLabelWidget.css">
+<tt class="descname">css</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.TableLabelWidget.css" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.TableLabelWidget.css_class__doc">
+<tt class="descname">css_class__doc</tt><em class="property"> = 'Main CSS class for this widget'</em><a class="headerlink" href="#sprox.widgets.TableLabelWidget.css_class__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.TableLabelWidget.css_classes">
+<tt class="descname">css_classes</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.TableLabelWidget.css_classes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.TableLabelWidget.css_classes__doc">
+<tt class="descname">css_classes__doc</tt><em class="property"> = 'A list with extra css classes for the widget.'</em><a class="headerlink" href="#sprox.widgets.TableLabelWidget.css_classes__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.TableLabelWidget.default">
+<tt class="descname">default</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.TableLabelWidget.default" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -4387,6 +6380,11 @@ around.</p>
 <tt class="descname">displays_on</tt><a class="headerlink" href="#sprox.widgets.TableLabelWidget.displays_on" title="Permalink to this definition">¶</a></dt>
 <dd><p>Where the widget is being displayed on</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.TableLabelWidget.engine_name">
+<tt class="descname">engine_name</tt><em class="property"> = 'toscawidgets'</em><a class="headerlink" href="#sprox.widgets.TableLabelWidget.engine_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.TableLabelWidget.get_default">
@@ -4417,6 +6415,11 @@ Example:</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.TableLabelWidget.id__doc">
+<tt class="descname">id__doc</tt><em class="property"> = 'The id of this widget. This id is used to reference a widget from its parent ``children`` attribute and is usually the DOM id of outermost HTML tag of the widget.'</em><a class="headerlink" href="#sprox.widgets.TableLabelWidget.id__doc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.TableLabelWidget.id_path_elem">
 <tt class="descname">id_path_elem</tt><a class="headerlink" href="#sprox.widgets.TableLabelWidget.id_path_elem" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -4445,6 +6448,11 @@ Example:</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgets.TableLabelWidget.javascript">
+<tt class="descname">javascript</tt><em class="property"> = []</em><a class="headerlink" href="#sprox.widgets.TableLabelWidget.javascript" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgets.TableLabelWidget.key">
 <tt class="descname">key</tt><a class="headerlink" href="#sprox.widgets.TableLabelWidget.key" title="Permalink to this definition">¶</a></dt>
 <dd><p>A string that can be used as a key to index the dictionary of
@@ -4463,6 +6471,16 @@ displaying.</p>
 </pre></div>
 </div>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.TableLabelWidget.params">
+<tt class="descname">params</tt><em class="property"> = frozenset(['css_class', 'controller', 'identifier', 'id', 'css_classes'])</em><a class="headerlink" href="#sprox.widgets.TableLabelWidget.params" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.TableLabelWidget.parent">
+<tt class="descname">parent</tt><em class="property"> = None</em><a class="headerlink" href="#sprox.widgets.TableLabelWidget.parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="attribute">
 <dt id="sprox.widgets.TableLabelWidget.path">
@@ -4519,6 +6537,16 @@ passing the kw argument&#8217;s dict to <cite>update_params</cite>.</p>
 <tt class="descname">root</tt><a class="headerlink" href="#sprox.widgets.TableLabelWidget.root" title="Permalink to this definition">¶</a></dt>
 <dd><p>The root of this widget tree</p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.TableLabelWidget.source_vars">
+<tt class="descname">source_vars</tt><em class="property"> = frozenset([])</em><a class="headerlink" href="#sprox.widgets.TableLabelWidget.source_vars" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgets.TableLabelWidget.template">
+<tt class="descname">template</tt><em class="property"> = 'genshi:sprox.widgets.templates.tableLabel'</em><a class="headerlink" href="#sprox.widgets.TableLabelWidget.template" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgets.TableLabelWidget.update_params">
@@ -4622,7 +6650,7 @@ applying a filter on them.</p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" size="18" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -4652,7 +6680,7 @@ applying a filter on them.</p>
           <a href="sprox.iprovider.html" title="sprox.iprovider"
              >previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.11</b></a>
+  <a href="../index.html"><b>Sprox 0.7rc1</b></a>
   </li>
 
   
@@ -4664,7 +6692,7 @@ applying a filter on them.</p>
 
     <div class="footer">
         &copy; Copyright 2008, Christopher Perkins.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.4.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.
     </div>
 
 <script type="text/javascript">

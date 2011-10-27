@@ -4,17 +4,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sprox.formbase &mdash; Sprox v0.6.11 documentation</title>
+    <title>sprox.formbase &mdash; Sprox 0.7rc1 documentation</title>
+    
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.11',
+        VERSION:     '0.7rc1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Sprox v0.6.11 documentation" href="../index.html" />
+    <link rel="top" title="Sprox 0.7rc1 documentation" href="../index.html" />
     <link rel="next" title="sprox.tablebase" href="sprox.tablebase.html" />
     <link rel="prev" title="Class Diagram" href="../class_diagram.html" /> 
   </head>
@@ -44,7 +47,7 @@
           <a href="../class_diagram.html" title="Class Diagram"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.11</b></a>
+  <a href="../index.html"><b>Sprox 0.7rc1</b></a>
   </li>
 
   
@@ -77,7 +80,7 @@ Released under MIT license.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Modifiers :</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Modifiers :</th><td class="field-body"></td>
 </tr>
 </tbody>
 </table>
@@ -89,61 +92,61 @@ Released under MIT license.</p>
 <col width="28%" />
 </colgroup>
 <thead valign="bottom">
-<tr><th class="head">Name</th>
+<tr class="row-odd"><th class="head">Name</th>
 <th class="head">Description</th>
 <th class="head">Default</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td>__base_widget_type__</td>
+<tr class="row-even"><td>__base_widget_type__</td>
 <td>What widget to use for the form.</td>
 <td>TableForm</td>
 </tr>
-<tr><td>__widget_selector_type__</td>
+<tr class="row-odd"><td>__widget_selector_type__</td>
 <td>What class to use for widget selection.</td>
 <td>SAWidgetSelector</td>
 </tr>
-<tr><td>__validator_selector_type__</td>
+<tr class="row-even"><td>__validator_selector_type__</td>
 <td>What class to use for validator selection.</td>
 <td>SAValidatorSelector</td>
 </tr>
-<tr><td>__require_fields__</td>
+<tr class="row-odd"><td>__require_fields__</td>
 <td>Specifies which fields are required.</td>
 <td>[]</td>
 </tr>
-<tr><td>__check_if_unique__</td>
+<tr class="row-even"><td>__check_if_unique__</td>
 <td>Set this to True for &#8220;new&#8221; forms.  This
 causes Sprox to check if there is an
 existing record in the database which
 matches the field data.</td>
 <td>False</td>
 </tr>
-<tr><td>__field_validators__</td>
+<tr class="row-odd"><td>__field_validators__</td>
 <td>A dictionary of validators indexed by
 fieldname.</td>
 <td>{}</td>
 </tr>
-<tr><td>__field_validator_types__</td>
+<tr class="row-even"><td>__field_validator_types__</td>
 <td>Types of validators to use for each field
 (allow sprox to set the attribute of the
 validators).</td>
 <td>{}</td>
 </tr>
-<tr><td>__base_validator__</td>
+<tr class="row-odd"><td>__base_validator__</td>
 <td>A validator to attch to the form.</td>
 <td>None</td>
 </tr>
-<tr><td>__validator_selector__</td>
+<tr class="row-even"><td>__validator_selector__</td>
 <td>What object to use to select field
 validators.</td>
 <td>None</td>
 </tr>
-<tr><td>__metadata_type__</td>
+<tr class="row-odd"><td>__metadata_type__</td>
 <td>What metadata type to use to get schema
 info on this object</td>
 <td>FieldsMetadata</td>
 </tr>
-<tr><td>__dropdown_field_names__</td>
+<tr class="row-even"><td>__dropdown_field_names__</td>
 <td>list or dict of names to use for discovery
 of field names for dropdowns (None uses
 sprox default names.)
@@ -160,23 +163,23 @@ a dict provides field-level granularity</td>
 <col width="28%" />
 </colgroup>
 <thead valign="bottom">
-<tr><th class="head">Name</th>
+<tr class="row-odd"><th class="head">Name</th>
 <th class="head">Description</th>
 <th class="head">Default</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td>__field_widgets__</td>
+<tr class="row-even"><td>__field_widgets__</td>
 <td>A dictionary of widgets to replace the
 ones that would be chosen by the selector</td>
 <td>{}</td>
 </tr>
-<tr><td>__field_widget_types__</td>
+<tr class="row-odd"><td>__field_widget_types__</td>
 <td>A dictionary of types of widgets, allowing
 sprox to determine the widget args</td>
 <td>{}</td>
 </tr>
-<tr><td>__widget_selector__</td>
+<tr class="row-even"><td>__widget_selector__</td>
 <td>an instantiated object to use for widget
 selection.</td>
 <td>None</td>
@@ -188,7 +191,7 @@ selection.</td>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Example Usage:</th><td class="field-body"></td>
 </tr>
 </tbody>
 </table>
@@ -245,7 +248,7 @@ Traceback (most recent call last):
 Invalid: town: Missing value</p>
 <dl class="method">
 <dt id="sprox.formbase.FormBase.validate">
-<tt class="descname">validate</tt><big>(</big><em>params</em>, <em>state=None</em><big>)</big><a class="headerlink" href="#sprox.formbase.FormBase.validate" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">validate</tt><big>(</big><em>params</em>, <em>state=None</em>, <em>use_request_local=True</em><big>)</big><a class="headerlink" href="#sprox.formbase.FormBase.validate" title="Permalink to this definition">¶</a></dt>
 <dd><p>A pass-thru to the widget&#8217;s validate function.</p>
 </dd></dl>
 
@@ -260,7 +263,7 @@ Invalid: town: Missing value</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Modifiers :</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Modifiers :</th><td class="field-body"></td>
 </tr>
 </tbody>
 </table>
@@ -272,13 +275,13 @@ Invalid: town: Missing value</p>
 <col width="28%" />
 </colgroup>
 <thead valign="bottom">
-<tr><th class="head">Name</th>
+<tr class="row-odd"><th class="head">Name</th>
 <th class="head">Description</th>
 <th class="head">Default</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td>__check_if_unique__</td>
+<tr class="row-even"><td>__check_if_unique__</td>
 <td>Set this to True for &#8220;new&#8221; forms.  This
 causes Sprox to check if there is an
 existing record in the database which
@@ -374,13 +377,13 @@ user_name in the model is unique:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">user_form</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;sprox_id&#39;</span><span class="p">:</span><span class="s">&#39;asdf&#39;</span><span class="p">,</span> <span class="s">&#39;user_name&#39;</span><span class="p">:</span><span class="s">u&#39;asdf&#39;</span><span class="p">})</span> 
 <span class="gt">Traceback (most recent call last):</span>
 <span class="c">...</span>
-<span class="nc">Invalid: user_name</span>: <span class="n-Identifier">That value already exists</span>
+<span class="gr">Invalid: user_name</span>: <span class="n">That value already exists</span>
 </pre></div>
 </div>
 <p>The validation fails because there is already a user with the user_name &#8216;asdf&#8217; in the database</p>
 <dl class="method">
 <dt id="sprox.formbase.AddRecordForm.validate">
-<tt class="descname">validate</tt><big>(</big><em>params</em>, <em>state=None</em><big>)</big><a class="headerlink" href="#sprox.formbase.AddRecordForm.validate" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">validate</tt><big>(</big><em>params</em>, <em>state=None</em>, <em>use_request_local=True</em><big>)</big><a class="headerlink" href="#sprox.formbase.AddRecordForm.validate" title="Permalink to this definition">¶</a></dt>
 <dd><p>A pass-thru to the widget&#8217;s validate function.</p>
 </dd></dl>
 
@@ -395,7 +398,7 @@ user_name in the model is unique:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Modifiers :</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Modifiers :</th><td class="field-body"></td>
 </tr>
 </tbody>
 </table>
@@ -446,7 +449,7 @@ user_name in the model is unique:</p>
 <p>You may notice in the above example that disabled fields pass in a hidden value for each disabled field.</p>
 <dl class="method">
 <dt id="sprox.formbase.DisabledForm.validate">
-<tt class="descname">validate</tt><big>(</big><em>params</em>, <em>state=None</em><big>)</big><a class="headerlink" href="#sprox.formbase.DisabledForm.validate" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">validate</tt><big>(</big><em>params</em>, <em>state=None</em>, <em>use_request_local=True</em><big>)</big><a class="headerlink" href="#sprox.formbase.DisabledForm.validate" title="Permalink to this definition">¶</a></dt>
 <dd><p>A pass-thru to the widget&#8217;s validate function.</p>
 </dd></dl>
 
@@ -461,7 +464,7 @@ user_name in the model is unique:</p>
 <p>see <a class="reference internal" href="#sprox.formbase.FormBase" title="sprox.formbase.FormBase"><tt class="xref py py-class docutils literal"><span class="pre">sprox.formbase.FormBase</span></tt></a></p>
 <dl class="method">
 <dt id="sprox.formbase.EditableForm.validate">
-<tt class="descname">validate</tt><big>(</big><em>params</em>, <em>state=None</em><big>)</big><a class="headerlink" href="#sprox.formbase.EditableForm.validate" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">validate</tt><big>(</big><em>params</em>, <em>state=None</em>, <em>use_request_local=True</em><big>)</big><a class="headerlink" href="#sprox.formbase.EditableForm.validate" title="Permalink to this definition">¶</a></dt>
 <dd><p>A pass-thru to the widget&#8217;s validate function.</p>
 </dd></dl>
 
@@ -507,7 +510,7 @@ user_name in the model is unique:</p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" size="18" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -537,7 +540,7 @@ user_name in the model is unique:</p>
           <a href="../class_diagram.html" title="Class Diagram"
              >previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.11</b></a>
+  <a href="../index.html"><b>Sprox 0.7rc1</b></a>
   </li>
 
   
@@ -549,7 +552,7 @@ user_name in the model is unique:</p>
 
     <div class="footer">
         &copy; Copyright 2008, Christopher Perkins.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.4.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.
     </div>
 
 <script type="text/javascript">

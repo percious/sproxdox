@@ -4,17 +4,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sprox.iprovider &mdash; Sprox v0.6.11 documentation</title>
+    <title>sprox.iprovider &mdash; Sprox 0.7rc1 documentation</title>
+    
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.11',
+        VERSION:     '0.7rc1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Sprox v0.6.11 documentation" href="../index.html" />
+    <link rel="top" title="Sprox 0.7rc1 documentation" href="../index.html" />
     <link rel="next" title="sprox.widgets" href="sprox.widgets.html" />
     <link rel="prev" title="sprox.saormprovider" href="sprox.saormprovider.html" /> 
   </head>
@@ -44,7 +47,7 @@
           <a href="sprox.saormprovider.html" title="sprox.saormprovider"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.11</b></a>
+  <a href="../index.html"><b>Sprox 0.7rc1</b></a>
   </li>
 
   
@@ -63,7 +66,38 @@
   <div class="section" id="module-sprox.iprovider">
 <span id="sprox-iprovider"></span><h1><a class="reference internal" href="#module-sprox.iprovider" title="sprox.iprovider"><tt class="xref py py-mod docutils literal"><span class="pre">sprox.iprovider</span></tt></a><a class="headerlink" href="#module-sprox.iprovider" title="Permalink to this headline">¶</a></h1>
 <p>iprovider Module</p>
-<p>This contains the class which allows dbsprockets to interface with any database.</p>
+<p>This contains the class which allows sprox to interface with any database
+via an object-relational mapper (ORM) or object-document mapper (ODM).</p>
+<p>Definitions:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Mapped object</dt>
+<dd>An object which is implemented by the ORM/ODM and represents
+a record or document in the database.</dd>
+<dt>Entity</dt>
+<dd>An object that represents a set of mapped objects that are part
+of the same collection or table in the database.</dd>
+<dt>Field</dt>
+<dd>A definition of aproperty of a mapped object which is accessible
+using attribute notation. An entity contains a set of fields,
+and each field has unique name within the entity.</dd>
+<dt>Property field</dt>
+<dd>A field which contains a value which is presentable to the user.</dd>
+<dt>Foreign key field</dt>
+<dd>A field which contains a value that refers to another object in
+the database, and which is hidden from the user.</dd>
+<dt>Relation field</dt>
+<dd>A field whose value is another mapped object in the database, or a list
+or set of such objects. The referened objects are presented to the user
+using a selection or prompting widget.</dd>
+<dt>Primary key field</dt>
+<dd>A set of fields which identify the mapped object within the entity.
+Need not be user-presentable.</dd>
+<dt>Dictify</dt>
+<dd>An alternative representation of a mapped object as a dictionary; see
+the dictify method docstring for details.</dd>
+</dl>
+</div></blockquote>
 <p>Copyright &amp;copy 2008 Christopher Perkins
 Original Version by Christopher Perkins 2008
 Released under MIT license.</p>
@@ -71,7 +105,7 @@ Released under MIT license.</p>
 <h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="sprox.iprovider.IProvider">
-<em class="property">class </em><tt class="descclassname">sprox.iprovider.</tt><tt class="descname">IProvider</tt><a class="headerlink" href="#sprox.iprovider.IProvider" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">sprox.iprovider.</tt><tt class="descname">IProvider</tt><big>(</big><em>hint=None</em>, <em>**hints</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
 <dt id="sprox.iprovider.IProvider.create">
 <tt class="descname">create</tt><big>(</big><em>entity</em>, <em>params</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.create" title="Permalink to this definition">¶</a></dt>
@@ -85,9 +119,45 @@ Released under MIT license.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="sprox.iprovider.IProvider.dictify">
+<tt class="descname">dictify</tt><big>(</big><em>obj</em>, <em>fields=None</em>, <em>omit_fields=None</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.dictify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a dictionary with keys being the names of fields in te object
+and values being the values of those fields, except that values that are
+mapped objects are replaced with the value of the corresponding primary
+key of the related object instead of the actual mapped object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments :</th><td class="field-body"><dl class="first docutils">
+<dt>obj</dt>
+<dd><p class="first last">a mapped object or None. If None, the return value is {}</p>
+</dd>
+<dt>fields</dt>
+<dd><p class="first last">a container of field names or None. If None, all fields that are not
+in omit_fields are returned. Otherwise only those fields that are in
+fields and not in omit_fields are returned.</p>
+</dd>
+<dt>omit_fields:</dt>
+<dd><p class="first last">a container of field names or None. If None, no fields are omitted.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>A dictionary of {field_name: value} where field_name is the name of a
+property field or relation field, and value is the value of the property
+field or the related primary key value.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="sprox.iprovider.IProvider.get">
-<tt class="descname">get</tt><big>(</big><em>entity</em>, <em>params</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a single entry of type entity which matches the params.</p>
+<tt class="descname">get</tt><big>(</big><em>entity</em>, <em>params</em>, <em>fields=None</em>, <em>omit_fields=None</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a single dictify of type entity which matches the params.</p>
+<p>Equivalent to dictify(get(entity, params), fields, omit_fields).</p>
 </dd></dl>
 
 <dl class="method">
@@ -98,18 +168,18 @@ Released under MIT license.</p>
 
 <dl class="method">
 <dt id="sprox.iprovider.IProvider.get_dropdown_options">
-<tt class="descname">get_dropdown_options</tt><big>(</big><em>entity</em>, <em>field_name</em>, <em>view_names=None</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_dropdown_options" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_dropdown_options</tt><big>(</big><em>entity_or_field</em>, <em>field_name=None</em>, <em>view_names=None</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_dropdown_options" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get all dropdown options for a given entity field.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Arguments :</th><td class="field-body"><dl class="first docutils">
-<dt>entity</dt>
-<dd><p class="first last">the entity where the field is located</p>
+<tr class="field-odd field"><th class="field-name">Arguments :</th><td class="field-body"><dl class="first docutils">
+<dt>entity_or_field</dt>
+<dd><p class="first last">either the entity where the field is located, or the field itself</p>
 </dd>
 <dt>field_name</dt>
-<dd><p class="first last">name of the field in the entity</p>
+<dd><p class="first last">if the entity is specified, name of the field in the entity. Otherwise, None</p>
 </dd>
 <dt>view_names</dt>
 <dd><p class="first last">a list of names which define what the view field may contain.  This allows the first
@@ -118,7 +188,7 @@ field that has a name in the list of names will be returned as the view field.</
 </dl>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns :</th><td class="field-body"></td>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"></td>
 </tr>
 </tbody>
 </table>
@@ -144,27 +214,93 @@ field that has a name in the list of names will be returned as the view field.</
 </dd></dl>
 
 <dl class="method">
+<dt id="sprox.iprovider.IProvider.get_field_widget_args">
+<tt class="descname">get_field_widget_args</tt><big>(</big><em>entity</em>, <em>field_name</em>, <em>field</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_field_widget_args" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a dict with any additional arguments that should be passed for the widget for the field in the entity.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>A dict of additional widget arguments.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="sprox.iprovider.IProvider.get_fields">
 <tt class="descname">get_fields</tt><big>(</big><em>entity</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_fields" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get all of the fields for a given entity.</p>
+<dd><p>Get all of the fields for a given entity, excluding foreign key fields.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments :</th><td class="field-body"><dl class="first docutils">
+<dt>entity</dt>
+<dd><p class="first last">An entity or entity thunk.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>A list of names of the fields that are not foreign keys in the entity.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.get_obj">
+<tt class="descname">get_obj</tt><big>(</big><em>entity</em>, <em>params</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_obj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a single mapped object of type entity which matches the params.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sprox.iprovider.IProvider.get_primary_field">
 <tt class="descname">get_primary_field</tt><big>(</big><em>entity</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_primary_field" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the single primary field for an entity</p>
+<dd><p>Get the single primary field for an entity. A single primary field is
+required for EditableForm and AddRecordForm-based forms.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>A field which unique identifies a record. Raises an exception if there is no
+such field.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sprox.iprovider.IProvider.get_primary_fields">
 <tt class="descname">get_primary_fields</tt><big>(</big><em>entity</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_primary_fields" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the fields in the entity which uniquely identifies a record.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>A sequence of fields which when taken together uniquely identify a record.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="sprox.iprovider.IProvider.get_relations">
 <tt class="descname">get_relations</tt><big>(</big><em>entity</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.get_relations" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get all of the field names in an enity which are related to other entities.</p>
+<dd><p>Get all of the field names in an enity which are relation fields.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>A list of names of relation fields in the entity.</p>
 </dd></dl>
 
 <dl class="method">
@@ -175,7 +311,7 @@ field that has a name in the list of names will be returned as the view field.</
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Arguments :</th><td class="field-body"><dl class="first last docutils">
+<tr class="field-odd field"><th class="field-name">Arguments :</th><td class="field-body"><dl class="first last docutils">
 <dt>entity</dt>
 <dd><p class="first last">the entity where the field is located</p>
 </dd>
@@ -191,6 +327,12 @@ field that has a name in the list of names will be returned as the view field.</
 </dd></dl>
 
 <dl class="method">
+<dt id="sprox.iprovider.IProvider.is_binary">
+<tt class="descname">is_binary</tt><big>(</big><em>entity</em>, <em>name</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.is_binary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine if the field in the entity is a binary field.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="sprox.iprovider.IProvider.is_nullable">
 <tt class="descname">is_nullable</tt><big>(</big><em>entity</em>, <em>field_name</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.is_nullable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determine if a field is nullable.</p>
@@ -199,7 +341,71 @@ field that has a name in the list of names will be returned as the view field.</
 <dl class="method">
 <dt id="sprox.iprovider.IProvider.is_relation">
 <tt class="descname">is_relation</tt><big>(</big><em>entity</em>, <em>field_name</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.is_relation" title="Permalink to this definition">¶</a></dt>
-<dd><p>Determine if a field is related to a field in another entity.</p>
+<dd><p>Determine if a field is a relation field.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.is_unique">
+<tt class="descname">is_unique</tt><big>(</big><em>entity</em>, <em>field_name</em>, <em>value</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.is_unique" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return true if the value for field is not yet used within the entity.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.is_unique_field">
+<tt class="descname">is_unique_field</tt><big>(</big><em>entity</em>, <em>field_name</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.is_unique_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return true if the field within the entity is a primary or alternate key.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.query">
+<tt class="descname">query</tt><big>(</big><em>entity</em>, <em>limit=None</em>, <em>offset=None</em>, <em>limit_fields=None</em>, <em>order_by=None</em>, <em>desc=False</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform a query against this entity.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments :</th><td class="field-body"><dl class="first docutils">
+<dt>entity</dt>
+<dd><p class="first last">the entity to be queried</p>
+</dd>
+<dt>limit</dt>
+<dd><p class="first last">the maximum number of objects to return. If unspecified, returns all objects</p>
+</dd>
+<dt>offset</dt>
+<dd><p class="first last">the number of objects at the start of the result set to skip. Defaults to 0</p>
+</dd>
+<dt>limit_fields</dt>
+<dd><p class="first last">XXX</p>
+</dd>
+<dt>order_by</dt>
+<dd><p class="first last">the name of a field to sort by. If unspecified, no sorting is done</p>
+</dd>
+<dt>desc</dt>
+<dd><p class="first last">if true, the sort order is descending. Otherwise, it is ascending.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns :</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>A tuple (count, iter) where iter is an iterator of mapped objects.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sprox.iprovider.IProvider.relation_fields">
+<tt class="descname">relation_fields</tt><big>(</big><em>entity</em>, <em>field_name</em><big>)</big><a class="headerlink" href="#sprox.iprovider.IProvider.relation_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>For the relation field with the given name, return the corresponding foreign key field(s) in the entity.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns :</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<p>A list of the names of the foreign key fields.</p>
 </dd></dl>
 
 <dl class="method">
@@ -250,7 +456,7 @@ field that has a name in the list of names will be returned as the view field.</
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" size="18" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -280,7 +486,7 @@ field that has a name in the list of names will be returned as the view field.</
           <a href="sprox.saormprovider.html" title="sprox.saormprovider"
              >previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.11</b></a>
+  <a href="../index.html"><b>Sprox 0.7rc1</b></a>
   </li>
 
   
@@ -292,7 +498,7 @@ field that has a name in the list of names will be returned as the view field.</
 
     <div class="footer">
         &copy; Copyright 2008, Christopher Perkins.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.4.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.
     </div>
 
 <script type="text/javascript">

@@ -4,17 +4,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sprox.sprockets &mdash; Sprox v0.6.11 documentation</title>
+    <title>sprox.sprockets &mdash; Sprox 0.7rc1 documentation</title>
+    
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.11',
+        VERSION:     '0.7rc1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Sprox v0.6.11 documentation" href="../index.html" />
+    <link rel="top" title="Sprox 0.7rc1 documentation" href="../index.html" />
     <link rel="next" title="sprox.metadata" href="sprox.metadata.html" />
     <link rel="prev" title="sprox.validators" href="sprox.validators.html" /> 
   </head>
@@ -44,7 +47,7 @@
           <a href="sprox.validators.html" title="sprox.validators"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.11</b></a>
+  <a href="../index.html"><b>Sprox 0.7rc1</b></a>
   </li>
 
   
@@ -83,12 +86,32 @@ Released under MIT license.</p>
 <dt id="sprox.sprockets.ConfigCache">
 <em class="property">class </em><tt class="descclassname">sprox.sprockets.</tt><tt class="descname">ConfigCache</tt><big>(</big><em>session</em>, <em>metadata=None</em><big>)</big><a class="headerlink" href="#sprox.sprockets.ConfigCache" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<dl class="attribute">
+<dt id="sprox.sprockets.ConfigCache.default_configs">
+<tt class="descname">default_configs</tt><em class="property"> = {}</em><a class="headerlink" href="#sprox.sprockets.ConfigCache.default_configs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.sprockets.ConfigCache.separator">
+<tt class="descname">separator</tt><em class="property"> = '__'</em><a class="headerlink" href="#sprox.sprockets.ConfigCache.separator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="class">
 <dt id="sprox.sprockets.ViewCache">
 <em class="property">class </em><tt class="descclassname">sprox.sprockets.</tt><tt class="descname">ViewCache</tt><big>(</big><em>session</em>, <em>metadata=None</em><big>)</big><a class="headerlink" href="#sprox.sprockets.ViewCache" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#sprox.sprockets.ConfigCache" title="sprox.sprockets.ConfigCache"><tt class="xref py py-class docutils literal"><span class="pre">sprox.sprockets.ConfigCache</span></tt></a></p>
+<dl class="attribute">
+<dt id="sprox.sprockets.ViewCache.default_configs">
+<tt class="descname">default_configs</tt><em class="property"> = {'edit': &lt;class 'sprox.formbase.EditableForm'&gt;, 'add': &lt;class 'sprox.formbase.AddRecordForm'&gt;, 'listing': &lt;class 'sprox.tablebase.TableBase'&gt;, 'metadata': &lt;class 'sprox.entitiesbase.EntityDefBase'&gt;, 'model_view': &lt;class 'sprox.entitiesbase.EntitiesBase'&gt;}</em><a class="headerlink" href="#sprox.sprockets.ViewCache.default_configs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.sprockets.ViewCache.separator">
+<tt class="descname">separator</tt><em class="property"> = '__'</em><a class="headerlink" href="#sprox.sprockets.ViewCache.separator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -96,6 +119,16 @@ Released under MIT license.</p>
 <em class="property">class </em><tt class="descclassname">sprox.sprockets.</tt><tt class="descname">FillerCache</tt><big>(</big><em>session</em>, <em>metadata=None</em><big>)</big><a class="headerlink" href="#sprox.sprockets.FillerCache" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#sprox.sprockets.ConfigCache" title="sprox.sprockets.ConfigCache"><tt class="xref py py-class docutils literal"><span class="pre">sprox.sprockets.ConfigCache</span></tt></a></p>
 <p>Container for Fillers</p>
+<dl class="attribute">
+<dt id="sprox.sprockets.FillerCache.default_configs">
+<tt class="descname">default_configs</tt><em class="property"> = {'edit': &lt;class 'sprox.fillerbase.EditFormFiller'&gt;, 'model_view': &lt;class 'sprox.fillerbase.ModelsFiller'&gt;, 'add': &lt;class 'sprox.fillerbase.AddFormFiller'&gt;, 'listing': &lt;class 'sprox.fillerbase.TableFiller'&gt;, 'view': &lt;class 'sprox.fillerbase.FormFiller'&gt;, 'metadata': &lt;class 'sprox.fillerbase.ModelDefFiller'&gt;}</em><a class="headerlink" href="#sprox.sprockets.FillerCache.default_configs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.sprockets.FillerCache.separator">
+<tt class="descname">separator</tt><em class="property"> = '__'</em><a class="headerlink" href="#sprox.sprockets.FillerCache.separator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -170,7 +203,7 @@ caching is disabled for now</p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" size="18" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -200,7 +233,7 @@ caching is disabled for now</p>
           <a href="sprox.validators.html" title="sprox.validators"
              >previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.11</b></a>
+  <a href="../index.html"><b>Sprox 0.7rc1</b></a>
   </li>
 
   
@@ -212,7 +245,7 @@ caching is disabled for now</p>
 
     <div class="footer">
         &copy; Copyright 2008, Christopher Perkins.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.4.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.
     </div>
 
 <script type="text/javascript">

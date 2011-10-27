@@ -4,17 +4,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sprox.widgetselector &mdash; Sprox v0.6.11 documentation</title>
+    <title>sprox.widgetselector &mdash; Sprox 0.7rc1 documentation</title>
+    
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.11',
+        VERSION:     '0.7rc1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Sprox v0.6.11 documentation" href="../index.html" />
+    <link rel="top" title="Sprox 0.7rc1 documentation" href="../index.html" />
     <link rel="next" title="sprox.validatorselector" href="sprox.validatorselector.html" />
     <link rel="prev" title="sprox.recordviewbase" href="sprox.recordviewbase.html" /> 
   </head>
@@ -44,7 +47,7 @@
           <a href="sprox.recordviewbase.html" title="sprox.recordviewbase"
              accesskey="P">previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.11</b></a>
+  <a href="../index.html"><b>Sprox 0.7rc1</b></a>
   </li>
 
   
@@ -74,7 +77,7 @@ TableDefWidgetSelector             Table def fields use the same widget</p>
 None</p>
 <p>Functions:
 None</p>
-<p>Copyright (c) 2007 Christopher Perkins
+<p>Copyright (c) 2007-10 Christopher Perkins
 Original Version by Christopher Perkins 2007Database
 Released under MIT license.</p>
 <div class="section" id="classes">
@@ -82,7 +85,8 @@ Released under MIT license.</p>
 <dl class="class">
 <dt id="sprox.widgetselector.WidgetSelector">
 <em class="property">class </em><tt class="descclassname">sprox.widgetselector.</tt><tt class="descname">WidgetSelector</tt><a class="headerlink" href="#sprox.widgetselector.WidgetSelector" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<dl class="method">
 <dt id="sprox.widgetselector.WidgetSelector.select">
 <tt class="descname">select</tt><big>(</big><em>field</em><big>)</big><a class="headerlink" href="#sprox.widgetselector.WidgetSelector.select" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -91,8 +95,8 @@ Released under MIT license.</p>
 
 <dl class="class">
 <dt id="sprox.widgetselector.SAWidgetSelector">
-<em class="property">class </em><tt class="descclassname">sprox.widgetselector.</tt><tt class="descname">SAWidgetSelector</tt><a class="headerlink" href="#sprox.widgetselector.SAWidgetSelector" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#sprox.widgetselector.WidgetSelector" title="sprox.widgetselector.WidgetSelector"><tt class="xref py py-class docutils literal"><span class="pre">sprox.widgetselector.WidgetSelector</span></tt></a></p>
+<em class="property">class </em><tt class="descclassname">sprox.widgetselector.</tt><tt class="descname">SAWidgetSelector</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.widgetselector.SAWidgetSelector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">sprox.sa.widgetselector.SAWidgetSelector</span></tt></p>
 <dl class="attribute">
 <dt id="sprox.widgetselector.SAWidgetSelector.default_multiple_select_field_widget_type">
 <tt class="descname">default_multiple_select_field_widget_type</tt><a class="headerlink" href="#sprox.widgetselector.SAWidgetSelector.default_multiple_select_field_widget_type" title="Permalink to this definition">¶</a></dt>
@@ -100,10 +104,20 @@ Released under MIT license.</p>
 </dd></dl>
 
 <dl class="attribute">
+<dt id="sprox.widgetselector.SAWidgetSelector.default_name_based_widgets">
+<tt class="descname">default_name_based_widgets</tt><em class="property"> = {}</em><a class="headerlink" href="#sprox.widgetselector.SAWidgetSelector.default_name_based_widgets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
 <dt id="sprox.widgetselector.SAWidgetSelector.default_single_select_field_widget_type">
 <tt class="descname">default_single_select_field_widget_type</tt><a class="headerlink" href="#sprox.widgetselector.SAWidgetSelector.default_single_select_field_widget_type" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">PropertySingleSelectField</span></tt></p>
 </dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.widgetselector.SAWidgetSelector.default_widgets">
+<tt class="descname">default_widgets</tt><em class="property"> = {&lt;class 'sqlalchemy.types.Binary'&gt;: &lt;class 'tw.forms.fields.FileField'&gt;, &lt;class 'sqlalchemy.types.Boolean'&gt;: &lt;class 'sprox.widgets.widgets.SproxCheckBox'&gt;, &lt;class 'sqlalchemy.types.Time'&gt;: &lt;class 'sprox.widgets.widgets.SproxTimePicker'&gt;, &lt;class 'sqlalchemy.types.Date'&gt;: &lt;class 'sprox.widgets.widgets.SproxCalendarDatePicker'&gt;, &lt;class 'sqlalchemy.types.String'&gt;: &lt;class 'tw.forms.fields.TextField'&gt;, &lt;class 'sqlalchemy.types.Numeric'&gt;: &lt;class 'tw.forms.fields.TextField'&gt;, &lt;class 'sqlalchemy.types.PickleType'&gt;: &lt;class 'tw.forms.fields.TextField'&gt;, &lt;class 'sqlalchemy.types.DateTime'&gt;: &lt;class 'sprox.widgets.widgets.SproxCalendarDateTimePicker'&gt;, &lt;class 'sqlalchemy.types.BLOB'&gt;: &lt;class 'tw.forms.fields.FileField'&gt;, &lt;class 'sqlalchemy.types.Integer'&gt;: &lt;class 'tw.forms.fields.TextField'&gt;}</em><a class="headerlink" href="#sprox.widgetselector.SAWidgetSelector.default_widgets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="sprox.widgetselector.SAWidgetSelector.select">
@@ -115,7 +129,7 @@ Released under MIT license.</p>
 <dl class="class">
 <dt id="sprox.widgetselector.EntitiesViewWidgetSelector">
 <em class="property">class </em><tt class="descclassname">sprox.widgetselector.</tt><tt class="descname">EntitiesViewWidgetSelector</tt><a class="headerlink" href="#sprox.widgetselector.EntitiesViewWidgetSelector" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#sprox.widgetselector.WidgetSelector" title="sprox.widgetselector.WidgetSelector"><tt class="xref py py-class docutils literal"><span class="pre">sprox.widgetselector.WidgetSelector</span></tt></a></p>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">sprox._widgetselector.WidgetSelector</span></tt></p>
 <dl class="method">
 <dt id="sprox.widgetselector.EntitiesViewWidgetSelector.select">
 <tt class="descname">select</tt><big>(</big><em>field</em><big>)</big><a class="headerlink" href="#sprox.widgetselector.EntitiesViewWidgetSelector.select" title="Permalink to this definition">¶</a></dt>
@@ -126,7 +140,7 @@ Released under MIT license.</p>
 <dl class="class">
 <dt id="sprox.widgetselector.EntityDefWidgetSelector">
 <em class="property">class </em><tt class="descclassname">sprox.widgetselector.</tt><tt class="descname">EntityDefWidgetSelector</tt><a class="headerlink" href="#sprox.widgetselector.EntityDefWidgetSelector" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#sprox.widgetselector.WidgetSelector" title="sprox.widgetselector.WidgetSelector"><tt class="xref py py-class docutils literal"><span class="pre">sprox.widgetselector.WidgetSelector</span></tt></a></p>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">sprox._widgetselector.WidgetSelector</span></tt></p>
 <dl class="method">
 <dt id="sprox.widgetselector.EntityDefWidgetSelector.select">
 <tt class="descname">select</tt><big>(</big><em>field</em><big>)</big><a class="headerlink" href="#sprox.widgetselector.EntityDefWidgetSelector.select" title="Permalink to this definition">¶</a></dt>
@@ -174,7 +188,7 @@ Released under MIT license.</p>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" size="18" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -204,7 +218,7 @@ Released under MIT license.</p>
           <a href="sprox.recordviewbase.html" title="sprox.recordviewbase"
              >previous</a> |</li>
   <li>
-  <a href="../index.html"><b>Sprox 0.6.11</b></a>
+  <a href="../index.html"><b>Sprox 0.7rc1</b></a>
   </li>
 
   
@@ -216,7 +230,7 @@ Released under MIT license.</p>
 
     <div class="footer">
         &copy; Copyright 2008, Christopher Perkins.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.4.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.
     </div>
 
 <script type="text/javascript">
