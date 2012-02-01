@@ -1,0 +1,218 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>sprox.mg.validatorselector &mdash; Sprox 0.7.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.7.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Sprox 0.7.1 documentation" href="../index.html" />
+    <link rel="next" title="General Dojo Usage Information" href="../dojo.html" />
+    <link rel="prev" title="sprox.widgetselector" href="sprox.mg.widgetselector.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../dojo.html" title="General Dojo Usage Information"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="sprox.mg.widgetselector.html" title="sprox.widgetselector"
+             accesskey="P">previous</a> |</li>
+  <li>
+  <a href="../index.html"><b>Sprox 0.7.1</b></a>
+  </li>
+
+  
+    <li> <b>/</b> <a href="#"><tt class="docutils literal docutils literal"><span class="pre">sprox.mg.validatorselector</span></tt></a></li>
+  
+
+      </ul>
+    </div>  
+
+    <div class="document">
+  <div class="document">
+    <div class="documentwrapper">
+      <div class="bodywrapper">
+      <div class="body">
+        
+  <div class="section" id="module-sprox.mg.validatorselector">
+<span id="sprox-mg-validatorselector"></span><h1><a class="reference internal" href="#module-sprox.mg.validatorselector" title="sprox.mg.validatorselector"><tt class="xref py py-mod docutils literal"><span class="pre">sprox.mg.validatorselector</span></tt></a><a class="headerlink" href="#module-sprox.mg.validatorselector" title="Permalink to this headline">¶</a></h1>
+<p>validatorselecter Module</p>
+<p>this contains the class which allows the ViewConfig to select the appropriate validator for the given field</p>
+<p>Classes:
+Name                               Description
+MongoValidatorSelecter             Class to aid in the selection of a validator for a mongo document field</p>
+<p>Exceptions:
+None</p>
+<p>Functions:
+None</p>
+<p>Copyright (c) 2009 Christopher Perkins
+Original Version by Christopher Perkins 2009
+Released under MIT license.</p>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="sprox.mg.validatorselector.MingValidatorSelector">
+<em class="property">class </em><tt class="descclassname">sprox.mg.validatorselector.</tt><tt class="descname">MingValidatorSelector</tt><big>(</big><em>*args</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.mg.validatorselector.MingValidatorSelector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">sprox._validatorselector.ValidatorSelector</span></tt></p>
+<dl class="attribute">
+<dt id="sprox.mg.validatorselector.MingValidatorSelector.default_validators">
+<tt class="descname">default_validators</tt><em class="property"> = {&lt;class 'ming.schema.Float'&gt;: &lt;class 'formencode.validators.Number'&gt;, &lt;class 'ming.schema.DateTime'&gt;: &lt;class 'formencode.validators.DateValidator'&gt;, &lt;class 'ming.schema.Int'&gt;: &lt;class 'formencode.validators.Int'&gt;, &lt;class 'ming.schema.Binary'&gt;: None, &lt;class 'ming.schema.Value'&gt;: None, &lt;class 'ming.schema.ObjectId'&gt;: None, &lt;class 'ming.schema.String'&gt;: &lt;class 'tw.forms.validators.UnicodeString'&gt;}</em><a class="headerlink" href="#sprox.mg.validatorselector.MingValidatorSelector.default_validators" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.mg.validatorselector.MingValidatorSelector.name_based_validators">
+<tt class="descname">name_based_validators</tt><a class="headerlink" href="#sprox.mg.validatorselector.MingValidatorSelector.name_based_validators" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.mg.validatorselector.MingValidatorSelector.select">
+<tt class="descname">select</tt><big>(</big><em>field</em><big>)</big><a class="headerlink" href="#sprox.mg.validatorselector.MingValidatorSelector.select" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+        <h1>Discuss</h1>
+        <div id="disqus_thread"></div>
+           <script type="text/javascript" src="http://disqus.com/forums/sproxdox/embed.js"></script>
+           <noscript><a href="http://sproxdox.disqus.com/?url=ref">View the discussion thread.</a></noscript>
+           <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+      </div>
+
+  </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/sprox_logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">sprox.mg.validatorselector</span></tt></a><ul>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="sprox.mg.widgetselector.html"
+                        title="previous chapter"><tt class="docutils literal docutils literal"><span class="pre">sprox.widgetselector</span></tt></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../dojo.html"
+                        title="next chapter">General Dojo Usage Information</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/modules/sprox.mg.validatorselector.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../dojo.html" title="General Dojo Usage Information"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="sprox.mg.widgetselector.html" title="sprox.widgetselector"
+             >previous</a> |</li>
+  <li>
+  <a href="../index.html"><b>Sprox 0.7.1</b></a>
+  </li>
+
+  
+    <li> <b>/</b> <a href="#"><tt class="docutils literal docutils literal"><span class="pre">sprox.mg.validatorselector</span></tt></a></li>
+  
+
+      </ul>
+    </div>
+
+    <div class="footer">
+        &copy; Copyright 2008, Christopher Perkins.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.
+    </div>
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+  var links = document.getElementsByTagName('a');
+  var query = '?';
+  for(var i = 0; i < links.length; i++) {
+    if(links[i].href.indexOf('#disqus_thread') >= 0) {
+      query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+    }
+  }
+  document.write('<script type="text/javascript" src="http://disqus.com/forums/sproxdox/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6778746-1");
+pageTracker._trackPageview();
+} catch(err) {}
+//]]>
+</script>
+
+
+  </body>
+</html>

@@ -1,0 +1,375 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>sprox.sa.provider &mdash; Sprox 0.7.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.7.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Sprox 0.7.1 documentation" href="../index.html" />
+    <link rel="next" title="sprox.sa.widgetselector" href="sprox.sa.widgetselector.html" />
+    <link rel="prev" title="sprox.util" href="sprox.util.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="sprox.sa.widgetselector.html" title="sprox.sa.widgetselector"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="sprox.util.html" title="sprox.util"
+             accesskey="P">previous</a> |</li>
+  <li>
+  <a href="../index.html"><b>Sprox 0.7.1</b></a>
+  </li>
+
+  
+    <li> <b>/</b> <a href="#"><tt class="docutils literal"><span class="pre">sprox.sa.provider</span></tt></a></li>
+  
+
+      </ul>
+    </div>  
+
+    <div class="document">
+  <div class="document">
+    <div class="documentwrapper">
+      <div class="bodywrapper">
+      <div class="body">
+        
+  <div class="section" id="module-sprox.sa.provider">
+<span id="sprox-sa-provider"></span><h1><a class="reference internal" href="#module-sprox.sa.provider" title="sprox.sa.provider"><tt class="xref py py-mod docutils literal"><span class="pre">sprox.sa.provider</span></tt></a><a class="headerlink" href="#module-sprox.sa.provider" title="Permalink to this headline">¶</a></h1>
+<p>saprovider Module</p>
+<p>this contains the class which allows dbsprockets to interface with sqlalchemy.</p>
+<p>Classes:
+Name                               Description
+SAProvider                         sqlalchemy metadata/crud provider</p>
+<p>Exceptions:
+None</p>
+<p>Functions:
+None</p>
+<p>Copyright (c) 2007 Christopher Perkins
+Original Version by Christopher Perkins 2007
+Released under MIT license.</p>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="sprox.sa.provider.SAORMProvider">
+<em class="property">class </em><tt class="descclassname">sprox.sa.provider.</tt><tt class="descname">SAORMProvider</tt><big>(</big><em>hint=None</em>, <em>**hints</em><big>)</big><a class="headerlink" href="#sprox.sa.provider.SAORMProvider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="sprox.iprovider.html#sprox.iprovider.IProvider" title="sprox.iprovider.IProvider"><tt class="xref py py-class docutils literal"><span class="pre">sprox.iprovider.IProvider</span></tt></a></p>
+<dl class="method">
+<dt id="sprox.sa.provider.SAORMProvider.create">
+<tt class="descname">create</tt><big>(</big><em>entity</em>, <em>params</em><big>)</big><a class="headerlink" href="#sprox.sa.provider.SAORMProvider.create" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.sa.provider.SAORMProvider.default_validator_selector_type">
+<tt class="descname">default_validator_selector_type</tt><a class="headerlink" href="#sprox.sa.provider.SAORMProvider.default_validator_selector_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">SAValidatorSelector</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.sa.provider.SAORMProvider.default_widget_selector_type">
+<tt class="descname">default_widget_selector_type</tt><a class="headerlink" href="#sprox.sa.provider.SAORMProvider.default_widget_selector_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">SAWidgetSelector</span></tt></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sprox.sa.provider.SAORMProvider.delete">
+<tt class="descname">delete</tt><big>(</big><em>entity</em>, <em>params</em><big>)</big><a class="headerlink" href="#sprox.sa.provider.SAORMProvider.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.sa.provider.SAORMProvider.dictify">
+<tt class="descname">dictify</tt><big>(</big><em>obj</em>, <em>fields=None</em>, <em>omit_fields=None</em><big>)</big><a class="headerlink" href="#sprox.sa.provider.SAORMProvider.dictify" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.sa.provider.SAORMProvider.flush">
+<tt class="descname">flush</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.sa.provider.SAORMProvider.flush" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.sa.provider.SAORMProvider.get">
+<tt class="descname">get</tt><big>(</big><em>entity</em>, <em>params</em>, <em>fields=None</em>, <em>omit_fields=None</em><big>)</big><a class="headerlink" href="#sprox.sa.provider.SAORMProvider.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.sa.provider.SAORMProvider.get_default_values">
+<tt class="descname">get_default_values</tt><big>(</big><em>entity</em>, <em>params</em><big>)</big><a class="headerlink" href="#sprox.sa.provider.SAORMProvider.get_default_values" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.sa.provider.SAORMProvider.get_dropdown_options">
+<tt class="descname">get_dropdown_options</tt><big>(</big><em>entity</em>, <em>field_name</em>, <em>view_names=None</em><big>)</big><a class="headerlink" href="#sprox.sa.provider.SAORMProvider.get_dropdown_options" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.sa.provider.SAORMProvider.get_entities">
+<tt class="descname">get_entities</tt><big>(</big><big>)</big><a class="headerlink" href="#sprox.sa.provider.SAORMProvider.get_entities" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.sa.provider.SAORMProvider.get_entity">
+<tt class="descname">get_entity</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#sprox.sa.provider.SAORMProvider.get_entity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.sa.provider.SAORMProvider.get_field">
+<tt class="descname">get_field</tt><big>(</big><em>entity</em>, <em>name</em><big>)</big><a class="headerlink" href="#sprox.sa.provider.SAORMProvider.get_field" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.sa.provider.SAORMProvider.get_field_default">
+<tt class="descname">get_field_default</tt><big>(</big><em>field</em><big>)</big><a class="headerlink" href="#sprox.sa.provider.SAORMProvider.get_field_default" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.sa.provider.SAORMProvider.get_field_provider_specific_widget_args">
+<tt class="descname">get_field_provider_specific_widget_args</tt><big>(</big><em>entity</em>, <em>field</em>, <em>field_name</em><big>)</big><a class="headerlink" href="#sprox.sa.provider.SAORMProvider.get_field_provider_specific_widget_args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.sa.provider.SAORMProvider.get_field_widget_args">
+<tt class="descname">get_field_widget_args</tt><big>(</big><em>entity</em>, <em>field_name</em>, <em>field</em><big>)</big><a class="headerlink" href="#sprox.sa.provider.SAORMProvider.get_field_widget_args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.sa.provider.SAORMProvider.get_fields">
+<tt class="descname">get_fields</tt><big>(</big><em>entity</em><big>)</big><a class="headerlink" href="#sprox.sa.provider.SAORMProvider.get_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.sa.provider.SAORMProvider.get_obj">
+<tt class="descname">get_obj</tt><big>(</big><em>entity</em>, <em>params</em>, <em>fields=None</em>, <em>omit_fields=None</em><big>)</big><a class="headerlink" href="#sprox.sa.provider.SAORMProvider.get_obj" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.sa.provider.SAORMProvider.get_primary_field">
+<tt class="descname">get_primary_field</tt><big>(</big><em>entity</em><big>)</big><a class="headerlink" href="#sprox.sa.provider.SAORMProvider.get_primary_field" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.sa.provider.SAORMProvider.get_primary_fields">
+<tt class="descname">get_primary_fields</tt><big>(</big><em>entity</em><big>)</big><a class="headerlink" href="#sprox.sa.provider.SAORMProvider.get_primary_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.sa.provider.SAORMProvider.get_relations">
+<tt class="descname">get_relations</tt><big>(</big><em>entity</em><big>)</big><a class="headerlink" href="#sprox.sa.provider.SAORMProvider.get_relations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.sa.provider.SAORMProvider.get_synonyms">
+<tt class="descname">get_synonyms</tt><big>(</big><em>entity</em><big>)</big><a class="headerlink" href="#sprox.sa.provider.SAORMProvider.get_synonyms" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.sa.provider.SAORMProvider.get_view_field_name">
+<tt class="descname">get_view_field_name</tt><big>(</big><em>entity</em>, <em>possible_names</em><big>)</big><a class="headerlink" href="#sprox.sa.provider.SAORMProvider.get_view_field_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.sa.provider.SAORMProvider.is_binary">
+<tt class="descname">is_binary</tt><big>(</big><em>entity</em>, <em>name</em><big>)</big><a class="headerlink" href="#sprox.sa.provider.SAORMProvider.is_binary" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.sa.provider.SAORMProvider.is_nullable">
+<tt class="descname">is_nullable</tt><big>(</big><em>entity</em>, <em>name</em><big>)</big><a class="headerlink" href="#sprox.sa.provider.SAORMProvider.is_nullable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.sa.provider.SAORMProvider.is_relation">
+<tt class="descname">is_relation</tt><big>(</big><em>entity</em>, <em>field_name</em><big>)</big><a class="headerlink" href="#sprox.sa.provider.SAORMProvider.is_relation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.sa.provider.SAORMProvider.is_unique">
+<tt class="descname">is_unique</tt><big>(</big><em>entity</em>, <em>field_name</em>, <em>value</em><big>)</big><a class="headerlink" href="#sprox.sa.provider.SAORMProvider.is_unique" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.sa.provider.SAORMProvider.is_unique_field">
+<tt class="descname">is_unique_field</tt><big>(</big><em>entity</em>, <em>field_name</em><big>)</big><a class="headerlink" href="#sprox.sa.provider.SAORMProvider.is_unique_field" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.sa.provider.SAORMProvider.query">
+<tt class="descname">query</tt><big>(</big><em>entity</em>, <em>limit=None</em>, <em>offset=None</em>, <em>limit_fields=None</em>, <em>order_by=None</em>, <em>desc=False</em>, <em>field_names=</em><span class="optional">[</span><span class="optional">]</span>, <em>filters={}</em>, <em>**kw</em><big>)</big><a class="headerlink" href="#sprox.sa.provider.SAORMProvider.query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.sa.provider.SAORMProvider.relation_fields">
+<tt class="descname">relation_fields</tt><big>(</big><em>entity</em>, <em>field_name</em><big>)</big><a class="headerlink" href="#sprox.sa.provider.SAORMProvider.relation_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sprox.sa.provider.SAORMProvider.update">
+<tt class="descname">update</tt><big>(</big><em>entity</em>, <em>params</em>, <em>omit_fields=None</em><big>)</big><a class="headerlink" href="#sprox.sa.provider.SAORMProvider.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="exceptions">
+<h2>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="sprox.sa.provider.SAORMProviderError">
+<em class="property">class </em><tt class="descclassname">sprox.sa.provider.</tt><tt class="descname">SAORMProviderError</tt><a class="headerlink" href="#sprox.sa.provider.SAORMProviderError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></tt></p>
+<dl class="attribute">
+<dt id="sprox.sa.provider.SAORMProviderError.args">
+<tt class="descname">args</tt><a class="headerlink" href="#sprox.sa.provider.SAORMProviderError.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sprox.sa.provider.SAORMProviderError.message">
+<tt class="descname">message</tt><a class="headerlink" href="#sprox.sa.provider.SAORMProviderError.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+        <h1>Discuss</h1>
+        <div id="disqus_thread"></div>
+           <script type="text/javascript" src="http://disqus.com/forums/sproxdox/embed.js"></script>
+           <noscript><a href="http://sproxdox.disqus.com/?url=ref">View the discussion thread.</a></noscript>
+           <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+      </div>
+
+  </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/sprox_logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><tt class="docutils literal"><span class="pre">sprox.sa.provider</span></tt></a><ul>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+<li><a class="reference internal" href="#exceptions">Exceptions</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="sprox.util.html"
+                        title="previous chapter"><tt class="docutils literal"><span class="pre">sprox.util</span></tt></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="sprox.sa.widgetselector.html"
+                        title="next chapter"><tt class="docutils literal"><span class="pre">sprox.sa.widgetselector</span></tt></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/modules/sprox.sa.provider.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="sprox.sa.widgetselector.html" title="sprox.sa.widgetselector"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="sprox.util.html" title="sprox.util"
+             >previous</a> |</li>
+  <li>
+  <a href="../index.html"><b>Sprox 0.7.1</b></a>
+  </li>
+
+  
+    <li> <b>/</b> <a href="#"><tt class="docutils literal"><span class="pre">sprox.sa.provider</span></tt></a></li>
+  
+
+      </ul>
+    </div>
+
+    <div class="footer">
+        &copy; Copyright 2008, Christopher Perkins.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.
+    </div>
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+  var links = document.getElementsByTagName('a');
+  var query = '?';
+  for(var i = 0; i < links.length; i++) {
+    if(links[i].href.indexOf('#disqus_thread') >= 0) {
+      query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+    }
+  }
+  document.write('<script type="text/javascript" src="http://disqus.com/forums/sproxdox/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6778746-1");
+pageTracker._trackPageview();
+} catch(err) {}
+//]]>
+</script>
+
+
+  </body>
+</html>

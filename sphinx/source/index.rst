@@ -243,16 +243,21 @@ Core Modules
     modules/sprox.viewbase
     modules/sprox.entitiesbase
     modules/sprox.recordviewbase
-    modules/sprox.widgetselector
-    modules/sprox.validatorselector
     modules/sprox.validators
     modules/sprox.sprockets
     modules/sprox.metadata
-    modules/sprox.saormprovider
     modules/sprox.iprovider
     modules/sprox.widgets
     modules/sprox.util
 
+    modules/sprox.sa.provider
+    modules/sprox.sa.widgetselector
+    modules/sprox.sa.validatorselector
+
+    modules/sprox.mg.provider
+    modules/sprox.mg.widgetselector
+    modules/sprox.mg.validatorselector
+    
 Dojo Support
 ===============
  Sprox now supports `Dojo <http://www.dojotoolkit.com>`_.  Dojo is a Javascript library which allows developers to deliver considerably richer
@@ -276,6 +281,15 @@ Dojo Related Modules
     modules/sprox.dojo.tablebase
     modules/sprox.dojo.fillerbase
     modules/sprox.dojo.formbase
+
+Mootools Support
+=================
+
+.. toctree::
+    :maxdepth: 1
+
+    modules/sprox.mootools.formbase
+
 
 About These Docs
 ==================
