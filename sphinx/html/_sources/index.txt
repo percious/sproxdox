@@ -177,41 +177,50 @@ is the current code coverage.::
 
     $ nose --with-coverage --cover-package=sprox --cover-erase
     ...
-    Name                      Stmts   Miss  Cover   Missing
-    -------------------------------------------------------
-    sprox                         0      0   100%   
-    sprox.configbase             78      0   100%   
-    sprox.dojo                    0      0   100%   
-    sprox.dojo.fillerbase        14      0   100%   
-    sprox.dojo.formbase          11      0   100%   
-    sprox.dojo.sprockets         18      0   100%   
-    sprox.dojo.tablebase         30      0   100%   
-    sprox.dummyentity             1      0   100%   
-    sprox.entitiesbase           15      0   100%   
-    sprox.fillerbase            104      0   100%   
-    sprox.formbase              155      0   100%   
-    sprox.iprovider              33      0   100%   
-    sprox.metadata               52      0   100%   
-    sprox.mootools                0      0   100%   
-    sprox.providerselector       72      0   100%   
-    sprox.saormprovider         339      0   100%   
-    sprox.sprockets              55      0   100%   
-    sprox.tablebase              45      0   100%   
-    sprox.util                    9      0   100%   
-    sprox.validators             11      0   100%   
-    sprox.validatorselector      52      0   100%   
-    sprox.viewbase              130      0   100%   
-    sprox.widgets                 1      0   100%   
-    sprox.widgets.dojo           85      0   100%   
-    sprox.widgets.templates       0      0   100%   
-    sprox.widgets.widgets        90      0   100%   
-    sprox.widgetselector         51      0   100%   
-    -------------------------------------------------------
-    TOTAL                      1451      0   100%   
+    Name                         Stmts   Miss  Cover   Missing
+    ----------------------------------------------------------
+    sprox                            0      0   100%   
+    sprox._validatorselector        26      0   100%   
+    sprox._widgetselector           15      0   100%   
+    sprox.configbase                78      0   100%   
+    sprox.dojo                       0      0   100%   
+    sprox.dojo.fillerbase           14      0   100%   
+    sprox.dojo.formbase             24      0   100%   
+    sprox.dojo.sprockets            18      0   100%   
+    sprox.dojo.tablebase            30      0   100%   
+    sprox.dummyentity                1      0   100%   
+    sprox.entitiesbase              15      0   100%   
+    sprox.fillerbase               102      0   100%   
+    sprox.formbase                 156      0   100%   
+    sprox.iprovider                 51      0   100%   
+    sprox.metadata                  53      0   100%   
+    sprox.mg                         0      0   100%   
+    sprox.mg.provider              236      0   100%   
+    sprox.mg.validatorselector      25      0   100%   
+    sprox.mg.widgetselector         35      0   100%   
+    sprox.mk                         0      0   100%   
+    sprox.mootools                   0      0   100%   
+    sprox.providerselector          85      0   100%   
+    sprox.recordviewbase            15      0   100%   
+    sprox.sa                         0      0   100%   
+    sprox.sa.provider              391      0   100%   
+    sprox.sa.validatorselector      30      0   100%   
+    sprox.sa.widgetselector         37      0   100%   
+    sprox.sprockets                 55      0   100%   
+    sprox.tablebase                 45      0   100%   
+    sprox.util                      42      0   100%   
+    sprox.validators                11      0   100%   
+    sprox.validatorselector          6      0   100%   
+    sprox.viewbase                 128      0   100%   
+    sprox.widgets                    1      0   100%   
+    sprox.widgets.dojo              85      0   100%   
+    sprox.widgets.templates          0      0   100%   
+    sprox.widgets.widgets           90      0   100%   
+    sprox.widgetselector             6      0   100%   
+    ----------------------------------------------------------
+    TOTAL                         1906      0   100%   
     ----------------------------------------------------------------------
-    Ran 242 tests in 5.755s
-    
-    OK
+    Ran 369 tests in 7.971s
 
 
 Sprox is an open source project, and can be found at `bitbucket <http://www.bitbucket.org/percious/sprox/src/>`_.  
@@ -225,7 +234,7 @@ Current Release
 License
 ===========
 
-Sprox is licensed under the liberal MIT license.  This means you can do what you want with it.  Include it in your own package, sell
+Sprox is licensed under the liberal MIT license.  This basically means you can do what you want with it.  Include it in your own package, sell
 it for a profit, modify it for your needs.  We really don't care how you use it, but it should be noted that preferential support
 is given to those consumers who give back to the open source community, participate in Sprox development and help us find and solve
 those pesky corner cases.
@@ -250,9 +259,25 @@ Core Modules
     modules/sprox.widgets
     modules/sprox.util
 
+SQLAlchemy Support
+==================
+
+Sprox has always included SQLAlchemy in it's orm support.
+
+.. toctree::
+    :maxdepth: 1
+    
     modules/sprox.sa.provider
     modules/sprox.sa.widgetselector
     modules/sprox.sa.validatorselector
+
+    
+Ming Support
+=============
+New for Sprox 0.7 is support for `Ming <http://merciless.sourceforge.net/tour.html>`_.  Ming is a wrapper for `MongoDB <http://mongodb.org>`_.
+
+.. toctree::
+    :maxdepth: 1
 
     modules/sprox.mg.provider
     modules/sprox.mg.widgetselector
@@ -260,30 +285,25 @@ Core Modules
     
 Dojo Support
 ===============
- Sprox now supports `Dojo <http://www.dojotoolkit.com>`_.  Dojo is a Javascript library which allows developers to deliver considerably richer
- content through the web.  Sprox's initial dojo support provides table widgets for your application
- which can literally scroll through millions of records, all through the browser.  Support is somewhat
- crude at this point, limited to just displaying the data and crud links, but you can expect to see editable/sorted/filtered
- data in the future.
+Sprox now supports `Dojo <http://www.dojotoolkit.com>`_.  Dojo is a Javascript library which allows developers to deliver considerably richer
+content through the web.  Sprox's initial dojo support provides table widgets for your application
+which can literally scroll through millions of records, all through the browser.  Support is somewhat
+crude at this point, limited to just displaying the data and crud links, but you can expect to see editable/sorted/filtered
+data in the future.
 
 
 .. toctree::
     :maxdepth: 1
 
     dojo
-
-Dojo Related Modules
------------------------
-
-.. toctree::
-    :maxdepth: 1
-
     modules/sprox.dojo.tablebase
     modules/sprox.dojo.fillerbase
     modules/sprox.dojo.formbase
 
 Mootools Support
 =================
+`Mootools <http://mootools.net>`_ has been supported in forms since before 0.6, but is now documented.
+
 
 .. toctree::
     :maxdepth: 1

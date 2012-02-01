@@ -1,5 +1,5 @@
 :mod:`sprox.mootools.formbase`
-=============================
+================================
 
 .. automodule:: sprox.mootools.formbase
 

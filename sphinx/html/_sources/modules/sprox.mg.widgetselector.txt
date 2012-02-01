@@ -1,34 +1,15 @@
-:mod:`sprox.widgetselector`
+:mod:`sprox.mg.widgetselector`
 ===============================================================================================================================================
 
 
-.. automodule:: sprox.widgetselector
+.. automodule:: sprox.mg.widgetselector
 
 
 Classes
 --------
-.. autoclass:: WidgetSelector
+.. autoclass:: MingWidgetSelector
    :show-inheritance:
    :members:
    :inherited-members:
    :undoc-members:
-
-.. autoclass:: SAWidgetSelector
-   :show-inheritance:
-   :members:
-   :inherited-members:
-   :undoc-members:
-
-.. autoclass:: EntitiesViewWidgetSelector
-   :show-inheritance:
-   :members:
-   :inherited-members:
-   :undoc-members:
-
-.. autoclass:: EntityDefWidgetSelector
-   :show-inheritance:
-   :members:
-   :inherited-members:
-   :undoc-members:
-
 

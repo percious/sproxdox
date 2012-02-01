@@ -221,41 +221,50 @@ Sprox is only released as a beta with 90% or higher coverage, 100% code coverage
 is the current code coverage.:</p>
 <div class="highlight-python"><pre>$ nose --with-coverage --cover-package=sprox --cover-erase
 ...
-Name                      Stmts   Miss  Cover   Missing
--------------------------------------------------------
-sprox                         0      0   100%
-sprox.configbase             78      0   100%
-sprox.dojo                    0      0   100%
-sprox.dojo.fillerbase        14      0   100%
-sprox.dojo.formbase          11      0   100%
-sprox.dojo.sprockets         18      0   100%
-sprox.dojo.tablebase         30      0   100%
-sprox.dummyentity             1      0   100%
-sprox.entitiesbase           15      0   100%
-sprox.fillerbase            104      0   100%
-sprox.formbase              155      0   100%
-sprox.iprovider              33      0   100%
-sprox.metadata               52      0   100%
-sprox.mootools                0      0   100%
-sprox.providerselector       72      0   100%
-sprox.saormprovider         339      0   100%
-sprox.sprockets              55      0   100%
-sprox.tablebase              45      0   100%
-sprox.util                    9      0   100%
-sprox.validators             11      0   100%
-sprox.validatorselector      52      0   100%
-sprox.viewbase              130      0   100%
-sprox.widgets                 1      0   100%
-sprox.widgets.dojo           85      0   100%
-sprox.widgets.templates       0      0   100%
-sprox.widgets.widgets        90      0   100%
-sprox.widgetselector         51      0   100%
--------------------------------------------------------
-TOTAL                      1451      0   100%
+Name                         Stmts   Miss  Cover   Missing
+----------------------------------------------------------
+sprox                            0      0   100%
+sprox._validatorselector        26      0   100%
+sprox._widgetselector           15      0   100%
+sprox.configbase                78      0   100%
+sprox.dojo                       0      0   100%
+sprox.dojo.fillerbase           14      0   100%
+sprox.dojo.formbase             24      0   100%
+sprox.dojo.sprockets            18      0   100%
+sprox.dojo.tablebase            30      0   100%
+sprox.dummyentity                1      0   100%
+sprox.entitiesbase              15      0   100%
+sprox.fillerbase               102      0   100%
+sprox.formbase                 156      0   100%
+sprox.iprovider                 51      0   100%
+sprox.metadata                  53      0   100%
+sprox.mg                         0      0   100%
+sprox.mg.provider              236      0   100%
+sprox.mg.validatorselector      25      0   100%
+sprox.mg.widgetselector         35      0   100%
+sprox.mk                         0      0   100%
+sprox.mootools                   0      0   100%
+sprox.providerselector          85      0   100%
+sprox.recordviewbase            15      0   100%
+sprox.sa                         0      0   100%
+sprox.sa.provider              391      0   100%
+sprox.sa.validatorselector      30      0   100%
+sprox.sa.widgetselector         37      0   100%
+sprox.sprockets                 55      0   100%
+sprox.tablebase                 45      0   100%
+sprox.util                      42      0   100%
+sprox.validators                11      0   100%
+sprox.validatorselector          6      0   100%
+sprox.viewbase                 128      0   100%
+sprox.widgets                    1      0   100%
+sprox.widgets.dojo              85      0   100%
+sprox.widgets.templates          0      0   100%
+sprox.widgets.widgets           90      0   100%
+sprox.widgetselector             6      0   100%
+----------------------------------------------------------
+TOTAL                         1906      0   100%
 ----------------------------------------------------------------------
-Ran 242 tests in 5.755s
-
-OK</pre>
+Ran 369 tests in 7.971s</pre>
 </div>
 <p>Sprox is an open source project, and can be found at <a class="reference external" href="http://www.bitbucket.org/percious/sprox/src/">bitbucket</a>.
 If you have a great idea of how to make sprox better, feel free to fork off your own copy and send a pull request.</p>
@@ -266,7 +275,7 @@ If you have a great idea of how to make sprox better, feel free to fork off your
 </div>
 <div class="section" id="license">
 <h1>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h1>
-<p>Sprox is licensed under the liberal MIT license.  This means you can do what you want with it.  Include it in your own package, sell
+<p>Sprox is licensed under the liberal MIT license.  This basically means you can do what you want with it.  Include it in your own package, sell
 it for a profit, modify it for your needs.  We really don&#8217;t care how you use it, but it should be noted that preferential support
 is given to those consumers who give back to the open source community, participate in Sprox development and help us find and solve
 those pesky corner cases.</p>
@@ -288,41 +297,50 @@ those pesky corner cases.</p>
 <li class="toctree-l1"><a class="reference internal" href="modules/sprox.iprovider.html"><tt class="docutils literal"><span class="pre">sprox.iprovider</span></tt></a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules/sprox.widgets.html"><tt class="docutils literal"><span class="pre">sprox.widgets</span></tt></a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules/sprox.util.html"><tt class="docutils literal"><span class="pre">sprox.util</span></tt></a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="sqlalchemy-support">
+<h1>SQLAlchemy Support<a class="headerlink" href="#sqlalchemy-support" title="Permalink to this headline">¶</a></h1>
+<p>Sprox has always included SQLAlchemy in it&#8217;s orm support.</p>
+<div class="toctree-wrapper compound">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="modules/sprox.sa.provider.html"><tt class="docutils literal"><span class="pre">sprox.sa.provider</span></tt></a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules/sprox.sa.widgetselector.html"><tt class="docutils literal"><span class="pre">sprox.sa.widgetselector</span></tt></a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules/sprox.sa.validatorselector.html"><tt class="docutils literal"><span class="pre">sprox.sa.validatorselector</span></tt></a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="ming-support">
+<h1>Ming Support<a class="headerlink" href="#ming-support" title="Permalink to this headline">¶</a></h1>
+<p>New for Sprox 0.7 is support for <a class="reference external" href="http://merciless.sourceforge.net/tour.html">Ming</a>.  Ming is a wrapper for <a class="reference external" href="http://mongodb.org">MongoDB</a>.</p>
+<div class="toctree-wrapper compound">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="modules/sprox.mg.provider.html"><tt class="docutils literal"><span class="pre">sprox.mg.provider</span></tt></a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules/sprox.mg.widgetselector.html"><tt class="docutils literal"><span class="pre">sprox.widgetselector</span></tt></a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/sprox.mg.widgetselector.html"><tt class="docutils literal"><span class="pre">sprox.mg.widgetselector</span></tt></a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules/sprox.mg.validatorselector.html"><tt class="docutils literal"><span class="pre">sprox.mg.validatorselector</span></tt></a></li>
 </ul>
 </div>
 </div>
 <div class="section" id="dojo-support">
 <h1>Dojo Support<a class="headerlink" href="#dojo-support" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div>Sprox now supports <a class="reference external" href="http://www.dojotoolkit.com">Dojo</a>.  Dojo is a Javascript library which allows developers to deliver considerably richer
+<p>Sprox now supports <a class="reference external" href="http://www.dojotoolkit.com">Dojo</a>.  Dojo is a Javascript library which allows developers to deliver considerably richer
 content through the web.  Sprox&#8217;s initial dojo support provides table widgets for your application
 which can literally scroll through millions of records, all through the browser.  Support is somewhat
 crude at this point, limited to just displaying the data and crud links, but you can expect to see editable/sorted/filtered
-data in the future.</div></blockquote>
+data in the future.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="dojo.html">General Dojo Usage Information</a></li>
-</ul>
-</div>
-<div class="section" id="dojo-related-modules">
-<h2>Dojo Related Modules<a class="headerlink" href="#dojo-related-modules" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
 <li class="toctree-l1"><a class="reference internal" href="modules/sprox.dojo.tablebase.html"><tt class="docutils literal"><span class="pre">sprox.dojo.tablebase</span></tt></a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules/sprox.dojo.fillerbase.html"><tt class="docutils literal"><span class="pre">sprox.dojo.fillerbase</span></tt></a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules/sprox.dojo.formbase.html"><tt class="docutils literal"><span class="pre">sprox.dojo.formbase</span></tt></a></li>
 </ul>
 </div>
 </div>
-</div>
 <div class="section" id="mootools-support">
 <h1>Mootools Support<a class="headerlink" href="#mootools-support" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="http://mootools.net">Mootools</a> has been supported in forms since before 0.6, but is now documented.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="modules/sprox.mootools.formbase.html"><tt class="docutils literal"><span class="pre">sprox.mootools.formbase</span></tt></a></li>
@@ -387,10 +405,13 @@ through out these docs are all based on an example model which is also used thro
 <li><a class="reference internal" href="#core-modules">Core Modules</a><ul>
 </ul>
 </li>
-<li><a class="reference internal" href="#dojo-support">Dojo Support</a><ul>
-<li><a class="reference internal" href="#dojo-related-modules">Dojo Related Modules</a><ul>
+<li><a class="reference internal" href="#sqlalchemy-support">SQLAlchemy Support</a><ul>
 </ul>
 </li>
+<li><a class="reference internal" href="#ming-support">Ming Support</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#dojo-support">Dojo Support</a><ul>
 </ul>
 </li>
 <li><a class="reference internal" href="#mootools-support">Mootools Support</a><ul>
@@ -450,7 +471,7 @@ through out these docs are all based on an example model which is also used thro
 
     <div class="footer">
         &copy; Copyright 2008, Christopher Perkins.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
     </div>
 
 <script type="text/javascript">
