@@ -1,25 +1,15 @@
-:mod:`sprox.saormprovider`
+:mod:`sprox.mg.provider`
 ===============================================================================================================================================
 
-.. automodule:: sprox.saormprovider
+.. automodule:: sprox.mg.provider
 
 
 Classes
 --------
 
-.. autoclass:: SAORMProvider
+.. autoclass:: MingProvider
    :show-inheritance:
    :members:
    :inherited-members:
    :undoc-members:
 
-
-
-Exceptions
-------------
-
-.. autoclass:: SAORMProviderError
-   :show-inheritance:
-   :members:
-   :inherited-members:
-   :undoc-members:

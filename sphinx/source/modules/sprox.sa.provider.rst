@@ -1,25 +1,25 @@
-:mod:`sprox.validatorselector`
+:mod:`sprox.sa.provider`
 ===============================================================================================================================================
 
-
-.. automodule:: sprox.validatorselector
-
-
+.. automodule:: sprox.sa.provider
 
 
 Classes
 --------
 
-.. autoclass:: SAValidatorSelector
+.. autoclass:: SAORMProvider
    :show-inheritance:
    :members:
    :inherited-members:
    :undoc-members:
 
 
-.. autoclass:: ValidatorSelector
+
+Exceptions
+------------
+
+.. autoclass:: SAORMProviderError
    :show-inheritance:
    :members:
    :inherited-members:
    :undoc-members:
-
